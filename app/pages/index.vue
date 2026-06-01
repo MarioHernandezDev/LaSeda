@@ -1,7 +1,6 @@
 <template>
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
-
-    <header class="relative min-h-screen flex flex-col overflow-hidden">
+<header class="relative min-h-screen flex flex-col overflow-hidden">
 
       <div class="absolute inset-0 z-0">
         <video
@@ -26,9 +25,9 @@
       </div>
 
       <div class="relative z-10 flex-1 flex items-center">
-        <div class="w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-24 md:py-0 grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="w-full max-w-7xl mx-auto px-5 md:px-16 lg:px-24 py-24 md:py-0 grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          <div class="md:col-span-7 lg:col-span-6 hero-content">
+          <div class="md:col-span-7 lg:col-span-6 hero-content min-w-0">
 
             <div class="flex items-center gap-3 mb-8 hero-item" style="animation-delay: 0.1s;">
               <div class="w-8 h-px bg-[#71B1A5] stroke-[2px]"></div>
@@ -38,17 +37,17 @@
             </div>
 
             <h1
-              class="font-serif italic font-medium text-[2.8rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[1.1] text-[#27252B] mb-6 tracking-[-0.01em] hero-item"
+              class="font-serif italic font-medium text-[2rem] md:text-[3.6rem] lg:text-[4.2rem] leading-[1.15] text-[#27252B] mb-6 tracking-[-0.01em] hero-item break-words"
               style="animation-delay: 0.25s;"
             >
               Psicología y Psicoterapia<br>
-              <span class="not-italic font-normal text-[2.2rem] md:text-[2.7rem] lg:text-[3.2rem] text-[#71B1A5] tracking-wide block mt-1">
+              <span class="not-italic font-normal text-[1.6rem] md:text-[2.7rem] lg:text-[3.2rem] text-[#71B1A5] tracking-wide block mt-2">
                 en Granada
               </span>
             </h1>
 
             <p
-              class="text-[#27252B]/80 text-lg md:text-xl leading-[1.85] mb-10 font-normal max-w-xl hero-item"
+              class="hidden md:block text-[#27252B]/80 text-base md:text-xl leading-[1.85] mb-10 font-normal max-w-full md:max-w-xl break-words hero-item"
               style="animation-delay: 0.4s;"
             >
               Estamos especializadas en trabajar con <strong class="text-[#27252B] font-bold border-b-2 border-[#71B1A5]/20 pb-0.5">las emociones humanas</strong>,
@@ -56,10 +55,10 @@
               Para ello, contamos con un <strong class="text-[#71B1A5] font-bold">equipo multidisciplinar</strong>, integrado por diferentes profesionales de la psicología, la salud, la educación y la comunicación humana.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 hero-item" style="animation-delay: 0.55s;">
+            <div class="flex flex-col sm:flex-row gap-4 hero-item mt-6 md:mt-0" style="animation-delay: 0.55s;">
               <NuxtLink
                 to="/contacto"
-                class="group inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold transition-all duration-500 shadow-lg shadow-[#71B1A5]/25 hover:bg-[#5a9a8e] hover:shadow-xl hover:shadow-[#71B1A5]/40 hover:-translate-y-0.5"
+                class="group inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold transition-all duration-500 shadow-lg shadow-[#71B1A5]/25 hover:bg-[#5a9a8e] hover:shadow-xl hover:shadow-[#71B1A5]/40 hover:-translate-y-0.5 w-full sm:w-auto"
               >
                 <svg class="w-4 h-4 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -70,7 +69,7 @@
 
               <NuxtLink
                 to="/conocenos"
-                class="group inline-flex items-center justify-center gap-3 border border-[#27252B]/40 text-[#27252B] px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold hover:border-[#71B1A5] hover:text-[#71B1A5] transition-all duration-500 hover:-translate-y-0.5 backdrop-blur-sm bg-white/40"
+                class="group inline-flex items-center justify-center gap-3 border border-[#27252B]/40 text-[#27252B] px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold hover:border-[#71B1A5] hover:text-[#71B1A5] transition-all duration-500 hover:-translate-y-0.5 backdrop-blur-sm bg-white/40 w-full sm:w-auto"
               >
                 Conocer al Equipo
                 <svg class="w-3.5 h-3.5 transition-transform duration-500 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,20 +78,20 @@
               </NuxtLink>
             </div>
 
-            <div class="flex items-center gap-8 mt-16 pt-8 border-t-2 border-[#27252B]/10 hero-item" style="animation-delay: 0.7s;">
+            <div class="flex items-center gap-4 sm:gap-8 mt-16 pt-8 border-t-2 border-[#27252B]/10 hero-item" style="animation-delay: 0.7s;">
               <div class="text-center">
-                <span class="block font-serif italic text-3xl md:text-4xl font-semibold text-[#71B1A5]">+12</span>
-                <span class="block text-xs text-[#27252B]/70 tracking-[0.3em] uppercase font-bold mt-1">Años</span>
+                <span class="block font-serif italic text-2xl md:text-4xl font-semibold text-[#71B1A5]">+12</span>
+                <span class="block text-[10px] md:text-xs text-[#27252B]/70 tracking-[0.25em] md:tracking-[0.3em] uppercase font-bold mt-1">Años</span>
               </div>
               <div class="w-px h-12 bg-[#27252B]/15"></div>
               <div class="text-center">
-                <span class="block font-serif italic text-3xl md:text-4xl font-semibold text-[#71B1A5]">+800</span>
-                <span class="block text-xs text-[#27252B]/70 tracking-[0.3em] uppercase font-bold mt-1">Pacientes</span>
+                <span class="block font-serif italic text-2xl md:text-4xl font-semibold text-[#71B1A5]">+800</span>
+                <span class="block text-[10px] md:text-xs text-[#27252B]/70 tracking-[0.25em] md:tracking-[0.3em] uppercase font-bold mt-1">Pacientes</span>
               </div>
               <div class="w-px h-12 bg-[#27252B]/15"></div>
               <div class="text-center">
-                <span class="block font-serif italic text-3xl md:text-4xl font-semibold text-[#71B1A5]">8</span>
-                <span class="block text-xs text-[#27252B]/70 tracking-[0.3em] uppercase font-bold mt-1">Psicólogos</span>
+                <span class="block font-serif italic text-2xl md:text-4xl font-semibold text-[#71B1A5]">8</span>
+                <span class="block text-[10px] md:text-xs text-[#27252B]/70 tracking-[0.25em] md:tracking-[0.3em] uppercase font-bold mt-1">Psicólogos</span>
               </div>
             </div>
           </div>
@@ -136,7 +135,6 @@
         <span class="text-xs tracking-[0.4em] uppercase text-[#27252B]/50 mt-1">Descubrir</span>
       </div>
     </header>
-
     <!-- ============================================================
          2. SECCIÓN FILOSOFÍA — Cita Claudio Naranjo
     ============================================================ -->

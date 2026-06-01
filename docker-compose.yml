@@ -1,0 +1,11 @@
+services:
+  nuxt_app:
+    build: .
+    container_name: laseda_frontal
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - HOST=0.0.0.0
+      - NODE_ENV=development

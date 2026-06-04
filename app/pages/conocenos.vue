@@ -1,509 +1,464 @@
 <template>
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
-    <!-- ============================================================
-         SEO: Metadatos de la página
-    ============================================================ -->
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 1 · MINI-HERO (mismo sistema: video + gradientes laterales)
+    ════════════════════════════════════════════════ -->
+    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-    <!-- ============================================================
-         1. CABECERA DE PÁGINA
-    ============================================================ -->
-    <section aria-labelledby="conocenos-titulo" class="pt-20 md:pt-28 pb-16 md:pb-20 px-8 md:px-16 lg:px-24">
-      <div class="max-w-7xl mx-auto">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay muted loop playsinline
+        poster="/images/caploader.png"
+      >
+        <source src="/video/minhero.mp4" type="video/mp4" />
+        <img src="/images/caploader.png" alt="Centro de Psicología La Seda Granada" class="w-full h-full object-cover" />
+      </video>
 
-        <div class="grid md:grid-cols-[1fr_auto] md:items-end gap-8">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-          <!-- Texto principal -->
-          <div>
-            <!-- Etiqueta de sección -->
-            <div class="flex items-center gap-3 mb-7">
-              <div class="w-8 h-px bg-[#71B1A5]"></div>
-              <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase font-light">
-                Quiénes somos
-              </span>
-            </div>
+      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
-            <h1 id="conocenos-titulo" class="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.1] text-[#27252B] max-w-2xl">
-              El equipo detrás de
-              <span class="italic text-[#71B1A5] block mt-1">La Seda</span>
-            </h1>
-          </div>
+        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
+          Quiénes somos
+        </p>
 
-          <!-- Descripción lateral -->
-          <p class="text-[#27252B]/55 text-base leading-relaxed max-w-sm font-light md:text-right md:pb-2">
-            Un grupo de profesionales comprometidos con la salud psicológica,
-            la educación emocional y el crecimiento personal en Granada.
-          </p>
+        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+          El equipo detrás de<br />
+          <span class="text-[#27252B]/75">La Seda</span>
+        </h1>
+
+        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
+          Un grupo de profesionales comprometidos con la salud psicológica,
+          la educación emocional y el crecimiento personal en Granada.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 2 · INTRODUCCIÓN (mismo patrón dos columnas sticky)
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+
+        <div class="md:col-span-4 md:sticky md:top-28">
+          <div class="w-12 h-px bg-[#71B1A5] mb-6" />
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            Rigor científico con profundidad humana.
+          </h2>
+          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" />
         </div>
 
-        <!-- Línea divisoria con ornamento -->
-        <div class="flex items-center gap-6 mt-14">
-          <div class="h-px flex-1 bg-[#27252B]/8"></div>
-          <div class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]"></div>
-          <div class="h-px w-16 bg-[#27252B]/8"></div>
-        </div>
-
-        <!-- Párrafo introductorio largo -->
-        <div class="grid md:grid-cols-2 gap-10 mt-12">
-          <p class="text-[#27252B]/65 leading-relaxed font-light text-[0.95rem]">
+        <div class="md:col-span-8 space-y-7">
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
             La Seda nació de la convicción de que la psicología más transformadora es aquella
             que integra rigor científico con profundidad humana. Nuestro equipo reúne especialistas
-            formados en las corrientes más sólidas — cognitivo-conductual, sistémica,
-            humanista-existencial y mindfulness-based — con una misión compartida:
+            formados en las corrientes más sólidas —cognitivo-conductual, sistémica,
+            humanista-existencial y mindfulness-based— con una misión compartida:
             acompañar procesos de cambio real.
           </p>
-          <p class="text-[#27252B]/65 leading-relaxed font-light text-[0.95rem]">
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
             Más allá de la clínica, entendemos el bienestar como un territorio que abarca
             la educación, las relaciones y el sentido de vida. Por eso nuestro trabajo se
             despliega en tres áreas complementarias: terapia, formación y crecimiento personal,
-            desde un espacio físico en Granada diseñado para que cada persona se sienta
-            recibida y acompañada desde el primer momento.
+            desde un espacio en Granada diseñado para que cada persona se sienta
+            recibida desde el primer momento.
           </p>
+
+          <div class="inline-flex items-center gap-3 pt-2">
+            <div class="w-2 h-2 bg-[#71B1A5]" />
+            <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ============================================================
-         2. SECCIÓN NUESTRO ESPACIO
-    ============================================================ -->
-    <section aria-labelledby="espacio-titulo" class="py-20 md:py-28 bg-stone-100/50">
-      <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
 
-        <!-- Encabezado de sección -->
-        <div class="flex items-center gap-3 mb-14">
-          <div class="w-6 h-px bg-[#71B1A5]"></div>
-          <h2 id="espacio-titulo" class="font-serif text-3xl md:text-4xl text-[#27252B]">
-            Nuestro espacio en Granada
-          </h2>
-        </div>
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 3 · NUESTRO ESPACIO (imagen + texto, mismo patrón §5 talleres)
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-        <!-- Layout asimétrico: imagen grande + texto + imagen pequeña -->
-        <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
-
-          <!-- Imagen principal grande (izquierda) -->
-          <div class="md:col-span-5 relative overflow-hidden group">
-            <div class="aspect-[3/4] overflow-hidden">
+          <!-- Imagen con marco desfasado -->
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 rounded-none pointer-events-none z-0" />
+            <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=88&auto=format&fit=crop"
-                alt="Sala de consulta terapéutica del Centro La Seda en Granada — espacio cálido y acogedor"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
+                src="/images/mariposa.png"
+                alt="Sala de consulta terapéutica del Centro La Seda en Granada"
+                class="w-full h-full object-cover rounded-none"
               />
+              <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
             </div>
-            <!-- Marco decorativo desplazado -->
-            <div class="absolute -bottom-4 -left-4 w-2/3 h-2/3 border border-[#71B1A5]/25 -z-10 pointer-events-none"></div>
+            <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block">
+              <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5]">Nuestro espacio</p>
+              <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
+            </div>
           </div>
 
-          <!-- Bloque central: texto + estadísticas -->
-          <div class="md:col-span-4 flex flex-col justify-center md:pt-12 md:px-4">
-
-            <p class="text-[#27252B]/65 leading-relaxed font-light text-[0.95rem] mb-8">
-              Nos ubicamos en el corazón de Granada, en un espacio proyectado para
-              que el cuerpo y la mente encuentren reposo desde el momento en que
-              cruzas la puerta. Luz natural, materiales orgánicos y un diseño
-              deliberadamente alejado de la estética clínica fría.
+          <!-- Texto y detalles -->
+          <div>
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+              El espacio
             </p>
-            <p class="text-[#27252B]/65 leading-relaxed font-light text-[0.95rem] mb-12">
-              Cada sala ha sido pensada con atención: la acústica que protege
-              la intimidad, la temperatura del color que invita a la calma, los
-              elementos naturales que recuerdan que el bienestar es, también,
-              una cuestión sensorial.
-            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
+              Un lugar pensado<br />
+              <span class="text-[#27252B]/60">para el bienestar.</span>
+            </h2>
 
-            <!-- Detalles del espacio -->
-            <ul class="space-y-5">
-              <li class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-[#71B1A5]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="block text-sm font-medium text-[#27252B]">5 salas independientes</span>
-                  <span class="block text-xs text-[#27252B]/45 font-light mt-0.5">Consultas individuales, grupales y sala de talleres</span>
-                </div>
-              </li>
+            <div class="space-y-10">
 
-              <li class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-[#71B1A5]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-                  </svg>
+              <div class="flex gap-6 items-start">
+                <div class="shrink-0">
+                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">5</span>
                 </div>
-                <div>
-                  <span class="block text-sm font-medium text-[#27252B]">Centro de Granada</span>
-                  <span class="block text-xs text-[#27252B]/45 font-light mt-0.5">Accesible en transporte público y con aparcamiento próximo</span>
+                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Salas independientes</h3>
+                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                    Consultas individuales, grupales y sala de talleres. Acústica que protege
+                    la intimidad y materiales orgánicos que invitan a la calma.
+                  </p>
                 </div>
-              </li>
+              </div>
 
-              <li class="flex items-start gap-4">
-                <div class="w-8 h-8 bg-[#71B1A5]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
-                </div>
-                <div>
-                  <span class="block text-sm font-medium text-[#27252B]">Sesiones online disponibles</span>
-                  <span class="block text-xs text-[#27252B]/45 font-light mt-0.5">Para quienes no puedan desplazarse hasta el centro</span>
-                </div>
-              </li>
-            </ul>
-          </div>
+              <div class="w-full h-px bg-[#27252B]/8" />
 
-          <!-- Imagen secundaria (derecha) + badge -->
-          <div class="md:col-span-3 relative">
-            <!-- Imagen pequeña desplazada hacia abajo -->
-            <div class="aspect-[2/3] overflow-hidden md:mt-20 group">
-              <img
-                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&q=88&auto=format&fit=crop"
-                alt="Zona de espera acogedora del Centro de Psicología La Seda Granada"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
+              <div class="flex gap-6 items-start">
+                <div class="shrink-0">
+                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">+12</span>
+                </div>
+                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Años en Granada</h3>
+                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                    En el corazón de Granada, accesible en transporte público y con
+                    aparcamiento próximo. Sesiones online disponibles para quienes no
+                    puedan desplazarse.
+                  </p>
+                </div>
+              </div>
+
             </div>
 
-            <!-- Tarjeta flotante sobre la imagen -->
-            <div class="absolute -top-6 -left-6 bg-white shadow-xl p-5 max-w-[160px] border-b-2 border-[#71B1A5]">
-              <span class="block font-serif text-3xl text-[#27252B] leading-none">+12</span>
-              <span class="block text-xs text-[#27252B]/50 tracking-widest uppercase mt-1 font-light">años en Granada</span>
+            <div class="mt-12 pt-8 border-t border-[#27252B]/10">
+              <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
+                <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+                  Reservar primera cita
+                </span>
+                <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+              </NuxtLink>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         3. SECCIÓN EL EQUIPO
-    ============================================================ -->
-    <section aria-labelledby="equipo-titulo" class="py-20 md:py-28 px-8 md:px-16 lg:px-24">
-      <div class="max-w-7xl mx-auto">
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 4 · EL EQUIPO (cuadrícula de tarjetas)
+    ════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         <!-- Encabezado -->
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
           <div>
-            <div class="flex items-center gap-3 mb-5">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
-              <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase font-light">Profesionales</span>
-            </div>
-            <h2 id="equipo-titulo" class="font-serif text-3xl md:text-4xl text-[#27252B] leading-tight">
-              Personas que cuidan
-              <span class="italic text-[#71B1A5] block mt-1">a personas</span>
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+              Profesionales
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+              Personas que cuidan<br />
+              <span class="text-[#27252B]/60">a personas.</span>
             </h2>
           </div>
-          <p class="text-[#27252B]/50 max-w-xs text-sm leading-relaxed font-light md:text-right">
+          <p class="text-[#27252B]/50 max-w-xs text-sm leading-relaxed font-light md:text-right md:mb-2">
             Todo nuestro equipo está colegiado por el COP Andalucía y en formación
-            continua. Aquí encontrarás a quien mejor se adapte a tu proceso.
+            continua.
           </p>
         </div>
 
-        <!-- Grid de tarjetas de equipo -->
+        <!-- Grid de tarjetas -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
 
           <!-- ── Profesional 1 ── -->
-          <article class="group flex flex-col bg-white border border-[#27252B]/8 hover:border-[#71B1A5]/35 hover:shadow-xl hover:shadow-[#71B1A5]/8 transition-all duration-500 hover:-translate-y-1">
-            <!-- Foto vertical -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8">
             <div class="relative overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=85&auto=format&fit=crop&crop=faces"
-                alt="Dra. Elena Ruiz Molina — Directora y Psicóloga Sanitaria en La Seda Granada"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                src="/images/ana.png"
+                alt="Elena Ruiz Molina — Directora y Psicóloga Sanitaria en La Seda Granada"
+                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <!-- Overlay degradado inferior -->
-              <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
-              <!-- Badge de especialidad -->
+              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
               <div class="absolute top-4 left-4 bg-[#71B1A5] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Dirección
               </div>
             </div>
-
-            <!-- Contenido -->
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl text-[#27252B] leading-tight mb-1">
-                Elena Ruiz Molina
+            <div class="p-6 flex flex-col flex-1 gap-3">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
+                Ana Jimenez
               </h3>
-              <p class="text-[#71B1A5] text-xs tracking-widest uppercase font-medium mb-3">
+              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
                 Psicóloga Sanitaria · Directora
               </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light mb-5 flex-1">
+              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
                 Especialista en trauma complejo y terapia EMDR. Más de 15 años acompañando
                 procesos terapéuticos en adultos. Formadora acreditada en mindfulness clínico.
               </p>
-
-              <!-- Número de colegiada -->
-              <div class="flex items-center gap-2 mb-5 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
+                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                 </svg>
                 <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
                   COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-04821</strong>
                 </span>
               </div>
-
-              <NuxtLink
-                to="/terapias"
-                class="inline-flex items-center gap-2 text-xs text-[#27252B]/60 tracking-widest uppercase font-medium group-hover:text-[#71B1A5] transition-colors duration-300"
-              >
+              <NuxtLink to="/terapias" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
                 Ver especialidad
-                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
               </NuxtLink>
             </div>
           </article>
 
           <!-- ── Profesional 2 ── -->
-          <article class="group flex flex-col bg-white border border-[#27252B]/8 hover:border-[#71B1A5]/35 hover:shadow-xl hover:shadow-[#71B1A5]/8 transition-all duration-500 hover:-translate-y-1 sm:mt-8 lg:mt-8">
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-8 lg:mt-8">
             <div class="relative overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=85&auto=format&fit=crop&crop=faces"
+                src="/images/leonor.png"
                 alt="Pablo Serrano Vega — Psicólogo Especialista Infanto-Juvenil en Granada"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
               <div class="absolute top-4 left-4 bg-[#27252B] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Infanto-Juvenil
               </div>
             </div>
-
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl text-[#27252B] leading-tight mb-1">
-                Pablo Serrano Vega
+            <div class="p-6 flex flex-col flex-1 gap-3">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
+                Leonor Cabrera
               </h3>
-              <p class="text-[#71B1A5] text-xs tracking-widest uppercase font-medium mb-3">
+              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
                 Especialista Infanto-Juvenil
               </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light mb-5 flex-1">
+              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
                 Psicólogo clínico especializado en niños, adolescentes y familias. Experto en
                 TDAH, ansiedad escolar y dificultades del neurodesarrollo. Colaborador habitual
                 con centros educativos de Granada.
               </p>
-
-              <div class="flex items-center gap-2 mb-5 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
+                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                 </svg>
                 <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
                   COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-07154</strong>
                 </span>
               </div>
-
-              <NuxtLink
-                to="/terapias"
-                class="inline-flex items-center gap-2 text-xs text-[#27252B]/60 tracking-widest uppercase font-medium group-hover:text-[#71B1A5] transition-colors duration-300"
-              >
+              <NuxtLink to="/terapias" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
                 Ver especialidad
-                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
               </NuxtLink>
             </div>
           </article>
 
           <!-- ── Profesional 3 ── -->
-          <article class="group flex flex-col bg-white border border-[#27252B]/8 hover:border-[#71B1A5]/35 hover:shadow-xl hover:shadow-[#71B1A5]/8 transition-all duration-500 hover:-translate-y-1">
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8">
             <div class="relative overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=85&auto=format&fit=crop&crop=faces"
+                src="/images/cristina.png"
                 alt="Lucía Montero Alarcón — Psicóloga Especialista en Terapia de Pareja Granada"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
               <div class="absolute top-4 left-4 bg-[#71B1A5] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Parejas
               </div>
             </div>
-
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl text-[#27252B] leading-tight mb-1">
-                Lucía Montero Alarcón
+            <div class="p-6 flex flex-col flex-1 gap-3">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
+                Cristina Lence
               </h3>
-              <p class="text-[#71B1A5] text-xs tracking-widest uppercase font-medium mb-3">
+              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
                 Terapia de Pareja y Familia
               </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light mb-5 flex-1">
+              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
                 Especialista en terapia sistémica y de pareja. Facilitadora certificada de
                 Constelaciones Familiares. Combina el enfoque narrativo con técnicas de
                 regulación emocional para familias en conflicto.
               </p>
-
-              <div class="flex items-center gap-2 mb-5 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
+                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                 </svg>
                 <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
                   COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-09307</strong>
                 </span>
               </div>
-
-              <NuxtLink
-                to="/talleres"
-                class="inline-flex items-center gap-2 text-xs text-[#27252B]/60 tracking-widest uppercase font-medium group-hover:text-[#71B1A5] transition-colors duration-300"
-              >
+              <NuxtLink to="/talleres" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
                 Ver especialidad
-                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
               </NuxtLink>
             </div>
           </article>
 
           <!-- ── Profesional 4 ── -->
-          <article class="group flex flex-col bg-white border border-[#27252B]/8 hover:border-[#71B1A5]/35 hover:shadow-xl hover:shadow-[#71B1A5]/8 transition-all duration-500 hover:-translate-y-1 sm:mt-8 lg:mt-8">
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-8 lg:mt-8">
             <div class="relative overflow-hidden aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=85&auto=format&fit=crop&crop=faces"
+                src="/images/reyes.png"
                 alt="Andrés Quesada Torres — Psicólogo Formador y Supervisor Clínico en Granada"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
               <div class="absolute top-4 left-4 bg-[#27252B] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
                 Formación
               </div>
             </div>
-
-            <div class="p-6 flex flex-col flex-1">
-              <h3 class="font-serif text-xl text-[#27252B] leading-tight mb-1">
-                Andrés Quesada Torres
+            <div class="p-6 flex flex-col flex-1 gap-3">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
+                Reyes Sánchez Tallón
               </h3>
-              <p class="text-[#71B1A5] text-xs tracking-widest uppercase font-medium mb-3">
+              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
                 Formador y Supervisor Clínico
               </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light mb-5 flex-1">
+              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
                 Psicólogo clínico y docente universitario. Responsable del área de formaciones
                 para profesionales. Especializado en psicología humanista y supervisión grupal
-                de casos. Autor de varios artículos en revistas indexadas.
+                de casos.
               </p>
-
-              <div class="flex items-center gap-2 mb-5 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
+                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                 </svg>
                 <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
                   COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-05639</strong>
                 </span>
               </div>
-
-              <NuxtLink
-                to="/formaciones"
-                class="inline-flex items-center gap-2 text-xs text-[#27252B]/60 tracking-widest uppercase font-medium group-hover:text-[#71B1A5] transition-colors duration-300"
-              >
+              <NuxtLink to="/formaciones" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
                 Ver especialidad
-                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
               </NuxtLink>
             </div>
           </article>
 
         </div>
 
-        <!-- Nota COP al pie del grid -->
         <p class="mt-10 text-center text-xs text-[#27252B]/35 font-light tracking-wider">
           Todos los profesionales están colegiados por el
           <strong class="text-[#27252B]/50 font-medium">Colegio Oficial de Psicólogos de Andalucía Oriental</strong>
           y sujetos al código deontológico de la profesión.
         </p>
+
       </div>
     </section>
 
-    <!-- ============================================================
-         VALORES — Bloque editorial oscuro de cierre
-    ============================================================ -->
-    <section aria-label="Valores del equipo La Seda" class="py-20 md:py-28 bg-[#27252B] px-8 md:px-16 lg:px-24">
-      <div class="max-w-7xl mx-auto">
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 5 · VALORES (bloque oscuro, mismo patrón 01/02/03)
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
+          <div>
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+              Nuestra forma de trabajar
+            </p>
+            <h2 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]">
+              Los valores que nos guían
+            </h2>
+          </div>
+          <div class="w-24 h-px bg-white/10 md:mb-2" />
+        </div>
 
         <div class="grid md:grid-cols-3 gap-10 md:gap-16">
 
-          <!-- Valor 1 -->
           <div class="border-t border-white/10 pt-8">
-            <span class="font-serif text-5xl text-[#71B1A5]/30 leading-none select-none block mb-6">01</span>
-            <h3 class="font-serif text-2xl text-white mb-4">Formación continua</h3>
+            <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6">01</span>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Formación continua</h3>
             <p class="text-white/45 text-sm leading-relaxed font-light">
               Cada miembro del equipo dedica horas anuales a supervisión clínica, congresos
               y programas de actualización. La excelencia no se declara: se practica.
             </p>
           </div>
 
-          <!-- Valor 2 -->
           <div class="border-t border-white/10 pt-8">
-            <span class="font-serif text-5xl text-[#71B1A5]/30 leading-none select-none block mb-6">02</span>
-            <h3 class="font-serif text-2xl text-white mb-4">Supervisión de casos</h3>
+            <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6">02</span>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Supervisión de casos</h3>
             <p class="text-white/45 text-sm leading-relaxed font-light">
               Trabajamos con supervisión grupal regular. Que el terapeuta sea acompañado
               en su práctica es garantía de calidad para quien acude a consulta.
             </p>
           </div>
 
-          <!-- Valor 3 -->
           <div class="border-t border-white/10 pt-8">
-            <span class="font-serif text-5xl text-[#71B1A5]/30 leading-none select-none block mb-6">03</span>
-            <h3 class="font-serif text-2xl text-white mb-4">Derivación responsable</h3>
+            <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6">03</span>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Derivación responsable</h3>
             <p class="text-white/45 text-sm leading-relaxed font-light">
               Si detectamos que otra especialidad puede ayudarte mejor, lo decimos.
               Contamos con una red de profesionales de confianza en Granada para
               acompañarte en ese camino.
             </p>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         CTA FINAL
-    ============================================================ -->
-    <section aria-label="Contacto con el equipo" class="py-20 md:py-24 px-8 md:px-16 bg-[#FDFBF9]">
-      <div class="max-w-3xl mx-auto text-center">
 
-        <div class="flex items-center justify-center gap-4 mb-8">
-          <div class="h-px w-10 bg-[#71B1A5]/60"></div>
-          <div class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]"></div>
-          <div class="h-px w-10 bg-[#71B1A5]/60"></div>
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 6 · CTA FINAL
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-24">
+      <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-10">
+        <div class="md:col-span-5">
+          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+            Contacto
+          </p>
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            ¿Con quién te gustaría<br />
+            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">comenzar?</span>
+          </h2>
         </div>
-
-        <h2 class="font-serif text-3xl md:text-4xl text-[#27252B] leading-tight mb-5">
-          ¿Con quién te gustaría
-          <span class="italic text-[#71B1A5]"> comenzar?</span>
-        </h2>
-
-        <p class="text-[#27252B]/55 text-base leading-relaxed mb-10 font-light max-w-xl mx-auto">
-          Si no sabes a qué profesional acudir, escríbenos. En La Seda te orientamos
-          sin compromiso hacia la persona y el enfoque que mejor encajan con lo que
-          estás viviendo.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <NuxtLink
-            to="/contacto"
-            class="inline-flex items-center gap-3 bg-[#71B1A5] text-white px-9 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#5a9a8e] transition-all duration-300 shadow-lg shadow-[#71B1A5]/20 w-full sm:w-auto justify-center"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            Reservar Primera Cita
-          </NuxtLink>
-
-          <NuxtLink
-            to="/terapias"
-            class="inline-flex items-center gap-3 border border-[#27252B]/20 text-[#27252B] px-9 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:border-[#71B1A5] hover:text-[#71B1A5] transition-all duration-300 w-full sm:w-auto justify-center"
-          >
-            Ver nuestras terapias
-          </NuxtLink>
+        <div class="md:col-span-7">
+          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
+            Si no sabes a qué profesional acudir, escríbenos. En La Seda te orientamos
+            sin compromiso hacia la persona y el enfoque que mejor encajan con lo que
+            estás viviendo.
+          </p>
         </div>
       </div>
+
+      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <NuxtLink
+          to="/contacto"
+          class="inline-flex items-center gap-4 group"
+        >
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+            Reservar primera cita
+          </span>
+          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+        </NuxtLink>
+
+        <NuxtLink
+          to="/terapias"
+          class="inline-flex items-center gap-4 group"
+        >
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
+            Ver nuestras terapias
+          </span>
+          <span class="w-10 h-px bg-[#27252B]/20 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+        </NuxtLink>
+      </div>
+
     </section>
 
   </main>

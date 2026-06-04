@@ -1,61 +1,100 @@
 <template>
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
-    <!-- ============================================================
-         CABECERA E INTRODUCCIÓN
-    ============================================================ -->
-    <section class="relative pt-20 pb-16 md:pt-28 md:pb-20 px-8 md:px-16 overflow-hidden">
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 1 · MINI-HERO (mismo sistema: video + gradientes laterales)
+    ════════════════════════════════════════════════ -->
+    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-      <!-- Detalle decorativo de fondo -->
-      <div
-        class="absolute top-0 right-0 w-96 h-96 opacity-[0.04] rounded-full bg-[#71B1A5] blur-none"
-        aria-hidden="true"
-        style="transform: translate(30%, -30%);"
-      ></div>
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay muted loop playsinline
+        poster="/images/caploader.png"
+      >
+        <source src="/video/minhero.mp4" type="video/mp4" />
+        <img src="/images/caploader.png" alt="Centro de Psicología La Seda Granada" class="w-full h-full object-cover" />
+      </video>
 
-      <div class="max-w-3xl">
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-8 h-px bg-[#71B1A5]"></div>
-          <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase font-light">
-            Contacto · La Seda Granada
-          </span>
-        </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.1] text-[#27252B] mb-6">
-          Estamos aquí para
-          <span class="block text-[#71B1A5] italic mt-1">acompañarte</span>
+      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
+          Contacto · La Seda Granada
+        </p>
+
+        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+          Estamos aquí para<br />
+          <span class="text-[#27252B]/75">acompañarte</span>
         </h1>
 
-        <p class="text-[#27252B]/60 text-lg leading-relaxed max-w-2xl font-light">
-          Dar el primer paso requiere valentía. Pero es, precisamente, el inicio del cambio.
-          Escríbenos o llámanos y te orientaremos sin compromiso hacia el camino
-          terapéutico que mejor se adapte a ti.
+        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
+          Dar el primer paso requiere valentía. Pero es, precisamente,
+          el inicio del cambio.
         </p>
+
       </div>
     </section>
 
-    <!-- ============================================================
-         CUERPO PRINCIPAL: DOS COLUMNAS
-    ============================================================ -->
-    <section class="py-12 md:py-16 px-8 md:px-16">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-[1fr_1.3fr] gap-14 xl:gap-20">
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 2 · INTRO (mismo patrón dos columnas sticky)
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+
+        <div class="md:col-span-4 md:sticky md:top-28">
+          <div class="w-12 h-px bg-[#71B1A5] mb-6" />
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            Escríbenos o llámanos sin compromiso.
+          </h2>
+          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" />
+        </div>
+
+        <div class="md:col-span-8 space-y-7">
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
+            En La Seda entendemos que pedir ayuda no siempre es fácil. Por eso
+            queremos que el primer contacto sea tan sencillo y cálido como sea posible.
+            Puedes escribirnos, llamarnos o rellenar el formulario: te orientaremos
+            hacia el camino terapéutico que mejor se adapte a ti.
+          </p>
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
+            Respondemos a todos los mensajes en menos de 24 horas laborables.
+            Ninguna consulta es demasiado pequeña.
+          </p>
+
+          <div class="inline-flex items-center gap-3 pt-2">
+            <div class="w-2 h-2 bg-[#71B1A5]" />
+            <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Confidencialidad garantizada · Granada</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 3 · CUERPO PRINCIPAL: INFO + FORMULARIO
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-14 xl:gap-20 items-start">
 
           <!-- ─────────────────────────────────────────────
                COLUMNA IZQUIERDA: Datos de contacto
           ───────────────────────────────────────────── -->
           <div>
-            <div class="flex items-center gap-3 mb-8">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
-              <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase">Información</span>
-            </div>
 
-            <h2 class="font-serif text-2xl md:text-3xl text-[#27252B] leading-tight mb-10">
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+              Información
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
               Cómo
-              <span class="italic text-[#71B1A5]"> encontrarnos</span>
+              <span class="text-[#27252B]/60"> encontrarnos</span>
             </h2>
 
-            <div class="space-y-8">
+            <div class="space-y-9">
 
               <!-- Dirección -->
               <div class="flex items-start gap-5">
@@ -66,9 +105,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
                 </div>
-                <div>
-                  <h3 class="text-sm font-medium text-[#27252B] mb-1 tracking-wide">Dirección</h3>
-                  <p class="text-[#27252B]/60 text-sm leading-relaxed font-light">
+                <div class="border-t border-[#27252B]/10 pt-3 flex-1">
+                  <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Dirección</h3>
+                  <p class="text-[#27252B]/65 text-sm leading-relaxed font-light">
                     Calle Recogidas, 14 – 2.º A<br>
                     18002 Granada, Andalucía
                   </p>
@@ -79,9 +118,6 @@
                 </div>
               </div>
 
-              <!-- Divisor sutil -->
-              <div class="h-px bg-[#27252B]/8 ml-16"></div>
-
               <!-- Teléfono + WhatsApp -->
               <div class="flex items-start gap-5">
                 <div class="w-11 h-11 bg-[#71B1A5]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -90,23 +126,20 @@
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                   </svg>
                 </div>
-                <div>
-                  <h3 class="text-sm font-medium text-[#27252B] mb-1 tracking-wide">Teléfono</h3>
+                <div class="border-t border-[#27252B]/10 pt-3 flex-1">
+                  <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Teléfono</h3>
                   <a
                     href="tel:+34958000000"
-                    class="text-[#27252B]/70 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
+                    class="text-[#27252B]/65 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
                   >
                     +34 958 000 000
                   </a>
-
-                  <!-- Botón WhatsApp -->
                   <a
                     href="https://wa.me/34600000000?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20vuestros%20servicios."
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="mt-3 inline-flex items-center gap-2.5 bg-[#25D366]/10 text-[#128C4E] border border-[#25D366]/25 px-4 py-2.5 text-xs tracking-[0.12em] uppercase font-medium hover:bg-[#25D366]/20 hover:border-[#25D366]/50 transition-all duration-300"
+                    class="mt-4 inline-flex items-center gap-2.5 bg-[#25D366]/10 text-[#128C4E] border border-[#25D366]/25 px-4 py-2.5 text-xs tracking-[0.12em] uppercase font-medium hover:bg-[#25D366]/20 hover:border-[#25D366]/50 transition-all duration-300"
                   >
-                    <!-- WhatsApp icon SVG -->
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
@@ -114,8 +147,6 @@
                   </a>
                 </div>
               </div>
-
-              <div class="h-px bg-[#27252B]/8 ml-16"></div>
 
               <!-- Email -->
               <div class="flex items-start gap-5">
@@ -125,11 +156,11 @@
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
                 </div>
-                <div>
-                  <h3 class="text-sm font-medium text-[#27252B] mb-1 tracking-wide">Correo electrónico</h3>
+                <div class="border-t border-[#27252B]/10 pt-3 flex-1">
+                  <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Correo electrónico</h3>
                   <a
                     href="mailto:hola@laseda.es"
-                    class="text-[#27252B]/70 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
+                    class="text-[#27252B]/65 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
                   >
                     hola@laseda.es
                   </a>
@@ -139,8 +170,6 @@
                 </div>
               </div>
 
-              <div class="h-px bg-[#27252B]/8 ml-16"></div>
-
               <!-- Horario -->
               <div class="flex items-start gap-5">
                 <div class="w-11 h-11 bg-[#71B1A5]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -149,8 +178,8 @@
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <div>
-                  <h3 class="text-sm font-medium text-[#27252B] mb-3 tracking-wide">Horario de atención</h3>
+                <div class="border-t border-[#27252B]/10 pt-3 flex-1">
+                  <h3 class="text-xs font-medium text-[#27252B] mb-3 tracking-[0.18em] uppercase">Horario de atención</h3>
                   <div class="space-y-2">
                     <div class="flex items-center justify-between gap-8">
                       <span class="text-[#27252B]/60 text-sm font-light">Lunes – Viernes</span>
@@ -171,6 +200,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
 
             <!-- Redes sociales -->
@@ -209,17 +239,14 @@
           <div>
             <div class="bg-white border border-[#27252B]/8 p-8 md:p-10 shadow-sm">
 
-              <div class="flex items-center gap-3 mb-8">
-                <div class="w-6 h-px bg-[#71B1A5]"></div>
-                <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase">Formulario de Contacto</span>
-              </div>
-
-              <h2 class="font-serif text-2xl md:text-3xl text-[#27252B] leading-tight mb-8">
-                Cuéntanos
-                <span class="italic text-[#71B1A5]"> cómo podemos ayudarte</span>
+              <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+                Formulario de Contacto
+              </p>
+              <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-10">
+                Cuéntanos cómo<br />
+                <span class="text-[#27252B]/60">podemos ayudarte</span>
               </h2>
 
-              <!-- Formulario -->
               <form
                 @submit.prevent="handleSubmit"
                 novalidate
@@ -231,7 +258,7 @@
                 <div class="space-y-2">
                   <label
                     for="nombre"
-                    class="block text-xs font-medium text-[#27252B] tracking-[0.15em] uppercase"
+                    class="block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase"
                   >
                     Nombre completo
                     <span class="text-[#71B1A5] ml-0.5" aria-hidden="true">*</span>
@@ -256,11 +283,10 @@
                 <!-- Teléfono y Email en grid -->
                 <div class="grid sm:grid-cols-2 gap-5">
 
-                  <!-- Teléfono -->
                   <div class="space-y-2">
                     <label
                       for="telefono"
-                      class="block text-xs font-medium text-[#27252B] tracking-[0.15em] uppercase"
+                      class="block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase"
                     >
                       Teléfono
                       <span class="text-[#71B1A5] ml-0.5" aria-hidden="true">*</span>
@@ -279,11 +305,10 @@
                     <p v-if="errors.telefono" class="text-xs text-red-500 font-light">{{ errors.telefono }}</p>
                   </div>
 
-                  <!-- Email -->
                   <div class="space-y-2">
                     <label
                       for="email"
-                      class="block text-xs font-medium text-[#27252B] tracking-[0.15em] uppercase"
+                      class="block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase"
                     >
                       Correo electrónico
                       <span class="text-[#71B1A5] ml-0.5" aria-hidden="true">*</span>
@@ -307,7 +332,7 @@
                 <div class="space-y-2">
                   <label
                     for="servicio"
-                    class="block text-xs font-medium text-[#27252B] tracking-[0.15em] uppercase"
+                    class="block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase"
                   >
                     ¿Qué servicio te interesa?
                     <span class="text-[#71B1A5] ml-0.5" aria-hidden="true">*</span>
@@ -329,7 +354,6 @@
                       <option value="formaciones">Formaciones para Profesionales</option>
                       <option value="primera-consulta">Primera consulta (sin decidir aún)</option>
                     </select>
-                    <!-- Flecha custom del select -->
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4">
                       <svg class="w-4 h-4 text-[#27252B]/35" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
@@ -343,7 +367,7 @@
                 <div class="space-y-2">
                   <label
                     for="mensaje"
-                    class="block text-xs font-medium text-[#27252B] tracking-[0.15em] uppercase"
+                    class="block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase"
                   >
                     Mensaje
                     <span class="text-[#27252B]/30 text-[10px] normal-case tracking-normal ml-1">(opcional)</span>
@@ -384,10 +408,9 @@
                 <button
                   type="submit"
                   :disabled="isSubmitting || formSent"
-                  class="w-full flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4.5 py-[1.125rem] text-sm tracking-[0.18em] uppercase font-medium transition-all duration-300 hover:bg-[#5a9a8e] active:scale-[0.99] shadow-lg shadow-[#71B1A5]/20 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+                  class="w-full flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-[1.125rem] text-sm tracking-[0.22em] uppercase font-medium transition-all duration-300 hover:bg-[#5a9a8e] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <template v-if="isSubmitting">
-                    <!-- Spinner -->
                     <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"/>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
@@ -401,11 +424,8 @@
                     Mensaje enviado
                   </template>
                   <template v-else>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
                     Solicitar primera consulta
+                    <span class="w-6 h-px bg-white/60 inline-block" />
                   </template>
                 </button>
 
@@ -439,29 +459,28 @@
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         SECCIÓN MAPA
-    ============================================================ -->
-    <section aria-labelledby="mapa-titulo" class="py-12 md:py-16 px-8 md:px-16 bg-stone-100/50">
-      <div class="max-w-7xl mx-auto">
 
-        <div class="flex items-center gap-3 mb-8">
-          <div class="w-6 h-px bg-[#71B1A5]"></div>
-          <span class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase">Cómo llegar</span>
-        </div>
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 4 · MAPA (mismo fondo claro, mismo patrón de encabezado)
+    ════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
-        <h2 id="mapa-titulo" class="font-serif text-2xl md:text-3xl text-[#27252B] mb-8 leading-tight">
+        <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+          Cómo llegar
+        </p>
+        <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
           Nos encontramos en el
-          <span class="italic text-[#71B1A5]"> corazón de Granada</span>
+          <span class="text-[#27252B]/60"> corazón de Granada</span>
         </h2>
 
         <!-- Contenedor del mapa -->
-        <div class="relative overflow-hidden border border-[#27252B]/10 bg-stone-200/60" style="height: 440px;">
-          <!-- Google Maps iframe (sustituir coordenadas y API key en producción) -->
+        <div class="relative overflow-hidden border border-[#27252B]/10" style="height: 440px;">
           <iframe
             title="Ubicación del Centro de Psicología La Seda en Granada"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.12345!2d-3.5986!3d37.1773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Recogidas+14+Granada!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
@@ -473,7 +492,7 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
 
-          <!-- Overlay con tarjeta de dirección -->
+          <!-- Overlay tarjeta dirección -->
           <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm shadow-xl border-l-2 border-[#71B1A5] p-5 max-w-[240px]">
             <div class="flex items-center gap-2 mb-2">
               <div class="w-2 h-2 rounded-full bg-[#71B1A5]"></div>
@@ -495,37 +514,77 @@
           </div>
         </div>
 
-        <!-- Indicaciones de acceso -->
-        <div class="mt-6 grid sm:grid-cols-3 gap-4">
-          <div class="flex items-start gap-3 p-4 bg-white border border-[#27252B]/8">
-            <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-            </svg>
-            <div>
-              <p class="text-xs font-medium text-[#27252B] mb-0.5">A pie</p>
-              <p class="text-xs text-[#27252B]/50 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
+        <!-- Indicaciones de acceso (mismo patrón de tarjetas de valores) -->
+        <div class="mt-6 grid sm:grid-cols-3 gap-0 border border-[#27252B]/8">
+          <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8">
+            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">A pie</p>
+              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-4 bg-white border border-[#27252B]/8">
-            <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
-            </svg>
-            <div>
-              <p class="text-xs font-medium text-[#27252B] mb-0.5">Transporte público</p>
-              <p class="text-xs text-[#27252B]/50 font-light leading-relaxed">Líneas de autobús C1 y 33 con parada en Recogidas.</p>
+          <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8">
+            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">Transporte público</p>
+              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Líneas C1 y 33 con parada en Recogidas.</p>
             </div>
           </div>
-          <div class="flex items-start gap-3 p-4 bg-white border border-[#27252B]/8">
-            <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-7 9v-2m0 0V9m0 6h7a2 2 0 002-2v-4a2 2 0 00-2-2H9m-4 6h4"/>
-            </svg>
-            <div>
-              <p class="text-xs font-medium text-[#27252B] mb-0.5">En coche</p>
-              <p class="text-xs text-[#27252B]/50 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
+          <div class="flex items-start gap-4 p-6">
+            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">En coche</p>
+              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
             </div>
           </div>
         </div>
+
       </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 5 · CTA FINAL (mismo patrón que quiénes somos §6)
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-24">
+      <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-10">
+        <div class="md:col-span-5">
+          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+            ¿Tienes dudas?
+          </p>
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            No tienes que saberlo<br />
+            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">todo de antemano.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-7">
+          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
+            Si no tienes claro qué servicio necesitas, cuéntanoslo. En La Seda te
+            orientamos sin compromiso hacia el profesional y el enfoque que mejor
+            encajan con lo que estás viviendo.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <NuxtLink
+          to="/equipo"
+          class="inline-flex items-center gap-4 group"
+        >
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+            Conocer al equipo
+          </span>
+          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+        </NuxtLink>
+
+        <NuxtLink
+          to="/terapias"
+          class="inline-flex items-center gap-4 group"
+        >
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
+            Ver nuestras terapias
+          </span>
+          <span class="w-10 h-px bg-[#27252B]/20 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+        </NuxtLink>
+      </div>
+
     </section>
 
   </main>

@@ -13,10 +13,10 @@
         muted
         loop
         playsinline
-        poster="/images/default.jpg"
+        poster="/images/caploader.png"
       >
-        <source src="/video/hero-calma2.mp4" type="video/mp4" />
-        <img src="/images/default.jpg" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
+        <source src="/video/minhero.mp4" type="video/mp4" />
+        <img src="/images/caploader.png" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
       </video>
 
       <!-- Capa de gradiente: derecha -->
@@ -114,24 +114,25 @@
         <!-- Cuadrícula de tarjetas -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- ── Tarjeta 1: Psicoterapia Adultos ── -->
+          <!-- ── Tarjeta 1: Terapia y Acompañamiento Adulto ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
               <img
-                src="/images/default.jpg"
-                alt="Psicoterapia para adultos"
+                src="/images/adult.png"
+                alt="Terapia y acompañamiento adulto"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
               <div class="w-6 h-px bg-[#71B1A5]" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Psicoterapia&nbsp;Adultos
+                Terapia y Acompañamiento Adulto
               </h3>
               <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Abordamos la ansiedad, la depresión, los procesos de duelo y la
-                construcción de una autoestima más sólida, acompañándote en cada
-                paso del recorrido hacia el bienestar.
+                Un espacio para resolver conflictos internos y relacionales,
+                conectar con tus emociones y avanzar hacia una vida más plena.
+                Trabajamos con sesiones de terapia, coaching y acompañamiento
+                emocional adaptadas a tu momento.
               </p>
               <NuxtLink
                 to="/terapias/adultos"
@@ -142,27 +143,28 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta 2: Terapia de Pareja ── -->
+          <!-- ── Tarjeta 2: Terapia Adolescentes ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
               <img
-                src="/images/default.jpg"
-                alt="Terapia de pareja"
+                src="/images/adolescente.png"
+                alt="Terapia para adolescentes"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
               <div class="w-6 h-px bg-[#71B1A5]" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia de Pareja
+                Terapia Adolescentes
               </h3>
               <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Trabajamos la comunicación, la resolución de conflictos y la
-                recuperación de la confianza para que la relación pueda
-                evolucionar desde un lugar más seguro y consciente.
+                ¿Tu hijo adolescente parece distante, se salta las normas y
+                sientes que no logras conectar con él o con ella? Acompañamos
+                a jóvenes y familias para encontrar nuevas formas de
+                comunicación y entendimiento.
               </p>
               <NuxtLink
-                to="/terapias/pareja"
+                to="/terapias/adolescentes"
                 class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
               >
                 Saber más
@@ -170,27 +172,28 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta 3: Infanto-Juvenil ── -->
+          <!-- ── Tarjeta 3: Terapia de Pareja y Familia ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
               <img
-                src="/images/default.jpg"
-                alt="Terapia infanto-juvenil"
+                src="/images/parejas.png"
+                alt="Terapia de pareja y familia"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
               <div class="w-6 h-px bg-[#71B1A5]" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Infanto-Juvenil
+                Terapia de Pareja y Familia
               </h3>
               <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Apoyamos el desarrollo emocional de niños y adolescentes,
-                trabajando miedos, inseguridades y dificultades conductuales,
-                con orientación específica para las familias.
+                Exploramos los objetivos, beneficios y dinámica de la terapia
+                de pareja y familiar: un espacio para mejorar la comunicación,
+                gestionar conflictos y fortalecer los vínculos desde
+                un enfoque sistémico.
               </p>
               <NuxtLink
-                to="/terapias/infanto-juvenil"
+                to="/terapias/pareja-familia"
                 class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
               >
                 Saber más
@@ -198,27 +201,28 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta 4: Terapia Familiar ── -->
+          <!-- ── Tarjeta 4: Terapia Infantil ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
               <img
-                src="/images/default.jpg"
-                alt="Terapia familiar"
+                src="/images/infantil.png"
+                alt="Terapia infantil"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
               <div class="w-6 h-px bg-[#71B1A5]" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia Familiar
+                Terapia Infantil
               </h3>
               <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Desde un enfoque sistémico exploramos las dinámicas del hogar,
-                los patrones relacionales y las vías de apoyo mutuo para fortalecer
-                el tejido familiar como unidad.
+                Estamos especializadas en trabajar con las emociones humanas,
+                especialmente aquellas que generan malestar en el día a día
+                de los más pequeños y que les impiden desarrollarse con
+                plenitud y seguridad.
               </p>
               <NuxtLink
-                to="/terapias/familiar"
+                to="/terapias/infantil"
                 class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
               >
                 Saber más
@@ -226,27 +230,28 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta 5: Terapia Online ── -->
+          <!-- ── Tarjeta 5: Terapia Grupal ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
               <img
-                src="/images/default.jpg"
-                alt="Terapia online"
+                src="/images/grupo.png"
+                alt="Terapia grupal"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
               <div class="w-6 h-px bg-[#71B1A5]" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia Online
+                Terapia Grupal
               </h3>
               <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Flexibilidad y accesibilidad sin renunciar al rigor clínico.
-                Nuestras sesiones a distancia mantienen la misma profundidad,
-                privacidad y calidad que las presenciales.
+                La terapia grupal en La Seda se apoya en el encuentro con
+                otros como fuente de aprendizaje y sostén. Un espacio donde
+                compartir, escuchar y crecer en compañía, guiados por
+                principios terapéuticos sólidos.
               </p>
               <NuxtLink
-                to="/terapias/online"
+                to="/terapias/grupal"
                 class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
               >
                 Saber más
@@ -297,7 +302,7 @@
           <!-- Imagen principal -->
           <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
             <img
-              src="/images/default.jpg"
+              src="/images/mariposa.png"
               alt="Sesión terapéutica en La Seda"
               class="w-full h-full object-cover rounded-none"
             />

@@ -1,0 +1,410 @@
+<template>
+  <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 1 · MINI-HERO
+    ════════════════════════════════════════════════ -->
+    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
+
+      <!-- Video de fondo -->
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/default.jpg"
+      >
+        <source src="/video/hero-calma2.mp4" type="video/mp4" />
+        <img src="/images/default.jpg" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
+      </video>
+
+      <!-- Capa de gradiente: derecha -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
+      <!-- Capa de gradiente: abajo -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
+
+      <!-- Contenido del hero -->
+      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <!-- Subtítulo -->
+        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
+          Especialidades Clínicas
+        </p>
+
+        <!-- Título principal -->
+        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+          Procesos de Psicoterapia<br />
+          <span class="text-[#27252B]/75">y Cuidado Psicológico</span>
+        </h1>
+
+        <!-- Párrafo introductorio -->
+        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
+          Acompañamos cada etapa vital desde un espacio de escucha activa,
+          rigor clínico y profundo respeto por la singularidad de cada persona.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+
+        <!-- Columna izquierda (col-span-4) -->
+        <div class="md:col-span-4 md:sticky md:top-28">
+          <!-- Línea decorativa -->
+          <div class="w-12 h-px bg-[#71B1A5] mb-6" />
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            Terapia integrativa adaptada a tu momento vital.
+          </h2>
+          <!-- Acento verde decorativo -->
+          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" />
+        </div>
+
+        <!-- Columna derecha (col-span-8) -->
+        <div class="md:col-span-8 space-y-7">
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
+            En La Seda trabajamos desde la psicología integrativa, un modelo que
+            nos permite seleccionar y combinar las herramientas más adecuadas de
+            diferentes corrientes para cada persona. No existe una única forma de
+            sanar: nuestro compromiso es encontrar el camino que mejor resuene
+            con tu historia, tu carácter y tus necesidades actuales.
+          </p>
+          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
+            La terapia cognitivo-conductual, el enfoque humanista, la perspectiva
+            sistémica y el protocolo EMDR conviven en nuestra práctica cotidiana.
+            Esta pluralidad nos permite ofrecer un acompañamiento verdaderamente
+            personalizado, con evidencia científica y con la calidez que merece
+            cada proceso de cambio.
+          </p>
+          <!-- Tag decorativo -->
+          <div class="inline-flex items-center gap-3 pt-2">
+            <div class="w-2 h-2 bg-[#71B1A5]" />
+            <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 3 · REJILLA DE TERAPIAS
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <!-- Encabezado de sección -->
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
+          <div>
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
+              Nuestras Especialidades
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+              Áreas de intervención
+            </h2>
+          </div>
+          <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" />
+        </div>
+
+        <!-- Cuadrícula de tarjetas -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- ── Tarjeta 1: Psicoterapia Adultos ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/default.jpg"
+                alt="Psicoterapia para adultos"
+                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
+                Psicoterapia&nbsp;Adultos
+              </h3>
+              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
+                Abordamos la ansiedad, la depresión, los procesos de duelo y la
+                construcción de una autoestima más sólida, acompañándote en cada
+                paso del recorrido hacia el bienestar.
+              </p>
+              <NuxtLink
+                to="/terapias/adultos"
+                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+              >
+                Saber más
+              </NuxtLink>
+            </div>
+          </article>
+
+          <!-- ── Tarjeta 2: Terapia de Pareja ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/default.jpg"
+                alt="Terapia de pareja"
+                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
+                Terapia de Pareja
+              </h3>
+              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
+                Trabajamos la comunicación, la resolución de conflictos y la
+                recuperación de la confianza para que la relación pueda
+                evolucionar desde un lugar más seguro y consciente.
+              </p>
+              <NuxtLink
+                to="/terapias/pareja"
+                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+              >
+                Saber más
+              </NuxtLink>
+            </div>
+          </article>
+
+          <!-- ── Tarjeta 3: Infanto-Juvenil ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/default.jpg"
+                alt="Terapia infanto-juvenil"
+                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
+                Infanto-Juvenil
+              </h3>
+              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
+                Apoyamos el desarrollo emocional de niños y adolescentes,
+                trabajando miedos, inseguridades y dificultades conductuales,
+                con orientación específica para las familias.
+              </p>
+              <NuxtLink
+                to="/terapias/infanto-juvenil"
+                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+              >
+                Saber más
+              </NuxtLink>
+            </div>
+          </article>
+
+          <!-- ── Tarjeta 4: Terapia Familiar ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/default.jpg"
+                alt="Terapia familiar"
+                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
+                Terapia Familiar
+              </h3>
+              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
+                Desde un enfoque sistémico exploramos las dinámicas del hogar,
+                los patrones relacionales y las vías de apoyo mutuo para fortalecer
+                el tejido familiar como unidad.
+              </p>
+              <NuxtLink
+                to="/terapias/familiar"
+                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+              >
+                Saber más
+              </NuxtLink>
+            </div>
+          </article>
+
+          <!-- ── Tarjeta 5: Terapia Online ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+            <div class="overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/default.jpg"
+                alt="Terapia online"
+                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div class="w-6 h-px bg-[#71B1A5]" />
+              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
+                Terapia Online
+              </h3>
+              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
+                Flexibilidad y accesibilidad sin renunciar al rigor clínico.
+                Nuestras sesiones a distancia mantienen la misma profundidad,
+                privacidad y calidad que las presenciales.
+              </p>
+              <NuxtLink
+                to="/terapias/online"
+                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+              >
+                Saber más
+              </NuxtLink>
+            </div>
+          </article>
+
+          <!-- ── Tarjeta decorativa de cierre (CTA) ── -->
+          <article class="bg-[#71B1A5] rounded-none flex flex-col justify-between p-7 min-h-[360px]">
+            <div class="w-6 h-px bg-[#FDFBF9]/60" />
+            <div class="space-y-5">
+              <h3 class="font-serif italic text-[#FDFBF9] text-2xl leading-snug">
+                ¿No encuentras lo que buscas?
+              </h3>
+              <p class="text-base leading-[1.85] text-[#FDFBF9]/80">
+                Cuéntanos tu situación. Valoraremos juntos el tipo de
+                acompañamiento que mejor se adapta a lo que estás viviendo.
+              </p>
+              <NuxtLink
+                to="/contacto"
+                class="inline-block text-sm tracking-[0.18em] uppercase text-[#FDFBF9] border-b border-[#FDFBF9]/50 pb-0.5 hover:border-[#FDFBF9] transition-colors duration-200"
+              >
+                Escríbenos
+              </NuxtLink>
+            </div>
+            <div class="text-[#FDFBF9]/20 font-serif italic text-7xl leading-none select-none text-right">
+              &amp;
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 4 · CÓMO TRABAJAMOS
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
+      <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+        <!-- Columna imagen con marco desfasado -->
+        <div class="relative order-2 md:order-1">
+          <!-- Marco trasero desfasado -->
+          <div
+            class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 rounded-none pointer-events-none z-0"
+          />
+          <!-- Imagen principal -->
+          <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
+            <img
+              src="/images/default.jpg"
+              alt="Sesión terapéutica en La Seda"
+              class="w-full h-full object-cover rounded-none"
+            />
+            <!-- Overlay sutil -->
+            <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
+          </div>
+          <!-- Etiqueta flotante -->
+          <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block">
+            <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5]">Centro de Psicología</p>
+            <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
+          </div>
+        </div>
+
+        <!-- Columna de contenido -->
+        <div class="order-1 md:order-2">
+          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+            Metodología
+          </p>
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
+            Cómo trabajamos<br />
+            <span class="text-[#27252B]/60">en La Seda</span>
+          </h2>
+
+          <!-- Pasos -->
+          <div class="space-y-10">
+
+            <!-- Paso 01 -->
+            <div class="flex gap-6 items-start">
+              <div class="shrink-0">
+                <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">
+                  01
+                </span>
+              </div>
+              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
+                  Primera Valoración
+                </h3>
+                <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                  Analizamos juntos el motivo de consulta, tu historia personal
+                  y el contexto en el que se enmarca lo que traes. Sin prisas,
+                  con total confidencialidad.
+                </p>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-[#27252B]/8" />
+
+            <!-- Paso 02 -->
+            <div class="flex gap-6 items-start">
+              <div class="shrink-0">
+                <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">
+                  02
+                </span>
+              </div>
+              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
+                  Propuesta Terapéutica
+                </h3>
+                <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                  Establecemos objetivos claros y acordados, eligiendo el
+                  enfoque o la combinación de enfoques más adecuados para
+                  tu proceso específico.
+                </p>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-[#27252B]/8" />
+
+            <!-- Paso 03 -->
+            <div class="flex gap-6 items-start">
+              <div class="shrink-0">
+                <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">
+                  03
+                </span>
+              </div>
+              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
+                  Sesiones de Acompañamiento
+                </h3>
+                <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                  Un espacio de trabajo activo donde adquieres herramientas
+                  reales, revisas tus patrones y avanzas hacia los cambios
+                  que deseas a tu propio ritmo.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CTA final -->
+          <div class="mt-12 pt-8 border-t border-[#27252B]/10">
+            <NuxtLink
+              to="/contacto"
+              class="inline-flex items-center gap-4 group"
+            >
+              <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+                Comenzar el proceso
+              </span>
+              <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+            </NuxtLink>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</template>

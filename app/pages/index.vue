@@ -13,10 +13,14 @@
           aria-hidden="true"
         >
           <source src="/video/hero-calma2.mp4" type="video/mp4" />
-          <img
-            src="/images/index1.jpg"
-            alt=""
+          <!-- HERO fallback: above the fold → preload + fetchpriority high, sin lazy -->
+          <NuxtImg
+            src="/images/hero-portada-centro-psicologia-granada-la-seda.jpg"
+            alt="Centro de Psicología La Seda Granada — portada hero"
             class="absolute inset-0 w-full h-full object-cover"
+            format="webp"
+            preload
+            fetchpriority="high"
           />
         </video>
 
@@ -135,16 +139,27 @@
         <span class="text-xs tracking-[0.4em] uppercase text-[#27252B]/50 mt-1">Descubrir</span>
       </div>
     </header>
+
     <!-- ============================================================
          2. SECCIÓN FILOSOFÍA — Cita Claudio Naranjo
     ============================================================ -->
     <section aria-label="Filosofía del centro" class="relative py-28 md:py-40 overflow-hidden">
 
       <div class="absolute inset-0 bg-[#27252B]"></div>
+      <!-- Below the fold → loading="lazy" -->
       <div
         class="absolute inset-0 opacity-[0.06]"
-        style="background-image: url('/images/index1.jpg'); background-size: cover; background-position: center;"
-      ></div>
+        style="background-size: cover; background-position: center;"
+      >
+        <NuxtImg
+          src="/images/fondo-filosofia-psicologia-bienestar-granada.jpg"
+          alt=""
+          class="w-full h-full object-cover"
+          format="webp"
+          loading="lazy"
+          aria-hidden="true"
+        />
+      </div>
       <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle, #71B1A5 1px, transparent 1px); background-size: 40px 40px;"></div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-8 md:px-16 text-center">
@@ -208,13 +223,14 @@
 
         <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
 
-          <!-- Card 1: Terapias -->
+          <!-- Card 1: Terapias — below the fold → lazy -->
           <article class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
             <div class="relative h-56 overflow-hidden">
-              <img
-                src="/images/Frame 1.png"
-                alt="Psicoterapia individual en Granada — Centro La Seda"
+              <NuxtImg
+                src="/images/terapia-psicologica-individual-adultos-granada-la-seda.jpg"
+                alt="Psicoterapia individual para adultos en Granada — Centro La Seda"
                 class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out"
+                format="webp"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/65 via-transparent to-transparent"></div>
@@ -247,13 +263,14 @@
             </div>
           </article>
 
-          <!-- Card 2: Talleres — destacada, offset vertical -->
+          <!-- Card 2: Talleres — below the fold → lazy -->
           <article class="group relative overflow-hidden bg-[#27252B] border border-transparent hover:border-[#71B1A5]/35 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 md:-mt-8 md:mb-8">
             <div class="relative h-56 overflow-hidden">
-              <img
-                src="/images/frame3.png"
-                alt="Talleres de crecimiento personal en Granada — La Seda"
+              <NuxtImg
+                src="/images/talleres-crecimiento-personal-constelaciones-familiares-granada.jpg"
+                alt="Talleres de crecimiento personal y Constelaciones Familiares en Granada — La Seda"
                 class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out opacity-65"
+                format="webp"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#27252B] via-[#27252B]/20 to-transparent"></div>
@@ -286,13 +303,14 @@
             </div>
           </article>
 
-          <!-- Card 3: Formaciones -->
+          <!-- Card 3: Formaciones — below the fold → lazy -->
           <article class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
             <div class="relative h-56 overflow-hidden">
-              <img
-                src="/images/frame2.png"
-                alt="Formación para psicólogos en Granada — Especialización oficial"
+              <NuxtImg
+                src="/images/formacion-psicologos-especializacion-salud-mental-granada.jpg"
+                alt="Formación especializada para psicólogos y profesionales de la salud en Granada — La Seda"
                 class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out"
+                format="webp"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/65 via-transparent to-transparent"></div>
@@ -338,10 +356,12 @@
 
           <div class="relative order-2 md:order-1">
             <div class="relative overflow-hidden aspect-[4/5] group">
-              <img
-                src="/images/foto1.png"
-                alt="Equipo multidisciplinar del Centro de Psicología La Seda en Granada"
+              <!-- Below the fold → lazy -->
+              <NuxtImg
+                src="/images/equipo-psicologo-centro-la-seda-granada-multidisciplinar.jpg"
+                alt="Equipo multidisciplinar de psicólogos del Centro de Psicología La Seda en Granada"
                 class="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                format="webp"
                 loading="lazy"
               />
               <div class="absolute -bottom-5 -right-5 w-full h-full border border-[#71B1A5]/25 -z-10 pointer-events-none"></div>
@@ -511,13 +531,20 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 justify-items-center">
           
+          <!-- Instagram Reel 1 — below the fold → lazy -->
           <a 
             href="https://www.instagram.com/p/DY5X41qsHzp/" 
             target="_blank" 
             rel="noopener noreferrer"
             class="group relative w-full max-w-[280px] aspect-[9/16] bg-stone-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-[#27252B]/5"
           >
-            <img src="/images/ig1.png" alt="Reflexiones sobre el malestar diario" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <NuxtImg
+              src="/images/instagram-reel-bienestar-emocional-psicologia-granada.jpg"
+              alt="Reel de Instagram sobre bienestar emocional y psicología — Centro La Seda Granada"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              format="webp"
+              loading="lazy"
+            />
             
             <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -538,13 +565,20 @@
             </div>
           </a>
 
+          <!-- Instagram Reel 2 — below the fold → lazy -->
           <a 
             href="https://www.instagram.com/p/DY27DAOM5xG/" 
             target="_blank" 
             rel="noopener noreferrer"
             class="group relative w-full max-w-[280px] aspect-[9/16] bg-stone-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-[#27252B]/5"
           >
-            <img src="/images/ig2.png" alt="Gestión de las emociones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <NuxtImg
+              src="/images/instagram-reel-gestion-ansiedad-tecnicas-psicologia-granada.jpg"
+              alt="Reel de Instagram sobre gestión de ansiedad y técnicas psicológicas — Centro La Seda Granada"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              format="webp"
+              loading="lazy"
+            />
             
             <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -565,13 +599,20 @@
             </div>
           </a>
 
+          <!-- Instagram Reel 3 — below the fold → lazy -->
           <a 
             href="https://www.instagram.com/p/DY1xml3MfsZ/" 
             target="_blank" 
             rel="noopener noreferrer"
             class="group relative w-full max-w-[280px] aspect-[9/16] bg-stone-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-[#27252B]/5"
           >
-            <img src="/images/ig3.png" alt="Herramientas del día a día" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <NuxtImg
+              src="/images/instagram-reel-psicoeducacion-herramientas-dia-a-dia-granada.jpg"
+              alt="Reel de Instagram sobre psicoeducación y herramientas del día a día — Centro La Seda Granada"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              format="webp"
+              loading="lazy"
+            />
             
             <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -592,13 +633,20 @@
             </div>
           </a>
 
+          <!-- Instagram Reel 4 — below the fold → lazy -->
           <a 
             href="https://www.instagram.com/p/DYzN9_KMTn8/" 
             target="_blank" 
             rel="noopener noreferrer"
             class="group relative w-full max-w-[280px] aspect-[9/16] bg-stone-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 border border-[#27252B]/5"
           >
-            <img src="/images/ig4.png" alt="Conoce a nuestro equipo multidisciplinar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <NuxtImg
+              src="/images/instagram-equipo-psicologos-centro-la-seda-granada.jpg"
+              alt="Equipo de psicólogos del Centro La Seda Granada en Instagram — psicología y salud mental"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              format="webp"
+              loading="lazy"
+            />
             
             <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
             <div class="absolute inset-0 flex items-center justify-center">
@@ -649,6 +697,7 @@
 
         <div class="grid md:grid-cols-3 gap-8 justify-items-center">
           
+          <!-- Facebook post 1 — below the fold → lazy -->
           <a 
             href="https://www.facebook.com/reel/1685798236098339?locale=es_ES" 
             target="_blank" 
@@ -656,7 +705,13 @@
             class="group relative w-full max-w-sm bg-white rounded-2xl overflow-hidden border border-[#27252B]/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
           >
             <div class="relative aspect-video w-full overflow-hidden bg-stone-100">
-              <img src="/images/ig1.png" alt="Talleres sobre infancia y adolescencia" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <NuxtImg
+                src="/images/facebook-taller-infancia-adolescencia-psicologia-granada.jpg"
+                alt="Taller de psicología para infancia y adolescencia en Granada — Centro La Seda Facebook"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                format="webp"
+                loading="lazy"
+              />
               <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-12 h-12 rounded-full bg-white/95 backdrop-blur-sm text-[#71B1A5] flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-500">
@@ -679,6 +734,7 @@
             </div>
           </a>
 
+          <!-- Facebook post 2 — below the fold → lazy -->
           <a 
             href="https://www.facebook.com/reel/1643758276877244?locale=es_ES" 
             target="_blank" 
@@ -686,7 +742,13 @@
             class="group relative w-full max-w-sm bg-white rounded-2xl overflow-hidden border border-[#27252B]/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
           >
             <div class="relative aspect-video w-full overflow-hidden bg-stone-100">
-              <img src="/images/ig2.png" alt="Formación viaje al niño interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <NuxtImg
+                src="/images/facebook-formacion-nino-interior-trauma-infantil-granada.jpg"
+                alt="Formación experiencial sobre niño interior y trauma infantil en Granada — La Seda Facebook"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                format="webp"
+                loading="lazy"
+              />
               <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-12 h-12 rounded-full bg-white/95 backdrop-blur-sm text-[#71B1A5] flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-500">
@@ -710,11 +772,18 @@
             </div>
           </a>
 
+          <!-- Facebook post 3 — below the fold → lazy -->
           <div 
             class="group relative w-full max-w-sm bg-white rounded-2xl overflow-hidden border border-[#27252B]/5 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5 flex flex-col"
           >
             <a href="https://www.facebook.com/photo?fbid=1661999792264507&set=a.616850166779480&locale=es_ES" target="_blank" rel="noopener noreferrer" class="relative aspect-video w-full overflow-hidden bg-stone-100 block">
-              <img src="/images/ig4.png" alt="Jornadas gratuitas cuidado emocional" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <NuxtImg
+                src="/images/facebook-jornadas-gratuitas-cuidado-emocional-infancia-granada.jpg"
+                alt="Jornadas gratuitas de cuidado emocional para infancia y adolescencia en Granada — La Seda"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                format="webp"
+                loading="lazy"
+              />
               <div class="absolute inset-0 bg-[#27252B]/15 group-hover:bg-[#27252B]/35 transition-colors duration-500"></div>
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-12 h-12 rounded-full bg-white/95 backdrop-blur-sm text-[#71B1A5] flex items-center justify-center shadow-md transform group-hover:scale-110 transition-transform duration-500">
@@ -729,7 +798,6 @@
                 <p class="text-sm md:text-base text-[#27252B]/80 font-normal leading-relaxed mb-4">
                   Hacemos unas jornadas gratuitas en el Centro La Seda de Granada para el cuidado emocional de la infancia y de la adolescencia. Revisa el programa detallado e inscríbete.
                 </p>
-                
               </div>
               <a 
                 href="https://www.facebook.com/photo?fbid=1661999792264507&set=a.616850166779480&locale=es_ES" 
@@ -763,11 +831,13 @@
     <section aria-label="Llamada a la acción principal" class="relative py-32 md:py-48 overflow-hidden bg-[#FDFBF9]">
 
       <div class="absolute inset-0">
-        <img
-          src="/images/fondo.jpg"
+        <!-- Below the fold → lazy -->
+        <NuxtImg
+          src="/images/fondo-cta-centro-psicologia-granada-bienestar.jpg"
           alt=""
           aria-hidden="true"
           class="w-full h-full object-cover object-center"
+          format="webp"
           loading="lazy"
         />
         <div class="absolute inset-0 bg-[#FDFBF9]/5 backdrop-blur-[2px]"></div>

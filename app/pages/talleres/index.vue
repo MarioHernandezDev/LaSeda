@@ -2,29 +2,33 @@
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · MINI-HERO (estilo terapias: video/imagen + gradientes laterales)
+         SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
     <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-      <!-- Imagen de fondo -->
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
         muted
         loop
         playsinline
-        poster="/images/caploader.png"
+        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/caploader.png" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
+        <!-- Fallback above the fold → preload + fetchpriority high -->
+        <NuxtImg
+          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
+          alt="Centro de Psicología La Seda Granada — talleres vivenciales y espacios de formación en psicoterapia"
+          format="webp"
+          preload
+          fetchpriority="high"
+          class="w-full h-full object-cover"
+        />
       </video>
 
-      <!-- Capa de gradiente: izquierda (igual que terapias) -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
-      <!-- Capa de gradiente: abajo -->
       <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-      <!-- Contenido del hero -->
       <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
@@ -36,7 +40,6 @@
           <span class="text-[#27252B]/75">y Transformarse</span>
         </h1>
 
-        <!-- Cita Naranjo reubicada como párrafo introductorio -->
         <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
           Espacios vivenciales donde la teoría y la experiencia se integran,
           diseñados para generar movimiento real en quien los habita.
@@ -47,21 +50,19 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE (igual estructura que terapias §2)
+         SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
 
-        <!-- Columna izquierda sticky -->
         <div class="md:col-span-4 md:sticky md:top-28">
           <div class="w-12 h-px bg-[#71B1A5] mb-6" />
           <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
             Talleres que no solo enseñan: transforman.
           </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" />
+          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30"></div>
         </div>
 
-        <!-- Columna derecha -->
         <div class="md:col-span-8 space-y-7">
           <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
             Nuestros talleres nacen de la convicción de que el conocimiento
@@ -76,14 +77,13 @@
             encontrarás un espacio cuidado, seguro y profundamente humano.
           </p>
 
-          <!-- Cita Naranjo integrada como bloque editorial -->
           <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
             <p class="font-serif italic text-[#27252B]/70 text-lg md:text-xl leading-[1.75]">
               "Lo que necesita nuestro tiempo son seres más bondadosos,
               no seres más inteligentes."
             </p>
             <footer class="mt-3 flex items-center gap-3">
-              <div class="w-6 h-px bg-[#71B1A5]/50" />
+              <div class="w-6 h-px bg-[#71B1A5]/50"></div>
               <cite class="not-italic text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
                 Claudio Naranjo · Psiquiatra y humanista
               </cite>
@@ -91,7 +91,7 @@
           </blockquote>
 
           <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]" />
+            <div class="w-2 h-2 bg-[#71B1A5]"></div>
             <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
           </div>
         </div>
@@ -101,12 +101,11 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 3 · CATÁLOGO DE TALLERES (cuadrícula como terapias §3)
+         SECCIÓN 3 · CATÁLOGO DE TALLERES
     ════════════════════════════════════════════════ -->
     <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
-        <!-- Encabezado de sección -->
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
           <div>
             <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
@@ -116,23 +115,25 @@
               Talleres y espacios de formación
             </h2>
           </div>
-          <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" />
+          <div class="w-24 h-px bg-[#27252B]/20 md:mb-2"></div>
         </div>
 
-        <!-- Cuadrícula de tarjetas (mismo patrón que terapias) -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           <!-- ── Tarjeta 1: Supervisión de Casos ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
-              <img
-                src="/images/casos.png"
-                alt="Supervisión de Casos Clínicos"
+              <!-- Below the fold → loading lazy -->
+              <NuxtImg
+                src="/images/supervision-casos-clinicos-terapeutas-gestalt-granada.jpg"
+                alt="Supervisión de casos clínicos para terapeutas y psicólogos en el Centro La Seda de Granada"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]" />
+              <div class="w-6 h-px bg-[#71B1A5]"></div>
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Supervisión de&nbsp;Casos
               </h3>
@@ -141,7 +142,6 @@
                 amplía la mirada sobre el paciente y certifica horas de
                 formación Gestalt con la AETG.
               </p>
-              <!-- Etiquetas de especialidad -->
               <div class="flex flex-wrap gap-2">
                 <span class="text-[10px] tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-2.5 py-1 font-medium">Gestalt</span>
                 <span class="text-[10px] tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-2.5 py-1 font-medium">AETG</span>
@@ -159,14 +159,17 @@
           <!-- ── Tarjeta 2: Constelaciones Familiares ── -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
-              <img
-                src="/images/constelaciones.png"
-                alt="Talleres de Constelaciones Familiares"
+              <!-- Below the fold → loading lazy -->
+              <NuxtImg
+                src="/images/taller-constelaciones-familiares-granada-centro-la-seda.jpg"
+                alt="Talleres de constelaciones familiares en Granada — Centro de Psicología La Seda"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]" />
+              <div class="w-6 h-px bg-[#71B1A5]"></div>
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Constelaciones&nbsp;Familiares
               </h3>
@@ -188,9 +191,9 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta decorativa de cierre (CTA) ── igual que en terapias -->
+          <!-- ── Tarjeta decorativa CTA ── -->
           <article class="bg-[#71B1A5] rounded-none flex flex-col justify-between p-7 min-h-[360px]">
-            <div class="w-6 h-px bg-[#FDFBF9]/60" />
+            <div class="w-6 h-px bg-[#FDFBF9]/60"></div>
             <div class="space-y-5">
               <h3 class="font-serif italic text-[#FDFBF9] text-2xl leading-snug">
                 ¿Tienes dudas sobre qué taller es para ti?
@@ -217,11 +220,10 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · AGENDA 2026 (fondo neutro, misma lógica que "Cómo trabajamos")
+         SECCIÓN 4 · AGENDA 2026
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
 
-      <!-- Encabezado con misma estructura de dos columnas -->
       <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-16">
         <div class="md:col-span-5">
           <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
@@ -240,14 +242,13 @@
         </div>
       </div>
 
-      <!-- Lista de eventos -->
       <div class="divide-y divide-[#27252B]/8">
 
         <!-- Evento 1 -->
-        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
+        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">28</span>
-            <div class="md:hidden w-px h-6 bg-[#27252B]/15" />
+            <div class="md:hidden w-px h-6 bg-[#27252B]/15"></div>
             <div>
               <span class="block text-xs tracking-[0.25em] uppercase text-[#27252B]/50 font-medium">Feb</span>
               <span class="block text-xs tracking-[0.2em] text-[#27252B]/40">2026</span>
@@ -276,10 +277,10 @@
         </div>
 
         <!-- Evento 2 -->
-        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
+        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">18</span>
-            <div class="md:hidden w-px h-6 bg-[#27252B]/15" />
+            <div class="md:hidden w-px h-6 bg-[#27252B]/15"></div>
             <div>
               <span class="block text-xs tracking-[0.25em] uppercase text-[#27252B]/50 font-medium">Abr</span>
               <span class="block text-xs tracking-[0.2em] text-[#27252B]/40">2026</span>
@@ -308,10 +309,10 @@
         </div>
 
         <!-- Evento 3 -->
-        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
+        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">16</span>
-            <div class="md:hidden w-px h-6 bg-[#27252B]/15" />
+            <div class="md:hidden w-px h-6 bg-[#27252B]/15"></div>
             <div>
               <span class="block text-xs tracking-[0.25em] uppercase text-[#27252B]/50 font-medium">May</span>
               <span class="block text-xs tracking-[0.2em] text-[#27252B]/40">2026</span>
@@ -340,10 +341,10 @@
         </div>
 
         <!-- Evento 4 · Especial Solsticio -->
-        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
+        <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">20</span>
-            <div class="md:hidden w-px h-6 bg-[#27252B]/15" />
+            <div class="md:hidden w-px h-6 bg-[#27252B]/15"></div>
             <div>
               <span class="block text-xs tracking-[0.25em] uppercase text-[#27252B]/50 font-medium">Jun</span>
               <span class="block text-xs tracking-[0.2em] text-[#27252B]/40">2026</span>
@@ -378,7 +379,6 @@
 
       </div>
 
-      <!-- CTA agenda (igual que CTA final de "Cómo trabajamos") -->
       <div class="mt-12 pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <p class="text-base text-[#27252B]/55 font-light max-w-md">
           ¿Tienes dudas sobre qué taller se adapta mejor a tu momento?
@@ -388,7 +388,7 @@
           <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
             Contactar con el centro
           </span>
-          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"></span>
         </NuxtLink>
       </div>
 
@@ -396,22 +396,25 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 5 · DATOS CLAVE (mismo patrón que §4 de terapias: imagen + contenido)
+         SECCIÓN 5 · DATOS CLAVE
     ════════════════════════════════════════════════ -->
     <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-          <!-- Columna imagen con marco desfasado (igual que terapias) -->
+          <!-- Columna imagen con marco desfasado -->
           <div class="relative order-2 md:order-1">
-            <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 rounded-none pointer-events-none z-0" />
-            <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
-              <img
-                src="/images/mariposa.png"
-                alt="Taller vivencial en La Seda"
-                class="w-full h-full object-cover rounded-none"
+            <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0"></div>
+            <div class="relative z-10 overflow-hidden aspect-[3/4]">
+              <!-- Below the fold → loading lazy -->
+              <NuxtImg
+                src="/images/espacio-terapeutico-centro-psicologia-la-seda-granada.jpg"
+                alt="Taller vivencial de psicología y crecimiento personal en el Centro La Seda, Granada"
+                format="webp"
+                loading="lazy"
+                class="w-full h-full object-cover"
               />
-              <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
+              <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none"></div>
             </div>
             <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block">
               <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5]">Talleres y Formación</p>
@@ -429,7 +432,6 @@
               <span class="text-[#27252B]/60">no solo para aprender.</span>
             </h2>
 
-            <!-- Stats como pasos numerados (mismo estilo que 01/02/03) -->
             <div class="space-y-10">
 
               <div class="flex gap-6 items-start">
@@ -445,7 +447,7 @@
                 </div>
               </div>
 
-              <div class="w-full h-px bg-[#27252B]/8" />
+              <div class="w-full h-px bg-[#27252B]/8"></div>
 
               <div class="flex gap-6 items-start">
                 <div class="shrink-0">
@@ -460,7 +462,7 @@
                 </div>
               </div>
 
-              <div class="w-full h-px bg-[#27252B]/8" />
+              <div class="w-full h-px bg-[#27252B]/8"></div>
 
               <div class="flex gap-6 items-start">
                 <div class="shrink-0">
@@ -477,13 +479,12 @@
 
             </div>
 
-            <!-- CTA final igual que terapias -->
             <div class="mt-12 pt-8 border-t border-[#27252B]/10">
               <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
                 <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
                   Reservar mi plaza
                 </span>
-                <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+                <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"></span>
               </NuxtLink>
             </div>
 

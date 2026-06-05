@@ -3,144 +3,213 @@ const route = useRoute()
 
 const terapias = {
   'adultos': {
-    titulo: 'Psicoterapia',
-    tituloItalico: 'para Adultos',
-    subtitulo: 'Un espacio donde el malestar encuentra nombre, forma y camino.',
-    descripcion: [
-      'La vida adulta trae consigo una complejidad que a menudo desborda los recursos emocionales con los que contamos. La ansiedad, la tristeza persistente, las pérdidas, las transiciones vitales o la sensación de no reconocerse a uno mismo son motivos legítimos y frecuentes para iniciar un proceso terapéutico. En La Seda acompañamos cada una de estas experiencias con rigor clínico y una escucha genuinamente humana.',
-      'Trabajamos desde un modelo integrativo que nos permite seleccionar las herramientas más adecuadas para cada persona: técnicas cognitivo-conductuales para modificar patrones de pensamiento, enfoques humanistas para reconectar con la propia experiencia, o intervenciones basadas en mindfulness para cultivar una relación más compasiva con uno mismo. El objetivo no es solo aliviar el síntoma, sino fortalecer la capacidad de vivir con mayor autenticidad.',
+    titulo: 'Terapia Gestalt',
+    tituloItalico: 'y Acompañamiento Emocional',
+    subtitulo: 'Un espacio donde resolver conflictos internos y conectar con los recursos que ya tienes.',
+    categoria: 'Para adultos',
+    descripcion: 'Las sesiones de terapia, coaching y acompañamiento emocional sirven para resolver y aprender de aquellos conflictos tanto internos como relacionales que se plantean en la vida, además de ser un lugar en el que conectar con los recursos que cada persona ya tiene, aún sin ser en muchas ocasiones consciente de ello.',
+    descripcion2: 'Son también un lugar en el que desvelar los patrones que vamos llevando a hombros a lo largo de la vida y que vamos repitiendo día tras día sin tener conciencia de ello. Nuestra línea de trabajo es humanista, basada en la terapia Gestalt y en la sistémica. La Gestalt nos permite trabajar en profundidad con la persona, mirar qué le sucede, a la vez que es una vía para que quien viene a consulta aprenda a gestionar sus emociones y a tener una comprensión de lo que le está sucediendo.',
+    cita: '"La terapia Gestalt no es un conjunto de técnicas sino la transmisión de una actitud, una forma de estar en la vida." — Claudio Naranjo',
+    motivos: [
+      { numero: '01', titulo: 'Gestalt', desc: 'Trabajamos en profundidad con la persona para comprender qué le sucede y aprender a gestionar las emociones en el momento presente.' },
+      { numero: '02', titulo: 'Terapia Sistémica', desc: 'Ponemos al individuo en su contexto relacional para ver los patrones que se repiten y encontrar maneras diferentes de vincularse y de estar en la vida.' },
+      { numero: '03', titulo: 'Método Wingwave', desc: 'Especialmente indicado para trabajar con bloqueos, miedos y asuntos pendientes, así como con situaciones traumáticas mediante desensibilización.' },
+      { numero: '04', titulo: 'Constelaciones Familiares', desc: 'Para explorar y resolver dinámicas familiares, relaciones interpersonales y conflictos personales de raíz sistémica.' },
     ],
-    sintomas: [
-      'Ansiedad generalizada o episodios de pánico recurrentes',
-      'Tristeza prolongada, apatía o síntomas depresivos',
-      'Duelos complicados o pérdidas no elaboradas',
-      'Baja autoestima, autocrítica excesiva o bloqueo vital',
+    proceso: [
+      { paso: '01', texto: 'Orientación telefónica inicial en la que te escuchamos y valoramos qué tipo de abordaje es el más adecuado para ti.' },
+      { paso: '02', texto: 'Primera sesión presencial u online en la que exploramos el motivo de consulta y establecemos los objetivos del proceso.' },
+      { paso: '03', texto: 'Sesiones semanales de 55 minutos, adaptadas a tu ritmo y a las necesidades del proceso terapéutico.' },
     ],
-    enfoque: 'Desde La Seda abordamos la psicoterapia de adultos combinando evaluación diagnóstica precisa con una relación terapéutica cálida. Cada proceso se diseña de forma individual, con objetivos claros y revisados periódicamente, para asegurarnos de que cada sesión tiene un propósito real en tu vida cotidiana.',
+    faqs: [
+      { pregunta: '¿Cuánto duran las sesiones?', respuesta: '55 minutos.' },
+      { pregunta: '¿Cómo serán las sesiones?', respuesta: 'Pueden ser tanto online a través de Skype u otro sistema de videoconferencia, como presencial en el Centro La Seda de Granada.' },
+      { pregunta: '¿Cómo empiezo?', respuesta: 'Los procesos comienzan con una orientación telefónica gratuita en la que te escuchamos y valoramos qué tipo de abordaje y qué profesional se adapta mejor a tus necesidades.' },
+    ],
   },
-  'pareja': {
-    titulo: 'Terapia',
-    tituloItalico: 'de Pareja',
-    subtitulo: 'Cuando la relación necesita un espacio propio para crecer.',
-    descripcion: [
-      'Toda relación atraviesa momentos de tensión, distancia o incomprensión. No es señal de fracaso: es parte de la complejidad de compartir la vida con otra persona. La terapia de pareja ofrece un espacio neutral, seguro y estructurado donde ambas personas pueden ser escuchadas, comprendidas y guiadas hacia formas de relacionarse más conscientes y satisfactorias.',
-      'En La Seda trabajamos con parejas en distintos momentos del vínculo: desde crisis agudas de comunicación o confianza, hasta procesos de crecimiento conjunto para parejas que funcionan bien pero quieren profundizar. El objetivo no es siempre "salvar" la relación, sino ayudar a cada persona a tomar decisiones auténticas desde un lugar más claro y menos reactivo.',
+
+  'adolescentes': {
+    titulo: 'Terapia para',
+    tituloItalico: 'Adolescentes',
+    subtitulo: 'Comprender qué le sucede a tu hijo y abrir vías de comunicación es vital para que esta etapa sea un momento de crecimiento.',
+    categoria: 'Adolescentes',
+    descripcion: 'La etapa de la adolescencia es difícil de comprender y de gestionar. La dinámica familiar que había cuando eran niños ya no funciona. La convivencia en familia puede convertirse en una pesadilla por el aislamiento emocional de los adolescentes, el rechazo a los padres y las reacciones abruptas y sin sentido.',
+    descripcion2: 'La adolescencia es una montaña rusa en la que sufre toda la familia. Es una etapa de cambios en la que es necesario comprender qué le sucede a los hijos y abrir vías de comunicación para que puedan expresarse, sentirse entendidos y comprendidos. Parte de la eficacia de la terapia va en función de la participación de los padres en el proceso.',
+    cita: '"Para acompañar bien a un adolescente primero hay que entender qué le está sucediendo por dentro."',
+    motivos: [
+      { numero: '01', titulo: 'Aislamiento y tristeza', desc: 'Cuando el adolescente se encierra en su cuarto, pierde el interés por sus actividades o muestra signos de tristeza profunda o bajo estado de ánimo.' },
+      { numero: '02', titulo: 'Agresividad e impulsividad', desc: 'La relación con la violencia verbal y el control de los impulsos son aspectos necesarios a trabajar cuando hay un desajuste emocional y una pérdida de límites.' },
+      { numero: '03', titulo: 'Duelos y pérdidas', desc: 'Separación de los padres, fallecimiento de un familiar, ruptura sentimental o cambio de ciudad que el adolescente no consigue superar.' },
+      { numero: '04', titulo: 'Fracaso escolar', desc: 'El psicólogo ayuda a encontrar una motivación y a buscar estrategias para que el adolescente pueda incorporarse al sistema educativo o formativo.' },
     ],
-    sintomas: [
-      'Conflictos repetitivos sin resolución y escalada emocional',
-      'Crisis de confianza o infidelidad y reconstrucción del vínculo',
-      'Distancia emocional, frialdad o sensación de desconexión',
-      'Dificultades en la comunicación o en la gestión de diferencias',
+    proceso: [
+      { paso: '01', texto: 'Entrevista inicial con los padres, ya sea juntos o por separado, para explorar el motivo de consulta.' },
+      { paso: '02', texto: 'Sesiones 2, 3 y 4 con el adolescente. Sesión 5 de dinámica familiar. Sesión 6 de devolución y pautas para los padres.' },
+      { paso: '03', texto: 'Continuación del proceso con el adolescente, incluyendo progresivamente sesiones con los padres según evolucione el trabajo.' },
     ],
-    enfoque: 'Utilizamos el modelo sistémico-relacional y técnicas de la terapia centrada en las emociones (EFT) para trabajar los patrones de interacción que mantienen el conflicto. El foco no está en quién tiene razón, sino en cómo construir un ciclo de comunicación más seguro y reparador para ambos.',
+    faqs: [
+      { pregunta: '¿Cuánto duran las sesiones?', respuesta: '55 minutos.' },
+      { pregunta: '¿A partir de qué edad trabajáis con adolescentes?', respuesta: 'A partir de los doce años. Para niños de entre seis y once años, consulta la terapia infantil.' },
+      { pregunta: '¿Cuándo veremos resultados?', respuesta: 'La adolescencia es un proceso complejo. Abordar el estado emocional del adolescente como un todo es vital para que los resultados puedan verse en un par de meses de trabajo.' },
+    ],
   },
-  'infanto-juvenil': {
-    titulo: 'Terapia',
-    tituloItalico: 'Infanto-Juvenil',
-    subtitulo: 'Acompañar la infancia y la adolescencia con la profundidad que merecen.',
-    descripcion: [
-      'Los niños y adolescentes no siempre tienen las palabras para expresar lo que les ocurre, pero su comportamiento, sus emociones y su cuerpo lo comunican de múltiples formas. La terapia infanto-juvenil ofrece un espacio adaptado a cada etapa del desarrollo donde el niño o joven puede explorar su mundo interior con herramientas ajustadas a su edad: el juego, la expresión creativa, el diálogo o la narrativa.',
-      'En La Seda entendemos que el trabajo con menores es también, inevitablemente, un trabajo con su sistema familiar. Por eso incluimos orientación parental como parte integral del proceso: padres y cuidadores son aliados imprescindibles en cualquier cambio duradero. Nuestro equipo cuenta con formación especializada en apego, trauma infantil y dificultades del neurodesarrollo.',
+
+  'pareja-familia': {
+    titulo: 'Terapia de',
+    tituloItalico: 'Pareja y Familia',
+    subtitulo: 'Un espacio seguro para mejorar la comunicación, resolver conflictos y comprenderse mutuamente.',
+    categoria: 'Pareja y familia',
+    descripcion: 'La terapia de pareja y de familia es un tipo de tratamiento psicológico diseñado para ayudar a las parejas y a las familias a resolver conflictos y mejorar su relación. Proporciona un espacio seguro para que las parejas y las familias trabajen juntas en la mejora de su comunicación, resolución de problemas y comprensión mutua.',
+    descripcion2: 'La primera sesión es una entrevista inicial con la pareja o con la familia en la que exploramos el motivo de consulta y las expectativas. Las siguientes sesiones son de trabajo conjunto y, dependiendo de la evolución del proceso terapéutico, iremos incluyendo sesiones individuales y de dinámica familiar. La periodicidad es de una vez por semana.',
+    cita: '"El objetivo no es siempre salvar la relación, sino ayudar a cada persona a tomar decisiones auténticas desde un lugar más claro."',
+    motivos: [
+      { numero: '01', titulo: 'Conflictos de pareja', desc: 'Abordamos y resolvemos conflictos recurrentes, mejorando la comunicación y enseñando habilidades de resolución de problemas.' },
+      { numero: '02', titulo: 'Infidelidad y confianza', desc: 'Proporcionamos un espacio para abordar el dolor, la ira y la reconstrucción de la confianza tras una ruptura de la misma.' },
+      { numero: '03', titulo: 'Crianza y co-parentalidad', desc: 'Las diferencias en la crianza de los hijos y la disciplina generan conflictos. Ayudamos a los padres a establecer una co-educación más efectiva.' },
+      { numero: '04', titulo: 'Dinámicas familiares', desc: 'Abordamos conflictos intrafamiliares, cambios de vida, duelos colectivos y crisis de convivencia para que el sistema se reorganice de forma más saludable.' },
     ],
-    sintomas: [
-      'Miedos intensos, fobias escolares o rechazo al entorno social',
-      'Dificultades emocionales asociadas a separaciones o cambios familiares',
-      'Problemas de conducta, impulsividad o dificultades de regulación',
-      'Bajo estado de ánimo, retraimiento o señales de ansiedad en la adolescencia',
+    proceso: [
+      { paso: '01', texto: 'Entrevista inicial con la pareja o con la familia en la que exploramos el motivo de consulta y las expectativas.' },
+      { paso: '02', texto: 'Sesiones de trabajo conjunto, adaptando el encuadre a las necesidades del proceso: sesiones conjuntas, individuales o de dinámica familiar.' },
+      { paso: '03', texto: 'Sesión de devolución y pautas, en la que compartimos las observaciones del proceso y los recursos para seguir avanzando.' },
     ],
-    enfoque: 'Integramos técnicas de terapia de juego, narrativa terapéutica y enfoque sistémico familiar. Cada intervención se diseña teniendo en cuenta la edad y el momento evolutivo del menor, con sesiones específicas de orientación parental para asegurar la transferencia de los cambios al entorno cotidiano.',
+    faqs: [
+      { pregunta: '¿Cuánto duran las sesiones?', respuesta: '55 minutos.' },
+      { pregunta: '¿Cómo serán las sesiones?', respuesta: 'Pueden ser tanto online a través de Skype u otro sistema de videoconferencia, como presencial en el Centro La Seda de Granada.' },
+      { pregunta: '¿Tienen que venir los dos miembros de la pareja?', respuesta: 'La terapia de pareja requiere la participación de ambos para ser efectiva. En el caso de terapia familiar, acordamos qué miembros del sistema deben estar presentes en cada sesión según el momento del proceso.' },
+    ],
   },
-  'familiar': {
+
+  'infantil': {
     titulo: 'Terapia',
-    tituloItalico: 'Familiar',
-    subtitulo: 'El sistema familiar como fuente de problema y de solución.',
-    descripcion: [
-      'La familia es el primer contexto en el que aprendemos a relacionarnos, a gestionar emociones y a construir nuestra identidad. Cuando ese sistema atraviesa dificultades —conflictos intergeneracionales, crisis de convivencia, duelos colectivos o momentos de transición— el malestar no pertenece a una sola persona, sino a la dinámica relacional del conjunto.',
-      'La terapia familiar sistémica trabaja precisamente con esa dinámica: explora los patrones de comunicación, los roles establecidos, las lealtades implícitas y los recursos propios del grupo familiar. El objetivo es ayudar al sistema a reorganizarse de forma más flexible, funcional y satisfactoria para todos sus miembros, respetando las diferencias generacionales y personales.',
+    tituloItalico: 'Infantil',
+    subtitulo: 'Ayudar a tu hijo a estar bien es también ayudarte a ti. La infancia es el momento en que todo empieza.',
+    categoria: 'Niños de 6 a 11 años',
+    descripcion: 'La infancia es un momento delicado porque el niño construye sus mecanismos de defensa y genera patrones de conducta que pueden perdurar durante toda su vida. El abandono, la soledad y el rechazo son heridas que, si son trabajadas durante la infancia, facilitarán una mejor gestión emocional incluso cuando el niño sea mayor.',
+    descripcion2: 'A veces no sabemos cómo ayudar a los niños a enfrentarse a las dificultades de la vida: miedos, bullying, separación de sus padres, pérdidas de seres queridos. Y los padres tampoco sabemos cómo educar bien, poniendo límites sanos y saludables. La terapia infantil ofrece un espacio adaptado a la edad del niño donde puede explorar su mundo interior con herramientas ajustadas a su momento evolutivo.',
+    cita: '"La infancia no es solo el principio de la vida, es también el principio de todo lo que vendrá después."',
+    motivos: [
+      { numero: '01', titulo: 'Miedos y ansiedad', desc: 'Miedo a la noche, al colegio o a la muerte. Trabajamos con el niño para que tome conciencia de qué le da miedo y potencie sus recursos para afrontarlo.' },
+      { numero: '02', titulo: 'Problemas de conducta', desc: 'Agresividad, dificultad para aceptar límites o control de impulsos. Trabajamos la regulación emocional y la contención en un espacio seguro.' },
+      { numero: '03', titulo: 'Dificultades relacionales', desc: 'Cuando el niño tiene problemas para relacionarse, no lo invitan a cumpleaños o sufre rechazo o acoso en el entorno escolar.' },
+      { numero: '04', titulo: 'Cambios y pérdidas', desc: 'Separación de los padres, fallecimiento de un familiar o cambio de ciudad que el niño no consigue integrar y que bloquea su desarrollo.' },
     ],
-    sintomas: [
-      'Conflictos persistentes entre padres e hijos adolescentes',
-      'Crisis de convivencia tras separaciones, recomposiciones familiares o duelos',
-      'Dinámicas de triangulación, roles rígidos o comunicación disfuncional',
-      'Dificultad para adaptarse a cambios vitales como enfermedades crónicas o pérdidas',
+    proceso: [
+      { paso: '01', texto: 'Entrevista inicial con los padres, ya sea juntos o por separado, para explorar el motivo de consulta.' },
+      { paso: '02', texto: 'Sesiones 2, 3 y 4 con el niño. Sesión 5 de dinámica familiar. Sesión 6 de devolución y pautas para los padres.' },
+      { paso: '03', texto: 'Continuación del proceso con el niño, incluyendo progresivamente sesiones con los padres y de dinámica familiar.' },
     ],
-    enfoque: 'Trabajamos desde el modelo sistémico intergeneracional e incorporamos herramientas de las Constelaciones Familiares cuando la historia transgeneracional resulta relevante. Las sesiones incluyen a los miembros del sistema que sea pertinente en cada momento del proceso, con un enfoque colaborativo y no culpabilizador.',
+    faqs: [
+      { pregunta: '¿Cuánto duran las sesiones?', respuesta: '55 minutos.' },
+      { pregunta: '¿Qué edades atiendes?', respuesta: 'Entre seis y once años. Para adolescentes a partir de los doce años, consulta la terapia para adolescentes.' },
+      { pregunta: '¿Cómo serán las sesiones con el niño?', respuesta: 'Escuchamos el problema que trae el niño, los padres o la familia. Hacemos las preguntas necesarias para ver el problema desde diferentes puntos de vista y mostramos una forma alternativa de abordarlo para que pueda haber más comunicación y comprensión.' },
+    ],
   },
-  'online': {
+
+  'grupal': {
     titulo: 'Terapia',
-    tituloItalico: 'Online',
-    subtitulo: 'La misma profundidad clínica, desde cualquier lugar del mundo.',
-    descripcion: [
-      'La terapia online no es una alternativa de segunda categoría: es un formato igualmente válido y eficaz para la mayoría de los procesos terapéuticos. La evidencia clínica respalda su efectividad en el tratamiento de la ansiedad, la depresión, las dificultades relacionales y muchos otros motivos de consulta. En La Seda hemos incorporado la modalidad online manteniendo exactamente los mismos estándares de calidad, ética y profundidad que en el trabajo presencial.',
-      'La sesión online elimina barreras geográficas y de movilidad, permite mayor flexibilidad horaria y ofrece la posibilidad de trabajar desde el propio entorno, lo que para muchas personas resulta más cómodo y menos intimidante. Utilizamos plataformas seguras y confidenciales, con garantías de protección de datos, para que el espacio terapéutico sea privado y libre de interrupciones.',
+    tituloItalico: 'Grupal',
+    subtitulo: 'La Gestalt en grupo: un espacio para crecer con otros, desde la experiencia presente.',
+    categoria: 'Grupos terapéuticos',
+    descripcion: 'La terapia grupal que hacemos en La Seda se apoya en los preceptos de la psicología Gestalt, apoyándonos en la percepción, la conciencia y la experiencia en el momento presente. Esta forma de terapia se lleva a cabo en grupos y tiene varios propósitos y beneficios únicos que no ofrece el formato individual.',
+    descripcion2: 'Es un grupo de trabajo con compromiso anual, de modo que los participantes puedan vincularse entre ellos y generar el espacio de confianza que este tipo de trabajo requiere. El grupo se reúne un jueves al mes de 17 a 20 horas y trabajamos con lo que traigan los participantes. Un grupo de este tipo se suele abrir con lo que denominamos una "ronda", donde los participantes cuentan en qué están en ese momento, y a partir de ahí se va desarrollando el trabajo.',
+    cita: '"El grupo es un espejo extraordinario: en los demás vemos lo que aún no hemos podido ver en nosotros mismos."',
+    motivos: [
+      { numero: '01', titulo: 'Conciencia personal', desc: 'Exploración de la experiencia presente y desarrollo de la autoconciencia en el contexto del grupo, que actúa como espejo y amplificador.' },
+      { numero: '02', titulo: 'Apoyo social y conexión', desc: 'Compartir el proceso con otros reduce el aislamiento, normaliza las dificultades y genera vínculos genuinos de apoyo mutuo.' },
+      { numero: '03', titulo: 'Expresión emocional', desc: 'El grupo ofrece un espacio seguro para la experimentación y la expresión emocional, con la contención del grupo y de la facilitadora.' },
+      { numero: '04', titulo: 'Habilidades relacionales', desc: 'Exploración de relaciones interpersonales y desarrollo de habilidades sociales a través de la interacción real con el grupo.' },
     ],
-    sintomas: [
-      'Necesidad de flexibilidad horaria o geográfica para acceder a terapia',
-      'Dificultad de desplazamiento por motivos físicos, laborales o familiares',
-      'Preferencia por trabajar desde un entorno propio y familiar',
-      'Continuidad de un proceso terapéutico iniciado de forma presencial',
+    proceso: [
+      { paso: '01', texto: 'Entrevista previa individual con la facilitadora para valorar si el formato grupal es adecuado para el momento del proceso de cada persona.' },
+      { paso: '02', texto: 'Incorporación al grupo con compromiso de asistencia anual. El grupo se reúne un jueves al mes de 17 a 20 horas.' },
+      { paso: '03', texto: 'Precio: 60 € por taller. Para inscribirse, se abona el primer taller. El compromiso de asistencia es anual.' },
     ],
-    enfoque: 'Todas nuestras psicólogas ofrecen modalidad online con la misma preparación clínica y el mismo modelo integrativo que en las sesiones presenciales. La primera sesión de valoración puede realizarse igualmente en formato online, de forma que el inicio del proceso sea accesible desde el primer momento.',
+    faqs: [
+      { pregunta: '¿Cuánto dura cada sesión grupal?', respuesta: 'Tres horas, de 17:00 a 20:00 h, una vez al mes.' },
+      { pregunta: '¿Puedo incorporarme en cualquier momento?', respuesta: 'El grupo trabaja con un compromiso anual para garantizar la confianza y la vinculación entre participantes. La incorporación se realiza al inicio de cada curso.' },
+      { pregunta: '¿Cómo me inscribo?', respuesta: 'Escríbenos a hola@centrolaseda.com o mándanos un WhatsApp indicándonos tu interés. Nos pondremos en contacto contigo para hacer una valoración previa.' },
+    ],
   },
 }
 
 const id = route.params.id
-const terapia = computed(() => terapias[id] ?? terapias['adultos'])
+const terapia = computed(() => terapias[id] ?? null)
+
+const faqAbierta = ref(null)
+const toggleFaq = (i) => {
+  faqAbierta.value = faqAbierta.value === i ? null : i
+}
 
 useSeoMeta({
-  title: () => `${terapia.value.titulo} ${terapia.value.tituloItalico} · La Seda Granada`,
-  description: () => terapia.value.subtitulo,
+  title: () => terapia.value ? `${terapia.value.titulo} ${terapia.value.tituloItalico} · La Seda Granada` : 'Terapia no encontrada · La Seda',
+  description: () => terapia.value?.subtitulo ?? '',
 })
 </script>
 
 <template>
-  <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
+  <!-- ═══ 404 ═══ -->
+  <main
+    v-if="!terapia"
+    class="bg-[#FDFBF9] text-[#27252B] font-sans min-h-screen flex flex-col items-center justify-center px-6 text-center"
+  >
+    <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">Error 404</p>
+    <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">Terapia no encontrada</h1>
+    <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
+      La página que buscas no existe o la URL no es correcta.
+    </p>
+    <NuxtLink
+      to="/terapias"
+      class="inline-flex items-center gap-4 bg-[#71B1A5] text-white px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium hover:bg-[#5a9a8e] transition-colors duration-300"
+    >
+      Ver todas las terapias
+      <span class="w-6 h-px bg-white/60 inline-block" />
+    </NuxtLink>
+  </main>
+
+  <!-- ═══ PÁGINA NORMAL ═══ -->
+  <main v-else class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · MINI-HERO DINÁMICO
+         SECCIÓN 1 · HERO
     ════════════════════════════════════════════════ -->
-    <section
-      class="relative w-full overflow-hidden"
-      style="height: clamp(40vh, 45vh, 50vh);"
-    >
-      <!-- Imagen de fondo -->
-      <img
-        src="/images/default.jpg"
-        alt=""
-        aria-hidden="true"
-        class="absolute inset-0 w-full h-full object-cover rounded-none"
-      />
+    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+      >
+        <source src="/video/minhero.mp4" type="video/mp4" />
+        <img src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
+      </video>
 
-      <!-- Gradiente horizontal -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/95 via-[#FDFBF9]/75 to-[#FDFBF9]/20 pointer-events-none" />
-      <!-- Gradiente vertical hacia abajo -->
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9] pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/92 via-[#FDFBF9]/65 to-transparent pointer-events-none" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-      <!-- Contenido -->
       <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
-        <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 mb-6" aria-label="Ruta de navegación">
+        <nav class="flex items-center gap-2 mb-5 md:mb-7" aria-label="Ruta de navegación">
           <NuxtLink
             to="/terapias"
-            class="text-xs tracking-[0.25em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200"
+            class="text-xs tracking-[0.25em] uppercase text-[#27252B]/45 hover:text-[#71B1A5] transition-colors duration-200"
           >
             Terapias
           </NuxtLink>
-          <span class="text-[#27252B]/30 text-xs">·</span>
+          <span class="text-[#27252B]/25 text-xs">·</span>
           <span class="text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
-            {{ terapia.titulo }} {{ terapia.tituloItalico }}
+            {{ terapia.categoria }}
           </span>
         </nav>
 
-        <!-- Título dinámico -->
-        <h1 class="text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-2xl">
-          <span class="font-sans font-light tracking-tight">{{ terapia.titulo }}</span>
-          <span class="font-serif italic block md:inline md:ml-3">{{ terapia.tituloItalico }}</span>
+        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+          {{ terapia.titulo }}<br />
+          <span class="text-[#27252B]/70">{{ terapia.tituloItalico }}</span>
         </h1>
 
-        <!-- Subtítulo clínico -->
-        <p class="text-[#71B1A5] text-base md:text-lg leading-[1.7] max-w-xl font-light tracking-wide">
+        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/75 max-w-xl">
           {{ terapia.subtitulo }}
         </p>
 
@@ -149,185 +218,299 @@ useSeoMeta({
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · CONTENIDO EDITORIAL DOS COLUMNAS
+         SECCIÓN 2 · DESCRIPCIÓN + MOTIVOS
     ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-        <!-- Columna izquierda: descripción en profundidad (col 7) -->
-        <div class="md:col-span-7 space-y-6">
-
-          <div class="w-10 h-px bg-[#71B1A5]" />
-
-          <p
-            v-for="(parrafo, i) in terapia.descripcion"
-            :key="i"
-            class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80"
-          >
-            {{ parrafo }}
+        <!-- Columna izquierda: descripción -->
+        <div class="lg:sticky lg:top-28">
+          <div class="w-12 h-px bg-[#71B1A5] mb-7" />
+          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+            Sobre esta terapia
           </p>
-
-          <!-- Imagen ilustrativa -->
-          <div class="mt-8 overflow-hidden rounded-none aspect-[16/7]">
-            <img
-              src="/images/default.jpg"
-              :alt="`Sesión de ${terapia.titulo} ${terapia.tituloItalico} en La Seda`"
-              class="w-full h-full object-cover rounded-none"
-            />
-          </div>
-
-        </div>
-
-        <!-- Columna derecha: tarjeta de síntomas/motivos (col 5) -->
-        <div class="md:col-span-5 md:sticky md:top-28">
-          <div class="bg-white border border-[#27252B]/8 rounded-none p-8 md:p-10">
-
-            <!-- Cabecera tarjeta -->
-            <div class="flex items-center gap-3 mb-8">
-              <div class="w-1 h-12 bg-[#71B1A5]" />
-              <div>
-                <p class="text-[10px] tracking-[0.3em] uppercase text-[#71B1A5] font-medium mb-1">
-                  Motivos frecuentes
-                </p>
-                <h2 class="font-serif italic text-[#27252B] text-xl leading-snug">
-                  ¿Por qué se acude<br />a esta consulta?
-                </h2>
-              </div>
-            </div>
-
-            <!-- Lista de síntomas -->
-            <ul class="space-y-5" role="list">
-              <li
-                v-for="(sintoma, i) in terapia.sintomas"
-                :key="i"
-                class="flex items-start gap-4 group"
-              >
-                <!-- Número -->
-                <span class="font-serif italic text-[#71B1A5]/60 text-2xl leading-none select-none mt-0.5 shrink-0 w-6">
-                  {{ String(i + 1).padStart(2, '0') }}
-                </span>
-                <!-- Texto -->
-                <p class="text-base leading-[1.75] text-[#27252B]/75 pt-0.5">
-                  {{ sintoma }}
-                </p>
-              </li>
-            </ul>
-
-            <!-- Separador -->
-            <div class="mt-8 pt-8 border-t border-[#27252B]/8">
-              <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-3">
-                Centro acreditado · Granada
-              </p>
-              <NuxtLink
-                to="/contacto"
-                class="inline-flex items-center gap-3 group"
-              >
-                <span class="text-sm tracking-[0.2em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-                  Pedir cita
-                </span>
-                <span class="w-8 h-px bg-[#27252B]/30 group-hover:w-12 group-hover:bg-[#71B1A5] transition-all duration-300" />
-              </NuxtLink>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 3 · ENFOQUE METODOLÓGICO + CTA
-    ════════════════════════════════════════════════ -->
-    <section class="relative overflow-hidden">
-
-      <!-- Fondo imagen difuminado -->
-      <div class="absolute inset-0">
-        <img
-          src="/images/default.jpg"
-          alt=""
-          aria-hidden="true"
-          class="w-full h-full object-cover rounded-none"
-        />
-        <div class="absolute inset-0 bg-[#27252B]/88" />
-      </div>
-
-      <!-- Patrón de puntos decorativo -->
-      <div
-        class="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style="background-image: radial-gradient(circle, #71B1A5 1px, transparent 1px); background-size: 36px 36px;"
-      />
-
-      <!-- Contenido -->
-      <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
-        <div class="max-w-3xl mx-auto text-center">
-
-          <!-- Decoración -->
-          <div class="flex items-center justify-center gap-5 mb-10">
-            <div class="h-px w-12 bg-[#71B1A5]/50" />
-            <div class="w-2 h-2 bg-[#71B1A5] rotate-45" />
-            <div class="h-px w-12 bg-[#71B1A5]/50" />
-          </div>
-
-          <!-- Etiqueta -->
-          <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-5">
-            Nuestro enfoque
-          </p>
-
-          <!-- Título -->
-          <h2 class="font-serif italic text-white text-3xl md:text-4xl lg:text-5xl leading-[1.2] mb-8">
-            Cómo trabajamos<br />
-            <span class="not-italic font-light text-white/60 text-2xl md:text-3xl">
-              este proceso contigo
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.18] mb-10">
+            Un espacio para<br />
+            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">
+              crecer y estar mejor
             </span>
           </h2>
 
-          <!-- Texto del enfoque dinámico -->
-          <p class="text-lg md:text-xl leading-[1.9] text-white/70 mb-14 font-light">
-            {{ terapia.enfoque }}
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7">
+            {{ terapia.descripcion }}
+          </p>
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-10">
+            {{ terapia.descripcion2 }}
           </p>
 
-          <!-- Separador -->
-          <div class="w-16 h-px bg-[#71B1A5]/40 mx-auto mb-14" />
+          <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
+            <p class="text-sm md:text-base leading-[1.9] text-[#27252B]/55 font-light italic">
+              {{ terapia.cita }}
+            </p>
+          </blockquote>
 
-          <!-- CTA principal -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <NuxtLink
-              to="/contacto"
-              class="group relative inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold rounded-none hover:bg-[#5a9a8e] transition-all duration-400 shadow-xl shadow-[#71B1A5]/30 hover:shadow-2xl hover:shadow-[#71B1A5]/50 hover:-translate-y-0.5 overflow-hidden w-full sm:w-auto"
-            >
-              <!-- Shimmer hover -->
-              <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
-              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-              </svg>
-              Reservar una sesión de valoración
-            </NuxtLink>
+          <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
+        </div>
 
-            <!-- Enlace secundario -->
-            <NuxtLink
-              to="/terapias"
-              class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/50 hover:text-white transition-colors duration-200 group"
+        <!-- Columna derecha: áreas de trabajo -->
+        <div>
+          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-7">
+            Áreas de trabajo
+          </p>
+          <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/8">
+            <div
+              v-for="motivo in terapia.motivos"
+              :key="motivo.numero"
+              class="flex items-start gap-5 px-6 py-6 hover:bg-[#71B1A5]/[0.04] transition-colors duration-150"
             >
-              <svg
-                class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
-                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-              Ver todas las terapias
-            </NuxtLink>
+              <span class="font-serif italic text-[#71B1A5]/40 text-3xl leading-none select-none mt-0.5 shrink-0 w-8">
+                {{ motivo.numero }}
+              </span>
+              <div>
+                <p class="text-sm font-semibold text-[#27252B] mb-2 leading-snug">{{ motivo.titulo }}</p>
+                <p class="text-sm text-[#27252B]/58 font-light leading-[1.85]">{{ motivo.desc }}</p>
+              </div>
+            </div>
           </div>
 
+          <div class="mt-10 overflow-hidden aspect-[16/8]">
+            <img
+              src="/images/default.jpg"
+              :alt="`${terapia.titulo} ${terapia.tituloItalico} en La Seda Granada`"
+              class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+            />
+          </div>
         </div>
-      </div>
 
+      </div>
     </section>
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · OTRAS ESPECIALIDADES
+         SECCIÓN 3 · CÓMO ES EL PROCESO
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">
+          <div class="md:col-span-5">
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+              El proceso
+            </p>
+            <h2 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]">
+              Cómo son las sesiones<br />
+              <span class="text-white/45 not-italic font-light text-2xl md:text-3xl">
+                en La Seda
+              </span>
+            </h2>
+          </div>
+          <div class="md:col-span-7">
+            <p class="text-base md:text-lg leading-[1.85] text-white/55">
+              Los procesos terapéuticos y de acompañamiento emocional en La Seda comienzan con una orientación telefónica gratuita en la que te escucharemos y valoraremos qué tipo de abordaje es el más adecuado para ti, así como cuál de nuestros profesionales se adapta mejor a tus necesidades.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-px bg-white/5">
+          <div
+            v-for="(paso, i) in terapia.proceso"
+            :key="i"
+            class="bg-[#27252B] p-9 hover:bg-white/[0.03] transition-colors duration-300"
+          >
+            <span class="font-serif italic text-[#71B1A5]/20 text-7xl leading-none block mb-6 select-none">
+              {{ paso.paso }}
+            </span>
+            <p class="text-white/65 text-base leading-[1.9] font-light">
+              {{ paso.texto }}
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
+          <NuxtLink
+            to="/contacto"
+            class="group relative inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-[#5a9a8e] transition-all duration-400 shadow-xl shadow-[#71B1A5]/30 hover:shadow-2xl hover:shadow-[#71B1A5]/50 hover:-translate-y-0.5 overflow-hidden w-full sm:w-auto"
+          >
+            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Pedir orientación gratuita
+          </NuxtLink>
+          <NuxtLink
+            to="/terapias"
+            class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors duration-200 group"
+          >
+            <svg
+              class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+            Ver todas las terapias
+          </NuxtLink>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 4 · FAQs + CONTACTO
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+          <!-- FAQs (col 7) -->
+          <div class="lg:col-span-7">
+            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-4">
+              Preguntas frecuentes
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-10">
+              Resolvemos tus dudas
+            </h2>
+
+            <div class="divide-y divide-[#27252B]/10">
+              <div
+                v-for="(faq, i) in terapia.faqs"
+                :key="i"
+                class="group"
+              >
+                <button
+                  class="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer"
+                  @click="toggleFaq(i)"
+                  :aria-expanded="faqAbierta === i"
+                >
+                  <span
+                    class="text-base md:text-lg font-medium text-[#27252B] leading-snug group-hover:text-[#71B1A5] transition-colors duration-200"
+                    :class="{ 'text-[#71B1A5]': faqAbierta === i }"
+                  >
+                    {{ faq.pregunta }}
+                  </span>
+                  <span class="shrink-0 mt-0.5">
+                    <svg
+                      class="w-5 h-5 text-[#71B1A5] transition-transform duration-300"
+                      :class="{ 'rotate-45': faqAbierta === i }"
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                    </svg>
+                  </span>
+                </button>
+
+                <div
+                  class="overflow-hidden transition-all duration-300"
+                  :class="faqAbierta === i ? 'max-h-96 pb-6' : 'max-h-0'"
+                >
+                  <p class="text-base md:text-lg leading-[1.9] text-[#27252B]/70 font-light">
+                    {{ faq.respuesta }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contacto + CTA (col 5) -->
+          <div class="lg:col-span-5 space-y-6">
+
+            <div class="bg-[#27252B] p-9 md:p-10">
+              <div class="w-8 h-px bg-[#71B1A5] mb-7" />
+              <h3 class="font-serif italic text-white text-2xl md:text-3xl leading-[1.2] mb-6">
+                ¿Listo para dar<br />el primer paso?
+              </h3>
+              <p class="text-white/60 text-base leading-[1.9] mb-9 font-light">
+                Comienza con una orientación telefónica gratuita. Te escuchamos y valoramos juntos qué tipo de acompañamiento se adapta mejor a tu momento vital.
+              </p>
+              <NuxtLink
+                to="/contacto"
+                class="group relative w-full inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden"
+              >
+                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                Reservar cita
+              </NuxtLink>
+            </div>
+
+            <div class="bg-white border border-[#27252B]/8 p-8 space-y-6">
+
+              <p class="text-xs tracking-[0.3em] uppercase text-[#27252B]/40 font-medium">
+                Contacto directo
+              </p>
+
+              <a
+                href="https://wa.me/34679571977"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 group/wa"
+              >
+                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/wa:bg-[#71B1A5]/20 transition-colors duration-200">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">WhatsApp · La Seda</p>
+                  <p class="text-sm font-medium text-[#27252B] group-hover/wa:text-[#71B1A5] transition-colors duration-200">
+                    679 571 977
+                  </p>
+                </div>
+              </a>
+
+              <div class="h-px bg-[#27252B]/8" />
+
+              <a
+                href="mailto:hola@centrolaseda.com"
+                class="flex items-center gap-4 group/email"
+              >
+                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/email:bg-[#71B1A5]/20 transition-colors duration-200">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Email</p>
+                  <p class="text-sm font-medium text-[#27252B] group-hover/email:text-[#71B1A5] transition-colors duration-200">
+                    hola@centrolaseda.com
+                  </p>
+                </div>
+              </a>
+
+              <div class="h-px bg-[#27252B]/8" />
+
+              <div class="flex items-start gap-4">
+                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Ubicación</p>
+                  <p class="text-sm font-medium text-[#27252B]">Calle Horno de Haza 29, Bajo 1</p>
+                  <p class="text-xs text-[#27252B]/45 font-light mt-0.5">Granada · Centro La Seda</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 5 · OTRAS TERAPIAS
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-24">
 
@@ -349,36 +532,54 @@ useSeoMeta({
         </NuxtLink>
       </div>
 
-      <!-- Grid de otras terapias filtradas -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <NuxtLink
           v-for="(t, key) in terapias"
           :key="key"
           :to="`/terapias/${key}`"
           v-show="key !== id"
-          class="group block bg-white border border-[#27252B]/8 rounded-none overflow-hidden hover:border-[#71B1A5]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/8"
+          class="group block bg-white border border-[#27252B]/8 overflow-hidden hover:border-[#71B1A5]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/8"
         >
-          <!-- Imagen -->
           <div class="overflow-hidden aspect-[3/2]">
             <img
               src="/images/default.jpg"
               :alt="t.titulo + ' ' + t.tituloItalico"
-              class="w-full h-full object-cover rounded-none group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <!-- Contenido -->
           <div class="p-5">
             <div class="w-4 h-px bg-[#71B1A5] mb-3" />
-            <p class="text-sm font-light text-[#27252B]">{{ t.titulo }}</p>
-            <p class="font-serif italic text-[#27252B] text-lg leading-snug">{{ t.tituloItalico }}</p>
-            <p class="text-xs tracking-[0.15em] uppercase text-[#71B1A5] mt-3 group-hover:gap-3 flex items-center gap-2 transition-all duration-200">
+            <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1">{{ t.categoria }}</p>
+            <p class="font-serif italic text-[#27252B] text-lg leading-snug">{{ t.titulo }}<br />{{ t.tituloItalico }}</p>
+            <p class="text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3 flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200">
               Ver más
-              <span class="w-4 h-px bg-[#71B1A5] group-hover:w-6 transition-all duration-300" />
+              <span class="w-4 h-px bg-current group-hover:w-6 transition-all duration-300" />
             </p>
           </div>
         </NuxtLink>
       </div>
 
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 6 · NAVEGACIÓN INFERIOR
+    ════════════════════════════════════════════════ -->
+    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-14">
+      <div class="border-t border-[#27252B]/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+        <NuxtLink to="/terapias" class="inline-flex items-center gap-4 group">
+          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
+            Todas las terapias
+          </span>
+        </NuxtLink>
+        <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
+          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+            Contactar con el centro
+          </span>
+          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+        </NuxtLink>
+      </div>
     </section>
 
   </main>

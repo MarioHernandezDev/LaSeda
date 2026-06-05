@@ -2,17 +2,25 @@
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · MINI-HERO (mismo sistema: video + gradientes laterales)
+         SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
     <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay muted loop playsinline
-        poster="/images/caploader.png"
+        poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/caploader.png" alt="Centro de Psicología La Seda Granada" class="w-full h-full object-cover" />
+        <!-- HERO fallback: above the fold → preload + fetchpriority="high", sin lazy -->
+        <NuxtImg
+          src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+          alt="Centro de Psicología La Seda Granada — página de contacto y cita previa"
+          class="w-full h-full object-cover"
+          format="webp"
+          preload
+          fetchpriority="high"
+        />
       </video>
 
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
@@ -39,7 +47,7 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · INTRO (mismo patrón dos columnas sticky)
+         SECCIÓN 2 · INTRO
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
@@ -107,11 +115,11 @@
                 </div>
                 <div class="border-t border-[#27252B]/10 pt-3 flex-1">
                   <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Dirección</h3>
-                  <p class="text-[#27252B]/65 text-sm leading-relaxed font-light">
+                  <p class="text-[#27252B]/70 text-sm leading-relaxed font-light">
                     Calle Recogidas, 14 – 2.º A<br>
                     18002 Granada, Andalucía
                   </p>
-                  <p class="text-[#27252B]/40 text-xs mt-2 font-light leading-relaxed">
+                  <p class="text-[#27252B]/50 text-sm mt-2 font-light leading-relaxed">
                     Zona centro, a 5 min a pie del Corte Inglés.<br>
                     Aparcamiento público en Plaza del Campillo.
                   </p>
@@ -130,7 +138,7 @@
                   <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Teléfono</h3>
                   <a
                     href="tel:+34958000000"
-                    class="text-[#27252B]/65 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
+                    class="text-[#27252B]/70 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
                   >
                     +34 958 000 000
                   </a>
@@ -160,11 +168,11 @@
                   <h3 class="text-xs font-medium text-[#27252B] mb-2 tracking-[0.18em] uppercase">Correo electrónico</h3>
                   <a
                     href="mailto:hola@laseda.es"
-                    class="text-[#27252B]/65 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
+                    class="text-[#27252B]/70 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
                   >
                     hola@laseda.es
                   </a>
-                  <p class="text-[#27252B]/40 text-xs mt-1.5 font-light">
+                  <p class="text-[#27252B]/50 text-sm mt-1.5 font-light">
                     Respondemos en menos de 24 h laborables.
                   </p>
                 </div>
@@ -196,7 +204,7 @@
                   </div>
                   <div class="mt-4 flex items-center gap-2">
                     <div class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]"></div>
-                    <span class="text-[10px] tracking-widest uppercase text-[#71B1A5] font-medium">Centro abierto ahora</span>
+                    <span class="text-xs tracking-widest uppercase text-[#71B1A5] font-medium">Centro abierto ahora</span>
                   </div>
                 </div>
               </div>
@@ -466,9 +474,108 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · MAPA (mismo fondo claro, mismo patrón de encabezado)
+         SECCIÓN 4 · UN ESPACIO PARA TI
     ════════════════════════════════════════════════ -->
     <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+          <!-- Columna imagen con marco desfasado — below the fold → lazy -->
+          <div class="relative order-2 md:order-1">
+            <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0" />
+            <div class="relative z-10 overflow-hidden aspect-[3/4]">
+              <NuxtImg
+                src="/images/espacio-terapeutico-consulta-psicologia-granada-la-seda.jpg"
+                alt="Espacio terapéutico y consulta de psicología del Centro La Seda en Granada"
+                class="w-full h-full object-cover"
+                format="webp"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
+            </div>
+            <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block">
+              <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5]">Centro de Psicología</p>
+              <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
+            </div>
+          </div>
+
+          <!-- Columna de contenido -->
+          <div class="order-1 md:order-2">
+            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
+              Un espacio para ti
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
+              Cada persona merece<br />
+              <span class="text-[#27252B]/60">un comienzo cálido.</span>
+            </h2>
+
+            <div class="space-y-10">
+
+              <div class="flex gap-6 items-start">
+                <div class="shrink-0">
+                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">01</span>
+                </div>
+                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Orientación sin compromiso</h3>
+                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                    Si no tienes claro qué necesitas, no pasa nada. En la primera
+                    consulta exploramos juntos qué te trae y cuál es el mejor camino.
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full h-px bg-[#27252B]/8" />
+
+              <div class="flex gap-6 items-start">
+                <div class="shrink-0">
+                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">24h</span>
+                </div>
+                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Respuesta en menos de 24 horas</h3>
+                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                    Respondemos a todos los mensajes en menos de un día laborable.
+                    Ninguna consulta queda sin atención.
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full h-px bg-[#27252B]/8" />
+
+              <div class="flex gap-6 items-start">
+                <div class="shrink-0">
+                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">100%</span>
+                </div>
+                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Confidencialidad garantizada</h3>
+                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                    Todo lo que compartes con nosotros permanece en el centro.
+                    Tu privacidad es parte esencial del proceso terapéutico.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-[#27252B]/10">
+              <NuxtLink to="/equipo" class="inline-flex items-center gap-4 group">
+                <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+                  Conocer al equipo
+                </span>
+                <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
+              </NuxtLink>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+         SECCIÓN 5 · MAPA
+    ════════════════════════════════════════════════ -->
+    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
@@ -496,15 +603,15 @@
           <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm shadow-xl border-l-2 border-[#71B1A5] p-5 max-w-[240px]">
             <div class="flex items-center gap-2 mb-2">
               <div class="w-2 h-2 rounded-full bg-[#71B1A5]"></div>
-              <span class="text-[10px] tracking-widest uppercase text-[#71B1A5] font-medium">La Seda · Granada</span>
+              <span class="text-xs tracking-widest uppercase text-[#71B1A5] font-medium">La Seda · Granada</span>
             </div>
             <p class="text-sm font-medium text-[#27252B] mb-0.5">Calle Recogidas, 14 – 2.º A</p>
-            <p class="text-xs text-[#27252B]/50 font-light">18002 Granada</p>
+            <p class="text-sm text-[#27252B]/50 font-light">18002 Granada</p>
             <a
               href="https://maps.google.com/?q=Calle+Recogidas+14+Granada"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-3 inline-flex items-center gap-1.5 text-[10px] tracking-widest uppercase text-[#71B1A5] font-medium hover:text-[#5a9a8e] transition-colors duration-300"
+              class="mt-3 inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#71B1A5] font-medium hover:text-[#5a9a8e] transition-colors duration-300"
             >
               Cómo llegar
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -514,24 +621,24 @@
           </div>
         </div>
 
-        <!-- Indicaciones de acceso (mismo patrón de tarjetas de valores) -->
+        <!-- Indicaciones de acceso -->
         <div class="mt-6 grid sm:grid-cols-3 gap-0 border border-[#27252B]/8">
           <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8">
             <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
               <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">A pie</p>
-              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
+              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8">
             <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
               <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">Transporte público</p>
-              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Líneas C1 y 33 con parada en Recogidas.</p>
+              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Líneas C1 y 33 con parada en Recogidas.</p>
             </div>
           </div>
           <div class="flex items-start gap-4 p-6">
             <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
               <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">En coche</p>
-              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
+              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
             </div>
           </div>
         </div>
@@ -541,7 +648,7 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 5 · CTA FINAL (mismo patrón que quiénes somos §6)
+         SECCIÓN 6 · CTA FINAL
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-24">
       <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-10">

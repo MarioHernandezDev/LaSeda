@@ -29,11 +29,12 @@
 
           <div class="flex-shrink-0 flex items-center justify-center z-10">
             <NuxtLink to="/" class="group block" aria-label="Ir a inicio">
-              <img
-                src="/images/logo-02.png"
-                alt="Logo Centro La Seda | Psicología y Talleres en Granada"
+              <NuxtImg
+                src="/images/logo-centro-la-seda-psicologia-granada.png"
+                alt="Logo Centro La Seda — Psicología y Talleres en Granada"
+                format="webp"
+                fetchpriority="high"
                 class="h-9 md:h-11 w-auto transition-transform duration-500 group-hover:scale-105"
-                loading="eager"
               />
             </NuxtLink>
           </div>
@@ -135,6 +136,34 @@
       <slot />
     </main>
 
+    <CustomCursor />
+
+    <Transition
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="opacity-0 translate-y-4 scale-90"
+      enter-to-class="opacity-100 translate-y-0 scale-100"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="opacity-100 translate-y-0 scale-100"
+      leave-to-class="opacity-0 translate-y-4 scale-90"
+    >
+      <button
+        v-if="showScrollTop"
+        @click="scrollToTop"
+        aria-label="Volver al inicio de la página"
+        class="fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center bg-[#FDFBF9] border border-[#27252B]/12 rounded-full shadow-lg shadow-[#27252B]/8 hover:shadow-xl hover:shadow-[#27252B]/12 hover:-translate-y-1 hover:border-[#71B1A5]/50 transition-all duration-300 group"
+      >
+        <svg
+          class="w-4 h-4 text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+        </svg>
+      </button>
+    </Transition>
+
     <footer class="bg-[#1e1c21] text-white/40" aria-label="Pie de página">
 
       <div class="h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent"></div>
@@ -144,17 +173,18 @@
 
           <div class="md:col-span-4">
             <NuxtLink to="/" class="inline-flex items-center gap-3 group mb-6" aria-label="Ir a inicio">
-              <img
-                src="/images/logo-02.png"
-                alt="Logo Centro La Seda | Psicología y Talleres en Granada"
-                class="h-9 w-auto opacity-60 group-hover:opacity-90 transition-opacity duration-300 brightness-0 invert"
+              <NuxtImg
+                src="/images/logo-centro-la-seda-psicologia-granada.png"
+                alt="Logo Centro La Seda — Psicología y Talleres en Granada"
+                format="webp"
                 loading="lazy"
+                class="h-9 w-auto opacity-60 group-hover:opacity-90 transition-opacity duration-300 brightness-0 invert"
               />
             </NuxtLink>
 
             <p class="text-sm leading-relaxed max-w-xs font-light mb-8">
               Centro de Psicología y Crecimiento Personal en Granada. Un espacio
-              donde la ciencia se encuentra con la bondad.
+              onde la ciencia se encuentra con la bondad.
             </p>
 
             <div class="border-l border-[#71B1A5]/40 pl-4">
@@ -164,26 +194,24 @@
             </div>
 
             <div class="flex items-center gap-3 mt-8">
-              <a
-                href="https://www.instagram.com/centrolaseda"
-                target="_blank"
+              <a 
+                href="https://www.instagram.com/centrolaseda/" 
+                target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="Instagram de La Seda Granada"
-                class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-[#71B1A5]/60 hover:text-[#71B1A5] transition-all duration-300"
+                class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
               >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
-              </a>
-              <a
+              </a> 
+              <a 
                 href="https://www.facebook.com/CentroLaSeda/?locale=es_ES"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook de La Seda Granada"
-                class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-[#71B1A5]/60 hover:text-[#71B1A5] transition-all duration-300"
+                class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
               >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 8H7v3h2v9h4v-9h3l.5-3H13V6c0-.5.5-1 1-1h2V1H13a5 5 0 00-5 5v2z"/>
                 </svg>
               </a>
             </div>
@@ -291,13 +319,21 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 // ── Estado del menú móvil
 const mobileMenuOpen = ref(false)
 
-// ── Efecto de scroll en el navbar
-const scrolled = ref(false)
+// ── Visibilidad del botón "volver arriba" + efecto scroll del navbar
+const scrolled      = ref(false)
+const showScrollTop = ref(false)
+
 const handleScroll = () => {
-  scrolled.value = window.scrollY > 30
+  const y = window.scrollY
+  scrolled.value      = y > 30
+  showScrollTop.value = y > 400
 }
+
 onMounted(() => window.addEventListener('scroll', handleScroll, { passive: true }))
 onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+
+// ── Acción del botón
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
 // ── Cerrar menú móvil al redimensionar a escritorio
 const handleResize = () => {
@@ -317,17 +353,28 @@ const navLinks = [
   { label: 'Conócenos',   to: '/conocenos'   },
 ]
 
-// ── Separación simétrica de enlaces para el Navbar
-const leftNavLinks = computed(() => navLinks.slice(0, 2))  // Terapias y Talleres
-const rightNavLinks = computed(() => navLinks.slice(2))   // Formaciones y Conócenos
+const leftNavLinks  = computed(() => navLinks.slice(0, 2))
+const rightNavLinks = computed(() => navLinks.slice(2))
 
-// ── Enlaces del footer (SEO)
 const footerNavLinks = [
-  { label: 'Inicio',             to: '/'            },
-  { label: 'Terapias Clínicas',  to: '/terapias'    },
-  { label: 'Talleres Vivenciales', to: '/talleres'  },
-  { label: 'Formaciones',        to: '/formaciones' },
-  { label: 'Conócenos',          to: '/conocenos'   },
-  { label: 'Contacto',           to: '/contacto'    },
+  { label: 'Inicio',               to: '/'            },
+  { label: 'Terapias Clínicas',    to: '/terapias'    },
+  { label: 'Talleres Vivenciales', to: '/talleres'    },
+  { label: 'Formaciones',          to: '/formaciones' },
+  { label: 'Conócenos',            to: '/conocenos'   },
+  { label: 'Contacto',             to: '/contacto'    },
 ]
 </script>
+
+<style>
+/* ── Ocultar cursor predeterminado del sistema en PC ── */
+@media (min-width: 1024px) {
+  body, 
+  a, 
+  button, 
+  [role="button"],
+  .group {
+    cursor: none !important;
+  }
+}
+</style>

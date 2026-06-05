@@ -2,29 +2,33 @@
   <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · MINI-HERO (mismo estilo que talleres: video/imagen + gradientes)
+         SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
     <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-      <!-- Imagen de fondo -->
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
         muted
         loop
         playsinline
-        poster="/images/caploader.png"
+        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/caploader.png" alt="Centro de Psicología La Seda – Formaciones" class="w-full h-full object-cover" />
+        <!-- Fallback above the fold → preload + fetchpriority high, sin loading lazy -->
+        <NuxtImg
+          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
+          alt="Centro de Psicología La Seda Granada — programas de formación y especialización en psicología"
+          format="webp"
+          preload
+          fetchpriority="high"
+          class="w-full h-full object-cover"
+        />
       </video>
 
-      <!-- Gradiente izquierda -->
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
-      <!-- Gradiente abajo -->
       <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-      <!-- Contenido del hero -->
       <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
@@ -51,7 +55,6 @@
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
 
-        <!-- Columna izquierda sticky -->
         <div class="md:col-span-4 md:sticky md:top-28">
           <div class="w-12 h-px bg-[#71B1A5] mb-6" />
           <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
@@ -60,7 +63,6 @@
           <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" />
         </div>
 
-        <!-- Columna derecha -->
         <div class="md:col-span-8 space-y-7">
           <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
             Nuestros programas nacen de la convicción de que el conocimiento
@@ -74,7 +76,6 @@
             práctica, aquí encontrarás un espacio riguroso, cercano y profundamente humano.
           </p>
 
-          <!-- Cita Naranjo -->
           <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
             <p class="font-serif italic text-[#27252B]/70 text-lg md:text-xl leading-[1.75]">
               "Lo que necesita nuestro tiempo son seres más bondadosos,
@@ -104,7 +105,6 @@
     <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
-        <!-- Encabezado de sección -->
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
           <div>
             <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
@@ -117,15 +117,16 @@
           <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" />
         </div>
 
-        <!-- Cuadrícula de tarjetas -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- ── Tarjeta 1: Gestalt Infantil ── -->
+          <!-- ── Tarjeta 1: Gestalt Infantil — below the fold → loading lazy -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
-              <img
-                src="/images/gestalt.png"
-                alt="Formación en Terapia Gestalt aplicada a la infancia y adolescencia"
+              <NuxtImg
+                src="/images/formacion-terapia-gestalt-infancia-adolescencia-granada.jpg"
+                alt="Formación presencial en Terapia Gestalt aplicada a la infancia y adolescencia — Centro La Seda Granada, 288 horas en 15 talleres"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -153,12 +154,14 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta 2: Wingwave ── -->
+          <!-- ── Tarjeta 2: Wingwave — below the fold → loading lazy -->
           <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
             <div class="overflow-hidden aspect-[4/3]">
-              <img
-                src="/images/win.png"
-                alt="Formación certificada en el Método Wingwave"
+              <NuxtImg
+                src="/images/formacion-certificada-metodo-wingwave-coaching-granada.jpg"
+                alt="Formación certificada oficial en el Método Wingwave — técnica avalada por estudios científicos ISO 29993, Centro La Seda Granada"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -186,7 +189,7 @@
             </div>
           </article>
 
-          <!-- ── Tarjeta decorativa CTA ── -->
+          <!-- ── Tarjeta decorativa CTA (sin imagen) ── -->
           <article class="bg-[#71B1A5] rounded-none flex flex-col justify-between p-7 min-h-[360px]">
             <div class="w-6 h-px bg-[#FDFBF9]/60" />
             <div class="space-y-5">
@@ -219,7 +222,6 @@
     ════════════════════════════════════════════════ -->
     <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
 
-      <!-- Encabezado con misma estructura de dos columnas que talleres -->
       <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-16">
         <div class="md:col-span-5">
           <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
@@ -240,10 +242,8 @@
         </div>
       </div>
 
-      <!-- Lista de eventos -->
       <div class="divide-y divide-[#27252B]/8">
 
-        <!-- Evento 1: Wingwave Mayo -->
         <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">9–12</span>
@@ -280,7 +280,6 @@
           </div>
         </div>
 
-        <!-- Evento 2: Sesión informativa Gestalt -->
         <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">2026</span>
@@ -316,7 +315,6 @@
           </div>
         </div>
 
-        <!-- Evento 3: Inicio Gestalt -->
         <div class="group grid md:grid-cols-12 gap-4 md:gap-8 items-center py-7 md:py-8 hover:bg-[#27252B]/[0.02] transition-colors duration-200 rounded-none">
           <div class="md:col-span-2 flex md:flex-col items-center md:items-start gap-3 md:gap-1">
             <span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">2026</span>
@@ -355,7 +353,6 @@
 
       </div>
 
-      <!-- CTA agenda -->
       <div class="mt-12 pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <p class="text-base text-[#27252B]/55 font-light max-w-md">
           ¿Quieres recibir el dossier completo con el calendario detallado y las condiciones económicas?
@@ -374,19 +371,21 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 5 · DATOS CLAVE (imagen + estadísticas, igual que talleres §5)
+         SECCIÓN 5 · DATOS CLAVE
     ════════════════════════════════════════════════ -->
     <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-          <!-- Columna imagen con marco desfasado -->
+          <!-- Imagen — below the fold → loading lazy -->
           <div class="relative order-2 md:order-1">
             <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 rounded-none pointer-events-none z-0" />
             <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
-              <img
-                src="/images/mariposa.png"
-                alt="Formación presencial en La Seda – Centro de Psicología Granada"
+              <NuxtImg
+                src="/images/espacio-formacion-presencial-psicologia-la-seda-granada.jpg"
+                alt="Sala de formación presencial del Centro de Psicología La Seda Granada — espacio para talleres y programas de especialización"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none"
               />
               <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
@@ -397,7 +396,6 @@
             </div>
           </div>
 
-          <!-- Columna de datos -->
           <div class="order-1 md:order-2">
             <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
               Por qué elegirnos
@@ -407,7 +405,6 @@
               <span class="text-[#27252B]/60">no solo para aprender.</span>
             </h2>
 
-            <!-- Stats numerados -->
             <div class="space-y-10">
 
               <div class="flex gap-6 items-start">
@@ -456,7 +453,6 @@
 
             </div>
 
-            <!-- CTA final -->
             <div class="mt-12 pt-8 border-t border-[#27252B]/10">
               <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
                 <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">

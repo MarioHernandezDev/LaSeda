@@ -9,10 +9,18 @@
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay muted loop playsinline
-        poster="/images/caploader.png"
+        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/caploader.png" alt="Centro de Psicología La Seda Granada" class="w-full h-full object-cover" />
+        <!-- Imagen de fallback del video — above the fold → preload + fetchpriority high -->
+        <NuxtImg
+          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
+          alt="Centro de Psicología La Seda Granada — sala de terapia y espacio de bienestar"
+          format="webp"
+          preload
+          fetchpriority="high"
+          class="w-full h-full object-cover"
+        />
       </video>
 
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
@@ -85,13 +93,15 @@
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-          <!-- Imagen con marco desfasado -->
+          <!-- Imagen con marco desfasado — below the fold → loading lazy -->
           <div class="relative">
             <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 rounded-none pointer-events-none z-0" />
             <div class="relative z-10 overflow-hidden rounded-none aspect-[3/4]">
-              <img
-                src="/images/mariposa.png"
-                alt="Sala de consulta terapéutica del Centro La Seda en Granada"
+              <NuxtImg
+                src="/images/espacio-terapeutico-centro-psicologia-la-seda-granada.jpg"
+                alt="Sala de consulta terapéutica del Centro de Psicología La Seda en Granada — espacio cálido con materiales orgánicos"
+                format="webp"
+                loading="lazy"
                 class="w-full h-full object-cover rounded-none"
               />
               <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" />
@@ -161,13 +171,13 @@
 
 
     <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · EL EQUIPO (cuadrícula de tarjetas)
+         SECCIÓN 4 · EL EQUIPO
     ════════════════════════════════════════════════ -->
     <section class="py-20 md:py-28">
       <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
 
         <!-- Encabezado -->
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-18">
           <div>
             <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
               Profesionales
@@ -178,182 +188,253 @@
             </h2>
           </div>
           <p class="text-[#27252B]/50 max-w-xs text-sm leading-relaxed font-light md:text-right md:mb-2">
-            Todo nuestro equipo está colegiado por el COP Andalucía y en formación
-            continua.
+            Un equipo multidisciplinar especializado en psicología, coaching
+            y educación emocional.
           </p>
         </div>
 
-        <!-- Grid de tarjetas -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+        <!-- Grid 2+2 en desktop, 1 columna en móvil -->
+        <div class="grid sm:grid-cols-2 gap-6 lg:gap-8">
 
-          <!-- ── Profesional 1 ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8">
-            <div class="relative overflow-hidden aspect-[3/4]">
-              <img
-                src="/images/ana.png"
-                alt="Elena Ruiz Molina — Directora y Psicóloga Sanitaria en La Seda Granada"
-                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+          <!-- ── Ana Jiménez ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col sm:flex-row border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#71B1A5]/8">
+
+            <!-- Imagen — below the fold → loading lazy -->
+            <div class="relative overflow-hidden sm:w-52 lg:w-60 shrink-0 aspect-[3/4] sm:aspect-auto">
+              <NuxtImg
+                src="/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg"
+                alt="Ana Jiménez — Psicóloga colegiada, terapeuta Gestalt y Co-directora del Centro La Seda Granada, especializada en infancia, adolescencia y familia"
+                format="webp"
                 loading="lazy"
+                class="w-full h-full object-cover object-top grayscale-[15%] group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/40 via-transparent to-transparent sm:bg-gradient-to-r sm:from-transparent sm:via-transparent sm:to-[#FDFBF9]/20" />
               <div class="absolute top-4 left-4 bg-[#71B1A5] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
-                Dirección
+                Co-dirección
               </div>
             </div>
-            <div class="p-6 flex flex-col flex-1 gap-3">
-              <div class="w-6 h-px bg-[#71B1A5]" />
-              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
-                Ana Jimenez
-              </h3>
-              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
-                Psicóloga Sanitaria · Directora
-              </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
-                Especialista en trauma complejo y terapia EMDR. Más de 15 años acompañando
-                procesos terapéuticos en adultos. Formadora acreditada en mindfulness clínico.
-              </p>
-              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-                <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
-                  COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-04821</strong>
-                </span>
+
+            <!-- Contenido -->
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div>
+                <div class="w-6 h-px bg-[#71B1A5] mb-4" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl leading-tight mb-1">
+                  Ana Jiménez
+                </h3>
+                <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
+                  Psicóloga · Co-directora de La Seda
+                </p>
               </div>
-              <NuxtLink to="/terapias" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
-                Ver especialidad
-              </NuxtLink>
+
+              <p class="text-[#27252B]/65 text-sm leading-[1.85] font-light flex-1">
+                Psicóloga colegiada y terapeuta Gestalt, miembro didacta de la Asociación Española
+                de Terapia Gestalt. Formada en Psicoterapia Clínica Integrativa con Juanjo Albert,
+                sistémica y constelaciones familiares. Formada en el Programa SAT de Claudio Naranjo.
+                Especializada en el trabajo con niños, adolescentes y familias.
+              </p>
+
+              <div class="space-y-2 pt-2 border-t border-[#27252B]/8">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                  <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
+                    Colegiada <strong class="text-[#27252B]/60 font-medium">Nº AO06843</strong>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <NuxtLink
+                    to="https://anajimenezpsicologa.es/"
+                    external
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                  >
+                    Ver especialidad
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
           </article>
 
-          <!-- ── Profesional 2 ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-8 lg:mt-8">
-            <div class="relative overflow-hidden aspect-[3/4]">
-              <img
-                src="/images/leonor.png"
-                alt="Pablo Serrano Vega — Psicólogo Especialista Infanto-Juvenil en Granada"
-                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+          <!-- ── Leonor Cabrera ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col sm:flex-row border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-10 lg:mt-12">
+
+            <div class="relative overflow-hidden sm:w-52 lg:w-60 shrink-0 aspect-[3/4] sm:aspect-auto">
+              <NuxtImg
+                src="/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg"
+                alt="Leonor Cabrera — Coach Profesional Certificada Asesco, especialista en método Wingwave y Co-directora del Centro La Seda Granada"
+                format="webp"
                 loading="lazy"
+                class="w-full h-full object-cover object-top grayscale-[15%] group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/40 via-transparent to-transparent sm:bg-gradient-to-r sm:from-transparent sm:via-transparent sm:to-[#FDFBF9]/20" />
               <div class="absolute top-4 left-4 bg-[#27252B] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
-                Infanto-Juvenil
+                Co-dirección
               </div>
             </div>
-            <div class="p-6 flex flex-col flex-1 gap-3">
-              <div class="w-6 h-px bg-[#71B1A5]" />
-              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
-                Leonor Cabrera
-              </h3>
-              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
-                Especialista Infanto-Juvenil
-              </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
-                Psicólogo clínico especializado en niños, adolescentes y familias. Experto en
-                TDAH, ansiedad escolar y dificultades del neurodesarrollo. Colaborador habitual
-                con centros educativos de Granada.
-              </p>
-              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-                <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
-                  COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-07154</strong>
-                </span>
+
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div>
+                <div class="w-6 h-px bg-[#71B1A5] mb-4" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl leading-tight mb-1">
+                  Leonor Cabrera
+                </h3>
+                <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
+                  Coach · Co-directora de La Seda
+                </p>
               </div>
-              <NuxtLink to="/terapias" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
-                Ver especialidad
-              </NuxtLink>
+
+              <p class="text-[#27252B]/65 text-sm leading-[1.85] font-light flex-1">
+                Coach Profesional Certificada (Asesco Nº 10.457). Especializada en fuerza interior
+                y bloqueos emocionales a través del método Wingwave®, del que es co-formadora
+                acreditada por el Instituto Besser-Siegmund de Hamburgo. Colaboradora del Programa
+                SAT de Claudio Naranjo. Formada en Gestalt, Bioenergética, PNL, coaching y
+                constelaciones familiares. Licenciada en Periodismo.
+              </p>
+
+              <div class="space-y-2 pt-2 border-t border-[#27252B]/8">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                  <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
+                    Asesco <strong class="text-[#27252B]/60 font-medium">Nº 10.457</strong>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <NuxtLink
+                    to="https://leonorcabrera.com/"
+                    external
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                  >
+                    Ver especialidad
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
           </article>
 
-          <!-- ── Profesional 3 ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8">
-            <div class="relative overflow-hidden aspect-[3/4]">
-              <img
-                src="/images/cristina.png"
-                alt="Lucía Montero Alarcón — Psicóloga Especialista en Terapia de Pareja Granada"
-                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+          <!-- ── Cristina Lence ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col sm:flex-row border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#71B1A5]/8">
+
+            <div class="relative overflow-hidden sm:w-52 lg:w-60 shrink-0 aspect-[3/4] sm:aspect-auto">
+              <NuxtImg
+                src="/images/cristina-lence-educadora-familiar-gestalt-sistemica-granada.jpg"
+                alt="Cristina Lence — Educadora Social, especialista en Gestalt y Sistémica aplicadas a infancia, adolescencia y familias en Granada"
+                format="webp"
                 loading="lazy"
+                class="w-full h-full object-cover object-top grayscale-[15%] group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/40 via-transparent to-transparent sm:bg-gradient-to-r sm:from-transparent sm:via-transparent sm:to-[#FDFBF9]/20" />
               <div class="absolute top-4 left-4 bg-[#71B1A5] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
-                Parejas
+                Educación Familiar
               </div>
             </div>
-            <div class="p-6 flex flex-col flex-1 gap-3">
-              <div class="w-6 h-px bg-[#71B1A5]" />
-              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
-                Cristina Lence
-              </h3>
-              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
-                Terapia de Pareja y Familia
-              </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
-                Especialista en terapia sistémica y de pareja. Facilitadora certificada de
-                Constelaciones Familiares. Combina el enfoque narrativo con técnicas de
-                regulación emocional para familias en conflicto.
-              </p>
-              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-                <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
-                  COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-09307</strong>
-                </span>
+
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div>
+                <div class="w-6 h-px bg-[#71B1A5] mb-4" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl leading-tight mb-1">
+                  Cristina Lence
+                </h3>
+                <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
+                  Educadora Familiar
+                </p>
               </div>
-              <NuxtLink to="/talleres" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
-                Ver especialidad
-              </NuxtLink>
+
+              <p class="text-[#27252B]/65 text-sm leading-[1.85] font-light flex-1">
+                Educadora Social con formación en Gestalt y Sistémica. Formada en Técnicas
+                Gestálticas aplicadas a la infancia y a la adolescencia con la ITG de Valencia
+                y en el Programa SAT de Claudio Naranjo. Especializada en el trabajo con
+                niños y niñas, adolescentes y familias.
+              </p>
+
+              <div class="space-y-2 pt-2 border-t border-[#27252B]/8">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                  <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
+                    Educadora Social · Gestalt y Sistémica
+                  </span>
+                </div>
+                <NuxtLink
+                  to="https://aetg.es/users/cristina-lence-dopico"
+                  external
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                >
+                  Ver especialidad
+                </NuxtLink>
+              </div>
             </div>
           </article>
 
-          <!-- ── Profesional 4 ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-8 lg:mt-8">
-            <div class="relative overflow-hidden aspect-[3/4]">
-              <img
-                src="/images/reyes.png"
-                alt="Andrés Quesada Torres — Psicólogo Formador y Supervisor Clínico en Granada"
-                class="w-full h-full object-cover object-top grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+          <!-- ── Reyes Sánchez Tallón ── -->
+          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col sm:flex-row border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#71B1A5]/8 sm:mt-10 lg:mt-12">
+
+            <div class="relative overflow-hidden sm:w-52 lg:w-60 shrink-0 aspect-[3/4] sm:aspect-auto">
+              <NuxtImg
+                src="/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg"
+                alt="Reyes Sánchez Tallón — Médica Pediatra colegiada, formada en terapia Gestalt, Terapia Corporal Integrativa y Sistémica en el Centro La Seda Granada"
+                format="webp"
                 loading="lazy"
+                class="w-full h-full object-cover object-top grayscale-[15%] group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#FDFBF9] via-[#FDFBF9]/40 to-transparent" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/40 via-transparent to-transparent sm:bg-gradient-to-r sm:from-transparent sm:via-transparent sm:to-[#FDFBF9]/20" />
               <div class="absolute top-4 left-4 bg-[#27252B] text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium">
-                Formación
+                Medicina
               </div>
             </div>
-            <div class="p-6 flex flex-col flex-1 gap-3">
-              <div class="w-6 h-px bg-[#71B1A5]" />
-              <h3 class="font-serif italic text-[#27252B] text-xl leading-tight">
-                Reyes Sánchez Tallón
-              </h3>
-              <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
-                Formador y Supervisor Clínico
-              </p>
-              <p class="text-[#27252B]/55 text-xs leading-relaxed font-light flex-1">
-                Psicólogo clínico y docente universitario. Responsable del área de formaciones
-                para profesionales. Especializado en psicología humanista y supervisión grupal
-                de casos.
-              </p>
-              <div class="flex items-center gap-2 py-3 border-y border-[#27252B]/8">
-                <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-                <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
-                  COP Andalucía · <strong class="text-[#27252B]/60 font-medium">Nº AN-05639</strong>
-                </span>
+
+            <div class="p-7 flex flex-col flex-1 gap-4">
+              <div>
+                <div class="w-6 h-px bg-[#71B1A5] mb-4" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl leading-tight mb-1">
+                  Reyes Sánchez Tallón
+                </h3>
+                <p class="text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium">
+                  Médica Pediatra
+                </p>
               </div>
-              <NuxtLink to="/formaciones" class="self-start text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200">
-                Ver especialidad
-              </NuxtLink>
+
+              <p class="text-[#27252B]/65 text-sm leading-[1.85] font-light flex-1">
+                Médica pediatra colegiada. Formada en terapia Gestalt, Terapia Corporal Integrativa
+                con el equipo Antonio Pacheco, y en psicología de los eneatipos y Bioenergética con
+                Fernando de Juan. Actualmente en formación en el Programa SAT de Claudio Naranjo
+                y en terapia sistémica en Psicogestalt de Madrid.
+              </p>
+
+              <div class="space-y-2 pt-2 border-t border-[#27252B]/8">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                  <span class="text-[10px] text-[#27252B]/40 font-light tracking-wider">
+                    Colegiada <strong class="text-[#27252B]/60 font-medium">Nº 18-10008273</strong>
+                  </span>
+                </div>
+                <NuxtLink
+                  to="https://aetg.es/users/reyes-sanchez-tallon"
+                  external
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                >
+                  Ver especialidad
+                </NuxtLink>
+              </div>
             </div>
           </article>
 
         </div>
 
-        <p class="mt-10 text-center text-xs text-[#27252B]/35 font-light tracking-wider">
-          Todos los profesionales están colegiados por el
-          <strong class="text-[#27252B]/50 font-medium">Colegio Oficial de Psicólogos de Andalucía Oriental</strong>
+        <p class="mt-12 text-center text-xs text-[#27252B]/35 font-light tracking-wider">
+          Todos los profesionales están colegiados o acreditados en sus respectivas especialidades
           y sujetos al código deontológico de la profesión.
         </p>
 
@@ -491,8 +572,8 @@ useHead({
             position: 1,
             item: {
               '@type': 'Person',
-              name: 'Elena Ruiz Molina',
-              jobTitle: 'Psicóloga Sanitaria · Directora',
+              name: 'Ana Jiménez',
+              jobTitle: 'Psicóloga Sanitaria · Co-directora',
               worksFor: { '@type': 'Organization', name: 'La Seda · Psicología y Crecimiento en Granada' },
             },
           },
@@ -501,8 +582,8 @@ useHead({
             position: 2,
             item: {
               '@type': 'Person',
-              name: 'Pablo Serrano Vega',
-              jobTitle: 'Especialista Infanto-Juvenil',
+              name: 'Leonor Cabrera',
+              jobTitle: 'Coach Profesional Certificada · Co-directora',
               worksFor: { '@type': 'Organization', name: 'La Seda · Psicología y Crecimiento en Granada' },
             },
           },
@@ -511,8 +592,8 @@ useHead({
             position: 3,
             item: {
               '@type': 'Person',
-              name: 'Lucía Montero Alarcón',
-              jobTitle: 'Terapia de Pareja y Familia',
+              name: 'Cristina Lence',
+              jobTitle: 'Educadora Familiar · Gestalt y Sistémica',
               worksFor: { '@type': 'Organization', name: 'La Seda · Psicología y Crecimiento en Granada' },
             },
           },
@@ -521,8 +602,8 @@ useHead({
             position: 4,
             item: {
               '@type': 'Person',
-              name: 'Andrés Quesada Torres',
-              jobTitle: 'Formador y Supervisor Clínico',
+              name: 'Reyes Sánchez Tallón',
+              jobTitle: 'Médica Pediatra',
               worksFor: { '@type': 'Organization', name: 'La Seda · Psicología y Crecimiento en Granada' },
             },
           },

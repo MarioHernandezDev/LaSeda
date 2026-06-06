@@ -1,0 +1,295 @@
+/* ============================================================
+   main.css — La Seda · Estilos Globales
+   Añadir al archivo CSS global de Nuxt (assets/css/main.css)
+   e importar en nuxt.config.ts → css: ['~/assets/css/main.css']
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────
+   @layer base
+   Estilos de etiquetas HTML puras. Estos estilos evitan que
+   cada página/componente tenga que redefinir el fondo,
+   color de texto, fuente base y el overflow del eje X,
+   eliminando flashes visuales durante las transiciones SPA.
+   ────────────────────────────────────────────────────────── */
+@layer base {
+
+  /* Raíz del documento */
+  html {
+    @apply scroll-smooth;
+    /* Evita overflow horizontal en toda la app sin tener
+       que ponerlo en cada <main> o <header> */
+    overflow-x: hidden;
+  }
+
+  /* Body: fuente, color de texto y fondo global.
+     Al definirlos aquí se heredan en TODAS las páginas sin
+     necesidad de repetir font-sans, text-[#27252B] y
+     bg-[#FDFBF9] en cada <main>. */
+  body {
+    @apply font-sans bg-[#FDFBF9] text-[#27252B];
+    /* Suaviza el renderizado de fuentes en macOS / iOS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Tipografía base — escala consistente en toda la app */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif leading-tight;
+  }
+
+  /* Párrafos con interlineado cómodo por defecto */
+  p {
+    @apply leading-relaxed;
+  }
+
+  /* Enlaces base sin subrayado (los estilos específicos van
+     en los componentes con clases utilitarias) */
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  /* Focus visible accesible — respeta el color de marca */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-[#71B1A5];
+  }
+
+  /* Imágenes responsive por defecto */
+  img, video {
+    @apply max-w-full;
+  }
+
+  /* Clase de utilidad accesible para ocultar contenido
+     visualmente pero mantenerlo para lectores de pantalla.
+     Uso: class="sr-only" (ya incluida en Tailwind, pero
+     se documenta aquí para claridad) */
+}
+
+/* ──────────────────────────────────────────────────────────
+   @layer components
+   Componentes reutilizables extraídos de clases repetidas
+   en múltiples páginas/secciones.
+   ────────────────────────────────────────────────────────── */
+@layer components {
+
+  /* ── Etiqueta de sección (eyebrow label) ──
+     Uso: <span class="section-label">Nuestros Servicios</span>
+     Reemplaza: text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium
+     repetido en cada sección */
+  .section-label {
+    @apply text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium;
+  }
+
+  /* ── Separador decorativo de sección ──
+     Reemplaza el patrón div.w-6.h-px.bg-[#71B1A5] repetido
+     junto a cada .section-label.
+     Uso: <div class="section-divider"></div> */
+  .section-divider {
+    @apply w-6 h-px bg-[#71B1A5];
+  }
+
+  /* ── Título de sección H2 — variante serif ligera ──
+     Reemplaza: font-serif italic font-light text-[2rem]
+     md:text-[2.6rem] leading-[1.15]
+     repetido en Pilares, Sobre el Centro, Testimonios, etc. */
+  .section-title {
+    @apply font-serif italic font-light text-[2rem] md:text-[2.6rem] leading-[1.15];
+  }
+
+  /* ── Acento de color en títulos de sección ──
+     Reemplaza: not-italic font-normal text-[#71B1A5]
+     Uso: <span class="section-title-accent">bienestar integral</span> */
+  .section-title-accent {
+    @apply not-italic font-normal text-[#71B1A5];
+  }
+
+  /* ── Botón primario (fondo teal) ──
+     Reemplaza el bloque de clases del botón "Contacto"
+     y "Pedir Cita" repetido en hero y CTA final.
+     Uso: <NuxtLink class="btn-primary"> */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3
+           bg-[#71B1A5] text-white
+           px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold
+           transition-all duration-500
+           shadow-lg shadow-[#71B1A5]/25
+           hover:bg-[#5a9a8e]
+           hover:shadow-xl hover:shadow-[#71B1A5]/40
+           hover:-translate-y-0.5;
+  }
+
+  /* ── Botón secundario (borde) ──
+     Reemplaza el patrón border + hover repetido.
+     Uso: <NuxtLink class="btn-secondary"> */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-3
+           border border-[#27252B]/40
+           px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold
+           hover:border-[#71B1A5] hover:text-[#71B1A5]
+           transition-all duration-500
+           hover:-translate-y-0.5
+           backdrop-blur-sm bg-white/40;
+  }
+
+  /* ── Tag / Badge de servicio ──
+     Reemplaza: text-xs tracking-[0.2em] uppercase
+     bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium
+     Uso: <span class="service-tag">Adultos</span> */
+  .service-tag {
+    @apply text-xs tracking-[0.2em] uppercase
+           bg-[#71B1A5]/10 text-[#71B1A5]
+           px-3 py-1.5 font-medium;
+  }
+
+  /* ── Contenedor de página estándar ──
+     Reemplaza: max-w-7xl mx-auto px-8 md:px-16
+     Uso: <div class="page-container"> */
+  .page-container {
+    @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-16;
+  }
+
+  /* ── Wrapper de icono en bloques de contacto ──
+     Reemplaza: w-11 h-11 bg-[#71B1A5]/12 flex items-center justify-center flex-shrink-0
+     repetido en cada fila de dirección, teléfono, email y horario.
+     Uso: <div class="contact-icon-wrap"> */
+  .contact-icon-wrap {
+    @apply w-11 h-11 bg-[#71B1A5]/10 flex items-center justify-center flex-shrink-0 mt-0.5;
+  }
+
+  /* ── Etiqueta de ítem de contacto (h3 interior) ──
+     Reemplaza: text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase
+     repetido en Dirección, Teléfono, Email, Horario.
+     Uso: <h3 class="contact-item-label"> */
+  .contact-item-label {
+    @apply text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase mb-2;
+  }
+
+  /* ── Botón de WhatsApp ──
+     Reemplaza el bloque inline del enlace de WhatsApp.
+     Uso: <a class="whatsapp-btn"> */
+  .whatsapp-btn {
+    @apply inline-flex items-center gap-2.5
+           bg-[#25D366]/10 text-[#128C4E]
+           border border-[#25D366]/25
+           px-4 py-2.5
+           text-xs tracking-[0.12em] uppercase font-medium
+           hover:bg-[#25D366]/20 hover:border-[#25D366]/50
+           transition-all duration-300;
+  }
+
+  /* ── Botón de icono para redes sociales ──
+     Reemplaza: w-9 h-9 border border-[#27252B]/15 flex items-center justify-center
+     text-[#27252B]/40 hover:border-[#71B1A5] hover:text-[#71B1A5]
+     repetido por cada red social.
+     Uso: <a class="social-icon-btn"> */
+  .social-icon-btn {
+    @apply w-9 h-9 border border-[#27252B]/15
+           flex items-center justify-center
+           text-[#27252B]/40
+           hover:border-[#71B1A5] hover:text-[#71B1A5]
+           transition-all duration-300;
+  }
+
+  /* ── Wrapper de campo de formulario ──
+     Reemplaza: div.space-y-2 repetido en cada campo.
+     Uso: <div class="form-field"> */
+  .form-field {
+    @apply space-y-2;
+  }
+
+  /* ── Label de formulario ──
+     Reemplaza: block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase
+     repetido en todos los labels del form.
+     Uso: <label class="form-label"> */
+  .form-label {
+    @apply block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase;
+  }
+
+  /* ── Input / Select / Textarea de formulario ──
+     Reemplaza la cadena larga repetida en todos los campos.
+     Uso: <input class="input-field">, <select class="input-field">, <textarea class="input-field"> */
+  .input-field {
+    @apply w-full border border-[#27252B]/15 bg-[#FDFBF9]
+           px-5 py-3.5 text-sm text-[#27252B]
+           placeholder-[#27252B]/30 font-light
+           focus:outline-none focus:border-[#71B1A5]
+           transition-colors duration-300;
+  }
+
+  /* ── Mensaje de error de campo de formulario ──
+     Uso: <p class="form-error" role="alert"> */
+  .form-error {
+    @apply text-xs text-red-500 font-light mt-1;
+  }
+
+  /* ── Tarjeta de miembro del equipo ──
+     Reemplaza: group bg-[#FDFBF9] rounded-none overflow-hidden
+     flex flex-col sm:flex-row border border-[#27252B]/8
+     hover:border-[#71B1A5]/50 transition-all duration-500
+     hover:shadow-xl hover:shadow-[#71B1A5]/8
+     repetido en las 4 tarjetas del equipo.
+     Uso: <article class="team-card group"> */
+  .team-card {
+    @apply bg-[#FDFBF9] overflow-hidden
+          flex flex-col sm:flex-row
+          border border-[#27252B]/10
+          hover:border-[#71B1A5]/50
+          transition-all duration-500
+          hover:shadow-xl hover:shadow-[#71B1A5]/5;
+  }
+
+  /* ── Badge de rol en tarjeta de equipo ──
+     Reemplaza: absolute top-4 left-4 text-white text-[10px]
+     tracking-[0.2em] uppercase px-3 py-1.5 font-medium
+     (el color de fondo se pasa como clase utilitaria: bg-[#71B1A5] o bg-[#27252B])
+     Uso: <div class="team-card-badge bg-[#71B1A5]"> */
+  .team-card-badge {
+    @apply absolute top-4 left-4
+           text-white text-[10px] tracking-[0.2em] uppercase
+           px-3 py-1.5 font-medium;
+  }
+
+  /* ── Rol / subtítulo del miembro del equipo ──
+     Reemplaza: text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium
+     Uso: <p class="team-card-role"> */
+  .team-card-role {
+    @apply text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium;
+  }
+
+  /* ── Enlace "Ver especialidad" en tarjeta de equipo ──
+     Reemplaza: text-xs tracking-[0.18em] uppercase text-[#27252B]
+     border-b border-[#27252B]/30 pb-0.5
+     hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200
+     Uso: <a class="team-card-link"> */
+  .team-card-link {
+    @apply text-xs tracking-[0.18em] uppercase
+           text-[#27252B] border-b border-[#27252B]/30 pb-0.5
+           hover:border-[#71B1A5] hover:text-[#71B1A5]
+           transition-colors duration-200;
+  }
+
+  /* ── Tarjeta de formación / curso ──
+     Reemplaza el patrón de article con borde, overflow y hover
+     repetido en las tarjetas de Gestalt Infantil y Wingwave.
+     Uso: <article class="training-card group"> */
+  .training-card {
+    @apply bg-[#FDFBF9] overflow-hidden
+           flex flex-col
+           border border-[#27252B]/10
+           hover:border-[#71B1A5]/50
+           transition-colors duration-300;
+  }
+
+  /* ── Tag de formación / badge de programa ──
+     Variante de .service-tag con tamaño reducido para las
+     tarjetas de formación y la agenda de convocatorias.
+     Uso: <span class="training-tag"> */
+  .training-tag {
+    @apply text-[10px] tracking-[0.2em] uppercase
+           bg-[#71B1A5]/10 text-[#71B1A5]
+           px-2.5 py-1 font-medium;
+  }
+}

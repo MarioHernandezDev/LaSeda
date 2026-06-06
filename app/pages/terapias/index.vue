@@ -1,50 +1,64 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Psicoterapia y Especialidades Clínicas en Granada | Centro La Seda',
+  ogTitle: 'Psicoterapia y Especialidades Clínicas en Granada | Centro La Seda',
+  description: 'Terapia individual, infantil, de pareja, adolescentes y grupal en Granada. Enfoque integrativo con EMDR, Gestalt y sistémica. Pide cita en Centro La Seda.',
+  ogDescription: 'Terapia individual, infantil, de pareja, adolescentes y grupal en Granada. Enfoque integrativo con EMDR, Gestalt y sistémica. Pide cita en Centro La Seda.',
+  ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://centrolaseda.com/terapias' }
+  ]
+})
+</script>
+
 <template>
-  <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
+  <main>
 
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
-    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-
+    <section
+      class="relative w-full"
+      style="height: clamp(45vh, 52vh, 55vh);"
+      aria-label="Cabecera — Especialidades Clínicas y Psicoterapia"
+    >
       <video
         class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
+        autoplay muted loop playsinline
         poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
+        aria-hidden="true"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <!-- Fallback above the fold → preload + fetchpriority high -->
         <NuxtImg
           src="/images/centro-psicologia-la-seda-granada-hero.jpg"
-          alt="Centro de Psicología La Seda Granada — procesos de psicoterapia y cuidado psicológico"
+          alt=""
+          width="1920"
+          height="1080"
           format="webp"
           preload
           fetchpriority="high"
           class="w-full h-full object-cover"
+          aria-hidden="true"
         />
       </video>
 
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" aria-hidden="true" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" aria-hidden="true" />
 
-      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-
-        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
-          Especialidades Clínicas
-        </p>
-
+      <div class="relative z-10 flex flex-col justify-center h-full page-container">
+        <p class="section-label mb-4 md:mb-6">Especialidades Clínicas</p>
         <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
           Procesos de Psicoterapia<br />
           <span class="text-[#27252B]/75">y Cuidado Psicológico</span>
         </h1>
-
         <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
           Acompañamos cada etapa vital desde un espacio de escucha activa,
           rigor clínico y profundo respeto por la singularidad de cada persona.
         </p>
-
       </div>
     </section>
 
@@ -52,15 +66,18 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
     ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+    <section
+      class="page-container py-20 md:py-28"
+      aria-labelledby="intro-heading"
+    >
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
 
         <div class="md:col-span-4 md:sticky md:top-28">
-          <div class="w-12 h-px bg-[#71B1A5] mb-6"></div>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+          <div class="section-divider mb-6" aria-hidden="true" />
+          <h2 id="intro-heading" class="section-title">
             Terapia integrativa adaptada a tu momento vital.
           </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30"></div>
+          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" aria-hidden="true" />
         </div>
 
         <div class="md:col-span-8 space-y-7">
@@ -79,7 +96,7 @@
             cada proceso de cambio.
           </p>
           <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]"></div>
+            <div class="w-2 h-2 bg-[#71B1A5]" aria-hidden="true" />
             <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
           </div>
         </div>
@@ -91,37 +108,39 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 3 · REJILLA DE TERAPIAS
     ════════════════════════════════════════════════ -->
-    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+    <section
+      class="bg-[#27252B]/[0.03] py-20 md:py-28"
+      aria-labelledby="especialidades-heading"
+    >
+      <div class="page-container">
 
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
           <div>
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
-              Nuestras Especialidades
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
+            <p class="section-label mb-3">Nuestras Especialidades</p>
+            <h2 id="especialidades-heading" class="section-title">
               Áreas de intervención
             </h2>
           </div>
-          <div class="w-24 h-px bg-[#27252B]/20 md:mb-2"></div>
+          <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" aria-hidden="true" />
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- ── Tarjeta 1: Terapia y Acompañamiento Adulto ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+          <!-- Tarjeta 1: Terapia Adulto -->
+          <article class="training-card group" aria-label="Especialidad: Terapia y Acompañamiento Adulto">
             <div class="overflow-hidden aspect-[4/3]">
-              <!-- Below the fold → loading lazy -->
               <NuxtImg
                 src="/images/terapia-acompanamiento-adulto-psicologia-granada-la-seda.jpg"
-                alt="Terapia individual y acompañamiento para adultos en el Centro de Psicología La Seda, Granada"
+                alt="Terapia individual y acompañamiento psicológico para adultos, Centro La Seda Granada"
+                width="640"
+                height="480"
                 format="webp"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
+              <div class="section-divider" aria-hidden="true" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Terapia y Acompañamiento Adulto
               </h3>
@@ -133,27 +152,29 @@
               </p>
               <NuxtLink
                 to="/terapias/adultos"
-                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                class="team-card-link self-start"
+                aria-label="Saber más sobre terapia y acompañamiento para adultos"
               >
                 Saber más
               </NuxtLink>
             </div>
           </article>
 
-          <!-- ── Tarjeta 2: Terapia Adolescentes ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+          <!-- Tarjeta 2: Terapia Adolescentes -->
+          <article class="training-card group" aria-label="Especialidad: Terapia Psicológica para Adolescentes">
             <div class="overflow-hidden aspect-[4/3]">
-              <!-- Below the fold → loading lazy -->
               <NuxtImg
                 src="/images/terapia-psicologica-adolescentes-granada-centro-la-seda.jpg"
-                alt="Terapia psicológica para adolescentes en Granada — Centro de Psicología La Seda"
+                alt="Terapia psicológica para adolescentes en Granada, Centro de Psicología La Seda"
+                width="640"
+                height="480"
                 format="webp"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
+              <div class="section-divider" aria-hidden="true" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Terapia Adolescentes
               </h3>
@@ -165,27 +186,29 @@
               </p>
               <NuxtLink
                 to="/terapias/adolescentes"
-                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                class="team-card-link self-start"
+                aria-label="Saber más sobre terapia psicológica para adolescentes"
               >
                 Saber más
               </NuxtLink>
             </div>
           </article>
 
-          <!-- ── Tarjeta 3: Terapia de Pareja y Familia ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+          <!-- Tarjeta 3: Terapia de Pareja y Familia -->
+          <article class="training-card group" aria-label="Especialidad: Terapia de Pareja y Familia">
             <div class="overflow-hidden aspect-[4/3]">
-              <!-- Below the fold → loading lazy -->
               <NuxtImg
                 src="/images/terapia-pareja-familia-sistemica-granada-centro-la-seda.jpg"
-                alt="Terapia de pareja y familia con enfoque sistémico en el Centro de Psicología La Seda, Granada"
+                alt="Terapia de pareja y familia con enfoque sistémico, Centro de Psicología La Seda Granada"
+                width="640"
+                height="480"
                 format="webp"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
+              <div class="section-divider" aria-hidden="true" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Terapia de Pareja y Familia
               </h3>
@@ -197,27 +220,29 @@
               </p>
               <NuxtLink
                 to="/terapias/pareja-familia"
-                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                class="team-card-link self-start"
+                aria-label="Saber más sobre terapia de pareja y familia sistémica"
               >
                 Saber más
               </NuxtLink>
             </div>
           </article>
 
-          <!-- ── Tarjeta 4: Terapia Infantil ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+          <!-- Tarjeta 4: Terapia Infantil -->
+          <article class="training-card group" aria-label="Especialidad: Terapia Infantil">
             <div class="overflow-hidden aspect-[4/3]">
-              <!-- Below the fold → loading lazy -->
               <NuxtImg
                 src="/images/terapia-infantil-psicologia-ninos-granada-centro-la-seda.jpg"
-                alt="Terapia infantil y psicología para niños en el Centro de Psicología La Seda, Granada"
+                alt="Terapia infantil y psicología para niños, Centro de Psicología La Seda Granada"
+                width="640"
+                height="480"
                 format="webp"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
+              <div class="section-divider" aria-hidden="true" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Terapia Infantil
               </h3>
@@ -229,27 +254,29 @@
               </p>
               <NuxtLink
                 to="/terapias/infantil"
-                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                class="team-card-link self-start"
+                aria-label="Saber más sobre terapia infantil y psicología para niños"
               >
                 Saber más
               </NuxtLink>
             </div>
           </article>
 
-          <!-- ── Tarjeta 5: Terapia Grupal ── -->
-          <article class="group bg-[#FDFBF9] rounded-none overflow-hidden flex flex-col border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-colors duration-300">
+          <!-- Tarjeta 5: Terapia Grupal -->
+          <article class="training-card group" aria-label="Especialidad: Terapia Grupal">
             <div class="overflow-hidden aspect-[4/3]">
-              <!-- Below the fold → loading lazy -->
               <NuxtImg
                 src="/images/terapia-grupal-psicologia-grupo-granada-centro-la-seda.jpg"
-                alt="Terapia grupal y psicología de grupo en el Centro de Psicología La Seda, Granada"
+                alt="Terapia grupal y psicología de grupo, Centro de Psicología La Seda Granada"
+                width="640"
+                height="480"
                 format="webp"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-none grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="w-6 h-px bg-[#71B1A5]"></div>
+              <div class="section-divider" aria-hidden="true" />
               <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
                 Terapia Grupal
               </h3>
@@ -261,16 +288,17 @@
               </p>
               <NuxtLink
                 to="/terapias/grupal"
-                class="self-start text-sm tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200"
+                class="team-card-link self-start"
+                aria-label="Saber más sobre terapia grupal en Granada"
               >
                 Saber más
               </NuxtLink>
             </div>
           </article>
 
-          <!-- ── Tarjeta decorativa CTA ── -->
-          <article class="bg-[#71B1A5] rounded-none flex flex-col justify-between p-7 min-h-[360px]">
-            <div class="w-6 h-px bg-[#FDFBF9]/60"></div>
+          <!-- Tarjeta CTA decorativa -->
+          <article class="bg-[#71B1A5] flex flex-col justify-between p-7 min-h-[360px]" aria-label="¿No encuentras lo que buscas? Contáctanos">
+            <div class="w-6 h-px bg-[#FDFBF9]/60" aria-hidden="true" />
             <div class="space-y-5">
               <h3 class="font-serif italic text-[#FDFBF9] text-2xl leading-snug">
                 ¿No encuentras lo que buscas?
@@ -282,13 +310,12 @@
               <NuxtLink
                 to="/contacto"
                 class="inline-block text-sm tracking-[0.18em] uppercase text-[#FDFBF9] border-b border-[#FDFBF9]/50 pb-0.5 hover:border-[#FDFBF9] transition-colors duration-200"
+                aria-label="Escríbenos para orientación sobre qué terapia elegir"
               >
                 Escríbenos
               </NuxtLink>
             </div>
-            <div class="text-[#FDFBF9]/20 font-serif italic text-7xl leading-none select-none text-right">
-              &amp;
-            </div>
+            <div class="text-[#FDFBF9]/20 font-serif italic text-7xl leading-none select-none text-right" aria-hidden="true">&amp;</div>
           </article>
 
         </div>
@@ -299,24 +326,28 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 4 · CÓMO TRABAJAMOS
     ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-32">
+    <section
+      class="page-container py-20 md:py-32"
+      aria-labelledby="metodologia-heading"
+    >
       <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-        <!-- Columna imagen con marco desfasado -->
+        <!-- Imagen con marco desfasado -->
         <div class="relative order-2 md:order-1">
-          <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0"></div>
+          <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0" aria-hidden="true" />
           <div class="relative z-10 overflow-hidden aspect-[3/4]">
-            <!-- Below the fold → loading lazy -->
             <NuxtImg
               src="/images/espacio-formacion-presencial-psicologia-la-seda-granada.jpg"
-              alt="Sesión terapéutica con psicóloga en el Centro de Psicología La Seda, Granada"
+              alt="Sesión de psicoterapia individual en el Centro de Psicología La Seda, Granada"
+              width="600"
+              height="800"
               format="webp"
               loading="lazy"
               class="w-full h-full object-cover"
             />
-            <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-[#27252B]/5 pointer-events-none" aria-hidden="true" />
           </div>
-          <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block">
+          <div class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block" aria-hidden="true">
             <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5]">Centro de Psicología</p>
             <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
           </div>
@@ -324,18 +355,16 @@
 
         <!-- Columna de contenido -->
         <div class="order-1 md:order-2">
-          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
-            Metodología
-          </p>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-12">
+          <p class="section-label mb-4">Metodología</p>
+          <h2 id="metodologia-heading" class="section-title mb-12">
             Cómo trabajamos<br />
             <span class="text-[#27252B]/60">en La Seda</span>
           </h2>
 
-          <div class="space-y-10">
+          <ol class="space-y-10" aria-label="Pasos del proceso terapéutico">
 
-            <div class="flex gap-6 items-start">
-              <div class="shrink-0">
+            <li class="flex gap-6 items-start">
+              <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">01</span>
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
@@ -348,12 +377,14 @@
                   con total confidencialidad.
                 </p>
               </div>
-            </div>
+            </li>
 
-            <div class="w-full h-px bg-[#27252B]/8"></div>
+            <li>
+              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
+            </li>
 
-            <div class="flex gap-6 items-start">
-              <div class="shrink-0">
+            <li class="flex gap-6 items-start">
+              <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">02</span>
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
@@ -366,12 +397,14 @@
                   tu proceso específico.
                 </p>
               </div>
-            </div>
+            </li>
 
-            <div class="w-full h-px bg-[#27252B]/8"></div>
+            <li>
+              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
+            </li>
 
-            <div class="flex gap-6 items-start">
-              <div class="shrink-0">
+            <li class="flex gap-6 items-start">
+              <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">03</span>
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
@@ -384,16 +417,20 @@
                   que deseas a tu propio ritmo.
                 </p>
               </div>
-            </div>
+            </li>
 
-          </div>
+          </ol>
 
           <div class="mt-12 pt-8 border-t border-[#27252B]/10">
-            <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
+            <NuxtLink
+              to="/contacto"
+              class="inline-flex items-center gap-4 group"
+              aria-label="Ir a contacto para comenzar el proceso terapéutico"
+            >
               <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
                 Comenzar el proceso
               </span>
-              <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"></span>
+              <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
             </NuxtLink>
           </div>
         </div>

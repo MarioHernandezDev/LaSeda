@@ -20,7 +20,7 @@
               >
                 {{ link.label }}
                 <span
-                  class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+                  class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
                   :class="{ 'scale-x-100': $route.path === link.to }"
                 ></span>
               </NuxtLink>
@@ -50,7 +50,7 @@
                 >
                   {{ link.label }}
                   <span
-                    class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"
+                    class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
                     :class="{ 'scale-x-100': $route.path === link.to }"
                   ></span>
                 </NuxtLink>
@@ -59,21 +59,21 @@
 
             <NuxtLink
               to="/contacto"
-              class="inline-flex items-center justify-center bg-[#71B1A5] text-white text-[10px] tracking-[0.22em] uppercase font-semibold px-6 py-2.5 rounded-full hover:bg-[#5a9a8e] transition-all duration-300 shadow-sm shadow-[#71B1A5]/10 hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap"
+              class="inline-flex items-center justify-center bg-[#71B1A5] text-white text-[10px] tracking-[0.22em] uppercase font-bold px-6 py-2.5 rounded-full hover:bg-[#5a9a8e] transition-all duration-500 shadow-lg shadow-[#71B1A5]/10 hover:shadow-xl hover:shadow-[#71B1A5]/30 hover:-translate-y-0.5 whitespace-nowrap"
             >
               Contacto
             </NuxtLink>
           </div>
 
           <button
-            class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full border border-[#27252B]/5 bg-[#FDFBF9]/40 backdrop-blur-sm ml-auto gap-1.5 transition-colors duration-300 active:bg-stone-100 focus:outline-none"
+            class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full border border-[#27252B]/5 bg-[#FDFBF9]/60 backdrop-blur-sm ml-auto gap-1.5 transition-all duration-300 active:scale-95 focus:outline-none z-50 relative"
             @click="mobileMenuOpen = !mobileMenuOpen"
             :aria-expanded="mobileMenuOpen"
             aria-label="Abrir menú de navegación"
           >
             <span
               class="block w-5 h-px bg-[#27252B] transition-all duration-300 origin-center"
-              :class="mobileMenuOpen ? 'rotate-45 translate-y-[6.5px]' : ''"
+              :class="mobileMenuOpen ? 'rotate-45 translate-y-[5px] !bg-[#27252B]' : ''"
             ></span>
             <span
               class="block w-3 h-px bg-[#27252B] transition-all duration-300"
@@ -81,56 +81,88 @@
             ></span>
             <span
               class="block w-5 h-px bg-[#27252B] transition-all duration-300 origin-center"
-              :class="mobileMenuOpen ? '-rotate-45 -translate-y-[4.5px]' : ''"
+              :class="mobileMenuOpen ? '-rotate-45 -translate-y-[3px] !bg-[#27252B]' : ''"
             ></span>
           </button>
 
         </nav>
       </div>
+    </header>
 
-      <Transition
-        enter-active-class="transition-all duration-300 ease-out"
-        enter-from-class="opacity-0 -translate-y-4 scale-95"
-        enter-to-class="opacity-100 translate-y-0 scale-100"
-        leave-active-class="transition-all duration-200 ease-in"
-        leave-from-class="opacity-100 translate-y-0 scale-100"
-        leave-to-class="opacity-0 -translate-y-4 scale-95"
+    <Transition
+      enter-active-class="transition-all duration-500 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-all duration-400 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
+    >
+      <div
+        v-if="mobileMenuOpen"
+        class="md:hidden fixed inset-0 w-screen h-screen bg-[#FDFBF9] z-40 flex flex-col justify-between px-8 pt-32 pb-12 overflow-y-auto"
       >
-        <div
-          v-if="mobileMenuOpen"
-          class="md:hidden mx-6 mt-3 bg-[#FDFBF9]/95 backdrop-blur-lg rounded-2xl border border-[#27252B]/8 shadow-2xl overflow-hidden"
-        >
-          <nav aria-label="Navegación móvil" class="px-6 py-6 flex flex-col gap-1.5">
+        <div class="w-full flex justify-center items-center opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] delay-100">
+          <NuxtImg
+            src="/images/logo-centro-la-seda-psicologia-granada.png"
+            alt="Logo Centro La Seda"
+            format="webp"
+            class="h-10 w-auto"
+          />
+        </div>
+
+        <nav aria-label="Navegación móvil" class="flex flex-col items-center justify-center space-y-7 my-auto">
+          
+          <div class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards] [animation-delay:150ms]">
             <NuxtLink
-              v-for="link in navLinks"
-              :key="link.to"
+              to="/"
+              class="text-sm tracking-[0.35em] uppercase font-semibold text-[#27252B]/60 hover:text-[#27252B] transition-colors duration-300"
+              :class="{ 'text-[#71B1A5] font-bold': $route.path === '/' }"
+              @click="mobileMenuOpen = false"
+            >
+              Inicio
+            </NuxtLink>
+          </div>
+
+          <div 
+            v-for="(link, index) in navLinks" 
+            :key="link.to"
+            class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]"
+            :style="{ 'animation-delay': `${200 + (index * 60)}ms` }"
+          >
+            <NuxtLink
               :to="link.to"
-              class="flex items-center justify-between px-4 py-4 text-xs tracking-[0.18em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] hover:bg-stone-100/50 rounded-xl transition-all duration-200"
-              :class="{ 'text-[#71B1A5] bg-[#71B1A5]/5 font-bold': $route.path === link.to }"
+              class="text-sm tracking-[0.35em] uppercase font-semibold text-[#27252B]/60 hover:text-[#27252B] transition-colors duration-300 relative group block text-center"
+              :class="{ 'text-[#71B1A5] font-bold': $route.path === link.to }"
               :aria-current="$route.path === link.to ? 'page' : undefined"
               @click="mobileMenuOpen = false"
             >
               {{ link.label }}
-              <svg class="w-4 h-4 text-[#71B1A5]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
-              </svg>
+              <span 
+                class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#71B1A5] opacity-0 transition-opacity duration-300"
+                :class="{ 'opacity-100': $route.path === link.to }"
+              ></span>
             </NuxtLink>
+          </div>
+        </nav>
 
-            <NuxtLink
-              to="/contacto"
-              class="mt-4 inline-flex items-center justify-center gap-2 bg-[#71B1A5] text-white text-xs tracking-[0.2em] uppercase font-semibold px-6 py-4 rounded-xl hover:bg-[#5a9a8e] transition-all duration-300 shadow-md shadow-[#71B1A5]/15 active:scale-[0.98]"
-              @click="mobileMenuOpen = false"
-            >
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-              </svg>
-              Contacto
-            </NuxtLink>
-          </nav>
+        <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-5 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] [animation-delay:450ms]">
+          <NuxtLink
+            to="/contacto"
+            class="w-full inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white text-xs tracking-[0.25em] uppercase font-bold py-4 rounded-full hover:bg-[#5a9a8e] transition-all duration-300 shadow-xl shadow-[#71B1A5]/15 active:scale-[0.98]"
+            @click="mobileMenuOpen = false"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contacto
+          </NuxtLink>
+
+          <p class="text-[9px] tracking-[0.2em] uppercase text-[#27252B]/40 text-center font-light">
+            Centro de Psicología La Seda
+          </p>
         </div>
-      </Transition>
-    </header>
+      </div>
+    </Transition>
 
     <main class="flex-grow pt-24 md:pt-28">
       <slot />
@@ -184,7 +216,7 @@
 
             <p class="text-sm leading-relaxed max-w-xs font-light mb-8">
               Centro de Psicología y Crecimiento Personal en Granada. Un espacio
-              onde la ciencia se encuentra con la bondad.
+              donde la ciencia se encuentra con la bondad.
             </p>
 
             <div class="border-l border-[#71B1A5]/40 pl-4">
@@ -199,6 +231,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
+                aria-label="Instagram de Centro La Seda"
               >
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
@@ -209,6 +242,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
+                aria-label="Facebook de Centro La Seda"
               >
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M9 8H7v3h2v9h4v-9h3l.5-3H13V6c0-.5.5-1 1-1h2V1H13a5 5 0 00-5 5v2z"/>
@@ -296,11 +330,11 @@
             <NuxtLink to="/aviso-legal" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
               Aviso Legal
             </NuxtLink>
-            <span class="w-px h-3 bg-white/10"></span>
+            <span class="w-px h-3 bg-white/10" aria-hidden="true"></span>
             <NuxtLink to="/privacidad" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
               Política de Privacidad
             </NuxtLink>
-            <span class="w-px h-3 bg-white/10"></span>
+            <span class="w-px h-3 bg-white/10" aria-hidden="true"></span>
             <NuxtLink to="/cookies" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
               Cookies
             </NuxtLink>
@@ -314,7 +348,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+// CORREGIDO: Se añade 'watch' a la importación de Vue
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 
 // ── Estado del menú móvil
 const mobileMenuOpen = ref(false)
@@ -364,17 +399,44 @@ const footerNavLinks = [
   { label: 'Conócenos',            to: '/conocenos'   },
   { label: 'Contacto',             to: '/contacto'    },
 ]
+
+// Bloquear scroll del body al abrir el menú móvil
+watch(mobileMenuOpen, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+})
 </script>
 
 <style>
-/* ── Ocultar cursor predeterminado del sistema en PC ── */
+/* ── Ocultar cursor predeterminado solo en elementos clickables reales ── */
 @media (min-width: 1024px) {
   body, 
   a, 
   button, 
-  [role="button"],
-  .group {
+  input,
+  textarea,
+  [role="button"] {
     cursor: none !important;
+  }
+}
+
+/* ── Animaciones nativas para el Menú Desplegable Móvil ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

@@ -19,7 +19,15 @@ export default defineNuxtConfig({
       content: [
         "./app/**/*.{vue,js,ts,jsx,tsx}",
         "./app.vue"
-      ]
+      ],
+      // 🌟 AQUÍ AÑADIMOS LA FUENTE MOFIWE:
+      theme: {
+        extend: {
+          fontFamily: {
+            'mofiwe': ['Mofiwe', 'monospace'],
+          },
+        },
+      },
     }
   },
   

@@ -3,10 +3,19 @@
    Añadir al archivo CSS global de Nuxt (assets/css/main.css)
    e importar en nuxt.config.ts → css: ['~/assets/css/main.css']
    ============================================================ */
+@font-face {
+  font-family: 'Mofiwe';
+  src: url('@/assets/fonts/Mofiwe-Regular.ttf') format('truetype'),
+       url('@/assets/fonts/Mofiwe-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* ──────────────────────────────────────────────────────────
    @layer base
@@ -20,18 +29,12 @@
   /* Raíz del documento */
   html {
     @apply scroll-smooth;
-    /* Evita overflow horizontal en toda la app sin tener
-       que ponerlo en cada <main> o <header> */
     overflow-x: hidden;
   }
 
-  /* Body: fuente, color de texto y fondo global.
-     Al definirlos aquí se heredan en TODAS las páginas sin
-     necesidad de repetir font-sans, text-[#27252B] y
-     bg-[#FDFBF9] en cada <main>. */
+  /* Body: fuente, color de texto y fondo global */
   body {
     @apply font-sans bg-[#FDFBF9] text-[#27252B];
-    /* Suaviza el renderizado de fuentes en macOS / iOS */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -46,8 +49,7 @@
     @apply leading-relaxed;
   }
 
-  /* Enlaces base sin subrayado (los estilos específicos van
-     en los componentes con clases utilitarias) */
+  /* Enlaces base sin subrayado */
   a {
     @apply transition-colors duration-300;
   }
@@ -62,11 +64,11 @@
     @apply max-w-full;
   }
 
-  /* Clase de utilidad accesible para ocultar contenido
-     visualmente pero mantenerlo para lectores de pantalla.
-     Uso: class="sr-only" (ya incluida en Tailwind, pero
-     se documenta aquí para claridad) */
+  /* Fuentes tipográficas (alias Tailwind → Google Fonts) */
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
 }
+
 
 /* ──────────────────────────────────────────────────────────
    @layer components
@@ -75,41 +77,41 @@
    ────────────────────────────────────────────────────────── */
 @layer components {
 
-  /* ── Etiqueta de sección (eyebrow label) ──
-     Uso: <span class="section-label">Nuestros Servicios</span>
-     Reemplaza: text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium
-     repetido en cada sección */
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Tokens de sección y layout
+     ════════════════════════════════════════════════════════ */
+
+  /* Etiqueta de sección (eyebrow label) */
   .section-label {
     @apply text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium;
   }
 
-  /* ── Separador decorativo de sección ──
-     Reemplaza el patrón div.w-6.h-px.bg-[#71B1A5] repetido
-     junto a cada .section-label.
-     Uso: <div class="section-divider"></div> */
+  /* Separador decorativo de sección */
   .section-divider {
     @apply w-6 h-px bg-[#71B1A5];
   }
 
-  /* ── Título de sección H2 — variante serif ligera ──
-     Reemplaza: font-serif italic font-light text-[2rem]
-     md:text-[2.6rem] leading-[1.15]
-     repetido en Pilares, Sobre el Centro, Testimonios, etc. */
+  /* Título de sección H2 — variante serif ligera */
   .section-title {
     @apply font-serif italic font-light text-[2rem] md:text-[2.6rem] leading-[1.15];
   }
 
-  /* ── Acento de color en títulos de sección ──
-     Reemplaza: not-italic font-normal text-[#71B1A5]
-     Uso: <span class="section-title-accent">bienestar integral</span> */
+  /* Acento de color en títulos de sección */
   .section-title-accent {
     @apply not-italic font-normal text-[#71B1A5];
   }
 
-  /* ── Botón primario (fondo teal) ──
-     Reemplaza el bloque de clases del botón "Contacto"
-     y "Pedir Cita" repetido en hero y CTA final.
-     Uso: <NuxtLink class="btn-primary"> */
+  /* Contenedor de página estándar */
+  .page-container {
+    @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-16;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Botones
+     ════════════════════════════════════════════════════════ */
+
+  /* Botón primario (fondo teal) */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-3
            bg-[#71B1A5] text-white
@@ -121,9 +123,7 @@
            hover:-translate-y-0.5;
   }
 
-  /* ── Botón secundario (borde) ──
-     Reemplaza el patrón border + hover repetido.
-     Uso: <NuxtLink class="btn-secondary"> */
+  /* Botón secundario (borde) */
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-3
            border border-[#27252B]/40
@@ -134,42 +134,43 @@
            backdrop-blur-sm bg-white/40;
   }
 
-  /* ── Tag / Badge de servicio ──
-     Reemplaza: text-xs tracking-[0.2em] uppercase
-     bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium
-     Uso: <span class="service-tag">Adultos</span> */
-  .service-tag {
-    @apply text-xs tracking-[0.2em] uppercase
-           bg-[#71B1A5]/10 text-[#71B1A5]
-           px-3 py-1.5 font-medium;
+  /* Botón principal con efecto shimmer */
+  .btn-shimmer {
+    @apply relative w-full inline-flex items-center justify-center gap-3
+           bg-[#71B1A5] text-white
+           px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold
+           hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden;
   }
 
-  /* ── Contenedor de página estándar ──
-     Reemplaza: max-w-7xl mx-auto px-8 md:px-16
-     Uso: <div class="page-container"> */
-  .page-container {
-    @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-16;
+  /* Capa de brillo animado (shimmer) */
+  .btn-shimmer-layer {
+    @apply absolute inset-0
+           bg-gradient-to-r from-transparent via-white/10 to-transparent
+           -translate-x-full group-hover:translate-x-full
+           transition-transform duration-700 pointer-events-none;
   }
 
-  /* ── Wrapper de icono en bloques de contacto ──
-     Reemplaza: w-11 h-11 bg-[#71B1A5]/12 flex items-center justify-center flex-shrink-0
-     repetido en cada fila de dirección, teléfono, email y horario.
-     Uso: <div class="contact-icon-wrap"> */
-  .contact-icon-wrap {
-    @apply w-11 h-11 bg-[#71B1A5]/10 flex items-center justify-center flex-shrink-0 mt-0.5;
+  /* Botón CTA principal con sombra */
+  .btn-cta-hero {
+    @apply relative inline-flex items-center justify-center gap-3
+           bg-[#71B1A5] text-white
+           px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold
+           hover:bg-[#5a9a8e] transition-all duration-300
+           shadow-xl shadow-[#71B1A5]/30
+           hover:shadow-2xl hover:shadow-[#71B1A5]/50
+           hover:-translate-y-0.5
+           overflow-hidden w-full sm:w-auto;
   }
 
-  /* ── Etiqueta de ítem de contacto (h3 interior) ──
-     Reemplaza: text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase
-     repetido en Dirección, Teléfono, Email, Horario.
-     Uso: <h3 class="contact-item-label"> */
-  .contact-item-label {
-    @apply text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase mb-2;
+  /* Botón de reserva sobre fondo oscuro */
+  .btn-reserve {
+    @apply inline-flex items-center gap-4
+           bg-[#71B1A5] text-[#27252B]
+           px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium
+           hover:bg-[#5a9a8e] transition-colors duration-300;
   }
 
-  /* ── Botón de WhatsApp ──
-     Reemplaza el bloque inline del enlace de WhatsApp.
-     Uso: <a class="whatsapp-btn"> */
+  /* Botón de WhatsApp */
   .whatsapp-btn {
     @apply inline-flex items-center gap-2.5
            bg-[#25D366]/10 text-[#128C4E]
@@ -180,11 +181,7 @@
            transition-all duration-300;
   }
 
-  /* ── Botón de icono para redes sociales ──
-     Reemplaza: w-9 h-9 border border-[#27252B]/15 flex items-center justify-center
-     text-[#27252B]/40 hover:border-[#71B1A5] hover:text-[#71B1A5]
-     repetido por cada red social.
-     Uso: <a class="social-icon-btn"> */
+  /* Botón de icono para redes sociales */
   .social-icon-btn {
     @apply w-9 h-9 border border-[#27252B]/15
            flex items-center justify-center
@@ -193,24 +190,22 @@
            transition-all duration-300;
   }
 
-  /* ── Wrapper de campo de formulario ──
-     Reemplaza: div.space-y-2 repetido en cada campo.
-     Uso: <div class="form-field"> */
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Formularios
+     ════════════════════════════════════════════════════════ */
+
+  /* Wrapper de campo de formulario */
   .form-field {
     @apply space-y-2;
   }
 
-  /* ── Label de formulario ──
-     Reemplaza: block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase
-     repetido en todos los labels del form.
-     Uso: <label class="form-label"> */
+  /* Label de formulario */
   .form-label {
     @apply block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase;
   }
 
-  /* ── Input / Select / Textarea de formulario ──
-     Reemplaza la cadena larga repetida en todos los campos.
-     Uso: <input class="input-field">, <select class="input-field">, <textarea class="input-field"> */
+  /* Input / Select / Textarea de formulario */
   .input-field {
     @apply w-full border border-[#27252B]/15 bg-[#FDFBF9]
            px-5 py-3.5 text-sm text-[#27252B]
@@ -219,51 +214,74 @@
            transition-colors duration-300;
   }
 
-  /* ── Mensaje de error de campo de formulario ──
-     Uso: <p class="form-error" role="alert"> */
+  /* Mensaje de error de campo de formulario */
   .form-error {
     @apply text-xs text-red-500 font-light mt-1;
   }
 
-  /* ── Tarjeta de miembro del equipo ──
-     Reemplaza: group bg-[#FDFBF9] rounded-none overflow-hidden
-     flex flex-col sm:flex-row border border-[#27252B]/8
-     hover:border-[#71B1A5]/50 transition-all duration-500
-     hover:shadow-xl hover:shadow-[#71B1A5]/8
-     repetido en las 4 tarjetas del equipo.
-     Uso: <article class="team-card group"> */
-  .team-card {
-    @apply bg-[#FDFBF9] overflow-hidden
-          flex flex-col sm:flex-row
-          border border-[#27252B]/10
-          hover:border-[#71B1A5]/50
-          transition-all duration-500
-          hover:shadow-xl hover:shadow-[#71B1A5]/5;
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Contacto
+     ════════════════════════════════════════════════════════ */
+
+  /* Wrapper de icono en bloques de contacto */
+  .contact-icon-wrap {
+    @apply w-11 h-11 bg-[#71B1A5]/10 flex items-center justify-center flex-shrink-0 mt-0.5;
   }
 
-  /* ── Badge de rol en tarjeta de equipo ──
-     Reemplaza: absolute top-4 left-4 text-white text-[10px]
-     tracking-[0.2em] uppercase px-3 py-1.5 font-medium
-     (el color de fondo se pasa como clase utilitaria: bg-[#71B1A5] o bg-[#27252B])
-     Uso: <div class="team-card-badge bg-[#71B1A5]"> */
+  /* Etiqueta de ítem de contacto (h3 interior) */
+  .contact-item-label {
+    @apply text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase mb-2;
+  }
+
+  /* Wrapper de ítem de contacto con icono */
+  .contact-icon-circle {
+    @apply w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0;
+  }
+
+  /* Separador de ítem de contacto */
+  .contact-divider {
+    @apply h-px bg-[#27252B]/10;
+  }
+
+  /* Tarjeta de contacto (fondo blanco con borde) */
+  .contact-card {
+    @apply bg-white border border-[#27252B]/10 p-8 space-y-6;
+  }
+
+  /* CTA box oscuro de reserva */
+  .cta-box-dark {
+    @apply bg-[#27252B] p-9 md:p-10;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Equipo
+     ════════════════════════════════════════════════════════ */
+
+  /* Tarjeta de miembro del equipo */
+  .team-card {
+    @apply bg-[#FDFBF9] overflow-hidden
+           flex flex-col sm:flex-row
+           border border-[#27252B]/10
+           hover:border-[#71B1A5]/50
+           transition-all duration-500
+           hover:shadow-xl hover:shadow-[#71B1A5]/5;
+  }
+
+  /* Badge de rol en tarjeta de equipo */
   .team-card-badge {
     @apply absolute top-4 left-4
            text-white text-[10px] tracking-[0.2em] uppercase
            px-3 py-1.5 font-medium;
   }
 
-  /* ── Rol / subtítulo del miembro del equipo ──
-     Reemplaza: text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium
-     Uso: <p class="team-card-role"> */
+  /* Rol / subtítulo del miembro del equipo */
   .team-card-role {
     @apply text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium;
   }
 
-  /* ── Enlace "Ver especialidad" en tarjeta de equipo ──
-     Reemplaza: text-xs tracking-[0.18em] uppercase text-[#27252B]
-     border-b border-[#27252B]/30 pb-0.5
-     hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200
-     Uso: <a class="team-card-link"> */
+  /* Enlace "Ver especialidad" en tarjeta de equipo */
   .team-card-link {
     @apply text-xs tracking-[0.18em] uppercase
            text-[#27252B] border-b border-[#27252B]/30 pb-0.5
@@ -271,10 +289,12 @@
            transition-colors duration-200;
   }
 
-  /* ── Tarjeta de formación / curso ──
-     Reemplaza el patrón de article con borde, overflow y hover
-     repetido en las tarjetas de Gestalt Infantil y Wingwave.
-     Uso: <article class="training-card group"> */
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Formaciones
+     ════════════════════════════════════════════════════════ */
+
+  /* Tarjeta de formación / curso */
   .training-card {
     @apply bg-[#FDFBF9] overflow-hidden
            flex flex-col
@@ -283,346 +303,538 @@
            transition-colors duration-300;
   }
 
-  /* ── Tag de formación / badge de programa ──
-     Variante de .service-tag con tamaño reducido para las
-     tarjetas de formación y la agenda de convocatorias.
-     Uso: <span class="training-tag"> */
+  /* Tag de formación / badge de programa */
   .training-tag {
     @apply text-[10px] tracking-[0.2em] uppercase
            bg-[#71B1A5]/10 text-[#71B1A5]
            px-2.5 py-1 font-medium;
   }
 
-  /* ── Eyebrow label de sección (variante tracking amplio) ──
-   Reemplaza: text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase
-   repetido 9 veces en [id].vue (hero, enfoque, vídeos, profesorado, logística…)
-   Uso: <p class="formation-label"> */
-.formation-label {
-  @apply text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase;
+  /* Eyebrow label de sección (variante tracking amplio) */
+  .formation-label {
+    @apply text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase;
+  }
+
+  /* Título H2 de formación (blanco, sobre fondo oscuro) */
+  .formation-title-dark {
+    @apply font-serif italic text-white text-3xl md:text-4xl leading-[1.2];
+  }
+
+  /* Título H2 de formación (oscuro, sobre fondo claro) */
+  .formation-title-light {
+    @apply font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2];
+  }
+
+  /* Fila de dato logístico (tabla de convocatoria) */
+  .logistics-row {
+    @apply flex items-start justify-between px-6 py-5 gap-6;
+  }
+
+  /* Etiqueta de dato logístico (columna izquierda) */
+  .logistics-label {
+    @apply text-sm text-white/50 font-light shrink-0;
+  }
+
+  /* Valor de dato logístico (columna derecha) */
+  .logistics-value {
+    @apply text-sm text-white font-medium;
+  }
+
+  /* Wrapper imagen avatar de profesorado (pequeño, Gestalt) */
+  .prof-avatar-sm {
+    @apply w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
+  }
+
+  /* Wrapper imagen avatar de profesorado (grande, Wingwave) */
+  .prof-avatar-lg {
+    @apply w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
+  }
+
+  /* Nombre del docente / facilitador */
+  .prof-name {
+    @apply text-sm font-semibold text-[#27252B] leading-tight;
+  }
+
+  /* Cargo del docente / facilitador */
+  .prof-role {
+    @apply text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug;
+  }
+
+  /* Separador interno de tarjeta de profesorado */
+  .prof-card-body {
+    @apply border-t border-[#27252B]/10 pt-5;
+  }
+
+  /* Biografía del docente */
+  .prof-bio {
+    @apply text-sm text-[#27252B]/60 font-light leading-[1.85];
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Beneficios y proceso
+     ════════════════════════════════════════════════════════ */
+
+  /* Tarjeta de beneficio / bloque de contenido oscuro */
+  .benefit-card {
+    @apply p-9 bg-[#27252B] hover:bg-white/5 transition-colors duration-300;
+  }
+
+  /* Número decorativo serif de beneficio */
+  .benefit-number {
+    @apply font-serif italic text-[#71B1A5]/25 text-6xl
+           leading-none block mb-5 select-none
+           group-hover:text-[#71B1A5]/45 transition-colors duration-300;
+  }
+
+  /* Título de beneficio */
+  .benefit-title {
+    @apply text-white font-medium text-base md:text-lg mb-4 leading-snug;
+  }
+
+  /* Descripción de beneficio */
+  .benefit-desc {
+    @apply text-white/55 text-sm md:text-base leading-[1.9] font-light;
+  }
+
+  /* Número decorativo de paso de proceso */
+  .process-number {
+    @apply font-serif italic text-[#71B1A5]/20 text-7xl
+           leading-none block mb-6 select-none;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Calendarios, fechas y áreas de trabajo
+     ════════════════════════════════════════════════════════ */
+
+  /* Fila de fecha en calendario */
+  .date-row {
+    @apply grid md:grid-cols-12 gap-4 md:gap-6 items-center
+           px-6 md:px-8 py-7 md:py-9
+           hover:bg-white transition-colors duration-200;
+  }
+
+  /* Número de día en calendario */
+  .date-day {
+    @apply font-serif italic text-[#71B1A5] text-4xl md:text-5xl leading-none;
+  }
+
+  /* Fila de área de trabajo */
+  .work-area-row {
+    @apply flex items-start gap-5 px-6 py-6
+           hover:bg-[#71B1A5]/5 transition-colors duration-150;
+  }
+
+  /* Número decorativo de área de trabajo */
+  .work-area-number {
+    @apply font-serif italic text-[#71B1A5]/40 text-3xl
+           leading-none select-none mt-0.5 shrink-0 w-8;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Terapias
+     ════════════════════════════════════════════════════════ */
+
+  /* Tag / Badge de servicio */
+  .service-tag {
+    @apply text-xs tracking-[0.2em] uppercase
+           bg-[#71B1A5]/10 text-[#71B1A5]
+           px-3 py-1.5 font-medium;
+  }
+
+  /* Tarjeta de terapia relacionada */
+  .therapy-card {
+    @apply block bg-white border border-[#27252B]/10 overflow-hidden
+           hover:border-[#71B1A5]/40 transition-all duration-300
+           hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/10;
+  }
+
+  /* Contenido interior de tarjeta de terapia */
+  .therapy-card-body {
+    @apply p-5;
+  }
+
+  /* Categoría dentro de tarjeta de terapia */
+  .therapy-card-category {
+    @apply text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1;
+  }
+
+  /* Enlace "Ver más" dentro de tarjeta de terapia */
+  .therapy-card-link {
+    @apply text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3
+           flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Navegación
+     ════════════════════════════════════════════════════════ */
+
+  /* Enlace de navegación de retorno */
+  .nav-back-link {
+    @apply inline-flex items-center gap-2
+           text-sm tracking-[0.2em] uppercase
+           text-[#27252B]/50 hover:text-[#71B1A5]
+           transition-colors duration-200;
+  }
+
+  /* Enlace de navegación de retorno sobre fondo oscuro */
+  .nav-back-link-dark {
+    @apply inline-flex items-center gap-2
+           text-xs tracking-[0.2em] uppercase
+           text-white/40 hover:text-white
+           transition-colors duration-200;
+  }
+
+  /* Enlace de navegación inferior (flecha izquierda) */
+  .nav-link-back {
+    @apply inline-flex items-center gap-4;
+  }
+
+  /* Línea animada de enlace de navegación */
+  .nav-link-line {
+    @apply w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300;
+  }
+
+  /* Texto de enlace de navegación inferior */
+  .nav-link-text {
+    @apply text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Hero — animaciones de entrada
+     Migrado desde index.vue <style>
+     ════════════════════════════════════════════════════════ */
+
+  /*
+   * Cada elemento del hero arranca en opacity-0 y sube 24px.
+   * Se activa con heroFadeUp. El animation-delay se aplica
+   * inline en el template para mantener la flexibilidad
+   * por elemento: style="animation-delay: 0.25s;"
+   */
+  .hero-item {
+    opacity: 0;
+    animation: heroFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /*
+   * Línea vertical con pulso de scroll.
+   * Uso: <div class="scroll-line w-px h-10 bg-gradient-to-b from-[#71B1A5] to-transparent">
+   */
+  .scroll-line {
+    animation: scrollPulse 2s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Marquee (carrusel infinito de testimonios)
+     Migrado desde index.vue <style>
+     ════════════════════════════════════════════════════════ */
+
+  /*
+   * Wrapper externo: oculta el overflow horizontal del track.
+   * Admite la variable CSS --duration para controlar la
+   * velocidad por instancia: style="--duration: 55s;"
+   */
+  .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /*
+   * Track: fila flex de anchura natural que se desplaza.
+   * Dirección por defecto → izquierda.
+   */
+  .marquee-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: marquee-ltr var(--duration, 55s) linear infinite;
+  }
+
+  /* Variante de dirección inversa (derecha → izquierda) */
+  .marquee-reverse .marquee-track {
+    animation-name: marquee-rtl;
+  }
+
+  /* Pausar al hacer hover para lectura cómoda */
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Tarjetas de testimonio
+     Migrado desde index.vue <style>
+     ════════════════════════════════════════════════════════ */
+
+  .testimonial-card {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    background: #fff;
+    border: 1px solid rgba(39, 37, 43, 0.07);
+    border-top: 2px solid #71B1A5;
+    padding: 28px 28px 24px;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(113, 177, 165, 0.12);
+  }
+
+  /* Variante oscura (fila 2 del marquee) */
+  .testimonial-card--dark {
+    background: #27252B;
+    border-color: transparent;
+    border-top-color: #71B1A5;
+  }
+
+  .testimonial-card--dark:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  /*
+   * Comilla decorativa serif gigante.
+   * Es aria-hidden en el template, así que su valor
+   * semántico es puramente visual.
+   */
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    color: rgba(113, 177, 165, 0.20);
+    font-size: 5rem;
+    line-height: 1;
+    position: absolute;
+    top: -4px;
+    left: 20px;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .testimonial-quote--dark {
+    color: rgba(113, 177, 165, 0.12);
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SECCIÓN: Mariposa Animada 3D (La Seda)
+     ════════════════════════════════════════════════════════ */
+
+  /* Contenedor de la escena con perspectiva */
+  .scene-container {
+    perspective: 800px;
+    perspective-origin: 50% 50%;
+  }
+
+  .butterfly-wrapper {
+    @apply relative flex items-center justify-center w-[30px] h-[30px];
+    transform-style: preserve-3d;
+  }
+
+  /* Animación de balanceo vertical de la mariposa */
+  .butterfly-3d {
+    animation: hoverButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite;
+    animation-direction: alternate;
+    animation-fill-mode: reverse;
+    @apply relative w-[30px];
+    transform-style: preserve-3d;
+    transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateY(0px);
+  }
+
+  /* Cuerpo de la mariposa */
+  .butterfly-3d::before {
+    content: '';
+    @apply block absolute w-5 h-[110px] top-[-15px] left-1/2 -ml-2.5 rounded-full z-[2];
+    background: #1d1a1f;
+    outline: 1px solid transparent;
+    transform: rotateY(100deg);
+  }
+
+  /* Sombra proyectada */
+  .shadow-3d {
+    animation: shadowButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite;
+    animation-direction: alternate;
+    animation-fill-mode: reverse;
+    @apply block absolute w-[100px] h-[12px] rounded-full opacity-[0.07];
+    background: #27252B;
+    transform-origin: 50% 50%;
+    transform: translateX(-20px) translateY(120px);
+  }
+
+  /* Estructura base de las alas */
+  .wing-3d {
+    @apply block absolute top-0 bg-[#888] opacity-85;
+    outline: 1px solid transparent;
+  }
+
+  /* Ala izquierda con su ciclo de aleteo */
+  .wing-3d:first-child {
+    animation: leftFlap 250ms cubic-bezier(.48,.01,.54,1) infinite;
+    animation-direction: alternate;
+    animation-fill-mode: reverse;
+    @apply w-px h-px left-0 z-[3];
+    transform: rotateY(-20deg);
+    transform-origin: 700% 50%;
+  }
+
+  /* Ala derecha con su ciclo de aleteo */
+  .wing-3d:last-child {
+    animation: rightFlap 250ms cubic-bezier(.48,.01,.54,1) infinite;
+    animation-direction: alternate;
+    animation-fill-mode: reverse;
+    @apply w-px h-px right-0 z-[1];
+    transform: rotateY(200deg);
+  }
+
+  /* Color principal de las alas: Verde Corporativo (#71B1A5) */
+  .wing-3d .bit-3d {
+    @apply bg-[#71B1A5];
+  }
+
+  /* Color secundario interior de las alas */
+  .wing-3d .bit-3d::after {
+    @apply bg-[#8ec4bc];
+  }
+
+  .wing-3d .bit-3d,
+  .wing-3d .bit-3d::after {
+    @apply absolute top-0 right-0 rounded-full overflow-hidden;
+    transform-origin: 100% 50%;
+  }
+
+  .wing-3d .bit-3d:first-child {
+    @apply w-[130px] h-[70px] top-[15px] text-center;
+    transform: rotateZ(40deg);
+  }
+
+  .wing-3d .bit-3d:first-child::after {
+    content: '';
+    @apply inline-block w-[100px] h-[60px] top-[5px] left-[-30px];
+  }
+
+  .wing-3d .bit-3d:last-child {
+    @apply w-[100px] h-[55px];
+    transform: rotateZ(-40deg);
+  }
+
+  .wing-3d .bit-3d:last-child::after {
+    content: '';
+    @apply inline-block w-[60px] h-[45px] top-[5px] left-[-24px] z-[1];
+  }
 }
 
-/* ── Título H2 de formación (blanco, sobre fondo oscuro) ──
-   Reemplaza: font-serif italic text-white text-3xl md:text-4xl leading-[1.2]
-   repetido en secciones de logística y reserva.
-   Uso: <h2 class="formation-title-dark"> */
-.formation-title-dark {
-  @apply font-serif italic text-white text-3xl md:text-4xl leading-[1.2];
+
+/* ──────────────────────────────────────────────────────────
+   @keyframes globales
+   Todas las animaciones en un único bloque, ordenadas
+   por origen / función para facilitar el mantenimiento.
+   ────────────────────────────────────────────────────────── */
+
+/* ── Hero ─────────────────────────────────────────────── */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ── Título H2 de formación (oscuro, sobre fondo claro) ──
-   Reemplaza: font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]
-   repetido en secciones de vídeos y profesorado.
-   Uso: <h2 class="formation-title-light"> */
-.formation-title-light {
-  @apply font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2];
+/* ── Scroll indicator ─────────────────────────────────── */
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleY(1.1);
+  }
 }
 
-/* ── Fila de dato logístico (tabla de convocatoria) ──
-   Reemplaza: flex items-start justify-between px-6 py-5 gap-6
-   repetido en cada fila de la tabla de logística.
-   Uso: <div class="logistics-row"> */
-.logistics-row {
-  @apply flex items-start justify-between px-6 py-5 gap-6;
+/* ── Marquee (carrusel de testimonios) ───────────────── */
+@keyframes marquee-ltr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* ── Etiqueta de dato logístico (columna izquierda) ──
-   Reemplaza: text-sm text-white/50 font-light shrink-0
-   Uso: <span class="logistics-label"> */
-.logistics-label {
-  @apply text-sm text-white/50 font-light shrink-0;
+@keyframes marquee-rtl {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* ── Valor de dato logístico (columna derecha) ──
-   Reemplaza: text-sm text-white font-medium
-   Uso: <span class="logistics-value"> */
-.logistics-value {
-  @apply text-sm text-white font-medium;
+/* ── Mariposa 3D ─────────────────────────────────────── */
+@keyframes hoverButterfly {
+  0%   { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(0px); }
+  100% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(-6px); }
 }
 
-/* ── Wrapper imagen avatar de profesorado (pequeño, Gestalt) ──
-   Reemplaza: w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10
-   Uso: <div class="prof-avatar-sm"> */
-.prof-avatar-sm {
-  @apply w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
+@keyframes shadowButterfly {
+  0%   { transform: translateX(-20px) translateY(120px) scale(1, 1); }
+  100% { transform: translateX(-20px) translateY(120px) scale(1.15, 1.15); }
 }
 
-/* ── Wrapper imagen avatar de profesorado (grande, Wingwave) ──
-   Reemplaza: w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10
-   Uso: <div class="prof-avatar-lg"> */
-.prof-avatar-lg {
-  @apply w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
+@keyframes leftFlap {
+  0%   { transform: rotateY(-20deg); }
+  100% { transform: rotateY(90deg); }
 }
 
-/* ── Nombre del docente / facilitador ──
-   Reemplaza: text-sm font-semibold text-[#27252B] leading-tight
-   (variante pequeña, para la grid de Gestalt)
-   Uso: <p class="prof-name"> */
-.prof-name {
-  @apply text-sm font-semibold text-[#27252B] leading-tight;
+@keyframes rightFlap {
+  0%   { transform: rotateY(200deg); }
+  100% { transform: rotateY(90deg); }
 }
 
-/* ── Cargo del docente / facilitador ──
-   Reemplaza: text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug
-   Uso: <p class="prof-role"> */
-.prof-role {
-  @apply text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug;
+
+/* ──────────────────────────────────────────────────────────
+   Accesibilidad: prefers-reduced-motion
+   Agrupa en un único bloque todas las animaciones que
+   deben desactivarse cuando el usuario las ha reducido.
+   ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-item {
+    animation: none;
+    opacity: 1;
+  }
+
+  .scroll-line {
+    animation: none;
+  }
+
+  .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .butterfly-3d,
+  .shadow-3d,
+  .wing-3d:first-child,
+  .wing-3d:last-child {
+    animation: none;
+  }
+
+
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ── Separador interno de tarjeta de profesorado ──
-   Reemplaza: border-t border-[#27252B]/10 pt-5 (y la variante pt-6)
-   Uso: <div class="prof-card-body"> y <div class="prof-card-body pt-6"> */
-.prof-card-body {
-  @apply border-t border-[#27252B]/10 pt-5;
-}
-
-/* ── Biografía del docente ──
-   Reemplaza: text-sm text-[#27252B]/60 font-light leading-[1.85]
-   Uso: <p class="prof-bio"> */
-.prof-bio {
-  @apply text-sm text-[#27252B]/60 font-light leading-[1.85];
-}
-
-/* ── Enlace de navegación inferior (flecha izquierda) ──
-   Reemplaza el bloque del NuxtLink "Todas las formaciones".
-   Uso: <NuxtLink class="nav-link-back group"> */
-.nav-link-back {
-  @apply inline-flex items-center gap-4;
-}
-
-/* ── Línea animada de enlace de navegación ──
-   Reemplaza: w-10 h-px bg-[#27252B]/40 group-hover:w-16
-   group-hover:bg-[#71B1A5] transition-all duration-300
-   Uso: <span class="nav-link-line"> */
-.nav-link-line {
-  @apply w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300;
-}
-
-/* ── Texto de enlace de navegación inferior ──
-   Reemplaza: text-sm tracking-[0.22em] uppercase text-[#27252B]/50
-   group-hover:text-[#71B1A5] transition-colors duration-200
-   Uso: <span class="nav-link-text"> */
-.nav-link-text {
-  @apply text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200;
-}
-
-/* ── Botón de reserva sobre fondo oscuro ──
-   Reemplaza el NuxtLink de "Solicitar información" en sección logística.
-   Variante del btn-primary para fondos oscuros (texto oscuro en lugar de blanco).
-   Uso: <NuxtLink class="btn-reserve"> */
-.btn-reserve {
-  @apply inline-flex items-center gap-4
-         bg-[#71B1A5] text-[#27252B]
-         px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium
-         hover:bg-[#5a9a8e] transition-colors duration-300;
-}
-
-/* ── Tarjeta de beneficio / bloque de contenido oscuro ──
-   Reemplaza: p-9 bg-[#27252B] hover:bg-white/5
-   transition-colors duration-300
-   Uso: <div class="benefit-card group"> */
-.benefit-card {
-  @apply p-9 bg-[#27252B] hover:bg-white/5 transition-colors duration-300;
-}
-
-/* ── Número decorativo serif de beneficio ──
-   Reemplaza: font-serif italic text-[#71B1A5]/25 text-6xl
-   leading-none block mb-5 select-none
-   group-hover:text-[#71B1A5]/45 transition-colors duration-300
-   Uso: <span class="benefit-number"> */
-.benefit-number {
-  @apply font-serif italic text-[#71B1A5]/25 text-6xl
-         leading-none block mb-5 select-none
-         group-hover:text-[#71B1A5]/45 transition-colors duration-300;
-}
-
-/* ── Título de beneficio ──
-   Reemplaza: text-white font-medium text-base md:text-lg
-   mb-4 leading-snug
-   Uso: <h3 class="benefit-title"> */
-.benefit-title {
-  @apply text-white font-medium text-base md:text-lg mb-4 leading-snug;
-}
-
-/* ── Descripción de beneficio ──
-   Reemplaza: text-white/55 text-sm md:text-base
-   leading-[1.9] font-light
-   Uso: <p class="benefit-desc"> */
-.benefit-desc {
-  @apply text-white/55 text-sm md:text-base leading-[1.9] font-light;
-}
-
-/* ── Fila de fecha en calendario ──
-   Reemplaza: grid md:grid-cols-12 gap-4 md:gap-6 items-center
-   px-6 md:px-8 py-7 md:py-9
-   hover:bg-white transition-colors duration-200
-   Uso: <div class="date-row group"> */
-.date-row {
-  @apply grid md:grid-cols-12 gap-4 md:gap-6 items-center
-         px-6 md:px-8 py-7 md:py-9
-         hover:bg-white transition-colors duration-200;
-}
-
-/* ── Número de día en calendario ──
-   Reemplaza: font-serif italic text-[#71B1A5] text-4xl
-   md:text-5xl leading-none
-   Uso: <span class="date-day"> */
-.date-day {
-  @apply font-serif italic text-[#71B1A5] text-4xl md:text-5xl leading-none;
-}
-
-/* ── Wrapper de ítem de contacto con icono ──
-   Reemplaza: w-9 h-9 bg-[#71B1A5]/10 flex items-center
-   justify-center shrink-0
-   (con variante hover gestionada inline con group)
-   Uso: <div class="contact-icon-circle"> */
-.contact-icon-circle {
-  @apply w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0;
-}
-
-/* ── Separador de ítem de contacto ──
-   Reemplaza: h-px bg-[#27252B]/8 (tres veces en la tarjeta)
-   Uso: <div class="contact-divider"> */
-.contact-divider {
-  @apply h-px bg-[#27252B]/10;
-}
-
-/* ── CTA box oscuro de reserva ──
-   Reemplaza: bg-[#27252B] p-9 md:p-10
-   Uso: <div class="cta-box-dark"> */
-.cta-box-dark {
-  @apply bg-[#27252B] p-9 md:p-10;
-}
-
-/* ── Tarjeta de contacto (fondo blanco con borde) ──
-   Reemplaza: bg-white border border-[#27252B]/10 p-8 space-y-6
-   Uso: <div class="contact-card"> */
-.contact-card {
-  @apply bg-white border border-[#27252B]/10 p-8 space-y-6;
-}
-
-/* ── Botón principal con efecto shimmer ──
-   Extiende .btn-primary añadiendo el overflow para el
-   efecto de brillo animado que usa este componente.
-   Uso: <NuxtLink class="btn-shimmer group"> */
-.btn-shimmer {
-  @apply relative w-full inline-flex items-center justify-center gap-3
-         bg-[#71B1A5] text-white
-         px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold
-         hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden;
-}
-
-/* ── Capa de brillo animado (shimmer) ──
-   Reemplaza: absolute inset-0 bg-gradient-to-r
-   from-transparent via-white/10 to-transparent
-   -translate-x-full group-hover:translate-x-full
-   transition-transform duration-700 pointer-events-none
-   Uso: <span class="btn-shimmer-layer" aria-hidden="true"> */
-.btn-shimmer-layer {
-  @apply absolute inset-0
-         bg-gradient-to-r from-transparent via-white/10 to-transparent
-         -translate-x-full group-hover:translate-x-full
-         transition-transform duration-700 pointer-events-none;
-}
-
-/* ── Enlace de navegación de retorno con flecha SVG ──
-   Reemplaza el NuxtLink "Ver todos los talleres".
-   Uso: <NuxtLink class="nav-back-link group"> */
-.nav-back-link {
-  @apply inline-flex items-center gap-2
-         text-sm tracking-[0.2em] uppercase
-         text-[#27252B]/50 hover:text-[#71B1A5]
-         transition-colors duration-200;
-}
-
-/* ── Tarjeta de terapia relacionada (grid "También puede interesarte") ──
-   Reemplaza: group block bg-white border border-[#27252B]/10 overflow-hidden
-   hover:border-[#71B1A5]/40 transition-all duration-300
-   hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/10
-   Uso: <NuxtLink class="therapy-card group"> */
-.therapy-card {
-  @apply block bg-white border border-[#27252B]/10 overflow-hidden
-         hover:border-[#71B1A5]/40 transition-all duration-300
-         hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/10;
-}
-
-/* ── Contenido interior de tarjeta de terapia ──
-   Reemplaza: p-5 repetido en cada tarjeta de terapia relacionada.
-   Uso: <div class="therapy-card-body"> */
-.therapy-card-body {
-  @apply p-5;
-}
-
-/* ── Categoría dentro de tarjeta de terapia ──
-   Reemplaza: text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1
-   Uso: <p class="therapy-card-category"> */
-.therapy-card-category {
-  @apply text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1;
-}
-
-/* ── Enlace "Ver más" dentro de tarjeta de terapia ──
-   Reemplaza: text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3
-   flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200
-   Uso: <p class="therapy-card-link"> */
-.therapy-card-link {
-  @apply text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3
-         flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200;
-}
-
-/* ── Fila de área de trabajo (lista de motivos/enfoques) ──
-   Reemplaza: flex items-start gap-5 px-6 py-6
-   hover:bg-[#71B1A5]/5 transition-colors duration-150
-   Uso: <div class="work-area-row"> */
-.work-area-row {
-  @apply flex items-start gap-5 px-6 py-6
-         hover:bg-[#71B1A5]/5 transition-colors duration-150;
-}
-
-/* ── Número decorativo de área de trabajo ──
-   Reemplaza: font-serif italic text-[#71B1A5]/40 text-3xl
-   leading-none select-none mt-0.5 shrink-0 w-8
-   Uso: <span class="work-area-number" aria-hidden="true"> */
-.work-area-number {
-  @apply font-serif italic text-[#71B1A5]/40 text-3xl
-         leading-none select-none mt-0.5 shrink-0 w-8;
-}
-
-/* ── Paso de proceso (tarjeta sobre fondo oscuro) ──
-   Reemplaza: bg-[#27252B] p-9 hover:bg-white/5 transition-colors duration-300
-   (variante sin group, igual que benefit-card pero sin el selector group)
-   Nota: benefit-card ya cubre este patrón — se reutiliza directamente. */
-
-/* ── Número decorativo de paso de proceso ──
-   Reemplaza: font-serif italic text-[#71B1A5]/20 text-7xl
-   leading-none block mb-6 select-none
-   Uso: <span class="process-number" aria-hidden="true"> */
-.process-number {
-  @apply font-serif italic text-[#71B1A5]/20 text-7xl
-         leading-none block mb-6 select-none;
-}
-
-/* ── Botón CTA principal con sombra (variante hero de sección proceso) ──
-   Reemplaza el bloque de NuxtLink "Pedir orientación gratuita":
-   full-width en móvil, sombra teal prominente, shimmer.
-   Uso: <NuxtLink class="btn-cta-hero group"> */
-.btn-cta-hero {
-  @apply relative inline-flex items-center justify-center gap-3
-         bg-[#71B1A5] text-white
-         px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold
-         hover:bg-[#5a9a8e] transition-all duration-300
-         shadow-xl shadow-[#71B1A5]/30
-         hover:shadow-2xl hover:shadow-[#71B1A5]/50
-         hover:-translate-y-0.5
-         overflow-hidden w-full sm:w-auto;
-}
-
-/* ── Enlace de navegación de retorno sobre fondo oscuro ──
-   Reemplaza: inline-flex items-center gap-2 text-xs tracking-[0.2em]
-   uppercase text-white/40 hover:text-white transition-colors duration-200
-   Uso: <NuxtLink class="nav-back-link-dark group"> */
-.nav-back-link-dark {
-  @apply inline-flex items-center gap-2
-         text-xs tracking-[0.2em] uppercase
-         text-white/40 hover:text-white
-         transition-colors duration-200;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 }

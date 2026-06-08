@@ -148,439 +148,449 @@ useSeoMeta({
 </script>
 
 <template>
-  <!-- ═══ 404 ═══ -->
-  <main
-    v-if="!terapia"
-    class="bg-[#FDFBF9] text-[#27252B] font-sans min-h-screen flex flex-col items-center justify-center px-6 text-center"
-  >
-    <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">Error 404</p>
-    <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">Terapia no encontrada</h1>
-    <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
-      La página que buscas no existe o la URL no es correcta.
-    </p>
-    <NuxtLink
-      to="/terapias"
-      class="inline-flex items-center gap-4 bg-[#71B1A5] text-white px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium hover:bg-[#5a9a8e] transition-colors duration-300"
+  <div>
+
+    <!-- ══════════════════════════════════════════
+         ESTADO 404
+    ═══════════════════════════════════════════ -->
+    <main
+      v-if="!terapia"
+      class="min-h-screen flex flex-col items-center justify-center px-6 text-center"
     >
-      Ver todas las terapias
-      <span class="w-6 h-px bg-white/60 inline-block" />
-    </NuxtLink>
-  </main>
-
-  <!-- ═══ PÁGINA NORMAL ═══ -->
-  <main v-else class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · HERO
-    ════════════════════════════════════════════════ -->
-    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
-      </video>
-
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/92 via-[#FDFBF9]/65 to-transparent pointer-events-none" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
-
-      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-
-        <nav class="flex items-center gap-2 mb-5 md:mb-7" aria-label="Ruta de navegación">
-          <NuxtLink
-            to="/terapias"
-            class="text-xs tracking-[0.25em] uppercase text-[#27252B]/45 hover:text-[#71B1A5] transition-colors duration-200"
-          >
-            Terapias
-          </NuxtLink>
-          <span class="text-[#27252B]/25 text-xs">·</span>
-          <span class="text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
-            {{ terapia.categoria }}
-          </span>
-        </nav>
-
-        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          {{ terapia.titulo }}<br />
-          <span class="text-[#27252B]/70">{{ terapia.tituloItalico }}</span>
-        </h1>
-
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/75 max-w-xl">
-          {{ terapia.subtitulo }}
-        </p>
-
-      </div>
-    </section>
+      <p class="formation-label mb-4">Error 404</p>
+      <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">
+        Terapia no encontrada
+      </h1>
+      <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
+        La página que buscas no existe o la URL no es correcta.
+      </p>
+      <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
+      <NuxtLink to="/terapias" class="btn-primary">
+        Ver todas las terapias
+        <span class="w-6 h-px bg-white/60 inline-block" />
+      </NuxtLink>
+    </main>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · DESCRIPCIÓN + MOTIVOS
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+    <!-- ══════════════════════════════════════════
+         ESTADO PRINCIPAL · Terapia encontrada
+    ═══════════════════════════════════════════ -->
+    <main v-else>
 
-        <!-- Columna izquierda: descripción -->
-        <div class="lg:sticky lg:top-28">
-          <div class="w-12 h-px bg-[#71B1A5] mb-7" />
-          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
-            Sobre esta terapia
-          </p>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.18] mb-10">
-            Un espacio para<br />
-            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">
-              crecer y estar mejor
-            </span>
-          </h2>
+      <!-- ─────────────────────────────────────
+           SECCIÓN 1 · HERO
+      ────────────────────────────────────── -->
+      <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7">
-            {{ terapia.descripcion }}
-          </p>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-10">
-            {{ terapia.descripcion2 }}
-          </p>
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+        >
+          <source src="/video/minhero.mp4" type="video/mp4" />
+        </video>
 
-          <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-            <p class="text-sm md:text-base leading-[1.9] text-[#27252B]/55 font-light italic">
-              {{ terapia.cita }}
-            </p>
-          </blockquote>
+        <!-- ✅ Fallback correcto fuera del <video>, solo para no-JS -->
+        <noscript>
+          <NuxtImg
+            src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+            alt="Centro de Psicología La Seda Granada — terapia y acompañamiento emocional"
+            format="webp"
+            width="1920"
+            height="1080"
+            preload
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </noscript>
 
-          <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
-        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/92 via-[#FDFBF9]/65 to-transparent pointer-events-none" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-        <!-- Columna derecha: áreas de trabajo -->
-        <div>
-          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-7">
-            Áreas de trabajo
-          </p>
-          <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/8">
-            <div
-              v-for="motivo in terapia.motivos"
-              :key="motivo.numero"
-              class="flex items-start gap-5 px-6 py-6 hover:bg-[#71B1A5]/[0.04] transition-colors duration-150"
+        <div class="relative z-10 flex flex-col justify-center h-full page-container">
+          <!-- ✅ Breadcrumb semántico con aria-label -->
+          <nav class="flex items-center gap-2 mb-5 md:mb-7" aria-label="Ruta de navegación">
+            <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
+            <NuxtLink
+              to="/terapias"
+              class="text-xs tracking-[0.25em] uppercase text-[#27252B]/45 hover:text-[#71B1A5] transition-colors duration-200"
             >
-              <span class="font-serif italic text-[#71B1A5]/40 text-3xl leading-none select-none mt-0.5 shrink-0 w-8">
-                {{ motivo.numero }}
-              </span>
-              <div>
-                <p class="text-sm font-semibold text-[#27252B] mb-2 leading-snug">{{ motivo.titulo }}</p>
-                <p class="text-sm text-[#27252B]/58 font-light leading-[1.85]">{{ motivo.desc }}</p>
-              </div>
-            </div>
-          </div>
+              Terapias
+            </NuxtLink>
+            <span class="text-[#27252B]/25 text-xs" aria-hidden="true">·</span>
+            <span class="text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
+              {{ terapia.categoria }}
+            </span>
+          </nav>
 
-          <div class="mt-10 overflow-hidden aspect-[16/8]">
-            <img
-              src="/images/default.jpg"
-              :alt="`${terapia.titulo} ${terapia.tituloItalico} en La Seda Granada`"
-              class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
-            />
-          </div>
+          <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+            {{ terapia.titulo }}<br />
+            <span class="text-[#27252B]/70">{{ terapia.tituloItalico }}</span>
+          </h1>
+          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/75 max-w-xl">
+            {{ terapia.subtitulo }}
+          </p>
         </div>
-
-      </div>
-    </section>
+      </section>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 3 · CÓMO ES EL PROCESO
-    ════════════════════════════════════════════════ -->
-    <section class="bg-[#27252B] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <!-- ─────────────────────────────────────
+           SECCIÓN 2 · DESCRIPCIÓN + ÁREAS
+      ────────────────────────────────────── -->
+      <section class="page-container py-24 md:py-32">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-        <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">
-          <div class="md:col-span-5">
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
-              El proceso
-            </p>
-            <h2 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]">
-              Cómo son las sesiones<br />
-              <span class="text-white/45 not-italic font-light text-2xl md:text-3xl">
-                en La Seda
+          <!-- Columna izquierda: descripción -->
+          <div class="lg:sticky lg:top-28">
+            <div class="section-divider mb-7" />
+            <p class="formation-label mb-4">Sobre esta terapia</p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.18] mb-10">
+              Un espacio para<br />
+              <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">
+                crecer y estar mejor
               </span>
             </h2>
-          </div>
-          <div class="md:col-span-7">
-            <p class="text-base md:text-lg leading-[1.85] text-white/55">
-              Los procesos terapéuticos y de acompañamiento emocional en La Seda comienzan con una orientación telefónica gratuita en la que te escucharemos y valoraremos qué tipo de abordaje es el más adecuado para ti, así como cuál de nuestros profesionales se adapta mejor a tus necesidades.
+
+            <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7">
+              {{ terapia.descripcion }}
             </p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-px bg-white/5">
-          <div
-            v-for="(paso, i) in terapia.proceso"
-            :key="i"
-            class="bg-[#27252B] p-9 hover:bg-white/[0.03] transition-colors duration-300"
-          >
-            <span class="font-serif italic text-[#71B1A5]/20 text-7xl leading-none block mb-6 select-none">
-              {{ paso.paso }}
-            </span>
-            <p class="text-white/65 text-base leading-[1.9] font-light">
-              {{ paso.texto }}
+            <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-10">
+              {{ terapia.descripcion2 }}
             </p>
+
+            <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
+              <p class="text-sm md:text-base leading-[1.9] text-[#27252B]/55 font-light italic">
+                {{ terapia.cita }}
+              </p>
+            </blockquote>
+
+            <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
           </div>
-        </div>
 
-        <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <NuxtLink
-            to="/contacto"
-            class="group relative inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-[#5a9a8e] transition-all duration-400 shadow-xl shadow-[#71B1A5]/30 hover:shadow-2xl hover:shadow-[#71B1A5]/50 hover:-translate-y-0.5 overflow-hidden w-full sm:w-auto"
-          >
-            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
-            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
-            Pedir orientación gratuita
-          </NuxtLink>
-          <NuxtLink
-            to="/terapias"
-            class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors duration-200 group"
-          >
-            <svg
-              class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-            Ver todas las terapias
-          </NuxtLink>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · FAQs + CONTACTO
-    ════════════════════════════════════════════════ -->
-    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
-
-          <!-- FAQs (col 7) -->
-          <div class="lg:col-span-7">
-            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-4">
-              Preguntas frecuentes
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-10">
-              Resolvemos tus dudas
-            </h2>
-
-            <div class="divide-y divide-[#27252B]/10">
+          <!-- Columna derecha: áreas de trabajo -->
+          <div>
+            <p class="formation-label mb-7">Áreas de trabajo</p>
+            <!-- ✅ divide-[#27252B]/10 en lugar de /8 -->
+            <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/10">
               <div
-                v-for="(faq, i) in terapia.faqs"
-                :key="i"
-                class="group"
+                v-for="motivo in terapia.motivos"
+                :key="motivo.numero"
+                class="work-area-row"
               >
-                <button
-                  class="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer"
-                  @click="toggleFaq(i)"
-                  :aria-expanded="faqAbierta === i"
-                >
-                  <span
-                    class="text-base md:text-lg font-medium text-[#27252B] leading-snug group-hover:text-[#71B1A5] transition-colors duration-200"
-                    :class="{ 'text-[#71B1A5]': faqAbierta === i }"
-                  >
-                    {{ faq.pregunta }}
-                  </span>
-                  <span class="shrink-0 mt-0.5">
-                    <svg
-                      class="w-5 h-5 text-[#71B1A5] transition-transform duration-300"
-                      :class="{ 'rotate-45': faqAbierta === i }"
-                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    >
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                    </svg>
-                  </span>
-                </button>
+                <span class="work-area-number" aria-hidden="true">{{ motivo.numero }}</span>
+                <div>
+                  <p class="text-sm font-semibold text-[#27252B] mb-2 leading-snug">{{ motivo.titulo }}</p>
+                  <p class="text-sm text-[#27252B]/60 font-light leading-[1.85]">{{ motivo.desc }}</p>
+                </div>
+              </div>
+            </div>
 
+            <!-- ✅ NuxtImg con atributos SEO completos; below-the-fold → lazy -->
+            <div class="mt-10 overflow-hidden aspect-[16/8]">
+              <NuxtImg
+                src="/images/default.jpg"
+                :alt="`${terapia.titulo} ${terapia.tituloItalico} — Centro de Psicología La Seda Granada`"
+                format="webp"
+                loading="lazy"
+                width="1200"
+                height="600"
+                class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ─────────────────────────────────────
+           SECCIÓN 3 · PROCESO
+      ────────────────────────────────────── -->
+      <section class="bg-[#27252B] py-20 md:py-28">
+        <div class="page-container">
+
+          <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">
+            <div class="md:col-span-5">
+              <p class="formation-label mb-4">El proceso</p>
+              <h2 class="formation-title-dark">
+                Cómo son las sesiones<br />
+                <span class="text-white/45 not-italic font-light text-2xl md:text-3xl">
+                  en La Seda
+                </span>
+              </h2>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-base md:text-lg leading-[1.85] text-white/55">
+                Los procesos terapéuticos y de acompañamiento emocional en La Seda comienzan con una orientación telefónica gratuita en la que te escucharemos y valoraremos qué tipo de abordaje es el más adecuado para ti, así como cuál de nuestros profesionales se adapta mejor a tus necesidades.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ benefit-card reutilizada — mismo patrón visual -->
+          <div class="grid md:grid-cols-3 gap-px bg-white/5">
+            <div
+              v-for="(paso, i) in terapia.proceso"
+              :key="i"
+              class="benefit-card"
+            >
+              <span class="process-number" aria-hidden="true">{{ paso.paso }}</span>
+              <p class="text-white/65 text-base leading-[1.9] font-light">{{ paso.texto }}</p>
+            </div>
+          </div>
+
+          <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
+            <!-- ✅ /contacto — verifica pages/contacto.vue -->
+            <NuxtLink to="/contacto" class="btn-cta-hero group">
+              <span class="btn-shimmer-layer" aria-hidden="true" />
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              Pedir orientación gratuita
+            </NuxtLink>
+            <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
+            <NuxtLink to="/terapias" class="nav-back-link-dark group">
+              <svg
+                class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+              Ver todas las terapias
+            </NuxtLink>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ─────────────────────────────────────
+           SECCIÓN 4 · FAQs + CONTACTO
+      ────────────────────────────────────── -->
+      <!-- ✅ bg-[#27252B]/5 en lugar de bg-[#27252B]/[0.03] -->
+      <section class="bg-[#27252B]/5 py-20 md:py-28">
+        <div class="page-container">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+            <div class="lg:col-span-7">
+              <p class="formation-label mb-4">Preguntas frecuentes</p>
+              <h2 class="formation-title-light mb-10">Resolvemos tus dudas</h2>
+
+              <div class="divide-y divide-[#27252B]/10">
                 <div
-                  class="overflow-hidden transition-all duration-300"
-                  :class="faqAbierta === i ? 'max-h-96 pb-6' : 'max-h-0'"
+                  v-for="(faq, i) in terapia.faqs"
+                  :key="i"
+                  class="group"
                 >
-                  <p class="text-base md:text-lg leading-[1.9] text-[#27252B]/70 font-light">
-                    {{ faq.respuesta }}
-                  </p>
+                  <button
+                    class="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer"
+                    :aria-expanded="faqAbierta === i"
+                    @click="toggleFaq(i)"
+                  >
+                    <span
+                      class="text-base md:text-lg font-medium text-[#27252B] leading-snug group-hover:text-[#71B1A5] transition-colors duration-200"
+                      :class="{ 'text-[#71B1A5]': faqAbierta === i }"
+                    >
+                      {{ faq.pregunta }}
+                    </span>
+                    <span class="shrink-0 mt-0.5" aria-hidden="true">
+                      <svg
+                        class="w-5 h-5 text-[#71B1A5] transition-transform duration-300"
+                        :class="{ 'rotate-45': faqAbierta === i }"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                      </svg>
+                    </span>
+                  </button>
+
+                  <div
+                    class="overflow-hidden transition-all duration-300"
+                    :class="faqAbierta === i ? 'max-h-96 pb-6' : 'max-h-0'"
+                  >
+                    <p class="text-base md:text-lg leading-[1.9] text-[#27252B]/70 font-light">
+                      {{ faq.respuesta }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Contacto + CTA (col 5) -->
-          <div class="lg:col-span-5 space-y-6">
+            <div class="lg:col-span-5 space-y-6">
 
-            <div class="bg-[#27252B] p-9 md:p-10">
-              <div class="w-8 h-px bg-[#71B1A5] mb-7" />
-              <h3 class="font-serif italic text-white text-2xl md:text-3xl leading-[1.2] mb-6">
-                ¿Listo para dar<br />el primer paso?
-              </h3>
-              <p class="text-white/60 text-base leading-[1.9] mb-9 font-light">
-                Comienza con una orientación telefónica gratuita. Te escuchamos y valoramos juntos qué tipo de acompañamiento se adapta mejor a tu momento vital.
-              </p>
-              <NuxtLink
-                to="/contacto"
-                class="group relative w-full inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden"
-              >
-                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
-                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-                Reservar cita
-              </NuxtLink>
-            </div>
-
-            <div class="bg-white border border-[#27252B]/8 p-8 space-y-6">
-
-              <p class="text-xs tracking-[0.3em] uppercase text-[#27252B]/40 font-medium">
-                Contacto directo
-              </p>
-
-              <a
-                href="https://wa.me/34679571977"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center gap-4 group/wa"
-              >
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/wa:bg-[#71B1A5]/20 transition-colors duration-200">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">WhatsApp · La Seda</p>
-                  <p class="text-sm font-medium text-[#27252B] group-hover/wa:text-[#71B1A5] transition-colors duration-200">
-                    679 571 977
-                  </p>
-                </div>
-              </a>
-
-              <div class="h-px bg-[#27252B]/8" />
-
-              <a
-                href="mailto:hola@centrolaseda.com"
-                class="flex items-center gap-4 group/email"
-              >
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/email:bg-[#71B1A5]/20 transition-colors duration-200">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="cta-box-dark">
+                <div class="section-divider mb-7" />
+                <h3 class="formation-title-dark mb-6">
+                  ¿Listo para dar<br />
+                  <span class="text-white/55">el primer paso?</span>
+                </h3>
+                <p class="text-white/60 text-base leading-[1.9] mb-9 font-light">
+                  Comienza con una orientación telefónica gratuita. Te escuchamos y valoramos juntos qué tipo de acompañamiento se adapta mejor a tu momento vital.
+                </p>
+                <NuxtLink to="/contacto" class="btn-shimmer group">
+                  <span class="btn-shimmer-layer" aria-hidden="true" />
+                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>
-                </div>
-                <div>
-                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Email</p>
-                  <p class="text-sm font-medium text-[#27252B] group-hover/email:text-[#71B1A5] transition-colors duration-200">
-                    hola@centrolaseda.com
-                  </p>
-                </div>
-              </a>
+                  Reservar cita
+                </NuxtLink>
+              </div>
 
-              <div class="h-px bg-[#27252B]/8" />
+              <div class="contact-card">
 
-              <div class="flex items-start gap-4">
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
+                <p class="text-xs tracking-[0.3em] uppercase text-[#27252B]/40 font-medium">
+                  Contacto directo
+                </p>
+
+                <a
+                  href="https://wa.me/34679571977"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-4 group/wa"
+                >
+                  <div class="contact-icon-circle group-hover/wa:bg-[#71B1A5]/20 transition-colors duration-200">
+                    <svg class="w-4 h-4 text-[#71B1A5]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">WhatsApp · La Seda</p>
+                    <p class="text-sm font-medium text-[#27252B] group-hover/wa:text-[#71B1A5] transition-colors duration-200">
+                      679 571 977
+                    </p>
+                  </div>
+                </a>
+
+                <div class="contact-divider" />
+
+                <a
+                  href="mailto:hola@centrolaseda.com"
+                  class="flex items-center gap-4 group/email"
+                >
+                  <div class="contact-icon-circle group-hover/email:bg-[#71B1A5]/20 transition-colors duration-200">
+                    <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Email</p>
+                    <p class="text-sm font-medium text-[#27252B] group-hover/email:text-[#71B1A5] transition-colors duration-200">
+                      hola@centrolaseda.com
+                    </p>
+                  </div>
+                </a>
+
+                <div class="contact-divider" />
+
+                <div class="flex items-start gap-4">
+                  <div class="contact-icon-circle mt-0.5">
+                    <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Ubicación</p>
+                    <p class="text-sm font-medium text-[#27252B]">Calle Horno de Haza 29, Bajo 1</p>
+                    <p class="text-xs text-[#27252B]/45 font-light mt-0.5">Granada · Centro La Seda</p>
+                  </div>
                 </div>
-                <div>
-                  <p class="text-xs tracking-[0.2em] uppercase text-[#27252B]/40 mb-0.5">Ubicación</p>
-                  <p class="text-sm font-medium text-[#27252B]">Calle Horno de Haza 29, Bajo 1</p>
-                  <p class="text-xs text-[#27252B]/45 font-light mt-0.5">Granada · Centro La Seda</p>
-                </div>
+
               </div>
 
             </div>
 
           </div>
+        </div>
+      </section>
 
+
+      <!-- ─────────────────────────────────────
+           SECCIÓN 5 · OTRAS TERAPIAS
+      ────────────────────────────────────── -->
+      <section class="page-container py-20 md:py-24">
+
+        <div class="flex items-center justify-between mb-12">
+          <div>
+            <p class="formation-label mb-2">Otras especialidades</p>
+            <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl">
+              También puede interesarte
+            </h3>
+          </div>
+          <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
+          <NuxtLink
+            to="/terapias"
+            class="hidden md:inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200 group"
+          >
+            Ver todas
+            <span class="w-6 h-px bg-current group-hover:w-10 transition-all duration-300" aria-hidden="true" />
+          </NuxtLink>
         </div>
 
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 5 · OTRAS TERAPIAS
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-24">
-
-      <div class="flex items-center justify-between mb-12">
-        <div>
-          <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-2">
-            Otras especialidades
-          </p>
-          <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl">
-            También puede interesarte
-          </h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <NuxtLink
+            v-for="(t, key) in terapias"
+            :key="key"
+            :to="`/terapias/${key}`"
+            v-show="key !== id"
+            class="therapy-card group"
+          >
+            <div class="overflow-hidden aspect-[3/2]">
+              <!-- ✅ NuxtImg con atributos SEO completos; below-the-fold → lazy -->
+              <NuxtImg
+                src="/images/default.jpg"
+                :alt="`${t.titulo} ${t.tituloItalico} — La Seda Granada`"
+                format="webp"
+                loading="lazy"
+                width="400"
+                height="267"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="therapy-card-body">
+              <div class="w-4 h-px bg-[#71B1A5] mb-3" />
+              <p class="therapy-card-category">{{ t.categoria }}</p>
+              <p class="font-serif italic text-[#27252B] text-lg leading-snug">
+                {{ t.titulo }}<br />{{ t.tituloItalico }}
+              </p>
+              <p class="therapy-card-link">
+                Ver más
+                <span class="w-4 h-px bg-current group-hover:w-6 transition-all duration-300" aria-hidden="true" />
+              </p>
+            </div>
+          </NuxtLink>
         </div>
-        <NuxtLink
-          to="/terapias"
-          class="hidden md:inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200 group"
-        >
-          Ver todas
-          <span class="w-6 h-px bg-current group-hover:w-10 transition-all duration-300" />
-        </NuxtLink>
-      </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <NuxtLink
-          v-for="(t, key) in terapias"
-          :key="key"
-          :to="`/terapias/${key}`"
-          v-show="key !== id"
-          class="group block bg-white border border-[#27252B]/8 overflow-hidden hover:border-[#71B1A5]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/8"
-        >
-          <div class="overflow-hidden aspect-[3/2]">
-            <img
-              src="/images/default.jpg"
-              :alt="t.titulo + ' ' + t.tituloItalico"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <div class="p-5">
-            <div class="w-4 h-px bg-[#71B1A5] mb-3" />
-            <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1">{{ t.categoria }}</p>
-            <p class="font-serif italic text-[#27252B] text-lg leading-snug">{{ t.titulo }}<br />{{ t.tituloItalico }}</p>
-            <p class="text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3 flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200">
-              Ver más
-              <span class="w-4 h-px bg-current group-hover:w-6 transition-all duration-300" />
-            </p>
-          </div>
-        </NuxtLink>
-      </div>
-
-    </section>
+      </section>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 6 · NAVEGACIÓN INFERIOR
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-10 md:py-14">
-      <div class="border-t border-[#27252B]/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-        <NuxtLink to="/terapias" class="inline-flex items-center gap-4 group">
-          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
-            Todas las terapias
-          </span>
-        </NuxtLink>
-        <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-            Contactar con el centro
-          </span>
-          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
-        </NuxtLink>
-      </div>
-    </section>
+      <!-- ─────────────────────────────────────
+           SECCIÓN 6 · NAVEGACIÓN INFERIOR
+      ────────────────────────────────────── -->
+      <section class="page-container py-10 md:py-14">
+        <div class="border-t border-[#27252B]/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+          <!-- ✅ nav-link-back / nav-link-line / nav-link-text reutilizados de formaciones -->
+          <NuxtLink to="/terapias" class="nav-link-back group">
+            <span class="nav-link-line" />
+            <span class="nav-link-text">Todas las terapias</span>
+          </NuxtLink>
+          <NuxtLink to="/contacto" class="nav-link-back group">
+            <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+              Contactar con el centro
+            </span>
+            <span class="nav-link-line" />
+          </NuxtLink>
+        </div>
+      </section>
 
-  </main>
+    </main>
+
+  </div>
 </template>

@@ -160,430 +160,452 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
 </script>
 
 <template>
-  <main v-if="formacion" class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
+  <div>
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · HERO
-    ════════════════════════════════════════════════ -->
-    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-        <!-- Fallback above the fold → preload + fetchpriority high, sin loading lazy -->
-        <NuxtImg
-          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
-          alt="Centro de Psicología La Seda Granada — formaciones especializadas en psicología y coaching"
-          format="webp"
-          preload
-          fetchpriority="high"
-          class="w-full h-full object-cover"
-        />
-      </video>
+    <!-- ══════════════════════════════════════════
+         ESTADO PRINCIPAL · Formación encontrada
+    ═══════════════════════════════════════════ -->
+    <main v-if="formacion" class="overflow-x-hidden">
 
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
+      <!-- ─────────────────────────────────────
+           SECCIÓN 1 · HERO
+      ────────────────────────────────────── -->
+      <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
 
-      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
-          {{ formacion.etiqueta }} · Centro de Psicología La Seda
-        </p>
-        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          {{ formacion.titulo }}
-        </h1>
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-          {{ formacion.subtitulo }}
-        </p>
-      </div>
-    </section>
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
+        >
+          <source src="/video/minhero.mp4" type="video/mp4" />
+        </video>
 
+        <!-- ✅ SEO: NuxtImg correcto fuera del <video>; el poster ya actúa de fallback.
+             width/height orientativos para evitar CLS (ajusta a tus dimensiones reales) -->
+        <noscript>
+          <NuxtImg
+            src="/images/centro-psicologia-la-seda-granada-hero.jpg"
+            alt="Centro de Psicología La Seda Granada — formaciones especializadas en psicología y coaching"
+            format="webp"
+            width="1920"
+            height="1080"
+            preload
+            fetchpriority="high"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+        </noscript>
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · ENFOQUE
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-        <div class="lg:sticky lg:top-28">
-          <div class="w-12 h-px bg-[#71B1A5] mb-7" />
-          <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
-            {{ esGestalt ? 'Sobre la formación' : 'Qué es el método' }}
+        <div class="relative z-10 flex flex-col justify-center h-full page-container">
+          <p class="formation-label mb-4 md:mb-6">
+            {{ formacion.etiqueta }} · Centro de Psicología La Seda
           </p>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.18] mb-10">
-            {{ esGestalt
-              ? 'Un recorrido profundo por la clínica con menores'
-              : 'Una intervención de alta eficacia respaldada por la ciencia' }}
-          </h2>
-
-          <div
-            v-for="(parrafo, i) in formacion.enfoque.split('\n\n')"
-            :key="i"
-            class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7"
-          >
-            {{ parrafo }}
-          </div>
-
-          <div v-if="esGestalt && formacion.dirigido" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-            <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#71B1A5] mb-3">¿A quién va dirigida?</p>
-            <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.dirigido }}</p>
-          </div>
-
-          <div v-if="esWingwave" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-            <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#71B1A5] mb-3">¿A quién va dirigida?</p>
-            <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.destinatarios }}</p>
-          </div>
-
-          <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
+          <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
+            {{ formacion.titulo }}
+          </h1>
+          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
+            {{ formacion.subtitulo }}
+          </p>
         </div>
-
-        <div>
-
-          <!-- GESTALT: lista de talleres -->
-          <div v-if="esGestalt">
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-7">
-              Programa · 15 talleres
-            </p>
-            <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/8">
-              <div
-                v-for="taller in formacion.programa"
-                :key="taller.numero"
-                class="flex items-start gap-5 px-6 py-5 hover:bg-[#71B1A5]/5 transition-colors duration-150"
-              >
-                <span class="flex-shrink-0 w-7 h-7 bg-[#71B1A5] text-white text-[0.65rem] font-medium flex items-center justify-center mt-0.5">
-                  {{ taller.numero }}
-                </span>
-                <div>
-                  <p class="text-sm font-medium text-[#27252B] mb-1.5 leading-snug">{{ taller.nombre }}</p>
-                  <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ taller.descripcion }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- WINGWAVE: ventajas + qué incluye -->
-          <div v-if="esWingwave" class="space-y-14">
-
-            <div>
-              <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-7">
-                Beneficios y aplicaciones
-              </p>
-              <div class="divide-y divide-[#27252B]/8">
-                <div
-                  v-for="ventaja in formacion.ventajas"
-                  :key="ventaja.texto"
-                  class="flex items-start gap-5 py-5"
-                >
-                  <div class="w-2 h-2 bg-[#71B1A5] flex-shrink-0 mt-2.5" />
-                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/78">{{ ventaja.texto }}</p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-7">
-                Qué incluye la formación
-              </p>
-              <div class="bg-[#27252B] px-8 py-9 space-y-6">
-                <div
-                  v-for="item in formacion.incluye"
-                  :key="item"
-                  class="flex items-start gap-5"
-                >
-                  <div class="w-px h-5 bg-[#71B1A5] flex-shrink-0 mt-1" />
-                  <p class="text-sm md:text-base leading-[1.8] text-white/80 font-light">{{ item }}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="border border-[#27252B]/12 px-7 py-6">
-              <p class="text-xs font-medium tracking-[0.25em] uppercase text-[#71B1A5] mb-2">Precio</p>
-              <p class="font-serif italic text-[#27252B] text-2xl mb-2">{{ formacion.logistica.precio }}</p>
-              <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Descuento por reserva anticipada y facilidades de pago a plazos disponibles.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
+      </section>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 3 · VÍDEOS (solo Wingwave)
-    ════════════════════════════════════════════════ -->
-    <section
-      v-if="esWingwave && formacion.videos"
-      class="bg-[#27252B]/[0.03] py-20 md:py-28"
-    >
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14">
-          <div class="md:col-span-5">
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">Recursos audiovisuales</p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
-              Conoce el método<br />
-              <span class="text-[#27252B]/60">en profundidad</span>
-            </h2>
-          </div>
-          <div class="md:col-span-7">
-            <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-              Testimonios de profesionales certificados y una demostración real del proceso de sesión.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div
-            v-for="video in formacion.videos"
-            :key="video.url"
-            class="border border-[#27252B]/10 overflow-hidden"
-          >
-            <div class="aspect-video w-full overflow-hidden">
-              <iframe
-                :src="video.url"
-                :title="video.titulo"
-                class="w-full h-full"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="px-6 py-6 bg-[#FDFBF9]">
-              <div class="w-6 h-px bg-[#71B1A5] mb-4" />
-              <p class="text-sm font-medium text-[#27252B] mb-2">{{ video.titulo }}</p>
-              <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ video.descripcion }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · PROFESORADO
-    ════════════════════════════════════════════════ -->
-    <section :class="esWingwave ? 'bg-[#FDFBF9]' : 'bg-[#27252B]/[0.03]'" class="py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-
-        <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-18">
-          <div class="md:col-span-5">
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">
-              {{ esGestalt ? 'Equipo docente' : 'Facilitadores' }}
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
-              {{ esGestalt
-                ? 'Profesionales con trayectoria, presencia y compromiso'
-                : 'Voces con autoridad y experiencia en el método' }}
-            </h2>
-          </div>
-          <div class="md:col-span-7">
-            <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-              {{ esGestalt
-                ? 'Un equipo de ocho especialistas que combinan rigor clínico y profundidad humana en cada módulo.'
-                : 'Formadores acreditados por el Besser-Siegmund Institut de Hamburgo con décadas de práctica clínica.' }}
-            </p>
-          </div>
-        </div>
-
-        <!-- Gestalt: grid de 3 columnas en desktop — below the fold → loading lazy -->
-        <div
-          v-if="esGestalt"
-          class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#27252B]/10"
-        >
-          <div
-            v-for="prof in formacion.profesorado"
-            :key="prof.nombre"
-            class="bg-[#FDFBF9] p-8 flex flex-col gap-5"
-          >
-            <div class="flex items-center gap-4">
-              <div class="w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10">
-                <NuxtImg
-                  :src="prof.imagen"
-                  :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                  format="webp"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
-                <p class="text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug">{{ prof.cargo }}</p>
-              </div>
-            </div>
-            <div class="border-t border-[#27252B]/8 pt-5">
-              <p class="text-sm text-[#27252B]/62 font-light leading-[1.85]">{{ prof.bio }}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Wingwave: 2 tarjetas grandes — below the fold → loading lazy -->
-        <div
-          v-if="esWingwave"
-          class="grid md:grid-cols-2 gap-8"
-        >
-          <div
-            v-for="prof in formacion.profesorado"
-            :key="prof.nombre"
-            class="border border-[#27252B]/10 p-10 flex flex-col gap-7 bg-[#FDFBF9]"
-          >
-            <div class="flex items-center gap-5">
-              <div class="w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10">
-                <NuxtImg
-                  :src="prof.imagen"
-                  :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                  format="webp"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <p class="text-base font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
-                <p class="text-xs text-[#71B1A5] mt-1 tracking-wide">{{ prof.cargo }}</p>
-              </div>
-            </div>
-            <div class="border-t border-[#27252B]/8 pt-6">
-              <p class="text-base text-[#27252B]/65 font-light leading-[1.9]">{{ prof.bio }}</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 5 · LOGÍSTICA Y RESERVA
-    ════════════════════════════════════════════════ -->
-    <section class="bg-[#27252B] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <!-- ─────────────────────────────────────
+           SECCIÓN 2 · ENFOQUE
+      ────────────────────────────────────── -->
+      <section class="page-container py-24 md:py-32">
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          <div>
-            <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">Información práctica</p>
-            <h2 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2] mb-12">
-              Próxima convocatoria<br />
-              <span class="text-white/50 not-italic font-light text-2xl md:text-3xl">{{ formacion.logistica.convocatoria }}</span>
+          <!-- Columna sticky izquierda -->
+          <div class="lg:sticky lg:top-28">
+            <div class="section-divider mb-7" />
+            <p class="formation-label mb-4">
+              {{ esGestalt ? 'Sobre la formación' : 'Qué es el método' }}
+            </p>
+            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.18] mb-10">
+              {{ esGestalt
+                ? 'Un recorrido profundo por la clínica con menores'
+                : 'Una intervención de alta eficacia respaldada por la ciencia' }}
             </h2>
 
-            <div class="border border-white/10 divide-y divide-white/8">
-              <div class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Formato</span>
-                <span class="text-sm text-white font-medium text-right">{{ formacion.logistica.formato }}</span>
-              </div>
-              <div class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Horario</span>
-                <span class="text-sm text-white font-medium text-right">{{ formacion.logistica.horario }}</span>
-              </div>
-              <div class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Horas totales</span>
-                <span class="text-sm text-white font-medium">{{ formacion.logistica.horas_total }}h</span>
-              </div>
-              <div v-if="formacion.logistica.horas_presenciales" class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Horas presenciales</span>
-                <span class="text-sm text-white font-medium">{{ formacion.logistica.horas_presenciales }}h</span>
-              </div>
-              <div v-if="formacion.logistica.horas_proyecto" class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Trabajo fin de curso</span>
-                <span class="text-sm text-white font-medium">{{ formacion.logistica.horas_proyecto }}h</span>
-              </div>
-              <div class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Lugar</span>
-                <span class="text-sm text-white font-medium text-right">{{ formacion.logistica.lugar }}</span>
-              </div>
-              <div v-if="formacion.logistica.participantes" class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Participantes</span>
-                <span class="text-sm text-white font-medium text-right">{{ formacion.logistica.participantes }}</span>
-              </div>
-              <div class="flex items-start justify-between px-6 py-5 gap-6">
-                <span class="text-sm text-white/50 font-light shrink-0">Precio</span>
-                <span class="text-sm text-[#71B1A5] font-medium text-right">
-                  {{ esWingwave ? formacion.logistica.precio : 'Solicitar dossier de precios' }}
-                </span>
+            <div
+              v-for="(parrafo, i) in formacion.enfoque.split('\n\n')"
+              :key="i"
+              class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7"
+            >
+              {{ parrafo }}
+            </div>
+
+            <div v-if="esGestalt && formacion.dirigido" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
+              <p class="formation-label mb-3">¿A quién va dirigida?</p>
+              <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.dirigido }}</p>
+            </div>
+
+            <div v-if="esWingwave" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
+              <p class="formation-label mb-3">¿A quién va dirigida?</p>
+              <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.destinatarios }}</p>
+            </div>
+
+            <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
+          </div>
+
+          <!-- Columna derecha -->
+          <div>
+
+            <!-- GESTALT: lista de talleres -->
+            <div v-if="esGestalt">
+              <p class="formation-label mb-7">Programa · 15 talleres</p>
+              <!-- ✅ divide-[#27252B]/10 en lugar de /8 (fuera de escala nativa) -->
+              <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/10">
+                <div
+                  v-for="taller in formacion.programa"
+                  :key="taller.numero"
+                  class="flex items-start gap-5 px-6 py-5 hover:bg-[#71B1A5]/5 transition-colors duration-150"
+                >
+                  <span class="flex-shrink-0 w-7 h-7 bg-[#71B1A5] text-white text-[0.65rem] font-medium flex items-center justify-center mt-0.5">
+                    {{ taller.numero }}
+                  </span>
+                  <div>
+                    <p class="text-sm font-medium text-[#27252B] mb-1.5 leading-snug">{{ taller.nombre }}</p>
+                    <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ taller.descripcion }}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div v-if="esWingwave" class="mt-8 border-l-2 border-[#71B1A5]/40 pl-5 py-1">
-              <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#71B1A5] mb-2">Requisitos de acceso</p>
-              <p class="text-sm text-white/55 font-light leading-relaxed">
-                Nivel mínimo de Practitioner de PNL, formación en psicología, terapia, medicina, Gestalt, constelaciones, coaching u otra formación equiparable. Es necesario acreditar la formación previa mediante fotocopias de títulos o diplomas.
+            <!-- WINGWAVE: ventajas + qué incluye -->
+            <div v-if="esWingwave" class="space-y-14">
+
+              <div>
+                <p class="formation-label mb-7">Beneficios y aplicaciones</p>
+                <!-- ✅ divide-[#27252B]/10 en lugar de /8 -->
+                <div class="divide-y divide-[#27252B]/10">
+                  <div
+                    v-for="ventaja in formacion.ventajas"
+                    :key="ventaja.texto"
+                    class="flex items-start gap-5 py-5"
+                  >
+                    <div class="w-2 h-2 bg-[#71B1A5] flex-shrink-0 mt-2.5" />
+                    <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75">{{ ventaja.texto }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p class="formation-label mb-7">Qué incluye la formación</p>
+                <div class="bg-[#27252B] px-8 py-9 space-y-6">
+                  <div
+                    v-for="item in formacion.incluye"
+                    :key="item"
+                    class="flex items-start gap-5"
+                  >
+                    <div class="w-px h-5 bg-[#71B1A5] flex-shrink-0 mt-1" />
+                    <p class="text-sm md:text-base leading-[1.8] text-white/80 font-light">{{ item }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ✅ border-[#27252B]/10 en lugar de /12 (fuera de escala nativa) -->
+              <div class="border border-[#27252B]/10 px-7 py-6">
+                <p class="formation-label mb-2">Precio</p>
+                <p class="font-serif italic text-[#27252B] text-2xl mb-2">{{ formacion.logistica.precio }}</p>
+                <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Descuento por reserva anticipada y facilidades de pago a plazos disponibles.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ─────────────────────────────────────
+           SECCIÓN 3 · VÍDEOS (solo Wingwave)
+      ────────────────────────────────────── -->
+      <section
+        v-if="esWingwave && formacion.videos"
+        class="bg-[#27252B]/5 py-20 md:py-28"
+      >
+        <div class="page-container">
+          <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14">
+            <div class="md:col-span-5">
+              <p class="formation-label mb-4">Recursos audiovisuales</p>
+              <h2 class="formation-title-light leading-[1.2]">
+                Conoce el método<br />
+                <span class="text-[#27252B]/60">en profundidad</span>
+              </h2>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
+                Testimonios de profesionales certificados y una demostración real del proceso de sesión.
               </p>
             </div>
           </div>
 
-          <div class="lg:pt-28 flex flex-col items-start gap-9">
-            <div class="w-12 h-px bg-[#71B1A5]" />
-            <h3 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]">
-              ¿Te interesa esta<br />
-              <span class="text-white/55">formación?</span>
-            </h3>
-            <p class="text-lg md:text-xl leading-[1.85] text-white/65">
-              Solicita información sin compromiso sobre el dossier completo, el calendario de talleres,
-              el proceso de matriculación y las condiciones de pago.
-              Puedes escribirnos a
-              <a href="mailto:hola@centrolaseda.com" class="text-[#71B1A5] hover:underline transition-all">hola@centrolaseda.com</a>
-              o llamarnos al
-              <a href="tel:679571977" class="text-[#71B1A5] hover:underline transition-all">679 571 977</a>.
-            </p>
-            <NuxtLink
-              to="/contacto"
-              class="inline-flex items-center gap-4 bg-[#71B1A5] text-[#27252B] px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium hover:bg-[#5a9a8e] transition-colors duration-300"
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              v-for="video in formacion.videos"
+              :key="video.url"
+              class="border border-[#27252B]/10 overflow-hidden"
             >
-              Solicitar información
-              <span class="w-6 h-px bg-[#27252B]/40 inline-block" />
-            </NuxtLink>
-            <p class="text-sm text-white/30 font-light">También por teléfono o WhatsApp. Respondemos en menos de 24 h.</p>
+              <div class="aspect-video w-full overflow-hidden">
+                <iframe
+                  :src="video.url"
+                  :title="video.titulo"
+                  class="w-full h-full"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                />
+              </div>
+              <div class="px-6 py-6 bg-[#FDFBF9]">
+                <div class="section-divider mb-4" />
+                <p class="text-sm font-medium text-[#27252B] mb-2">{{ video.titulo }}</p>
+                <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ video.descripcion }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ─────────────────────────────────────
+           SECCIÓN 4 · PROFESORADO
+      ────────────────────────────────────── -->
+      <section :class="esWingwave ? 'bg-[#FDFBF9]' : 'bg-[#27252B]/5'" class="py-20 md:py-28">
+        <div class="page-container">
+
+          <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-18">
+            <div class="md:col-span-5">
+              <p class="formation-label mb-4">
+                {{ esGestalt ? 'Equipo docente' : 'Facilitadores' }}
+              </p>
+              <h2 class="formation-title-light leading-[1.2]">
+                {{ esGestalt
+                  ? 'Profesionales con trayectoria, presencia y compromiso'
+                  : 'Voces con autoridad y experiencia en el método' }}
+              </h2>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
+                {{ esGestalt
+                  ? 'Un equipo de ocho especialistas que combinan rigor clínico y profundidad humana en cada módulo.'
+                  : 'Formadores acreditados por el Besser-Siegmund Institut de Hamburgo con décadas de práctica clínica.' }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Gestalt: grid 3 columnas -->
+          <div
+            v-if="esGestalt"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#27252B]/10"
+          >
+            <div
+              v-for="prof in formacion.profesorado"
+              :key="prof.nombre"
+              class="bg-[#FDFBF9] p-8 flex flex-col gap-5"
+            >
+              <div class="flex items-center gap-4">
+                <div class="prof-avatar-sm">
+                  <!-- ✅ width/height añadidos para evitar CLS -->
+                  <NuxtImg
+                    :src="prof.imagen"
+                    :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
+                    format="webp"
+                    loading="lazy"
+                    width="44"
+                    height="44"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p class="prof-name">{{ prof.nombre }}</p>
+                  <p class="prof-role">{{ prof.cargo }}</p>
+                </div>
+              </div>
+              <div class="prof-card-body">
+                <p class="prof-bio">{{ prof.bio }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wingwave: 2 tarjetas grandes -->
+          <div
+            v-if="esWingwave"
+            class="grid md:grid-cols-2 gap-8"
+          >
+            <div
+              v-for="prof in formacion.profesorado"
+              :key="prof.nombre"
+              class="border border-[#27252B]/10 p-10 flex flex-col gap-7 bg-[#FDFBF9]"
+            >
+              <div class="flex items-center gap-5">
+                <div class="prof-avatar-lg">
+                  <!-- ✅ width/height añadidos para evitar CLS -->
+                  <NuxtImg
+                    :src="prof.imagen"
+                    :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
+                    format="webp"
+                    loading="lazy"
+                    width="56"
+                    height="56"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p class="text-base font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
+                  <p class="text-xs text-[#71B1A5] mt-1 tracking-wide">{{ prof.cargo }}</p>
+                </div>
+              </div>
+              <!-- ✅ pt-6 como clase utilitaria sobre la base prof-card-body -->
+              <div class="prof-card-body pt-6">
+                <p class="text-base text-[#27252B]/65 font-light leading-[1.9]">{{ prof.bio }}</p>
+              </div>
+            </div>
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 6 · CTA FINAL / NAVEGACIÓN
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-20">
-      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-        <NuxtLink to="/formaciones" class="inline-flex items-center gap-4 group">
-          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
-            Todas las formaciones
-          </span>
-        </NuxtLink>
-        <NuxtLink to="/contacto" class="inline-flex items-center gap-4 group">
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-            Contactar con el centro
-          </span>
-          <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" />
-        </NuxtLink>
-      </div>
-    </section>
+      <!-- ─────────────────────────────────────
+           SECCIÓN 5 · LOGÍSTICA Y RESERVA
+      ────────────────────────────────────── -->
+      <section class="bg-[#27252B] py-20 md:py-28">
+        <div class="page-container">
+          <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-  </main>
+            <!-- Columna izquierda: tabla de datos -->
+            <div>
+              <p class="formation-label mb-4">Información práctica</p>
+              <h2 class="formation-title-dark mb-12">
+                Próxima convocatoria<br />
+                <span class="text-white/50 not-italic font-light text-2xl md:text-3xl">{{ formacion.logistica.convocatoria }}</span>
+              </h2>
+
+              <!-- ✅ divide-white/10 en lugar de /8 (fuera de escala nativa) -->
+              <div class="border border-white/10 divide-y divide-white/10">
+                <div class="logistics-row">
+                  <span class="logistics-label">Formato</span>
+                  <span class="logistics-value text-right">{{ formacion.logistica.formato }}</span>
+                </div>
+                <div class="logistics-row">
+                  <span class="logistics-label">Horario</span>
+                  <span class="logistics-value text-right">{{ formacion.logistica.horario }}</span>
+                </div>
+                <div class="logistics-row">
+                  <span class="logistics-label">Horas totales</span>
+                  <span class="logistics-value">{{ formacion.logistica.horas_total }}h</span>
+                </div>
+                <div v-if="formacion.logistica.horas_presenciales" class="logistics-row">
+                  <span class="logistics-label">Horas presenciales</span>
+                  <span class="logistics-value">{{ formacion.logistica.horas_presenciales }}h</span>
+                </div>
+                <div v-if="formacion.logistica.horas_proyecto" class="logistics-row">
+                  <span class="logistics-label">Trabajo fin de curso</span>
+                  <span class="logistics-value">{{ formacion.logistica.horas_proyecto }}h</span>
+                </div>
+                <div class="logistics-row">
+                  <span class="logistics-label">Lugar</span>
+                  <span class="logistics-value text-right">{{ formacion.logistica.lugar }}</span>
+                </div>
+                <div v-if="formacion.logistica.participantes" class="logistics-row">
+                  <span class="logistics-label">Participantes</span>
+                  <span class="logistics-value text-right">{{ formacion.logistica.participantes }}</span>
+                </div>
+                <div class="logistics-row">
+                  <span class="logistics-label">Precio</span>
+                  <span class="text-sm text-[#71B1A5] font-medium text-right">
+                    {{ esWingwave ? formacion.logistica.precio : 'Solicitar dossier de precios' }}
+                  </span>
+                </div>
+              </div>
+
+              <div v-if="esWingwave" class="mt-8 border-l-2 border-[#71B1A5]/40 pl-5 py-1">
+                <p class="formation-label mb-2">Requisitos de acceso</p>
+                <p class="text-sm text-white/55 font-light leading-relaxed">
+                  Nivel mínimo de Practitioner de PNL, formación en psicología, terapia, medicina, Gestalt, constelaciones, coaching u otra formación equiparable. Es necesario acreditar la formación previa mediante fotocopias de títulos o diplomas.
+                </p>
+              </div>
+            </div>
+
+            <!-- Columna derecha: CTA de reserva -->
+            <div class="lg:pt-28 flex flex-col items-start gap-9">
+              <div class="w-12 h-px bg-[#71B1A5]" />
+              <h3 class="formation-title-dark leading-[1.2]">
+                ¿Te interesa esta<br />
+                <span class="text-white/55">formación?</span>
+              </h3>
+              <p class="text-lg md:text-xl leading-[1.85] text-white/65">
+                Solicita información sin compromiso sobre el dossier completo, el calendario de talleres,
+                el proceso de matriculación y las condiciones de pago.
+                Puedes escribirnos a
+                <a href="mailto:hola@centrolaseda.com" class="text-[#71B1A5] hover:underline transition-all">hola@centrolaseda.com</a>
+                o llamarnos al
+                <a href="tel:679571977" class="text-[#71B1A5] hover:underline transition-all">679 571 977</a>.
+              </p>
+              <NuxtLink to="/contacto" class="btn-reserve">
+                Solicitar información
+                <span class="w-6 h-px bg-[#27252B]/40 inline-block" />
+              </NuxtLink>
+              <p class="text-sm text-white/30 font-light">También por teléfono o WhatsApp. Respondemos en menos de 24 h.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
 
-  <!-- ═══════════════════════════════════════════════
-       ESTADO 404
-  ════════════════════════════════════════════════ -->
-  <main
-    v-else
-    class="bg-[#FDFBF9] text-[#27252B] font-sans min-h-screen flex flex-col items-center justify-center px-6 text-center"
-  >
-    <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-4">Error 404</p>
-    <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">Formación no encontrada</h1>
-    <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
-      La formación que buscas no existe o la URL no es correcta.
-    </p>
-    <NuxtLink
-      to="/formaciones"
-      class="inline-flex items-center gap-4 bg-[#71B1A5] text-white px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium hover:bg-[#5a9a8e] transition-colors duration-300"
+      <!-- ─────────────────────────────────────
+           SECCIÓN 6 · NAVEGACIÓN INFERIOR
+      ────────────────────────────────────── -->
+      <section class="page-container py-16 md:py-20">
+        <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+
+          <!-- ✅ Ruta /formaciones — verifica que exista pages/formaciones/index.vue o pages/formaciones.vue -->
+          <NuxtLink to="/formaciones" class="nav-link-back group">
+            <span class="nav-link-line" />
+            <span class="nav-link-text">Todas las formaciones</span>
+          </NuxtLink>
+
+          <!-- ✅ Ruta /contacto — verifica que exista pages/contacto.vue -->
+          <NuxtLink to="/contacto" class="nav-link-back group">
+            <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+              Contactar con el centro
+            </span>
+            <span class="nav-link-line" />
+          </NuxtLink>
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- ══════════════════════════════════════════
+         ESTADO 404 · Formación no encontrada
+    ═══════════════════════════════════════════ -->
+    <main
+      v-else
+      class="min-h-screen flex flex-col items-center justify-center px-6 text-center"
     >
-      Ver todas las formaciones
-      <span class="w-6 h-px bg-white/60 inline-block" />
-    </NuxtLink>
-  </main>
+      <p class="formation-label mb-4">Error 404</p>
+      <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">
+        Formación no encontrada
+      </h1>
+      <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
+        La formación que buscas no existe o la URL no es correcta.
+      </p>
+      <NuxtLink to="/formaciones" class="btn-primary">
+        Ver todas las formaciones
+        <span class="w-6 h-px bg-white/60 inline-block" />
+      </NuxtLink>
+    </main>
+
+  </div>
 </template>

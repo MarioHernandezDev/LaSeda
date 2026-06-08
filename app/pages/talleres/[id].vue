@@ -143,11 +143,11 @@ const talleres = {
       },
       {
         pregunta: '¿Es seguro que constelaré en el taller?',
-        respuesta: 'En este tipo de talleres no podemos asegurar que todos los participantes constelen, porque en ocasiones, por razones terapéuticas, no es adecuado hacer una constelación sino otro tipo de intervención. El trabajo va mucho más allá de constelarse: a lo largo del taller los asistentes van recibiendo comprensiones y tomas de conciencia que pueden ser igual o más efectivas. Abrirse a la experiencia de lo que suceda es la actitud más sanadora.',
+        respuesta: 'En este tipo de talleres no podemos asegurar que todos los participantes constelen, porque en ocasiones, por razones terapéuticas, no es adecuado hacer una constelación sino otro tipo de intervención. El trabajo va mucho más allá de constelar: a lo largo del taller los asistentes van recibiendo comprensiones y tomas de conciencia que pueden ser igual o más efectivas. Abrirse a la experiencia de lo que suceda es la actitud más sanadora.',
       },
       {
         pregunta: '¿Puedo participar como representante sin tener una constelación propia?',
-        respuesta: 'Sí, y es una experiencia muy valiosa en sí misma. Participar como representante permite vivir en primera persona el campo sistémico y obtener información sobre los propios patrones, incluso sin constelarse directamente.',
+        respuesta: 'Sí, y es una experiencia muy valiosa en sí misma. Participar como representante permite vivir en primera persona el campo sistémico y obtener información sobre los propios patrones, incluso sin constelar directamente.',
       },
       {
         pregunta: '¿Cómo reservo plaza en un taller?',
@@ -160,7 +160,6 @@ const talleres = {
 const id = route.params.id
 const taller = computed(() => talleres[id] ?? talleres['constelaciones-familiares'])
 
-// Acordeón FAQs
 const faqAbierta = ref(null)
 const toggleFaq = (i) => {
   faqAbierta.value = faqAbierta.value === i ? null : i
@@ -173,12 +172,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="bg-[#FDFBF9] text-[#27252B] font-sans overflow-x-hidden">
+  <main>
 
-   <!-- ═══════════════════════════════════════════════
-        SECCIÓN 1 · HERO DETALLE
-    ════════════════════════════════════════════════ -->
+    <!-- ─────────────────────────────────────
+         SECCIÓN 1 · HERO
+    ────────────────────────────────────── -->
     <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
+
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
@@ -188,59 +188,75 @@ useSeoMeta({
         poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
       >
         <source src="/video/minhero.mp4" type="video/mp4" />
-        <img src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg" alt="Centro de Psicología La Seda" class="w-full h-full object-cover" />
       </video>
+
+      <!-- ✅ Fallback correcto fuera del <video>, solo para no-JS -->
+      <noscript>
+        <NuxtImg
+          src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+          alt="Centro de Psicología La Seda Granada — talleres y espacios vivenciales"
+          format="webp"
+          width="1920"
+          height="1080"
+          preload
+          fetchpriority="high"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </noscript>
 
       <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
       <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
 
-      <div class="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-
-        <p class="text-[#71B1A5] text-xs md:text-sm font-medium tracking-[0.35em] uppercase mb-4 md:mb-6">
+      <div class="relative z-10 flex flex-col justify-center h-full page-container">
+        <p class="formation-label mb-4 md:mb-6">
           {{ taller.categoria }} · {{ taller.facilitadora.nombre }}
         </p>
-
         <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
           {{ taller.titulo }}<br />
           <span class="text-[#27252B]/75">{{ taller.tituloItalico }}</span>
         </h1>
-
         <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
           {{ taller.subtitulo }}
         </p>
-
       </div>
     </section>
-    <!-- ═══════════════════════════════════════════════
+
+
+    <!-- ─────────────────────────────────────
          SECCIÓN 2 · PRESENTACIÓN EDITORIAL
-    ════════════════════════════════════════════════ -->
-    <section class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32">
+    ────────────────────────────────────── -->
+    <section class="page-container py-24 md:py-32">
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
         <!-- Columna izquierda: bio facilitadora -->
         <div class="lg:sticky lg:top-28">
 
           <div class="overflow-hidden aspect-[3/4] mb-10 relative">
-            <img
+            <!-- ✅ NuxtImg con atributos SEO correctos; below-the-fold → lazy -->
+            <NuxtImg
               src="/images/default.jpg"
-              :alt="taller.facilitadora.nombre"
+              :alt="`${taller.facilitadora.nombre} — facilitadora en Centro de Psicología La Seda Granada`"
+              format="webp"
+              loading="lazy"
+              width="600"
+              height="800"
               class="w-full h-full object-cover"
             />
             <div class="absolute -bottom-3 -right-3 w-full h-full border border-[#71B1A5]/30 pointer-events-none z-[-1]" />
             <div class="absolute bottom-5 left-0 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3">
-              <p class="text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium">Facilitadora</p>
+              <p class="formation-label">Facilitadora</p>
               <p class="font-serif italic text-[#27252B] text-sm mt-0.5">{{ taller.facilitadora.nombre }}</p>
             </div>
           </div>
 
-          <div class="w-8 h-px bg-[#71B1A5] mb-6" />
+          <div class="section-divider mb-6" />
           <h2 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-[1.2] mb-7">
             Sobre la facilitadora
           </h2>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/72 mb-6">
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/70 mb-6">
             {{ taller.facilitadora.bio }}
           </p>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/72">
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/70">
             {{ taller.facilitadora.bio2 }}
           </p>
 
@@ -250,9 +266,7 @@ useSeoMeta({
         <div class="space-y-10">
 
           <div>
-            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-5">
-              El taller
-            </p>
+            <p class="formation-label mb-5">El taller</p>
             <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-8">
               ¿Qué es y para quién es<br />
               <span class="text-[#27252B]/50 not-italic font-light text-2xl md:text-3xl">
@@ -261,18 +275,22 @@ useSeoMeta({
             </h2>
           </div>
 
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/78">
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75">
             {{ taller.descripcion }}
           </p>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/78">
+          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75">
             {{ taller.descripcion2 }}
           </p>
 
-          <!-- Imagen secundaria -->
+          <!-- ✅ NuxtImg con atributos SEO correctos; below-the-fold → lazy -->
           <div class="overflow-hidden aspect-[16/8] mt-2">
-            <img
+            <NuxtImg
               src="/images/default.jpg"
-              :alt="`${taller.titulo} ${taller.tituloItalico} en La Seda Granada`"
+              :alt="`${taller.titulo} ${taller.tituloItalico} — Centro de Psicología La Seda Granada`"
+              format="webp"
+              loading="lazy"
+              width="1200"
+              height="600"
               class="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-700"
             />
           </div>
@@ -283,42 +301,36 @@ useSeoMeta({
     </section>
 
 
-    <!-- ═══════════════════════════════════════════════
+    <!-- ─────────────────────────────────────
          SECCIÓN 3 · BENEFICIOS
-    ════════════════════════════════════════════════ -->
+    ────────────────────────────────────── -->
     <section class="bg-[#27252B] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <div class="page-container">
 
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-18">
           <div>
-            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-4">
+            <p class="formation-label mb-4">
               {{ taller.id === 'supervision-casos' ? 'Beneficios del proceso' : 'Qué abordamos' }}
             </p>
-            <h2 class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]">
+            <h2 class="formation-title-dark">
               {{ taller.id === 'supervision-casos'
                 ? 'Lo que ganas como terapeuta'
-                : 'Situaciones que este taller puede mover'
-              }}
+                : 'Situaciones que este taller puede mover' }}
             </h2>
           </div>
           <div class="w-20 h-px bg-[#71B1A5]/30 md:mb-2 shrink-0" />
         </div>
 
+        <!-- ✅ gap-px + bg-white/5 en lugar de bg-white/[0.05] -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           <div
             v-for="(b, i) in taller.beneficios"
             :key="i"
-            class="group p-9 bg-[#27252B] hover:bg-white/[0.03] transition-colors duration-300"
+            class="benefit-card group"
           >
-            <span class="font-serif italic text-[#71B1A5]/25 text-6xl leading-none block mb-5 select-none group-hover:text-[#71B1A5]/45 transition-colors duration-300">
-              {{ b.numero }}
-            </span>
-            <h3 class="text-white font-medium text-base md:text-lg mb-4 leading-snug">
-              {{ b.titulo }}
-            </h3>
-            <p class="text-white/55 text-sm md:text-base leading-[1.9] font-light">
-              {{ b.desc }}
-            </p>
+            <span class="benefit-number" aria-hidden="true">{{ b.numero }}</span>
+            <h3 class="benefit-title">{{ b.titulo }}</h3>
+            <p class="benefit-desc">{{ b.desc }}</p>
           </div>
         </div>
 
@@ -326,20 +338,16 @@ useSeoMeta({
     </section>
 
 
-    <!-- ═══════════════════════════════════════════════
+    <!-- ─────────────────────────────────────
          SECCIÓN 4 · FECHAS Y LOGÍSTICA
-    ════════════════════════════════════════════════ -->
+    ────────────────────────────────────── -->
     <section class="py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <div class="page-container">
 
         <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-16">
           <div class="md:col-span-5">
-            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-4">
-              Calendario 2026
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]">
-              Próximas fechas
-            </h2>
+            <p class="formation-label mb-4">Calendario 2026</p>
+            <h2 class="formation-title-light">Próximas fechas</h2>
           </div>
           <div class="md:col-span-7">
             <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/65">
@@ -349,16 +357,15 @@ useSeoMeta({
           </div>
         </div>
 
-        <div class="bg-[#27252B]/[0.03] divide-y divide-[#27252B]/8">
+        <!-- ✅ bg-[#27252B]/5 y divide-[#27252B]/10 en lugar de /[0.03] y /8 -->
+        <div class="bg-[#27252B]/5 divide-y divide-[#27252B]/10">
           <div
             v-for="(fecha, i) in taller.fechas"
             :key="i"
-            class="group grid md:grid-cols-12 gap-4 md:gap-6 items-center px-6 md:px-8 py-7 md:py-9 hover:bg-white transition-colors duration-200"
+            class="date-row group"
           >
             <div class="md:col-span-1 flex md:block items-center gap-3">
-              <span class="font-serif italic text-[#71B1A5] text-4xl md:text-5xl leading-none">
-                {{ fecha.dia }}
-              </span>
+              <span class="date-day">{{ fecha.dia }}</span>
             </div>
 
             <div class="md:col-span-2">
@@ -374,16 +381,17 @@ useSeoMeta({
               <h3 class="font-serif italic text-[#27252B] text-lg md:text-xl leading-snug group-hover:text-[#71B1A5] transition-colors duration-200">
                 {{ fecha.descripcion }}
               </h3>
+              <!-- ✅ training-tag ya definida en el CSS global -->
               <span
                 v-if="fecha.especial"
-                class="inline-block mt-2 text-[10px] tracking-[0.2em] uppercase bg-[#71B1A5]/15 text-[#71B1A5] px-2.5 py-1 font-medium"
+                class="training-tag inline-block mt-2"
               >
                 {{ fecha.especial }}
               </span>
             </div>
 
             <div class="md:col-span-2 flex items-center gap-2">
-              <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
@@ -391,10 +399,8 @@ useSeoMeta({
             </div>
 
             <div class="md:col-span-2 flex md:justify-end">
-              <NuxtLink
-                to="/contacto"
-                class="inline-flex items-center gap-2 group/cta"
-              >
+              <!-- ✅ /contacto — verifica pages/contacto.vue -->
+              <NuxtLink to="/contacto" class="inline-flex items-center gap-2 group/cta">
                 <span class="text-xs tracking-[0.2em] uppercase text-[#27252B] border-b border-[#27252B]/25 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-colors duration-200 whitespace-nowrap">
                   Reservar plaza
                 </span>
@@ -407,23 +413,19 @@ useSeoMeta({
     </section>
 
 
-    <!-- ═══════════════════════════════════════════════
+    <!-- ─────────────────────────────────────
          SECCIÓN 5 · FAQS + CONTACTO
-    ════════════════════════════════════════════════ -->
-    <section class="bg-[#27252B]/[0.03] py-20 md:py-28">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+    ────────────────────────────────────── -->
+    <!-- ✅ bg-[#27252B]/5 en lugar de bg-[#27252B]/[0.03] -->
+    <section class="bg-[#27252B]/5 py-20 md:py-28">
+      <div class="page-container">
 
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
 
           <!-- FAQs (col 7) -->
           <div class="lg:col-span-7">
-
-            <p class="text-[#71B1A5] text-xs tracking-[0.35em] uppercase font-medium mb-4">
-              Preguntas frecuentes
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-10">
-              Resolvemos tus dudas
-            </h2>
+            <p class="formation-label mb-4">Preguntas frecuentes</p>
+            <h2 class="formation-title-light mb-10">Resolvemos tus dudas</h2>
 
             <div class="divide-y divide-[#27252B]/10">
               <div
@@ -433,8 +435,8 @@ useSeoMeta({
               >
                 <button
                   class="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer"
-                  @click="toggleFaq(i)"
                   :aria-expanded="faqAbierta === i"
+                  @click="toggleFaq(i)"
                 >
                   <span
                     class="text-base md:text-lg font-medium text-[#27252B] leading-snug group-hover:text-[#71B1A5] transition-colors duration-200"
@@ -442,7 +444,7 @@ useSeoMeta({
                   >
                     {{ faq.pregunta }}
                   </span>
-                  <span class="shrink-0 mt-0.5">
+                  <span class="shrink-0 mt-0.5" aria-hidden="true">
                     <svg
                       class="w-5 h-5 text-[#71B1A5] transition-transform duration-300"
                       :class="{ 'rotate-45': faqAbierta === i }"
@@ -469,21 +471,19 @@ useSeoMeta({
           <!-- Contacto + CTA (col 5) -->
           <div class="lg:col-span-5 space-y-6">
 
-            <div class="bg-[#27252B] p-9 md:p-10">
-              <div class="w-8 h-px bg-[#71B1A5] mb-7" />
-              <h3 class="font-serif italic text-white text-2xl md:text-3xl leading-[1.2] mb-6">
-                ¿Listo para reservar<br />tu plaza?
+            <div class="cta-box-dark">
+              <div class="section-divider mb-7" />
+              <h3 class="formation-title-dark mb-6">
+                ¿Listo para reservar<br />
+                <span class="text-white/55">tu plaza?</span>
               </h3>
               <p class="text-white/60 text-base leading-[1.9] mb-9 font-light">
                 Escríbenos para confirmar disponibilidad, resolver cualquier duda o
                 reservar tu lugar en el próximo taller.
               </p>
-              <NuxtLink
-                to="/contacto"
-                class="group relative w-full inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden"
-              >
-                <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
-                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <NuxtLink to="/contacto" class="btn-shimmer group">
+                <span class="btn-shimmer-layer" aria-hidden="true" />
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
@@ -491,20 +491,20 @@ useSeoMeta({
               </NuxtLink>
             </div>
 
-            <div class="bg-white border border-[#27252B]/8 p-8 space-y-6">
+            <div class="contact-card">
 
               <p class="text-xs tracking-[0.3em] uppercase text-[#27252B]/40 font-medium">
                 Contacto directo
               </p>
 
-              <a
+              <a 
                 href="https://wa.me/34656431309"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center gap-4 group/wa"
               >
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/wa:bg-[#71B1A5]/20 transition-colors duration-200">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="currentColor" viewBox="0 0 24 24">
+                <div class="contact-icon-circle group-hover/wa:bg-[#71B1A5]/20 transition-colors duration-200">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
                   </svg>
                 </div>
@@ -516,14 +516,14 @@ useSeoMeta({
                 </div>
               </a>
 
-              <div class="h-px bg-[#27252B]/8" />
+              <div class="contact-divider" />
 
-              <a
+              <a 
                 href="mailto:hola@centrolaseda.com"
                 class="flex items-center gap-4 group/email"
               >
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 group-hover/email:bg-[#71B1A5]/20 transition-colors duration-200">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="contact-icon-circle group-hover/email:bg-[#71B1A5]/20 transition-colors duration-200">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
@@ -536,11 +536,11 @@ useSeoMeta({
                 </div>
               </a>
 
-              <div class="h-px bg-[#27252B]/8" />
+              <div class="contact-divider" />
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="contact-icon-circle mt-0.5">
+                  <svg class="w-4 h-4 text-[#71B1A5]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -556,13 +556,11 @@ useSeoMeta({
             </div>
 
             <div class="pt-2">
-              <NuxtLink
-                to="/talleres"
-                class="inline-flex items-center gap-2 group text-sm tracking-[0.2em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200"
-              >
+              <NuxtLink to="/talleres" class="nav-back-link group">
                 <svg
                   class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
                   fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>

@@ -26,6 +26,9 @@
    ────────────────────────────────────────────────────────── */
 @layer base {
 
+  
+
+
   /* Raíz del documento */
   html {
     @apply scroll-smooth;
@@ -67,6 +70,19 @@
   /* Fuentes tipográficas (alias Tailwind → Google Fonts) */
   .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
   .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
+
+  header {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  /* Forzamos el prefijo webkit para navegadores basados en Safari/iOS */
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+  }
 }
 
 
@@ -837,4 +853,431 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+}
+
+
+
+
+/* ════════════════════════════════════════════════════════
+   GALERÍA DEL LOCAL
+   ════════════════════════════════════════════════════════ */
+
+/* Grid full-width: 4 columnas desktop, 2 móvil */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;  /* 1 columna en móvil */
+  gap: 0;                       /* sin separación */
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;  /* mantén el gap en desktop si quieres, o ponlo a 0 también */
+  }
+}
+
+/* Cada celda: proporción 4:3, overflow oculto */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: zoom-in;
+  display: block;
+  border: none;
+  padding: 0;
+  background: #27252B;
+}
+
+/* Overlay con lupa al hover */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 37, 43, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  background: rgba(39, 37, 43, 0.45);
+}
+
+.gallery-overlay svg {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover .gallery-overlay svg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ════════════════════════════════════════════════════════
+   LIGHTBOX
+   ════════════════════════════════════════════════════════ */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 12, 15, 0.96);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.lightbox-img-wrap {
+  max-width: min(90vw, 1100px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-caption {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: rgba(255,255,255,0.6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.lightbox-close:hover { color: #fff; }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  padding: 14px;
+  transition: background 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.lightbox-nav:hover {
+  background: rgba(113, 177, 165, 0.25);
+  color: #fff;
+}
+
+.lightbox-nav--prev { left: 20px; }
+.lightbox-nav--next { right: 20px; }
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ════════════════════════════════════════════════════════
+   REDES SOCIALES
+   ════════════════════════════════════════════════════════ */
+
+/* Botones de seguir */
+.social-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(113, 177, 165, 0.35);
+  color: rgba(255, 255, 255, 0.65);
+  padding: 10px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.social-follow-btn:hover {
+  border-color: #71B1A5;
+  color: #71B1A5;
+  background: rgba(113, 177, 165, 0.06);
+}
+
+/* Tabs de red social */
+.social-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.3s ease;
+}
+
+.social-tab:hover { color: rgba(255,255,255,0.7); }
+
+.social-tab--active {
+  color: #71B1A5;
+  border-bottom-color: #71B1A5;
+}
+
+/* ── Reels Instagram ── */
+.reels-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #1a1820;
+  text-decoration: none;
+}
+
+.reels-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(39, 37, 43, 0.85) 0%, transparent 45%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.reels-card:hover .reels-overlay { opacity: 1; }
+
+.reels-play {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  color: #71B1A5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.85);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.reels-card:hover .reels-play { transform: scale(1); }
+
+.reels-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reels-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(113, 177, 165, 0.85);
+  padding: 3px 8px;
+  align-self: flex-start;
+}
+
+.reels-handle {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+/* ── Posts Facebook ── */
+.fb-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fb-card:hover {
+  border-color: rgba(113, 177, 165, 0.35);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+}
+
+.fb-card-body {
+  padding: 24px 28px 28px;
+}
+
+.fb-badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #71B1A5;
+  background: rgba(113, 177, 165, 0.15);
+  padding: 4px 10px;
+}
+
+.fb-card-category {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(113, 177, 165, 0.7);
+  margin-bottom: 8px;
+}
+
+.fb-card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.fb-card-desc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.fb-card-link {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #71B1A5;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(113, 177, 165, 0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.fb-card-link:hover {
+  color: #8ec4bc;
+  border-color: #8ec4bc;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item img,
+  .reels-card img,
+  .fb-card,
+  .lightbox-backdrop {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════
+   PAGE HERO — Layout bipartito sin animación (páginas secundarias)
+   ════════════════════════════════════════════════════════ */
+.page-hero-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .page-hero-root {
+    flex-direction: row;
+    height: 70vh;
+    min-height: 520px;
+    max-height: 780px;
+  }
+}
+
+.page-hero-panel-left {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .page-hero-panel-left {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.page-hero-panel-right {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 260px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .page-hero-panel-right {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.page-hero-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Mariposa: anclada abajo a la derecha en móvil, arriba en desktop */
+.page-hero-butterfly {
+  bottom: 32px;
+  right: 40px;
+  transform: scale(0.5);
+  transform-origin: bottom right;
+}
+
+@media (min-width: 768px) {
+  .page-hero-butterfly {
+    top: 200px;
+    bottom: auto;
+    right: 56px;
+    transform: scale(0.85);
+    transform-origin: top right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-butterfly .butterfly-3d,
+  .page-hero-butterfly .shadow-3d,
+  .page-hero-butterfly .wing-3d:first-child,
+  .page-hero-butterfly .wing-3d:last-child {
+    animation: none;
+  }
 }

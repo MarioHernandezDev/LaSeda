@@ -5,56 +5,20 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
-    <section
-      class="relative w-full"
-      style="height: clamp(45vh, 52vh, 55vh);"
-      aria-label="Cabecera de la página del equipo"
+    <PageHero
+      label="Quiénes somos · Granada"
+      title-main="El equipo detrás de"
+      title-accent="La Seda"
+      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+      image-alt="Equipo del Centro de Psicología La Seda en Granada"
+      secondary-link="/terapias"
+      secondary-label="Ver nuestras terapias"
     >
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        :aria-hidden="true"
-        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-        <NuxtImg
-          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
-          alt="Sala de terapia y espacio de bienestar del Centro de Psicología La Seda en Granada"
-          class="w-full h-full object-cover"
-          width="1920"
-          height="1080"
-          format="webp"
-          preload
-          fetchpriority="high"
-        />
-      </video>
-
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none"
-        aria-hidden="true"
-      />
-
-      <div class="relative z-10 flex flex-col justify-center h-full page-container">
-        <p class="section-label mb-4 md:mb-6">Quiénes somos</p>
-
-        <h1 class="font-serif italic font-light text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          El equipo detrás de<br />
-          <span class="text-[#27252B]/75">La Seda</span>
-        </h1>
-
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-          Un grupo de profesionales comprometidos con la salud psicológica,
-          la educación emocional y el crecimiento personal en Granada.
-        </p>
-      </div>
-    </section>
+      <template #description>
+        Un grupo de profesionales comprometidos con la salud psicológica,
+        la educación emocional y el crecimiento personal en Granada.
+      </template>
+    </PageHero>
 
 
     <!-- ═══════════════════════════════════════════════

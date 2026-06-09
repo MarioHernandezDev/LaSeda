@@ -180,62 +180,17 @@ useSeoMeta({
       <!-- ─────────────────────────────────────
            SECCIÓN 1 · HERO
       ────────────────────────────────────── -->
-      <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-
-        <video
-          class="absolute inset-0 w-full h-full object-cover"
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-        >
-          <source src="/video/minhero.mp4" type="video/mp4" />
-        </video>
-
-        <!-- ✅ Fallback correcto fuera del <video>, solo para no-JS -->
-        <noscript>
-          <NuxtImg
-            src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-            alt="Centro de Psicología La Seda Granada — terapia y acompañamiento emocional"
-            format="webp"
-            width="1920"
-            height="1080"
-            preload
-            fetchpriority="high"
-            class="absolute inset-0 w-full h-full object-cover"
-          />
-        </noscript>
-
-        <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/92 via-[#FDFBF9]/65 to-transparent pointer-events-none" />
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
-
-        <div class="relative z-10 flex flex-col justify-center h-full page-container">
-          <!-- ✅ Breadcrumb semántico con aria-label -->
-          <nav class="flex items-center gap-2 mb-5 md:mb-7" aria-label="Ruta de navegación">
-            <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
-            <NuxtLink
-              to="/terapias"
-              class="text-xs tracking-[0.25em] uppercase text-[#27252B]/45 hover:text-[#71B1A5] transition-colors duration-200"
-            >
-              Terapias
-            </NuxtLink>
-            <span class="text-[#27252B]/25 text-xs" aria-hidden="true">·</span>
-            <span class="text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
-              {{ terapia.categoria }}
-            </span>
-          </nav>
-
-          <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-            {{ terapia.titulo }}<br />
-            <span class="text-[#27252B]/70">{{ terapia.tituloItalico }}</span>
-          </h1>
-          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/75 max-w-xl">
-            {{ terapia.subtitulo }}
-          </p>
-        </div>
-      </section>
-
+      <PageHero
+        :label="`${terapia.categoria} · La Seda Granada`"
+        :title-main="terapia.titulo"
+        :title-accent="terapia.tituloItalico"
+        image="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+        :image-alt="`${terapia.titulo} ${terapia.tituloItalico} — Centro de Psicología La Seda Granada`"
+        secondary-link="/terapias"
+        secondary-label="Ver todas las terapias"
+      >
+        <template #description>{{ terapia.subtitulo }}</template>
+      </PageHero>
 
       <!-- ─────────────────────────────────────
            SECCIÓN 2 · DESCRIPCIÓN + ÁREAS

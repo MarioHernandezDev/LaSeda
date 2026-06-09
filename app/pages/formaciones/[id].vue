@@ -170,50 +170,16 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
       <!-- ─────────────────────────────────────
            SECCIÓN 1 · HERO
       ────────────────────────────────────── -->
-      <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-
-        <video
-          class="absolute inset-0 w-full h-full object-cover"
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
-        >
-          <source src="/video/minhero.mp4" type="video/mp4" />
-        </video>
-
-        <!-- ✅ SEO: NuxtImg correcto fuera del <video>; el poster ya actúa de fallback.
-             width/height orientativos para evitar CLS (ajusta a tus dimensiones reales) -->
-        <noscript>
-          <NuxtImg
-            src="/images/centro-psicologia-la-seda-granada-hero.jpg"
-            alt="Centro de Psicología La Seda Granada — formaciones especializadas en psicología y coaching"
-            format="webp"
-            width="1920"
-            height="1080"
-            preload
-            fetchpriority="high"
-            class="absolute inset-0 w-full h-full object-cover"
-          />
-        </noscript>
-
-        <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
-
-        <div class="relative z-10 flex flex-col justify-center h-full page-container">
-          <p class="formation-label mb-4 md:mb-6">
-            {{ formacion.etiqueta }} · Centro de Psicología La Seda
-          </p>
-          <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-            {{ formacion.titulo }}
-          </h1>
-          <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-            {{ formacion.subtitulo }}
-          </p>
-        </div>
-      </section>
-
+      <PageHero
+      :label="`${formacion.etiqueta} · Centro de Psicología La Seda`"
+      :title-main="formacion.titulo"
+      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+      :image-alt="`${formacion.titulo} — Centro de Psicología La Seda Granada`"
+      secondary-link="/formaciones"
+      secondary-label="Ver todas las formaciones"
+    >
+      <template #description>{{ formacion.subtitulo }}</template>
+    </PageHero>
 
       <!-- ─────────────────────────────────────
            SECCIÓN 2 · ENFOQUE

@@ -177,49 +177,17 @@ useSeoMeta({
     <!-- ─────────────────────────────────────
          SECCIÓN 1 · HERO
     ────────────────────────────────────── -->
-    <section class="relative w-full" style="height: clamp(45vh, 52vh, 55vh);">
-
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-      </video>
-
-      <!-- ✅ Fallback correcto fuera del <video>, solo para no-JS -->
-      <noscript>
-        <NuxtImg
-          src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-          alt="Centro de Psicología La Seda Granada — talleres y espacios vivenciales"
-          format="webp"
-          width="1920"
-          height="1080"
-          preload
-          fetchpriority="high"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-      </noscript>
-
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" />
-
-      <div class="relative z-10 flex flex-col justify-center h-full page-container">
-        <p class="formation-label mb-4 md:mb-6">
-          {{ taller.categoria }} · {{ taller.facilitadora.nombre }}
-        </p>
-        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          {{ taller.titulo }}<br />
-          <span class="text-[#27252B]/75">{{ taller.tituloItalico }}</span>
-        </h1>
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-          {{ taller.subtitulo }}
-        </p>
-      </div>
-    </section>
+    <PageHero
+      :label="`${taller.categoria} · ${taller.facilitadora.nombre}`"
+      :title-main="taller.titulo"
+      :title-accent="taller.tituloItalico"
+      image="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+      :image-alt="`${taller.titulo} ${taller.tituloItalico} — Centro de Psicología La Seda Granada`"
+      secondary-link="/talleres"
+      secondary-label="Ver todos los talleres"
+    >
+      <template #description>{{ taller.subtitulo }}</template>
+    </PageHero>
 
 
     <!-- ─────────────────────────────────────

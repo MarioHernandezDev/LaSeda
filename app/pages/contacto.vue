@@ -4,56 +4,20 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
-    <section
-      class="relative w-full"
-      style="height: clamp(45vh, 52vh, 55vh);"
-      aria-label="Cabecera de la página de contacto"
+    <PageHero
+      label="Contacto · La Seda Granada"
+      title-main="Estamos aquí para"
+      title-accent="acompañarte"
+      image="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
+      image-alt="Interior del Centro de Psicología La Seda en Granada, ambiente cálido y acogedor"
+      secondary-link="/conocenos"
+      secondary-label="Conocer al equipo"
     >
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay
-        muted
-        loop
-        playsinline
-        :aria-hidden="true"
-        poster="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-        <NuxtImg
-          src="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
-          alt="Interior del Centro de Psicología La Seda en Granada, ambiente cálido y acogedor"
-          class="w-full h-full object-cover"
-          width="1920"
-          height="1080"
-          format="webp"
-          preload
-          fetchpriority="high"
-        />
-      </video>
-
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none"
-        aria-hidden="true"
-      />
-
-      <div class="relative z-10 flex flex-col justify-center h-full page-container">
-        <p class="section-label mb-4 md:mb-6">
-          Contacto · La Seda Granada
-        </p>
-        <h1 class="italic font-light text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          Estamos aquí para<br />
-          <span class="text-[#27252B]/75">acompañarte</span>
-        </h1>
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-          Dar el primer paso requiere valentía. Pero es, precisamente,
-          el inicio del cambio.
-        </p>
-      </div>
-    </section>
+      <template #description>
+        Dar el primer paso requiere valentía. Pero es, precisamente,
+        el inicio del cambio.
+      </template>
+    </PageHero>
 
 
     <!-- ═══════════════════════════════════════════════

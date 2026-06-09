@@ -21,46 +21,20 @@ useHead({
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
-    <section
-      class="relative w-full"
-      style="height: clamp(45vh, 52vh, 55vh);"
-      aria-label="Cabecera — Especialidades Clínicas y Psicoterapia"
+    <PageHero
+      label="Especialidades Clínicas"
+      title-main="Procesos de Psicoterapia"
+      title-accent="y Cuidado Psicológico"
+      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+      image-alt="Sala de terapia del Centro de Psicología La Seda en Granada"
+      secondary-link="/contacto"
+      secondary-label="Pedir primera cita"
     >
-      <video
-        class="absolute inset-0 w-full h-full object-cover"
-        autoplay muted loop playsinline
-        poster="/images/centro-psicologia-la-seda-granada-hero.jpg"
-        aria-hidden="true"
-      >
-        <source src="/video/minhero.mp4" type="video/mp4" />
-        <NuxtImg
-          src="/images/centro-psicologia-la-seda-granada-hero.jpg"
-          alt=""
-          width="1920"
-          height="1080"
-          format="webp"
-          preload
-          fetchpriority="high"
-          class="w-full h-full object-cover"
-          aria-hidden="true"
-        />
-      </video>
-
-      <div class="absolute inset-0 bg-gradient-to-r from-[#FDFBF9]/90 via-[#FDFBF9]/60 to-transparent pointer-events-none" aria-hidden="true" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FDFBF9]/95 pointer-events-none" aria-hidden="true" />
-
-      <div class="relative z-10 flex flex-col justify-center h-full page-container">
-        <p class="section-label mb-4 md:mb-6">Especialidades Clínicas</p>
-        <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 md:mb-7 max-w-2xl">
-          Procesos de Psicoterapia<br />
-          <span class="text-[#27252B]/75">y Cuidado Psicológico</span>
-        </h1>
-        <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/80 max-w-xl">
-          Acompañamos cada etapa vital desde un espacio de escucha activa,
-          rigor clínico y profundo respeto por la singularidad de cada persona.
-        </p>
-      </div>
-    </section>
+      <template #description>
+        Acompañamos cada etapa vital desde un espacio de escucha activa,
+        rigor clínico y profundo respeto por la singularidad de cada persona.
+      </template>
+    </PageHero>
 
 
     <!-- ═══════════════════════════════════════════════

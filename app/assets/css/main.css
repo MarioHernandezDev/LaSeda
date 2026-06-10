@@ -1201,28 +1201,38 @@
   }
 }
 
-/* ════════════════════════════════════════════════════════
-   PAGE HERO — Layout bipartito sin animación (páginas secundarias)
-   ════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   PAGE HERO — Layout Dinámico Responsivo Inteligente
+   ════════════════════════════════════════════════════════════ */
+
+/* Contenedor Raíz (Solución al fondo negro usando 100svh) */
 .page-hero-root {
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
-  overflow: hidden;
+  min-height: 100svh; /* Se adapta restando las barras de Safari/Chrome en móvil */
+  width: 100%;
+  background-color: #F5F2EE;
 }
 
 @media (min-width: 768px) {
   .page-hero-root {
     flex-direction: row;
-    height: 70vh;
-    min-height: 520px;
-    max-height: 780px;
+    height: 80vh; /* Altura ideal en escritorio para páginas secundarias */
+    min-height: 600px;
+    max-height: 100vh;
   }
 }
 
-.page-hero-panel-left {
+/* Base de los paneles */
+.page-hero-panel-left,
+.page-hero-panel-right {
   position: relative;
+  overflow: hidden;
   width: 100%;
+}
+
+/* Panel Izquierdo (Texto) */
+.page-hero-panel-left {
   flex-shrink: 0;
 }
 
@@ -1233,11 +1243,9 @@
   }
 }
 
+/* Panel Derecho (Imagen de Sección) */
 .page-hero-panel-right {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 260px;
+  height: 320px; /* Evita que la foto colapse en móviles */
   flex-shrink: 0;
 }
 
@@ -1248,6 +1256,7 @@
   }
 }
 
+/* Alineación interior del bloque crema */
 .page-hero-inner {
   height: 100%;
   display: flex;
@@ -1255,29 +1264,34 @@
   justify-content: center;
 }
 
-/* Mariposa: anclada abajo a la derecha en móvil, arriba en desktop */
-.page-hero-butterfly {
-  bottom: 32px;
-  right: 40px;
-  transform: scale(0.5);
-  transform-origin: bottom right;
-}
+/* ════════════════════════════════════════════════════════════
+   COMPORTAMIENTO RESPONSIVO DE LA MARIPOSA (PAGINAS INTERNAS)
+   ════════════════════════════════════════════════════════════ */
 
-@media (min-width: 768px) {
+/* --- Configuración para Móvil --- */
+@media (max-width: 767px) {
   .page-hero-butterfly {
-    top: 200px;
-    bottom: auto;
-    right: 56px;
-    transform: scale(0.85);
-    transform-origin: top right;
+    top: 24px;
+    right: 32px;
+    /* Escala fija al 50% para que no compita con los textos dinámicos */
+    transform: scale(0.5) rotate(0deg);
   }
 }
 
+/* --- Configuración para Desktop --- */
+@media (min-width: 768px) {
+  .page-hero-butterfly {
+    bottom: 20%; /* Centrada orgánicamente con respecto al bloque inferior */
+    right: 12%;
+    /* Escala premium elegante en pantallas grandes */
+    transform: scale(0.8) rotate(0deg);
+  }
+}
+
+/* Respetar accesibilidad de usuarios con animaciones desactivadas */
 @media (prefers-reduced-motion: reduce) {
-  .page-hero-butterfly .butterfly-3d,
-  .page-hero-butterfly .shadow-3d,
-  .page-hero-butterfly .wing-3d:first-child,
-  .page-hero-butterfly .wing-3d:last-child {
-    animation: none;
+  .page-hero-butterfly {
+    transform: none !important;
+    transition: none !important;
   }
 }

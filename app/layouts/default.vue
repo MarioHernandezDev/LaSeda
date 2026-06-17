@@ -216,7 +216,7 @@
 
             <p class="text-sm leading-relaxed max-w-xs font-light mb-8">
               Centro de Psicología y Crecimiento Personal en Granada. Un espacio
-              donde la ciencia se encuentra con la bondad.
+              where la ciencia se encuentra con la bondad.
             </p>
 
             <div class="border-l border-[#71B1A5]/40 pl-4">
@@ -277,8 +277,9 @@
                 </svg>
                 <div>
                   <p class="text-sm font-light leading-relaxed">
-                    Calle Ejemplo, 12, 1º<br/>
-                    18001 Granada, Andalucía
+                    C. Horno de Haza, 29, Bajo 1<br/>
+                    <span class="text-white/30 text-xs italic font-sans">(Se accede por el portal)</span><br/>
+                    Centro, 18002 Granada
                   </p>
                 </div>
               </div>
@@ -323,9 +324,23 @@
 
       <div class="max-w-7xl mx-auto px-8 md:px-16 py-6">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] tracking-widest uppercase">
-          <p class="text-white/25">
-            © {{ currentYear }} Centro La Seda · Psicología y Crecimiento en Granada
-          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p class="text-white/25">
+              © {{ currentYear }} Centro La Seda · Psicología y Crecimiento en Granada
+            </p>
+            <span class="hidden sm:inline w-px h-3 bg-white/10" aria-hidden="true"></span>
+            <p class="text-white/25 normal-case tracking-normal">
+              Hecho con ♡ por 
+              <a 
+                href="https://codifiko.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="lowercase font-mono text-white/40 hover:text-[#71B1A5] transition-colors duration-300 tracking-wider font-bold"
+              >
+                codifiko._
+              </a>
+            </p>
+          </div>
           <nav aria-label="Navegación legal" class="flex items-center gap-6">
             <NuxtLink to="/aviso-legal" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
               Aviso Legal

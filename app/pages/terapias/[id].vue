@@ -7,6 +7,8 @@ const terapias = {
     tituloItalico: 'y Acompañamiento Emocional',
     subtitulo: 'Un espacio donde resolver conflictos internos y conectar con los recursos que ya tienes.',
     categoria: 'Para adultos',
+    imagen: '/images/terapia-gestalt-adultos-centro-psicologia-la-seda-granada.jpg',
+    imagenAlt: 'Sesión de Terapia Gestalt para adultos en el Centro de Psicología La Seda, Granada',
     descripcion: 'Las sesiones de terapia, coaching y acompañamiento emocional sirven para resolver y aprender de aquellos conflictos tanto internos como relacionales que se plantean en la vida, además de ser un lugar en el que conectar con los recursos que cada persona ya tiene, aún sin ser en muchas ocasiones consciente de ello.',
     descripcion2: 'Son también un lugar en el que desvelar los patrones que vamos llevando a hombros a lo largo de la vida y que vamos repitiendo día tras día sin tener conciencia de ello. Nuestra línea de trabajo es humanista, basada en la terapia Gestalt y en la sistémica. La Gestalt nos permite trabajar en profundidad con la persona, mirar qué le sucede, a la vez que es una vía para que quien viene a consulta aprenda a gestionar sus emociones y a tener una comprensión de lo que le está sucediendo.',
     cita: '"La terapia Gestalt no es un conjunto de técnicas sino la transmisión de una actitud, una forma de estar en la vida." — Claudio Naranjo',
@@ -33,6 +35,8 @@ const terapias = {
     tituloItalico: 'Adolescentes',
     subtitulo: 'Comprender qué le sucede a tu hijo y abrir vías de comunicación es vital para que esta etapa sea un momento de crecimiento.',
     categoria: 'Adolescentes',
+    imagen: '/images/terapia-adolescentes-psicologia-granada-la-seda.jpg',
+    imagenAlt: 'Sesión de terapia psicológica para adolescentes en el Centro La Seda, Granada',
     descripcion: 'La etapa de la adolescencia es difícil de comprender y de gestionar. La dinámica familiar que había cuando eran niños ya no funciona. La convivencia en familia puede convertirse en una pesadilla por el aislamiento emocional de los adolescentes, el rechazo a los padres y las reacciones abruptas y sin sentido.',
     descripcion2: 'La adolescencia es una montaña rusa en la que sufre toda la familia. Es una etapa de cambios en la que es necesario comprender qué le sucede a los hijos y abrir vías de comunicación para que puedan expresarse, sentirse entendidos y comprendidos. Parte de la eficacia de la terapia va en función de la participación de los padres en el proceso.',
     cita: '"Para acompañar bien a un adolescente primero hay que entender qué le está sucediendo por dentro."',
@@ -59,6 +63,8 @@ const terapias = {
     tituloItalico: 'Pareja y Familia',
     subtitulo: 'Un espacio seguro para mejorar la comunicación, resolver conflictos y comprenderse mutuamente.',
     categoria: 'Pareja y familia',
+    imagen: '/images/terapia-pareja-familia-psicologia-granada-la-seda.jpg',
+    imagenAlt: 'Terapia de pareja y familia en el Centro de Psicología La Seda, Granada',
     descripcion: 'La terapia de pareja y de familia es un tipo de tratamiento psicológico diseñado para ayudar a las parejas y a las familias a resolver conflictos y mejorar su relación. Proporciona un espacio seguro para que las parejas y las familias trabajen juntas en la mejora de su comunicación, resolución de problemas y comprensión mutua.',
     descripcion2: 'La primera sesión es una entrevista inicial con la pareja o con la familia en la que exploramos el motivo de consulta y las expectativas. Las siguientes sesiones son de trabajo conjunto y, dependiendo de la evolución del proceso terapéutico, iremos incluyendo sesiones individuales y de dinámica familiar. La periodicidad es de una vez por semana.',
     cita: '"El objetivo no es siempre salvar la relación, sino ayudar a cada persona a tomar decisiones auténticas desde un lugar más claro."',
@@ -85,6 +91,8 @@ const terapias = {
     tituloItalico: 'Infantil',
     subtitulo: 'Ayudar a tu hijo a estar bien es también ayudarte a ti. La infancia es el momento en que todo empieza.',
     categoria: 'Niños de 6 a 11 años',
+    imagen: '/images/terapia-infantil-ninos-psicologia-granada-la-seda.jpg',
+    imagenAlt: 'Terapia psicológica infantil para niños de 6 a 11 años en el Centro La Seda, Granada',
     descripcion: 'La infancia es un momento delicado porque el niño construye sus mecanismos de defensa y genera patrones de conducta que pueden perdurar durante toda su vida. El abandono, la soledad y el rechazo son heridas que, si son trabajadas durante la infancia, facilitarán una mejor gestión emocional incluso cuando el niño sea mayor.',
     descripcion2: 'A veces no sabemos cómo ayudar a los niños a enfrentarse a las dificultades de la vida: miedos, bullying, separación de sus padres, pérdidas de seres queridos. Y los padres tampoco sabemos cómo educar bien, poniendo límites sanos y saludables. La terapia infantil ofrece un espacio adaptado a la edad del niño donde puede explorar su mundo interior con herramientas ajustadas a su momento evolutivo.',
     cita: '"La infancia no es solo el principio de la vida, es también el principio de todo lo que vendrá después."',
@@ -111,6 +119,8 @@ const terapias = {
     tituloItalico: 'Grupal',
     subtitulo: 'La Gestalt en grupo: un espacio para crecer con otros, desde la experiencia presente.',
     categoria: 'Grupos terapéuticos',
+    imagen: '/images/terapia-grupal-gestalt-psicologia-granada-la-seda.jpg',
+    imagenAlt: 'Sesión de terapia grupal Gestalt en el Centro de Psicología La Seda, Granada',
     descripcion: 'La terapia grupal que hacemos en La Seda se apoya en los preceptos de la psicología Gestalt, apoyándonos en la percepción, la conciencia y la experiencia en el momento presente. Esta forma de terapia se lleva a cabo en grupos y tiene varios propósitos y beneficios únicos que no ofrece el formato individual.',
     descripcion2: 'Es un grupo de trabajo con compromiso anual, de modo que los participantes puedan vincularse entre ellos y generar el espacio de confianza que este tipo de trabajo requiere. El grupo se reúne un jueves al mes de 17 a 20 horas y trabajamos con lo que traigan los participantes. Un grupo de este tipo se suele abrir con lo que denominamos una "ronda", donde los participantes cuentan en qué están en ese momento, y a partir de ahí se va desarrollando el trabajo.',
     cita: '"El grupo es un espejo extraordinario: en los demás vemos lo que aún no hemos podido ver en nosotros mismos."',
@@ -136,15 +146,78 @@ const terapias = {
 const id = route.params.id
 const terapia = computed(() => terapias[id] ?? null)
 
+// SEO canónico por terapia
+const seoTitle = computed(() =>
+  terapia.value
+    ? `${terapia.value.titulo} ${terapia.value.tituloItalico} en Granada · La Seda`
+    : 'Terapia no encontrada · La Seda'
+)
+const seoDescription = computed(() =>
+  terapia.value
+    ? `${terapia.value.subtitulo} Centro de Psicología La Seda, Granada. Primera orientación gratuita.`
+    : ''
+)
+const seoImage = computed(() =>
+  terapia.value?.imagen
+    ? `https://www.laseda.es${terapia.value.imagen}`
+    : 'https://www.laseda.es/images/hero-consulta-laseda.jpg'
+)
+const seoUrl = computed(() =>
+  terapia.value ? `https://www.laseda.es/terapias/${id}` : 'https://www.laseda.es/terapias'
+)
+
+useSeoMeta({
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogImage: seoImage,
+  ogType: 'website',
+  ogUrl: seoUrl,
+  ogLocale: 'es_ES',
+  twitterCard: 'summary_large_image',
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  twitterImage: seoImage,
+  robots: 'index, follow',
+  canonical: seoUrl,
+})
+
+useHead({
+  script: computed(() => terapia.value ? [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'MedicalBusiness',
+        name: `${terapia.value.titulo} ${terapia.value.tituloItalico} — Centro La Seda Granada`,
+        description: terapia.value.subtitulo,
+        url: seoUrl.value,
+        image: seoImage.value,
+        telephone: '+34-679-571-977',
+        email: 'hola@centrolaseda.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Calle Horno de Haza 29, Bajo 1',
+          addressLocality: 'Granada',
+          addressRegion: 'Andalucía',
+          postalCode: '18001',
+          addressCountry: 'ES',
+        },
+        parentOrganization: {
+          '@type': 'MedicalBusiness',
+          name: 'La Seda · Psicología y Crecimiento en Granada',
+          url: 'https://www.laseda.es',
+        },
+      }),
+    },
+  ] : [])
+})
+
 const faqAbierta = ref(null)
 const toggleFaq = (i) => {
   faqAbierta.value = faqAbierta.value === i ? null : i
 }
-
-useSeoMeta({
-  title: () => terapia.value ? `${terapia.value.titulo} ${terapia.value.tituloItalico} · La Seda Granada` : 'Terapia no encontrada · La Seda',
-  description: () => terapia.value?.subtitulo ?? '',
-})
 </script>
 
 <template>
@@ -164,7 +237,6 @@ useSeoMeta({
       <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
         La página que buscas no existe o la URL no es correcta.
       </p>
-      <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
       <NuxtLink to="/terapias" class="btn-primary">
         Ver todas las terapias
         <span class="w-6 h-px bg-white/60 inline-block" />
@@ -228,7 +300,6 @@ useSeoMeta({
           <!-- Columna derecha: áreas de trabajo -->
           <div>
             <p class="formation-label mb-7">Áreas de trabajo</p>
-            <!-- ✅ divide-[#27252B]/10 en lugar de /8 -->
             <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/10">
               <div
                 v-for="motivo in terapia.motivos"
@@ -243,11 +314,11 @@ useSeoMeta({
               </div>
             </div>
 
-            <!-- ✅ NuxtImg con atributos SEO completos; below-the-fold → lazy -->
+            <!-- Imagen específica de cada terapia -->
             <div class="mt-10 overflow-hidden aspect-[16/8]">
               <NuxtImg
-                src="/images/default.jpg"
-                :alt="`${terapia.titulo} ${terapia.tituloItalico} — Centro de Psicología La Seda Granada`"
+                :src="terapia.imagen"
+                :alt="terapia.imagenAlt"
                 format="webp"
                 loading="lazy"
                 width="1200"
@@ -284,7 +355,6 @@ useSeoMeta({
             </div>
           </div>
 
-          <!-- ✅ benefit-card reutilizada — mismo patrón visual -->
           <div class="grid md:grid-cols-3 gap-px bg-white/5">
             <div
               v-for="(paso, i) in terapia.proceso"
@@ -297,7 +367,6 @@ useSeoMeta({
           </div>
 
           <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
-            <!-- ✅ /contacto — verifica pages/contacto.vue -->
             <NuxtLink to="/contacto" class="btn-cta-hero group">
               <span class="btn-shimmer-layer" aria-hidden="true" />
               <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -306,7 +375,6 @@ useSeoMeta({
               </svg>
               Pedir orientación gratuita
             </NuxtLink>
-            <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
             <NuxtLink to="/terapias" class="nav-back-link-dark group">
               <svg
                 class="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform duration-200"
@@ -326,7 +394,6 @@ useSeoMeta({
       <!-- ─────────────────────────────────────
            SECCIÓN 4 · FAQs + CONTACTO
       ────────────────────────────────────── -->
-      <!-- ✅ bg-[#27252B]/5 en lugar de bg-[#27252B]/[0.03] -->
       <section class="bg-[#27252B]/5 py-20 md:py-28">
         <div class="page-container">
           <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
@@ -335,11 +402,19 @@ useSeoMeta({
               <p class="formation-label mb-4">Preguntas frecuentes</p>
               <h2 class="formation-title-light mb-10">Resolvemos tus dudas</h2>
 
-              <div class="divide-y divide-[#27252B]/10">
+              <!-- FAQ Schema -->
+              <div
+                class="divide-y divide-[#27252B]/10"
+                itemscope
+                itemtype="https://schema.org/FAQPage"
+              >
                 <div
                   v-for="(faq, i) in terapia.faqs"
                   :key="i"
                   class="group"
+                  itemscope
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
                 >
                   <button
                     class="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer"
@@ -349,6 +424,7 @@ useSeoMeta({
                     <span
                       class="text-base md:text-lg font-medium text-[#27252B] leading-snug group-hover:text-[#71B1A5] transition-colors duration-200"
                       :class="{ 'text-[#71B1A5]': faqAbierta === i }"
+                      itemprop="name"
                     >
                       {{ faq.pregunta }}
                     </span>
@@ -366,8 +442,14 @@ useSeoMeta({
                   <div
                     class="overflow-hidden transition-all duration-300"
                     :class="faqAbierta === i ? 'max-h-96 pb-6' : 'max-h-0'"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer"
                   >
-                    <p class="text-base md:text-lg leading-[1.9] text-[#27252B]/70 font-light">
+                    <p
+                      class="text-base md:text-lg leading-[1.9] text-[#27252B]/70 font-light"
+                      itemprop="text"
+                    >
                       {{ faq.respuesta }}
                     </p>
                   </div>
@@ -479,7 +561,6 @@ useSeoMeta({
               También puede interesarte
             </h3>
           </div>
-          <!-- ✅ /terapias — verifica pages/terapias/index.vue -->
           <NuxtLink
             to="/terapias"
             class="hidden md:inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200 group"
@@ -498,9 +579,9 @@ useSeoMeta({
             class="therapy-card group"
           >
             <div class="overflow-hidden aspect-[3/2]">
-              <!-- ✅ NuxtImg con atributos SEO completos; below-the-fold → lazy -->
+              <!-- Imagen específica de cada terapia en las cards -->
               <NuxtImg
-                src="/images/default.jpg"
+                :src="t.imagen"
                 :alt="`${t.titulo} ${t.tituloItalico} — La Seda Granada`"
                 format="webp"
                 loading="lazy"
@@ -531,7 +612,6 @@ useSeoMeta({
       ────────────────────────────────────── -->
       <section class="page-container py-10 md:py-14">
         <div class="border-t border-[#27252B]/10 pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-          <!-- ✅ nav-link-back / nav-link-line / nav-link-text reutilizados de formaciones -->
           <NuxtLink to="/terapias" class="nav-link-back group">
             <span class="nav-link-line" />
             <span class="nav-link-text">Todas las terapias</span>

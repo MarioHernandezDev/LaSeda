@@ -22,7 +22,7 @@ El trabajo con los menores se complementa siempre con el sistema familiar, abarc
       { numero: 3,  nombre: 'La creatividad y el juego como herramienta terapéutica I',        descripcion: 'La ludoterapia gestáltica: materiales, encuadre y presencia del terapeuta.' },
       { numero: 4,  nombre: 'La creatividad y el juego como herramienta terapéutica II',       descripcion: 'Uso del dibujo, el cuento, la arcilla y la metáfora en sesión.' },
       { numero: 5,  nombre: 'Self emergente. Desarrollo emocional de la adolescencia',         descripcion: 'Intervención y supervisión de casos en la etapa adolescente.' },
-      { numero: 6,  nombre: 'Resistencias y Mecanismos de defensa del terapeuta',             descripcion: 'Supervisión y trabajo sobre la propia historia del terapeuta.' },
+      { numero: 6,  nombre: 'Resistencias y Mecanismos de defensa del terapeuta',             descripcion: 'Supervisión and trabajo sobre la propia historia del terapeuta.' },
       { numero: 7,  nombre: 'Adolescencia y Trastorno de Conducta Alimentaria',               descripcion: 'Detección, comprensión e intervención gestáltica en los TCA.' },
       { numero: 8,  nombre: 'Heridas en la infancia y trauma',                                descripcion: 'Impacto del trauma en la formación de la identidad y los vínculos.' },
       { numero: 9,  nombre: 'Intervención con progenitores',                                  descripcion: 'La figura parental como recurso terapéutico. Límites y alianzas.' },
@@ -48,6 +48,7 @@ El trabajo con los menores se complementa siempre con el sistema familiar, abarc
         cargo: 'Directora del Programa · Psicóloga General Sanitaria',
         bio: 'Miembro titular, didacta y supervisora acreditada por la AETG. Formada en Eneagrama, Psicoterapia Integrativa y Transpersonal (Programa SAT) y Bioenergética. Especialista en duelo, EMDR Nivel I y Wingwave. Más de quince años de experiencia en terapia infantil y con adolescentes, en la Escuela Sal Gestalt de Jerez y en Qualia Salud Emocional (Granada). Actualmente directora del Centro de Psicología La Seda.',
         imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
+        perfilSlug: 'ana-jimenez' // ✅ Vínculo activo (Ana)
       },
       {
         nombre: 'Yael Peña García',
@@ -70,7 +71,7 @@ El trabajo con los menores se complementa siempre con el sistema familiar, abarc
       {
         nombre: 'Martín Mindeguía',
         cargo: 'Médico Pediatra · Especialista en Cuidados Paliativos',
-        bio: 'Terapeuta Gestalt y docente del Posgrado D.O.L. de Assumpta Mateu. Facilitador de EPEC-Pediatrics. Docente en el Máster Universitario en Cuidados Paliativos Pediátricos (UNIR), en el título de Experto en Acompañamiento Espiritual en Clínica (Universidad Francisco de Vitoria) y en el posgrado del Institut Borja de Bioètica (Universitat Ramon Llull, Barcelona).',
+        bio: 'Terapeuta Gestalt and docente del Posgrado D.O.L. de Assumpta Mateu. Facilitador de EPEC-Pediatrics. Docente en el Máster Universitario en Cuidados Paliativos Pediátricos (UNIR), en el título de Experto en Acompañamiento Espiritual en Clínica (Universidad Francisco de Vitoria) y en el posgrado del Institut Borja de Bioètica (Universitat Ramon Llull, Barcelona).',
         imagen: '/images/martin-mindeguia-medico-pediatra-cuidados-paliativos-gestalt.jpg',
       },
       {
@@ -145,6 +146,7 @@ Su campo de aplicación es amplio y profundo: regulación del estrés agudo y cr
         cargo: 'Terapeuta Wingwave® · Co-directora de La Seda',
         bio: 'Terapeuta wingwave® y co-formadora acreditada por el Besser-Siegmund Institut de Hamburgo (Alemania). Colaboradora del Programa SAT de Claudio Naranjo. Cofundadora de Viventi y co-directora de La Seda.',
         imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+        perfilSlug: 'leonor-cabrera' // ✅ Vínculo activo (Leonor)
       },
     ],
     videos: [
@@ -162,32 +164,22 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
 <template>
   <div>
 
-    <!-- ══════════════════════════════════════════
-         ESTADO PRINCIPAL · Formación encontrada
-    ═══════════════════════════════════════════ -->
     <main v-if="formacion" class="overflow-x-hidden">
 
-      <!-- ─────────────────────────────────────
-           SECCIÓN 1 · HERO
-      ────────────────────────────────────── -->
       <PageHero
-      :label="`${formacion.etiqueta} · Centro de Psicología La Seda`"
-      :title-main="formacion.titulo"
-      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
-      :image-alt="`${formacion.titulo} — Centro de Psicología La Seda Granada`"
-      secondary-link="/formaciones"
-      secondary-label="Ver todas las formaciones"
-    >
-      <template #description>{{ formacion.subtitulo }}</template>
-    </PageHero>
+        :label="`${formacion.etiqueta} · Centro de Psicología La Seda`"
+        :title-main="formacion.titulo"
+        image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+        :image-alt="`${formacion.titulo} — Centro de Psicología La Seda Granada`"
+        secondary-link="/formaciones"
+        secondary-label="Ver todas las formaciones"
+      >
+        <template #description>{{ formacion.subtitulo }}</template>
+      </PageHero>
 
-      <!-- ─────────────────────────────────────
-           SECCIÓN 2 · ENFOQUE
-      ────────────────────────────────────── -->
       <section class="page-container py-24 md:py-32">
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          <!-- Columna sticky izquierda -->
           <div class="lg:sticky lg:top-28">
             <div class="section-divider mb-7" />
             <p class="formation-label mb-4">
@@ -220,13 +212,10 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
             <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
           </div>
 
-          <!-- Columna derecha -->
           <div>
 
-            <!-- GESTALT: lista de talleres -->
             <div v-if="esGestalt">
               <p class="formation-label mb-7">Programa · 15 talleres</p>
-              <!-- ✅ divide-[#27252B]/10 en lugar de /8 (fuera de escala nativa) -->
               <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/10">
                 <div
                   v-for="taller in formacion.programa"
@@ -244,12 +233,9 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
               </div>
             </div>
 
-            <!-- WINGWAVE: ventajas + qué incluye -->
             <div v-if="esWingwave" class="space-y-14">
-
               <div>
                 <p class="formation-label mb-7">Beneficios y aplicaciones</p>
-                <!-- ✅ divide-[#27252B]/10 en lugar de /8 -->
                 <div class="divide-y divide-[#27252B]/10">
                   <div
                     v-for="ventaja in formacion.ventajas"
@@ -276,23 +262,17 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
                 </div>
               </div>
 
-              <!-- ✅ border-[#27252B]/10 en lugar de /12 (fuera de escala nativa) -->
               <div class="border border-[#27252B]/10 px-7 py-6">
                 <p class="formation-label mb-2">Precio</p>
                 <p class="font-serif italic text-[#27252B] text-2xl mb-2">{{ formacion.logistica.precio }}</p>
                 <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Descuento por reserva anticipada y facilidades de pago a plazos disponibles.</p>
               </div>
-
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
-
-      <!-- ─────────────────────────────────────
-           SECCIÓN 3 · VÍDEOS (solo Wingwave)
-      ────────────────────────────────────── -->
       <section
         v-if="esWingwave && formacion.videos"
         class="bg-[#27252B]/5 py-20 md:py-28"
@@ -339,10 +319,6 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
         </div>
       </section>
 
-
-      <!-- ─────────────────────────────────────
-           SECCIÓN 4 · PROFESORADO
-      ────────────────────────────────────── -->
       <section :class="esWingwave ? 'bg-[#FDFBF9]' : 'bg-[#27252B]/5'" class="py-20 md:py-28">
         <div class="page-container">
 
@@ -360,13 +336,12 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
             <div class="md:col-span-7">
               <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
                 {{ esGestalt
-                  ? 'Un equipo de ocho especialistas que combinan rigor clínico y profundidad humana en cada módulo.'
+                  ? 'Un equipo de especialistas que combinan rigor clínico y profundidad humana en cada módulo.'
                   : 'Formadores acreditados por el Besser-Siegmund Institut de Hamburgo con décadas de práctica clínica.' }}
               </p>
             </div>
           </div>
 
-          <!-- Gestalt: grid 3 columnas -->
           <div
             v-if="esGestalt"
             class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#27252B]/10"
@@ -374,33 +349,46 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
             <div
               v-for="prof in formacion.profesorado"
               :key="prof.nombre"
-              class="bg-[#FDFBF9] p-8 flex flex-col gap-5"
+              class="bg-[#FDFBF9] p-8 flex flex-col justify-between gap-6"
             >
-              <div class="flex items-center gap-4">
-                <div class="prof-avatar-sm">
-                  <!-- ✅ width/height añadidos para evitar CLS -->
-                  <NuxtImg
-                    :src="prof.imagen"
-                    :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                    format="webp"
-                    loading="lazy"
-                    width="44"
-                    height="44"
-                    class="w-full h-full object-cover"
-                  />
+              <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-4">
+                  <div class="prof-avatar-sm">
+                    <NuxtImg
+                      :src="prof.imagen"
+                      :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
+                      format="webp"
+                      loading="lazy"
+                      width="44"
+                      height="44"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="prof-name">{{ prof.nombre }}</p>
+                    <p class="prof-role">{{ prof.cargo }}</p>
+                  </div>
                 </div>
-                <div>
-                  <p class="prof-name">{{ prof.nombre }}</p>
-                  <p class="prof-role">{{ prof.cargo }}</p>
+                <div class="prof-card-body">
+                  <p class="prof-bio">{{ prof.bio }}</p>
                 </div>
               </div>
-              <div class="prof-card-body">
-                <p class="prof-bio">{{ prof.bio }}</p>
+
+              <div v-if="prof.perfilSlug" class="mt-2 pt-4 border-t border-[#27252B]/5">
+                <NuxtLink
+                  :to="`/conocenos/${prof.perfilSlug}`"
+                  class="inline-flex w-full items-center justify-center gap-2 px-4 py-3 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-[10px] font-medium tracking-[0.15em] uppercase"
+                  :aria-label="`Ver perfil clínico de ${prof.nombre}`"
+                >
+                  <span>Ver perfil clínico</span>
+                  <svg class="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </NuxtLink>
               </div>
             </div>
           </div>
 
-          <!-- Wingwave: 2 tarjetas grandes -->
           <div
             v-if="esWingwave"
             class="grid md:grid-cols-2 gap-8"
@@ -408,29 +396,42 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
             <div
               v-for="prof in formacion.profesorado"
               :key="prof.nombre"
-              class="border border-[#27252B]/10 p-10 flex flex-col gap-7 bg-[#FDFBF9]"
+              class="border border-[#27252B]/10 p-10 flex flex-col justify-between gap-7 bg-[#FDFBF9]"
             >
-              <div class="flex items-center gap-5">
-                <div class="prof-avatar-lg">
-                  <!-- ✅ width/height añadidos para evitar CLS -->
-                  <NuxtImg
-                    :src="prof.imagen"
-                    :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                    format="webp"
-                    loading="lazy"
-                    width="56"
-                    height="56"
-                    class="w-full h-full object-cover"
-                  />
+              <div>
+                <div class="flex items-center gap-5">
+                  <div class="prof-avatar-lg">
+                    <NuxtImg
+                      :src="prof.imagen"
+                      :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
+                      format="webp"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-base font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
+                    <p class="text-xs text-[#71B1A5] mt-1 tracking-wide">{{ prof.cargo }}</p>
+                  </div>
                 </div>
-                <div>
-                  <p class="text-base font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
-                  <p class="text-xs text-[#71B1A5] mt-1 tracking-wide">{{ prof.cargo }}</p>
+                <div class="prof-card-body pt-6">
+                  <p class="text-base text-[#27252B]/65 font-light leading-[1.9]">{{ prof.bio }}</p>
                 </div>
               </div>
-              <!-- ✅ pt-6 como clase utilitaria sobre la base prof-card-body -->
-              <div class="prof-card-body pt-6">
-                <p class="text-base text-[#27252B]/65 font-light leading-[1.9]">{{ prof.bio }}</p>
+
+              <div v-if="prof.perfilSlug" class="pt-4 border-t border-[#27252B]/5">
+                <NuxtLink
+                  :to="`/conocenos/${prof.perfilSlug}`"
+                  class="inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-xs font-medium tracking-[0.2em] uppercase"
+                  :aria-label="`Ver perfil clínico completo de ${prof.nombre}`"
+                >
+                  <span>Ver perfil clínico</span>
+                  <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -438,15 +439,10 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
         </div>
       </section>
 
-
-      <!-- ─────────────────────────────────────
-           SECCIÓN 5 · LOGÍSTICA Y RESERVA
-      ────────────────────────────────────── -->
       <section class="bg-[#27252B] py-20 md:py-28">
         <div class="page-container">
           <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-            <!-- Columna izquierda: tabla de datos -->
             <div>
               <p class="formation-label mb-4">Información práctica</p>
               <h2 class="formation-title-dark mb-12">
@@ -454,7 +450,6 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
                 <span class="text-white/50 not-italic font-light text-2xl md:text-3xl">{{ formacion.logistica.convocatoria }}</span>
               </h2>
 
-              <!-- ✅ divide-white/10 en lugar de /8 (fuera de escala nativa) -->
               <div class="border border-white/10 divide-y divide-white/10">
                 <div class="logistics-row">
                   <span class="logistics-label">Formato</span>
@@ -500,7 +495,6 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
               </div>
             </div>
 
-            <!-- Columna derecha: CTA de reserva -->
             <div class="lg:pt-28 flex flex-col items-start gap-9">
               <div class="w-12 h-px bg-[#71B1A5]" />
               <h3 class="formation-title-dark leading-[1.2]">
@@ -526,36 +520,24 @@ const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
         </div>
       </section>
 
-
-      <!-- ─────────────────────────────────────
-           SECCIÓN 6 · NAVEGACIÓN INFERIOR
-      ────────────────────────────────────── -->
       <section class="page-container py-16 md:py-20">
         <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-
-          <!-- ✅ Ruta /formaciones — verifica que exista pages/formaciones/index.vue o pages/formaciones.vue -->
           <NuxtLink to="/formaciones" class="nav-link-back group">
             <span class="nav-link-line" />
             <span class="nav-link-text">Todas las formaciones</span>
           </NuxtLink>
 
-          <!-- ✅ Ruta /contacto — verifica que exista pages/contacto.vue -->
           <NuxtLink to="/contacto" class="nav-link-back group">
             <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
               Contactar con el centro
             </span>
             <span class="nav-link-line" />
           </NuxtLink>
-
         </div>
       </section>
 
     </main>
 
-
-    <!-- ══════════════════════════════════════════
-         ESTADO 404 · Formación no encontrada
-    ═══════════════════════════════════════════ -->
     <main
       v-else
       class="min-h-screen flex flex-col items-center justify-center px-6 text-center"

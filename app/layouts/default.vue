@@ -15,13 +15,13 @@
               <NuxtLink
                 :to="link.to"
                 class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-                :class="{ '!text-[#27252B] font-bold': $route.path === link.to }"
-                :aria-current="$route.path === link.to ? 'page' : undefined"
+                :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
+                :aria-current="currentPath === link.to ? 'page' : undefined"
               >
                 {{ link.label }}
                 <span
                   class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                  :class="{ 'scale-x-100': $route.path === link.to }"
+                  :class="{ 'scale-x-100': currentPath === link.to }"
                 ></span>
               </NuxtLink>
             </li>
@@ -45,13 +45,13 @@
                 <NuxtLink
                   :to="link.to"
                   class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-                  :class="{ '!text-[#27252B] font-bold': $route.path === link.to }"
-                  :aria-current="$route.path === link.to ? 'page' : undefined"
+                  :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
+                  :aria-current="currentPath === link.to ? 'page' : undefined"
                 >
                   {{ link.label }}
                   <span
                     class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                    :class="{ 'scale-x-100': $route.path === link.to }"
+                    :class="{ 'scale-x-100': currentPath === link.to }"
                   ></span>
                 </NuxtLink>
               </li>
@@ -111,35 +111,23 @@
         </div>
 
         <nav aria-label="Navegación móvil" class="flex flex-col items-center justify-center space-y-7 my-auto">
-
-          <div class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards] [animation-delay:150ms]">
-            <NuxtLink
-              to="/"
-              class="text-sm tracking-[0.35em] uppercase font-semibold text-[#27252B]/60 hover:text-[#27252B] transition-colors duration-300"
-              :class="{ 'text-[#71B1A5] font-bold': $route.path === '/' }"
-              @click="mobileMenuOpen = false"
-            >
-              Inicio
-            </NuxtLink>
-          </div>
-
           <div
-            v-for="(link, index) in navLinks"
+            v-for="(link, index) in mobileNavLinks"
             :key="link.to"
             class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]"
-            :style="{ 'animation-delay': `${200 + (index * 60)}ms` }"
+            :style="{ 'animation-delay': `${150 + (index * 60)}ms` }"
           >
             <NuxtLink
               :to="link.to"
               class="text-sm tracking-[0.35em] uppercase font-semibold text-[#27252B]/60 hover:text-[#27252B] transition-colors duration-300 relative group block text-center"
-              :class="{ 'text-[#71B1A5] font-bold': $route.path === link.to }"
-              :aria-current="$route.path === link.to ? 'page' : undefined"
+              :class="{ 'text-[#71B1A5] font-bold': currentPath === link.to }"
+              :aria-current="currentPath === link.to ? 'page' : undefined"
               @click="mobileMenuOpen = false"
             >
               {{ link.label }}
               <span
                 class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#71B1A5] opacity-0 transition-opacity duration-300"
-                :class="{ 'opacity-100': $route.path === link.to }"
+                :class="{ 'opacity-100': currentPath === link.to }"
               ></span>
             </NuxtLink>
           </div>
@@ -197,7 +185,6 @@
     </Transition>
 
     <footer class="bg-[#1e1c21] text-white/40" aria-label="Pie de página">
-
       <div class="h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent"></div>
 
       <div class="max-w-7xl mx-auto px-8 md:px-16 pt-16 md:pt-20 pb-14">
@@ -216,7 +203,7 @@
 
             <p class="text-sm leading-relaxed max-w-xs font-light mb-8">
               Centro de Psicología y Crecimiento Personal en Granada. Un espacio
-              where la ciencia se encuentra con la bondad.
+              donde la ciencia se encuentra con la bondad.
             </p>
 
             <div class="border-l border-[#71B1A5]/40 pl-4">
@@ -305,8 +292,7 @@
 
             <div class="mt-8 flex items-start gap-3 p-4 border border-white/5 bg-white/[0.01]">
               <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138"/>
               </svg>
               <p class="text-xs text-white/40 leading-relaxed font-light">
                 Psicólogos colegiados por el
@@ -356,7 +342,6 @@
           </nav>
         </div>
       </div>
-
     </footer>
 
   </div>
@@ -364,6 +349,10 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+// Importante en Nuxt 3 para mapear rutas de forma reactiva en <script setup>
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 // ── Estado del menú móvil
 const mobileMenuOpen = ref(false)
@@ -399,6 +388,9 @@ onUnmounted(() => window.removeEventListener('resize', handleResize))
 // ── Año actual para el copyright
 const currentYear = new Date().getFullYear()
 
+// ── Computada para capturar el path actual de forma reactiva y limpia
+const currentPath = computed(() => route.path)
+
 // ── Definición de enlaces de navegación
 const navLinks = [
   { label: 'Terapias',    to: '/terapias'    },
@@ -410,8 +402,14 @@ const navLinks = [
 const leftNavLinks  = computed(() => navLinks.slice(0, 2))
 const rightNavLinks = computed(() => navLinks.slice(2))
 
+// Menú móvil unificado (Agregamos inicio al bucle evitando código duplicado)
+const mobileNavLinks = computed(() => [
+  { label: 'Inicio', to: '/' },
+  ...navLinks
+])
+
 const footerNavLinks = [
-  { label: 'Inicio',               to: '/'            },
+  { label: 'Inicio',            to: '/'            },
   { label: 'Terapias Clínicas',    to: '/terapias'    },
   { label: 'Talleres Vivenciales', to: '/talleres'    },
   { label: 'Formaciones',          to: '/formaciones' },
@@ -430,7 +428,6 @@ watch(mobileMenuOpen, (menuOpen) => {
 </script>
 
 <style>
-/* Parche de rendimiento gráfico nativo móvil contra cuadros negros */
 header {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -443,14 +440,12 @@ header {
   backdrop-filter: blur(12px) !important;
 }
 
-/* Ocultar cursor en escritorio sobre elementos interactivos */
 @media (min-width: 1024px) {
   body, a, button, input, textarea, [role="button"] {
     cursor: none !important;
   }
 }
 
-/* Animaciones nativas */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }

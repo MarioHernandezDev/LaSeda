@@ -10,9 +10,10 @@ const talleres = {
     categoria: 'Formación profesional',
     facilitadora: {
       nombre: 'Ana Jiménez',
+      perfilSlug: 'ana-jimenez', // Enlace dinámico a /conocenos/ana-jimenez
       rol: 'Psicóloga · Miembro didacta y supervisora AETG',
-      bio: 'Ana Jiménez es psicóloga y psicoterapeuta Gestalt, miembro didacta y supervisora acreditada por la Asociación Española de Terapia Gestalt (AETG). Con más de quince años acompañando a otros terapeutas en sus procesos de supervisión, su trabajo se orienta a ampliar la conciencia del terapeuta sobre sí mismo y sobre el vínculo que establece con cada paciente.',
-      bio2: 'Su enfoque integra la supervisión clínica con el trabajo personal del terapeuta, partiendo de la convicción de que el principal instrumento de la terapia es el propio terapeuta. Las sesiones que dirige son un espacio de honestidad, apoyo y rigor profesional.',
+      bio: 'Ana Jiménez es psicóloga y psicoterapeuta Gestalt, miembro didacta y supervisora acreditada por la Asociación Española de Terapia Gestalt (AETG). Con más de <strong>quince años acompañando a otros terapeutas</strong> en sus procesos de supervisión, su trabajo se orienta a ampliar la conciencia del terapeuta sobre sí mismo y sobre el vínculo que establece con cada paciente.',
+      bio2: 'Su enfoque integra la supervisión clínica con el trabajo personal del terapeuta, partiendo de la convicción de que el <strong>principal instrumento de la terapia es el propio terapeuta</strong>. Las sesiones que dirige son un espacio de honestidad, apoyo y rigor profesional.',
     },
     descripcion: 'La supervisión para psicólogos y terapeutas es un proceso esencial para el desarrollo profesional y la calidad de la atención que se brinda a los pacientes. Trabajar con el sufrimiento ajeno moviliza inevitablemente el propio mundo emocional del terapeuta. Este espacio ofrece un lugar donde llevar los casos que generan perplejidad, bloqueo o resonancia interna, con la guía de una supervisora con amplia experiencia clínica.',
     descripcion2: 'La supervisión puede ser tanto en sesiones individuales como grupales, en formato presencial en el Centro La Seda de Granada o en modalidad online. Cada sesión permite ampliar la perspectiva terapéutica, revisar los propios puntos ciegos y fortalecer la capacidad de presencia y contacto en consulta. Las horas certificadas cuentan para la formación acreditada en Terapia Gestalt según los criterios de la AETG.',
@@ -88,9 +89,10 @@ const talleres = {
     categoria: 'Espacios vivenciales',
     facilitadora: {
       nombre: 'Leonor Cabrera Torrado',
+      perfilSlug: 'leonor-cabrera', // Enlace dinámico a /conocenos/leonor-cabrera
       rol: 'Especialista en Constelaciones Familiares · Autora',
-      bio: 'Leonor Cabrera Torrado está especializada en trabajar la fuerza interior y los bloqueos emocionales a través de las Constelaciones Familiares y de otros medios, como el método Wingwave®, del que es co-formadora acreditada por el Instituto Besser-Siegmund de Hamburgo. Colaboradora del Programa SAT de Claudio Naranjo, con formación en Gestalt y PNL.',
-      bio2: 'Es autora del libro "El camino de la fuerza interior". Su trabajo combina el rigor del método sistémico de Bert Hellinger con una mirada profundamente compasiva hacia las cargas que cada persona lleva, muchas veces sin saberlo. Los talleres que facilita son espacios de movimiento real, donde lo que estaba atascado comienza a fluir.',
+      bio: 'Leonor Cabrera Torrado está especializada en trabajar la fuerza interior y los bloqueos emocionales a través de las <strong>Constelaciones Familiares</strong> y de otros medios, como el método Wingwave®, del que es co-formadora acreditada por el Instituto Besser-Siegmund de Hamburgo. Colaboradora del Programa SAT de Claudio Naranjo.',
+      bio2: 'Es autora del libro "El camino de la fuerza interior". Su trabajo combina el rigor del método sistémico de Bert Hellinger con una <strong>mirada profundamente compasiva</strong> hacia las cargas que cada persona lleva. Los talleres que facilita son espacios de movimiento real, donde lo que estaba atascado comienza a fluir.',
     },
     descripcion: 'Los talleres de Constelaciones Familiares de La Seda sirven para abordar problemas y dinámicas familiares, así como otros desafíos personales o interpersonales. Esta técnica fue desarrollada por Bert Hellinger en la década de los 90 y se basa en la idea de que las familias tienen patrones y lealtades invisibles que pueden afectar la vida de sus miembros de manera profunda.',
     descripcion2: 'El objetivo principal es revelar y resolver estos patrones para promover el bienestar emocional y las relaciones saludables. Los talleres no requieren experiencia previa ni formación específica. Están abiertos a cualquier persona que sienta el llamado de mirar más hondo en su historia familiar, sanar heridas transgeneracionales o comprender por qué ciertos patrones se repiten una y otra vez en su vida.',
@@ -98,7 +100,7 @@ const talleres = {
       {
         numero: '01',
         titulo: 'Resolver conflictos familiares',
-        desc: 'Identifica y resuelve conflictos persistentes dentro de la familia: entre padres e hijos, entre hermanos o conflictos intergeneracionales que se arrastran sin que nadie sepa bien por qué.',
+        desc: 'Identifica y resuelve conflictos persistententes dentro de la familia: entre padres e hijos, entre hermanos o conflictos intergeneracionales que se arrastran sin que nadie sepa bien por qué.',
       },
       {
         numero: '02',
@@ -174,9 +176,6 @@ useSeoMeta({
 <template>
   <main>
 
-    <!-- ─────────────────────────────────────
-         SECCIÓN 1 · HERO
-    ────────────────────────────────────── -->
     <PageHero
       :label="`${taller.categoria} · ${taller.facilitadora.nombre}`"
       :title-main="taller.titulo"
@@ -190,17 +189,12 @@ useSeoMeta({
     </PageHero>
 
 
-    <!-- ─────────────────────────────────────
-         SECCIÓN 2 · PRESENTACIÓN EDITORIAL
-    ────────────────────────────────────── -->
     <section class="page-container py-24 md:py-32">
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-        <!-- Columna izquierda: bio facilitadora -->
         <div class="lg:sticky lg:top-28">
 
           <div class="overflow-hidden aspect-[3/4] mb-10 relative">
-            <!-- ✅ NuxtImg con atributos SEO correctos; below-the-fold → lazy -->
             <NuxtImg
               src="/images/default.jpg"
               :alt="`${taller.facilitadora.nombre} — facilitadora en Centro de Psicología La Seda Granada`"
@@ -221,17 +215,29 @@ useSeoMeta({
           <h2 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-[1.2] mb-7">
             Sobre la facilitadora
           </h2>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/70 mb-6">
-            {{ taller.facilitadora.bio }}
-          </p>
-          <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/70">
-            {{ taller.facilitadora.bio2 }}
-          </p>
+          
+          <div class="space-y-6 text-base md:text-lg leading-[1.95] text-[#27252B]/70 [&_strong]:font-semibold [&_strong]:text-[#27252B] mb-10">
+            <p v-html="taller.facilitadora.bio" />
+            <p v-html="taller.facilitadora.bio2" />
+          </div>
 
-        </div>
+          <NuxtLink
+            :to="`/conocenos/${taller.facilitadora.perfilSlug}`"
+            class="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-xs font-medium tracking-[0.2em] uppercase shadow-sm"
+            :aria-label="`Ver perfil clínico completo de ${taller.facilitadora.nombre}`"
+          >
+            <span>Ver perfil clínico</span>
+            <svg 
+              class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300 ease-out" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </NuxtLink>
 
-        <!-- Columna derecha: propósito del taller -->
-        <div class="space-y-10">
+        </div> <div class="space-y-10">
 
           <div>
             <p class="formation-label mb-5">El taller</p>
@@ -250,7 +256,6 @@ useSeoMeta({
             {{ taller.descripcion2 }}
           </p>
 
-          <!-- ✅ NuxtImg con atributos SEO correctos; below-the-fold → lazy -->
           <div class="overflow-hidden aspect-[16/8] mt-2">
             <NuxtImg
               src="/images/default.jpg"
@@ -263,15 +268,10 @@ useSeoMeta({
             />
           </div>
 
-        </div>
-
-      </div>
+        </div> </div>
     </section>
 
 
-    <!-- ─────────────────────────────────────
-         SECCIÓN 3 · BENEFICIOS
-    ────────────────────────────────────── -->
     <section class="bg-[#27252B] py-20 md:py-28">
       <div class="page-container">
 
@@ -289,7 +289,6 @@ useSeoMeta({
           <div class="w-20 h-px bg-[#71B1A5]/30 md:mb-2 shrink-0" />
         </div>
 
-        <!-- ✅ gap-px + bg-white/5 en lugar de bg-white/[0.05] -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           <div
             v-for="(b, i) in taller.beneficios"
@@ -306,9 +305,6 @@ useSeoMeta({
     </section>
 
 
-    <!-- ─────────────────────────────────────
-         SECCIÓN 4 · FECHAS Y LOGÍSTICA
-    ────────────────────────────────────── -->
     <section class="py-20 md:py-28">
       <div class="page-container">
 
@@ -325,7 +321,6 @@ useSeoMeta({
           </div>
         </div>
 
-        <!-- ✅ bg-[#27252B]/5 y divide-[#27252B]/10 en lugar de /[0.03] y /8 -->
         <div class="bg-[#27252B]/5 divide-y divide-[#27252B]/10">
           <div
             v-for="(fecha, i) in taller.fechas"
@@ -349,7 +344,6 @@ useSeoMeta({
               <h3 class="font-serif italic text-[#27252B] text-lg md:text-xl leading-snug group-hover:text-[#71B1A5] transition-colors duration-200">
                 {{ fecha.descripcion }}
               </h3>
-              <!-- ✅ training-tag ya definida en el CSS global -->
               <span
                 v-if="fecha.especial"
                 class="training-tag inline-block mt-2"
@@ -367,7 +361,6 @@ useSeoMeta({
             </div>
 
             <div class="md:col-span-2 flex md:justify-end">
-              <!-- ✅ /contacto — verifica pages/contacto.vue -->
               <NuxtLink to="/contacto" class="inline-flex items-center gap-2 group/cta">
                 <span class="text-xs tracking-[0.2em] uppercase text-[#27252B] border-b border-[#27252B]/25 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-colors duration-200 whitespace-nowrap">
                   Reservar plaza
@@ -381,16 +374,11 @@ useSeoMeta({
     </section>
 
 
-    <!-- ─────────────────────────────────────
-         SECCIÓN 5 · FAQS + CONTACTO
-    ────────────────────────────────────── -->
-    <!-- ✅ bg-[#27252B]/5 en lugar de bg-[#27252B]/[0.03] -->
     <section class="bg-[#27252B]/5 py-20 md:py-28">
       <div class="page-container">
 
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
 
-          <!-- FAQs (col 7) -->
           <div class="lg:col-span-7">
             <p class="formation-label mb-4">Preguntas frecuentes</p>
             <h2 class="formation-title-light mb-10">Resolvemos tus dudas</h2>
@@ -436,7 +424,6 @@ useSeoMeta({
 
           </div>
 
-          <!-- Contacto + CTA (col 5) -->
           <div class="lg:col-span-5 space-y-6">
 
             <div class="cta-box-dark">

@@ -23,43 +23,14 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 2 · INTRO
     ════════════════════════════════════════════════ -->
-    <section
-      class="page-container py-20 md:py-28"
-      aria-labelledby="intro-heading"
-    >
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-
-        <div class="md:col-span-4 md:sticky md:top-28">
-          <div class="section-divider mb-6" aria-hidden="true" />
-          <h2
-            id="intro-heading"
-            class="section-title"
-          >
-            Escríbenos o llámanos<br />sin compromiso.
-          </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" aria-hidden="true" />
-        </div>
-
-        <div class="md:col-span-8 space-y-7">
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            En La Seda entendemos que pedir ayuda no siempre es fácil. Por eso
-            queremos que el primer contacto sea tan sencillo y cálido como sea posible.
-            Puedes escribirnos, llamarnos o rellenar el formulario: te orientaremos
-            hacia el camino terapéutico que mejor se adapte a ti.
-          </p>
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            Respondemos a todos los mensajes en menos de 24 horas laborables.
-            Ninguna consulta es demasiado pequeña.
-          </p>
-          <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]" aria-hidden="true" />
-            <span class="section-label">Confidencialidad garantizada · Granada</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    <SeccionIntro
+      id-heading="contacto-heading"
+      titulo="Escríbenos o llámanos sin compromiso."
+      :parrafos="[
+        'En La Seda sabemos que dar el paso de pedir ayuda requiere valor. Por ello, resolvemos tu primer contacto con la máxima sencillez. Escríbenos, llámanos o completa el formulario: analizaremos tu caso con cercanía para orientarte hacia el proceso terapéutico óptimo.',
+        'Respondemos a cada consulta en menos de 24 horas laborables. Recuerda que ninguna duda es insignificante cuando se trata de tu tranquilidad.'
+      ]"
+    />
 
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 3 · CUERPO PRINCIPAL: INFO + FORMULARIO

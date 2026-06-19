@@ -24,46 +24,14 @@
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 2 · INTRODUCCIÓN
     ════════════════════════════════════════════════ -->
-    <section
-      class="page-container py-20 md:py-28"
-      aria-labelledby="intro-heading"
-    >
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-
-        <div class="md:col-span-4 md:sticky md:top-28">
-          <div class="section-divider mb-6" aria-hidden="true" />
-          <h2
-            id="intro-heading"
-            class="section-title"
-          >
-            Rigor científico con profundidad humana.
-          </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" aria-hidden="true" />
-        </div>
-
-        <div class="md:col-span-8 space-y-7">
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            La Seda nació de la convicción de que la psicología más transformadora es aquella
-            que integra rigor científico con profundidad humana. Nuestro equipo reúne especialistas
-            formados en las corrientes más sólidas —cognitivo-conductual, sistémica,
-            humanista-existencial y mindfulness-based— con una misión compartida:
-            acompañar procesos de cambio real.
-          </p>
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            Más allá de la clínica, entendemos el bienestar como un territorio que abarca
-            la educación, las relaciones y el sentido de vida. Por eso nuestro trabajo se
-            despliega en tres áreas complementarias: terapia, formación y crecimiento personal,
-            desde un espacio en Granada diseñado para que cada persona se sienta
-            recibida desde el primer momento.
-          </p>
-          <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]" aria-hidden="true" />
-            <span class="section-label">Centro acreditado · Granada</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <SeccionIntro
+      id-heading="nosotros-heading"
+      titulo="Rigor científico con profundidad humana."
+      :parrafos="[
+        'La Seda nace para demostrar que la psicología más transformadora une la evidencia científica con una sensibilidad humana real. Nuestro equipo reúne a especialistas de corrientes sólidas —cognitivo-conductual, sistémica, humanista y mindfulness— bajo un mismo fin: consolidar cambios duraderos.',
+        'Entendemos el bienestar como un todo integrado que abarca la terapia, la formación y el crecimiento interno. Desplegamos nuestra labor desde un espacio en Granada concebido en detalle para que te sientas en calma y calidez desde el primer paso.'
+      ]"
+    />
 
 
     <!-- ═══════════════════════════════════════════════

@@ -40,43 +40,14 @@ useHead({
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
     ════════════════════════════════════════════════ -->
-    <section
-      class="page-container py-20 md:py-28"
-      aria-labelledby="intro-heading"
-    >
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-
-        <div class="md:col-span-4 md:sticky md:top-28">
-          <div class="section-divider mb-6" aria-hidden="true" />
-          <h2 id="intro-heading" class="section-title">
-            Terapia integrativa adaptada a tu momento vital.
-          </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" aria-hidden="true" />
-        </div>
-
-        <div class="md:col-span-8 space-y-7">
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            En La Seda trabajamos desde la psicología integrativa, un modelo que
-            nos permite seleccionar y combinar las herramientas más adecuadas de
-            diferentes corrientes para cada persona. No existe una única forma de
-            sanar: nuestro compromiso es encontrar el camino que mejor resuene
-            con tu historia, tu carácter y tus necesidades actuales.
-          </p>
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            La terapia cognitivo-conductual, el enfoque humanista, la perspectiva
-            sistémica y el protocolo EMDR conviven en nuestra práctica cotidiana.
-            Esta pluralidad nos permite ofrecer un acompañamiento verdaderamente
-            personalizado, con evidencia científica y con la calidez que merece
-            cada proceso de cambio.
-          </p>
-          <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]" aria-hidden="true" />
-            <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <SeccionIntro
+      id-heading="terapia-heading"
+      titulo="Terapia integrativa adaptada a tu momento vital."
+      :parrafos="[
+        'En La Seda trabajamos desde la psicología integrativa, combinando las herramientas más adecuadas de diferentes corrientes para cada persona. No existe una única forma de sanar: nuestro compromiso es encontrar el camino que mejor resuene con tu historia y tus necesidades actuales.',
+        'El enfoque cognitivo-conductual, el humanista, la perspectiva sistémica y el protocolo EMDR guían nuestra práctica cotidiana. Esta pluralidad nos permite ofrecer un acompañamiento personalizado, respaldado por evidencia científica y con una profunda calidez humana.'
+      ]"
+    />
 
 
     <!-- ═══════════════════════════════════════════════

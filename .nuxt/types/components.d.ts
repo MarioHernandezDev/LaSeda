@@ -16,6 +16,7 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 interface _GlobalComponents {
   CustomCursor: typeof import("../../app/components/CustomCursor.vue")['default']
   PageHero: typeof import("../../app/components/PageHero.vue")['default']
+  SeccionIntro: typeof import("../../app/components/SeccionIntro.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   NuxtErrorBoundary: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -42,6 +43,7 @@ interface _GlobalComponents {
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   LazyCustomCursor: LazyComponent<typeof import("../../app/components/CustomCursor.vue")['default']>
   LazyPageHero: LazyComponent<typeof import("../../app/components/PageHero.vue")['default']>
+  LazySeccionIntro: LazyComponent<typeof import("../../app/components/SeccionIntro.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   LazyNuxtErrorBoundary: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

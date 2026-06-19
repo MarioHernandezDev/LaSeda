@@ -40,54 +40,16 @@ useHead({
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
     ════════════════════════════════════════════════ -->
-    <section
-      class="page-container py-20 md:py-28"
-      aria-labelledby="intro-heading"
-    >
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-
-        <div class="md:col-span-4 md:sticky md:top-28">
-          <div class="section-divider mb-6" aria-hidden="true" />
-          <h2 id="intro-heading" class="section-title">
-            Formaciones que no solo enseñan: transforman.
-          </h2>
-          <div class="mt-8 w-1 h-24 bg-[#71B1A5]/30" aria-hidden="true" />
-        </div>
-
-        <div class="md:col-span-8 space-y-7">
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            Nuestros programas nacen de la convicción de que el conocimiento
-            profesional solo se integra cuando va acompañado de experiencia vivida.
-            Teoría, práctica clínica y supervisión se entrelazan en cada formación
-            para que el aprendizaje sea también un proceso de crecimiento personal.
-          </p>
-          <p class="text-lg md:text-xl leading-[1.9] text-[#27252B]/80">
-            Tanto si eres terapeuta que busca ampliar su especialización clínica,
-            como si quieres incorporar una herramienta avalada científicamente a tu
-            práctica, aquí encontrarás un espacio riguroso, cercano y profundamente humano.
-          </p>
-
-          <blockquote class="border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-            <p class="font-serif italic text-[#27252B]/70 text-lg md:text-xl leading-[1.75]">
-              "Lo que necesita nuestro tiempo son seres más bondadosos,
-              no seres más inteligentes."
-            </p>
-            <footer class="mt-3 flex items-center gap-3">
-              <div class="section-divider" aria-hidden="true" />
-              <cite class="not-italic text-xs tracking-[0.25em] uppercase text-[#71B1A5]">
-                Claudio Naranjo · Psiquiatra y humanista
-              </cite>
-            </footer>
-          </blockquote>
-
-          <div class="inline-flex items-center gap-3 pt-2">
-            <div class="w-2 h-2 bg-[#71B1A5]" aria-hidden="true" />
-            <span class="text-sm tracking-[0.2em] uppercase text-[#71B1A5]">Centro acreditado · Granada</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
+    <SeccionIntro
+      id-heading="formaciones-heading"
+      titulo="Formaciones que no solo enseñan: transforman."
+      :parrafos="[
+        'Nuestros programas nacen de la convicción de que el conocimiento profesional de calidad solo se asimila cuando va acompañado de vivencia clínica. Teoría, práctica y supervisión se entrelazan en cada formación para impulsar tanto tu destreza técnica como tu madurez personal.',
+        'Si buscas ampliar tu especialización o incorporar herramientas avaladas científicamente a tu consulta, aquí encontrarás un entorno riguroso, cercano y comprometido con la excelencia.'
+      ]"
+      cita="Lo que necesita nuestro tiempo son seres más bondadosos, no seres más inteligentes."
+      cita-autor="Claudio Naranjo · Psiquiatra y humanista"
+    />
 
 
     <!-- ═══════════════════════════════════════════════

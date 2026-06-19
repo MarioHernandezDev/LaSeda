@@ -49,7 +49,19 @@
 
   /* Párrafos con interlineado cómodo por defecto */
   p {
-    @apply leading-relaxed;
+    @apply text-[17px] md:text-[19px] leading-[1.85] text-[#27252B]/80;
+  }
+
+  .text-base {
+    @apply text-[17px] md:text-[18px] !important;
+  }
+
+  .text-lg {
+    @apply text-[18px] md:text-[20px] !important;
+  }
+
+  .text-xl {
+    @apply text-[21px] md:text-[24px] !important;
   }
 
   /* Enlaces base sin subrayado */

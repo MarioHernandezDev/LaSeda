@@ -1,12 +1,12 @@
 <script setup lang="ts">
-interface Motivo {
+interface BloqueClave {
   numero: string
   titulo: string
   desc: string
 }
 
 defineProps<{
-  motivos: Motivo[]
+  motivos: BloqueClave[]
   imagen: string
   imagenAlt: string
 }>()
@@ -28,33 +28,33 @@ defineProps<{
             <div class="flex items-center gap-3 mb-4">
               <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
               <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-                ¿Cuándo acudir?
+                Pilares del Programa
               </p>
             </div>
             <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-              Motivos de consulta<br>
+              Estructura Académica<br>
               <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-                más frecuentes
+                y especificaciones clave
               </span>
             </h2>
           </div>
 
           <div class="divide-y divide-[#27252B]/5 border-t border-b border-[#27252B]/5">
             <div 
-              v-for="motivo in motivos" 
-              :key="motivo.numero" 
+              v-for="item in motivos" 
+              :key="item.numero" 
               class="py-6 flex gap-6 md:gap-8 items-start px-2"
             >
-              <span class="font-serif italic text-xl md:text-2xl text-[#71B1A5]/60 select-none pt-0.5">
-                {{ motivo.numero }}
+              <span class="font-serif italic text-xl md:text-2xl text-[#71B1A5]/60 min-w-[50px] select-none pt-0.5">
+                {{ item.numero }}
               </span>
               
               <div class="space-y-1.5 flex-grow">
                 <h3 class="font-medium text-lg text-[#27252B] tracking-tight">
-                  {{ motivo.titulo }}
+                  {{ item.titulo }}
                 </h3>
                 <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">
-                  {{ motivo.desc }}
+                  {{ item.desc }}
                 </p>
               </div>
             </div>
@@ -67,7 +67,7 @@ defineProps<{
               <NuxtImg 
                 :src="imagen" 
                 :alt="imagenAlt"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover grayscale-[10%]"
                 loading="lazy"
                 format="webp"
               />

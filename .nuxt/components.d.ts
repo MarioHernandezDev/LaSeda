@@ -18,6 +18,11 @@ export const CustomCursor: typeof import("../app/components/CustomCursor.vue")['
 export const PageHero: typeof import("../app/components/PageHero.vue")['default']
 export const SeccionIntro: typeof import("../app/components/SeccionIntro.vue")['default']
 export const TeamCard: typeof import("../app/components/TeamCard.vue")['default']
+export const FormationEstructure: typeof import("../app/components/formation/FormationEstructure.vue")['default']
+export const FormationOverview: typeof import("../app/components/formation/FormationOverview.vue")['default']
+export const FormationProcess: typeof import("../app/components/formation/FormationProcess.vue")['default']
+export const FormationRelated: typeof import("../app/components/formation/FormationRelated.vue")['default']
+export const FormationTeam: typeof import("../app/components/formation/FormationTeam.vue")['default']
 export const TherapyFAQ: typeof import("../app/components/therapy/TherapyFAQ.vue")['default']
 export const TherapyHero: typeof import("../app/components/therapy/TherapyHero.vue")['default']
 export const TherapyOverview: typeof import("../app/components/therapy/TherapyOverview.vue")['default']
@@ -53,6 +58,11 @@ export const LazyCustomCursor: LazyComponent<typeof import("../app/components/Cu
 export const LazyPageHero: LazyComponent<typeof import("../app/components/PageHero.vue")['default']>
 export const LazySeccionIntro: LazyComponent<typeof import("../app/components/SeccionIntro.vue")['default']>
 export const LazyTeamCard: LazyComponent<typeof import("../app/components/TeamCard.vue")['default']>
+export const LazyFormationEstructure: LazyComponent<typeof import("../app/components/formation/FormationEstructure.vue")['default']>
+export const LazyFormationOverview: LazyComponent<typeof import("../app/components/formation/FormationOverview.vue")['default']>
+export const LazyFormationProcess: LazyComponent<typeof import("../app/components/formation/FormationProcess.vue")['default']>
+export const LazyFormationRelated: LazyComponent<typeof import("../app/components/formation/FormationRelated.vue")['default']>
+export const LazyFormationTeam: LazyComponent<typeof import("../app/components/formation/FormationTeam.vue")['default']>
 export const LazyTherapyFAQ: LazyComponent<typeof import("../app/components/therapy/TherapyFAQ.vue")['default']>
 export const LazyTherapyHero: LazyComponent<typeof import("../app/components/therapy/TherapyHero.vue")['default']>
 export const LazyTherapyOverview: LazyComponent<typeof import("../app/components/therapy/TherapyOverview.vue")['default']>

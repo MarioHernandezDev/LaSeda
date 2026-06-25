@@ -1,559 +1,205 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const formations = {
-  'gestalt-infantil': {
-    id: 'gestalt-infantil',
-    titulo: 'Formación en Terapia Gestalt Aplicada a la Infancia y Adolescencia',
-    subtitulo: 'Una formación transformadora para acompañar a los más jóvenes desde la presencia y el contacto auténtico',
-    etiqueta: 'Formación Especializada',
-    enfoque: `Aprender a acompañar bien a los niños y niñas es una labor importante y delicada. Saber escuchar e intervenir sobre las heridas emocionales en la infancia y adolescencia también es un gran reto. Esta formación ofrece un recorrido profundo y transformador por los fundamentos de la Terapia Gestalt aplicada a la infancia y la adolescencia.
-
-A lo largo del programa, exploraremos la vivencia del trauma en edades tempranas, la depresión infantil, los efectos de la desestructuración familiar y los mecanismos de defensa que desarrollan los niños y jóvenes. Desde el enfoque gestáltico, la presencia, la actitud y el vincularse son las herramientas más importantes, así como el juego y las técnicas proyectivas.
-
-El trabajo con los menores se complementa siempre con el sistema familiar, abarcando una mirada amplia en la que también están presentes el sistema educativo, las instituciones y el entorno social en el que niños y jóvenes viven.`,
-    dirigido: 'Psicólogos/as, educadores/as, maestros/as, terapeutas, médicos y profesionales de la salud que quieran acompañar a niños y adolescentes y también a sus familias. Profesionales de infantojuvenil que necesiten una actualización de sus recursos y aprender a trabajar desde un lugar más humano y sistémico.',
-    programa: [
-      { numero: 1,  nombre: 'Inicio. Introducción a las teorías evolutivas infantojuveniles',  descripcion: 'Principios básicos de la terapia Gestalt aplicados a la terapia. Encuadre.' },
-      { numero: 2,  nombre: 'Metodología en el trabajo infantojuvenil',                        descripcion: 'Supervisión de casos y herramientas de intervención.' },
-      { numero: 3,  nombre: 'La creatividad y el juego como herramienta terapéutica I',        descripcion: 'La ludoterapia gestáltica: materiales, encuadre y presencia del terapeuta.' },
-      { numero: 4,  nombre: 'La creatividad y el juego como herramienta terapéutica II',       descripcion: 'Uso del dibujo, el cuento, la arcilla y la metáfora en sesión.' },
-      { numero: 5,  nombre: 'Self emergente. Desarrollo emocional de la adolescencia',         descripcion: 'Intervención y supervisión de casos en la etapa adolescente.' },
-      { numero: 6,  nombre: 'Resistencias y Mecanismos de defensa del terapeuta',             descripcion: 'Supervisión and trabajo sobre la propia historia del terapeuta.' },
-      { numero: 7,  nombre: 'Adolescencia y Trastorno de Conducta Alimentaria',               descripcion: 'Detección, comprensión e intervención gestáltica en los TCA.' },
-      { numero: 8,  nombre: 'Heridas en la infancia y trauma',                                descripcion: 'Impacto del trauma en la formación de la identidad y los vínculos.' },
-      { numero: 9,  nombre: 'Intervención con progenitores',                                  descripcion: 'La figura parental como recurso terapéutico. Límites y alianzas.' },
-      { numero: 10, nombre: 'Instituciones, protección y justicia',                           descripcion: 'Marco legal, consentimiento, confidencialidad y dilemas éticos.' },
-      { numero: 11, nombre: 'Sistémica aplicada a la Gestalt infantojuvenil',                 descripcion: 'Intervención sistémica y gestáltica en contextos de crisis familiar.' },
-      { numero: 12, nombre: 'Apego',                                                          descripcion: 'Construcción del apego y su influencia en el proceso terapéutico.' },
-      { numero: 13, nombre: 'Estrés Postraumático infantojuvenil',                            descripcion: 'Herramientas específicas para el trabajo con el trauma complejo.' },
-      { numero: 14, nombre: 'Síntomas, Enfermedad y muerte como ciclo de la vida',            descripcion: 'Taller residencial. El ciclo de la experiencia en su dimensión más profunda.' },
-      { numero: 15, nombre: 'Cierre. Duelos y pérdidas',                                     descripcion: 'El final del proceso terapéutico: despedidas, integración y cierre sano.' },
-    ],
-    logistica: {
-      horario: 'Viernes 17–21 h · Sábado 10–14 h y 16–20 h · Domingo 10–14 h',
-      horas_total: 288,
-      horas_presenciales: 240,
-      horas_proyecto: 48,
-      convocatoria: '2026',
-      formato: 'Presencial intensivo de fin de semana',
-      lugar: 'Centro de Psicología La Seda · Granada',
-    },
-    profesorado: [
-      {
-        nombre: 'Ana María Jiménez',
-        cargo: 'Directora del Programa · Psicóloga General Sanitaria',
-        bio: 'Miembro titular, didacta y supervisora acreditada por la AETG. Formada en Eneagrama, Psicoterapia Integrativa y Transpersonal (Programa SAT) y Bioenergética. Especialista en duelo, EMDR Nivel I y Wingwave. Más de quince años de experiencia en terapia infantil y con adolescentes, en la Escuela Sal Gestalt de Jerez y en Qualia Salud Emocional (Granada). Actualmente directora del Centro de Psicología La Seda.',
-        imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
-        perfilSlug: 'ana-jimenez' // ✅ Vínculo activo (Ana)
-      },
-      {
-        nombre: 'Yael Peña García',
-        cargo: 'Psicóloga General Sanitaria · Psicoterapeuta (FEAP)',
-        bio: 'Miembro titular, didacta y supervisora acreditada por la AETG. Responsable del área infantojuvenil del Instituto de Terapia Gestalt de Valencia. Especializada en perinatalidad, infancia, adolescencia y edad adulta. Formada en duelo infantojuvenil (proceso M.A.R.), PNL, trauma infantil, construcción del apego y autoestima infantil.',
-        imagen: '/images/yael-pena-garcia-psicologa-gestalt-infancia-adolescencia-granada.jpg',
-      },
-      {
-        nombre: 'Yolanda Mozota García',
-        cargo: 'Terapeuta Gestalt · Miembro Titular y Didacta AETG',
-        bio: 'Licenciada en Sociología por la UCM. Cofundadora de los centros ARUNAT Y-LANDA. Posgrados en creatividad y conducción de grupos con Paco Peñarrubia, formación en el Programa SAT de Claudio Naranjo, Bioenergética (IPTG) y psicodrama. Autora de la tesina "Abusos sexuales y maltrato en la infancia" (2007) y creadora de la formación en TEPT por abusos y maltrato.',
-        imagen: '/images/yolanda-mozota-garcia-terapeuta-gestalt-didacta-aetg-granada.jpg',
-      },
-      {
-        nombre: 'Maravillas Cano Reguero',
-        cargo: 'Psicóloga General Sanitaria · Psicoterapeuta (FEAP)',
-        bio: 'Miembro titular de la AETG. Licenciada en Filología, Arte Dramático y Educadora Social. Formada en SAT, Terapia de Pareja, Terapia Corporal Integrativa, Sistémica Familiar, Constelaciones y EMDR. Coautora del programa "Integración Gestáltica". Más de 20 años de experiencia con menores en medio abierto. Equipo psicoterapéutico de Lamar (Escuela Gestalt de Málaga).',
-        imagen: '/images/maravillas-cano-reguero-psicologa-gestalt-sistemica-granada.jpg',
-      },
-      {
-        nombre: 'Martín Mindeguía',
-        cargo: 'Médico Pediatra · Especialista en Cuidados Paliativos',
-        bio: 'Terapeuta Gestalt and docente del Posgrado D.O.L. de Assumpta Mateu. Facilitador de EPEC-Pediatrics. Docente en el Máster Universitario en Cuidados Paliativos Pediátricos (UNIR), en el título de Experto en Acompañamiento Espiritual en Clínica (Universidad Francisco de Vitoria) y en el posgrado del Institut Borja de Bioètica (Universitat Ramon Llull, Barcelona).',
-        imagen: '/images/martin-mindeguia-medico-pediatra-cuidados-paliativos-gestalt.jpg',
-      },
-      {
-        nombre: 'Margarita de la Torre Rodríguez',
-        cargo: 'Psicóloga General Sanitaria · Psicoterapeuta (FEAP)',
-        bio: 'Formadora en Psicodrama Infantil, Terapia de Juego y Terapia Gestalt con niños y adolescentes (UmayQuipae, Madrid). Amplia formación en trastornos alimentarios y drogodependencias. Docente en el Máster de Terapias Humanistas de la Universidad Pontificia de Comillas. Trabaja como psicóloga en la residencia Hogar Villa Paz con menores tutelados.',
-        imagen: '/images/margarita-de-la-torre-psicologa-psicodrama-gestalt-infancia.jpg',
-      },
-      {
-        nombre: 'Juan Carlos Calvo',
-        cargo: 'Psicólogo Sanitario · Psicoterapeuta (FEAP)',
-        bio: 'Máster en Psicoterapia Psicoanalítica (Universidad de Comillas). Miembro didacta y supervisor acreditado por la AETG. Formado en Terapia Familiar y Sistémica. Amplia trayectoria como docente en escuelas de terapia en España y Latinoamérica. Constelador familiar, máster en PNL, formado en Hipnosis Eriksoniana y EMDR.',
-        imagen: '/images/juan-carlos-calvo-psicologo-gestalt-terapia-familiar-sistemica.jpg',
-      },
-      {
-        nombre: 'Inmaculada López Espejo',
-        cargo: 'Psicóloga General Sanitaria · Terapeuta EMDR',
-        bio: 'Máster en Terapias Psicológicas de Tercera Generación. Formada en clínica y diagnóstico diferencial de los TCA (UCM) y especializada en trastornos alimentarios y obesidad. Terapeuta Gestalt (miembro adherente AETG). Docente en la Escuela Andaluza de Salud Pública. Más de diez años en terapia infantojuvenil. Orientadora del Programa de Bienestar Emocional de la Junta de Andalucía.',
-        imagen: '/images/inmaculada-lopez-espejo-psicologa-emdr-trastornos-alimentarios-granada.jpg',
-      },
-    ],
-    videos: null,
+// 1. BASE DE DATOS DE PROFESORADO / STAFF
+const staff: Record<string, any> = {
+  'ana-jimenez': {
+    id: 'ana-jimenez',
+    nombre: 'Ana María Jiménez',
+    rol: 'Psicóloga Clínica · Miembro Didacta AETG',
+    imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
+    imagenAlt: 'Ana María Jiménez, directora de la formación Gestalt Infantil en Granada'
   },
+  'oriol-belles': {
+    id: 'oriol-belles',
+    nombre: 'Oriol Bellés',
+    rol: 'Symbiotik Institut · Formador Oficial Wingwave®',
+    imagen: '/images/oriol-belles-formador-wingwave.jpg',
+    imagenAlt: 'Oriol Bellés, formador oficial del método Wingwave'
+  },
+  'leonor-cabrera': {
+    id: 'leonor-cabrera',
+    nombre: 'Leonor Cabrera',
+    rol: 'Symbiotik Institut · Formadora Oficial Wingwave®',
+    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagenAlt: 'Leonor Cabrera, formadora certificada Wingwave'
+  }
+}
 
+// 2. BASE DE DATOS DE FORMACIONES (Espejo exacto del modelo de Terapias)
+const formations: Record<string, any> = {
+  'gestalt-infantil': {
+    titulo: 'Formación en Gestalt aplicada a la',
+    tituloItalico: 'Infancia y Adolescencia',
+    subtitulo: 'Un programa vivencial diseñado para integrar teoría, práctica clínica y el desarrollo de recursos proyectivos y corporales.',
+    categoria: 'Convocatoria 2026 · Granada',
+    imagen: '/images/formacion-terapia-gestalt-infancia-adolescencia-granada.jpg',
+    imagenAlt: 'Alumnos en formación presencial de Terapia Gestalt Infantil en Centro La Seda',
+    descripcion: 'Esta formación especializada ofrece un recorrido profundo por el universo emocional de la infancia y la adolescencia. A través de un enfoque humanista y sistémico, aprenderás a decodificar el lenguaje del niño a través del juego, el dibujo y la expresión corporal, adquiriendo herramientas técnicas sólidas para la práctica clínica real.',
+    descripcion2: 'El programa está estructurado en módulos teórico-vivenciales donde el propio crecimiento y madurez del terapeuta es el pilar central. Dirigido a profesionales de la psicología, la salud y la educación que deseen incorporar la mirada amorosa y transformadora de la Gestalt en sus consultas.',
+    cita: '"El niño no juega para pasar el tiempo, juega para comprender su mundo y sanar sus heridas a través de la experiencia."',
+    terapeutas: ['ana-jimenez'], // Mapeado como profesores en el componente visual
+    beneficios: [
+      'Adquirir herramientas prácticas y creativas (caja de arena, cuentos, técnicas plásticas).',
+      'Aprender metodologías de supervisión clínica de casos reales infanto-juveniles.',
+      'Desarrollar la actitud gestáltica: presencia, escucha activa y autorregulación en consulta.',
+      'Comprender las dinámicas familiares y el trabajo sistémico con los padres.',
+      'Obtener una titulación avalada por un equipo docente con dilatada trayectoria.',
+    ],
+    motivos: [
+      { numero: '288h', titulo: 'Horas Lectivas totales', desc: 'Divididas en 240 horas de formación presencial directa y 48 horas destinadas al desarrollo tutorizado del proyecto final.' },
+      { numero: '15', titulo: 'Talleres Monográficos', desc: 'Un fin de semana al mes diseñado para profundizar de manera intensiva en temáticas específicas del desarrollo evolutivo.' },
+      { numero: '01', titulo: 'Entrevista de Valoración', desc: 'Garantizamos la cohesión y calidad humana del grupo mediante un encuentro previo gratuito con la dirección del programa.' },
+      { numero: 'AETG', titulo: 'Mirada Didáctica', desc: 'Dirección impartida por miembros didactas y especialistas en activo dentro del panorama terapéutico nacional.' },
+    ],
+    proceso: [
+      { paso: '01', texto: 'Solicitud de información y reserva de una entrevista de valoración inicial con la dirección académica del centro.' },
+      { paso: '02', texto: 'Formalización de la matrícula y entrega del calendario detallado de los 15 talleres del ciclo 2026.' },
+      { paso: '03', texto: 'Asistencia presencial mensual (fines de semana) combinando teoría, dinámicas de grupo y prácticas supervisadas.' },
+    ],
+    faqs: [
+      { pregunta: '¿A quién está dirigida esta especialización?', respuesta: 'Principalmente a profesionales o estudiantes de último año de psicología, pedagogía, educación social y disciplinas de la salud o acompañamiento humanista.' },
+      { pregunta: '¿Cuáles son las facilidades de pago?', respuesta: 'El centro dispone de planes de financiación fraccionada por talleres mensuales para facilitar el acceso a la formación sin recargos.' },
+      { pregunta: '¿Qué ocurre si falto a un taller?', respuesta: 'Disponemos de protocolos de recuperación de contenido teórico-práctico y tutorías de apoyo para asegurar la continuidad del aprendizaje.' },
+    ],
+  },
   'metodo-wingwave': {
-    id: 'metodo-wingwave',
-    titulo: 'Formación Certificada Oficial en el Método Wingwave®',
-    subtitulo: 'Una herramienta de intervención profunda avalada por la ciencia para regular el estrés, procesar traumas y liberar el máximo potencial',
-    etiqueta: 'Certificación Oficial',
-    enfoque: `El método Wingwave® es una técnica de intervención de alto impacto desarrollada en Alemania y avalada por más de 14 estudios científicos independientes realizados en universidades alemanas. Certificada bajo la norma ISO 29993 y reconocida con 32 créditos de formación continuada por la ICF, esta formación te habilita para trabajar profesionalmente con una herramienta que combina la estimulación bilateral del movimiento ocular, el muscle-testing kinesiológico (test O-Ring) y los principios del coaching emocional.
-
-Su campo de aplicación es amplio y profundo: regulación del estrés agudo y crónico, disolución de fobias y miedos específicos, procesamiento de experiencias traumáticas no resueltas, mejora del rendimiento bajo presión y potenciación de la creatividad y la toma de decisiones. Wingwave® actúa directamente sobre el sistema límbico, facilitando la reprocesación de recuerdos y patrones emocionales bloqueados de forma rápida, no invasiva y con resultados duraderos.`,
-    ventajas: [
-      { texto: 'Regulación del estrés agudo y crónico en pocas sesiones' },
-      { texto: 'Disolución de fobias, miedos y bloqueos emocionales específicos' },
-      { texto: 'Procesamiento de traumas no resueltos de forma no intrusiva' },
-      { texto: 'Mejora del rendimiento deportivo, académico y profesional bajo presión' },
-      { texto: 'Incremento de la creatividad, la fluidez y la capacidad de decisión' },
-      { texto: 'Aplicable en bienestar personal, coaching ejecutivo y clínica' },
-      { texto: 'Avalado por más de 14 estudios científicos independientes' },
-      { texto: 'Certificación reconocida internacionalmente (ISO 29993 · 32 CCE por ICF)' },
+    titulo: 'Formación Certificada Oficial en el',
+    tituloItalico: 'Método Wingwave®',
+    subtitulo: 'Certificación internacional en coaching emocional y regulación del estrés respaldada por evidencias científicas.',
+    categoria: 'Certificación ISO 29993 · Mayo 2026',
+    imagen: '/images/formacion-certificada-metodo-wingwave-coaching-granada.jpg',
+    imagenAlt: 'Prácticas del test miostático u O-Ring durante la formación oficial de Wingwave en Granada',
+    descripcion: 'El Método Wingwave® es un enfoque de intervención rápida para el desbloqueo emocional y el rendimiento mental. Combina la estimulación bilateral de los hemisferios cerebrales (similar a la fase REM del sueño) con la Programación Neurolingüística (PNL) y el test miostático O-Ring para localizar con precisión los disparadores exactos del estrés.',
+    descripcion2: 'Esta formación intensiva te capacita de manera oficial para utilizar una de las herramientas de regulación de ansiedad y superación de traumas más estudiadas y extendidas en Europa. Al finalizar, obtendrás la titulación oficial internacional que te acredita como Coach Wingwave® certificado.',
+    cita: '"Una combinación perfecta de precisión muscular, reprogramación neurolingüística y balance cerebral profundo."',
+    terapeutas: ['oriol-belles', 'leonor-cabrera'],
+    beneficios: [
+      'Aprender a disolver bloqueos, fobias, miedos escénicos y estrés postraumático en pocas sesiones.',
+      'Dominar el test miostático o de resistencia muscular como brújula precisa en tus terapias.',
+      'Incorporar protocolos validados científicamente por más de 14 estudios independientes.',
+      'Acceso al buscador y red mundial de profesionales acreditados de la marca Besser-Siegmund.',
+      'Formación con sello de calidad europeo ISO 29993 orientada a la excelencia formativa.',
     ],
-    destinatarios: 'Psicólogos/as, terapeutas, coaches, médicos, educadores, asistentes sociales, artistas, deportistas y en general todos los profesionales del acompañamiento al cambio que deseen obtener más recursos para gestionar el estrés y las emociones con sus clientes. También a toda persona que quiera sanar su pasado, alcanzar sus metas y aumentar su bienestar.',
-    incluye: [
-      'Formación presencial intensiva de 4 días (32 horas lectivas) con dossier didáctico oficial',
-      'Acceso al grupo privado de la comunidad wingwave® con más de 20 h de supervisiones en vídeo',
-      'Posibilidad de repetir la formación presencial como asistente de forma gratuita',
-      'Derecho de uso de la marca, logo y material divulgativo wingwave® en español',
-      '1 día de supervisión presencial con la creadora del método, Cora Besser-Siegmund',
-      '1 año de pertenencia al Círculo de Calidad wingwave® con descuentos y acceso al área privada de profesionales',
+    motivos: [
+      { numero: '32h', titulo: 'Horas Académicas', desc: 'Distribuidas de forma intensiva a lo largo de 4 jornadas consecutivas con un enfoque eminentemente práctico.' },
+      { numero: '12', titulo: 'Alumnos por Formador', desc: 'Plazas estrictamente limitadas para garantizar la supervisión milimétrica de las prácticas individuales en la sala.' },
+      { numero: 'ISO', titulo: 'Calidad Europea Certificada', desc: 'Contenidos y metodologías pedagógicas auditadas bajo los más altos estándares internacionales de formación.' },
+      { numero: '04', titulo: 'Días de Inmersión Total', desc: 'Convocatoria del 9 al 12 de mayo de 2026 en nuestras instalaciones presenciales de Granada capital.' },
     ],
-    logistica: {
-      horario: 'Formación intensiva de 4 días consecutivos',
-      horas_total: 32,
-      horas_presenciales: 32,
-      horas_proyecto: null,
-      convocatoria: '9, 10, 11 y 12 de mayo de 2026',
-      formato: 'Presencial intensivo · Jueves a domingo',
-      lugar: 'Centro de Psicología La Seda · Granada',
-      precio: '1.500 € (consultar condiciones especiales para socios AEPNL, ICF, FEAP, AETG y otros)',
-      participantes: 'Máximo 12 participantes por formador (máx. 24 con dos formadores)',
-    },
-    profesorado: [
-      {
-        nombre: 'Oriol Bellés',
-        cargo: 'Formador Oficial Wingwave® · Director de Symbiotik Institut',
-        bio: 'Terapeuta wingwave® y formador acreditado por el Besser-Siegmund Institut de Hamburgo (Alemania). Cofundador de Symbiotik Institut. Referente en la formación y difusión del método wingwave® en España y Latinoamérica, ha formado a cientos de profesionales en múltiples países.',
-        imagen: '/images/oriol-belles-formador-oficial-wingwave-symbiotik-institut-espana.jpg',
-      },
-      {
-        nombre: 'Leonor Cabrera',
-        cargo: 'Terapeuta Wingwave® · Co-directora de La Seda',
-        bio: 'Terapeuta wingwave® y co-formadora acreditada por el Besser-Siegmund Institut de Hamburgo (Alemania). Colaboradora del Programa SAT de Claudio Naranjo. Cofundadora de Viventi y co-directora de La Seda.',
-        imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
-        perfilSlug: 'leonor-cabrera' // ✅ Vínculo activo (Leonor)
-      },
+    proceso: [
+      { paso: '01', texto: 'Inscripción online previa para reservar una de las plazas limitadas del grupo intensivo de mayo.' },
+      { paso: '02', texto: 'Acceso al material didáctico oficial preparatorio y lecturas recomendadas antes del inicio de las clases.' },
+      { paso: '03', texto: 'Entrenamiento intensivo presencial de 4 días y alta en la comunidad internacional de profesionales.' },
     ],
-    videos: [
-      { url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', titulo: 'Introducción al Método Wingwave®', descripcion: 'Una visión general del método, su fundamento científico y sus principales aplicaciones.' },
-      { url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', titulo: 'Wingwave® en la Práctica Clínica', descripcion: 'Demostración del proceso de una sesión y testimonios de profesionales certificados.' },
+    faqs: [
+      { pregunta: '¿Qué titulación se obtiene al finalizar el curso?', respuesta: 'Se expide el diploma oficial internacional expedido de forma conjunta por Symbiotik Institut y el Besser-Siegmund-Institut de Hamburgo, Alemania.' },
+      { pregunta: '¿Es necesario ser psicólogo para certificarse?', respuesta: 'Está dirigido a psicólogos, terapeutas, médicos, coaches profesionales, mentores o profesionales de recursos humanos y optimización del rendimiento.' },
+      { pregunta: '¿Qué materiales incluye la matrícula?', respuesta: 'Incluye los manuales oficiales de formación de la marca registrada, cuadernos de trabajo y el acceso a la plataforma online de recursos.' },
     ],
   },
 }
 
-const formacion  = computed(() => formations[route.params.id] || null)
-const esWingwave = computed(() => route.params.id === 'metodo-wingwave')
-const esGestalt  = computed(() => route.params.id === 'gestalt-infantil')
+// Control de Ruta de Nuxt
+const id = route.params.id as string
+const formacion = computed(() => formations[id] ?? null)
+
+// Mapeo seguro del Profesorado Activo utilizando el componente visual de equipo
+const profesoresActivos = computed(() => {
+  if (!formacion.value || !formacion.value.terapeutas) return []
+  return formacion.value.terapeutas
+    .map((idRef: string) => ({ id: idRef, ...staff[idRef] }))
+    .filter((p: any) => p.nombre)
+})
+
+// Reactividad de SEO Avanzado Dinámico
+const seoTitle = computed(() =>
+  formacion.value
+    ? `${formacion.value.titulo} ${formacion.value.tituloItalico} · Granada 2026`
+    : 'Formación no encontrada · Centro La Seda'
+)
+const seoDescription = computed(() =>
+  formacion.value ? `${formacion.value.subtitulo} Convocatoria abierta 2026.` : ''
+)
+const seoImage = computed(() =>
+  formacion.value?.imagen
+    ? `https://centrolaseda.com${formacion.value.imagen}`
+    : 'https://centrolaseda.com/images/centro-psicologia-la-seda-granada-hero.jpg'
+)
+const seoUrl = computed(() => `https://centrolaseda.com/formaciones/${id}`)
+
+useSeoMeta({
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogImage: seoImage,
+  ogType: 'website',
+  ogUrl: seoUrl,
+  ogLocale: 'es_ES',
+  twitterCard: 'summary_large_image',
+  canonical: seoUrl,
+})
 </script>
 
 <template>
-  <div>
-
-    <main v-if="formacion" class="overflow-x-hidden">
-
-      <PageHero
-        :label="`${formacion.etiqueta} · Centro de Psicología La Seda`"
-        :title-main="formacion.titulo"
-        image="/images/centro-psicologia-la-seda-granada-hero.jpg"
-        :image-alt="`${formacion.titulo} — Centro de Psicología La Seda Granada`"
-        secondary-link="/formaciones"
-        secondary-label="Ver todas las formaciones"
-      >
-        <template #description>{{ formacion.subtitulo }}</template>
-      </PageHero>
-
-      <section class="page-container py-24 md:py-32">
-        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-          <div class="lg:sticky lg:top-28">
-            <div class="section-divider mb-7" />
-            <p class="formation-label mb-4">
-              {{ esGestalt ? 'Sobre la formación' : 'Qué es el método' }}
-            </p>
-            <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl lg:text-[2.6rem] leading-[1.18] mb-10">
-              {{ esGestalt
-                ? 'Un recorrido profundo por la clínica con menores'
-                : 'Una intervención de alta eficacia respaldada por la ciencia' }}
-            </h2>
-
-            <div
-              v-for="(parrafo, i) in formacion.enfoque.split('\n\n')"
-              :key="i"
-              class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 mb-7"
-            >
-              {{ parrafo }}
-            </div>
-
-            <div v-if="esGestalt && formacion.dirigido" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-              <p class="formation-label mb-3">¿A quién va dirigida?</p>
-              <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.dirigido }}</p>
-            </div>
-
-            <div v-if="esWingwave" class="mt-10 border-l-2 border-[#71B1A5]/50 pl-6 py-1">
-              <p class="formation-label mb-3">¿A quién va dirigida?</p>
-              <p class="text-base leading-[1.9] text-[#27252B]/70">{{ formacion.destinatarios }}</p>
-            </div>
-
-            <div class="mt-12 w-1 h-20 bg-[#71B1A5]/25" />
-          </div>
-
-          <div>
-
-            <div v-if="esGestalt">
-              <p class="formation-label mb-7">Programa · 15 talleres</p>
-              <div class="border border-[#27252B]/10 divide-y divide-[#27252B]/10">
-                <div
-                  v-for="taller in formacion.programa"
-                  :key="taller.numero"
-                  class="flex items-start gap-5 px-6 py-5 hover:bg-[#71B1A5]/5 transition-colors duration-150"
-                >
-                  <span class="flex-shrink-0 w-7 h-7 bg-[#71B1A5] text-white text-[0.65rem] font-medium flex items-center justify-center mt-0.5">
-                    {{ taller.numero }}
-                  </span>
-                  <div>
-                    <p class="text-sm font-medium text-[#27252B] mb-1.5 leading-snug">{{ taller.nombre }}</p>
-                    <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ taller.descripcion }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div v-if="esWingwave" class="space-y-14">
-              <div>
-                <p class="formation-label mb-7">Beneficios y aplicaciones</p>
-                <div class="divide-y divide-[#27252B]/10">
-                  <div
-                    v-for="ventaja in formacion.ventajas"
-                    :key="ventaja.texto"
-                    class="flex items-start gap-5 py-5"
-                  >
-                    <div class="w-2 h-2 bg-[#71B1A5] flex-shrink-0 mt-2.5" />
-                    <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75">{{ ventaja.texto }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <p class="formation-label mb-7">Qué incluye la formación</p>
-                <div class="bg-[#27252B] px-8 py-9 space-y-6">
-                  <div
-                    v-for="item in formacion.incluye"
-                    :key="item"
-                    class="flex items-start gap-5"
-                  >
-                    <div class="w-px h-5 bg-[#71B1A5] flex-shrink-0 mt-1" />
-                    <p class="text-sm md:text-base leading-[1.8] text-white/80 font-light">{{ item }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="border border-[#27252B]/10 px-7 py-6">
-                <p class="formation-label mb-2">Precio</p>
-                <p class="font-serif italic text-[#27252B] text-2xl mb-2">{{ formacion.logistica.precio }}</p>
-                <p class="text-sm text-[#27252B]/50 font-light leading-relaxed">Descuento por reserva anticipada y facilidades de pago a plazos disponibles.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section
-        v-if="esWingwave && formacion.videos"
-        class="bg-[#27252B]/5 py-20 md:py-28"
-      >
-        <div class="page-container">
-          <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14">
-            <div class="md:col-span-5">
-              <p class="formation-label mb-4">Recursos audiovisuales</p>
-              <h2 class="formation-title-light leading-[1.2]">
-                Conoce el método<br />
-                <span class="text-[#27252B]/60">en profundidad</span>
-              </h2>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-                Testimonios de profesionales certificados y una demostración real del proceso de sesión.
-              </p>
-            </div>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <div
-              v-for="video in formacion.videos"
-              :key="video.url"
-              class="border border-[#27252B]/10 overflow-hidden"
-            >
-              <div class="aspect-video w-full overflow-hidden">
-                <iframe
-                  :src="video.url"
-                  :title="video.titulo"
-                  class="w-full h-full"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                />
-              </div>
-              <div class="px-6 py-6 bg-[#FDFBF9]">
-                <div class="section-divider mb-4" />
-                <p class="text-sm font-medium text-[#27252B] mb-2">{{ video.titulo }}</p>
-                <p class="text-sm text-[#27252B]/55 font-light leading-relaxed">{{ video.descripcion }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section :class="esWingwave ? 'bg-[#FDFBF9]' : 'bg-[#27252B]/5'" class="py-20 md:py-28">
-        <div class="page-container">
-
-          <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-14 md:mb-18">
-            <div class="md:col-span-5">
-              <p class="formation-label mb-4">
-                {{ esGestalt ? 'Equipo docente' : 'Facilitadores' }}
-              </p>
-              <h2 class="formation-title-light leading-[1.2]">
-                {{ esGestalt
-                  ? 'Profesionales con trayectoria, presencia y compromiso'
-                  : 'Voces con autoridad y experiencia en el método' }}
-              </h2>
-            </div>
-            <div class="md:col-span-7">
-              <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-                {{ esGestalt
-                  ? 'Un equipo de especialistas que combinan rigor clínico y profundidad humana en cada módulo.'
-                  : 'Formadores acreditados por el Besser-Siegmund Institut de Hamburgo con décadas de práctica clínica.' }}
-              </p>
-            </div>
-          </div>
-
-          <div
-            v-if="esGestalt"
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#27252B]/10"
-          >
-            <div
-              v-for="prof in formacion.profesorado"
-              :key="prof.nombre"
-              class="bg-[#FDFBF9] p-8 flex flex-col justify-between gap-6"
-            >
-              <div class="flex flex-col gap-5">
-                <div class="flex items-center gap-4">
-                  <div class="prof-avatar-sm">
-                    <NuxtImg
-                      :src="prof.imagen"
-                      :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                      format="webp"
-                      loading="lazy"
-                      width="44"
-                      height="44"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p class="prof-name">{{ prof.nombre }}</p>
-                    <p class="prof-role">{{ prof.cargo }}</p>
-                  </div>
-                </div>
-                <div class="prof-card-body">
-                  <p class="prof-bio">{{ prof.bio }}</p>
-                </div>
-              </div>
-
-              <div v-if="prof.perfilSlug" class="mt-2 pt-4 border-t border-[#27252B]/5">
-                <NuxtLink
-                  :to="`/conocenos/${prof.perfilSlug}`"
-                  class="inline-flex w-full items-center justify-center gap-2 px-4 py-3 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-[10px] font-medium tracking-[0.15em] uppercase"
-                  :aria-label="`Ver perfil clínico de ${prof.nombre}`"
-                >
-                  <span>Ver perfil clínico</span>
-                  <svg class="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </NuxtLink>
-              </div>
-            </div>
-          </div>
-
-          <div
-            v-if="esWingwave"
-            class="grid md:grid-cols-2 gap-8"
-          >
-            <div
-              v-for="prof in formacion.profesorado"
-              :key="prof.nombre"
-              class="border border-[#27252B]/10 p-10 flex flex-col justify-between gap-7 bg-[#FDFBF9]"
-            >
-              <div>
-                <div class="flex items-center gap-5">
-                  <div class="prof-avatar-lg">
-                    <NuxtImg
-                      :src="prof.imagen"
-                      :alt="`${prof.nombre} — ${prof.cargo} en el Centro de Psicología La Seda Granada`"
-                      format="webp"
-                      loading="lazy"
-                      width="56"
-                      height="56"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p class="text-base font-semibold text-[#27252B] leading-tight">{{ prof.nombre }}</p>
-                    <p class="text-xs text-[#71B1A5] mt-1 tracking-wide">{{ prof.cargo }}</p>
-                  </div>
-                </div>
-                <div class="prof-card-body pt-6">
-                  <p class="text-base text-[#27252B]/65 font-light leading-[1.9]">{{ prof.bio }}</p>
-                </div>
-              </div>
-
-              <div v-if="prof.perfilSlug" class="pt-4 border-t border-[#27252B]/5">
-                <NuxtLink
-                  :to="`/conocenos/${prof.perfilSlug}`"
-                  class="inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-xs font-medium tracking-[0.2em] uppercase"
-                  :aria-label="`Ver perfil clínico completo de ${prof.nombre}`"
-                >
-                  <span>Ver perfil clínico</span>
-                  <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </NuxtLink>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="bg-[#27252B] py-20 md:py-28">
-        <div class="page-container">
-          <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-
-            <div>
-              <p class="formation-label mb-4">Información práctica</p>
-              <h2 class="formation-title-dark mb-12">
-                Próxima convocatoria<br />
-                <span class="text-white/50 not-italic font-light text-2xl md:text-3xl">{{ formacion.logistica.convocatoria }}</span>
-              </h2>
-
-              <div class="border border-white/10 divide-y divide-white/10">
-                <div class="logistics-row">
-                  <span class="logistics-label">Formato</span>
-                  <span class="logistics-value text-right">{{ formacion.logistica.formato }}</span>
-                </div>
-                <div class="logistics-row">
-                  <span class="logistics-label">Horario</span>
-                  <span class="logistics-value text-right">{{ formacion.logistica.horario }}</span>
-                </div>
-                <div class="logistics-row">
-                  <span class="logistics-label">Horas totales</span>
-                  <span class="logistics-value">{{ formacion.logistica.horas_total }}h</span>
-                </div>
-                <div v-if="formacion.logistica.horas_presenciales" class="logistics-row">
-                  <span class="logistics-label">Horas presenciales</span>
-                  <span class="logistics-value">{{ formacion.logistica.horas_presenciales }}h</span>
-                </div>
-                <div v-if="formacion.logistica.horas_proyecto" class="logistics-row">
-                  <span class="logistics-label">Trabajo fin de curso</span>
-                  <span class="logistics-value">{{ formacion.logistica.horas_proyecto }}h</span>
-                </div>
-                <div class="logistics-row">
-                  <span class="logistics-label">Lugar</span>
-                  <span class="logistics-value text-right">{{ formacion.logistica.lugar }}</span>
-                </div>
-                <div v-if="formacion.logistica.participantes" class="logistics-row">
-                  <span class="logistics-label">Participantes</span>
-                  <span class="logistics-value text-right">{{ formacion.logistica.participantes }}</span>
-                </div>
-                <div class="logistics-row">
-                  <span class="logistics-label">Precio</span>
-                  <span class="text-sm text-[#71B1A5] font-medium text-right">
-                    {{ esWingwave ? formacion.logistica.precio : 'Solicitar dossier de precios' }}
-                  </span>
-                </div>
-              </div>
-
-              <div v-if="esWingwave" class="mt-8 border-l-2 border-[#71B1A5]/40 pl-5 py-1">
-                <p class="formation-label mb-2">Requisitos de acceso</p>
-                <p class="text-sm text-white/55 font-light leading-relaxed">
-                  Nivel mínimo de Practitioner de PNL, formación en psicología, terapia, medicina, Gestalt, constelaciones, coaching u otra formación equiparable. Es necesario acreditar la formación previa mediante fotocopias de títulos o diplomas.
-                </p>
-              </div>
-            </div>
-
-            <div class="lg:pt-28 flex flex-col items-start gap-9">
-              <div class="w-12 h-px bg-[#71B1A5]" />
-              <h3 class="formation-title-dark leading-[1.2]">
-                ¿Te interesa esta<br />
-                <span class="text-white/55">formación?</span>
-              </h3>
-              <p class="text-lg md:text-xl leading-[1.85] text-white/65">
-                Solicita información sin compromiso sobre el dossier completo, el calendario de talleres,
-                el proceso de matriculación y las condiciones de pago.
-                Puedes escribirnos a
-                <a href="mailto:hola@centrolaseda.com" class="text-[#71B1A5] hover:underline transition-all">hola@centrolaseda.com</a>
-                o llamarnos al
-                <a href="tel:679571977" class="text-[#71B1A5] hover:underline transition-all">679 571 977</a>.
-              </p>
-              <NuxtLink to="/contacto" class="btn-reserve">
-                Solicitar información
-                <span class="w-6 h-px bg-[#27252B]/40 inline-block" />
-              </NuxtLink>
-              <p class="text-sm text-white/30 font-light">También por teléfono o WhatsApp. Respondemos en menos de 24 h.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section class="page-container py-16 md:py-20">
-        <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-          <NuxtLink to="/formaciones" class="nav-link-back group">
-            <span class="nav-link-line" />
-            <span class="nav-link-text">Todas las formaciones</span>
-          </NuxtLink>
-
-          <NuxtLink to="/contacto" class="nav-link-back group">
-            <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-              Contactar con el centro
-            </span>
-            <span class="nav-link-line" />
-          </NuxtLink>
-        </div>
-      </section>
-
-    </main>
-
+  <div class="bg-[#FDFBF9] antialiased">
+    
     <main
-      v-else
+      v-if="!formacion"
       class="min-h-screen flex flex-col items-center justify-center px-6 text-center"
     >
-      <p class="formation-label mb-4">Error 404</p>
-      <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6">
+      <p class="section-label mb-4 text-[#71B1A5]">Error 404</p>
+      <h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl mb-6">
         Formación no encontrada
       </h1>
-      <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12">
-        La formación que buscas no existe o la URL no es correcta.
+      <p class="text-lg md:text-xl text-[#27252B]/60 max-w-md mb-12">
+        El programa de especialización que buscas no pertenece a la convocatoria 2026.
       </p>
-      <NuxtLink to="/formaciones" class="btn-primary">
-        Ver todas las formaciones
-        <span class="w-6 h-px bg-white/60 inline-block" />
+      <NuxtLink to="/formaciones" class="inline-flex items-center gap-3 text-xs font-semibold tracking-widest uppercase border border-[#27252B] px-6 py-3.5 hover:bg-[#27252B] hover:text-white transition-all duration-300">
+        Ver todos los programas
       </NuxtLink>
     </main>
 
+    <main v-else>
+      
+      <TherapyHero 
+        :categoria="formacion.categoria"
+        :titulo="formacion.titulo"
+        :tituloItalico="formacion.tituloItalico"
+        :subtitulo="formacion.subtitulo"
+      />
+
+      <FormationOverview 
+        :descripcion="formacion.descripcion"
+        :descripcion2="formacion.descripcion2"
+        :cita="formacion.cita"
+        :beneficios="formacion.beneficios"
+      />
+
+      <FormationTeam :profesores="profesoresActivos" />
+
+      <FormationEstructure 
+        :motivos="formacion.motivos"
+        :imagen="formacion.imagen"
+        :imagenAlt="formacion.imagenAlt"
+      />
+
+      <FormationProcess 
+        :proceso="formacion.proceso"
+      />
+
+      <TherapyFAQ 
+        :faqs="formacion.faqs"
+      />
+
+      <FormationRelated 
+        :actualId="id"
+        :todasLasFormaciones="formations"
+      />
+
+    </main>
   </div>
 </template>

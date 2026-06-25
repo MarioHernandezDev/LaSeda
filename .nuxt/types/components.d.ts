@@ -17,6 +17,14 @@ interface _GlobalComponents {
   CustomCursor: typeof import("../../app/components/CustomCursor.vue")['default']
   PageHero: typeof import("../../app/components/PageHero.vue")['default']
   SeccionIntro: typeof import("../../app/components/SeccionIntro.vue")['default']
+  TeamCard: typeof import("../../app/components/TeamCard.vue")['default']
+  TherapyFAQ: typeof import("../../app/components/therapy/TherapyFAQ.vue")['default']
+  TherapyHero: typeof import("../../app/components/therapy/TherapyHero.vue")['default']
+  TherapyOverview: typeof import("../../app/components/therapy/TherapyOverview.vue")['default']
+  TherapyProcess: typeof import("../../app/components/therapy/TherapyProcess.vue")['default']
+  TherapyRelated: typeof import("../../app/components/therapy/TherapyRelated.vue")['default']
+  TherapyTeam: typeof import("../../app/components/therapy/TherapyTeam.vue")['default']
+  TherapyWorkAreas: typeof import("../../app/components/therapy/TherapyWorkAreas.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   NuxtErrorBoundary: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -44,6 +52,14 @@ interface _GlobalComponents {
   LazyCustomCursor: LazyComponent<typeof import("../../app/components/CustomCursor.vue")['default']>
   LazyPageHero: LazyComponent<typeof import("../../app/components/PageHero.vue")['default']>
   LazySeccionIntro: LazyComponent<typeof import("../../app/components/SeccionIntro.vue")['default']>
+  LazyTeamCard: LazyComponent<typeof import("../../app/components/TeamCard.vue")['default']>
+  LazyTherapyFAQ: LazyComponent<typeof import("../../app/components/therapy/TherapyFAQ.vue")['default']>
+  LazyTherapyHero: LazyComponent<typeof import("../../app/components/therapy/TherapyHero.vue")['default']>
+  LazyTherapyOverview: LazyComponent<typeof import("../../app/components/therapy/TherapyOverview.vue")['default']>
+  LazyTherapyProcess: LazyComponent<typeof import("../../app/components/therapy/TherapyProcess.vue")['default']>
+  LazyTherapyRelated: LazyComponent<typeof import("../../app/components/therapy/TherapyRelated.vue")['default']>
+  LazyTherapyTeam: LazyComponent<typeof import("../../app/components/therapy/TherapyTeam.vue")['default']>
+  LazyTherapyWorkAreas: LazyComponent<typeof import("../../app/components/therapy/TherapyWorkAreas.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   LazyNuxtErrorBoundary: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

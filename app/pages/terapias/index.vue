@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Psicoterapia y Especialidades Clínicas en Granada | Centro La Seda',
-  ogTitle: 'Psicoterapia y Especialidades Clínicas en Granada | Centro La Seda',
-  description: 'Terapia individual, infantil, de pareja, adolescentes y grupal en Granada. Enfoque integrativo con EMDR, Gestalt y sistémica. Pide cita en Centro La Seda.',
-  ogDescription: 'Terapia individual, infantil, de pareja, adolescentes y grupal en Granada. Enfoque integrativo con EMDR, Gestalt y sistémica. Pide cita en Centro La Seda.',
+  title: 'Terapia Infantil, Pareja y Adultos en Granada | Centro La Seda',
+  ogTitle: 'Terapia Infantil, Pareja y Adultos en Granada | Centro La Seda',
+  description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, familias y adultos desde un enfoque integrativo.',
+  ogDescription: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, familias y adultos desde un enfoque integrativo.',
   ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
   twitterCard: 'summary_large_image',
 })
@@ -11,16 +11,16 @@ useSeoMeta({
 useHead({
   link: [
     { rel: 'canonical', href: 'https://centrolaseda.com/terapias' }
-  ]
+  ],
+  htmlAttrs: {
+    lang: 'es'
+  }
 })
 </script>
 
 <template>
   <main>
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 1 · MINI-HERO
-    ════════════════════════════════════════════════ -->
     <PageHero
       label="Especialidades Clínicas"
       title-main="Procesos de Psicoterapia"
@@ -37,9 +37,6 @@ useHead({
     </PageHero>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · INTRODUCCIÓN AL ENFOQUE
-    ════════════════════════════════════════════════ -->
     <SeccionIntro
       id-heading="terapia-heading"
       titulo="Terapia integrativa adaptada a tu momento vital."
@@ -50,16 +47,13 @@ useHead({
     />
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 3 · REJILLA DE TERAPIAS
-    ════════════════════════════════════════════════ -->
     <section
-      class="bg-[#27252B]/[0.03] py-20 md:py-28"
+      class="bg-[#27252B]/[0.03] py-20 md:py-32 overflow-hidden"
       aria-labelledby="especialidades-heading"
     >
       <div class="page-container">
 
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14 md:mb-16">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16 md:mb-24">
           <div>
             <p class="section-label mb-3">Nuestras Especialidades</p>
             <h2 id="especialidades-heading" class="section-title">
@@ -69,215 +63,190 @@ useHead({
           <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" aria-hidden="true" />
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          <!-- Tarjeta 1: Terapia Adulto -->
-          <article class="training-card group" aria-label="Especialidad: Terapia y Acompañamiento Adulto">
-            <div class="overflow-hidden aspect-[4/3]">
-              <NuxtImg
-                src="/images/terapia-acompanamiento-adulto-psicologia-granada-la-seda.jpg"
-                alt="Terapia individual y acompañamiento psicológico para adultos, Centro La Seda Granada"
-                width="640"
-                height="480"
-                format="webp"
-                loading="lazy"
-                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="section-divider" aria-hidden="true" />
-              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia y Acompañamiento Adulto
-              </h3>
-              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Un espacio para resolver conflictos internos y relacionales,
-                conectar con tus emociones y avanzar hacia una vida más plena.
-                Trabajamos con sesiones de terapia, coaching y acompañamiento
-                emocional adaptadas a tu momento.
-              </p>
-              <NuxtLink
-                to="/terapias/adultos"
-                class="team-card-link self-start"
-                aria-label="Saber más sobre terapia y acompañamiento para adultos"
-              >
-                Saber más
-              </NuxtLink>
-            </div>
-          </article>
+          <div class="space-y-12 lg:space-y-32">
+            
+            <NuxtLink
+              to="/terapias/infantil"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              aria-label="Saber más sobre Terapia Infantil en Granada"
+            >
+              <div class="overflow-hidden aspect-[16/10] relative">
+                <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
+                <NuxtImg
+                  src="/images/terapia-infantil-psicologia-ninos-granada-centro-la-seda.jpg"
+                  alt="Terapia infantil y psicología para niños, Centro de Psicología La Seda Granada"
+                  width="800"
+                  height="500"
+                  format="webp"
+                  loading="lazy"
+                  class="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
+                <div class="section-divider" aria-hidden="true" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Infantil</h3>
+                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
+                  Permite a los niños enfrentarse a dificultades como <strong>miedos, bullying, separación de sus padres o pérdidas</strong>. Un espacio que dota de herramientas emocionales al menor y ayuda a las familias a educar mejor, estableciendo <strong>límites sanos y saludables</strong>.
+                </p>
+                <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
+                  Imparten: <span class="font-normal text-[#27252B]/70">Ana Jiménez, Cristina Lence, María Noel Reyes</span>
+                </div>
+                <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
+                  Saber más
+                  <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
+                </span>
+              </div>
+            </NuxtLink>
 
-          <!-- Tarjeta 2: Terapia Adolescentes -->
-          <article class="training-card group" aria-label="Especialidad: Terapia Psicológica para Adolescentes">
-            <div class="overflow-hidden aspect-[4/3]">
-              <NuxtImg
-                src="/images/terapia-psicologica-adolescentes-granada-centro-la-seda.jpg"
-                alt="Terapia psicológica para adolescentes en Granada, Centro de Psicología La Seda"
-                width="640"
-                height="480"
-                format="webp"
-                loading="lazy"
-                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="section-divider" aria-hidden="true" />
-              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia Adolescentes
-              </h3>
-              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                ¿Tu hijo adolescente parece distante, se salta las normas y
-                sientes que no logras conectar con él o con ella? Acompañamos
-                a jóvenes y familias para encontrar nuevas formas de
-                comunicación y entendimiento.
-              </p>
-              <NuxtLink
-                to="/terapias/adolescentes"
-                class="team-card-link self-start"
-                aria-label="Saber más sobre terapia psicológica para adolescentes"
-              >
-                Saber más
-              </NuxtLink>
-            </div>
-          </article>
+            <NuxtLink
+              to="/terapias/adultos"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              aria-label="Saber más sobre Terapia psicológica y acompañamiento emocional para adultos"
+            >
+              <div class="overflow-hidden aspect-[16/10] relative">
+                <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
+                <NuxtImg
+                  src="/images/terapia-acompanamiento-adulto-psicologia-granada-la-seda.jpg"
+                  alt="Terapia individual y acompañamiento psicológico para adultos, Centro La Seda Granada"
+                  width="800"
+                  height="500"
+                  format="webp"
+                  loading="lazy"
+                  class="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
+                <div class="section-divider" aria-hidden="true" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adultos y Acompañamiento</h3>
+                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
+                  Enfoque psicoterapéutico <strong>humanista, Gestalt y sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
+                </p>
+                <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
+                  Imparten: <span class="font-normal text-[#27252B]/60 text-[11px]">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera, R. Sánchez-Tallón</span>
+                </div>
+                <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
+                  Saber más
+                  <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
+                </span>
+              </div>
+            </NuxtLink>
 
-          <!-- Tarjeta 3: Terapia de Pareja y Familia -->
-          <article class="training-card group" aria-label="Especialidad: Terapia de Pareja y Familia">
-            <div class="overflow-hidden aspect-[4/3]">
-              <NuxtImg
-                src="/images/terapia-pareja-familia-sistemica-granada-centro-la-seda.jpg"
-                alt="Terapia de pareja y familia con enfoque sistémico, Centro de Psicología La Seda Granada"
-                width="640"
-                height="480"
-                format="webp"
-                loading="lazy"
-                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="section-divider" aria-hidden="true" />
-              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia de Pareja y Familia
-              </h3>
-              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Exploramos los objetivos, beneficios y dinámica de la terapia
-                de pareja y familiar: un espacio para mejorar la comunicación,
-                gestionar conflictos y fortalecer los vínculos desde
-                un enfoque sistémico.
-              </p>
-              <NuxtLink
-                to="/terapias/pareja-familia"
-                class="team-card-link self-start"
-                aria-label="Saber más sobre terapia de pareja y familia sistémica"
-              >
-                Saber más
-              </NuxtLink>
-            </div>
-          </article>
+          </div>
 
-          <!-- Tarjeta 4: Terapia Infantil -->
-          <article class="training-card group" aria-label="Especialidad: Terapia Infantil">
-            <div class="overflow-hidden aspect-[4/3]">
-              <NuxtImg
-                src="/images/terapia-infantil-psicologia-ninos-granada-centro-la-seda.jpg"
-                alt="Terapia infantil y psicología para niños, Centro de Psicología La Seda Granada"
-                width="640"
-                height="480"
-                format="webp"
-                loading="lazy"
-                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="section-divider" aria-hidden="true" />
-              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia Infantil
-              </h3>
-              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                Estamos especializadas en trabajar con las emociones humanas,
-                especialmente aquellas que generan malestar en el día a día
-                de los más pequeños y que les impiden desarrollarse con
-                plenitud y seguridad.
-              </p>
-              <NuxtLink
-                to="/terapias/infantil"
-                class="team-card-link self-start"
-                aria-label="Saber más sobre terapia infantil y psicología para niños"
-              >
-                Saber más
-              </NuxtLink>
-            </div>
-          </article>
+          <div class="space-y-12 lg:space-y-32 lg:mt-32">
 
-          <!-- Tarjeta 5: Terapia Grupal -->
-          <article class="training-card group" aria-label="Especialidad: Terapia Grupal">
-            <div class="overflow-hidden aspect-[4/3]">
-              <NuxtImg
-                src="/images/terapia-grupal-psicologia-grupo-granada-centro-la-seda.jpg"
-                alt="Terapia grupal y psicología de grupo, Centro de Psicología La Seda Granada"
-                width="640"
-                height="480"
-                format="webp"
-                loading="lazy"
-                class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div class="p-7 flex flex-col flex-1 gap-4">
-              <div class="section-divider" aria-hidden="true" />
-              <h3 class="font-serif italic text-[#27252B] text-2xl leading-snug">
-                Terapia Grupal
-              </h3>
-              <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/75 flex-1">
-                La terapia grupal en La Seda se apoya en el encuentro con
-                otros como fuente de aprendizaje y sostén. Un espacio donde
-                compartir, escuchar y crecer en compañía, guiados por
-                principios terapéuticos sólidos.
-              </p>
-              <NuxtLink
-                to="/terapias/grupal"
-                class="team-card-link self-start"
-                aria-label="Saber más sobre terapia grupal en Granada"
-              >
-                Saber más
-              </NuxtLink>
-            </div>
-          </article>
+            <NuxtLink
+              to="/terapias/adolescentes"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              aria-label="Saber más sobre Terapia Psicológica para Adolescentes"
+            >
+              <div class="overflow-hidden aspect-[16/10] relative">
+                <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
+                <NuxtImg
+                  src="/images/terapia-psicologica-adolescentes-granada-centro-la-seda.jpg"
+                  alt="Terapia psicológica para adolescentes en Granada, Centro de Psicología La Seda"
+                  width="800"
+                  height="500"
+                  format="webp"
+                  loading="lazy"
+                  class="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
+                <div class="section-divider" aria-hidden="true" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adolescentes</h3>
+                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
+                  Ofrece un <strong>espacio seguro y confidencial</strong> donde el joven puede desarrollar recursos ante la <strong>ansiedad, aislamiento o conflictos</strong>. Acompaña a los padres para optimizar la escucha y <strong>mejorar la comunicación familiar</strong>.
+                </p>
+                <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
+                  Imparten: <span class="font-normal text-[#27252B]/70">Ana Jiménez, Cristina Lence, María Noel Reyes</span>
+                </div>
+                <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
+                  Saber más
+                  <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
+                </span>
+              </div>
+            </NuxtLink>
 
-          <!-- Tarjeta CTA decorativa -->
-          <article class="bg-[#71B1A5] flex flex-col justify-between p-7 min-h-[360px]" aria-label="¿No encuentras lo que buscas? Contáctanos">
-            <div class="w-6 h-px bg-[#FDFBF9]/60" aria-hidden="true" />
-            <div class="space-y-5">
-              <h3 class="font-serif italic text-[#FDFBF9] text-2xl leading-snug">
-                ¿No encuentras lo que buscas?
-              </h3>
-              <p class="text-base leading-[1.85] text-[#FDFBF9]/80">
-                Cuéntanos tu situación. Valoraremos juntos el tipo de
-                acompañamiento que mejor se adapta a lo que estás viviendo.
-              </p>
-              <NuxtLink
-                to="/contacto"
-                class="inline-block text-sm tracking-[0.18em] uppercase text-[#FDFBF9] border-b border-[#FDFBF9]/50 pb-0.5 hover:border-[#FDFBF9] transition-colors duration-200"
-                aria-label="Escríbenos para orientación sobre qué terapia elegir"
-              >
-                Escríbenos
-              </NuxtLink>
-            </div>
-            <div class="text-[#FDFBF9]/20 font-serif italic text-7xl leading-none select-none text-right" aria-hidden="true">&amp;</div>
-          </article>
+            <NuxtLink
+              to="/terapias/pareja-familia"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              aria-label="Saber más sobre Terapia de Pareja y Familia"
+            >
+              <div class="overflow-hidden aspect-[16/10] relative">
+                <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
+                <NuxtImg
+                  src="/images/terapia-pareja-familia-sistemica-granada-centro-la-seda.jpg"
+                  alt="Terapia de pareja y familia con enfoque sistémico, Centro de Psicología La Seda Granada"
+                  width="800"
+                  height="500"
+                  format="webp"
+                  loading="lazy"
+                  class="w-full h-full object-cover grayscale-[15%] group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
+                <div class="section-divider" aria-hidden="true" />
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia de Pareja y Familia</h3>
+                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
+                  Aborda dificultades de comunicación, crisis o momentos de cambio. Ayuda a resolver <strong>conflictos recurrentes, infidelidades o desacuerdos en la crianza</strong>, ofreciendo soporte ante <strong>separaciones, duelos y transiciones</strong> familiares importantes.
+                </p>
+                <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
+                  Imparten: <span class="font-normal text-[#27252B]/70">Leonor Cabrera, Reyes Sánchez-Tallón</span>
+                </div>
+                <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
+                  Saber más
+                  <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
+                </span>
+              </div>
+            </NuxtLink>
 
+          </div>
         </div>
+
+        <div class="mt-20 lg:mt-32 max-w-3xl mx-auto">
+          <NuxtLink
+            to="/contacto"
+            class="training-card group relative flex flex-col items-center justify-center text-center bg-[#71B1A5] rounded-sm p-10 md:p-16 min-h-[380px] transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/20 block overflow-hidden"
+            aria-label="Escríbenos para orientación sobre qué terapia elegir"
+          >
+            <div class="absolute -bottom-10 font-serif italic text-[18rem] text-[#FDFBF9]/5 leading-none select-none pointer-events-none z-0">
+              &
+            </div>
+            
+            <div class="relative z-10 space-y-6 max-w-xl flex flex-col items-center">
+              <div class="w-12 h-px bg-[#FDFBF9]/60" />
+              <h3 class="font-serif italic text-[#FDFBF9] text-3xl md:text-4xl leading-tight">
+                ¿No encuentras el tipo de acompañamiento que buscas?
+              </h3>
+              <p class="text-base md:text-lg text-[#FDFBF9]/90 font-light leading-relaxed">
+                Cuéntanos tu situación. Valoraremos juntos las necesidades actuales y el enfoque terapéutico que mejor se adapte a tu momento vital.
+              </p>
+            </div>
+
+            <div class="relative z-10 pt-8">
+              <span class="inline-flex items-center gap-3 bg-[#FDFBF9] text-[#27252B] text-xs tracking-[0.2em] uppercase font-bold px-8 py-4 rounded-full group-hover:bg-white group-hover:scale-105 transition-all duration-300 shadow-lg">
+                Escríbenos ahora
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </div>
+          </NuxtLink>
+        </div>
+
       </div>
     </section>
 
 
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · CÓMO TRABAJAMOS
-    ════════════════════════════════════════════════ -->
     <section
       class="page-container py-20 md:py-32"
       aria-labelledby="metodologia-heading"
     >
       <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
 
-        <!-- Imagen con marco desfasado -->
         <div class="relative order-2 md:order-1">
           <div class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0" aria-hidden="true" />
           <div class="relative z-10 overflow-hidden aspect-[3/4]">
@@ -298,7 +267,6 @@ useHead({
           </div>
         </div>
 
-        <!-- Columna de contenido -->
         <div class="order-1 md:order-2">
           <p class="section-label mb-4">Metodología</p>
           <h2 id="metodologia-heading" class="section-title mb-12">

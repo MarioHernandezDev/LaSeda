@@ -1,8 +1,10 @@
 <template>
-  <main class="bg-[#FDFBF9] antialiased min-h-screen">
+  <main class="bg-[#FDFBF9] antialiased min-h-screen relative w-full isolate">
     
     <div v-if="perfil">
       
+      <ConocenosMiniHero :perfil="perfil" />
+
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <ConocenosBiography :perfil="perfil" />
       </div>
@@ -38,6 +40,7 @@
     
   </main>
 </template>
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useSeoMeta, useHead } from '#app'
@@ -159,7 +162,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     biografiaExtendida: [
       'Leonor Cabrera es co-directora de La Seda y una de las profesionales más singulares del panorama del <strong>coaching y el desarrollo personal en Granada</strong>. Su trayectoria combina una sólida base académica en Periodismo con una formación profunda en herramientas de transformación emocional.',
       'Certificada como <strong>Coach Profesional por Asesco</strong>, Leonor ha centrado gran parte de su especialización en el trabajo con los <strong>bloqueos emocionales</strong> que frenan el potencial de las personas. Su herramienta principal en este campo es el <strong>método Wingwave®</strong>.',
-      'La experiencia con el <strong>Programa SAT de Claudio Naranjo</strong> imprimió en su práctica una dimensión de profundidad que va más allá de los objetivos del coaching convencional: el trabajo con el carácter, el <strong>autoconocimiento radical</strong> y la integración de las sombras.'
+      'La experiencia con el <strong>Programa SAT de Claudio Naranjo</strong> imprimió en su práctica una dimensión de profundidad que va más allá de los objetivos del coaching unconventional: el trabajo con el carácter, el <strong>autoconocimiento radical</strong> y la integración de las sombras.'
     ],
     trayectoria: [
       'Tras licenciarse en Periodismo, Leonor transitó de forma orgánica hacia el mundo del desarrollo humano. Sus primeras formaciones en <strong>Gestalt y PNL</strong> le ofrecieron un lenguaje para lo que ya intuía: que los patrones emocionales inconscientes determinan nuestras decisiones.',
@@ -260,7 +263,7 @@ const perfiles: Record<string, PerfilProfesional> = {
       'Cristina aporta al equipo una sensibilidad especial para conectar con la infancia desde su propio lenguaje: <strong>el juego, el movimiento, la expresión artística y la narrativa</strong>.'
     ],
     trayectoria: [
-      'Formada en Educación Social, Cristina orientó desde el principio su carrera hacia la infancia en contextos de vulnerabilidad emocional. Su experiencia en Granada le mostró que las dificultades de los menores reflejan un <strong>sistema familiar</strong> que necesita atención.',
+      'Formada en Educación Social, Cristina orientó desde el principio su career hacia la infancia en contextos de vulnerabilidad emocional. Su experiencia en Granada le mostró que las dificultades de los menores reflejan un <strong>sistema familiar</strong> que necesita atención.',
       'Esta convicción la llevó a profundizar en la Gestalt aplicada a la infancia y la adolescencia con la ITG de Valencia. Aprendió a trabajar con <strong>el cuerpo y la emoción</strong> como vías de acceso al mundo interno del niño.',
       'Su paso por el <strong>Programa SAT de Claudio Naranjo</strong> amplió su perspectiva sobre el desarrollo humano. En La Seda, Cristina acompaña familias y facilita <strong>talleres de parentalidad consciente</strong>.'
     ],
@@ -307,7 +310,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     biografiaExtendida: [
       'Reyes Sánchez Tallón es médica pediatra colegiada y la voz de la <strong>medicina integrativa</strong> dentro de La Seda. Su presencia encarna una visión de la salud donde <strong>el cuerpo, la emoción y la mente</strong> forman un sistema indivisible.',
       'Su formación como pediatra le dio una base científica sólida. Pero fue su encuentro con la <strong>Gestalt y el trabajo corporal</strong> lo que transformó su forma de acompañar, añadiendo la capacidad de leer el cuerpo como un mapa emocional vivo.',
-      'Reyes trabaja desde la frontera enriquecedora que existe entre la medicina y la psicoterapia, un espacio donde la <strong>somatización</strong> tiene nombre y donde el síntoma físico es también un mensaje de alerta.'
+      'Reyes trabaja desde la frontera enriquecedora que existe entre la medicina y la psicoterapia, un espacio donde la <strong>somatización</strong> tiene nombre y donde el síntoma físico es también un message de alerta.'
     ],
     trayectoria: [
       'Tras completar su especialización como pediatra por <strong>vía MIR</strong>, Reyes ejerció durante años en el sistema sanitario público, donde fue testigo de cómo el malestar emocional se manifestaba en forma de <strong>síntomas físicos</strong>.',
@@ -405,5 +408,12 @@ useHead({
 :deep(strong) {
   font-weight: 500;
   color: #27252B;
+}
+
+/* SOLUCIÓN: Forzamos prioridad de renderizado del color crema base y creamos un contexto 3D para evitar parpadeos negros */
+main {
+  background-color: #FDFBF9 !important;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 </style>

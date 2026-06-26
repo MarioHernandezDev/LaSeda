@@ -1,7 +1,7 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5 w-screen relative left-1/2 right-1/2 -ml-[50vw] mr-[50vw]">
+  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5 w-screen left-1/2 right-1/2 -ml-[50vw] mr-[50vw]">
 
-    <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-20 max-md:!bg-transparent flex flex-col justify-center">
+    <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10 max-md:!bg-transparent flex flex-col justify-center">
       
       <div
         class="absolute inset-0 opacity-[0.018] pointer-events-none z-0"
@@ -77,7 +77,7 @@
 
     </div>
 
-    <div class="page-hero-panel-right max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10">
+    <div class="page-hero-panel-right max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-0">
       <NuxtImg
         :src="perfil.imagen"
         :alt="perfil.imagenAlt"

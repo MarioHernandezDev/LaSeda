@@ -3,8 +3,6 @@
     
     <div v-if="perfil">
       
-      <ConocenosMiniHero :perfil="perfil" />
-
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
         <ConocenosBiography :perfil="perfil" />
       </div>

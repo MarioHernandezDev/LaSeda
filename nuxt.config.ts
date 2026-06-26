@@ -1,16 +1,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  
   css: [
-    '@/assets/css/main.css' 
+    '@/assets/css/main.css'
   ],
-
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image'
   ],
-
   tailwindcss: {
     exposeConfig: true,
     viewer: false,
@@ -24,19 +21,16 @@ export default defineNuxtConfig({
           fontFamily: {
             'mofiwe': ['Mofiwe', 'monospace'],
           },
-          // 🌟 AÑADIMOS ESTO PARA CAMBIAR LOS TAMAÑOS DE TEXTO:
           fontSize: {
-            // [tamaño, { altura de línea por defecto }]
-            'sm': ['0.95rem', { lineHeight: '1.75' }],   // Sube un pelín el texto pequeño
-            'base': ['1.125rem', { lineHeight: '1.85' }], // Sube de 16px a 18px (¡Tu nuevo texto por defecto!)
-            'lg': ['1.25rem', { lineHeight: '1.8' }],     // Sube de 18px a 20px
-            'xl': ['1.5rem', { lineHeight: '1.7' }],      // Sube de 20px a 24px
+            'sm':   ['0.95rem',  { lineHeight: '1.75' }],
+            'base': ['1.125rem', { lineHeight: '1.85' }],
+            'lg':   ['1.25rem',  { lineHeight: '1.8'  }],
+            'xl':   ['1.5rem',   { lineHeight: '1.7'  }],
           },
         },
       },
     }
   },
-  
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
   }

@@ -18,11 +18,20 @@ interface _GlobalComponents {
   PageHero: typeof import("../../app/components/PageHero.vue")['default']
   SeccionIntro: typeof import("../../app/components/SeccionIntro.vue")['default']
   TeamCard: typeof import("../../app/components/TeamCard.vue")['default']
+  ConocenosAcademic: typeof import("../../app/components/conocenos/ConocenosAcademic.vue")['default']
+  ConocenosAsideInfo: typeof import("../../app/components/conocenos/ConocenosAsideInfo.vue")['default']
+  ConocenosBiography: typeof import("../../app/components/conocenos/ConocenosBiography.vue")['default']
+  ConocenosMiniHero: typeof import("../../app/components/conocenos/ConocenosMiniHero.vue")['default']
+  ConocenosSpecialties: typeof import("../../app/components/conocenos/ConocenosSpecialties.vue")['default']
   FormationEstructure: typeof import("../../app/components/formation/FormationEstructure.vue")['default']
   FormationOverview: typeof import("../../app/components/formation/FormationOverview.vue")['default']
   FormationProcess: typeof import("../../app/components/formation/FormationProcess.vue")['default']
   FormationRelated: typeof import("../../app/components/formation/FormationRelated.vue")['default']
   FormationTeam: typeof import("../../app/components/formation/FormationTeam.vue")['default']
+  TalleresWorkshopBenefits: typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']
+  TalleresWorkshopDates: typeof import("../../app/components/talleres/WorkshopDates.vue")['default']
+  TalleresWorkshopFaqs: typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']
+  TalleresWorkshopIntro: typeof import("../../app/components/talleres/WorkshopIntro.vue")['default']
   TherapyFAQ: typeof import("../../app/components/therapy/TherapyFAQ.vue")['default']
   TherapyHero: typeof import("../../app/components/therapy/TherapyHero.vue")['default']
   TherapyOverview: typeof import("../../app/components/therapy/TherapyOverview.vue")['default']
@@ -58,11 +67,20 @@ interface _GlobalComponents {
   LazyPageHero: LazyComponent<typeof import("../../app/components/PageHero.vue")['default']>
   LazySeccionIntro: LazyComponent<typeof import("../../app/components/SeccionIntro.vue")['default']>
   LazyTeamCard: LazyComponent<typeof import("../../app/components/TeamCard.vue")['default']>
+  LazyConocenosAcademic: LazyComponent<typeof import("../../app/components/conocenos/ConocenosAcademic.vue")['default']>
+  LazyConocenosAsideInfo: LazyComponent<typeof import("../../app/components/conocenos/ConocenosAsideInfo.vue")['default']>
+  LazyConocenosBiography: LazyComponent<typeof import("../../app/components/conocenos/ConocenosBiography.vue")['default']>
+  LazyConocenosMiniHero: LazyComponent<typeof import("../../app/components/conocenos/ConocenosMiniHero.vue")['default']>
+  LazyConocenosSpecialties: LazyComponent<typeof import("../../app/components/conocenos/ConocenosSpecialties.vue")['default']>
   LazyFormationEstructure: LazyComponent<typeof import("../../app/components/formation/FormationEstructure.vue")['default']>
   LazyFormationOverview: LazyComponent<typeof import("../../app/components/formation/FormationOverview.vue")['default']>
   LazyFormationProcess: LazyComponent<typeof import("../../app/components/formation/FormationProcess.vue")['default']>
   LazyFormationRelated: LazyComponent<typeof import("../../app/components/formation/FormationRelated.vue")['default']>
   LazyFormationTeam: LazyComponent<typeof import("../../app/components/formation/FormationTeam.vue")['default']>
+  LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']>
+  LazyTalleresWorkshopDates: LazyComponent<typeof import("../../app/components/talleres/WorkshopDates.vue")['default']>
+  LazyTalleresWorkshopFaqs: LazyComponent<typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']>
+  LazyTalleresWorkshopIntro: LazyComponent<typeof import("../../app/components/talleres/WorkshopIntro.vue")['default']>
   LazyTherapyFAQ: LazyComponent<typeof import("../../app/components/therapy/TherapyFAQ.vue")['default']>
   LazyTherapyHero: LazyComponent<typeof import("../../app/components/therapy/TherapyHero.vue")['default']>
   LazyTherapyOverview: LazyComponent<typeof import("../../app/components/therapy/TherapyOverview.vue")['default']>

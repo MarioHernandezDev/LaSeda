@@ -1,5 +1,5 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5 w-screen left-1/2 right-1/2 -ml-[50vw] mr-[50vw]">
+  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5 w-full">
 
     <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10 max-md:!bg-transparent flex flex-col justify-center">
       
@@ -13,7 +13,7 @@
         aria-hidden="true"
       />
 
-      <div class="w-full relative z-10 px-0 md:px-12 lg:px-16 xl:px-20 max-md:h-full max-md:flex max-md:items-end">
+      <div class="w-full max-w-7xl mx-auto relative z-10 px-6 md:px-12 lg:px-16 xl:px-20 max-md:h-full max-md:flex max-md:items-end">
         
         <div class="max-md:bg-[#F5F2EE]/90 max-md:backdrop-blur-md max-md:py-12 max-md:px-6 max-md:w-full max-md:rounded-none max-md:border-0 max-md:border-t max-md:border-[#27252B]/5">
 

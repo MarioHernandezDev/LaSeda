@@ -1,6 +1,5 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5 w-full">
-
+  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[100vh] border-b border-[#27252B]/5 w-full md:pt-0">
     <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10 max-md:!bg-transparent flex flex-col justify-center">
       
       <div
@@ -81,7 +80,7 @@
       <NuxtImg
         :src="perfil.imagen"
         :alt="perfil.imagenAlt"
-        class="w-full h-full object-cover object-center grayscale-[10%] hover:grayscale-0 transition-all duration-1000 ease-out"
+        class="w-full h-[101%] object-cover object-center grayscale-[10%] hover:grayscale-0 transition-all duration-1000 ease-out"
         format="webp"
         fetchpriority="high"
         preload

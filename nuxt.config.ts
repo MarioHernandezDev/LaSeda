@@ -1,13 +1,18 @@
+// nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  
   devtools: { enabled: true },
+  
   css: [
     '@/assets/css/main.css'
   ],
+  
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image'
   ],
+  
   tailwindcss: {
     exposeConfig: true,
     viewer: false,
@@ -31,7 +36,11 @@ export default defineNuxtConfig({
       },
     }
   },
+  
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    // Transición sutil y elegante entre páginas
+    pageTransition: { 
+      name: 'page', 
+    }
   }
 })

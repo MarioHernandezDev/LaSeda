@@ -28,6 +28,7 @@ interface _GlobalComponents {
   FormationProcess: typeof import("../../app/components/formation/FormationProcess.vue")['default']
   FormationRelated: typeof import("../../app/components/formation/FormationRelated.vue")['default']
   FormationTeam: typeof import("../../app/components/formation/FormationTeam.vue")['default']
+  IndexSocialMedia: typeof import("../../app/components/index/SocialMedia.vue")['default']
   TalleresWorkshopBenefits: typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']
   TalleresWorkshopDates: typeof import("../../app/components/talleres/WorkshopDates.vue")['default']
   TalleresWorkshopFaqs: typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']
@@ -77,6 +78,7 @@ interface _GlobalComponents {
   LazyFormationProcess: LazyComponent<typeof import("../../app/components/formation/FormationProcess.vue")['default']>
   LazyFormationRelated: LazyComponent<typeof import("../../app/components/formation/FormationRelated.vue")['default']>
   LazyFormationTeam: LazyComponent<typeof import("../../app/components/formation/FormationTeam.vue")['default']>
+  LazyIndexSocialMedia: LazyComponent<typeof import("../../app/components/index/SocialMedia.vue")['default']>
   LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']>
   LazyTalleresWorkshopDates: LazyComponent<typeof import("../../app/components/talleres/WorkshopDates.vue")['default']>
   LazyTalleresWorkshopFaqs: LazyComponent<typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']>

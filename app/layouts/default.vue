@@ -159,21 +159,21 @@
     <CustomCursor />
 
     <Transition
-      enter-active-class="transition-all duration-300 ease-out"
-      enter-from-class="opacity-0 translate-y-4 scale-90"
-      enter-to-class="opacity-100 translate-y-0 scale-100"
-      leave-active-class="transition-all duration-200 ease-in"
-      leave-from-class="opacity-100 translate-y-0 scale-100"
-      leave-to-class="opacity-0 translate-y-4 scale-90"
+      enter-active-class="transition-opacity duration-300 ease-out"
+      enter-from-class="opacity-0"
+      enter-to-class="opacity-100"
+      leave-active-class="transition-opacity duration-200 ease-in"
+      leave-from-class="opacity-100"
+      leave-to-class="opacity-0"
     >
       <button
         v-if="showScrollTop"
         @click="scrollToTop"
         aria-label="Volver al inicio de la página"
-        class="fixed bottom-8 right-8 z-50 w-11 h-11 flex items-center justify-center bg-[#FDFBF9] border border-[#27252B]/12 rounded-full shadow-lg shadow-[#27252B]/8 hover:shadow-xl hover:shadow-[#27252B]/12 hover:-translate-y-1 hover:border-[#71B1A5]/50 transition-all duration-300 group"
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-11 h-11 md:w-14 md:h-14 flex items-center justify-center bg-[#FDFBF9] border border-[#27252B]/12 rounded-full shadow-lg shadow-[#27252B]/8 hover:shadow-xl hover:shadow-[#27252B]/12 hover:-translate-y-1 hover:border-[#71B1A5]/50 transition-all duration-300 group"
       >
         <svg
-          class="w-4 h-4 text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300"
+          class="w-4 h-4 md:w-5 md:h-5 text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -200,8 +200,6 @@
                 class="h-9 w-auto opacity-60 group-hover:opacity-90 transition-opacity duration-300 brightness-0 invert"
               />
             </NuxtLink>
-
-          
 
             <div class="border-l border-[#71B1A5]/40 pl-4">
               <p class="font-serif text-sm italic text-white/35 leading-relaxed">
@@ -289,7 +287,7 @@
 
             <div class="mt-8 flex items-start gap-3 p-4 border border-white/5 bg-white/[0.01]">
               <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138"/>
               </svg>
               <p class="text-xs text-white/40 leading-relaxed font-light">
                 Psicólogos colegiados por el
@@ -346,15 +344,11 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-// Importante en Nuxt 3 para mapear rutas de forma reactiva en <script setup>
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-// ── Estado del menú móvil
 const mobileMenuOpen = ref(false)
-
-// ── Visibilidad del botón "volver arriba" + efecto scroll del navbar
 const scrolled      = ref(false)
 const showScrollTop = ref(false)
 
@@ -372,23 +366,17 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-// ── Acción del botón
 const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
-// ── Cerrar menú móvil al redimensionar a escritorio
 const handleResize = () => {
   if (window.innerWidth >= 768) mobileMenuOpen.value = false
 }
 onMounted(() => window.addEventListener('resize', handleResize, { passive: true }))
 onUnmounted(() => window.removeEventListener('resize', handleResize))
 
-// ── Año actual para el copyright
 const currentYear = new Date().getFullYear()
-
-// ── Computada para capturar el path actual de forma reactiva y limpia
 const currentPath = computed(() => route.path)
 
-// ── Definición de enlaces de navegación
 const navLinks = [
   { label: 'Terapias',    to: '/terapias'    },
   { label: 'Talleres',    to: '/talleres'    },
@@ -399,7 +387,6 @@ const navLinks = [
 const leftNavLinks  = computed(() => navLinks.slice(0, 2))
 const rightNavLinks = computed(() => navLinks.slice(2))
 
-// Menú móvil unificado (Agregamos inicio al bucle evitando código duplicado)
 const mobileNavLinks = computed(() => [
   { label: 'Inicio', to: '/' },
   ...navLinks
@@ -414,7 +401,6 @@ const footerNavLinks = [
   { label: 'Contacto',             to: '/contacto'    },
 ]
 
-// ── Bloquear scroll cuando el menú móvil esté abierto
 watch(mobileMenuOpen, (menuOpen) => {
   if (menuOpen) {
     document.body.style.overflow = 'hidden'

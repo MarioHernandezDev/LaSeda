@@ -354,12 +354,37 @@
                   :aria-invalid="errors.servicio ? 'true' : undefined"
                 >
                   <option value="" disabled selected>Selecciona una opción</option>
-                  <option value="terapia-individual">Terapia Individual</option>
-                  <option value="terapia-pareja">Terapia de Pareja</option>
-                  <option value="infanto-juvenil">Psicología Infanto-Juvenil</option>
-                  <option value="talleres">Talleres de Crecimiento Personal</option>
-                  <option value="formaciones">Formaciones para Profesionales</option>
-                  <option value="primera-consulta">Primera consulta (sin decidir aún)</option>
+
+                  <optgroup label="Terapias">
+                    <option value="terapia-adultos">Terapia de Adultos</option>
+                    <option value="terapia-infantil">Psicología Infantil</option>
+                    <option value="terapia-adolescente">Psicología de la Adolescencia</option>
+                    <option value="terapia-pareja">Terapia de Pareja</option>
+                    <option value="acompanamiento-socioemocional">Acompañamiento Socioemocional</option>
+                  </optgroup>
+
+                  <optgroup label="Talleres y Supervisión">
+                    <option value="taller-constelaciones">Talleres de Constelaciones Familiares</option>
+                    <option value="supervision-casos">Supervisión de Casos Clínicos</option>
+                  </optgroup>
+
+                  <optgroup label="Formaciones Especializadas">
+                    <option value="formacion-gestalt-infantil">Formación en Gestalt Infantil y Adolescente</option>
+                    <option value="formacion-wingwave">Formación en Método Wingwave®</option>
+                  </optgroup>
+
+                  <optgroup label="Contactar con una profesional">
+                    <option value="contacto-ana-jimenez">Ana Jiménez (Co-dirección / Gestalt)</option>
+                    <option value="contacto-leonor-cabrera">Leonor Cabrera (Co-dirección / Coaching)</option>
+                    <option value="contacto-maria-noel">María Noel Reyes (Psicología Clínica)</option>
+                    <option value="contacto-cristina-lence">Cristina Lence (Educación Familiar)</option>
+                    <option value="contacto-reyes-sanchez">Reyes Sánchez (Medicina Integrativa)</option>
+                  </optgroup>
+
+                  <optgroup label="Otros motivos">
+                    <option value="primera-consulta">Primera consulta (Sin decidir servicio aún)</option>
+                    <option value="otro-motivo">Otro motivo de consulta</option>
+                  </optgroup>
                 </select>
                 <div
                   class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4"

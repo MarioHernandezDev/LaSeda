@@ -2,12 +2,26 @@
   <main class="py-32 md:py-40 bg-[#FDFBF9] text-[#27252B]">
     <div class="max-w-4xl mx-auto px-6 md:px-12">
       
-      <header class="mb-12 border-b border-[#27252B]/10 pb-8">
-        <p class="text-[#71B1A5] text-[11px] tracking-[0.3em] uppercase font-bold mb-3">Legal</p>
-        <h1 class="font-serif italic font-light text-4xl md:text-5xl leading-tight text-[#27252B]">
-          Política de <span class="not-italic font-normal text-[#71B1A5]">Cookies</span>
-        </h1>
-        <p class="text-xs text-[#27252B]/50 mt-4 font-mono uppercase tracking-wider">Última actualización: Junio 2026</p>
+      <header class="mb-12 border-b border-[#27252B]/10 pb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6 overflow-hidden">
+        
+        <div>
+          <p class="text-[#71B1A5] text-[11px] tracking-[0.3em] uppercase font-bold mb-3">Legal</p>
+          <h1 class="font-serif italic font-light text-4xl md:text-5xl leading-tight text-[#27252B]">
+            Política de <span class="not-italic font-normal text-[#71B1A5]">Cookies</span>
+          </h1>
+          <p class="text-xs text-[#27252B]/50 mt-4 font-mono uppercase tracking-wider">Última actualización: Junio 2026</p>
+        </div>
+
+        <div class="relative flex-shrink-0 flex items-center justify-center h-28 md:h-32 w-full md:w-auto select-none group">
+          <div class="absolute w-24 h-24 bg-[#71B1A5]/5 rounded-full blur-xl group-hover:scale-110 transition-transform duration-700"></div>
+          
+          <NuxtImg 
+            src="/images/cookienaje.png" 
+            alt="Monstruo de las cookies" 
+            class="cookie-page-img w-auto h-full object-contain relative z-10"
+          />
+        </div>
+
       </header>
 
       <div class="prose prose-stone max-w-none font-light leading-relaxed space-y-8 text-sm md:text-base text-[#27252B]/85">
@@ -76,7 +90,7 @@
             Al pulsar "Aceptar" en nuestro banner inicial, consiente de forma expresa la instalación de las cookies analíticas de Google mencionadas anteriormente. Si decide rechazarlas o ignorar el aviso, el script de Google Analytics permanecerá completamente bloqueado y no rastreará su navegación.
           </p>
           <p class="mt-4">
-            Para cualquier duda sobre nuestra política de cookies o el tratamiento de sus datos de contacto, puede escribirnos directamente a nuestro correo electrónico: <a href="mailto:hola@laseda.es" class="text-[#71B1A5] underline font-medium">hola@laseda.es</a>.
+            Para cualquier duda sobre nuestra política de cookies o el tratamiento de sus datos de contacto, puede escribirnos directamente a nuestro correo electrónico: <a href="mailto:centrolaseda@gmail.com" class="text-[#71B1A5] underline font-medium">centrolaseda@gmail.com</a>.
           </p>
         </section>
 
@@ -95,4 +109,10 @@ th, td {
 tr:hover td {
   background-color: rgba(113, 177, 165, 0.03);
 }
+
+/* Espejo horizontal para que el personaje mire hacia el texto legal */
+.cookie-page-img {
+  transform: scaleX(-1);
+}
+
 </style>

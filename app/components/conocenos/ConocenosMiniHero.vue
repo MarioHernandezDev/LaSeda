@@ -1,57 +1,67 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[100vh] border-b border-[#27252B]/5 w-full md:pt-0">
-    <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10 max-md:!bg-transparent flex flex-col justify-center">
+  <header class="page-hero-root relative overflow-hidden h-[100dvh] md:h-[100vh] w-full bg-[#F5F2EE]">
+    
+    <div class="page-hero-panel relative z-20 h-full flex flex-col justify-center max-md:justify-end">
       
       <div
-        class="absolute inset-0 opacity-[0.018] pointer-events-none z-0"
-        style="background-image: radial-gradient(circle, #27252B 1px, transparent 1px); background-size: 24px 24px;"
-        aria-hidden="true"
-      />
-      <div
-        class="absolute top-[-10%] left-[-20%] w-[480px] h-[480px] rounded-full bg-[#71B1A5]/5 blur-[100px] pointer-events-none z-0"
+        class="absolute inset-0 opacity-[0.015] pointer-events-none z-0 hidden md:block"
+        style="background-image: radial-gradient(circle, #27252B 1px, transparent 1px); background-size: 32px 32px;"
         aria-hidden="true"
       />
 
-      <div class="w-full max-w-7xl mx-auto relative z-10 px-6 md:px-12 lg:px-16 xl:px-20 max-md:h-full max-md:flex max-md:items-end">
+      <div class="w-full max-w-7xl mx-auto relative z-10 px-6 sm:px-12 md:px-16 lg:px-24 max-md:pb-12">
         
-        <div class="max-md:bg-[#F5F2EE]/90 max-md:backdrop-blur-md max-md:py-12 max-md:px-6 max-md:w-full max-md:rounded-none max-md:border-0 max-md:border-t max-md:border-[#27252B]/5">
+        <div class="max-md:bg-[#F5F2EE]/85 max-md:backdrop-blur-md max-md:p-8 max-md:rounded-sm max-md:border max-md:border-white/20 max-w-2xl py-16 md:py-24">
 
-          <div class="flex items-center gap-3 mb-6 lg:mb-8">
-            <span class="w-5 h-px bg-[#71B1A5]" aria-hidden="true"></span>
-            <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.42em] uppercase font-bold">
-              {{ perfil.especialidadLabel }} · LA SEDA GRANADA
+          <div class="flex items-center gap-3 mb-6 md:mb-8">
+            <span class="w-6 h-px bg-[#71B1A5]/60" aria-hidden="true"></span>
+            <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.35em] uppercase font-semibold leading-none">
+              {{ perfil.especialidadLabel }} · LA SEDA
             </p>
           </div>
 
-          <h1
-            class="font-serif italic font-medium leading-[1.12] tracking-tight text-[#27252B] mb-5 relative flex items-start md:items-center"
-            style="font-size: clamp(2.1rem, 3.5vw, 3.8rem);"
-          >
-            <div class="relative z-10">
+          <div class="mb-6 md:mb-8">
+            <h1
+              class="font-serif italic font-normal leading-[1.1] tracking-tight text-[#27252B]"
+              style="font-size: clamp(2.4rem, 4.5vw, 4.2rem);"
+            >
               {{ perfil.nombre }}
-              <span 
-                v-if="perfil.tituloOficial"
-                class="not-italic font-normal text-[#71B1A5] block mt-2 font-sans"
-                style="font-size: clamp(1.2rem, 2.2vw, 2.2rem); letter-spacing: 0.04em;"
-              >
-                {{ perfil.tituloOficial }}
-              </span>
-            </div>
-          </h1>
+            </h1>
+            <span 
+              v-if="perfil.tituloOficial"
+              class="not-italic font-sans text-[#27252B]/60 block mt-3 text-xs md:text-sm font-light tracking-wide max-w-xl leading-relaxed"
+            >
+              {{ perfil.tituloOficial }}
+            </span>
+          </div>
 
-          <div class="flex flex-col sm:flex-row gap-3">
+          <blockquote class="relative pl-5 border-l border-[#71B1A5]/40 mb-8 md:mb-10 max-w-lg">
+            <p 
+              class="text-[#27252B]/80 font-serif italic leading-relaxed"
+              style="font-size: clamp(0.95rem, 1.2vw, 1.15rem);"
+            >
+              “{{ perfil.cita }}”
+            </p>
+          </blockquote>
+
+          <div class="flex flex-col sm:flex-row sm:items-center gap-5 pt-2">
             <NuxtLink
               to="/contacto"
-              class="group inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-bold transition-all duration-500 shadow-lg shadow-[#71B1A5]/25 hover:bg-[#5a9a8e] hover:shadow-xl hover:shadow-[#71B1A5]/40 hover:-translate-y-0.5 w-full sm:w-auto"
+              class="group btn-primary !inline-flex w-full sm:w-auto justify-center"
             >
-              <svg class="w-4 h-4 transition-transform duration-500 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-              </svg>
-              Agendar Consulta
+              <span>Agendar Consulta</span>
+              <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-white pointer-events-none">
+                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
             </NuxtLink>
 
             <div
-              class="group inline-flex items-center justify-center gap-3 border border-[#27252B]/20 bg-transparent px-7 py-3.5 text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/70 w-full sm:w-auto max-md:bg-white/40 max-md:backdrop-blur-sm cursor-default select-none"
+              class="inline-flex items-center justify-center text-[10px] tracking-[0.2em] uppercase font-medium text-[#27252B]/40 px-3 py-2 bg-[#27252B]/5 rounded-xs w-full sm:w-auto select-none whitespace-nowrap"
             >
               {{ perfil.rol }}
             </div>
@@ -59,32 +69,20 @@
 
         </div>
 
-        <p
-          class="text-stone-600/85 leading-[1.85] font-serif italic mb-8 lg:mb-10 max-w-md hidden md:block mt-6 px-4 md:px-0"
-          style="font-size: clamp(0.9rem, 1.1vw, 1.1rem);"
-        >
-          “{{ perfil.cita }}”
-        </p>
-
       </div>
-
-      <div
-        class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 h-[45%] w-px"
-        style="background: linear-gradient(to bottom, transparent, rgba(113,177,165,0.35), transparent);"
-        aria-hidden="true"
-      ></div>
 
     </div>
 
-    <div class="page-hero-panel-right max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-0">
+    <div class="page-hero-panel-right max-md:absolute max-md:inset-0 max-md:w-full max-md:h-full z-10">
       <NuxtImg
         :src="perfil.imagen"
         :alt="perfil.imagenAlt"
-        class="w-full h-[101%] object-cover object-center grayscale-[10%] hover:grayscale-0 transition-all duration-1000 ease-out"
+        class="w-full h-full object-cover object-top grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out"
         format="webp"
         fetchpriority="high"
         preload
       />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/40 via-transparent to-transparent md:hidden" aria-hidden="true" />
     </div>
 
   </header>

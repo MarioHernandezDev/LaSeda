@@ -36,7 +36,6 @@ useHead({
       </template>
     </PageHero>
 
-
     <SeccionIntro
       id-heading="terapia-heading"
       titulo="Terapia integrativa adaptada a tu momento vital."
@@ -45,7 +44,6 @@ useHead({
         'El enfoque cognitivo-conductual, el humanista, la perspectiva sistémica y el protocolo EMDR guían nuestra práctica cotidiana. Esta pluralidad nos permite ofrecer un acompañamiento personalizado, respaldado por evidencia científica y con una profunda calidez humana.'
       ]"
     />
-
 
     <section
       class="bg-[#27252B]/[0.03] py-20 md:py-32 overflow-hidden"
@@ -121,7 +119,7 @@ useHead({
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adultos y Acompañamiento</h3>
                 <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Enfoque psicoterapéutico <strong>humanista, Gestalt y sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
+                  Enfoque psicoterapéutico <strong>humanista, Gestalt and sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
                 </p>
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Imparten: <span class="font-normal text-[#27252B]/60 text-[11px]">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera, R. Sánchez-Tallón</span>
@@ -227,11 +225,8 @@ useHead({
             </div>
 
             <div class="relative z-10 pt-8">
-              <span class="inline-flex items-center gap-3 bg-[#FDFBF9] text-[#27252B] text-xs tracking-[0.2em] uppercase font-bold px-8 py-4 rounded-full group-hover:bg-white group-hover:scale-105 transition-all duration-300 shadow-lg">
+              <span class="btn-secondary !bg-white/95 !border-transparent hover:!bg-white text-[#27252B] hover:scale-105 shadow-xl transition-transform">
                 Escríbenos ahora
-                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
               </span>
             </div>
           </NuxtLink>
@@ -239,7 +234,6 @@ useHead({
 
       </div>
     </section>
-
 
     <section
       class="page-container py-20 md:py-32"
@@ -333,21 +327,26 @@ useHead({
             </li>
 
           </ol>
-
-          <div class="mt-12 pt-8 border-t border-[#27252B]/10">
-            <NuxtLink
-              to="/contacto"
-              class="inline-flex items-center gap-4 group"
-              aria-label="Ir a contacto para comenzar el proceso terapéutico"
-            >
-              <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-                Comenzar el proceso
-              </span>
-              <span class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
-            </NuxtLink>
-          </div>
         </div>
 
+      </div>
+
+      <div class="mt-16 md:mt-24 pt-12 border-t border-[#27252B]/10 flex justify-center w-full">
+        <NuxtLink
+          to="/contacto"
+          class="group btn-primary !inline-flex"
+          aria-label="Ir a contacto para comenzar el proceso terapéutico"
+        >
+          <span>Comenzar el proceso</span>
+          <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-white pointer-events-none">
+            <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+            <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </div>
+        </NuxtLink>
       </div>
     </section>
 

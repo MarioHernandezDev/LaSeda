@@ -1,8 +1,8 @@
 /* ============================================================
-   main.css — La Seda · Estilos Globales
-   Añadir al archivo CSS global de Nuxt (assets/css/main.css)
-   e importar en nuxt.config.ts → css: ['~/assets/css/main.css']
+   main.css — La Seda · Estilos Globales Optimizados
+   Ubicación: assets/css/main.css
    ============================================================ */
+
 @font-face {
   font-family: 'Mofiwe';
   src: url('@/assets/fonts/Mofiwe-Regular.ttf') format('truetype'),
@@ -16,38 +16,25 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* ──────────────────────────────────────────────────────────
-   @layer base
-   Estilos de etiquetas HTML puras. Estos estilos evitan que
-   cada página/componente tenga que redefinir el fondo,
-   color de texto, fuente base y el overflow del eje X,
-   eliminando flashes visuales durante las transiciones SPA.
+   @layer base — Estilos de etiquetas nativas
    ────────────────────────────────────────────────────────── */
 @layer base {
-
-  
-
-
-  /* Raíz del documento */
   html {
     @apply scroll-smooth;
     overflow-x: hidden;
   }
 
-  /* Body: fuente, color de texto y fondo global */
   body {
     @apply font-sans bg-[#FDFBF9] text-[#27252B];
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Tipografía base — escala consistente en toda la app */
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif leading-tight;
   }
 
-  /* Párrafos con interlineado cómodo por defecto */
   p {
     @apply text-[17px] md:text-[19px] leading-[1.85] text-[#27252B]/80;
   }
@@ -64,22 +51,18 @@
     @apply text-[21px] md:text-[24px] !important;
   }
 
-  /* Enlaces base sin subrayado */
   a {
     @apply transition-colors duration-300;
   }
 
-  /* Focus visible accesible — respeta el color de marca */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-[#71B1A5];
   }
 
-  /* Imágenes responsive por defecto */
   img, video {
     @apply max-w-full;
   }
 
-  /* Fuentes tipográficas (alias Tailwind → Google Fonts) */
   .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
   .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
 
@@ -90,1044 +73,327 @@
     perspective: 1000;
   }
 
-  /* Forzamos el prefijo webkit para navegadores basados en Safari/iOS */
   .backdrop-blur-md {
     -webkit-backdrop-filter: blur(12px) !important;
     backdrop-filter: blur(12px) !important;
   }
 }
 
-
 /* ──────────────────────────────────────────────────────────
-   @layer components
-   Componentes reutilizables extraídos de clases repetidas
-   en múltiples páginas/secciones.
+   @layer components — Componentes corporativos reutilizables
    ────────────────────────────────────────────────────────── */
 @layer components {
 
   /* ════════════════════════════════════════════════════════
-     SECCIÓN: Tokens de sección y layout
+     SECCIÓN: Tokens de layout y sección
      ════════════════════════════════════════════════════════ */
-
-  /* Etiqueta de sección (eyebrow label) */
   .section-label {
     @apply text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium;
   }
 
-  /* Separador decorativo de sección */
   .section-divider {
     @apply w-6 h-px bg-[#71B1A5];
   }
 
-  /* Título de sección H2 — variante serif ligera */
   .section-title {
     @apply font-serif italic font-light text-[2rem] md:text-[2.6rem] leading-[1.15];
   }
 
-  /* Acento de color en títulos de sección */
   .section-title-accent {
     @apply not-italic font-normal text-[#71B1A5];
   }
 
-  /* Contenedor de página estándar */
   .page-container {
     @apply max-w-7xl mx-auto px-5 md:px-8 lg:px-16;
   }
 
-
   /* ════════════════════════════════════════════════════════
-     SECCIÓN: Botones
+     NUEVA SECCIÓN DE BOTONES UNIFICADOS (Estilo Píldora Premium)
      ════════════════════════════════════════════════════════ */
-
-  /* Botón primario (fondo teal) */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-3
-           bg-[#71B1A5] text-white
-           px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold
-           transition-all duration-500
-           shadow-lg shadow-[#71B1A5]/25
-           hover:bg-[#5a9a8e]
-           hover:shadow-xl hover:shadow-[#71B1A5]/40
-           hover:-translate-y-0.5;
-  }
-
-  /* Botón secundario (borde) */
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-3
-           border border-[#27252B]/40
-           px-8 py-4 text-xs tracking-[0.2em] uppercase font-bold
-           hover:border-[#71B1A5] hover:text-[#71B1A5]
-           transition-all duration-500
-           hover:-translate-y-0.5
-           backdrop-blur-sm bg-white/40;
-  }
-
-  /* Botón principal con efecto shimmer */
-  .btn-shimmer {
-    @apply relative w-full inline-flex items-center justify-center gap-3
-           bg-[#71B1A5] text-white
-           px-8 py-4 text-xs tracking-[0.25em] uppercase font-semibold
-           hover:bg-[#5a9a8e] transition-all duration-300 overflow-hidden;
-  }
-
-  /* Capa de brillo animado (shimmer) */
-  .btn-shimmer-layer {
-    @apply absolute inset-0
-           bg-gradient-to-r from-transparent via-white/10 to-transparent
-           -translate-x-full group-hover:translate-x-full
-           transition-transform duration-700 pointer-events-none;
-  }
-
-  /* Botón CTA principal con sombra */
-  .btn-cta-hero {
+  
+  /* Base común para todos los botones del ecosistema */
+  .btn-premium-base {
     @apply relative inline-flex items-center justify-center gap-3
-           bg-[#71B1A5] text-white
-           px-10 py-5 text-xs tracking-[0.25em] uppercase font-semibold
-           hover:bg-[#5a9a8e] transition-all duration-300
-           shadow-xl shadow-[#71B1A5]/30
-           hover:shadow-2xl hover:shadow-[#71B1A5]/50
-           hover:-translate-y-0.5
-           overflow-hidden w-full sm:w-auto;
+           px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold 
+           rounded-full transition-all duration-500 transform hover:-translate-y-0.5 
+           overflow-hidden w-full sm:w-auto text-center select-none;
   }
 
-  /* Botón de reserva sobre fondo oscuro */
-  .btn-reserve {
-    @apply inline-flex items-center gap-4
-           bg-[#71B1A5] text-[#27252B]
-           px-8 py-4 text-sm tracking-[0.22em] uppercase font-medium
-           hover:bg-[#5a9a8e] transition-colors duration-300;
+  /* Botón Primario: Sólido Antracita / Hover Corporativo Verde */
+  .btn-primary {
+    @apply btn-premium-base bg-[#27252B] text-white border border-transparent
+           shadow-lg shadow-[#27252B]/5 hover:bg-[#71B1A5] hover:shadow-xl hover:shadow-[#71B1A5]/20;
   }
 
-  /* Botón de WhatsApp */
+  /* Botón Secundario: Contraste Cristal con borde sutil */
+  .btn-secondary {
+    @apply btn-premium-base border border-[#27252B]/30 bg-[#FDFBF9]/60 backdrop-blur-md text-[#27252B]
+           shadow-sm hover:border-[#71B1A5] hover:text-[#71B1A5] hover:bg-white/90 hover:shadow-xl hover:shadow-[#71B1A5]/10;
+  }
+
+  /* Clases simplificadas que antes duplicaban código */
+  .btn-shimmer, .btn-cta-hero, .btn-reserve {
+    @apply btn-primary;
+  }
+
+  /* Redes sociales y Utilidades */
   .whatsapp-btn {
-    @apply inline-flex items-center gap-2.5
-           bg-[#25D366]/10 text-[#128C4E]
-           border border-[#25D366]/25
-           px-4 py-2.5
-           text-xs tracking-[0.12em] uppercase font-medium
-           hover:bg-[#25D366]/20 hover:border-[#25D366]/50
-           transition-all duration-300;
+    @apply inline-flex items-center gap-2.5 bg-[#25D366]/10 text-[#128C4E] border border-[#25D366]/25 px-4 py-2.5 text-xs tracking-[0.12em] uppercase font-medium hover:bg-[#25D366]/20 hover:border-[#25D366]/50 transition-all duration-300 rounded-full;
   }
 
-  /* Botón de icono para redes sociales */
   .social-icon-btn {
-    @apply w-9 h-9 border border-[#27252B]/15
-           flex items-center justify-center
-           text-[#27252B]/40
-           hover:border-[#71B1A5] hover:text-[#71B1A5]
-           transition-all duration-300;
+    @apply w-9 h-9 border border-[#27252B]/15 flex items-center justify-center text-[#27252B]/40 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-all duration-300 rounded-full;
   }
-
 
   /* ════════════════════════════════════════════════════════
      SECCIÓN: Formularios
      ════════════════════════════════════════════════════════ */
-
-  /* Wrapper de campo de formulario */
-  .form-field {
-    @apply space-y-2;
-  }
-
-  /* Label de formulario */
-  .form-label {
-    @apply block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase;
-  }
-
-  /* Input / Select / Textarea de formulario */
+  .form-field { @apply space-y-2; }
+  .form-label { @apply block text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase; }
   .input-field {
-    @apply w-full border border-[#27252B]/15 bg-[#FDFBF9]
-           px-5 py-3.5 text-sm text-[#27252B]
-           placeholder-[#27252B]/30 font-light
-           focus:outline-none focus:border-[#71B1A5]
-           transition-colors duration-300;
+    @apply w-full border border-[#27252B]/15 bg-[#FDFBF9] px-5 py-3.5 text-sm text-[#27252B] placeholder-[#27252B]/30 font-light focus:outline-none focus:border-[#71B1A5] transition-colors duration-300;
   }
-
-  /* Mensaje de error de campo de formulario */
-  .form-error {
-    @apply text-xs text-red-500 font-light mt-1;
-  }
-
+  .form-error { @apply text-xs text-red-500 font-light mt-1; }
 
   /* ════════════════════════════════════════════════════════
-     SECCIÓN: Contacto
+     SECCIÓN: Contacto, Equipo y Formaciones
      ════════════════════════════════════════════════════════ */
+  .contact-icon-wrap { @apply w-11 h-11 bg-[#71B1A5]/10 flex items-center justify-center flex-shrink-0 mt-0.5; }
+  .contact-item-label { @apply text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase mb-2; }
+  .contact-icon-circle { @apply w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0 rounded-full; }
+  .contact-divider { @apply h-px bg-[#27252B]/10; }
+  .contact-card { @apply bg-white border border-[#27252B]/10 p-8 space-y-6; }
+  .cta-box-dark { @apply bg-[#27252B] p-9 md:p-10; }
 
-  /* Wrapper de icono en bloques de contacto */
-  .contact-icon-wrap {
-    @apply w-11 h-11 bg-[#71B1A5]/10 flex items-center justify-center flex-shrink-0 mt-0.5;
-  }
-
-  /* Etiqueta de ítem de contacto (h3 interior) */
-  .contact-item-label {
-    @apply text-xs font-medium text-[#27252B] tracking-[0.18em] uppercase mb-2;
-  }
-
-  /* Wrapper de ítem de contacto con icono */
-  .contact-icon-circle {
-    @apply w-9 h-9 bg-[#71B1A5]/10 flex items-center justify-center shrink-0;
-  }
-
-  /* Separador de ítem de contacto */
-  .contact-divider {
-    @apply h-px bg-[#27252B]/10;
-  }
-
-  /* Tarjeta de contacto (fondo blanco con borde) */
-  .contact-card {
-    @apply bg-white border border-[#27252B]/10 p-8 space-y-6;
-  }
-
-  /* CTA box oscuro de reserva */
-  .cta-box-dark {
-    @apply bg-[#27252B] p-9 md:p-10;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Equipo
-     ════════════════════════════════════════════════════════ */
-
-  /* Tarjeta de miembro del equipo */
   .team-card {
-    @apply bg-[#FDFBF9] overflow-hidden
-           flex flex-col sm:flex-row
-           border border-[#27252B]/10
-           hover:border-[#71B1A5]/50
-           transition-all duration-500
-           hover:shadow-xl hover:shadow-[#71B1A5]/5;
+    @apply bg-[#FDFBF9] overflow-hidden flex flex-col sm:flex-row border border-[#27252B]/10 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#71B1A5]/5;
   }
+  .team-card-badge { @apply absolute top-4 left-4 text-white text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 font-medium; }
+  .team-card-role { @apply text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium; }
+  .team-card-link { @apply text-xs tracking-[0.18em] uppercase text-[#27252B] border-b border-[#27252B]/30 pb-0.5 hover:border-[#71B1A5] hover:text-[#71B1A5] transition-colors duration-200; }
 
-  /* Badge de rol en tarjeta de equipo */
-  .team-card-badge {
-    @apply absolute top-4 left-4
-           text-white text-[10px] tracking-[0.2em] uppercase
-           px-3 py-1.5 font-medium;
-  }
-
-  /* Rol / subtítulo del miembro del equipo */
-  .team-card-role {
-    @apply text-[#71B1A5] text-[10px] tracking-[0.22em] uppercase font-medium;
-  }
-
-  /* Enlace "Ver especialidad" en tarjeta de equipo */
-  .team-card-link {
-    @apply text-xs tracking-[0.18em] uppercase
-           text-[#27252B] border-b border-[#27252B]/30 pb-0.5
-           hover:border-[#71B1A5] hover:text-[#71B1A5]
-           transition-colors duration-200;
-  }
-
+  .training-card { @apply bg-[#FDFBF9] overflow-hidden flex flex-col border border-[#27252B]/10 hover:border-[#71B1A5]/50 transition-colors duration-300; }
+  .training-tag { @apply text-[10px] tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-2.5 py-1 font-medium; }
+  .formation-label { @apply text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase; }
+  .formation-title-dark { @apply font-serif italic text-white text-3xl md:text-4xl leading-[1.2]; }
+  .formation-title-light { @apply font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2]; }
+  
+  .logistics-row { @apply flex items-start justify-between px-6 py-5 gap-6; }
+  .logistics-label { @apply text-sm text-white/50 font-light shrink-0; }
+  .logistics-value { @apply text-sm text-white font-medium; }
+  
+  .prof-avatar-sm { @apply w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10; }
+  .prof-avatar-lg { @apply w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10; }
+  .prof-name { @apply text-sm font-semibold text-[#27252B] leading-tight; }
+  .prof-role { @apply text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug; }
+  .prof-card-body { @apply border-t border-[#27252B]/10 pt-5; }
+  .prof-bio { @apply text-sm text-[#27252B]/60 font-light leading-[1.85]; }
 
   /* ════════════════════════════════════════════════════════
-     SECCIÓN: Formaciones
+     SECCIÓN: Beneficios, Procesos y Terapias
      ════════════════════════════════════════════════════════ */
+  .benefit-card { @apply p-9 bg-[#27252B] hover:bg-white/5 transition-colors duration-300; }
+  .benefit-number { @apply font-serif italic text-[#71B1A5]/25 text-6xl leading-none block mb-5 select-none group-hover:text-[#71B1A5]/45 transition-colors duration-300; }
+  .benefit-title { @apply text-white font-medium text-base md:text-lg mb-4 leading-snug; }
+  .benefit-desc { @apply text-white/55 text-sm md:text-base leading-[1.9] font-light; }
+  .process-number { @apply font-serif italic text-[#71B1A5]/20 text-7xl leading-none block mb-6 select-none; }
 
-  /* Tarjeta de formación / curso */
-  .training-card {
-    @apply bg-[#FDFBF9] overflow-hidden
-           flex flex-col
-           border border-[#27252B]/10
-           hover:border-[#71B1A5]/50
-           transition-colors duration-300;
-  }
+  .date-row { @apply grid md:grid-cols-12 gap-4 md:gap-6 items-center px-6 md:px-8 py-7 md:py-9 hover:bg-white transition-colors duration-200; }
+  .date-day { @apply font-serif italic text-[#71B1A5] text-4xl md:text-5xl leading-none; }
+  .work-area-row { @apply flex items-start gap-5 px-6 py-6 hover:bg-[#71B1A5]/5 transition-colors duration-150; }
+  .work-area-number { @apply font-serif italic text-[#71B1A5]/40 text-3xl leading-none select-none mt-0.5 shrink-0 w-8; }
 
-  /* Tag de formación / badge de programa */
-  .training-tag {
-    @apply text-[10px] tracking-[0.2em] uppercase
-           bg-[#71B1A5]/10 text-[#71B1A5]
-           px-2.5 py-1 font-medium;
-  }
-
-  /* Eyebrow label de sección (variante tracking amplio) */
-  .formation-label {
-    @apply text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase;
-  }
-
-  /* Título H2 de formación (blanco, sobre fondo oscuro) */
-  .formation-title-dark {
-    @apply font-serif italic text-white text-3xl md:text-4xl leading-[1.2];
-  }
-
-  /* Título H2 de formación (oscuro, sobre fondo claro) */
-  .formation-title-light {
-    @apply font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2];
-  }
-
-  /* Fila de dato logístico (tabla de convocatoria) */
-  .logistics-row {
-    @apply flex items-start justify-between px-6 py-5 gap-6;
-  }
-
-  /* Etiqueta de dato logístico (columna izquierda) */
-  .logistics-label {
-    @apply text-sm text-white/50 font-light shrink-0;
-  }
-
-  /* Valor de dato logístico (columna derecha) */
-  .logistics-value {
-    @apply text-sm text-white font-medium;
-  }
-
-  /* Wrapper imagen avatar de profesorado (pequeño, Gestalt) */
-  .prof-avatar-sm {
-    @apply w-11 h-11 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
-  }
-
-  /* Wrapper imagen avatar de profesorado (grande, Wingwave) */
-  .prof-avatar-lg {
-    @apply w-14 h-14 overflow-hidden flex-shrink-0 bg-[#71B1A5]/10;
-  }
-
-  /* Nombre del docente / facilitador */
-  .prof-name {
-    @apply text-sm font-semibold text-[#27252B] leading-tight;
-  }
-
-  /* Cargo del docente / facilitador */
-  .prof-role {
-    @apply text-[0.7rem] text-[#71B1A5] mt-0.5 tracking-wide leading-snug;
-  }
-
-  /* Separador interno de tarjeta de profesorado */
-  .prof-card-body {
-    @apply border-t border-[#27252B]/10 pt-5;
-  }
-
-  /* Biografía del docente */
-  .prof-bio {
-    @apply text-sm text-[#27252B]/60 font-light leading-[1.85];
-  }
-
+  .service-tag { @apply text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium; }
+  .therapy-card { @apply block bg-white border border-[#27252B]/10 overflow-hidden hover:border-[#71B1A5]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/10; }
+  .therapy-card-body { @apply p-5; }
+  .therapy-card-category { @apply text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1; }
+  .therapy-card-link { @apply text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3 flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200; }
 
   /* ════════════════════════════════════════════════════════
-     SECCIÓN: Beneficios y proceso
+     SECCIÓN: Navegación, Heros y Animaciones
      ════════════════════════════════════════════════════════ */
+  .nav-back-link { @apply inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase text-[#27252B]/50 hover:text-[#71B1A5] transition-colors duration-200; }
+  .nav-back-link-dark { @apply inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors duration-200; }
+  .nav-link-back { @apply inline-flex items-center gap-4; }
+  .nav-link-line { @apply w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300; }
+  .nav-link-text { @apply text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200; }
 
-  /* Tarjeta de beneficio / bloque de contenido oscuro */
-  .benefit-card {
-    @apply p-9 bg-[#27252B] hover:bg-white/5 transition-colors duration-300;
-  }
-
-  /* Número decorativo serif de beneficio */
-  .benefit-number {
-    @apply font-serif italic text-[#71B1A5]/25 text-6xl
-           leading-none block mb-5 select-none
-           group-hover:text-[#71B1A5]/45 transition-colors duration-300;
-  }
-
-  /* Título de beneficio */
-  .benefit-title {
-    @apply text-white font-medium text-base md:text-lg mb-4 leading-snug;
-  }
-
-  /* Descripción de beneficio */
-  .benefit-desc {
-    @apply text-white/55 text-sm md:text-base leading-[1.9] font-light;
-  }
-
-  /* Número decorativo de paso de proceso */
-  .process-number {
-    @apply font-serif italic text-[#71B1A5]/20 text-7xl
-           leading-none block mb-6 select-none;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Calendarios, fechas y áreas de trabajo
-     ════════════════════════════════════════════════════════ */
-
-  /* Fila de fecha en calendario */
-  .date-row {
-    @apply grid md:grid-cols-12 gap-4 md:gap-6 items-center
-           px-6 md:px-8 py-7 md:py-9
-           hover:bg-white transition-colors duration-200;
-  }
-
-  /* Número de día en calendario */
-  .date-day {
-    @apply font-serif italic text-[#71B1A5] text-4xl md:text-5xl leading-none;
-  }
-
-  /* Fila de área de trabajo */
-  .work-area-row {
-    @apply flex items-start gap-5 px-6 py-6
-           hover:bg-[#71B1A5]/5 transition-colors duration-150;
-  }
-
-  /* Número decorativo de área de trabajo */
-  .work-area-number {
-    @apply font-serif italic text-[#71B1A5]/40 text-3xl
-           leading-none select-none mt-0.5 shrink-0 w-8;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Terapias
-     ════════════════════════════════════════════════════════ */
-
-  /* Tag / Badge de servicio */
-  .service-tag {
-    @apply text-xs tracking-[0.2em] uppercase
-           bg-[#71B1A5]/10 text-[#71B1A5]
-           px-3 py-1.5 font-medium;
-  }
-
-  /* Tarjeta de terapia relacionada */
-  .therapy-card {
-    @apply block bg-white border border-[#27252B]/10 overflow-hidden
-           hover:border-[#71B1A5]/40 transition-all duration-300
-           hover:-translate-y-1 hover:shadow-lg hover:shadow-[#71B1A5]/10;
-  }
-
-  /* Contenido interior de tarjeta de terapia */
-  .therapy-card-body {
-    @apply p-5;
-  }
-
-  /* Categoría dentro de tarjeta de terapia */
-  .therapy-card-category {
-    @apply text-xs tracking-[0.2em] uppercase text-[#71B1A5] font-medium mb-1;
-  }
-
-  /* Enlace "Ver más" dentro de tarjeta de terapia */
-  .therapy-card-link {
-    @apply text-xs tracking-[0.15em] uppercase text-[#27252B]/45 mt-3
-           flex items-center gap-2 group-hover:text-[#71B1A5] transition-colors duration-200;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Navegación
-     ════════════════════════════════════════════════════════ */
-
-  /* Enlace de navegación de retorno */
-  .nav-back-link {
-    @apply inline-flex items-center gap-2
-           text-sm tracking-[0.2em] uppercase
-           text-[#27252B]/50 hover:text-[#71B1A5]
-           transition-colors duration-200;
-  }
-
-  /* Enlace de navegación de retorno sobre fondo oscuro */
-  .nav-back-link-dark {
-    @apply inline-flex items-center gap-2
-           text-xs tracking-[0.2em] uppercase
-           text-white/40 hover:text-white
-           transition-colors duration-200;
-  }
-
-  /* Enlace de navegación inferior (flecha izquierda) */
-  .nav-link-back {
-    @apply inline-flex items-center gap-4;
-  }
-
-  /* Línea animada de enlace de navegación */
-  .nav-link-line {
-    @apply w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300;
-  }
-
-  /* Texto de enlace de navegación inferior */
-  .nav-link-text {
-    @apply text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Hero — animaciones de entrada
-     Migrado desde index.vue <style>
-     ════════════════════════════════════════════════════════ */
-
-  /*
-   * Cada elemento del hero arranca en opacity-0 y sube 24px.
-   * Se activa con heroFadeUp. El animation-delay se aplica
-   * inline en el template para mantener la flexibilidad
-   * por elemento: style="animation-delay: 0.25s;"
-   */
   .hero-item {
     opacity: 0;
     animation: heroFadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-
-  /*
-   * Línea vertical con pulso de scroll.
-   * Uso: <div class="scroll-line w-px h-10 bg-gradient-to-b from-[#71B1A5] to-transparent">
-   */
   .scroll-line {
     animation: scrollPulse 2s ease-in-out infinite;
     transform-origin: top center;
   }
 
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Marquee (carrusel infinito de testimonios)
-     Migrado desde index.vue <style>
-     ════════════════════════════════════════════════════════ */
-
-  /*
-   * Wrapper externo: oculta el overflow horizontal del track.
-   * Admite la variable CSS --duration para controlar la
-   * velocidad por instancia: style="--duration: 55s;"
-   */
-  .marquee-wrapper {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  /*
-   * Track: fila flex de anchura natural que se desplaza.
-   * Dirección por defecto → izquierda.
-   */
-  .marquee-track {
-    display: flex;
-    gap: 16px;
-    width: max-content;
-    animation: marquee-ltr var(--duration, 55s) linear infinite;
-  }
-
-  /* Variante de dirección inversa (derecha → izquierda) */
-  .marquee-reverse .marquee-track {
-    animation-name: marquee-rtl;
-  }
-
-  /* Pausar al hacer hover para lectura cómoda */
-  .marquee-wrapper:hover .marquee-track {
-    animation-play-state: paused;
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Tarjetas de testimonio
-     Migrado desde index.vue <style>
-     ════════════════════════════════════════════════════════ */
+  /* Marquee de Testimonios */
+  .marquee-wrapper { width: 100%; overflow: hidden; }
+  .marquee-track { display: flex; gap: 16px; width: max-content; animation: marquee-ltr var(--duration, 55s) linear infinite; }
+  .marquee-reverse .marquee-track { animation-name: marquee-rtl; }
+  .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
 
   .testimonial-card {
-    position: relative;
-    flex-shrink: 0;
-    width: 300px;
-    background: #fff;
-    border: 1px solid rgba(39, 37, 43, 0.07);
-    border-top: 2px solid #71B1A5;
-    padding: 28px 28px 24px;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    overflow: hidden;
+    position: relative; flex-shrink: 0; width: 300px; background: #fff; border: 1px solid rgba(39, 37, 43, 0.07); border-top: 2px solid #71B1A5; padding: 28px 28px 24px; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1); overflow: hidden;
   }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(113, 177, 165, 0.12); }
+  .testimonial-card--dark { background: #27252B; border-color: transparent; border-top-color: #71B1A5; }
+  .testimonial-card--dark:hover { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); }
+  .testimonial-quote { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: rgba(113, 177, 165, 0.20); font-size: 5rem; line-height: 1; position: absolute; top: -4px; left: 20px; user-select: none; pointer-events: none; }
+  .testimonial-quote--dark { color: rgba(113, 177, 165, 0.12); }
 
-  .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(113, 177, 165, 0.12);
-  }
-
-  /* Variante oscura (fila 2 del marquee) */
-  .testimonial-card--dark {
-    background: #27252B;
-    border-color: transparent;
-    border-top-color: #71B1A5;
-  }
-
-  .testimonial-card--dark:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  }
-
-  /*
-   * Comilla decorativa serif gigante.
-   * Es aria-hidden en el template, así que su valor
-   * semántico es puramente visual.
-   */
-  .testimonial-quote {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    color: rgba(113, 177, 165, 0.20);
-    font-size: 5rem;
-    line-height: 1;
-    position: absolute;
-    top: -4px;
-    left: 20px;
-    user-select: none;
-    pointer-events: none;
-  }
-
-  .testimonial-quote--dark {
-    color: rgba(113, 177, 165, 0.12);
-  }
-
-
-  /* ════════════════════════════════════════════════════════
-     SECCIÓN: Mariposa Animada 3D (La Seda)
-     ════════════════════════════════════════════════════════ */
-
-  /* Contenedor de la escena con perspectiva */
-  .scene-container {
-    perspective: 800px;
-    perspective-origin: 50% 50%;
-  }
-
-  .butterfly-wrapper {
-    @apply relative flex items-center justify-center w-[30px] h-[30px];
-    transform-style: preserve-3d;
-  }
-
-  /* Animación de balanceo vertical de la mariposa */
-  .butterfly-3d {
-    animation: hoverButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite;
-    animation-direction: alternate;
-    animation-fill-mode: reverse;
-    @apply relative w-[30px];
-    transform-style: preserve-3d;
-    transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateY(0px);
-  }
-
-  /* Cuerpo de la mariposa */
-  .butterfly-3d::before {
-    content: '';
-    @apply block absolute w-5 h-[110px] top-[-15px] left-1/2 -ml-2.5 rounded-full z-[2];
-    background: #1d1a1f;
-    outline: 1px solid transparent;
-    transform: rotateY(100deg);
-  }
-
-  /* Sombra proyectada */
-  .shadow-3d {
-    animation: shadowButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite;
-    animation-direction: alternate;
-    animation-fill-mode: reverse;
-    @apply block absolute w-[100px] h-[12px] rounded-full opacity-[0.07];
-    background: #27252B;
-    transform-origin: 50% 50%;
-    transform: translateX(-20px) translateY(120px);
-  }
-
-  /* Estructura base de las alas */
-  .wing-3d {
-    @apply block absolute top-0 bg-[#888] opacity-85;
-    outline: 1px solid transparent;
-  }
-
-  /* Ala izquierda con su ciclo de aleteo */
-  .wing-3d:first-child {
-    animation: leftFlap 250ms cubic-bezier(.48,.01,.54,1) infinite;
-    animation-direction: alternate;
-    animation-fill-mode: reverse;
-    @apply w-px h-px left-0 z-[3];
-    transform: rotateY(-20deg);
-    transform-origin: 700% 50%;
-  }
-
-  /* Ala derecha con su ciclo de aleteo */
-  .wing-3d:last-child {
-    animation: rightFlap 250ms cubic-bezier(.48,.01,.54,1) infinite;
-    animation-direction: alternate;
-    animation-fill-mode: reverse;
-    @apply w-px h-px right-0 z-[1];
-    transform: rotateY(200deg);
-  }
-
-  /* Color principal de las alas: Verde Corporativo (#71B1A5) */
-  .wing-3d .bit-3d {
-    @apply bg-[#71B1A5];
-  }
-
-  /* Color secundario interior de las alas */
-  .wing-3d .bit-3d::after {
-    @apply bg-[#8ec4bc];
-  }
-
-  .wing-3d .bit-3d,
-  .wing-3d .bit-3d::after {
-    @apply absolute top-0 right-0 rounded-full overflow-hidden;
-    transform-origin: 100% 50%;
-  }
-
-  .wing-3d .bit-3d:first-child {
-    @apply w-[130px] h-[70px] top-[15px] text-center;
-    transform: rotateZ(40deg);
-  }
-
-  .wing-3d .bit-3d:first-child::after {
-    content: '';
-    @apply inline-block w-[100px] h-[60px] top-[5px] left-[-30px];
-  }
-
-  .wing-3d .bit-3d:last-child {
-    @apply w-[100px] h-[55px];
-    transform: rotateZ(-40deg);
-  }
-
-  .wing-3d .bit-3d:last-child::after {
-    content: '';
-    @apply inline-block w-[60px] h-[45px] top-[5px] left-[-24px] z-[1];
-  }
+  /* Mariposa Animada 3D */
+  .scene-container { perspective: 800px; perspective-origin: 50% 50%; }
+  .butterfly-wrapper { @apply relative flex items-center justify-center w-[30px] h-[30px]; transform-style: preserve-3d; }
+  .butterfly-3d { animation: hoverButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite; animation-direction: alternate; animation-fill-mode: reverse; @apply relative w-[30px]; transform-style: preserve-3d; transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateY(0px); }
+  .butterfly-3d::before { content: ''; @apply block absolute w-5 h-[110px] top-[-15px] left-1/2 -ml-2.5 rounded-full z-[2]; background: #1d1a1f; transform: rotateY(100deg); }
+  .shadow-3d { animation: shadowButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite; animation-direction: alternate; animation-fill-mode: reverse; @apply block absolute w-[100px] h-[12px] rounded-full opacity-[0.07]; background: #27252B; transform-origin: 50% 50%; transform: translateX(-20px) translateY(120px); }
+  .wing-3d { @apply block absolute top-0 bg-[#888] opacity-85; }
+  .wing-3d:first-child { animation: leftFlap 250ms cubic-bezier(.48,.01,.54,1) infinite; animation-direction: alternate; animation-fill-mode: reverse; @apply w-px h-px left-0 z-[3]; transform: rotateY(-20deg); transform-origin: 700% 50%; }
+  .wing-3d:last-child { animation: rightFlap 250ms cubic-bezier(.48,.01,.54,1) infinite; animation-direction: alternate; animation-fill-mode: reverse; @apply w-px h-px right-0 z-[1]; transform: rotateY(200deg); }
+  .wing-3d .bit-3d { @apply bg-[#71B1A5]; }
+  .wing-3d .bit-3d::after { @apply bg-[#8ec4bc]; }
+  .wing-3d .bit-3d, .wing-3d .bit-3d::after { @apply absolute top-0 right-0 rounded-full overflow-hidden; transform-origin: 100% 50%; }
+  .wing-3d .bit-3d:first-child { @apply w-[130px] h-[70px] top-[15px] text-center; transform: rotateZ(40deg); }
+  .wing-3d .bit-3d:first-child::after { content: ''; @apply inline-block w-[100px] h-[60px] top-[5px] left-[-30px]; }
+  .wing-3d .bit-3d:last-child { @apply w-[100px] h-[55px]; transform: rotateZ(-40deg); }
+  .wing-3d .bit-3d:last-child::after { content: ''; @apply inline-block w-[60px] h-[45px] top-[5px] left-[-24px] z-[1]; }
 }
-
 
 /* ──────────────────────────────────────────────────────────
    @keyframes globales
-   Todas las animaciones en un único bloque, ordenadas
-   por origen / función para facilitar el mantenimiento.
    ────────────────────────────────────────────────────────── */
-
-/* ── Hero ─────────────────────────────────────────────── */
-@keyframes heroFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ── Scroll indicator ─────────────────────────────────── */
-@keyframes scrollPulse {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scaleY(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scaleY(1.1);
-  }
-}
-
-/* ── Marquee (carrusel de testimonios) ───────────────── */
-@keyframes marquee-ltr {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-rtl {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-/* ── Mariposa 3D ─────────────────────────────────────── */
-@keyframes hoverButterfly {
-  0%   { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(0px); }
-  100% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(-6px); }
-}
-
-@keyframes shadowButterfly {
-  0%   { transform: translateX(-20px) translateY(120px) scale(1, 1); }
-  100% { transform: translateX(-20px) translateY(120px) scale(1.15, 1.15); }
-}
-
-@keyframes leftFlap {
-  0%   { transform: rotateY(-20deg); }
-  100% { transform: rotateY(90deg); }
-}
-
-@keyframes rightFlap {
-  0%   { transform: rotateY(200deg); }
-  100% { transform: rotateY(90deg); }
-}
-
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scrollPulse { 0%, 100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 0.9; transform: scaleY(1.1); } }
+@keyframes marquee-ltr { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes marquee-rtl { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+@keyframes hoverButterfly { 0% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(0px); } 100% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(-6px); } }
+@keyframes shadowButterfly { 0% { transform: translateX(-20px) translateY(120px) scale(1, 1); } 100% { transform: translateX(-20px) translateY(120px) scale(1.15, 1.15); } }
+@keyframes leftFlap { 0% { transform: rotateY(-20deg); } 100% { transform: rotateY(90deg); } }
+@keyframes rightFlap { 0% { transform: rotateY(200deg); } 100% { transform: rotateY(90deg); } }
 
 /* ──────────────────────────────────────────────────────────
-   Accesibilidad: prefers-reduced-motion
-   Agrupa en un único bloque todas las animaciones que
-   deben desactivarse cuando el usuario las ha reducido.
+   Galería y Lightbox del Local
    ────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .hero-item {
-    animation: none;
-    opacity: 1;
-  }
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 768px) { .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 4px; } }
+.gallery-item { position: relative; aspect-ratio: 4 / 3; overflow: hidden; cursor: zoom-in; display: block; border: none; padding: 0; background: #27252B; }
+.gallery-overlay { position: absolute; inset: 0; background: rgba(39, 37, 43, 0); display: flex; align-items: center; justify-content: center; transition: background 0.4s ease; }
+.gallery-item:hover .gallery-overlay { background: rgba(39, 37, 43, 0.45); }
+.gallery-overlay svg { opacity: 0; transform: scale(0.85); transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.gallery-item:hover .gallery-overlay svg { opacity: 1; transform: scale(1); }
 
-  .scroll-line {
-    animation: none;
-  }
-
-  .marquee-track {
-    animation-play-state: paused;
-  }
-
-  .butterfly-3d,
-  .shadow-3d,
-  .wing-3d:first-child,
-  .wing-3d:last-child {
-    animation: none;
-  }
-
-
-  @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-}
-
-
-
-
-/* ════════════════════════════════════════════════════════
-   GALERÍA DEL LOCAL
-   ════════════════════════════════════════════════════════ */
-
-/* Grid full-width: 4 columnas desktop, 2 móvil */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;  /* 1 columna en móvil */
-  gap: 0;                       /* sin separación */
-}
-
-@media (min-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;  /* mantén el gap en desktop si quieres, o ponlo a 0 también */
-  }
-}
-
-/* Cada celda: proporción 4:3, overflow oculto */
-.gallery-item {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  cursor: zoom-in;
-  display: block;
-  border: none;
-  padding: 0;
-  background: #27252B;
-}
-
-/* Overlay con lupa al hover */
-.gallery-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(39, 37, 43, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.4s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-  background: rgba(39, 37, 43, 0.45);
-}
-
-.gallery-overlay svg {
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.gallery-item:hover .gallery-overlay svg {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ════════════════════════════════════════════════════════
-   LIGHTBOX
-   ════════════════════════════════════════════════════════ */
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(13, 12, 15, 0.96);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  animation: fadeIn 0.25s ease;
-}
-
-.lightbox-img-wrap {
-  max-width: min(90vw, 1100px);
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.lightbox-img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  border-radius: 2px;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
-}
-
-.lightbox-caption {
-  color: rgba(255,255,255,0.45);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  color: rgba(255,255,255,0.6);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  transition: color 0.2s;
-  z-index: 10;
-}
-
+.lightbox-backdrop { position: fixed; inset: 0; background: rgba(13, 12, 15, 0.96); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 16px; animation: fadeIn 0.25s ease; }
+.lightbox-img-wrap { max-width: min(90vw, 1100px); max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.lightbox-img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 2px; box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7); }
+.lightbox-caption { color: rgba(255,255,255,0.45); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; }
+.lightbox-close { position: absolute; top: 20px; right: 24px; color: rgba(255,255,255,0.6); background: none; border: none; cursor: pointer; padding: 8px; transition: color 0.2s; z-index: 10; }
 .lightbox-close:hover { color: #fff; }
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.7);
-  cursor: pointer;
-  padding: 14px;
-  transition: background 0.2s, color 0.2s;
-  z-index: 10;
-}
-
-.lightbox-nav:hover {
-  background: rgba(113, 177, 165, 0.25);
-  color: #fff;
-}
-
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); cursor: pointer; padding: 14px; transition: background 0.2s, color 0.2s; z-index: 10; }
+.lightbox-nav:hover { background: rgba(113, 177, 165, 0.25); color: #fff; }
 .lightbox-nav--prev { left: 20px; }
 .lightbox-nav--next { right: 20px; }
+.lightbox-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.35); font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; }
 
-.lightbox-counter {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,0.35);
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-
-/* ════════════════════════════════════════════════════════════
-   PAGE HERO — Layout Dinámico Responsivo Inteligente
-   ════════════════════════════════════════════════════════════ */
-
-/* Contenedor Raíz (Solución al fondo negro usando 100svh) */
-.page-hero-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh; /* Se adapta restando las barras de Safari/Chrome en móvil */
-  width: 100%;
-  background-color: #F5F2EE;
-}
-
-@media (min-width: 768px) {
-  .page-hero-root {
-    flex-direction: row;
-    height: 80vh; /* Altura ideal en escritorio para páginas secundarias */
-    min-height: 600px;
-    max-height: 100vh;
-  }
-}
-
-/* Base de los paneles */
-.page-hero-panel-left,
-.page-hero-panel-right {
+/* ──────────────────────────────────────────────────────────
+   NUEVO SISTEMA CORRECTOR: Layout Dinámico de Páginas Interiores y Mariposa
+   ────────────────────────────────────────────────────────── */
+.page-hero-root { 
+  display: flex; 
+  flex-direction: column; 
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 100%; 
+  background-color: #F5F2EE; 
 }
 
-/* Panel Izquierdo (Texto) */
-.page-hero-panel-left {
-  flex-shrink: 0;
+/* En escritorio las dos columnas se acoplan y se estiran simétricamente */
+@media (min-width: 768px) { 
+  .page-hero-root { 
+    flex-direction: row; 
+    align-items: stretch; /* Obliga a igualar alturas según el texto */
+    min-height: 540px; 
+  } 
 }
 
-@media (min-width: 768px) {
-  .page-hero-panel-left {
-    width: 50%;
-    height: 100%;
-  }
-}
-
-/* Panel Derecho (Imagen de Sección) */
-.page-hero-panel-right {
-  height: 320px; /* Evita que la foto colapse en móviles */
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .page-hero-panel-right {
-    width: 50%;
-    height: 100%;
-  }
-}
-
-/* Alineación interior del bloque crema */
-.page-hero-inner {
-  height: 100%;
+/* Contenedor Izquierdo del Texto */
+.page-hero-panel-left { 
+  position: relative; 
+  width: 100%; 
+  z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
-/* ════════════════════════════════════════════════════════════
-   COMPORTAMIENTO RESPONSIVO DE LA MARIPOSA (PAGINAS INTERNAS)
-   ════════════════════════════════════════════════════════════ */
-
-/* --- Configuración para Móvil --- */
-@media (max-width: 767px) {
-  .page-hero-butterfly {
-    top: 24px;
-    right: 32px;
-    /* Escala fija al 50% para que no compita con los textos dinámicos */
-    transform: scale(0.5) rotate(0deg);
-  }
+@media (min-width: 768px) { 
+  .page-hero-panel-left { 
+    width: 50%; 
+    flex-shrink: 0;
+  } 
 }
 
-/* --- Configuración para Desktop --- */
-@media (min-width: 768px) {
-  .page-hero-butterfly {
-    bottom: 20%; /* Centrada orgánicamente con respecto al bloque inferior */
-    right: 12%;
-    /* Escala premium elegante en pantallas grandes */
-    transform: scale(0.8) rotate(0deg);
-  }
-}
-
-/* Respetar accesibilidad de usuarios con animaciones desactivadas */
-@media (prefers-reduced-motion: reduce) {
-  .page-hero-butterfly {
-    transform: none !important;
-    transition: none !important;
-  }
-}
-
-
-/* Transición Crossfade Súper Rápida y sin Flashazo */
-.page-enter-from {
-  opacity: 0;
-}
-
-.page-leave-to {
-  opacity: 0;
-}
-
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Evita que una página empuje a la otra hacia abajo durante el cruce */
-.page-leave-active {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Contenedor Derecho del Minihero (Imagen) */
+.page-hero-panel-right { 
+  position: relative; 
   width: 100%;
+  overflow: hidden; 
+}
+@media (min-width: 768px) { 
+  .page-hero-panel-right { 
+    width: 50%; 
+    flex-shrink: 0;
+  } 
+  
+  /* Blindaje total para que la imagen no colapse y se adapte como un guante */
+  .page-hero-panel-right img,
+  .page-hero-panel-right :deep(img) {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}
+
+/* Soporte y comportamiento mobile fluido en superposición */
+@media (max-width: 767px) {
+  .page-hero-root {
+    min-height: 480px;
+  }
+  .page-hero-panel-left {
+    background-color: rgba(245, 242, 238, 0.78) !important;
+    backdrop-filter: blur(12px);
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+  .page-hero-panel-right {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+  .page-hero-panel-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Posicionamiento de la Mariposa en páginas interiores */
+@media (max-width: 767px) { .page-hero-butterfly { top: 24px; right: 32px; transform: scale(0.5) rotate(0deg); } }
+@media (min-width: 768px) { .page-hero-butterfly { bottom: 20%; right: 12%; transform: scale(0.8) rotate(0deg); } }
+
+/* Transiciones de Página SPA sin flashazos */
+.page-enter-from, .page-leave-to { opacity: 0; }
+.page-enter-active, .page-leave-active { transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
+.page-leave-active { position: absolute; top: 0; left: 0; width: 100%; }
+
+/* ──────────────────────────────────────────────────────────
+   Accesibilidad y Reducción de Movimiento
+   ────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-item, .scroll-line, .marquee-track, .butterfly-3d, .shadow-3d, .wing-3d, .page-hero-butterfly {
+    animation: none !important; transform: none !important; transition: none !important; opacity: 1 !important;
+  }
 }

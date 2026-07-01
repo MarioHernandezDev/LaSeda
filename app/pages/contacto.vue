@@ -541,131 +541,6 @@
       </div>
     </section>
 
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 4 · UN ESPACIO PARA TI
-    ════════════════════════════════════════════════ -->
-    <section
-      class="py-20 md:py-28"
-      aria-labelledby="espacio-heading"
-    >
-      <div class="page-container">
-        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-
-          <!-- Columna imagen -->
-          <div class="relative order-2 md:order-1">
-            <div
-              class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/40 pointer-events-none z-0"
-              aria-hidden="true"
-            />
-            <div class="relative z-10 overflow-hidden aspect-[3/4]">
-              <NuxtImg
-                src="/images/espacio-terapeutico-consulta-psicologia-granada-la-seda.jpg"
-                alt="Sala de terapia del Centro de Psicología La Seda en Granada: espacio cálido, luminoso y acogedor"
-                class="w-full h-full object-cover"
-                width="600"
-                height="800"
-                format="webp"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-[#27252B]/5 pointer-events-none"
-                aria-hidden="true"
-              />
-            </div>
-            <div
-              class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block"
-              aria-hidden="true"
-            >
-              <p class="section-label">Centro de Psicología</p>
-              <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
-            </div>
-          </div>
-
-          <!-- Columna de contenido -->
-          <div class="order-1 md:order-2">
-            <p class="section-label mb-4">Un espacio para ti</p>
-            <h2
-              id="espacio-heading"
-              class="font-serif italic text-3xl md:text-4xl leading-[1.2] mb-12"
-            >
-              Cada persona merece<br />
-              <span class="text-[#27252B]/60">un comienzo cálido.</span>
-            </h2>
-
-            <ol class="space-y-10 list-none" aria-label="Compromisos del centro">
-
-              <li class="flex gap-6 items-start">
-                <div class="shrink-0" aria-hidden="true">
-                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">01</span>
-                </div>
-                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
-                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Orientación sin compromiso</h3>
-                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                    Si no tienes claro qué necesitas, no pasa nada. En la primera
-                    consulta exploramos juntos qué te trae y cuál es el mejor camino.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
-              </li>
-
-              <li class="flex gap-6 items-start">
-                <div class="shrink-0" aria-hidden="true">
-                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">24h</span>
-                </div>
-                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
-                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Respuesta en menos de 24 horas</h3>
-                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                    Respondemos a todos los mensajes en menos de un día laborable.
-                    Ninguna consulta queda sin atención.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
-              </li>
-
-              <li class="flex gap-6 items-start">
-                <div class="shrink-0" aria-hidden="true">
-                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">100%</span>
-                </div>
-                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
-                  <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Confidencialidad garantizada</h3>
-                  <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                    Todo lo que compartes con nosotros permanece en el centro.
-                    Tu privacidad es parte esencial del proceso terapéutico.
-                  </p>
-                </div>
-              </li>
-
-            </ol>
-
-            <div class="mt-12 pt-8 border-t border-[#27252B]/10">
-              <NuxtLink
-                to="/conocenos"
-                class="inline-flex items-center gap-4 group"
-                aria-label="Conocer al equipo de psicólogos de La Seda Granada"
-              >
-                <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-                  Conocer al equipo
-                </span>
-                <span
-                  class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
-                  aria-hidden="true"
-                />
-              </NuxtLink>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 5 · MAPA
     ════════════════════════════════════════════════ -->
@@ -754,11 +629,7 @@
       </div>
     </section>
 
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 6 · CTA FINAL
-    ════════════════════════════════════════════════ -->
-    <section
+<section
       class="page-container py-20 md:py-24"
       aria-labelledby="cta-heading"
     >
@@ -782,38 +653,39 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row justify-center items-center gap-4">
+        
         <NuxtLink
           to="/conocenos"
-          class="inline-flex items-center gap-4 group"
+          class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#27252B] text-white border border-[#27252B] rounded-full group hover:bg-[#71B1A5] hover:border-[#71B1A5] transition-all duration-300 shadow-sm w-full sm:w-auto text-center"
           aria-label="Ir a la página del equipo de psicólogos de La Seda"
         >
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+          <span class="text-xs tracking-[0.22em] uppercase font-medium">
             Conocer al equipo
           </span>
           <span
-            class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
+            class="w-6 h-px bg-white/40 group-hover:w-9 transition-all duration-300"
             aria-hidden="true"
           />
         </NuxtLink>
 
         <NuxtLink
           to="/terapias"
-          class="inline-flex items-center gap-4 group"
+          class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-transparent text-[#27252B] border border-[#27252B]/20 rounded-full group hover:border-[#71B1A5] hover:text-[#71B1A5] transition-all duration-300 w-full sm:w-auto text-center"
           aria-label="Ver todos los servicios y terapias del Centro La Seda en Granada"
         >
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
+          <span class="text-xs tracking-[0.22em] uppercase font-medium">
             Ver nuestras terapias
           </span>
           <span
-            class="w-10 h-px bg-[#27252B]/20 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
+            class="w-6 h-px bg-[#27252B]/20 group-hover:w-9 group-hover:bg-[#71B1A5] transition-all duration-300"
             aria-hidden="true"
           />
         </NuxtLink>
+
       </div>
 
     </section>
-
   </main>
 </template>
 

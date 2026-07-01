@@ -36,7 +36,7 @@
       <div class="flex items-center gap-3">
         <span class="w-1 h-1 rounded-full bg-[#71B1A5]" aria-hidden="true" />
         <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#27252B]/40 font-sans">
-          Recorrido Clínico
+          Recorrido!
         </p>
       </div>
 

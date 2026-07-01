@@ -1,69 +1,21 @@
-<template>
-  <main class="bg-[#FDFBF9] antialiased min-h-screen relative w-full isolate">
-    
-    <div v-if="perfil">
-      
-      <ConocenosMiniHero :perfil="perfil" />
+// app/data/profesionales.ts
 
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
-        <ConocenosBiography :perfil="perfil" />
-      </div>
-
-      <div class="w-full my-20 lg:my-28">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ConocenosAsideInfo :perfil="perfil" />
-        </div>
-      </div>
-
-      <div class="page-container pb-16 md:pb-24 max-w-5xl mx-auto space-y-24 lg:space-y-36 px-4 sm:px-6 lg:px-8">
-        <ConocenosSpecialties :perfil="perfil" />
-        <ConocenosAcademic :perfil="perfil" />
-
-        <div class="pt-16 border-t border-[#27252B]/10 space-y-12">
-          <div class="flex justify-center pt-6">
-            <NuxtLink 
-              to="/conocenos" 
-              class="inline-flex items-center gap-4 group/btn py-2"
-              aria-label="Volver al catálogo del equipo"
-            >
-              <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
-              <span class="text-xs tracking-[0.2em] uppercase font-bold text-[#27252B]/50 group-hover/btn:text-[#71B1A5] transition-colors duration-300">
-                Ver todo el equipo
-              </span>
-              <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    
-  </main>
-</template>
-
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute, useSeoMeta, useHead } from '#app'
-
-// ─────────────────────────────────────────────────────────────
-// INTERFACES DEL MODELO DE DATOS
-// ─────────────────────────────────────────────────────────────
-interface AreaEspecializacion {
+export interface AreaEspecializacion {
   titulo: string
   descripcion: string
 }
 
-interface ItemFormacion {
+export interface ItemFormacion {
   titulo: string
   institucion: string
 }
 
-interface FotoGaleria {
+export interface FotoGaleria {
   src: string
   alt: string
 }
 
-interface PerfilProfesional {
+export interface PerfilProfesional {
   id: string
   nombre: string
   nombreCorto: string
@@ -86,10 +38,7 @@ interface PerfilProfesional {
   }
 }
 
-// ─────────────────────────────────────────────────────────────
-// BASE DE DATOS LOCAL CONSOLIDADA
-// ─────────────────────────────────────────────────────────────
-const perfiles: Record<string, PerfilProfesional> = {
+export const perfiles: Record<string, PerfilProfesional> = {
   'ana-jimenez': {
     id: 'ana-jimenez',
     nombre: 'Ana Jiménez',
@@ -117,7 +66,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     ],
     trayectoria: [
       'Ana comenzó su formación clínica en el Instituto Gestalt de Granada, ampliando posteriormente su base teórica con la formación en <strong>Psicoterapia Clínica Integrativa</strong> junto a Juanjo Albert, una de las figuras más reconocidas de la psicoterapia humanista en España.',
-      'Su participación en el <strong>Programa SAT de Claudio Naranjo</strong> marcó un point de inflexión en su desarrollo como terapeuta, integrando la psicología transpersonal, el trabajo con el carácter y la dimensión espiritual del proceso terapéutico.',
+      'Su participación en el <strong>Programa SAT de Claudio Naranjo</strong> marcó un punto de inflexión en su desarrollo como terapeuta, integrando la psicología transpersonal, el trabajo con el carácter y la dimensión espiritual del proceso terapéutico.',
       'Con <strong>más de doce años de experiencia clínica en Granada</strong>, ha acompañado a cientos de personas, familias y parejas en procesos de crisis, duelo, ansiedad, trauma y búsqueda de sentido. Co-fundó La Seda con la visión de crear un espacio donde rigor científico y sensibilidad humana formaran una misma cosa.',
     ],
     areasEspecializacion: [
@@ -130,7 +79,7 @@ const perfiles: Record<string, PerfilProfesional> = {
       { titulo: 'Licenciatura en Psicología', institucion: 'Universidad de Granada' },
       { titulo: 'Formación en Psicoterapia Gestalt (nivel didacta)', institucion: 'Instituto Gestalt de Granada · AETG' },
       { titulo: 'Postgrado en Psicoterapia Clínica Integrativa', institucion: 'Instituto Juanjo Albert, Valencia' },
-      { titulo: 'Formación en Terapia Sistémica y Constelaciones Familiares', institucion: 'Escuela de Terapia Familiar de Granada' },
+      { titulo: 'Formación en Terapia Sistémica y Constelaciones Familiares', institucion: 'Escuela Terapia Familiar de Granada' },
       { titulo: 'Programa SAT — Psicología del Carácter y Espiritualidad', institucion: 'Instituto SAT — Claudio Naranjo' },
       { titulo: 'Formación en Trauma y Apego en Infancia', institucion: 'Fundación FARO, Madrid' }
     ],
@@ -144,56 +93,62 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'Leonor Cabrera',
     nombreCorto: 'Leonor',
     rol: 'Co-dirección',
-    especialidadLabel: 'Terapia Gestalt, Transpersonal e Integrativa · Co-directora',
-    tituloOficial: 'Terapeuta Gestalt, Transpersonal e Integrativa · Coach Profesional Certificada',
+    especialidadLabel: 'Terapia Gestalt · Co-directora',
+    tituloOficial: 'Terapeuta Gestalt, transpersonal e integrativa · Formadora de profesionales · Coach Profesional Certificada',
     cita: 'Desatar los nudos del pasado nos permite recuperar la fuerza para habitar el presente.',
     imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
-    imagenAlt: 'Leonor Cabrera, terapeuta Gestalt, transpersonal e integrativa y co-directora del Centro La Seda en Granada',
+    imagenAlt: 'Leonor Cabrera, terapeuta integrativa y co-directora del Centro La Seda en Granada',
     galeria: [
-      { src: '/images/leonor-cabrera-formacion-wingwave.jpg', alt: 'Leonor Cabrera durante una formación de Coaching Wingwave®' },
-      { src: '/images/la-seda-sala-reuniones.jpg', alt: 'Instalaciones compartidas y espacios de acogida en La Seda Granada' }
+      { src: '/images/leonor-cabrera-formacion-wingwave.jpg', alt: 'Leonor Cabrera durante un acompañamiento terapéutico' },
+      { src: '/images/la-seda-sala-reuniones.jpg', alt: 'Espacio de trabajo y desarrollo personal en La Seda Granada' }
     ],
     acreditaciones: [
-      'Coach Profesional Certificada por Asesco — Nº 10.457',
-      'Co-formadora acreditada en Coaching Wingwave® — Instituto Besser-Siegmund, Hamburgo',
+      'Coach Profesional Certificada por ASESCO (Nº 10.457)',
+      'Coformadora acreditada en Coaching Wingwave® por el Instituto Besser-Siegmund de Hamburgo',
       'Profesora y colaboradora del Programa SAT de Claudio Naranjo',
     ],
-    tags: ['Terapia Gestalt', 'Trauma y memoria emocional', 'Eneagrama', 'Constelaciones Familiares', 'Coaching Wingwave®', 'PNL', 'Bioenergética', 'Formación de profesionales', 'Desarrollo personal'],
+    tags: [
+      'Terapia Gestalt',
+      'Trauma y memoria emocional',
+      'Eneagrama',
+      'Constelaciones Familiares',
+      'Coaching Wingwave®',
+      'PNL',
+      'Bioenergética',
+      'Formación de profesionales',
+      'Desarrollo personal'
+    ],
     biografiaExtendida: [
-      'Leonor Cabrera es <strong>terapeuta Gestalt, transpersonal e integrativa</strong>, con formación en trauma, trabajo corporal, constelaciones familiares y sistémicas, Eneagrama, PNL y coaching Wingwave®. Desde 2013 acompaña a personas que atraviesan crisis vitales, bloqueos emocionales, dificultades en sus relaciones, duelos, cambios importantes o momentos de pérdida de sentido, acumulando <strong>más de 5.000 horas de experiencia en sesiones individuales</strong>.',
-      'Su forma de trabajar integra la escucha terapéutica, el cuerpo, la comprensión del carácter, la memoria emocional y la mirada sistémica. No se centra únicamente en aquello que una persona quiere cambiar, sino también en los <strong>patrones emocionales, corporales y relacionales</strong> que siguen influyendo en su vida, adaptando el acompañamiento al ritmo y a los recursos de cada persona.',
-      'Junto al trabajo individual, una parte importante de su trayectoria está vinculada a la <strong>formación de profesionales del desarrollo personal</strong>: ha sido formadora de coaches, co-formadora acreditada en Wingwave® y profesora y colaboradora del Programa SAT de Claudio Naranjo.'
+      'Leonor Cabrera es cofundadora y codirectora del Centro La Seda de Granada. Desde 2013 acompaña procesos de transformación personal y acumula <strong>más de 5.000 horas de experiencia en sesiones individuales</strong>. Su enfoque terapéutico destaca por un entendimiento holístico y respetuoso de las crisis y los bloqueos humanos.',
+      'Su metodología de acompañamiento integra de forma activa la escucha terapéutica, el cuerpo, la comprensión profunda del carácter, la memoria emocional y la mirada sistémica. No busca únicamente cambiar el malestar inmediato, sino entender los patrones corporales y relacionales inconscientes que siguen influyendo en el presente de la persona.',
+      'Junto a su labor individual, Leonor cuenta con una amplia trayectoria vinculada a la <strong>formación y mentoría de profesionales del desarrollo personal</strong> en ámbitos como el coaching profesional, el método Wingwave® y la Psicología de los Eneatipos.'
     ],
     trayectoria: [
-      'Es <strong>licenciada en Periodismo por la Universidad de Málaga</strong> y actualmente cursa el <strong>Grado en Psicología en la Universidad Internacional de La Rioja (UNIR)</strong>. Antes de dedicarse plenamente al acompañamiento terapéutico, ejerció durante quince años como periodista en medios como <strong>El Mundo y Europa Press</strong>, y colaboró con elmundo.es y la Cadena SER divulgando contenidos de desarrollo personal y bienestar emocional.',
-      'En 2013 fundó <strong>Viventi</strong>, una escuela de desarrollo personal y comunicación en Benalmádena (Málaga). En 2022 cofundó en Granada <strong>La Seda</strong> junto a Ana Jiménez, centro sanitario autorizado con una unidad asistencial de Psicología, donde conviven la atención psicológica sanitaria y otros servicios de acompañamiento, terapia Gestalt, coaching, formación y desarrollo personal.',
-      'Es autora del libro <strong>El camino de la fuerza interior</strong>, centrado en el autoconocimiento, la memoria emocional y la recuperación de los propios recursos internos. El cuerpo, la disciplina y la presencia forman parte de su recorrido: practica <strong>aikido</strong> y fue atleta de competición nacional e internacional, proclamándose en varias ocasiones <strong>campeona de España</strong>.'
+      'Antes de dedicarse plenamente al ámbito del acompañamiento terapéutico, Leonor ejerció durante quince años como periodista licenciada en medios de comunicación de primer nivel como <strong>El Mundo y Europa Press</strong>, colaborando además con la Cadena SER. Esta larga experiencia le otorgó una agudeza excepcional en la escucha y en el arte de formular preguntas para reorganizar historias vitales.',
+      'En 2013 dio el salto definitivo al fundar Viventi, una reconocida escuela de desarrollo personal en Málaga, y en 2022 consolidó su andadura cofundando el Centro La Seda en Granada. Su entendimiento corporal procede también de su bagaje personal: practica activamente <strong>aikido</strong> (disciplina de equilibrio y energía consciente) y en su juventud fue atleta de competición, proclamándose en varias ocasiones <strong>campeona de España</strong>, lo que le enseñó el valor de la constancia y el traspasar límites sin perder el centro.',
+      'Es autora del libro de autoconocimiento <strong>"El camino de la fuerza interior"</strong>, enfocado en dotar a las personas de los recursos emocionales necesarios para aprender a desatar sus nudos con autonomía.'
     ],
     areasEspecializacion: [
-      { titulo: 'Terapia individual y transformación personal', descripcion: 'Acompañamiento en crisis vitales, bloqueos emocionales, baja autoestima, dificultades relacionales, duelos, cambios personales y repetición de patrones, para comprender qué los sostiene y recuperar los recursos internos necesarios.' },
-      { titulo: 'Trauma y memoria emocional', descripcion: 'Comprensión e integración de experiencias del pasado que continúan manifestándose en el cuerpo, las emociones, las decisiones o las relaciones presentes, desde una mirada Gestalt, corporal e integrativa.' },
-      { titulo: 'Eneagrama y Psicología de los Eneatipos', descripcion: 'Trabajo con la comprensión del carácter, los automatismos y las estrategias de adaptación y protección, entendiendo el Eneagrama como una herramienta dinámica de conciencia y transformación.' },
-      { titulo: 'Constelaciones Familiares y Sistémicas', descripcion: 'Acompañamiento en sesión individual y en talleres grupales para explorar vínculos, dinámicas familiares, repeticiones, lealtades invisibles y patrones que siguen influyendo en la vida presente.' },
-      { titulo: 'Coaching Wingwave®', descripcion: 'Método orientado al trabajo con estrés, bloqueos emocionales, inseguridad, dificultades de rendimiento y objetivos personales o profesionales, como coach y co-formadora acreditada.' }
+      { titulo: 'Terapia individual y transformación personal', descripcion: 'Acompañamiento a personas que atraviesan crisis vitales, duelos, bloqueos emocionales, baja autoestima, dificultades relacionales o momentos de pérdida de sentido.' },
+      { titulo: 'Trauma y memoria emocional', descripcion: 'Exploración e integración de experiencias del pasado manifestadas en el cuerpo y las relaciones presentes, respetando los límites de cada persona desde una mirada Gestalt e integrativa.' },
+      { titulo: 'Eneagrama y Psicología de los Eneatipos', descripcion: 'Comprensión dinámica de la estructura del carácter, automatismos y protecciones, respaldada por su experiencia como profesora del Programa SAT de Claudio Naranjo.' },
+      { titulo: 'Constelaciones Familiares y Sistémicas', descripcion: 'Exploración de vínculos y lealtades invisibles en el sistema familiar, tanto en sesiones individuales (con recursos simbólicos) como en talleres grupales.' },
+      { titulo: 'Coaching Wingwave®', descripcion: 'Trabajo focalizado con el estrés, la inseguridad, las dificultades de rendimiento y bloqueos emocionales como coformadora oficial acreditada por Hamburgo.' }
     ],
     formacion: [
-      { titulo: 'Grado en Psicología (en curso)', institucion: 'Universidad Internacional de La Rioja, UNIR' },
+      { titulo: 'Grado en Psicología (Actualmente en curso)', institucion: 'Universidad Internacional de La Rioja, UNIR' },
       { titulo: 'Licenciatura en Periodismo', institucion: 'Universidad de Málaga' },
-      { titulo: 'Psicoterapia Gestalt, Bioenergética y Crecimiento Personal — 520 h (2011-2014)', institucion: 'Centro de Psicología Humanista de Málaga' },
-      { titulo: 'Introducción al Trauma y su Tratamiento (Modelo Aleceia) — 72 h (2021-2022)', institucion: 'Instituto Aleces de Psicoterapia del Trauma · Cert. AETG' },
-      { titulo: 'Formación en Constelaciones Familiares — 250 h (2018)', institucion: 'ECOS, Escuela de Constelaciones Sistémicas' },
-      { titulo: 'Profundización en Constelaciones Familiares aplicadas a la pareja — 36,5 h (2019)', institucion: 'Institut Gestalt de Barcelona (con Joan Garriga)' },
-      { titulo: 'Experta en Coaching Profesional Certificado — 210 h (2012)', institucion: 'COANCO, centro acreditado por Asesco' },
-      { titulo: 'Coach Profesional Certificada por Asesco — Nº 10.457', institucion: 'Asesco' },
-      { titulo: 'Coach y co-formadora acreditada en Wingwave®', institucion: 'Instituto Besser-Siegmund, Hamburgo' },
-      { titulo: 'Máster Practitioner en PNL — 90 h (2017)', institucion: 'Institut Gestalt de Barcelona' },
-      { titulo: 'Practitioner en PNL — 90 h (2013)', institucion: 'Institut Integratiu de Barcelona' },
-      { titulo: 'Profesora y colaboradora del Programa SAT', institucion: 'Instituto SAT — Claudio Naranjo' },
-      { titulo: 'Curso básico de Terapia de Vidas Pasadas — 20 h (2024)', institucion: 'Impartido por José Luis Cabouli' }
+      { titulo: 'Formación en Psicoterapia Gestalt, Bioenergética y Crecimiento Personal (520h)', institucion: 'Centro de Psicología Humanista de Málaga (C. Garcés y C. Odriozola)' },
+      { titulo: 'Introducción al Trauma y su Tratamiento — Modelo Aleceia (72h)', institucion: 'Instituto Aleces de Psicoterapia del Trauma (Mario Salvador, Cert. AETG)' },
+      { titulo: 'Formación y Profundización en Constelaciones Familiares (250h y postgrados)', institucion: 'ECOS Escuela de Constelaciones (Peter Bourquin) e Institut Gestalt (Joan Garriga)' },
+      { titulo: 'Experta en Coaching Profesional Certificado (210h)', institucion: 'COANCO (Centro acreditado por ASESCO, Cert. 10.457)' },
+      { titulo: 'Coach y Coformadora Acreditada en Wingwave®', institucion: 'Instituto Besser-Siegmund de Hamburgo (Formada con Cora Besser-Siegmund)' },
+      { titulo: 'Master Practitioner y Practitioner en PNL (180h)', institucion: 'Institut Gestalt e Institut Integratiu de Barcelona (Vicens Olivé)' },
+      { titulo: 'Programa SAT completo — Psicología de los Eneatipos', institucion: 'Fundación Claudio Naranjo' }
     ],
     seo: {
-      title: 'Leonor Cabrera | Terapeuta Gestalt y Coach Wingwave® en Granada — La Seda',
-      description: 'Leonor Cabrera, terapeuta Gestalt, transpersonal e integrativa y coach profesional certificada (Asesco Nº 10.457). Co-directora de La Seda en Granada. Más de 5.000 horas de experiencia.'
+      title: 'Leonor Cabrera | Terapeuta Gestalt e Integrativa en Granada — La Seda',
+      description: 'Conoce a Leonor Cabrera, codirectora de La Seda Granada. Especialista en terapia Gestalt, constelaciones familiares, Eneagrama (Programa SAT) y método Wingwave®.'
     }
   },
   'maria-noel-reyes': {
@@ -236,7 +191,7 @@ const perfiles: Record<string, PerfilProfesional> = {
       { titulo: 'Máster en Psicología General Sanitaria', institucion: 'Universidad de Granada' },
       { titulo: 'Formación Avanzada en Psicoterapia de Trauma y Apego', institucion: 'Asociación Española de Psicología Sanitaria' },
       { titulo: 'Especialización en Técnicas de Integración Cerebral y EMDR', institucion: 'Instituto de Psicoterapia Integrativa' },
-      { titulo: 'Instrucción en Mindfulness y Compasión Aplicada a la Clínica', institucion: 'Centro de Formación en Salud Mental' }
+      { titulo: 'Instrucción en Mindfulness y Compasión Aplicada a la Clínica', institucion: 'Centro de Formation en Salud Mental' }
     ],
     seo: {
       title: 'María Noel Reyes | Psicóloga Sanitaria y Terapeuta en Granada — La Seda',
@@ -269,7 +224,7 @@ const perfiles: Record<string, PerfilProfesional> = {
       'Cristina aporta al equipo una sensibilidad especial para conectar con la infancia desde su propio lenguaje: <strong>el juego, el movimiento, la expresión artística y la narrativa</strong>.'
     ],
     trayectoria: [
-      'Formada en Educación Social, Cristina orientó desde el principio su career hacia la infancia en contextos de vulnerabilidad emocional. Su experiencia en Granada le mostró que las dificultades de los menores reflejan un <strong>sistema familiar</strong> que necesita atención.',
+      'Formada en Educación Social, Cristina orientó desde el principio su carrera hacia la infancia en contextos de vulnerabilidad emocional. Su experiencia en Granada le mostró que las dificultades de los menores reflejan un <strong>sistema familiar</strong> que necesita atención.',
       'Esta convicción la llevó a profundizar en la Gestalt aplicada a la infancia y la adolescencia con la ITG de Valencia. Aprendió a trabajar con <strong>el cuerpo y la emoción</strong> como vías de acceso al mundo interno del niño.',
       'Su paso por el <strong>Programa SAT de Claudio Naranjo</strong> amplió su perspectiva sobre el desarrollo humano. En La Seda, Cristina acompaña familias y facilita <strong>talleres de parentalidad consciente</strong>.'
     ],
@@ -316,7 +271,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     biografiaExtendida: [
       'Reyes Sánchez Tallón es médica pediatra colegiada y la voz de la <strong>medicina integrativa</strong> dentro de La Seda. Su presencia encarna una visión de la salud donde <strong>el cuerpo, la emoción y la mente</strong> forman un sistema indivisible.',
       'Su formación como pediatra le dio una base científica sólida. Pero fue su encuentro con la <strong>Gestalt y el trabajo corporal</strong> lo que transformó su forma de acompañar, añadiendo la capacidad de leer el cuerpo como un mapa emocional vivo.',
-      'Reyes trabaja desde la frontera enriquecedora que existe entre la medicina y la psicoterapia, un espacio donde la <strong>somatización</strong> tiene nombre y donde el síntoma físico es también un message de alerta.'
+      'Reyes trabaja desde la frontera enriquecedora que existe entre la medicina y la psicoterapia, un espacio donde la <strong>somatización</strong> tiene nombre y donde el síntoma físico es también un mensaje de alerta.'
     ],
     trayectoria: [
       'Tras completar su especialización como pediatra por <strong>vía MIR</strong>, Reyes ejerció durante años en el sistema sanitario público, donde fue testigo de cómo el malestar emocional se manifestaba en forma de <strong>síntomas físicos</strong>.',
@@ -344,82 +299,3 @@ const perfiles: Record<string, PerfilProfesional> = {
     }
   }
 }
-
-// ─────────────────────────────────────────────────────────────
-// CAPTURA DE RUTA Y EVALUACIÓN REACTIVA DEL PERFIL
-// ─────────────────────────────────────────────────────────────
-const route = useRoute()
-const id = computed(() => route.params.id as string)
-const perfil = computed<PerfilProfesional | null>(() => perfiles[id.value] ?? null)
-
-// ─────────────────────────────────────────────────────────────
-// MOTOR DE SEO AVANZADO (Reactividad total y control de nulos)
-// ─────────────────────────────────────────────────────────────
-useSeoMeta({
-  title: () => perfil.value?.seo.title ?? 'Perfil Clínico No Encontrado | La Seda Granada',
-  description: () => perfil.value?.seo.description ?? 'Consulte los perfiles profesionales de nuestro equipo clínico en Granada.',
-  ogTitle: () => perfil.value?.seo.title ?? 'Perfil Clínico No Encontrado | La Seda Granada',
-  ogDescription: () => perfil.value?.seo.description ?? 'Consulte los perfiles profesionales de nuestro equipo clínico en Granada.',
-  ogImage: () => perfil.value?.imagen ?? '',
-  ogType: () => perfil.value ? 'profile' : 'website',
-  ogUrl: () => perfil.value ? `https://www.laseda.es/conocenos/${perfil.value.id}` : 'https://www.laseda.es/conocenos',
-  twitterCard: 'summary_large_image',
-  twitterTitle: () => perfil.value?.seo.title ?? 'Perfil Clínico No Encontrado | La Seda Granada',
-  twitterDescription: () => perfil.value?.seo.description ?? 'Consulte los perfiles profesionales de nuestro equipo clínico en Granada.',
-  profileFirstName: () => perfil.value?.nombre.split(' ')[0] ?? '',
-  profileLastName: () => perfil.value?.nombre.split(' ').slice(1).join(' ') ?? '',
-  robots: () => perfil.value ? 'index, follow' : 'noindex, nofollow',
-})
-
-useHead({
-  link: [
-    { 
-      rel: 'canonical', 
-      href: () => perfil.value ? `https://www.laseda.es/conocenos/${perfil.value.id}` : 'https://www.laseda.es/conocenos' 
-    }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: () => perfil.value ? JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'ProfilePage',
-        'mainEntity': {
-          '@type': 'Person',
-          'name': perfil.value.nombre,
-          'jobTitle': perfil.value.tituloOficial,
-          'image': `https://www.laseda.es${perfil.value.imagen}`,
-          'url': `https://www.laseda.es/conocenos/${perfil.value.id}`,
-          'description': perfil.value.biografiaExtendida.join(' '),
-          'worksFor': {
-            '@type': 'MedicalBusiness',
-            '@id': 'https://www.laseda.es/#business',
-            'name': 'La Seda · Centro de Psicología en Granada',
-            'address': {
-              '@type': 'PostalAddress',
-              'addressLocality': 'Granada',
-              'addressRegion': 'Andalucía',
-              'addressCountry': 'ES',
-            }
-          },
-          'knowsAbout': perfil.value.tags
-        }
-      }) : ''
-    }
-  ]
-})
-</script>
-
-<style scoped>
-:deep(strong) {
-  font-weight: 500;
-  color: #27252B;
-}
-
-/* SOLUCIÓN: Forzamos prioridad de renderizado del color crema base y creamos un contexto 3D para evitar parpadeos negros */
-main {
-  background-color: #FDFBF9 !important;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-</style>

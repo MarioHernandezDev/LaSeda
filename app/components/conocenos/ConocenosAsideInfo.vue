@@ -17,7 +17,7 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-              Garantía Clínica
+              Garantía Profesional
             </p>
           </div>
           <h2 class="text-[#27252B] text-3xl md:text-4xl font-serif italic font-light leading-[1.2]">
@@ -30,7 +30,7 @@
         
         <div class="md:col-span-6 lg:col-span-7 border-l border-[#27252B]/10 pl-6 md:pl-10">
           <p class="text-[#27252B]/70 text-sm md:text-base leading-[1.8] font-light max-w-xl">
-            La práctica profesional de <span class="text-[#27252B] font-normal">{{ perfil.nombreCorto }}</span> está regulada por los organismos oficiales competentes, asegurando un marco clínico seguro, transparente y basado estrictamente en el rigor y la deontología sanitaria.
+            La práctica profesional de <span class="text-[#27252B] font-normal">{{ perfil.nombreCorto }}</span> está regulada por los organismos oficiales competentes, asegurando un marco seguro, transparente y basado estrictamente en el rigor y la deontología sanitaria.
           </p>
         </div>
       </div>
@@ -87,7 +87,7 @@
               class="group/btn relative inline-flex w-full items-center justify-center gap-3 bg-[#71B1A5] text-white text-xs tracking-[0.2em] uppercase font-bold px-6 py-4 rounded-xl transition-all duration-500 shadow-md shadow-[#71B1A5]/10 hover:bg-[#27252B] hover:shadow-xl hover:shadow-[#27252B]/5 hover:-translate-y-0.5 text-center"
               :aria-label="`Solicitar consulta con ${perfil.nombreCorto}`"
             >
-              <span>Agendar consulta clínica</span>
+              <span>Agendar consulta</span>
               <svg 
                 class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300 text-white/90" 
                 fill="none" 

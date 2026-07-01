@@ -104,16 +104,10 @@
             <div class="mt-12 pt-8 border-t border-[#27252B]/10">
               <NuxtLink
                 to="/contacto"
-                class="inline-flex items-center gap-4 group"
+                class="btn-secondary !inline-flex"
                 aria-label="Reservar primera cita en el Centro de Psicología La Seda Granada"
               >
-                <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-                  Reservar primera cita
-                </span>
-                <span
-                  class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
-                  aria-hidden="true"
-                />
+                <span>Reservar primera cita</span>
               </NuxtLink>
             </div>
 
@@ -151,18 +145,18 @@
           aria-label="Miembros del equipo de La Seda Granada"
         >
           <li 
-            v-for="miembro in equipo" 
+            v-for="(miembro, index) in equipo" 
             :key="miembro.id"
-            class="group relative"
+            class="block"
           >
-            <article
-              class="relative flex flex-col md:flex-row md:group-odd:flex-row-reverse items-center gap-8 md:gap-16 lg:gap-24 transition-all duration-500 rounded-sm"
-              :aria-labelledby="`nombre-${miembro.id}`"
+            <NuxtLink 
+              :to="`/conocenos/${miembro.id}`"
+              class="group relative flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24 transition-all duration-500 rounded-sm isolate cursor-pointer decoration-transparent block"
+              :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
             >
-              
               <div class="relative w-full md:w-[380px] lg:w-[420px] shrink-0 aspect-[3/4] z-10 overflow-visible">
                 <div
-                  class="absolute inset-0 border border-[#71B1A5]/20 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out z-0 pointer-events-none"
+                  class="absolute inset-0 border border-[#71B1A5]/20 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"
                   aria-hidden="true"
                 />
                 
@@ -177,14 +171,13 @@
                     loading="lazy"
                   />
                   <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#27252B]/10 via-transparent to-transparent pointer-events-none"
+                    class="absolute inset-0 bg-gradient-to-t from-[#27252B]/10 via-transparent to-transparent"
                     aria-hidden="true"
                   />
                 </div>
 
                 <div
                   class="absolute -top-3 left-6 md:-left-3 z-20 text-[10px] font-medium tracking-[0.2em] uppercase bg-[#71B1A5] text-white px-4 py-2 shadow-xs"
-                  :aria-label="`Rol: ${miembro.rol}`"
                 >
                   {{ miembro.rol }}
                 </div>
@@ -194,7 +187,6 @@
                 <div class="space-y-6">
                   <div>
                     <h3
-                      :id="`nombre-${miembro.id}`"
                       class="font-serif italic text-3xl md:text-4xl text-[#27252B] leading-tight mb-2 group-hover:text-[#71B1A5] transition-colors duration-300"
                     >
                       {{ miembro.nombre }}
@@ -215,18 +207,16 @@
                   </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-10 pt-6 border-t border-[#27252B]/10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-10 pt-6 border-t border-[#27252B]/10 relative z-20">
                   <div class="flex items-center gap-2.5">
                     <svg class="w-4 h-4 text-[#71B1A5]/80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z"/>
                     </svg>
                     <span class="text-xs text-[#27252B]/50 font-light tracking-wide" v-html="miembro.colegiadoTexto" />
                   </div>
 
-                  <NuxtLink
-                    :to="`/conocenos/${miembro.id}`"
-                    class="inline-flex items-center gap-4 py-1 text-sm text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200 after:absolute after:inset-0 after:z-20 cursor-pointer"
-                    :aria-label="`Ver perfil clínico y trayectoria de ${miembro.nombre}`"
+                  <div
+                    class="inline-flex items-center gap-4 py-1 text-sm text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200"
                   >
                     <span class="tracking-[0.15em] uppercase text-xs font-medium">
                       Ver perfil
@@ -235,11 +225,10 @@
                       class="w-8 h-px bg-[#27252B]/40 group-hover:w-14 group-hover:bg-[#71B1A5] transition-all duration-300"
                       aria-hidden="true"
                     />
-                  </NuxtLink>
+                  </div>
                 </div>
               </div>
-
-            </article>
+            </NuxtLink>
           </li>
         </ul>
 
@@ -331,33 +320,29 @@
         </div>
       </div>
 
-      <div class="pt-8 border-t border-[#27252B]/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div class="pt-12 border-t border-[#27252B]/10 flex flex-col sm:flex-row justify-center items-center gap-6 w-full">
         <NuxtLink
           to="/contacto"
-          class="inline-flex items-center gap-4 group"
+          class="group btn-primary !inline-flex"
           aria-label="Ir a la página de contacto para reservar primera cita en La Seda"
         >
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
-            Reservar primera cita
-          </span>
-          <span
-            class="w-10 h-px bg-[#27252B]/40 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
-            aria-hidden="true"
-          />
+          <span>Reservar primera cita</span>
+          <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-white pointer-events-none">
+            <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+            <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </div>
         </NuxtLink>
 
         <NuxtLink
           to="/terapias"
-          class="inline-flex items-center gap-4 group"
-          aria-label="Ver todos los servicios y terapias del Centro La Seda en Granada"
+          class="btn-secondary !inline-flex"
+          aria-label="Ver todos los servicios y terapias del Centro La Seda del Albaicín en Granada"
         >
-          <span class="text-sm tracking-[0.22em] uppercase text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-200">
-            Ver nuestras terapias
-          </span>
-          <span
-            class="w-10 h-px bg-[#27252B]/20 group-hover:w-16 group-hover:bg-[#71B1A5] transition-all duration-300"
-            aria-hidden="true"
-          />
+          <span>Ver nuestras terapias</span>
         </NuxtLink>
       </div>
     </section>
@@ -367,9 +352,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-// ─────────────────────────────────────────────────────────────
-// INTERFACES
-// ─────────────────────────────────────────────────────────────
 interface MiembroEquipo {
   id: string
   nombre: string
@@ -382,89 +364,75 @@ interface MiembroEquipo {
   colegiadoTexto: string
 }
 
-// ─────────────────────────────────────────────────────────────
-// DATOS DEL EQUIPO (Con María Noel Reyes añadida correctamente)
-// ─────────────────────────────────────────────────────────────
 const equipo: MiembroEquipo[] = [
   {
     id: 'ana-jimenez',
     nombre: 'Ana Jiménez',
     rol: 'Co-dirección',
-    subtitulo: 'Psicóloga · Co-directora de La Seda',
+    subtitulo: 'Psicología Clínica · Co-directora de La Seda',
     cita: 'Acompañar desde la presencia es permitir que cada persona descubra su propio ritmo para florecer.',
-    biografia:
-      'Psicóloga colegiada y terapeuta Gestalt, miembro didacta de la Asociación Española de Terapia Gestalt. Formada en Psicoterapia Clínica Integrativa con Juanjo Albert, sistémica y constelaciones familiares. Formada en el Programa SAT de Claudio Naranjo. Especializada en el trabajo con niños, adolescentes y familias.',
+    biografia: 'Psicóloga sanitaria colegiada y terapeuta Gestalt, miembro didacta de la Asociación Española de Terapia Gestalt (AETG). Formada en Psicoterapia Clínica Integrativa junto a Juanjo Albert, sistémica y constelaciones familiares. Cuenta con amplia especialización clínica en el territorio de la infancia, adolescencia y acompañamiento familiar.',
     imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
-    imagenAlt: 'Ana Jiménez, psicóloga colegiada y co-directora del Centro La Seda Granada',
-    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO06843</strong>',
+    imagenAlt: 'Ana Jiménez, psicóloga sanitaria colegiada y co-directora del Centro La Seda Granada',
+    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO06843</strong> — Psicóloga Sanitaria',
   },
   {
     id: 'leonor-cabrera',
     nombre: 'Leonor Cabrera',
     rol: 'Co-dirección',
-    subtitulo: 'Coach · Co-directora de La Seda',
-    cita: 'Desatar los nudos del pasado es el primer paso para caminar con fuerza y ligereza hacia tu presente.',
-    biografia:
-      'Coach Profesional Certificada (Asesco Nº 10.457). Especializada en fuerza interior y bloqueos emocionales a través del método Wingwave®, del que es co-formadora acreditada por el Instituto Besser-Siegmund de Hamburgo. Colaboradora del Programa SAT de Claudio Naranjo. Formada en Gestalt, Bioenergética, PNL, coaching y constelaciones familiares. Licenciada en Periodismo.',
+    subtitulo: 'Terapia Gestalt · Co-directora de La Seda',
+    cita: 'Desatar los nudos del pasado nos permite recuperar la fuerza para habitar el presente.',
+    biografia: 'Terapeuta Gestalt, transpersonal e integrativa con más de 5.000 horas de experiencia en sesiones individuales. Coach Profesional Certificada por ASESCO. Especializada en trauma, memoria emocional y bloqueos mediante el método Wingwave® (coformadora oficial) y las Constelaciones Familiares. Profesora del Programa SAT de Claudio Naranjo y autora del libro "El camino de la fuerza interior".',
     imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
-    imagenAlt: 'Leonor Cabrera, coach profesional certificada y co-directora de La Seda Granada',
-    colegiadoTexto: 'Asesco <strong class="text-[#27252B]/70 font-medium">Nº 10.457</strong>',
+    imagenAlt: 'Leonor Cabrera, terapeuta integrativa y co-directora del Centro La Seda en Granada',
+    colegiadoTexto: 'Certificación ASESCO <strong class="text-[#27252B]/70 font-medium">Nº 10.457</strong> — Coach Profesional',
   },
   {
     id: 'maria-noel-reyes',
     nombre: 'María Noel Reyes',
     rol: 'Psicoterapia',
-    subtitulo: 'Psicóloga Clínica y Psicoterapeuta',
+    subtitulo: 'Psicología Clínica · Adultos',
     cita: 'El espacio terapéutico es un lugar de revelación y soporte donde integrar cada fragmento de la historia vital.',
-    biografia:
-      'Psicóloga con una dilatada experiencia clínica enfocada en procesos de trauma, apego, regulación del sistema nervioso e intervención integrativa. Formada de manera profunda en las corrientes transformadoras del centro y dedicada al acompañamiento psicoterapéutico individual y de adultos.',
+    biografia: 'Psicóloga sanitaria colegiada con experiencia clínica centrada en psicoterapia integrativa de adultos, tratamiento del trauma, heridas de apego y regulación del sistema nervioso. Formada en abordajes de procesamiento profundo como EMDR y técnicas basadas en Mindfulness y Compasión Aplicada a la clínica.',
     imagen: '/images/maria-noel-reyes-psicologa-terapeuta-granada.jpg',
-    imagenAlt: 'María Noel Reyes, psicóloga clínica y psicoterapeuta de La Seda Granada',
-    colegiadoTexto: 'Psicóloga Colegiada · Especialista en Psicoterapia',
+    imagenAlt: 'María Noel Reyes, psicóloga sanitaria colegiada en el Centro de Psicología La Seda en Granada',
+    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO11245</strong> — Psicóloga Sanitaria',
   },
   {
     id: 'cristina-lence',
     nombre: 'Cristina Lence',
     rol: 'Educación Familiar',
-    subtitulo: 'Educadora Familiar',
+    subtitulo: 'Educación Social · Infancia y Familias',
     cita: 'Ofrecer un espacio seguro a la infancia y a las familias es sembrar raíces fuertes para el mañana.',
-    biografia:
-      'Educadora Social con formación en Gestalt y Sistémica. Formada en Técnicas Gestálticas aplicadas a la infancia y a la adolescencia con la ITG de Valencia y en el Programa SAT de Claudio Naranjo. Especializada en el trabajo con niños y niñas, adolescentes y familias.',
+    biografia: 'Educadora Social con un enfoque socioemocional que integra las Técnicas Gestálticas para Infancia y Adolescencia (ITG Valencia) con la mirada sistémica familiar. Formada en el Programa SAT de Claudio Naranjo y especializada en acompañamiento de menores en dificultades adaptativas, conductuales y en orientación de parentalidad consciente.',
     imagen: '/images/cristina-lence-educadora-familiar-gestalt-sistemica-granada.jpg',
-    imagenAlt: 'Cristina Lence, educadora social especializada en Gestalt y Sistémica',
-    colegiadoTexto: 'Educadora Social · Gestalt y Sistémica',
+    imagenAlt: 'Cristina Lence, educadora social especializada en Gestalt infanto-juvenil y sistémica en el Centro La Seda de Granada',
+    colegiadoTexto: 'Educadora Social — <strong class="text-[#27252B]/70 font-medium">Habilitada</strong>',
   },
   {
     id: 'reyes-sanchez',
     nombre: 'Reyes Sánchez Tallón',
     rol: 'Medicina',
-    subtitulo: 'Médica Pediatra',
+    subtitulo: 'Medicina Pediátrica · Salud Integrativa',
     cita: 'Integrar el cuidado del cuerpo y la salud emocional es devolverle la plenitud y el equilibrio al ser.',
-    biografia:
-      'Médica pediatra colegiada. Formada en terapia Gestalt, Terapia Corporal Integrativa con el equipo Antonio Pacheco, y en psicología de los eneatipos y Bioenergética con Fernando de Juan. Actualmente en formación en el Programa SAT de Claudio Naranjo y en terapia sistémica en Psicogestalt de Madrid.',
+    biografia: 'Médica pediatra colegiada con formación MIR. Especialista en salud integrativa trabajando el síntoma físico y la somatización a través de la terapia Gestalt, la Terapia Corporal Integrativa (TCI), la psicología de los eneatipos, la bioenergética y el enfoque sistémico para modular las memorias somáticas.',
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',
-    imagenAlt: 'Reyes Sánchez Tallón, médica pediatra colegiada',
-    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº 18-10008273</strong>',
+    imagenAlt: 'Reyes Sánchez Tallón, médica pediatra colegiada y especialista en salud integrativa en el Centro La Seda de Granada',
+    colegiadoTexto: 'Médica Colegiada <strong class="text-[#27252B]/70 font-medium">Nº 18-10008273</strong>',
   },
 ]
 
-// ─────────────────────────────────────────────────────────────
-// METADATOS SEO OPTIMIZADOS
-// ─────────────────────────────────────────────────────────────
 useSeoMeta({
   title: 'Equipo de Psicólogos en Granada | Centro La Seda',
-  description:
-    'Conoce al equipo de psicólogos colegiados y terapeutas de La Seda en Granada. Especialistas en psicoterapia Gestalt, terapia individual, de pareja y constelaciones familiares.',
+  description: 'Conoce al equipo de psicólogos colegiados y terapeutas de La Seda en Granada. Especialistas en psicoterapia Gestalt, terapia individual, de pareja y constelaciones familiares.',
   ogTitle: 'Equipo de Psicólogos en Granada · Centro de Psicología La Seda',
-  ogDescription:
-    'Especialistas de la psicología en Granada altamente cualificados. Terapia individual, familiar y grupal en un espacio diseñado para tu bienestar.',
+  ogDescription: 'Especialistas de la psicología en Granada altamente cualificados. Terapia individual, familiar y grupal en un espacio diseñado para tu bienestar.',
   ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
   ogType: 'website',
   ogUrl: 'https://www.laseda.es/conocenos',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Equipo de Psicólogos en Granada · Centro La Seda',
-  twitterDescription:
-    'Acompañamiento psicológico profesional en Granada. Psicología clínica, Gestalt, sistémica y coaching orientado a cambios profundos.',
+  twitterDescription: 'Acompañamiento psicológico profesional en Granada. Psicología clínica, Gestalt, sistémica y coaching orientado a cambios profundos.',
   robots: 'index, follow',
 })
 
@@ -472,7 +440,6 @@ useHead({
   link: [{ rel: 'canonical', href: 'https://www.laseda.es/conocenos' }],
 })
 
-// Schema JSON-LD Reactivo (Automatizado para SEO Local)
 const jsonLdSchema = computed(() => {
   return {
     '@context': 'https://schema.org',

@@ -29,7 +29,14 @@ interface _GlobalComponents {
   FormationProcess: typeof import("../../app/components/formation/FormationProcess.vue")['default']
   FormationRelated: typeof import("../../app/components/formation/FormationRelated.vue")['default']
   FormationTeam: typeof import("../../app/components/formation/FormationTeam.vue")['default']
+  IndexCtaFinal: typeof import("../../app/components/index/CtaFinal.vue")['default']
+  IndexFilosofia: typeof import("../../app/components/index/Filosofia.vue")['default']
+  IndexGaleria: typeof import("../../app/components/index/Galeria.vue")['default']
+  IndexHero: typeof import("../../app/components/index/Hero.vue")['default']
+  IndexServicios: typeof import("../../app/components/index/Servicios.vue")['default']
+  IndexSobreCentro: typeof import("../../app/components/index/SobreCentro.vue")['default']
   IndexSocialMedia: typeof import("../../app/components/index/SocialMedia.vue")['default']
+  IndexTestimonios: typeof import("../../app/components/index/Testimonios.vue")['default']
   TalleresWorkshopBenefits: typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']
   TalleresWorkshopDates: typeof import("../../app/components/talleres/WorkshopDates.vue")['default']
   TalleresWorkshopFaqs: typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']
@@ -80,7 +87,14 @@ interface _GlobalComponents {
   LazyFormationProcess: LazyComponent<typeof import("../../app/components/formation/FormationProcess.vue")['default']>
   LazyFormationRelated: LazyComponent<typeof import("../../app/components/formation/FormationRelated.vue")['default']>
   LazyFormationTeam: LazyComponent<typeof import("../../app/components/formation/FormationTeam.vue")['default']>
+  LazyIndexCtaFinal: LazyComponent<typeof import("../../app/components/index/CtaFinal.vue")['default']>
+  LazyIndexFilosofia: LazyComponent<typeof import("../../app/components/index/Filosofia.vue")['default']>
+  LazyIndexGaleria: LazyComponent<typeof import("../../app/components/index/Galeria.vue")['default']>
+  LazyIndexHero: LazyComponent<typeof import("../../app/components/index/Hero.vue")['default']>
+  LazyIndexServicios: LazyComponent<typeof import("../../app/components/index/Servicios.vue")['default']>
+  LazyIndexSobreCentro: LazyComponent<typeof import("../../app/components/index/SobreCentro.vue")['default']>
   LazyIndexSocialMedia: LazyComponent<typeof import("../../app/components/index/SocialMedia.vue")['default']>
+  LazyIndexTestimonios: LazyComponent<typeof import("../../app/components/index/Testimonios.vue")['default']>
   LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']>
   LazyTalleresWorkshopDates: LazyComponent<typeof import("../../app/components/talleres/WorkshopDates.vue")['default']>
   LazyTalleresWorkshopFaqs: LazyComponent<typeof import("../../app/components/talleres/WorkshopFaqs.vue")['default']>

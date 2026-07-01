@@ -1,5 +1,10 @@
 <template>
-  <header class="page-hero-root">
+  <header class="page-hero-root relative">
+
+    <div 
+      class="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#F5F2EE]/90 via-[#F5F2EE]/60 to-transparent z-40 pointer-events-none" 
+      aria-hidden="true"
+    />
 
     <div class="page-hero-panel-left bg-[#F5F2EE] flex flex-col justify-center py-12 md:py-0">
       
@@ -86,11 +91,15 @@
 
     </div>
 
-    <div class="page-hero-panel-right">
+    <div class="page-hero-panel-right relative">
+      <div 
+        class="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#F5F2EE]/80 via-[#F5F2EE]/20 to-transparent z-10 pointer-events-none md:block hidden"
+        aria-hidden="true"
+      />
       <NuxtImg
         :src="image"
         :alt="imageAlt"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover object-center relative z-0"
         format="webp"
         fetchpriority="high"
         preload

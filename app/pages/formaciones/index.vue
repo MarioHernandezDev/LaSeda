@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { useSeoMeta, useHead } from '#app'
+
+// ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE FORMACIONES ─────────
 useSeoMeta({
-  title: 'Formaciones en Psicología · Granada 2026 | Centro La Seda',
-  ogTitle: 'Formaciones en Psicología · Granada 2026 | Centro La Seda',
-  description: 'Programas presenciales de especialización en Terapia Gestalt infantil y Método Wingwave® en Granada. Convocatoria 2026. Centro acreditado.',
-  ogDescription: 'Programas presenciales de especialización en Terapia Gestalt infantil y Método Wingwave® en Granada. Convocatoria 2026. Centro acreditado.',
-  ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
+  title: 'Formación para Psicólogos y Terapia Gestalt Infantil en Granada 2026 | La Seda',
+  ogTitle: 'Formación para Psicólogos y Terapia Gestalt Infantil en Granada 2026 | La Seda',
+  description: 'Cursos y formaciones de psicología en Granada. Especialización en Terapia Gestalt infantil y juvenil, y certificación oficial del Método Wingwave® en Centro La Seda.',
+  ogDescription: 'Impulsa tu práctica clínica con nuestras formaciones presenciales en Granada. Especialización profesional en Terapia Gestalt Infantil y Certificación Internacional Wingwave®.',
+  ogImage: '/images/formacion-psicologia-presencial-granada-la-seda.jpg',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Formación en Psicología Clínica y Especialización en Granada',
+  twitterDescription: 'Programas presenciales 2026 para profesionales de la salud mental y educación. Gestalt infantil y certificación internacional Wingwave®.',
+  robots: 'index, follow'
 })
 
 useHead({
@@ -25,13 +31,13 @@ useHead({
       label="Programas de Especialización y Formación"
       title-main="Formarse es también"
       title-accent="un acto de cuidado propio."
-      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
-      image-alt="Formación especializada para profesionales de la salud en el Centro La Seda Granada"
+      image="/images/formacion-psicologia-presencial-granada-la-seda.jpg"
+      image-alt="Alumnos en el aula presencial del Centro La Seda durante una formación de psicología y terapia integrativa en Granada"
       secondary-link="/contacto"
-      secondary-label="Consultar convocatoria"
+      secondary-label="Reservar"
     >
       <template #description>
-        Programas presenciales diseñados para integrar teoría, práctica clínica
+        Programas presenciales diseñados para integrar teoría, práctica
         y crecimiento personal genuino. Convocatoria 2026 · Granada.
       </template>
     </PageHero>
@@ -69,7 +75,7 @@ useHead({
             
             <NuxtLink
               to="/formaciones/gestalt-infantil"
-              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5"
               aria-label="Ver programa de Terapia Gestalt Infantil y Adolescente"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
@@ -108,7 +114,7 @@ useHead({
 
             <NuxtLink
               to="/formaciones/metodo-wingwave"
-              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
+              class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5"
               aria-label="Saber más sobre la Formación Certificada Oficial en Método Wingwave"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
@@ -147,7 +153,7 @@ useHead({
         <div class="mt-20 lg:mt-32 max-w-3xl mx-auto">
           <NuxtLink
             to="/contacto"
-            class="training-card group relative flex flex-col items-center justify-center text-center bg-[#71B1A5] rounded-sm p-10 md:p-16 min-h-[380px] transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/20 block overflow-hidden"
+            class="training-card group relative flex flex-col items-center justify-center text-center bg-[#71B1A5] rounded-sm p-10 md:p-16 min-h-[380px] transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/20 overflow-hidden"
             aria-label="Escríbenos para orientación formativa"
           >
             <div class="absolute -bottom-10 font-serif italic text-[18rem] text-[#FDFBF9]/5 leading-none select-none pointer-events-none z-0">

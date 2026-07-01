@@ -1,11 +1,16 @@
 <script setup lang="ts">
+// ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE TERAPIAS ────────────
 useSeoMeta({
-  title: 'Terapia Infantil, Pareja y Adultos en Granada | Centro La Seda',
-  ogTitle: 'Terapia Infantil, Pareja y Adultos en Granada | Centro La Seda',
-  description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, familias y adultos desde un enfoque integrativo.',
-  ogDescription: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, familias y adultos desde un enfoque integrativo.',
-  ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
+  title: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
+  ogTitle: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
+  description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, terapia Gestalt y adultos desde un enfoque integrativo y eficaz.',
+  ogDescription: 'Encuentra tu psicólogo en Granada. Especialistas en terapia infantil, terapia de pareja, adultos, adolescentes y enfoque sistémico-humanista en Centro La Seda.',
+  // Nombre de imagen actualizado para el SEO
+  ogImage: '/images/psicoterapia-integrativa-adultos-pareja-granada.jpg',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Especialidades Clínicas y Psicoterapia en Granada | La Seda',
+  twitterDescription: 'Terapia infantil, de pareja, adolescentes y psicoterapia integrativa en Granada. Consulta nuestro equipo de psicólogos colegiados.',
+  robots: 'index, follow'
 })
 
 useHead({
@@ -25,7 +30,7 @@ useHead({
       label="Especialidades Clínicas"
       title-main="Procesos de Psicoterapia"
       title-accent="y Cuidado Psicológico"
-      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+      image="/images/psicoterapia-integrativa-adultos-pareja-granada.jpg"
       image-alt="Sala de terapia del Centro de Psicología La Seda en Granada"
       secondary-link="/contacto"
       secondary-label="Pedir primera cita"
@@ -119,7 +124,7 @@ useHead({
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adultos y Acompañamiento</h3>
                 <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Enfoque psicoterapéutico <strong>humanista, Gestalt and sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
+                  Enfoque psicoterapéutico <strong>humanista, Gestalt y sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
                 </p>
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Imparten: <span class="font-normal text-[#27252B]/60 text-[11px]">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera, R. Sánchez-Tallón</span>

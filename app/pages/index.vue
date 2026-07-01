@@ -14,21 +14,21 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// ─── SEO & Metadatos Globales de la Home ─────────────────────────────────────
+// ─── SEO & METADATOS ULTRA-OPTIMIZADOS (LOCAL & TEMÁTICO) ────────────────────
 useSeoMeta({
-  title: 'Centro de Psicología y Psicoterapia en Granada | La Seda',
-  description: 'Psicólogos en Granada especializados en terapia individual, de pareja e infanto-juvenil. Equipo multidisciplinar, más de 12 años de experiencia. Primera consulta sin compromiso.',
-  ogTitle: 'La Seda · Centro de Psicología en Granada',
-  ogDescription: 'Terapia psicológica, talleres de crecimiento personal y formación especializada en Granada. Más de 800 pacientes atendidos. Pide cita hoy.',
+  title: 'Centro de Psicología en Granada | Psicólogos y Terapia Gestalt La Seda',
+  description: '¿Buscas psicólogos en Granada? En Centro La Seda somos especialistas en psicoterapia individual, de pareja, terapia Gestalt, talleres y formación. ¡Consúltanos!',
+  ogTitle: 'La Seda · Centro de Psicología en Granada y Psicoterapia',
+  ogDescription: 'Tu centro de psicología en Granada. Expertos en terapia Gestalt, crecimiento personal, terapia infanto-juvenil y formaciones especializadas.',
   ogImage: '/images/hero-consulta-laseda.jpg',
   ogType: 'website',
   ogUrl: 'https://www.laseda.es',
   ogLocale: 'es_ES',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'La Seda · Psicología y Psicoterapia en Granada',
-  twitterDescription: 'Terapia individual, de pareja, infanto-juvenil y talleres de crecimiento personal en Granada. Equipo multidisciplinar colegiado.',
+  twitterTitle: 'La Seda | Centro de Psicología en Granada',
+  twitterDescription: 'Especialistas en psicoterapia clínica, psicología integrativa, terapia de pareja y talleres vivenciales en Granada.',
   twitterImage: '/images/hero-consulta-laseda.jpg',
-  robots: 'index, follow',
+  robots: 'index, follow, max-image-preview:large',
   canonical: 'https://www.laseda.es',
 })
 
@@ -48,19 +48,58 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'MedicalBusiness',
-        name: 'La Seda · Psicología y Crecimiento en Granada',
-        description: 'Centro de psicología y crecimiento personal en Granada. Terapias clínicas, talleres y formaciones para profesionales.',
+        '@id': 'https://www.laseda.es/#business',
+        name: 'La Seda · Centro de Psicología en Granada',
+        alternateName: 'Centro de Psicología La Seda',
+        description: 'Centro de psicología, psicoterapia integrativa y crecimiento personal en Granada. Especializados en terapia individual para adultos, terapia Gestalt, terapia de pareja, talleres vivenciales y formación para profesionales de la salud mental.',
         url: 'https://www.laseda.es',
         telephone: '+34-679-571-977',
         email: 'hola@laseda.es',
-        medicalSpecialty: 'Psychiatry',
         priceRange: '€€',
         image: 'https://www.laseda.es/images/hero-consulta-laseda.jpg',
-        address: { '@type': 'PostalAddress', addressLocality: 'Granada', addressRegion: 'Andalucía', postalCode: '18001', addressCountry: 'ES' },
-        geo: { '@type': 'GeoCoordinates', latitude: 37.1773, longitude: -3.5986 },
-        openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '20:00' }],
-        sameAs: ['https://www.instagram.com/centrolaseda', 'https://www.facebook.com/CentroLaSeda'],
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '10', bestRating: '5', worstRating: '1' },
+        knowsAbout: [
+          'Psicología Clínica',
+          'Psicoterapia',
+          'Terapia Gestalt',
+          'Terapia de Pareja',
+          'Crecimiento Personal',
+          'Gestión Emocional',
+          'Ansiedad y Autoestima',
+          'Formación para Psicólogos'
+        ],
+        address: { 
+          '@type': 'PostalAddress', 
+          streetAddress: 'Dirección del Centro', // Reemplaza por tu calle exacta si quieres potenciar el SEO Local en Google Maps
+          addressLocality: 'Granada', 
+          addressRegion: 'Andalucía', 
+          postalCode: '18001', 
+          addressCountry: 'ES' 
+        },
+        geo: { 
+          '@type': 'GeoCoordinates', 
+          latitude: 37.1773, 
+          longitude: -3.5986 
+        },
+        openingHoursSpecification: [
+          { 
+            '@type': 'OpeningHoursSpecification', 
+            dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], 
+            opens: '09:00', 
+            closes: '20:00' 
+          }
+        ],
+        sameAs: [
+          'https://www.instagram.com/centrolaseda', 
+          'https://www.facebook.com/CentroLaSeda',
+          'https://www.tiktok.com/@centro.la.seda'
+        ],
+        aggregateRating: { 
+          '@type': 'AggregateRating', 
+          ratingValue: '5', 
+          reviewCount: '15', 
+          bestRating: '5', 
+          worstRating: '1' 
+        }
       }),
     },
   ],
@@ -109,6 +148,5 @@ const valores = [
 </script>
 
 <style scoped>
-/* El bloque de estilos se queda completamente vacío y limpio. 
-   Cada componente gestionará ahora sus propios estilos encapsulados. */
+/* Vacío y limpio */
 </style>

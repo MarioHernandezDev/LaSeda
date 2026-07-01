@@ -362,6 +362,7 @@ interface MiembroEquipo {
   imagen: string
   imagenAlt: string
   colegiadoTexto: string
+  especialidades: string[] // Añadido para enriquecer el Schema org de forma dinámica
 }
 
 const equipo: MiembroEquipo[] = [
@@ -375,6 +376,7 @@ const equipo: MiembroEquipo[] = [
     imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
     imagenAlt: 'Ana Jiménez, psicóloga sanitaria colegiada y co-directora del Centro La Seda Granada',
     colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO06843</strong> — Psicóloga Sanitaria',
+    especialidades: ['Psicología Sanitaria', 'Terapia Gestalt Infantil', 'Constelaciones Familiares', 'Psicoterapia Integrativa']
   },
   {
     id: 'leonor-cabrera',
@@ -386,6 +388,7 @@ const equipo: MiembroEquipo[] = [
     imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
     imagenAlt: 'Leonor Cabrera, terapeuta integrativa y co-directora del Centro La Seda en Granada',
     colegiadoTexto: 'Certificación ASESCO <strong class="text-[#27252B]/70 font-medium">Nº 10.457</strong> — Coach Profesional',
+    especialidades: ['Terapia Gestalt', 'Método Wingwave', 'Constelaciones Familiares', 'Coaching Profesional']
   },
   {
     id: 'maria-noel-reyes',
@@ -397,6 +400,7 @@ const equipo: MiembroEquipo[] = [
     imagen: '/images/maria-noel-reyes-psicologa-terapeuta-granada.jpg',
     imagenAlt: 'María Noel Reyes, psicóloga sanitaria colegiada en el Centro de Psicología La Seda en Granada',
     colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO11245</strong> — Psicóloga Sanitaria',
+    especialidades: ['Psicología Sanitaria', 'Terapia EMDR', 'Mindfulness', 'Tratamiento del Trauma']
   },
   {
     id: 'cristina-lence',
@@ -408,6 +412,7 @@ const equipo: MiembroEquipo[] = [
     imagen: '/images/cristina-lence-educadora-familiar-gestalt-sistemica-granada.jpg',
     imagenAlt: 'Cristina Lence, educadora social especializada en Gestalt infanto-juvenil y sistémica en el Centro La Seda de Granada',
     colegiadoTexto: 'Educadora Social — <strong class="text-[#27252B]/70 font-medium">Habilitada</strong>',
+    especialidades: ['Educación Social', 'Técnicas Gestálticas Infancia', 'Acompañamiento Familiar', 'Parentalidad Consciente']
   },
   {
     id: 'reyes-sanchez',
@@ -419,20 +424,22 @@ const equipo: MiembroEquipo[] = [
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',
     imagenAlt: 'Reyes Sánchez Tallón, médica pediatra colegiada y especialista en salud integrativa en el Centro La Seda de Granada',
     colegiadoTexto: 'Médica Colegiada <strong class="text-[#27252B]/70 font-medium">Nº 18-10008273</strong>',
+    especialidades: ['Medicina Pediátrica', 'Salud Integrativa', 'Terapia Corporal Integrativa', 'Somatización']
   },
 ]
 
+// ─── SEO META LOCALIZADO Y TRANSACCIONAL ─────────────────────────────────────
 useSeoMeta({
-  title: 'Equipo de Psicólogos en Granada | Centro La Seda',
-  description: 'Conoce al equipo de psicólogos colegiados y terapeutas de La Seda en Granada. Especialistas en psicoterapia Gestalt, terapia individual, de pareja y constelaciones familiares.',
-  ogTitle: 'Equipo de Psicólogos en Granada · Centro de Psicología La Seda',
-  ogDescription: 'Especialistas de la psicología en Granada altamente cualificados. Terapia individual, familiar y grupal en un espacio diseñado para tu bienestar.',
+  title: 'Psicólogos en Granada | Nuestro Equipo de Terapeutas | Centro La Seda',
+  description: 'Conoce a nuestro equipo de psicólogos colegiados, profesionales sanitarios y terapeutas Gestalt en Granada. Expertos en psicoterapia integrativa y familiar.',
+  ogTitle: 'Psicólogos en Granada | Nuestro Equipo de Terapeutas | Centro La Seda',
+  ogDescription: 'Especialistas de la psicología clínica, Gestalt y sistémica en Granada. Consulta los perfiles y números de colegiado de nuestro equipo multidisciplinar.',
   ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
   ogType: 'website',
   ogUrl: 'https://www.laseda.es/conocenos',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Equipo de Psicólogos en Granada · Centro La Seda',
-  twitterDescription: 'Acompañamiento psicológico profesional en Granada. Psicología clínica, Gestalt, sistémica y coaching orientado a cambios profundos.',
+  twitterTitle: 'Equipo de Psicólogos y Terapeutas en Granada · Centro La Seda',
+  twitterDescription: 'Acompañamiento psicológico clínico y humanista de confianza. Profesionales acreditados en Terapia Gestalt, EMDR y Constelaciones Familiares.',
   robots: 'index, follow',
 })
 
@@ -440,12 +447,13 @@ useHead({
   link: [{ rel: 'canonical', href: 'https://www.laseda.es/conocenos' }],
 })
 
+// ─── JSON-LD SCHEMA AVANZADO (E-E-A-T GOOGLE CORRESPONSAL) ────────────────────
 const jsonLdSchema = computed(() => {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Equipo de psicólogos y terapeutas — La Seda Granada',
-    description: 'Listado oficial de psicólogos colegiados y profesionales de la salud mental del Centro La Seda en Granada.',
+    name: 'Equipo de psicólogos colegiados y terapeutas — La Seda Granada',
+    description: 'Listado oficial verificado de psicólogos sanitarios, médicos y profesionales de la salud mental del Centro La Seda en Granada.',
     url: 'https://www.laseda.es/conocenos',
     numberOfItems: equipo.length,
     itemListElement: equipo.map((m, i) => ({
@@ -456,11 +464,14 @@ const jsonLdSchema = computed(() => {
         name: m.nombre,
         jobTitle: m.subtitulo,
         url: `https://www.laseda.es/conocenos/${m.id}`,
+        image: `https://www.laseda.es${m.imagen}`,
+        knowsAbout: m.especialidades,
         worksFor: {
           '@type': 'MedicalBusiness',
           '@id': 'https://www.laseda.es/#business',
           name: 'La Seda · Centro de Psicología en Granada',
-        },
+          url: 'https://www.laseda.es'
+        }
       },
     })),
   }

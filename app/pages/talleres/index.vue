@@ -1,11 +1,16 @@
 <script setup lang="ts">
+// ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE TALLERES ────────────
 useSeoMeta({
-  title: 'Talleres de Psicología y Constelaciones Familiares · Granada 2026 | La Seda',
-  ogTitle: 'Talleres de Psicología y Constelaciones Familiares · Granada 2026 | La Seda',
-  description: 'Talleres vivenciales de constelaciones familiares y supervisión clínica en Granada. Grupos reducidos, facilitadoras acreditadas. Agenda 2026 Centro La Seda.',
-  ogDescription: 'Talleres vivenciales de constelaciones familiares y supervisión clínica en Granada. Grupos reducidos, facilitadoras acreditadas. Agenda 2026 Centro La Seda.',
-  ogImage: '/images/centro-psicologia-la-seda-granada-hero.jpg',
+  title: 'Talleres de Psicología, Terapia Gestalt y Constelaciones Familiares en Granada 2026 | La Seda',
+  ogTitle: 'Talleres de Psicología, Terapia Gestalt y Constelaciones Familiares en Granada 2026 | La Seda',
+  description: 'Participa en nuestros talleres vivenciales en Granada: Constelaciones Familiares, crecimiento personal y supervisión de casos clínicos acreditada por la AETG.',
+  ogDescription: 'Encuentra tu espacio de crecimiento en Granada. Talleres de Constelaciones Familiares, grupos de autoconocimiento y supervisión para psicólogos Gestalt en Centro La Seda.',
+  // Nombre de imagen optimizado para la sección de talleres grupales
+  ogImage: '/images/talleres-psicologia-constelaciones-familiares-granada.jpg',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Talleres de Crecimiento Personal y Supervisión Clínica en Granada',
+  twitterDescription: 'Constelaciones Familiares y supervisión de casos clínicos (AETG) en Granada. Grupos reducidos con enfoque humano y riguroso.',
+  robots: 'index, follow'
 })
 
 useHead({
@@ -25,14 +30,14 @@ useHead({
       label="Talleres y Espacios de Formación"
       title-main="Encuentros para Crecer"
       title-accent="y Transformarse"
-      image="/images/centro-psicologia-la-seda-granada-hero.jpg"
+      image="/images/talleres-psicologia-constelaciones-familiares-granada.jpg"
       image-alt="Taller grupal de crecimiento personal en el Centro La Seda Granada"
       secondary-link="/contacto"
       secondary-label="Reservar plaza"
     >
       <template #description>
         Espacios vivenciales donde la teoría y la experiencia se integran,
-        diseñados para generar movement real en quien los habita.
+        diseñados para generar movimiento real en quien los habita.
       </template>
     </PageHero>
 
@@ -88,7 +93,7 @@ useHead({
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Taller de Constelaciones Familiares</h3>
                 <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Espacios grupales de exploración y acompañamiento para observar patrones, vínculos y lealtades familiares inconscientes. Una oportunidad de liberar cargas y obtener una mirada amplia sobre dinámicas relacionales o duelos.
+                  Espacios grupales de exploration y acompañamiento para observar patrones, vínculos y lealtades familiares inconscientes. Una oportunidad de liberar cargas y obtener una mirada amplia sobre dinámicas relacionales o duelos.
                 </p>
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5 flex flex-wrap gap-x-4 gap-y-1">
                   <span>Enfoque: <span class="font-normal text-[#27252B]/70">Grupal Vivencial</span></span>

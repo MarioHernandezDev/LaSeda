@@ -36,21 +36,6 @@
               {{ titleAccent }}
             </span>
           </div>
-
-          <div
-            class="flex-shrink-0 relative pointer-events-none transform scale-[0.55] md:scale-[0.8] lg:scale-[0.9] origin-left mt-4 md:mt-0 md:-mt-4 ml-6 md:ml-12 lg:ml-20"
-            style="z-index: 50; isolation: isolate;"
-            aria-hidden="true"
-          >
-            <div class="absolute w-24 h-24 bg-[#71B1A5]/12 rounded-full blur-2xl -z-10 translate-x-4"></div>
-            <div class="butterfly-wrapper !static">
-              <div class="butterfly-3d">
-                <div class="wing-3d"><div class="bit-3d"></div><div class="bit-3d"></div></div>
-                <div class="wing-3d"><div class="bit-3d"></div><div class="bit-3d"></div></div>
-              </div>
-              <div class="shadow-3d"></div>
-            </div>
-          </div>
         </h1>
 
         <p

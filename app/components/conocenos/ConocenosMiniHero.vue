@@ -13,7 +13,7 @@
         
         <div class="max-md:bg-[#F5F2EE]/85 max-md:backdrop-blur-md max-md:p-8 max-md:rounded-sm max-md:border max-md:border-white/20 max-w-2xl py-16 md:py-24">
 
-          <div class="flex items-center gap-3 mb-6 md:mb-8">
+          <div class="hidden md:flex items-center gap-3 mb-6 md:mb-8">
             <span class="w-6 h-px bg-[#71B1A5]/60" aria-hidden="true"></span>
             <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.35em] uppercase font-semibold leading-none">
               {{ perfil.especialidadLabel }} · LA SEDA
@@ -35,7 +35,7 @@
             </span>
           </div>
 
-          <blockquote class="relative pl-5 border-l border-[#71B1A5]/40 mb-8 md:mb-10 max-w-lg">
+          <blockquote class="hidden md:block relative pl-5 border-l border-[#71B1A5]/40 mb-8 md:mb-10 max-w-lg">
             <p 
               class="text-[#27252B]/80 font-serif italic leading-relaxed"
               style="font-size: clamp(0.95rem, 1.2vw, 1.15rem);"
@@ -73,11 +73,11 @@
 
     </div>
 
-    <div class="page-hero-panel-right max-md:absolute max-md:inset-0 max-md:w-full max-md:h-full z-10">
+    <div class="page-hero-panel-right max-md:absolute max-md:inset-0 max-md:w-full max-md:h-full z-10 overflow-hidden">
       <NuxtImg
         :src="perfil.imagen"
         :alt="perfil.imagenAlt"
-        class="w-full h-full object-cover object-top grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out"
+        class="block w-full h-full object-cover object-top grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out scale-[1.01]"
         format="webp"
         fetchpriority="high"
         preload

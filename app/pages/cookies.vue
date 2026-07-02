@@ -12,15 +12,7 @@
           <p class="text-xs text-[#27252B]/50 mt-4 font-mono uppercase tracking-wider">Última actualización: Junio 2026</p>
         </div>
 
-        <div class="relative flex-shrink-0 flex items-center justify-center h-28 md:h-32 w-full md:w-auto select-none group">
-          <div class="absolute w-24 h-24 bg-[#71B1A5]/5 rounded-full blur-xl group-hover:scale-110 transition-transform duration-700"></div>
-          
-          <NuxtImg 
-            src="/images/cookienaje.png" 
-            alt="Monstruo de las cookies" 
-            class="cookie-page-img w-auto h-full object-contain relative z-10"
-          />
-        </div>
+      
 
       </header>
 

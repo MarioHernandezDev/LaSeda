@@ -391,18 +391,6 @@ const equipo: MiembroEquipo[] = [
     especialidades: ['Terapia Gestalt', 'Método Wingwave', 'Constelaciones Familiares', 'Coaching Profesional']
   },
   {
-    id: 'maria-noel-reyes',
-    nombre: 'María Noel Reyes',
-    rol: 'Psicoterapia',
-    subtitulo: 'Psicología Clínica · Adultos',
-    cita: 'El espacio terapéutico es un lugar de revelación y soporte donde integrar cada fragmento de la historia vital.',
-    biografia: 'Psicóloga sanitaria colegiada con experiencia clínica centrada en psicoterapia integrativa de adultos, tratamiento del trauma, heridas de apego y regulación del sistema nervioso. Formada en abordajes de procesamiento profundo como EMDR y técnicas basadas en Mindfulness y Compasión Aplicada a la clínica.',
-    imagen: '/images/maria-noel-reyes-psicologa-terapeuta-granada.jpg',
-    imagenAlt: 'María Noel Reyes, psicóloga sanitaria colegiada en el Centro de Psicología La Seda en Granada',
-    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO11245</strong> — Psicóloga Sanitaria',
-    especialidades: ['Psicología Sanitaria', 'Terapia EMDR', 'Mindfulness', 'Tratamiento del Trauma']
-  },
-  {
     id: 'cristina-lence',
     nombre: 'Cristina Lence',
     rol: 'Educación Familiar',
@@ -418,13 +406,26 @@ const equipo: MiembroEquipo[] = [
     id: 'reyes-sanchez',
     nombre: 'Reyes Sánchez Tallón',
     rol: 'Medicina',
-    subtitulo: 'Medicina Pediátrica · Salud Integrativa',
+    subtitulo: 'Medicina · Colaboradora en Salud Integrativa',
     cita: 'Integrar el cuidado del cuerpo y la salud emocional es devolverle la plenitud y el equilibrio al ser.',
-    biografia: 'Médica pediatra colegiada con formación MIR. Especialista en salud integrativa trabajando el síntoma físico y la somatización a través de la terapia Gestalt, la Terapia Corporal Integrativa (TCI), la psicología de los eneatipos, la bioenergética y el enfoque sistémico para modular las memorias somáticas.',
+    biografia: 'Médica colegiada, licenciada en Medicina y Cirugía (Universidad de Granada) y especialista en Pediatría por la vía MIR. Colaboradora de La Seda formada en terapia Gestalt (equipo Qualia), Terapia Corporal Integrativa, análisis caracterológico psico-corporal, terapia sistémica y herramientas de intervención en trauma y TEPT.',
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',
-    imagenAlt: 'Reyes Sánchez Tallón, médica pediatra colegiada y especialista en salud integrativa en el Centro La Seda de Granada',
+    imagenAlt: 'Reyes Sánchez Tallón, médica colegiada y colaboradora en salud integrativa en el Centro La Seda de Granada',
     colegiadoTexto: 'Médica Colegiada <strong class="text-[#27252B]/70 font-medium">Nº 18-10008273</strong>',
-    especialidades: ['Medicina Pediátrica', 'Salud Integrativa', 'Terapia Corporal Integrativa', 'Somatización']
+    especialidades: ['Medicina', 'Terapia Gestalt', 'Terapia Corporal Integrativa', 'Trauma y TEPT']
+  },
+  {
+    id: 'maria-noel-reyes',
+    nombre: 'María Noel Reyes',
+    rol: 'Psicoterapia',
+    subtitulo: 'Psicoterapia Integradora-Humanista · Adultos',
+    cita: 'Cada persona lleva dentro los recursos para crecer; mi trabajo es acompañarla a encontrarlos.',
+    biografia: 'Psicoterapeuta con enfoque integrador-humanista y terapeuta Gestalt, con más de una década de experiencia en el acompañamiento a personas mayores, duelo y final de vida en Barcelona, y dedicada desde 2015 a la psicoterapia privada con adultos: crecimiento personal, gestión emocional y terapia de pareja.',
+    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagenAlt: 'María Noel Reyes, psicoterapeuta en el Centro de Psicología La Seda en Granada',
+    // NOTA PARA EL EQUIPO: no había número de colegiada en el CV recibido; sustituye este texto en cuanto lo tengáis.
+    colegiadoTexto: '<strong class="text-[#27252B]/70 font-medium">Máster en Psicología General Sanitaria</strong> — Universidad de Valencia',
+    especialidades: ['Terapia Gestalt', 'Enfoque Integrador-Humanista', 'Duelo y Pérdidas', 'Psicogerontología']
   },
 ]
 

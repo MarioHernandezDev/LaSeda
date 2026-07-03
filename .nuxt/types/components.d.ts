@@ -14,6 +14,10 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  AppFooter: typeof import("../../app/components/AppFooter.vue")['default']
+  AppHeader: typeof import("../../app/components/AppHeader.vue")['default']
+  AppMobileMenu: typeof import("../../app/components/AppMobileMenu.vue")['default']
+  ChatGuiado: typeof import("../../app/components/ChatGuiado.vue")['default']
   CookieBanner: typeof import("../../app/components/CookieBanner.vue")['default']
   CustomCursor: typeof import("../../app/components/CustomCursor.vue")['default']
   PageHero: typeof import("../../app/components/PageHero.vue")['default']
@@ -72,6 +76,10 @@ interface _GlobalComponents {
   Html: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
   Body: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  LazyAppFooter: LazyComponent<typeof import("../../app/components/AppFooter.vue")['default']>
+  LazyAppHeader: LazyComponent<typeof import("../../app/components/AppHeader.vue")['default']>
+  LazyAppMobileMenu: LazyComponent<typeof import("../../app/components/AppMobileMenu.vue")['default']>
+  LazyChatGuiado: LazyComponent<typeof import("../../app/components/ChatGuiado.vue")['default']>
   LazyCookieBanner: LazyComponent<typeof import("../../app/components/CookieBanner.vue")['default']>
   LazyCustomCursor: LazyComponent<typeof import("../../app/components/CustomCursor.vue")['default']>
   LazyPageHero: LazyComponent<typeof import("../../app/components/PageHero.vue")['default']>

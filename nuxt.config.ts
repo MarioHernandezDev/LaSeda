@@ -13,6 +13,13 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
   
+  router: {
+    options: {
+      // Fuerza al navegador a subir arriba del todo en cada cambio de ruta
+      scrollBehaviorType: 'smooth' 
+    }
+  },
+  
   tailwindcss: {
     exposeConfig: true,
     viewer: false,

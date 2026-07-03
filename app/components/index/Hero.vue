@@ -31,10 +31,7 @@
           </p>
         </div>
 
-        <h1 
-          class="hero-text-item text-[#27252B] tracking-tight mb-8" 
-          style="--i:2;"
-        >
+        <h1 class="hero-text-item text-[#27252B] tracking-tight mb-8" style="--i:2;">
           <span class="block font-serif italic font-light text-[3rem] sm:text-[4.5rem] lg:text-[5.6rem] leading-[1.05]">
             Psicología, terapia Gestalt
           </span>
@@ -43,10 +40,7 @@
           </span>
         </h1>
 
-        <p 
-          class="hero-text-item text-stone-600/90 font-light text-base md:text-lg leading-[1.85] max-w-2xl mb-12"
-          style="--i:3"
-        >
+        <p class="hero-text-item text-stone-600/90 font-light text-base md:text-lg leading-[1.85] max-w-2xl mb-12" style="--i:3">
           Acompañamos a adultos, niños, adolescentes y familias en procesos de cambio, crisis y crecimiento, desde un enfoque integrativo, humano y cercano.
         </p>
 
@@ -103,17 +97,23 @@
           class="hero-text-item lg:col-span-3 flex justify-center lg:justify-end border-t lg:border-t-0 pt-6 lg:pt-0 border-[#27252B]/5"
           style="--i:6"
         >
-          <div class="relative w-48 h-48 bg-[#F5F2EE]/90 rounded-full border border-[#27252B]/8 shadow-sm group/butterfly overflow-hidden">
+          <div class="relative w-48 h-48 bg-[#F5F2EE]/90 rounded-full border border-[#27252B]/8 shadow-sm group/butterfly overflow-hidden flex items-center justify-center">
             <div class="absolute inset-0 m-auto w-16 h-16 bg-[#71B1A5]/20 rounded-full blur-xl transition-transform duration-700 group-hover/butterfly:scale-150 pointer-events-none"></div>
             
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center butterfly-floating-animation">
-              <div class="butterfly-wrapper !static !p-0 !m-0 !inset-auto transform scale-[0.75] flex items-center justify-center">
-                <div class="butterfly-3d">
-                  <div class="wing-3d"><div class="bit-3d"></div><div class="bit-3d"></div></div>
-                  <div class="wing-3d"><div class="bit-3d"></div><div class="bit-3d"></div></div>
+            <div class="scene-container scale-[0.65] transform translate-y-[-15px]">
+              <div class="butterfly-3d">
+                <div class="wing-3d">
+                  <div class="bit-3d"></div>
+                  <div class="bit-3d"></div>
+                </div>
+                <div class="wing-3d">
+                  <div class="bit-3d"></div>
+                  <div class="bit-3d"></div>
                 </div>
               </div>
+              <div class="shadow-3d"></div>
             </div>
+
           </div>
         </div>
 
@@ -132,7 +132,7 @@ defineProps({
 </script>
 
 <style scoped>
-/* Animaciones Fluidas Modernas */
+/* Animaciones Fluidas Modernas del Contenido */
 .hero-text-item {
   opacity: 0;
   transform: translateY(30px);
@@ -158,23 +158,164 @@ defineProps({
   transform: scale(1.01);
 }
 
-/* Animación de flotado sobre el centro absoluto */
-.butterfly-floating-animation {
-  animation: organicFloat 4.5s ease-in-out infinite;
-  will-change: transform;
+/* ════════════════════════════════════════════════════════
+   SISTEMA DE ANIMACIÓN 3D NATIVO PARA LA MARIPOSA
+   ════════════════════════════════════════════════════════ */
+.scene-container { 
+  perspective: 800px; 
+  perspective-origin: 50% 50%; 
+  position: relative;
 }
 
-@keyframes organicFloat {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translate(-50%, -50%) translateY(-4px) rotate(3deg);
-  }
+.butterfly-3d { 
+  animation: hoverButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite; 
+  animation-direction: alternate; 
+  animation-fill-mode: reverse; 
+  position: relative; 
+  width: 30px; 
+  transform-style: preserve-3d; 
+  transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateY(0px); 
+  z-index: 10;
+}
+
+/* Cuerpo central de la mariposa */
+.butterfly-3d::before { 
+  content: ''; 
+  display: block; 
+  position: absolute; 
+  width: 8px; 
+  height: 75px; 
+  top: 10px; 
+  left: 50%; 
+  margin-left: -4px; 
+  border-radius: 50%; 
+  z-index: 2; 
+  background: #27252B; 
+  transform: rotateY(100deg); 
+}
+
+/* Sombra proyectada en la base */
+.shadow-3d { 
+  animation: shadowButterfly 250ms cubic-bezier(.48,.01,.54,1) infinite; 
+  animation-direction: alternate; 
+  animation-fill-mode: reverse; 
+  display: block; 
+  position: absolute; 
+  width: 80px; 
+  height: 8px; 
+  border-radius: 50%;
+  opacity: 0.08; 
+  background: #27252B; 
+  transform-origin: 50% 50%; 
+  transform: translateX(-30px) translateY(85px); 
+}
+
+.wing-3d { 
+  display: block; 
+  opacity: 0.85; 
+  position: absolute; 
+  top: 0; 
+}
+
+/* Ala Izquierda */
+.wing-3d:first-child { 
+  animation: leftFlap 250ms cubic-bezier(.48,.01,.54,1) infinite; 
+  animation-direction: alternate; 
+  animation-fill-mode: reverse; 
+  width: 1px; 
+  height: 1px; 
+  left: 0; 
+  z-index: 3; 
+  transform: rotateY(-20deg); 
+  transform-origin: 700% 50%; 
+}
+
+/* Ala Derecha */
+.wing-3d:last-child { 
+  animation: rightFlap 250ms cubic-bezier(.48,.01,.54,1) infinite; 
+  animation-direction: alternate; 
+  animation-fill-mode: reverse; 
+  width: 1px; 
+  height: 1px; 
+  right: 0; 
+  z-index: 1; 
+  transform: rotateY(200deg); 
+}
+
+/* Colores de marca aplicados a las alas */
+.wing-3d .bit-3d { 
+  background: #71B1A5; 
+}
+.wing-3d .bit-3d::after { 
+  background: #8ec4bc; 
+}
+
+.wing-3d .bit-3d, 
+.wing-3d .bit-3d::after { 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  transform-origin: 100% 50%; 
+}
+
+.wing-3d .bit-3d:first-child { 
+  width: 130px; 
+  height: 70px; 
+  top: 15px; 
+  text-align: center; 
+  transform: rotateZ(40deg); 
+}
+
+.wing-3d .bit-3d:first-child::after { 
+  content: ''; 
+  display: inline-block; 
+  width: 100px; 
+  height: 60px; 
+  top: 5px; 
+  left: -30px; 
+}
+
+.wing-3d .bit-3d:last-child { 
+  width: 100px; 
+  height: 55px; 
+  transform: rotateZ(-40deg); 
+}
+
+.wing-3d .bit-3d:last-child::after { 
+  content: ''; 
+  display: inline-block; 
+  width: 60px; 
+  height: 45px; 
+  top: 5px; 
+  left: -24px; 
+  z-index: 1; 
+}
+
+/* Keyframes de Física y Movimiento 3D */
+@keyframes hoverButterfly {
+  0% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(0px); }
+  100% { transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateZ(-6px); }
+}
+
+@keyframes shadowButterfly {
+  0% { transform: translateX(-30px) translateY(85px) scale(1,1); }
+  100% { transform: translateX(-30px) translateY(85px) scale(1.15, 1.15); }
+}
+
+@keyframes leftFlap {
+  0% { transform: rotateY(-20deg); }
+  100% { transform: rotateY(90deg); }
+}
+
+@keyframes rightFlap {
+  0% { transform: rotateY(200deg); }
+  100% { transform: rotateY(90deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-text-item, .hero-bg-image, .butterfly-floating-animation {
+  .hero-text-item, .hero-bg-image, .butterfly-3d, .wing-3d, .shadow-3d {
     transform: none !important;
     opacity: 1 !important;
     transition: none !important;

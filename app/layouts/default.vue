@@ -1,156 +1,17 @@
 <template>
   <div class="flex flex-col min-h-screen bg-[#FDFBF9] font-sans text-[#27252B]">
+    
+    <AppHeader 
+      :scrolled="scrolled" 
+      :current-path="currentPath" 
+      @toggle-menu="mobileMenuOpen = !mobileMenuOpen" 
+    />
 
-    <header
-      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform-gpu will-change-transform backface-hidden"
-      :class="scrolled
-        ? 'bg-[#FDFBF9]/90 backdrop-blur-md shadow-lg shadow-[#27252B]/4 border-b border-[#27252B]/5 py-2'
-        : 'bg-transparent py-4 md:py-6'"
-    >
-      <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <nav class="flex items-center justify-between h-14 md:h-16" aria-label="Navegación principal">
-
-          <ul class="hidden md:flex flex-1 items-center justify-end gap-6 lg:gap-10 pr-12 lg:pr-16" role="list">
-            <li v-for="link in leftNavLinks" :key="link.to">
-              <NuxtLink
-                :to="link.to"
-                class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-                :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
-                :aria-current="currentPath === link.to ? 'page' : undefined"
-              >
-                {{ link.label }}
-                <span
-                  class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                  :class="{ 'scale-x-100': currentPath === link.to }"
-                ></span>
-              </NuxtLink>
-            </li>
-          </ul>
-
-          <div class="flex-shrink-0 flex items-center justify-center z-10">
-            <NuxtLink to="/" class="group block" aria-label="Ir a inicio">
-              <NuxtImg
-                src="/images/logo-centro-la-seda-psicologia-granada.png"
-                alt="Logo Centro La Seda — Psicología y Talleres en Granada"
-                format="webp"
-                fetchpriority="high"
-                class="h-9 md:h-11 w-auto transition-transform duration-500 group-hover:scale-105"
-              />
-            </NuxtLink>
-          </div>
-
-          <div class="hidden md:flex flex-1 items-center justify-start gap-8 lg:gap-12 pl-12 lg:pl-16">
-            <ul class="flex items-center gap-6 lg:gap-10" role="list">
-              <li v-for="link in rightNavLinks" :key="link.to">
-                <NuxtLink
-                  :to="link.to"
-                  class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-                  :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
-                  :aria-current="currentPath === link.to ? 'page' : undefined"
-                >
-                  {{ link.label }}
-                  <span
-                    class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                    :class="{ 'scale-x-100': currentPath === link.to }"
-                  ></span>
-                </NuxtLink>
-              </li>
-            </ul>
-
-            <NuxtLink
-              to="/contacto"
-              class="inline-flex items-center justify-center bg-[#71B1A5] text-white text-[10px] tracking-[0.22em] uppercase font-bold px-6 py-2.5 rounded-full hover:bg-[#5a9a8e] transition-all duration-500 shadow-lg shadow-[#71B1A5]/10 hover:shadow-xl hover:shadow-[#71B1A5]/30 hover:-translate-y-0.5 whitespace-nowrap"
-            >
-              Contacto
-            </NuxtLink>
-          </div>
-
-          <button
-            class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full border border-[#27252B]/5 bg-[#FDFBF9]/60 backdrop-blur-sm ml-auto gap-1.5 transition-all duration-300 active:scale-95 focus:outline-none z-50 relative"
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            :aria-expanded="mobileMenuOpen"
-            aria-label="Abrir menú de navegación"
-          >
-            <span
-              class="block w-5 h-px bg-[#27252B] transition-all duration-300 origin-center"
-              :class="mobileMenuOpen ? 'rotate-45 translate-y-[5px] !bg-[#27252B]' : ''"
-            ></span>
-            <span
-              class="block w-3 h-px bg-[#27252B] transition-all duration-300"
-              :class="mobileMenuOpen ? 'opacity-0 w-0' : ''"
-            ></span>
-            <span
-              class="block w-5 h-px bg-[#27252B] transition-all duration-300 origin-center"
-              :class="mobileMenuOpen ? '-rotate-45 -translate-y-[3px] !bg-[#27252B]' : ''"
-            ></span>
-          </button>
-
-        </nav>
-      </div>
-    </header>
-
-    <Transition
-      enter-active-class="transition-all duration-500 ease-out"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-all duration-400 ease-in"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <div
-        v-if="mobileMenuOpen"
-        class="md:hidden fixed inset-0 w-screen h-screen bg-[#FDFBF9] z-40 flex flex-col justify-between px-8 pt-32 pb-12 overflow-y-auto"
-      >
-        <div class="w-full flex justify-center items-center opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] delay-100">
-          <NuxtImg
-            src="/images/logo-centro-la-seda-psicologia-granada.png"
-            alt="Logo Centro La Seda"
-            format="webp"
-            class="h-10 w-auto"
-          />
-        </div>
-
-        <nav aria-label="Navegación móvil" class="flex flex-col items-center justify-center space-y-7 my-auto">
-          <div
-            v-for="(link, index) in mobileNavLinks"
-            :key="link.to"
-            class="opacity-0 animate-[fadeInUp_0.5s_ease-out_forwards]"
-            :style="{ 'animation-delay': `${150 + (index * 60)}ms` }"
-          >
-            <NuxtLink
-              :to="link.to"
-              class="text-sm tracking-[0.35em] uppercase font-semibold text-[#27252B]/60 hover:text-[#27252B] transition-colors duration-300 relative group block text-center"
-              :class="{ 'text-[#71B1A5] font-bold': currentPath === link.to }"
-              :aria-current="currentPath === link.to ? 'page' : undefined"
-              @click="mobileMenuOpen = false"
-            >
-              {{ link.label }}
-              <span
-                class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#71B1A5] opacity-0 transition-opacity duration-300"
-                :class="{ 'opacity-100': currentPath === link.to }"
-              ></span>
-            </NuxtLink>
-          </div>
-        </nav>
-
-        <div class="w-full max-w-sm mx-auto flex flex-col items-center gap-5 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] [animation-delay:450ms]">
-          <NuxtLink
-            to="/contacto"
-            class="w-full inline-flex items-center justify-center gap-3 bg-[#71B1A5] text-white text-xs tracking-[0.25em] uppercase font-bold py-4 rounded-full hover:bg-[#5a9a8e] transition-all duration-300 shadow-xl shadow-[#71B1A5]/15 active:scale-[0.98]"
-            @click="mobileMenuOpen = false"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            Contacto
-          </NuxtLink>
-
-          <p class="text-[9px] tracking-[0.2em] uppercase text-[#27252B]/40 text-center font-light">
-            Centro de Psicología La Seda
-          </p>
-        </div>
-      </div>
-    </Transition>
+    <AppMobileMenu 
+      :is-open="mobileMenuOpen" 
+      :current-path="currentPath" 
+      @close="mobileMenuOpen = false" 
+    />
 
     <main class="flex-grow relative z-10">
       <slot />
@@ -184,160 +45,9 @@
       </button>
     </Transition>
 
-    <footer class="bg-[#1e1c21] text-white/40" aria-label="Pie de página">
-      <div class="h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent"></div>
+    <ChatGuiado />
 
-      <div class="max-w-7xl mx-auto px-8 md:px-16 pt-16 md:pt-20 pb-14">
-        <div class="grid md:grid-cols-12 gap-12 md:gap-10">
-
-          <div class="md:col-span-4">
-            <NuxtLink to="/" class="inline-flex items-center gap-3 group mb-6" aria-label="Ir a inicio">
-              <NuxtImg
-                src="/images/logo-centro-la-seda-psicologia-granada.png"
-                alt="Logo Centro La Seda — Psicología y Talleres en Granada"
-                format="webp"
-                loading="lazy"
-                class="h-9 w-auto opacity-60 group-hover:opacity-90 transition-opacity duration-300 brightness-0 invert"
-              />
-            </NuxtLink>
-
-            <div class="border-l border-[#71B1A5]/40 pl-4">
-              <p class="font-serif text-sm italic text-white/35 leading-relaxed">
-                "Crecer no es un privilegio.<br/>Es un derecho que acompañamos."
-              </p>
-            </div>
-
-            <div class="flex items-center gap-3 mt-8">
-              <a
-                href="https://www.instagram.com/centrolaseda/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
-                aria-label="Instagram de Centro La Seda"
-              >
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/CentroLaSeda/?locale=es_ES"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-white/40 hover:text-[#71B1A5] transition-colors duration-300"
-                aria-label="Facebook de Centro La Seda"
-              >
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M9 8H7v3h2v9h4v-9h3l.5-3H13V6c0-.5.5-1 1-1h2V1H13a5 5 0 00-5 5v2z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div class="md:col-span-3 md:col-start-6">
-            <h3 class="text-white text-[10px] tracking-[0.3em] uppercase mb-6 font-medium">Explora</h3>
-            <ul class="space-y-3" role="list">
-              <li v-for="link in footerNavLinks" :key="link.to">
-                <NuxtLink
-                  :to="link.to"
-                  class="group inline-flex items-center gap-2 text-sm font-light hover:text-[#71B1A5] transition-colors duration-300"
-                >
-                  <span class="w-0 group-hover:w-3 h-px bg-[#71B1A5] transition-all duration-300 overflow-hidden"></span>
-                  {{ link.label }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </div>
-
-          <div class="md:col-span-3 md:col-start-10">
-            <h3 class="text-white text-[10px] tracking-[0.3em] uppercase mb-6 font-medium">Contacto</h3>
-
-            <address class="not-italic space-y-4">
-              <div class="flex items-start gap-3">
-                <svg class="w-4 h-4 text-[#71B1A5] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <div>
-                  <p class="text-sm font-light leading-relaxed">
-                    C. Horno de Haza, 29, Bajo 1<br/>
-                    <span class="text-white/30 text-xs italic font-sans">(Se accede por el portal)</span><br/>
-                    Centro, 18002 Granada
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <svg class="w-4 h-4 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <a href="tel:+34679571977" class="text-sm font-light hover:text-[#71B1A5] transition-colors duration-300">
-                  679 571 977
-                </a>
-              </div>
-
-              <div class="flex items-center gap-3">
-                <svg class="w-4 h-4 text-[#71B1A5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <a href="mailto:hola@laseda.es" class="text-sm font-light hover:text-[#71B1A5] transition-colors duration-300">
-                  hola@laseda.es
-                </a>
-              </div>
-            </address>
-
-            <div class="mt-8 flex items-start gap-3 p-4 border border-white/5 bg-white/[0.01]">
-              <svg class="w-5 h-5 text-[#71B1A5] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138"/>
-              </svg>
-              <p class="text-xs text-white/40 leading-relaxed font-light">
-                Psicólogos colegiados por el
-                <strong class="text-white/60 font-medium block">Colegio Oficial de Psicólogos de Andalucía Oriental</strong>
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-8 md:px-16">
-        <div class="h-px bg-white/5"></div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-8 md:px-16 py-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] tracking-widest uppercase">
-          <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <span class="text-white/25">
-              © {{ currentYear }} Centro La Seda · Psicología y Crecimiento en Granada
-            </span>
-            <span class="hidden sm:inline w-px h-3 bg-white/10" aria-hidden="true"></span>
-            <span class="text-white/25 normal-case tracking-normal">
-              Hecho con ♡ por 
-              <a 
-                href="https://codifiko.vercel.app" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="lowercase font-mono text-white/40 hover:text-[#71B1A5] transition-colors duration-300 tracking-wider font-bold"
-              >
-                codifiko._
-              </a>
-            </span>
-          </div>
-          <nav aria-label="Navegación legal" class="flex items-center gap-6">
-            <NuxtLink to="/aviso-legal" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
-              Aviso Legal
-            </NuxtLink>
-            <span class="w-px h-3 bg-white/10" aria-hidden="true"></span>
-            <NuxtLink to="/privacidad" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
-              Política de Privacidad
-            </NuxtLink>
-            <span class="w-px h-3 bg-white/10" aria-hidden="true"></span>
-            <NuxtLink to="/cookies" class="text-white/25 hover:text-[#71B1A5] transition-colors duration-300">
-              Cookies
-            </NuxtLink>
-          </nav>
-        </div>
-      </div>
-    </footer>
+    <AppFooter />
 
   </div>
 </template>
@@ -374,32 +84,7 @@ const handleResize = () => {
 onMounted(() => window.addEventListener('resize', handleResize, { passive: true }))
 onUnmounted(() => window.removeEventListener('resize', handleResize))
 
-const currentYear = new Date().getFullYear()
 const currentPath = computed(() => route.path)
-
-const navLinks = [
-  { label: 'Terapias',    to: '/terapias'    },
-  { label: 'Talleres',    to: '/talleres'    },
-  { label: 'Formaciones', to: '/formaciones' },
-  { label: 'Conócenos',   to: '/conocenos'   },
-]
-
-const leftNavLinks  = computed(() => navLinks.slice(0, 2))
-const rightNavLinks = computed(() => navLinks.slice(2))
-
-const mobileNavLinks = computed(() => [
-  { label: 'Inicio', to: '/' },
-  ...navLinks
-])
-
-const footerNavLinks = [
-  { label: 'Inicio',            to: '/'            },
-  { label: 'Terapias Clínicas',    to: '/terapias'    },
-  { label: 'Talleres Vivenciales', to: '/talleres'    },
-  { label: 'Formaciones',          to: '/formaciones' },
-  { label: 'Conócenos',            to: '/conocenos'   },
-  { label: 'Contacto',             to: '/contacto'    },
-]
 
 watch(mobileMenuOpen, (menuOpen) => {
   if (menuOpen) {
@@ -411,37 +96,9 @@ watch(mobileMenuOpen, (menuOpen) => {
 </script>
 
 <style>
-header {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-
-.backdrop-blur-md {
-  -webkit-backdrop-filter: blur(12px) !important;
-  backdrop-filter: blur(12px) !important;
-}
-
 @media (min-width: 1024px) {
   body, a, button, input, textarea, [role="button"] {
     cursor: none !important;
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

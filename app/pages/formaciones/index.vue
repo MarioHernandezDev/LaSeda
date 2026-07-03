@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useSeoMeta, useHead } from '#app'
 
-// ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE FORMACIONES ─────────
+// ─── SEO & METADATOS ULTRA-OPTIMIZADOS ───────────────────────────────────────
 useSeoMeta({
   title: 'Formación para Psicólogos y Terapia Gestalt Infantil en Granada 2026 | La Seda',
   ogTitle: 'Formación para Psicólogos y Terapia Gestalt Infantil en Granada 2026 | La Seda',
@@ -9,7 +9,7 @@ useSeoMeta({
   ogDescription: 'Impulsa tu práctica clínica con nuestras formaciones presenciales en Granada. Especialización profesional en Terapia Gestalt Infantil y Certificación Internacional Wingwave®.',
   ogImage: '/images/formacion-psicologia-presencial-granada-la-seda.jpg',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Formación en Psicología Clínica y Especialización en Granada',
+  twitterTitle: 'Formación en Psicología Clinical y Especialización en Granada',
   twitterDescription: 'Programas presenciales 2026 para profesionales de la salud mental y educación. Gestalt infantil y certificación internacional Wingwave®.',
   robots: 'index, follow'
 })
@@ -22,6 +22,13 @@ useHead({
     lang: 'es'
   }
 })
+
+// Función de seguridad para garantizar el scroll superior instantáneo
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
+}
 </script>
 
 <template>
@@ -70,11 +77,11 @@ useHead({
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-
+          
           <div class="space-y-12 lg:space-y-32">
-            
             <NuxtLink
               to="/formaciones/gestalt-infantil"
+              @click="scrollToTop"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5"
               aria-label="Ver programa de Terapia Gestalt Infantil y Adolescente"
             >
@@ -94,7 +101,7 @@ useHead({
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Gestalt Infantil y Adolescente</h3>
                 <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Un paseo por la infancia y la adolescencia desde la comprensión teórica hasta la práctica clínica más humana y sistémica. Recursos prácticos como juego, creatividad, técnicas proyectivas y supervisión de la mano de profesionales titulados.
+                  Un paseo por la infancia y la adolescencia desde la comprensión teórica hasta la práctica clínica más humana y sistémica. Recursos prácticos como juego, creatividad, técnicas proyectivas y supervisión de la mano de profesionales de referencia.
                 </p>
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5 flex flex-wrap gap-x-4 gap-y-1">
                   <span>Módulos: <span class="font-normal text-[#27252B]/70">288h · 15 talleres</span></span>
@@ -107,13 +114,12 @@ useHead({
                 </span>
               </div>
             </NuxtLink>
-
           </div>
 
           <div class="space-y-12 lg:space-y-32 lg:mt-32">
-
             <NuxtLink
               to="/formaciones/metodo-wingwave"
+              @click="scrollToTop"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5"
               aria-label="Saber más sobre la Formación Certificada Oficial en Método Wingwave"
             >
@@ -133,7 +139,7 @@ useHead({
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Método Wingwave® Certificación</h3>
                 <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Herramienta efectiva para regular el estrés emocional, procesar bloqueos y fobias de forma rápida. Metodología estructurada mediante estimulación bilateral y test O-Ring. Con acreditación internacional.
+                  Herramienta efectiva para regular el estrés emocional, procesar bloqueos y fobias de forma rápida. Metodología estructurada mediante estimulación bilateral y test O-Ring. Con Acreditación Internacional.
                 </p>
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5 flex flex-wrap gap-x-4 gap-y-1">
                   <span>Formato: <span class="font-normal text-[#27252B]/70">32h · 4 días intensivos</span></span>
@@ -146,13 +152,14 @@ useHead({
                 </span>
               </div>
             </NuxtLink>
-
           </div>
+
         </div>
 
         <div class="mt-20 lg:mt-32 max-w-3xl mx-auto">
           <NuxtLink
             to="/contacto"
+            @click="scrollToTop"
             class="training-card group relative flex flex-col items-center justify-center text-center bg-[#71B1A5] rounded-sm p-10 md:p-16 min-h-[380px] transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/20 overflow-hidden"
             aria-label="Escríbenos para orientación formativa"
           >
@@ -171,9 +178,9 @@ useHead({
             </div>
 
             <div class="relative z-10 pt-8">
-              <span class="btn-secondary !bg-white/95 !border-transparent hover:!bg-white text-[#27252B] hover:scale-105 shadow-xl transition-transform">
+              <div class="btn-secondary inline-block !bg-white/95 !border-transparent hover:!bg-white text-[#27252B] hover:scale-105 shadow-xl transition-transform">
                 Escríbenos ahora
-              </span>
+              </div>
             </div>
           </NuxtLink>
         </div>
@@ -215,57 +222,47 @@ useHead({
           </h2>
 
           <ol class="space-y-10" aria-label="Valores del centro formativo">
-
-            <li class="flex gap-6 items-start">
+            <li class="flex gap-6 items-start pb-8 border-b border-[#27252B]/8">
               <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">288</span>
               </div>
-              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+              <div class="pt-2 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
                   Horas Avaladas en Especialidad Gestalt
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  240 horas de docencia directa presencial sumadas a 48 horas de desarrollo de proyecto práctico clínico, repartidas equilibradamente en 15 talleres monográficos.
+                  240 horas de docencia directa presencial sumadas a 48 horas de desarrollo de proyecto práctico clínico, repartidas en 15 talleres monográficos.
                 </p>
               </div>
             </li>
 
-            <li>
-              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
-            </li>
-
-            <li class="flex gap-6 items-start">
+            <li class="flex gap-6 items-start pb-8 border-b border-[#27252B]/8">
               <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">14+</span>
               </div>
-              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+              <div class="pt-2 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
                   Estudios Universitarios Científicos
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  La validez del método Wingwave® está sólidamente respaldada por más de 14 investigaciones independientes y auditada bajo la estricta norma de calidad educativa ISO 29993.
+                  La validez del método Wingwave® está sólidamente respaldada por más de 14 investigaciones independientes y auditada bajo la norma educativa ISO 29993.
                 </p>
               </div>
-            </li>
-
-            <li>
-              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
             </li>
 
             <li class="flex gap-6 items-start">
               <div class="shrink-0" aria-hidden="true">
                 <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">10</span>
               </div>
-              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+              <div class="pt-2 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
                   Docentes de Máximo Nivel Clínico
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  Aprende de un claustro interdisciplinar de referencia integrado por Ana Mª Jiménez, Leonor Cabrera, Oriol Bellés y reconocidos colaboradores activos de la psicología nacional.
+                  Aprende de un claustro interdisciplinar integrado por Ana Mª Jiménez, Leonor Cabrera, Oriol Bellés y reconocidos colaboradores activos de la psicología nacional.
                 </p>
               </div>
             </li>
-
           </ol>
         </div>
 
@@ -274,6 +271,7 @@ useHead({
       <div class="mt-16 md:mt-24 pt-12 border-t border-[#27252B]/10 flex justify-center w-full">
         <NuxtLink
           to="/contacto"
+          @click="scrollToTop"
           class="group btn-primary !inline-flex"
           aria-label="Ir a contacto para solicitar reserva de plaza"
         >

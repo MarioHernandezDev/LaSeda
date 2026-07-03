@@ -201,46 +201,50 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'María Noel Reyes',
     nombreCorto: 'María Noel',
     rol: 'Psicoterapia',
-    especialidadLabel: 'Psicología Clínica · Adultos',
-    tituloOficial: 'Psicóloga Sanitaria Colegiada · Especialista en Trauma y Apego',
-    cita: 'El espacio terapéutico es un lugar de revelación y soporte donde integrar cada fragmento de la historia vital.',
-    imagen: '/images/maria-noel-reyes-psicologa-terapeuta-granada.jpg',
-    imagenAlt: 'María Noel Reyes, psicóloga sanitaria colegiada en el Centro de Psicología La Seda en Granada',
+    especialidadLabel: 'Psicoterapia Integradora-Humanista · Adultos',
+    // NOTA PARA EL EQUIPO: en el CV recibido no figura número de colegiada.
+    // Añádelo aquí en "tituloOficial" / "acreditaciones" en cuanto lo tengáis, para mantener la coherencia con el resto de perfiles.
+    tituloOficial: 'Psicóloga General Sanitaria · Terapeuta Gestalt',
+    cita: 'Cada persona lleva dentro los recursos para crecer; mi trabajo es acompañarla a encontrarlos.',
+    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagenAlt: 'María Noel Reyes, psicoterapeuta en el Centro de Psicología La Seda en Granada',
     galeria: [
-      { src: '/images/maria-noel-reyes-consulta.jpg', alt: 'María Noel Reyes en una sesión clínica clínica individual' },
-      { src: '/images/la-seda-detalles-granada.jpg', alt: 'Detalle ambiental y pacífico de los despachos en La Seda' }
+      { src: '/images/leonor-cabrera-formacion-wingwave.jpg', alt: 'María Noel Reyes en una sesión terapéutica en La Seda' },
+      { src: '/images/la-seda-sala-reuniones.jpg', alt: 'Espacios de acompañamiento y encuentro en el Centro La Seda' }
     ],
     acreditaciones: [
-      'Colegiada Nº AO11245 — Colegio Oficial de Psicología de Andalucía Oriental',
-      'Máster en Psicología General Sanitaria — Universidad de Granada',
-      'Especialista en Trauma, Apego y Procesamiento Emocional',
+      'Máster en Psicología General Sanitaria — Universidad de Valencia',
+      'Terapeuta Gestalt — Institut Gestalt, Barcelona',
+      'Postgrado en Acompañamiento al Duelo y Pérdidas — Asociación Aves, Barcelona',
     ],
-    tags: ['Psicología Clínica', 'Trauma y Apego', 'EMDR', 'Mindfulness', 'Enfoque Integrativo', 'Regulación Emocional'],
+    tags: ['Terapia Gestalt', 'Enfoque Integrador-Humanista', 'Duelo y Pérdidas', 'Psicogerontología', 'Terapia de Pareja', 'Arte-terapia', 'Teatro Terapia Gestalt'],
     biografiaExtendida: [
-      'María Noel Reyes es <strong>psicóloga sanitaria colegiada</strong> y especialista en psicoterapia integrativa de adultos en La Seda. Su labor se centra en construir un puente seguro hacia el autoconocimiento, permitiendo que cada paciente explore sus dificultades desde un clima de <strong>absoluto respeto, calidez y validación</strong>.',
-      'Su enfoque combina la evidencia científica con una sensibilidad humanista profunda, prestando especial atención a cómo las <strong>experiencias de apego temprano</strong> y las vivencias difíciles moldean nuestra manera de gestionar el estrés, la ansiedad y las relaciones en el presente.',
-      'Entiende el síntoma psicológico no como un enemigo a batir, sino como una señal de alarma del organismo que necesita ser comprendida y atendida mediante herramientas de <strong>regulación emocional y procesamiento profundo</strong>.'
+      'María Noel Reyes es <strong>psicoterapeuta de vocación</strong>, con una curiosidad natural que la mantiene en constante formación y aprendizaje, tanto a nivel profesional como personal. Su línea de trabajo parte de un <strong>enfoque integrador-humanista</strong>, que le permite acompañar a cada persona desde una concepción holística y positiva del ser humano.',
+      'Desde 2015 desarrolla su práctica privada de <strong>psicoterapia con adultos</strong>, trabajando tanto a nivel individual como grupal y de pareja: crecimiento personal, autoconocimiento y autoestima, gestión emocional —ansiedad, fobias, pánico— y acompañamiento en momentos de crisis y cambio vital.',
+      'Antes de dedicarse a la práctica privada, acumuló más de una década de experiencia en el <strong>acompañamiento psicológico a personas mayores</strong> y a sus familias, un recorrido que ha dejado una huella profunda en su forma de entender el vínculo, el cuidado y el final de la vida.'
     ],
     trayectoria: [
-      'Desarrolló sus primeras etapas de especialización clínica en el ámbito de la <strong>salud mental y la psicoterapia de adultos en Granada</strong>, orientando su práctica hacia el tratamiento de trastornos del estado de ánimo, duelos complejos y bloqueos existenciales.',
-      'Su continuo interés por los mecanismos corporales y emocionales del estrés la llevó a formarse en abordajes de vanguardia como el <strong>procesamiento del trauma (EMDR) y técnicas basadas en Mindfulness</strong>. Esto le permite intervenir tanto en el plano cognitivo como en el sistema nervioso.',
-      'En el Centro La Seda, María Noel ofrece un acompañamiento psicoterapéutico riguroso y personalizado, ayudando a consolidar un bienestar interno duradero y una relación más compasiva de la persona consigo misma.'
+      'Entre 2011 y 2022, María Noel trabajó en asociaciones, centros de día y diversas residencias de <strong>Barcelona</strong>, ofreciendo apoyo psicológico a personas mayores en procesos de vejez y demencia, así como a sus familias. Su último puesto en este ámbito fue en la <strong>Residencia Rubí (Grup Mutuam), Barcelona, entre 2017 y 2022</strong>.',
+      'En ese entorno acompañó a personas mayores en <strong>duelos, procesos de demencia —a través de la metodología de la validación— y situaciones de final de vida</strong>, además de asesorar a familias y cuidadores e impartir talleres formativos. También ofreció apoyo psicológico individual y grupal a los propios trabajadores de los centros.',
+      'Desarrolló este trabajo desde el <strong>enfoque centrado en la persona (ACP)</strong> y dentro de un equipo multidisciplinar, promoviendo el comité de ética y la supervisión de casos, formándose de manera continua en ACP y cuidados, y participando en conferencias e investigación. Desde 2015 compagina —y desde 2022 centra— su actividad en la <strong>psicoterapia privada con adultos</strong>.'
     ],
     areasEspecializacion: [
-      { titulo: 'Psicoterapia de adultos', descripcion: 'Tratamiento personalizado para la ansiedad, estados depresivos, transiciones vitales complejas, baja autoestima y crisis de identidad.' },
-      { titulo: 'Trauma y heridas de apego', descripcion: 'Acompañamiento especializado en el procesamiento de vivencias dolorosas del pasado y la reparación de dinámicas vinculares que afectan al bienestar actual.' },
-      { titulo: 'Regulación del sistema nervioso', descripcion: 'Integración de herramientas corporales y de atención plena para modular la respuesta al estrés crónico, la angustia y la somatización.' }
+      { titulo: 'Psicoterapia individual de adultos', descripcion: 'Acompañamiento en procesos de crecimiento personal, autoconocimiento y autoestima, gestión emocional de la ansiedad, las fobias y el pánico, y desarrollo del potencial humano ante crisis y cambios vitales.' },
+      { titulo: 'Terapia grupal y arte-terapia', descripcion: 'Espacios grupales de feminidad consciente, arte-terapia y entrenamiento en habilidades sociales, como vías complementarias de exploración y expresión emocional.' },
+      { titulo: 'Terapia de pareja', descripcion: 'Acompañamiento a parejas en la comprensión de sus dinámicas relacionales, facilitando una comunicación más consciente y un vínculo más saludable.' },
+      { titulo: 'Acompañamiento a personas mayores y familias', descripcion: 'Apoyo psicológico en procesos de vejez y demencia, duelo y final de vida, con más de una década de experiencia trabajando junto a familias y equipos multidisciplinares en Barcelona.' }
     ],
     formacion: [
-      { titulo: 'Graduada en Psicología', institucion: 'Universidad de Granada' },
-      { titulo: 'Máster en Psicología General Sanitaria', institucion: 'Universidad de Granada' },
-      { titulo: 'Formación Avanzada en Psicoterapia de Trauma y Apego', institucion: 'Asociación Española de Psicología Sanitaria' },
-      { titulo: 'Especialización en Técnicas de Integración Cerebral y EMDR', institucion: 'Instituto de Psicoterapia Integrativa' },
-      { titulo: 'Instrucción en Mindfulness y Compasión Aplicada a la Clínica', institucion: 'Centro de Formación en Salud Mental' }
+      { titulo: 'Licenciatura en Psicología (2004-2009)', institucion: 'Universidad de Granada' },
+      { titulo: 'Terapeuta Gestalt (2010-2014)', institucion: 'Institut Gestalt, Barcelona' },
+      { titulo: 'Postgrado en Acompañamiento al Duelo y Pérdidas (2018-2020)', institucion: 'Asociación Aves, Barcelona' },
+      { titulo: 'Máster en Escuela Española de Teatro Terapia Gestalt (2023-2025)', institucion: 'Madrid' },
+      { titulo: 'Máster en Psicología General Sanitaria (2023-2025)', institucion: 'Universidad de Valencia' },
+      { titulo: 'Postgrado en Terapia Gestalt Infanto-Juvenil (2024-2025)', institucion: 'Granada' }
     ],
     seo: {
-      title: 'María Noel Reyes | Psicóloga Sanitaria y Terapeuta en Granada — La Seda',
-      description: 'María Noel Reyes, psicóloga colegiada especializada en psicoterapia integrativa de adultos, trauma y apego en el Centro La Seda de Granada. Pide cita.'
+      title: 'María Noel Reyes | Psicoterapeuta Gestalt en Granada — La Seda',
+      description: 'María Noel Reyes, psicoterapeuta con enfoque integrador-humanista, especializada en terapia Gestalt, duelo y acompañamiento a personas mayores. Centro La Seda, Granada.'
     }
   },
   'cristina-lence': {
@@ -297,50 +301,52 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'Reyes Sánchez Tallón',
     nombreCorto: 'Reyes',
     rol: 'Medicina',
-    especialidadLabel: 'Medicina Pediátrica · Salud Integrativa',
-    tituloOficial: 'Médica Pediatra Colegiada · Especialista en Terapia Gestalt y Trabajo Corporal',
+    especialidadLabel: 'Medicina · Colaboradora en Salud Integrativa',
+    tituloOficial: 'Médica Colegiada · Especialista en Pediatría · Terapia Gestalt y Trabajo Corporal',
     cita: 'Integrar el cuidado del cuerpo y la salud emocional es devolverle la plenitud y el equilibrio al ser.',
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',
-    imagenAlt: 'Reyes Sánchez Tallón, médica pediatra colegiada y especialista en salud integrativa en el Centro La Seda de Granada',
+    imagenAlt: 'Reyes Sánchez Tallón, médica colegiada y colaboradora en salud integrativa en el Centro La Seda de Granada',
     galeria: [
       { src: '/images/reyes-sanchez-intervencion-corporal.jpg', alt: 'Reyes Sánchez Tallón aplicando dinámicas de terapia corporal integrativa' },
       { src: '/images/la-seda-consulta-medica.jpg', alt: 'Despacho clínico polivalente para enfoques de medicina integrativa en La Seda' }
     ],
     acreditaciones: [
-      'Colegiada Nº 18-10008273 — Colegio Oficial de Médicos de Granada',
-      'Especialista en Pediatría — Formación MIR',
-      'Formada en Terapia Gestalt — AETG',
-      'Certificada en Terapia Corporal Integrativa — equipo Antonio Pacheco',
+      'Colegiada Nº 18-10008273 — Licenciada en Medicina y Cirugía, Universidad de Granada',
+      'Especialista en Pediatría y sus áreas específicas — Formación MIR',
+      'Formada en Terapia Gestalt — Equipo Qualia, Granada',
+      'Formada en Terapia Corporal Integrativa — Equipo Antonio Pacheco',
     ],
-    tags: ['Medicina Pediátrica', 'Terapia Gestalt', 'Trabajo Corporal', 'Bioenergética', 'Eneatipos', 'Sistémica', 'Salud Integrativa'],
+    tags: ['Medicina Pediátrica', 'Terapia Gestalt', 'Terapia Corporal Integrativa', 'Análisis Caracterológico', 'Terapia Sistémica', 'Trauma y TEPT', 'Salud Integrativa'],
     biografiaExtendida: [
-      'Reyes Sánchez Tallón es médica pediatra colegiada y la voz de la <strong>medicina integrativa</strong> dentro de La Seda. Su presencia encarna una visión de la salud donde <strong>el cuerpo, la emoción y la mente</strong> forman un sistema indivisible.',
-      'Su formación como pediatra le dio una base científica sólida. Pero fue su encuentro con la <strong>Gestalt y el trabajo corporal</strong> lo que transformó su forma de acompañar, añadiendo la capacidad de leer el cuerpo como un mapa emocional vivo.',
-      'Reyes trabaja desde la frontera enriquecedora que existe entre la medicina y la psicoterapia, un espacio donde la <strong>somatización</strong> tiene nombre y donde el síntoma físico es también un message de alerta.'
+      'Reyes Sánchez Tallón es <strong>médica colegiada</strong>, licenciada en Medicina y Cirugía por la Universidad de Granada y especialista en Pediatría por la vía MIR. Colabora con el Centro La Seda aportando una mirada de <strong>salud integrativa</strong>, en la que el cuerpo y la emoción se entienden como parte de un mismo sistema.',
+      'Su formación médica se ha ampliado con la <strong>terapia Gestalt</strong> —con el equipo de Qualia, en Granada— y con la <strong>Terapia Corporal Integrativa</strong> junto al equipo de Antonio Pacheco, herramientas que le permiten trabajar con el cuerpo como vía de acceso a la experiencia emocional.',
+      'Ha profundizado también en el <strong>análisis caracterológico psico-corporal</strong> con Fernando de Juan, en <strong>terapia sistémica</strong> en la escuela de Psicogestalt de Madrid junto a Juan Carlos Calvo, y en herramientas de intervención en <strong>TEPT y trauma</strong> de abuso sexual y maltrato a través del Centro Landa, con Yolanda Mozota.'
     ],
     trayectoria: [
-      'Tras completar su especialización como pediatra por <strong>vía MIR</strong>, Reyes ejerció durante años en el sistema sanitario público, donde fue testigo de cómo el malestar emocional se manifestaba en forma de <strong>síntomas físicos</strong>.',
-      'Su formación en <strong>terapia Gestalt</strong> le abrió la puerta al trabajo con la experiencia subjetiva. Poco después, la <strong>Terapia Corporal Integrativa (TCI)</strong> le proporcionó un lenguaje para intervenir directamente a través del cuerpo.',
-      'El trabajo con la psicología de los eneatipos y la <strong>Bioenergética</strong> añadió una capa de comprensión del carácter que enriquece enormemente su consulta en La Seda, la cual combina con su formación en terapia sistémica.'
+      'Tras licenciarse en Medicina y Cirugía por la Universidad de Granada, Reyes completó su especialización en <strong>Pediatría</strong> por la vía MIR, adquiriendo una base clínica sólida en el trabajo con la infancia y sus áreas específicas.',
+      'Su interés por comprender la salud desde una perspectiva más amplia la llevó a formarse en <strong>terapia Gestalt</strong> con el equipo de Qualia en Granada, y posteriormente en <strong>Terapia Corporal Integrativa</strong> con el equipo de Antonio Pacheco, así como en el <strong>Programa SAT de Claudio Naranjo</strong>.',
+      'En los últimos años ha continuado ampliando su formación en el <strong>análisis caracterológico psico-corporal</strong> (Fernando de Juan), en <strong>terapia sistémica</strong> (Escuela de Psicogestalt, Juan Carlos Calvo, Madrid) y en el abordaje del trauma y el TEPT (Centro Landa, Yolanda Mozota). Actualmente se encuentra <strong>en formación en el modelo Aleceia</strong> de integración y reprocesamiento del trauma.'
     ],
     areasEspecializacion: [
-      { titulo: 'Salud pediátrica integrativa', descripcion: 'Atención médica pediátrica que integra la perspectiva emocional en la comprensión de los síntomas físicos de niños y adolescentes, con foco en somatizaciones.' },
-      { titulo: 'Terapia Gestalt con adultos', descripcion: 'Acompañamiento terapéutico individual desde el enfoque Gestalt, trabajando con la conciencia del momento presente, el contacto y el cuerpo.' },
+      { titulo: 'Salud integrativa', descripcion: 'Mirada de la salud que integra la perspectiva médica y emocional, entendiendo el cuerpo y la mente como un sistema en constante diálogo.' },
+      { titulo: 'Terapia Gestalt', descripcion: 'Acompañamiento terapéutico desde el enfoque Gestalt, trabajando con la conciencia del momento presente, el contacto y el cuerpo.' },
       { titulo: 'Terapia corporal integrativa', descripcion: 'Intervención terapéutica que utiliza el cuerpo como vía de acceso a experiencias emocionales y memorias somáticas que el lenguaje verbal no procesa.' },
-      { titulo: 'Psicología de los eneatipos', descripcion: 'Trabajo con el mapa del carácter y la estructura energética del cuerpo para comprender los patrones de respuesta emocional y liberar bloqueos.' }
+      { titulo: 'Trauma y TEPT', descripcion: 'Herramientas de intervención en trastorno de estrés postraumático, abuso sexual y maltrato, en formación continua a través de distintos modelos especializados.' }
     ],
     formacion: [
       { titulo: 'Licenciatura en Medicina y Cirugía', institucion: 'Universidad de Granada' },
-      { titulo: 'Especialidad en Pediatría (MIR)', institucion: 'Hospital Universitario Clínico San Cecilio, Granada' },
-      { titulo: 'Formación en Terapia Gestalt', institucion: 'Instituto Gestalt de Granada · AETG' },
-      { titulo: 'Terapia Corporal Integrativa', institucion: 'Equipo Antonio Pacheco, España' },
-      { titulo: 'Psicología de los Eneatipos y Bioenergética', institucion: 'Formación con Fernando de Juan' },
+      { titulo: 'Especialidad en Pediatría y áreas específicas (MIR)', institucion: 'Formación MIR' },
+      { titulo: 'Formación en Terapia Gestalt', institucion: 'Equipo Qualia, Granada' },
+      { titulo: 'Terapia Corporal Integrativa', institucion: 'Equipo Antonio Pacheco' },
       { titulo: 'Programa SAT — Psicología del Carácter y Espiritualidad', institucion: 'Instituto SAT — Claudio Naranjo' },
-      { titulo: 'Formación en Terapia Sistémica (en curso)', institucion: 'Psicogestalt, Madrid' }
+      { titulo: 'El carácter en el cuerpo — Análisis caracterológico psico-corporal', institucion: 'Fernando de Juan, Granada' },
+      { titulo: 'Formación en Terapia Sistémica', institucion: 'Escuela de Psicogestalt — Juan Carlos Calvo, Madrid' },
+      { titulo: 'Herramientas de intervención en TEPT y trauma de abuso sexual y maltrato', institucion: 'Centro Landa — Yolanda Mozota' },
+      { titulo: 'Psicoterapia de Integración y Reprocesamiento del Trauma — Modelo Aleceia (en formación)', institucion: 'Modelo Aleceia' }
     ],
     seo: {
-      title: 'Reyes Sánchez Tallón | Médica Pediatra y Terapeuta Gestalt en Granada — La Seda',
-      description: 'Reyes Sánchez Tallón, médica pediatra colegiada (Nº 18-10008273) especializada en salud integrativa y terapia Gestalt en el Centro La Seda de Granada.'
+      title: 'Reyes Sánchez Tallón | Médica y Terapeuta Gestalt en Granada — La Seda',
+      description: 'Reyes Sánchez Tallón, médica colegiada (Nº 18-10008273), especialista en Pediatría y colaboradora en salud integrativa, terapia Gestalt y trabajo corporal en el Centro La Seda de Granada.'
     }
   }
 }

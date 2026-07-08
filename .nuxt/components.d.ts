@@ -33,6 +33,7 @@ export const FormationOverview: typeof import("../app/components/formation/Forma
 export const FormationProcess: typeof import("../app/components/formation/FormationProcess.vue")['default']
 export const FormationRelated: typeof import("../app/components/formation/FormationRelated.vue")['default']
 export const FormationTeam: typeof import("../app/components/formation/FormationTeam.vue")['default']
+export const IndexAnuncioRefinado: typeof import("../app/components/index/AnuncioRefinado.vue")['default']
 export const IndexCtaFinal: typeof import("../app/components/index/CtaFinal.vue")['default']
 export const IndexFilosofia: typeof import("../app/components/index/Filosofia.vue")['default']
 export const IndexGaleria: typeof import("../app/components/index/Galeria.vue")['default']
@@ -95,6 +96,7 @@ export const LazyFormationOverview: LazyComponent<typeof import("../app/componen
 export const LazyFormationProcess: LazyComponent<typeof import("../app/components/formation/FormationProcess.vue")['default']>
 export const LazyFormationRelated: LazyComponent<typeof import("../app/components/formation/FormationRelated.vue")['default']>
 export const LazyFormationTeam: LazyComponent<typeof import("../app/components/formation/FormationTeam.vue")['default']>
+export const LazyIndexAnuncioRefinado: LazyComponent<typeof import("../app/components/index/AnuncioRefinado.vue")['default']>
 export const LazyIndexCtaFinal: LazyComponent<typeof import("../app/components/index/CtaFinal.vue")['default']>
 export const LazyIndexFilosofia: LazyComponent<typeof import("../app/components/index/Filosofia.vue")['default']>
 export const LazyIndexGaleria: LazyComponent<typeof import("../app/components/index/Galeria.vue")['default']>

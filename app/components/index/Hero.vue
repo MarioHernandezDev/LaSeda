@@ -27,21 +27,21 @@
         <div class="hero-text-item flex items-center gap-4 mb-6 md:mb-8" style="--i:1">
           <span class="w-12 h-px bg-[#71B1A5]/60"></span>
           <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.45em] uppercase font-bold">
-            Granada · Psicoterapia e Integración
+            Centro La Seda · Terapia y Formación
           </p>
         </div>
 
         <h1 class="hero-text-item text-[#27252B] tracking-tight mb-8" style="--i:2;">
           <span class="block font-serif italic font-light text-[3rem] sm:text-[4.5rem] lg:text-[5.6rem] leading-[1.05]">
-            Psicología, terapia Gestalt
+            Psicología y terapia Gestalt en Granada
           </span>
           <span class="block font-sans font-light text-[#71B1A5] text-[1.2rem] sm:text-[1.6rem] lg:text-[2rem] mt-5 uppercase tracking-[0.16em] leading-none">
-            y formación para profesionales
+            Y FORMACIÓN PARA PROFESIONALES 
           </span>
         </h1>
 
         <p class="hero-text-item text-stone-600/90 font-light text-base md:text-lg leading-[1.85] max-w-2xl mb-12" style="--i:3">
-          Acompañamos a adultos, niños, adolescentes y familias en procesos de cambio, crisis y crecimiento, desde un enfoque integrativo, humano y cercano.
+          Acompañamos  desde un enfoque humanista a adultos, niños, adolescentes y familias en procesos de cambio, crisis y crecimiento, y formamos a profesionales del desarrollo personal.
         </p>
 
         <div class="hero-text-item flex flex-col sm:flex-row gap-5 items-center justify-start mt-4 w-full" style="--i:4">

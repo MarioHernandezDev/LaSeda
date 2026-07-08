@@ -25,7 +25,7 @@
 
       <figure class="flex flex-col items-center">
         <blockquote class="font-serif italic font-light text-[1.9rem] md:text-[2.4rem] lg:text-[2.9rem] text-white leading-[1.45] mb-12 tracking-[-0.005em]">
-          <span class="block">"Lo que necesita nuestro timepo son seres más bondadosos, no seres más inteligentes.
+          <span class="block">"Lo que necesita nuestro tiempo son seres más bondadosos, no seres más inteligentes.
           <em class="text-[#71B1A5] not-italic"> La inteligencia sin bondad es una mutación fallida.</em>"</span>
         </blockquote>
 

@@ -33,6 +33,7 @@ interface _GlobalComponents {
   FormationProcess: typeof import("../../app/components/formation/FormationProcess.vue")['default']
   FormationRelated: typeof import("../../app/components/formation/FormationRelated.vue")['default']
   FormationTeam: typeof import("../../app/components/formation/FormationTeam.vue")['default']
+  IndexAnuncioRefinado: typeof import("../../app/components/index/AnuncioRefinado.vue")['default']
   IndexCtaFinal: typeof import("../../app/components/index/CtaFinal.vue")['default']
   IndexFilosofia: typeof import("../../app/components/index/Filosofia.vue")['default']
   IndexGaleria: typeof import("../../app/components/index/Galeria.vue")['default']
@@ -95,6 +96,7 @@ interface _GlobalComponents {
   LazyFormationProcess: LazyComponent<typeof import("../../app/components/formation/FormationProcess.vue")['default']>
   LazyFormationRelated: LazyComponent<typeof import("../../app/components/formation/FormationRelated.vue")['default']>
   LazyFormationTeam: LazyComponent<typeof import("../../app/components/formation/FormationTeam.vue")['default']>
+  LazyIndexAnuncioRefinado: LazyComponent<typeof import("../../app/components/index/AnuncioRefinado.vue")['default']>
   LazyIndexCtaFinal: LazyComponent<typeof import("../../app/components/index/CtaFinal.vue")['default']>
   LazyIndexFilosofia: LazyComponent<typeof import("../../app/components/index/Filosofia.vue")['default']>
   LazyIndexGaleria: LazyComponent<typeof import("../../app/components/index/Galeria.vue")['default']>

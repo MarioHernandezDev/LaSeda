@@ -17,14 +17,11 @@
           <div class="flex items-center gap-3 mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-[#71B1A5] text-xs tracking-[0.3em] uppercase font-bold">
-              Garantía Profesional
+              Especialidad
             </p>
           </div>
           <h2 class="text-[#27252B] text-3xl md:text-4xl font-serif italic font-light leading-[1.15]">
-            Colegiación y<br />
-            <span class="text-[#27252B]/50 not-italic font-sans font-light text-base md:text-lg block mt-2 tracking-wide uppercase">
-              Acreditación Oficial
-            </span>
+            Acreditación profesional<br />
           </h2>
         </div>
         
@@ -52,9 +49,6 @@
             </span>
             
             <div class="space-y-1.5">
-              <span class="text-[#27252B]/40 text-xs tracking-[0.2em] font-sans font-semibold uppercase block">
-                Garantía 0{{ i + 1 }}
-              </span>
               <p class="text-[#27252B]/80 group-hover:text-[#27252B] text-sm md:text-[15px] leading-relaxed font-light transition-colors duration-500" v-html="acred" />
             </div>
           </div>

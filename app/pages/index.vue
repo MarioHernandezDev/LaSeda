@@ -8,6 +8,8 @@
     <IndexGaleria />
     <IndexTestimonios />
     <IndexCtaFinal />
+
+    <IndexAnuncioRefinado />
   </main>
 </template>
 
@@ -69,7 +71,7 @@ useHead({
         ],
         address: { 
           '@type': 'PostalAddress', 
-          streetAddress: 'Dirección del Centro', // Reemplaza por tu calle exacta si quieres potenciar el SEO Local en Google Maps
+          streetAddress: 'Dirección del Centro', 
           addressLocality: 'Granada', 
           addressRegion: 'Andalucía', 
           postalCode: '18001', 
@@ -105,7 +107,6 @@ useHead({
   ],
 })
 
-// ─── Control de Animación del Telón (Gestión en Root) ─────────────────────────
 const heroReady = ref(false)
 
 onMounted(() => {
@@ -122,7 +123,6 @@ onUnmounted(() => {
   document.body.style.overflow = ''
 })
 
-// ─── Estructura de Datos estática para SobreCentro ───────────────────────────
 const valores = [
   {
     title: 'Trato Humano',
@@ -146,7 +146,3 @@ const valores = [
   },
 ]
 </script>
-
-<style scoped>
-/* Vacío y limpio */
-</style>

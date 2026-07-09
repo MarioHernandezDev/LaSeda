@@ -70,10 +70,6 @@
           </div>
 
           <div v-if="currentStep === 'inicio'" class="space-y-3 pt-1 flex flex-col">
-            <button @click="goToStep('urgencia')" class="w-full text-left bg-red-500/[0.06] border border-red-500/15 hover:bg-red-500/[0.1] text-red-800 p-4 rounded-xl text-sm md:text-base font-light transition-colors duration-200 flex items-center justify-between group">
-              <span>Necesito atención <strong class="font-bold text-red-800 underline decoration-red-500/40 decoration-2">preferente o urgente</strong></span>
-              <svg class="w-4 h-4 text-red-500/70 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"/></svg>
-            </button>
             
             <button @click="goToStep('cita')" class="w-full text-left bg-white border border-[#27252B]/10 hover:border-[#71B1A5] hover:bg-[#71B1A5]/5 p-4 rounded-xl text-sm md:text-base text-stone-600 hover:text-[#27252B] transition-colors duration-200 flex items-center justify-between group">
               <span>Agendar o solicitar una <strong class="font-bold text-[#27252B] underline decoration-[#27252B]/30 decoration-2">cita en el centro</strong></span>
@@ -84,20 +80,6 @@
               <span>Información sobre <strong class="font-bold text-[#27252B] underline decoration-[#27252B]/30 decoration-2">Cursos y Talleres</strong></span>
               <svg class="w-4 h-4 text-[#71B1A5]/70 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5l7 7-7 7"/></svg>
             </button>
-          </div>
-
-          <div v-if="currentStep === 'urgencia'" class="space-y-4 animate-fadeIn">
-            <div class="bg-red-500/[0.04] text-red-900 rounded-xl p-4 md:p-5 text-sm md:text-base font-light leading-relaxed border border-red-500/10">
-              <span class="text-red-700 font-medium block mb-1">Atención prioritaria:</span> Si te encuentras en una situación que requiere asistencia inmediata, por favor <strong class="font-bold text-red-800 underline decoration-red-500/30 decoration-2">llámanos directamente</strong> o envíanos un <strong class="font-bold text-red-800 underline decoration-red-500/30 decoration-2">WhatsApp de urgencia</strong> para priorizar tu caso hoy mismo.
-            </div>
-            <div class="space-y-2.5 flex flex-col">
-              <a href="tel:+34679571977" class="w-full text-center bg-red-600 hover:bg-red-700 text-white p-3.5 md:p-4 rounded-xl text-sm md:text-base font-semibold shadow-md transition-colors">
-                Llamar ahora: 679 571 977
-              </a>
-              <a href="https://wa.me/34679571977?text=URGENTE:%20Necesito%20asistencia%20o%20cita%20lo%20antes%20posible." target="_blank" class="w-full text-center bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 md:p-4 rounded-xl text-sm md:text-base font-semibold transition-colors">
-                WhatsApp Urgente
-              </a>
-            </div>
           </div>
 
           <div v-if="currentStep === 'cita'" class="space-y-4 animate-fadeIn">

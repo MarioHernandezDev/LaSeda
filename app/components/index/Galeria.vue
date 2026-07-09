@@ -14,7 +14,6 @@
       </h2>
     </div>
 
-    <!-- Grid full-width -->
     <div class="gallery-grid">
       <button
         v-for="(foto, idx) in galeriaFotos"
@@ -41,7 +40,6 @@
       </button>
     </div>
 
-    <!-- Lightbox -->
     <Teleport to="body">
       <div
         v-if="lightboxAbierto"
@@ -95,17 +93,14 @@ import { ref } from 'vue'
 
 const galeriaFotos = [
   { src: '/images/galeria-sala-espera-centro-psicologia-la-seda-granada.jpg',       alt: 'Sala de espera acogedora del Centro de Psicología La Seda en Granada',                      caption: 'Sala de espera' },
-  { src: '/images/galeria-consulta-terapia-individual-la-seda-granada.jpg',         alt: 'Consulta de terapia individual del Centro La Seda Granada',                                caption: 'Consulta individual' },
   { src: '/images/galeria-sala-talleres-grupales-psicologia-granada-la-seda.jpg',   alt: 'Sala de talleres grupales y terapia grupal en el Centro La Seda Granada',                  caption: 'Sala de talleres' },
-  { src: '/images/galeria-zona-recepcion-centro-la-seda-granada.jpg',               alt: 'Recepción y zona de bienvenida del Centro de Psicología La Seda Granada',                  caption: 'Recepción' },
-  { src: '/images/galeria-despacho-psicologia-clinica-granada-la-seda.jpg',         alt: 'Despacho de psicología clínica en el Centro La Seda Granada',                              caption: 'Despacho clínico' },
+  { src: '/images/galeria-recepcion-centro-la-seda-granada.jpg',               alt: 'Recepción y bienvenida del Centro de Psicología La Seda Granada',                  caption: 'Recepción' },
+  { src: '/images/galeria-despacho-psicologia-infantil-granada-la-seda.jpg',         alt: 'Despacho de psicología infantil en el Centro La Seda Granada',                              caption: 'Despacho infantil' },
   { src: '/images/galeria-espacio-bienestar-relajacion-centro-la-seda-granada.jpg', alt: 'Espacio de bienestar y relajación en el Centro La Seda Granada',                          caption: 'Espacio de bienestar' },
   { src: '/images/galeria-sala-formacion-profesionales-psicologia-granada.jpg',     alt: 'Sala de formación para profesionales de psicología en el Centro La Seda Granada',         caption: 'Sala de formación' },
   { src: '/images/galeria-ambiente-consulta-psicoterapia-granada-la-seda.jpg',      alt: 'Ambiente cálido de consulta de psicoterapia en Granada — Centro La Seda',                 caption: 'Ambiente consulta' },
   { src: '/images/galeria-detalle-decoracion-centro-psicologia-la-seda.jpg',        alt: 'Detalle de decoración y diseño interior del Centro La Seda Granada',                      caption: 'Detalle interior' },
-  { src: '/images/galeria-iluminacion-natural-consulta-granada-la-seda.jpg',        alt: 'Iluminación natural en consulta del Centro de Psicología La Seda Granada',               caption: 'Luz natural' },
   { src: '/images/galeria-pasillo-centro-psicologia-la-seda-granada.jpg',           alt: 'Pasillo interior del Centro de Psicología La Seda en Granada',                           caption: 'Accesos interiores' },
-  { src: '/images/galeria-exterior-fachada-centro-la-seda-granada.jpg',             alt: 'Fachada exterior del Centro de Psicología La Seda en Granada',                           caption: 'Fachada del centro' },
 ]
 
 const lightboxAbierto = ref(false)
@@ -143,7 +138,7 @@ function lightboxPrev() {
 
 @media (min-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

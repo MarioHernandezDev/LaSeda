@@ -5,7 +5,7 @@
       
       <ConocenosMiniHero :perfil="perfil" />
 
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
+      <div class="w-full">
         <ConocenosBiography :perfil="perfil" />
       </div>
 
@@ -102,7 +102,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     imagenAlt: 'Ana Jiménez, psicóloga sanitaria y co-directora del Centro de Psicología La Seda en Granada',
     galeria: [
       { src: '/images/ana-jimenez-consulta-granada.jpg', alt: 'Ana Jiménez atendiendo una sesión terapéutica en La Seda' },
-      { src: '/images/la-seda-sala-gestalt.jpg', alt: 'Detalle de los espacios de encuentro y co-visión en Centro La Seda' }
+      { src: '/images/ana-jimenez-leonor.jpg', alt: 'Detalle de los espacios de encuentro y co-visión en Centro La Seda' }
     ],
     acreditaciones: [
       'Colegiada Nº AO06843 — Colegio Oficial de Psicología de Andalucía Oriental',
@@ -151,7 +151,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     imagenAlt: 'Leonor Cabrera, terapeuta Gestalt, transpersonal e integrativa y co-directora del Centro La Seda en Granada',
     galeria: [
       { src: '/images/leonor-cabrera-formacion-wingwave.jpg', alt: 'Leonor Cabrera durante una formación de Coaching Wingwave®' },
-      { src: '/images/la-seda-sala-reuniones.jpg', alt: 'Instalaciones compartidas y espacios de acogida en La Seda Granada' }
+      { src: '/images/la-seda-leonor-cabrera.jpg', alt: 'Instalaciones compartidas y espacios de acogida en La Seda Granada' }
     ],
     acreditaciones: [
       'Coach Profesional Certificada por Asesco — Nº 10.457',
@@ -206,11 +206,11 @@ const perfiles: Record<string, PerfilProfesional> = {
     // Añádelo aquí en "tituloOficial" / "acreditaciones" en cuanto lo tengáis, para mantener la coherencia con el resto de perfiles.
     tituloOficial: 'Psicóloga General Sanitaria · Terapeuta Gestalt',
     cita: 'Cada persona lleva dentro los recursos para crecer; mi trabajo es acompañarla a encontrarlos.',
-    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagen: '/images/maria-noel-reyes-granada.jpg',
     imagenAlt: 'María Noel Reyes, psicoterapeuta en el Centro de Psicología La Seda en Granada',
     galeria: [
-      { src: '/images/leonor-cabrera-formacion-wingwave.jpg', alt: 'María Noel Reyes en una sesión terapéutica en La Seda' },
-      { src: '/images/la-seda-sala-reuniones.jpg', alt: 'Espacios de acompañamiento y encuentro en el Centro La Seda' }
+      { src: '/images/maria-noel-reyes.jpg', alt: 'María Noel Reyes en una sesión terapéutica en La Seda' },
+      { src: '/images/maria-noel-reyes-2.jpg', alt: 'Espacios de acompañamiento y encuentro en el Centro La Seda' }
     ],
     acreditaciones: [
       'Máster en Psicología General Sanitaria — Universidad de Valencia',
@@ -259,7 +259,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     imagenAlt: 'Cristina Lence, educadora social especializada en Gestalt infanto-juvenil y sistémica en el Centro La Seda de Granada',
     galeria: [
       { src: '/images/cristina-lence-talleres.jpg', alt: 'Cristina Lence preparando materiales para dinámicas con niños y adolescentes' },
-      { src: '/images/la-seda-sala-infantil.jpg', alt: 'Gabinete y espacio lúdico para psicología infanto-juvenil en La Seda' }
+      { src: '/images/cristina-lence-infantil.jpg', alt: 'Gabinete y espacio lúdico para psicología infanto-juvenil en La Seda' }
     ],
     acreditaciones: [
       'Titulada en Educación Social — habilitada para la intervención con menores y familias',
@@ -308,7 +308,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     imagenAlt: 'Reyes Sánchez Tallón, médica colegiada y colaboradora en salud integrativa en el Centro La Seda de Granada',
     galeria: [
       { src: '/images/reyes-sanchez-intervencion-corporal.jpg', alt: 'Reyes Sánchez Tallón aplicando dinámicas de terapia corporal integrativa' },
-      { src: '/images/la-seda-consulta-medica.jpg', alt: 'Despacho clínico polivalente para enfoques de medicina integrativa en La Seda' }
+      { src: '/images/reyes-sanchez-medica.jpg', alt: 'Despacho clínico polivalente para enfoques de medicina integrativa en La Seda' }
     ],
     acreditaciones: [
       'Colegiada Nº 18-10008273 — Licenciada en Medicina y Cirugía, Universidad de Granada',

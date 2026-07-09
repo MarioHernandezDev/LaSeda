@@ -16,7 +16,7 @@ const staff: Record<string, any> = {
     id: 'oriol-belles',
     nombre: 'Oriol Bellés',
     rol: 'Symbiotik Institut · Formador Oficial Wingwave®',
-    imagen: '/images/oriol-belles-formador-wingwave.jpg',
+    imagen: '/images/oriol-belles-formador-wavewave.jpg',
     imagenAlt: 'Oriol Bellés, formador oficial del método Wingwave'
   },
   'leonor-cabrera': {
@@ -28,7 +28,7 @@ const staff: Record<string, any> = {
   }
 }
 
-// 2. BASE DE DATOS DE FORMACIONES (Espejo exacto del modelo de Terapias)
+// 2. BASE DE DATOS DE FORMACIONES
 const formations: Record<string, any> = {
   'gestalt-infantil': {
     titulo: 'Formación en Gestalt aplicada a la',
@@ -40,7 +40,7 @@ const formations: Record<string, any> = {
     descripcion: 'Esta formación especializada ofrece un recorrido profundo por el universo emocional de la infancia y la adolescencia. A través de un enfoque humanista y sistémico, aprenderás a decodificar el lenguaje del niño a través del juego, el dibujo y la expresión corporal, adquiriendo herramientas técnicas sólidas para la práctica clínica real.',
     descripcion2: 'El programa está estructurado en módulos teórico-vivenciales donde el propio crecimiento y madurez del terapeuta es el pilar central. Dirigido a profesionales de la psicología, la salud y la educación que deseen incorporar la mirada amorosa y transformadora de la Gestalt en sus consultas.',
     cita: '"El niño no juega para pasar el tiempo, juega para comprender su mundo y sanar sus heridas a través de la experiencia."',
-    terapeutas: ['ana-jimenez'], // Mapeado como profesores en el componente visual
+    terapeutas: ['ana-jimenez'], 
     beneficios: [
       'Adquirir herramientas prácticas y creativas (caja de arena, cuentos, técnicas plásticas).',
       'Aprender metodologías de supervisión clínica de casos reales infanto-juveniles.',
@@ -75,7 +75,8 @@ const formations: Record<string, any> = {
     descripcion: 'El Método Wingwave® es un enfoque de intervención rápida para el desbloqueo emocional y el rendimiento mental. Combina la estimulación bilateral de los hemisferios cerebrales (similar a la fase REM del sueño) con la Programación Neurolingüística (PNL) y el test miostático O-Ring para localizar con precisión los disparadores exactos del estrés.',
     descripcion2: 'Esta formación intensiva te capacita de manera oficial para utilizar una de las herramientas de regulación de ansiedad y superación de traumas más estudiadas y extendidas en Europa. Al finalizar, obtendrás la titulación oficial internacional que te acredita como Coach Wingwave® certificado.',
     cita: '"Una combinación perfecta de precisión muscular, reprogramación neurolingüística y balance cerebral profundo."',
-    terapeutas: ['oriol-belles', 'leonor-cabrera'],
+    // CAMBIO AQUÍ: Dejamos únicamente a Leonor Cabrera en el array
+    terapeutas: ['leonor-cabrera'],
     beneficios: [
       'Aprender a disolver bloqueos, fobias, miedos escénicos y estrés postraumático en pocas sesiones.',
       'Dominar el test miostático o de resistencia muscular como brújula precisa en tus terapias.',
@@ -85,7 +86,8 @@ const formations: Record<string, any> = {
     ],
     motivos: [
       { numero: '32h', titulo: 'Horas Académicas', desc: 'Distribuidas de forma intensiva a lo largo de 4 jornadas consecutivas con un enfoque eminentemente práctico.' },
-      { numero: '12', titulo: 'Alumnos por Formador', desc: 'Plazas estrictamente limitadas para garantizar la supervisión milimétrica de las prácticas individuales en la sala.' },
+      // Actualizamos también el texto de la cantidad de alumnos por formador para adaptarlo a un único profesor
+      { numero: '12', titulo: 'Alumnos por Formadora', desc: 'Plazas estrictamente limitadas para garantizar la supervisión milimétrica de las prácticas individuales en la sala.' },
       { numero: 'ISO', titulo: 'Calidad Europea Certificada', desc: 'Contenidos y metodologías pedagógicas auditadas bajo los más altos estándares internacionales de formación.' },
       { numero: '04', titulo: 'Días de Inmersión Total', desc: 'Convocatoria del 9 al 12 de mayo de 2026 en nuestras instalaciones presenciales de Granada capital.' },
     ],

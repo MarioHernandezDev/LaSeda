@@ -18,13 +18,13 @@ defineProps<{
     class="py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden"
   >
     <div 
-      class="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-[#27252B]/5 via-transparent to-transparent hidden lg:block" 
+      class="absolute top-0 right-1/2 w-px h-full bg-gradient-to-b from-[#27252B]/5 via-transparent to-transparent hidden lg:block" 
       aria-hidden="true" 
     />
 
     <div class="page-container relative z-10">
       
-      <div class="grid md:grid-cols-12 gap-8 items-end mb-20">
+      <div class="grid md:grid-cols-12 gap-8 items-end mb-16 lg:mb-24">
         <div class="md:col-span-7 lg:col-span-6">
           <div class="flex items-center gap-3 mb-4">
             <span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true" />
@@ -33,7 +33,7 @@ defineProps<{
             </p>
           </div>
           <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-            Claustro Docente<br>
+            Dirección de la Formación<br>
             <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
               y especialistas a cargo
             </span>
@@ -46,48 +46,46 @@ defineProps<{
               0{{ profesores.length }}
             </span>
             <p class="text-[10px] tracking-widest text-[#27252B]/50 uppercase font-medium mt-0.5">
-              {{ profesores.length === 1 ? 'Director / Formador' : 'Docentes asignados' }}
+              {{ profesores.length === 1 ? 'Docente a cargo' : 'Docentes asignados' }}
             </p>
           </div>
         </div>
       </div>
 
-      <div v-if="profesores.length === 1" class="max-w-4xl mx-auto">
+      <div v-if="profesores.length === 1" class="max-w-5xl mx-auto">
         <NuxtLink
           :to="`/conocenos/${profesores[0].id}`"
-          class="group flex flex-col md:flex-row bg-[#F5F2EE]/20 border border-[#27252B]/5 rounded-2xl overflow-hidden p-6 gap-8 lg:gap-12 transition-all duration-500 hover:bg-[#F5F2EE]/50 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5 cursor-pointer"
+          class="group grid grid-cols-1 lg:grid-cols-12 border border-[#27252B]/10 rounded-none overflow-hidden p-0 gap-0 transition-all duration-700 hover:border-[#71B1A5]/40 hover:shadow-2xl hover:shadow-[#71B1A5]/5 cursor-pointer items-stretch bg-transparent"
         >
-          <div class="relative aspect-[4/5] md:w-2/5 shrink-0 rounded-xl overflow-hidden bg-[#27252B]/5">
+          <div class="relative aspect-square lg:col-span-5 w-full overflow-hidden bg-[#27252B]/5 border-b lg:border-b-0 lg:border-r border-[#27252B]/10">
             <NuxtImg
               :src="profesores[0].imagen"
               :alt="profesores[0].imagenAlt || `Fotografía de ${profesores[0].nombre}`"
-              class="w-full h-full object-cover object-center grayscale-[20%] transition-all duration-700 ease-out group-hover:scale-103 group-hover:grayscale-0"
+              class="w-full h-full object-cover object-center grayscale-[20%] transition-all duration-[1000ms] ease-out scale-100 group-hover:scale-102 group-hover:grayscale-0"
               loading="lazy"
               format="webp"
             />
-            <div class="absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#27252B]/5">
-              <p class="text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold">
-                Dirección Académica
-              </p>
-            </div>
           </div>
 
-          <div class="flex flex-col justify-between py-2 flex-grow space-y-6">
-            <div class="space-y-3">
+          <div class="lg:col-span-7 flex flex-col justify-center h-full space-y-8 p-8 sm:p-12 md:p-14 lg:p-12 xl:p-16 bg-[#F5F2EE]/10 group-hover:bg-[#F5F2EE]/30 transition-colors duration-500">
+            <div class="space-y-4">
               <h3 class="font-serif italic text-3xl lg:text-4xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300">
                 {{ profesores[0].nombre }}
               </h3>
-              <p class="text-xs tracking-wider text-[#27252B]/50 uppercase font-medium">
+              <p class="text-xs tracking-[0.1em] text-[#27252B]/60 uppercase font-medium leading-relaxed">
                 {{ profesores[0].rol }}
               </p>
-              <div class="w-12 h-px bg-[#71B1A5]/30 pt-2" />
-              <p class="text-base leading-relaxed text-[#27252B]/70 font-light">
-                Profesional en activo con amplio bagaje clínico y docente, encargado de velar por el rigor del programa teórico, la supervisión de casos y la tutorización del proyecto integrador.
+              <div class="w-16 h-px bg-[#71B1A5]/50 pt-px" aria-hidden="true" />
+              
+              <p class="text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-4">
+                Profesional en activo con un amplio bagaje clínico y docente. Se encarga de velar por el rigor del programa teórico, coordinar las dinámicas vivenciales del grupo, la supervisión directa de casos prácticos y la tutorización metodológica de los alumnos.
               </p>
             </div>
 
-            <div class="pt-4 border-t border-[#27252B]/5 flex items-center gap-3 text-[11px] tracking-widest uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300">
-              <span>Consultar trayectoria profesional</span>
+            <div class="pt-6 border-t border-[#27252B]/5 inline-flex items-center gap-4 text-[11px] tracking-[0.15em] uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300">
+              <span class="border-b border-transparent group-hover:border-[#71B1A5]/40 pb-0.5 transition-all duration-300">
+                Trayectoria profesional completa
+              </span>
               <svg 
                 class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" 
                 fill="none" 
@@ -113,9 +111,9 @@ defineProps<{
           v-for="(profesor, index) in profesores"
           :key="profesor.id"
           :to="`/conocenos/${profesor.id}`"
-          class="flex flex-col group bg-[#F5F2EE]/30 border border-[#27252B]/5 rounded-2xl overflow-hidden p-4 transition-all duration-500 hover:bg-[#F5F2EE]/60 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5 cursor-pointer"
+          class="flex flex-col group bg-[#F5F2EE]/30 border border-[#27252B]/5 rounded-none overflow-hidden p-4 transition-all duration-500 hover:bg-[#F5F2EE]/60 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5 cursor-pointer"
         >
-          <div class="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#27252B]/5 mb-6">
+          <div class="relative aspect-[4/5] w-full rounded-none overflow-hidden bg-[#27252B]/5 mb-6">
             <NuxtImg
               :src="profesor.imagen"
               :alt="profesor.imagenAlt || `Fotografía de ${profesor.nombre}`"
@@ -123,7 +121,7 @@ defineProps<{
               loading="lazy"
               format="webp"
             />
-            <div class="absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#27252B]/5">
+            <div class="absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-none border border-[#27252B]/5">
               <p class="text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold">
                 {{ index === 0 ? 'Codirección / Docente' : 'Docente Especialista' }}
               </p>

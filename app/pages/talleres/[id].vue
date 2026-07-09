@@ -11,12 +11,12 @@ const route = useRoute()
 const staff: Record<string, any> = {
   'ana-jimenez': {
     nombre: 'Ana Jiménez',
-    imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
+    imagen: '/images/ana-jimenez-consulta-granada.jpg',
     imagenAlt: 'Ana Jiménez, psicóloga y supervisora clínica acreditada por la AETG'
   },
   'leonor-cabrera': {
     nombre: 'Leonor Cabrera Torrado',
-    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagen: '/images/la-seda-leonor-cabrera.jpg',
     imagenAlt: 'Leonor Cabrera Torrado, especialista y facilitadora de Constelaciones Familiares'
   }
 }

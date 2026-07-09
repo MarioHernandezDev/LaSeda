@@ -31,11 +31,11 @@ const staff: Record<string, any> = {
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',
     imagenAlt: 'Reyes Sánchez Tallón, médica pediatra y terapeuta'
   },
-  'maria-noel': {
-    id: 'maria-noel',
+  'maria-noel-reyes': {
+    id: 'maria-noel-reyes',
     nombre: 'María Noel Reyes',
     rol: 'Psicología y Acompañamiento',
-    imagen: '/images/maria-noel-reyes-psicologa-granada.jpg',
+    imagen: '/images/maria-noel-reyes-granada.jpg',
     imagenAlt: 'María Noel Reyes, psicóloga en Granada'
   }
 }
@@ -52,7 +52,7 @@ const terapias: Record<string, any> = {
     descripcion: 'La terapia psicológica y el acompañamiento emocional son un espacio para comprender y resolver conflictos personales o relacionales. Desde un enfoque humanista, Gestalt y sistémico, trabajamos para que puedas reconocer las emociones que se mueven en ti, descubrir los patrones que repites sin darte cuenta y conectar con tus propios recursos.',
     descripcion2: 'El proceso puede incorporar también Wingwave y constelaciones familiares, según las necesidades de cada persona. La Gestalt nos permite trabajar en profundidad con quien viene a consulta, poniendo el foco en el momento presente y en la experiencia real, mientras que la sistémica sitúa al individuo dentro de su contexto relacional para comprender qué dinámicas le influyen y cómo puede relacionarse de otra manera.',
     cita: '"La terapia Gestalt no es un conjunto de técnicas sino la transmisión de una actitud, una forma de estar en la vida." — Claudio Naranjo',
-    terapeutas: ['ana-jimenez', 'leonor-cabrera', 'cristina-lence', 'reyes-sanchez', 'maria-noel'],
+    terapeutas: ['ana-jimenez', 'leonor-cabrera', 'cristina-lence', 'reyes-sanchez', 'maria-noel-reyes'],
     beneficios: [
       'Aumentar el autoconocimiento y la comprensión de lo que te ocurre.',
       'Gestionar mejor las emociones y fortalecer tu autoestima.',
@@ -87,7 +87,7 @@ const terapias: Record<string, any> = {
     descripcion: 'La adolescencia es una etapa de cambios profundos en la que el joven necesita un espacio propio donde pueda expresar lo que siente sin ser juzgado. La terapia para adolescentes ofrece ese entorno seguro y confidencial donde explorar lo que le ocurre, gestionar sus emociones y desarrollar recursos para afrontar las dificultades propias de este momento vital.',
     descripcion2: 'La eficacia del proceso depende también de la implicación de los padres. Por eso, a lo largo del trabajo incluimos sesiones con la familia que permiten mejorar la comunicación, reducir los enfrentamientos y ofrecer al adolescente un entorno con mayor seguridad y comprensión. Entender qué le está pasando por dentro es el primer paso para acompañarle bien.',
     cita: '"Para acompañar bien a un adolescente primero hay que entender qué le está sucediendo por dentro."',
-    terapeutas: ['ana-jimenez', 'cristina-lence', 'maria-noel'],
+    terapeutas: ['ana-jimenez', 'cristina-lence', 'maria-noel-reyes'],
     beneficios: [
       'Gestionar mejor sus emociones y fortalecer su autoestima.',
       'Mejorar sus relaciones con la familia y el entorno.',
@@ -157,7 +157,7 @@ const terapias: Record<string, any> = {
     descripcion: 'La infancia es el momento en que el niño construye sus mecanismos de defensa y genera patrones de conducta que pueden perdurar toda la vida. La terapia infantil ofrece un espacio adaptado a la edad del niño donde puede explorar su mundo interior con herramientas ajustadas a su momento evolutivo, aprender a gestionar sus emociones y comprender qué le preocupa o le frustra.',
     descripcion2: 'Los padres también son parte del proceso. La terapia les ayuda a comunicarse mejor con sus hijos, a comprender qué les sucede y a adoptar medidas adaptadas a cada situación. Porque a veces no sabemos cómo poner límites sanos, cómo hablar de las pérdidas o cómo acompañar el miedo sin amplificarlo. Y eso también tiene solución.',
     cita: '"La infancia no es solo el principio de la vida, es también el principio de todo lo que vendrá después."',
-    terapeutas: ['ana-jimenez', 'cristina-lence', 'maria-noel'],
+    terapeutas: ['ana-jimenez', 'cristina-lence', 'maria-noel-reyes'],
     beneficios: [
       'Reducir el síntoma que le genera malestar: ansiedad, miedos, tristeza.',
       'Aprender a identificar y gestionar sus emociones.',
@@ -312,6 +312,7 @@ useHead({
 
       <TherapyProcess 
         :proceso="terapia.proceso"
+        :therapyId="id"
       />
 
       <TherapyFAQ 

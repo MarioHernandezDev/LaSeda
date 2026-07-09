@@ -414,6 +414,55 @@
                   </p>
                 </div>
 
+                <!-- Modalidad de preferencia -->
+                <div class="form-field">
+                  <label for="modalidad" class="form-label text-sm text-[#27252B]/85 font-medium">
+                    Modalidad de preferencia
+                  </label>
+                  <div class="relative">
+                    <select
+                      id="modalidad"
+                      v-model="form.modalidad"
+                      name="modalidad"
+                      :disabled="form.servicio === 'terapia-infantil'"
+                      class="input-field appearance-none pr-12 cursor-pointer text-base rounded-none disabled:cursor-not-allowed disabled:opacity-70"
+                      :class="{
+                        '!border-red-400': errors.modalidad,
+                        'text-[#27252B]/50': !form.modalidad
+                      }"
+                      :aria-describedby="errors.modalidad ? 'modalidad-error' : (form.servicio === 'terapia-infantil' ? 'modalidad-aviso' : undefined)"
+                      :aria-invalid="errors.modalidad ? 'true' : undefined"
+                    >
+                      <option value="" disabled selected>Selecciona formato</option>
+                      <option value="presencial">Presencial (En el centro de Granada)</option>
+                      <option value="online">Online (A través de videoconferencia)</option>
+                    </select>
+                    <div
+                      class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4"
+                      aria-hidden="true"
+                    >
+                      <svg class="w-4 h-4 text-[#27252B]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p
+                    v-if="errors.modalidad"
+                    id="modalidad-error"
+                    class="form-error text-red-500 font-medium"
+                    role="alert"
+                  >
+                    {{ errors.modalidad }}
+                  </p>
+                  <p
+                    v-if="form.servicio === 'terapia-infantil'"
+                    id="modalidad-aviso"
+                    class="text-xs italic text-[#27252B]/60 mt-2 leading-relaxed"
+                  >
+                    * Por motivos metodológicos y clínicos, la terapia infantil se ofrece exclusivamente de forma presencial en nuestra sede.
+                  </p>
+                </div>
+
                 <!-- Mensaje -->
                 <div class="form-field">
                   <label for="mensaje" class="form-label text-sm text-[#27252B]/85 font-medium">
@@ -690,7 +739,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, watch } from 'vue'
 
 // ─── SEO & structured data ───────────────────────────────────────────────────
 
@@ -802,6 +851,7 @@ interface ContactForm {
   telefono: string
   email: string
   servicio: string
+  modalidad: string
   mensaje: string
   privacidad: boolean
 }
@@ -811,6 +861,7 @@ interface ContactErrors {
   telefono: string
   email: string
   servicio: string
+  modalidad: string
   privacidad: string
 }
 
@@ -821,6 +872,7 @@ const form = reactive<ContactForm>({
   telefono: '',
   email: '',
   servicio: '',
+  modalidad: '',
   mensaje: '',
   privacidad: false,
 })
@@ -830,11 +882,23 @@ const errors = reactive<ContactErrors>({
   telefono: '',
   email: '',
   servicio: '',
+  modalidad: '',
   privacidad: '',
 })
 
 const isSubmitting = ref<boolean>(false)
 const formSent = ref<boolean>(false)
+
+// ─── Lógica reactiva: servicio → modalidad ──────────────────────────────────
+
+watch(
+  () => form.servicio,
+  (nuevoServicio) => {
+    if (nuevoServicio === 'terapia-infantil') {
+      form.modalidad = 'presencial'
+    }
+  }
+)
 
 // ─── Validación ──────────────────────────────────────────────────────────────
 
@@ -843,6 +907,7 @@ function resetErrors(): void {
   errors.telefono = ''
   errors.email = ''
   errors.servicio = ''
+  errors.modalidad = ''
   errors.privacidad = ''
 }
 
@@ -886,6 +951,7 @@ function resetForm(): void {
   form.telefono = ''
   form.email = ''
   form.servicio = ''
+  form.modalidad = ''
   form.mensaje = ''
   form.privacidad = false
 }

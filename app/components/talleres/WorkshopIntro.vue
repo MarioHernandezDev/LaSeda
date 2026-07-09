@@ -18,80 +18,97 @@ defineProps<{
 </script>
 
 <template>
-  <section id="sobre-la-terapia" class="page-container py-24 md:py-32">
-    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+  <div class="w-full text-[#27252B] font-sans pt-12 md:pt-16 pb-24 lg:pb-32 space-y-24 lg:space-y-36 bg-[#FDFBF9]">
+    
+    <section class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0 border-b border-[#27252B]/5 pb-24 lg:pb-0">
       
-      <div class="lg:sticky lg:top-28">
-        <div class="overflow-hidden aspect-[3/4] mb-10 relative">
-          <NuxtImg
-            v-if="facilitadora"
-            :src="facilitadora.imagen"
-            :alt="facilitadora.imagenAlt"
-            format="webp"
-            loading="lazy"
-            width="600"
-            height="800"
-            class="w-full h-full object-cover grayscale-[15%]"
-          />
-          <div class="absolute -bottom-3 -right-3 w-full h-full border border-[#71B1A5]/30 pointer-events-none z-[-1]" />
-          <div class="absolute bottom-5 left-0 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3">
-            <p class="text-[10px] tracking-[0.2em] uppercase text-[#27252B]/40 font-bold">Facilitadora</p>
-            <p class="font-serif italic text-[#27252B] text-sm mt-0.5">{{ facilitadora?.nombre }}</p>
+      <div class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-[#27252B]/5 relative border-b lg:border-b-0 lg:border-r border-[#27252B]/10 rounded-none">
+        <img
+          :src="imagen"
+          :alt="imagenAlt"
+          class="absolute inset-0 w-full h-full object-cover grayscale-[10%] hover:scale-102 transition-all duration-[1200ms] ease-out"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-start lg:max-w-[90%] xl:max-w-[85%] justify-self-start">
+        <div class="space-y-6 w-full">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
+              El Taller
+            </p>
+          </div>
+          <h2 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal leading-tight tracking-tight">
+            ¿Qué es y para quién es<br />
+            <span class="text-[#27252B]/50 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">este espacio?</span>
+          </h2>
+          <div class="space-y-6 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2">
+            <p>{{ descripcion }}</p>
+            <p>{{ descripcion2 }}</p>
           </div>
         </div>
-
-        <div class="w-12 h-px bg-[#71B1A5] mb-6" />
-        <h2 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-[1.2] mb-7">
-          Sobre la facilitadora
-        </h2>
-        
-        <div class="space-y-6 text-base md:text-lg leading-[1.95] text-[#27252B]/70 [&_strong]:font-semibold [&_strong]:text-[#27252B] mb-10">
-          <p v-html="bio" />
-          <p v-html="bio2" />
-        </div>
-
-        <NuxtLink
-          v-if="facilitadora"
-          :to="`/conocenos/${facilitadoraId}`"
-          class="inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#71B1A5] text-[#FDFBF9] hover:bg-[#27252B] transition-colors duration-300 ease-out group/btn text-xs font-medium tracking-[0.2em] uppercase shadow-sm"
-          :aria-label="`Ver perfil clínico completo de ${facilitadora.nombre}`"
-        >
-          <span>Ver perfil</span>
-          <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </NuxtLink>
       </div>
+    </section>
 
-      <div class="space-y-10 lg:pt-4">
-        <div>
-          <p class="text-[#71B1A5] text-[10px] tracking-[0.3em] uppercase font-bold mb-5">El taller</p>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-[1.2] mb-8">
-            ¿Qué es y para quién es<br />
-            <span class="text-[#27252B]/50 not-italic font-light text-2xl md:text-3xl">este espacio?</span>
+    <section v-if="facilitadora" class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0">
+      
+      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-end lg:max-w-[90%] xl:max-w-[85%] justify-self-end order-2 lg:order-1">
+        <div class="space-y-6 w-full">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
+              Acompañamiento Profesional
+            </p>
+          </div>
+          <h2 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal tracking-tight leading-tight">
+            Sobre la facilitadora<br />
+            <span class="text-[#27252B]/40 not-italic font-sans font-light text-xl md:text-2xl block mt-1">{{ facilitadora.nombre }}</span>
           </h2>
-        </div>
+          
+          <div class="space-y-6 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2 mb-4">
+            <p v-html="bio" />
+            <p v-html="bio2" />
+          </div>
 
-        <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 font-light">
-          {{ descripcion }}
-        </p>
-        <p class="text-base md:text-lg leading-[1.95] text-[#27252B]/75 font-light">
-          {{ descripcion2 }}
-        </p>
+          <div class="pt-4 w-full flex justify-start">
+            <NuxtLink
+              :to="`/conocenos/${facilitadoraId}`"
+              class="group relative inline-flex items-center justify-center gap-4 bg-[#27252B] text-white px-10 py-5 md:min-w-[240px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-none transition-all duration-500 hover:bg-[#71B1A5] w-full sm:w-auto shadow-md transform hover:-translate-y-0.5 overflow-hidden border border-transparent"
+              :aria-label="`Ver perfil clínico completo de ${facilitadora.nombre}`"
+            >
+              <span>Ver perfil completo</span>
+              <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+            </NuxtLink>
+          </div>
 
-        <div class="overflow-hidden aspect-[16/10] border border-[#27252B]/5 rounded-sm mt-4">
-          <NuxtImg
-            :src="imagen"
-            :alt="imagenAlt"
-            format="webp"
-            loading="lazy"
-            width="1200"
-            height="750"
-            class="w-full h-full object-cover grayscale-[10%] hover:scale-[1.02] transition-transform duration-700"
-          />
         </div>
       </div>
 
-    </div>
-  </section>
+      <div class="w-full aspect-square overflow-hidden bg-[#27252B]/5 relative order-1 lg:order-2 border border-[#27252B]/10 rounded-none max-w-[550px] lg:max-w-full justify-self-center lg:w-full">
+        <img
+          :src="facilitadora.imagen"
+          :alt="facilitadora.imagenAlt"
+          class="absolute inset-0 w-full h-full object-cover object-center grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out scale-100 hover:scale-102"
+          loading="lazy"
+        />
+      </div>
+
+    </section>
+
+  </div>
 </template>
+
+<style scoped>
+:deep(strong) {
+  font-weight: 500;
+  color: #27252B;
+}
+</style>

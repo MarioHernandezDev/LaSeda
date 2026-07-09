@@ -1,113 +1,128 @@
 <template>
-  <div class="bg-transparent">
+  <div class="w-full text-[#27252B] font-sans pt-12 md:pt-16 space-y-24 lg:space-y-36">
     
-    <div class="max-w-5xl mx-auto px-6 md:px-8 pt-12 pb-24 md:pb-32">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-16">
-        
-        <div class="lg:col-span-4 lg:sticky lg:top-28 space-y-4">
+    <section class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0">
+      
+      <div 
+        v-if="fotoUno" 
+        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-2xl lg:rounded-none relative"
+      >
+        <img
+          :src="fotoUno.src"
+          :alt="fotoUno.alt"
+          class="absolute inset-0 w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out scale-100 hover:scale-102"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-start lg:max-w-[90%] xl:max-w-[85%] justify-self-start">
+        <div class="space-y-6 w-full">
           <div class="flex items-center gap-3">
             <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
               Filosofía
             </p>
           </div>
-          <h3 class="font-serif italic text-3xl md:text-4xl text-[#27252B] font-normal leading-[1.15] tracking-tight">
-            Trayectoria y<br />Enfoque Humano
+          <h3 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal leading-tight tracking-tight">
+            Trayectoria y Enfoque Humano
           </h3>
-        </div>
-
-        <div class="lg:col-span-8 space-y-10 text-stone-600/90 text-base md:text-[18px] leading-[2] font-light font-sans tracking-wide">
-          <p 
-            v-for="(parrafo, i) in perfil.biografiaExtendida" 
-            :key="i"
-            :class="{'first-letter:text-7xl first-letter:font-serif first-letter:italic first-letter:font-normal first-letter:mr-4 first-letter:float-left first-letter:text-[#71B1A5] first-letter:leading-none first-letter:pt-2': i === 0}"
-            v-html="parrafo"
-          />
-        </div>
-      </div>
-
-      <div v-if="perfil.galeria && perfil.galeria[0]" class="-mx-6 md:mx-0">
-        <div class="overflow-hidden w-full">
-          <NuxtImg
-            :src="perfil.galeria[0].src"
-            :alt="perfil.galeria[0].alt"
-            class="w-full h-[260px] sm:h-[360px] md:h-auto md:max-h-[520px] object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-[1400ms] ease-out"
-            sizes="(max-width: 1024px) 100vw, 1024px"
-            format="webp"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] mr-[50vw] bg-transparent pb-20 lg:pb-28 overflow-x-clip">
-      <div class="flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-        
-        <div :class="[perfil.galeria && perfil.galeria[1] ? 'lg:col-span-7' : 'lg:col-span-12', 'space-y-14 px-6 sm:px-8 lg:pl-0 relative z-10 max-w-2xl lg:max-w-none w-full']">
-          
-          <div class="space-y-3">
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
-              <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
-                Evolución Integrativa
-              </p>
-            </div>
-            <h3 class="font-serif italic text-3xl text-[#27252B] font-normal tracking-tight">
-              El tejido de una identity profesional
-            </h3>
-          </div>
-
-          <div class="space-y-14 text-stone-600/90 text-base md:text-[17px] leading-[1.95] font-light font-sans tracking-wide">
-            <div 
-              v-for="(parrafo, i) in perfil.trayectoria" 
+          <div class="space-y-6 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2">
+            <p 
+              v-for="(parrafo, i) in perfil.biografiaExtendida" 
               :key="i"
-              class="relative group/text transition-colors duration-500 py-2"
-            >
-              <div class="absolute -left-4 top-0 bottom-0 w-px bg-stone-300/40 group-hover/text:bg-[#71B1A5] transition-colors duration-500 hidden md:block" />
-              <div class="group-hover/text:text-[#27252B] transition-colors duration-500" v-html="parrafo" />
-            </div>
-          </div>
-
-        </div>
-
-        <div v-if="perfil.galeria && perfil.galeria[1]" class="lg:col-span-5 w-full flex justify-center lg:justify-end relative self-end order-last lg:order-first px-6 lg:px-0">
-          <div class="overflow-hidden h-[450px] sm:h-[550px] lg:h-[720px] group/portrait w-full max-w-md lg:max-w-none
-             lg:absolute lg:left-0 lg:w-[calc(50vw-40px)] xl:w-[450px] 2xl:w-[480px] lg:bottom-0">
-            <NuxtImg
-              :src="perfil.galeria[1].src"
-              :alt="perfil.galeria[1].alt"
-              class="w-full h-full object-cover object-top grayscale-[10%] hover:grayscale-0 transition-all duration-[1400ms] ease-out group-hover/portrait:scale-102"
-              sizes="(max-width: 1024px) 100vw, 600px"
-              format="webp"
-              loading="lazy"
+              :class="{'biografia-capitular': i === 0}"
+              v-html="parrafo"
             />
           </div>
         </div>
-
       </div>
-    </div>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0">
+      
+      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-end lg:max-w-[90%] xl:max-w-[85%] justify-self-end order-2 lg:order-1">
+        <div class="space-y-6 w-full">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
+              Evolución Integrativa
+            </p>
+          </div>
+          <h3 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal tracking-tight leading-tight">
+            El tejido de una identidad profesional
+          </h3>
+          
+          <div class="space-y-8 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2 pl-1">
+            <div 
+              v-for="(parrafo, i) in perfil.trayectoria" 
+              :key="i"
+              class="relative group/text transition-colors duration-500 py-1"
+            >
+              <div class="absolute -left-5 top-0 bottom-0 w-px bg-stone-100 group-hover/text:bg-[#71B1A5] transition-colors duration-500 hidden md:block" />
+              <div class="group-hover/text:text-[#27252B] transition-colors duration-500" v-html="parrafo" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div 
+        v-if="fotoDos" 
+        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-2xl lg:rounded-none relative order-1 lg:order-2"
+      >
+        <img
+          :src="fotoDos.src"
+          :alt="fotoDos.alt"
+          class="absolute inset-0 w-full h-full object-cover object-top grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out scale-100 hover:scale-102"
+          loading="lazy"
+        />
+      </div>
+
+    </section>
 
   </div>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface FotoGaleria {
   src: string
   alt: string
 }
 
-defineProps<{
+const props = defineProps<{
   perfil: {
     biografiaExtendida: string[]
     trayectoria: string[]
     galeria?: FotoGaleria[]
   }
 }>()
+
+// Extracción limpia y controlada de las propiedades dinámicas de la galería
+const fotoUno = computed(() => {
+  return props.perfil?.galeria && props.perfil.galeria.length > 0 ? props.perfil.galeria[0] : null
+})
+
+const fotoDos = computed(() => {
+  return props.perfil?.galeria && props.perfil.galeria.length > 1 ? props.perfil.galeria[1] : null
+})
 </script>
 
 <style scoped>
 :deep(strong) {
   font-weight: 500;
   color: #27252B;
+}
+
+.biografia-capitular::first-letter {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 4.25rem;
+  line-height: 0.85;
+  float: left;
+  margin-right: 0.75rem;
+  padding-top: 0.3rem;
+  color: #71B1A5;
 }
 </style>

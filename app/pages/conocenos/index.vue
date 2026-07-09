@@ -421,7 +421,7 @@ const equipo: MiembroEquipo[] = [
     subtitulo: 'Psicoterapia Integradora-Humanista · Adultos',
     cita: 'Cada persona lleva dentro los recursos para crecer; mi trabajo es acompañarla a encontrarlos.',
     biografia: 'Psicoterapeuta con enfoque integrador-humanista y terapeuta Gestalt, con más de una década de experiencia en el acompañamiento a personas mayores, duelo y final de vida en Barcelona, y dedicada desde 2015 a la psicoterapia privada con adultos: crecimiento personal, gestión emocional y terapia de pareja.',
-    imagen: '/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg',
+    imagen: '/images/maria-noel-reyes-granada.jpg',
     imagenAlt: 'María Noel Reyes, psicoterapeuta en el Centro de Psicología La Seda en Granada',
     // NOTA PARA EL EQUIPO: no había número de colegiada en el CV recibido; sustituye este texto en cuanto lo tengáis.
     colegiadoTexto: '<strong class="text-[#27252B]/70 font-medium">Máster en Psicología General Sanitaria</strong> — Universidad de Valencia',

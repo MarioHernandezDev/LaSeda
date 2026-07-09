@@ -5,7 +5,7 @@
       
       <div 
         v-if="fotoUno" 
-        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-2xl lg:rounded-none relative"
+        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-none sm:rounded-2xl lg:rounded-none relative"
       >
         <img
           :src="fotoUno.src"
@@ -67,7 +67,7 @@
 
       <div 
         v-if="fotoDos" 
-        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-2xl lg:rounded-none relative order-1 lg:order-2"
+        class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-stone-100 rounded-none sm:rounded-2xl lg:rounded-none relative order-1 lg:order-2"
       >
         <img
           :src="fotoDos.src"
@@ -98,7 +98,6 @@ const props = defineProps<{
   }
 }>()
 
-// Extracción limpia y controlada de las propiedades dinámicas de la galería
 const fotoUno = computed(() => {
   return props.perfil?.galeria && props.perfil.galeria.length > 0 ? props.perfil.galeria[0] : null
 })

@@ -962,17 +962,37 @@ async function handleSubmit(): Promise<void> {
   isSubmitting.value = true
 
   try {
-    // TODO: reemplazar con la llamada real a tu endpoint o servicio de formularios
-    await new Promise<void>((resolve) => setTimeout(resolve, 1800))
-    formSent.value = true
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '340850fb-0e06-463e-b69b-5cf9a99e5e45', // la que te da Web3Forms al registrarte
+        subject: `Nueva consulta desde la web · ${form.servicio}`,
+        from_name: 'Formulario La Seda',
+        to: 'correomsys@gmail.com',
+        nombre: form.nombre,
+        telefono: form.telefono,
+        email: form.email,
+        servicio: form.servicio,
+        modalidad: form.modalidad || 'No especificada',
+        mensaje: form.mensaje || 'Sin mensaje adicional',
+      }),
+    })
 
-    setTimeout(() => {
-      formSent.value = false
-      resetForm()
-    }, 8000)
+    const result = await response.json()
+
+    if (result.success) {
+      formSent.value = true
+      setTimeout(() => {
+        formSent.value = false
+        resetForm()
+      }, 8000)
+    } else {
+      throw new Error(result.message || 'Error al enviar el formulario')
+    }
   } catch (error) {
-    // TODO: manejar errores de red / servidor con un mensaje al usuario
     console.error('[ContactoPage] Error al enviar el formulario:', error)
+    // Aquí podrías mostrar un mensaje de error al usuario
   } finally {
     isSubmitting.value = false
   }

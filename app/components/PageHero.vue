@@ -93,6 +93,11 @@
 
     <div class="page-hero-panel-right relative">
       <div 
+        class="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F2EE] to-transparent z-10 pointer-events-none md:block hidden"
+        aria-hidden="true"
+      />
+
+      <div 
         class="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#F5F2EE]/80 via-[#F5F2EE]/20 to-transparent z-10 pointer-events-none md:block hidden"
         aria-hidden="true"
       />

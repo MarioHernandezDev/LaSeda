@@ -3,9 +3,9 @@
     <IndexHero :ready="heroReady" />
     <IndexFilosofia />
     <IndexServicios />
-    <IndexSobreCentro :valores="valores" />
+        <IndexGaleria />
+
     <IndexSocialMedia />
-    <IndexGaleria />
     <IndexTestimonios />
     <IndexCtaFinal />
 

@@ -24,7 +24,6 @@ export const PageHero: typeof import("../app/components/PageHero.vue")['default'
 export const SeccionIntro: typeof import("../app/components/SeccionIntro.vue")['default']
 export const TeamCard: typeof import("../app/components/TeamCard.vue")['default']
 export const ConocenosAcademic: typeof import("../app/components/conocenos/ConocenosAcademic.vue")['default']
-export const ConocenosAsideInfo: typeof import("../app/components/conocenos/ConocenosAsideInfo.vue")['default']
 export const ConocenosBiography: typeof import("../app/components/conocenos/ConocenosBiography.vue")['default']
 export const ConocenosMiniHero: typeof import("../app/components/conocenos/ConocenosMiniHero.vue")['default']
 export const ConocenosSpecialties: typeof import("../app/components/conocenos/ConocenosSpecialties.vue")['default']
@@ -39,7 +38,6 @@ export const IndexFilosofia: typeof import("../app/components/index/Filosofia.vu
 export const IndexGaleria: typeof import("../app/components/index/Galeria.vue")['default']
 export const IndexHero: typeof import("../app/components/index/Hero.vue")['default']
 export const IndexServicios: typeof import("../app/components/index/Servicios.vue")['default']
-export const IndexSobreCentro: typeof import("../app/components/index/SobreCentro.vue")['default']
 export const IndexSocialMedia: typeof import("../app/components/index/SocialMedia.vue")['default']
 export const IndexTestimonios: typeof import("../app/components/index/Testimonios.vue")['default']
 export const TalleresWorkshopBenefits: typeof import("../app/components/talleres/WorkshopBenefits.vue")['default']
@@ -87,7 +85,6 @@ export const LazyPageHero: LazyComponent<typeof import("../app/components/PageHe
 export const LazySeccionIntro: LazyComponent<typeof import("../app/components/SeccionIntro.vue")['default']>
 export const LazyTeamCard: LazyComponent<typeof import("../app/components/TeamCard.vue")['default']>
 export const LazyConocenosAcademic: LazyComponent<typeof import("../app/components/conocenos/ConocenosAcademic.vue")['default']>
-export const LazyConocenosAsideInfo: LazyComponent<typeof import("../app/components/conocenos/ConocenosAsideInfo.vue")['default']>
 export const LazyConocenosBiography: LazyComponent<typeof import("../app/components/conocenos/ConocenosBiography.vue")['default']>
 export const LazyConocenosMiniHero: LazyComponent<typeof import("../app/components/conocenos/ConocenosMiniHero.vue")['default']>
 export const LazyConocenosSpecialties: LazyComponent<typeof import("../app/components/conocenos/ConocenosSpecialties.vue")['default']>
@@ -102,7 +99,6 @@ export const LazyIndexFilosofia: LazyComponent<typeof import("../app/components/
 export const LazyIndexGaleria: LazyComponent<typeof import("../app/components/index/Galeria.vue")['default']>
 export const LazyIndexHero: LazyComponent<typeof import("../app/components/index/Hero.vue")['default']>
 export const LazyIndexServicios: LazyComponent<typeof import("../app/components/index/Servicios.vue")['default']>
-export const LazyIndexSobreCentro: LazyComponent<typeof import("../app/components/index/SobreCentro.vue")['default']>
 export const LazyIndexSocialMedia: LazyComponent<typeof import("../app/components/index/SocialMedia.vue")['default']>
 export const LazyIndexTestimonios: LazyComponent<typeof import("../app/components/index/Testimonios.vue")['default']>
 export const LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../app/components/talleres/WorkshopBenefits.vue")['default']>

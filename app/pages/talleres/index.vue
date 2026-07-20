@@ -41,16 +41,6 @@ useHead({
       </template>
     </PageHero>
 
-    <SeccionIntro
-      id-heading="talleres-intro-heading"
-      titulo="Talleres que no solo enseñan: transforman."
-      :parrafos="[
-        'Nuestros talleres nacen de la convicción de que el conocimiento intelectual solo se integra a través de la experiencia vivida. Diseñamos espacios donde el cuerpo, la emoción y la mente trabajan en sintonía bajo la guía de profesionales expertos.',
-        'Tanto si eres un terapeuta que busca ampliar su mirada clínica, como si deseas profundizar en tu propio crecimiento, aquí encontrarás un entorno cuidado, seguro y profundamente humano.'
-      ]"
-      cita="Lo que necesita nuestro tiempo son seres más bondadosos, no seres más inteligentes."
-      cita-autor="Claudio Naranjo · Psiquiatra y humanista"
-    />
 
     <section
       class="bg-[#27252B]/[0.03] py-20 md:py-32 overflow-hidden"

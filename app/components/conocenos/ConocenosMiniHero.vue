@@ -1,5 +1,5 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[100dvh] md:h-[100vh] w-full bg-[#F5F2EE]">
+  <header class="page-hero-root relative overflow-hidden h-[100dvh] md:h-[calc(100vh-20rem)] md:pt-24 w-full bg-[#F5F2EE]">
     
     <div class="page-hero-panel relative z-20 h-full flex flex-col justify-center max-md:justify-end">
       
@@ -111,6 +111,8 @@ defineProps<{
   .page-hero-panel-right {
     width: 50%;
     flex-shrink: 0;
+    /* Nos aseguramos de que los dos paneles hereden la altura exacta del calc del header */
+    height: 100%; 
   }
 }
 </style>

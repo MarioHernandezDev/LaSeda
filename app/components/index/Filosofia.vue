@@ -43,9 +43,7 @@
       </figure>
 
       <p class="mt-16 text-white/70 text-[18px] md:text-[21px] leading-[1.9] max-w-2xl mx-auto font-light">
-        En La Seda hacemos nuestra esta visión. La psicología que practicamos no busca
-        únicamente aliviar síntomas: busca despertar en cada persona su capacidad innata
-        de vivir con mayor autenticidad, conexión y cuidado.
+        Para nosotras, la terapia no es sólo una manera de aliviar los síntomas, sino que busca despertar en cada persona su capacidad innata de vivir con mayor autenticidad, conexión y conciencia. 
       </p>
     </div>
   </section>

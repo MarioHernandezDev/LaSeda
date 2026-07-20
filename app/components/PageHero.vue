@@ -1,12 +1,7 @@
 <template>
-  <header class="page-hero-root relative">
+  <header class="page-hero-root relative pt-0 md:pt-24">
 
-    <div 
-      class="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#F5F2EE]/90 via-[#F5F2EE]/60 to-transparent z-40 pointer-events-none" 
-      aria-hidden="true"
-    />
-
-    <div class="page-hero-panel-left bg-[#F5F2EE] flex flex-col justify-center py-12 md:py-0">
+    <div class="page-hero-panel-left bg-[#F5F2EE] flex flex-col justify-center py-12 md:py-0 relative">
       
       <div
         class="absolute inset-0 opacity-[0.018] pointer-events-none z-0"
@@ -96,11 +91,6 @@
         class="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F2EE] to-transparent z-10 pointer-events-none md:block hidden"
         aria-hidden="true"
       />
-
-      <div 
-        class="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#F5F2EE]/80 via-[#F5F2EE]/20 to-transparent z-10 pointer-events-none md:block hidden"
-        aria-hidden="true"
-      />
       <NuxtImg
         :src="image"
         :alt="imageAlt"
@@ -127,5 +117,4 @@ defineProps({
 </script>
 
 <style scoped>
-/* El comportamiento estructural ahora hereda directamente de los tokens limpios del main.css */
 </style>

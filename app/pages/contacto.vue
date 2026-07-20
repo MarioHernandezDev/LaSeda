@@ -19,20 +19,6 @@
       </template>
     </PageHero>
 
-
-    <!-- ═══════════════════════════════════════════════
-         SECCIÓN 2 · INTRO
-    ════════════════════════════════════════════════ -->
-    <SeccionIntro
-      id-heading="contacto-heading"
-      titulo="Escríbenos o llámanos sin compromiso."
-      :parrafos="[
-        'En La Seda sabemos que dar el paso de pedir ayuda requiere valor. Por ello, resolvemos tu primer contacto con la máxima sencillez. Escríbenos, llámanos o completa el formulario: analizaremos tu caso con cercanía para orientarte hacia el proceso terapéutico óptimo.',
-        'Respondemos a cada consulta en menos de 24 horas laborables. Recuerda que ninguna duda es insignificante cuando se trata de tu tranquilidad.'
-      ]"
-    />
-
-
     <!-- ═══════════════════════════════════════════════
          SECCIÓN 3 · CUERPO PRINCIPAL: INFO + FORMULARIO
     ════════════════════════════════════════════════ -->

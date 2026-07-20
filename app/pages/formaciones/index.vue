@@ -49,17 +49,6 @@ const scrollToTop = () => {
       </template>
     </PageHero>
 
-    <SeccionIntro
-      id-heading="formaciones-heading"
-      titulo="Formaciones que no solo enseñan: transforman."
-      :parrafos="[
-        'Nuestros programas nacen de la convicción de que el conocimiento profesional de calidad solo se asimila cuando va acompañado de vivencia clínica. Teoría, práctica y supervisión se entrelazan en cada formación para impulsar tanto tu destreza técnica como tu madurez personal.',
-        'Si buscas ampliar tu especialización o incorporar herramientas avaladas científicamente a tu consulta, aquí encontrarás un entorno riguroso, cercano y comprometido con la excelencia.'
-      ]"
-      cita="Lo que necesita nuestro tiempo son seres más bondadosos, no seres más inteligentes."
-      cita-autor="Claudio Naranjo · Psiquiatra y humanista"
-    />
-
     <section
       class="bg-[#27252B]/[0.03] py-20 md:py-32 overflow-hidden"
       aria-labelledby="programas-heading"

@@ -9,11 +9,6 @@
         <ConocenosBiography :perfil="perfil" />
       </div>
 
-      <div class="w-full my-20 lg:my-28">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ConocenosAsideInfo :perfil="perfil" />
-        </div>
-      </div>
 
       <div class="page-container pb-16 md:pb-24 max-w-5xl mx-auto space-y-24 lg:space-y-36 px-4 sm:px-6 lg:px-8">
         <ConocenosSpecialties :perfil="perfil" />

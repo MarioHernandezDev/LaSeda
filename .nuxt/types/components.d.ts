@@ -24,7 +24,6 @@ interface _GlobalComponents {
   SeccionIntro: typeof import("../../app/components/SeccionIntro.vue")['default']
   TeamCard: typeof import("../../app/components/TeamCard.vue")['default']
   ConocenosAcademic: typeof import("../../app/components/conocenos/ConocenosAcademic.vue")['default']
-  ConocenosAsideInfo: typeof import("../../app/components/conocenos/ConocenosAsideInfo.vue")['default']
   ConocenosBiography: typeof import("../../app/components/conocenos/ConocenosBiography.vue")['default']
   ConocenosMiniHero: typeof import("../../app/components/conocenos/ConocenosMiniHero.vue")['default']
   ConocenosSpecialties: typeof import("../../app/components/conocenos/ConocenosSpecialties.vue")['default']
@@ -39,7 +38,6 @@ interface _GlobalComponents {
   IndexGaleria: typeof import("../../app/components/index/Galeria.vue")['default']
   IndexHero: typeof import("../../app/components/index/Hero.vue")['default']
   IndexServicios: typeof import("../../app/components/index/Servicios.vue")['default']
-  IndexSobreCentro: typeof import("../../app/components/index/SobreCentro.vue")['default']
   IndexSocialMedia: typeof import("../../app/components/index/SocialMedia.vue")['default']
   IndexTestimonios: typeof import("../../app/components/index/Testimonios.vue")['default']
   TalleresWorkshopBenefits: typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']
@@ -87,7 +85,6 @@ interface _GlobalComponents {
   LazySeccionIntro: LazyComponent<typeof import("../../app/components/SeccionIntro.vue")['default']>
   LazyTeamCard: LazyComponent<typeof import("../../app/components/TeamCard.vue")['default']>
   LazyConocenosAcademic: LazyComponent<typeof import("../../app/components/conocenos/ConocenosAcademic.vue")['default']>
-  LazyConocenosAsideInfo: LazyComponent<typeof import("../../app/components/conocenos/ConocenosAsideInfo.vue")['default']>
   LazyConocenosBiography: LazyComponent<typeof import("../../app/components/conocenos/ConocenosBiography.vue")['default']>
   LazyConocenosMiniHero: LazyComponent<typeof import("../../app/components/conocenos/ConocenosMiniHero.vue")['default']>
   LazyConocenosSpecialties: LazyComponent<typeof import("../../app/components/conocenos/ConocenosSpecialties.vue")['default']>
@@ -102,7 +99,6 @@ interface _GlobalComponents {
   LazyIndexGaleria: LazyComponent<typeof import("../../app/components/index/Galeria.vue")['default']>
   LazyIndexHero: LazyComponent<typeof import("../../app/components/index/Hero.vue")['default']>
   LazyIndexServicios: LazyComponent<typeof import("../../app/components/index/Servicios.vue")['default']>
-  LazyIndexSobreCentro: LazyComponent<typeof import("../../app/components/index/SobreCentro.vue")['default']>
   LazyIndexSocialMedia: LazyComponent<typeof import("../../app/components/index/SocialMedia.vue")['default']>
   LazyIndexTestimonios: LazyComponent<typeof import("../../app/components/index/Testimonios.vue")['default']>
   LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../../app/components/talleres/WorkshopBenefits.vue")['default']>

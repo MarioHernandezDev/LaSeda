@@ -11,7 +11,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
 </script>
 
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[580px] lg:h-[640px] border-b border-[#27252B]/5">
+  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[calc(580px+6rem)] lg:h-[calc(640px+6rem)] md:pt-24 border-b border-[#27252B]/5">
 
     <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-20 max-md:!bg-transparent flex flex-col justify-center">
       
@@ -126,6 +126,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
   .page-hero-panel-right {
     width: 50%;
     flex-shrink: 0;
+    height: 100%;
   }
 }
 </style>

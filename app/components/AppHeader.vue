@@ -1,31 +1,11 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 transform-gpu will-change-transform backface-hidden"
-    :class="scrolled
-      ? 'bg-[#FDFBF9]/90 backdrop-blur-md shadow-lg shadow-[#27252B]/4 border-b border-[#27252B]/5 py-2'
-      : 'bg-transparent py-4 md:py-6'"
+    class="fixed top-0 left-0 right-0 h-24 bg-[#FDFBF9] border-b border-[#27252B]/5 z-50 flex items-center shadow-sm"
   >
-    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-      <nav class="flex items-center justify-between h-14 md:h-16" aria-label="Navegación principal">
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 h-full">
+      <nav class="flex items-center justify-between h-full" aria-label="Navegación principal">
 
-        <ul class="hidden md:flex flex-1 items-center justify-end gap-6 lg:gap-10 pr-12 lg:pr-16" role="list">
-          <li v-for="link in leftNavLinks" :key="link.to">
-            <NuxtLink
-              :to="link.to"
-              class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-              :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
-              :aria-current="currentPath === link.to ? 'page' : undefined"
-            >
-              {{ link.label }}
-              <span
-                class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                :class="{ 'scale-x-100': currentPath === link.to }"
-              ></span>
-            </NuxtLink>
-          </li>
-        </ul>
-
-        <div class="flex-shrink-0 flex items-center justify-center z-10">
+        <div class="flex-shrink-0 flex items-center">
           <NuxtLink to="/" class="group block" aria-label="Ir a inicio">
             <NuxtImg
               src="/images/logo-centro-la-seda-psicologia-granada.png"
@@ -37,31 +17,27 @@
           </NuxtLink>
         </div>
 
-        <div class="hidden md:flex flex-1 items-center justify-start gap-8 lg:gap-12 pl-12 lg:pl-16">
-          <ul class="flex items-center gap-6 lg:gap-10" role="list">
-            <li v-for="link in rightNavLinks" :key="link.to">
-              <NuxtLink
-                :to="link.to"
-                class="relative px-2 py-2 text-[11px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 hover:text-[#27252B] transition-colors duration-300 group"
-                :class="{ '!text-[#27252B] font-bold': currentPath === link.to }"
-                :aria-current="currentPath === link.to ? 'page' : undefined"
-              >
+        <ul class="hidden md:flex items-center h-full" role="list">
+          <li v-for="link in navLinks" :key="link.to" class="h-full flex">
+            <NuxtLink
+              :to="link.to"
+              class="relative px-6 xl:px-8 h-full flex items-center text-[13px] tracking-[0.25em] uppercase font-semibold text-[#27252B]/70 transition-all duration-300 group overflow-hidden"
+              :class="{ 'text-[#27252B] bg-[#27252B]/4 font-bold': currentPath === link.to }"
+              :aria-current="currentPath === link.to ? 'page' : undefined"
+            >
+              <span class="absolute inset-0 bg-[#71B1A5]/5 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></span>
+              
+              <span class="relative z-10 group-hover:text-[#27252B] transition-colors duration-300">
                 {{ link.label }}
-                <span
-                  class="absolute bottom-0 left-2 right-2 h-px bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out origin-center"
-                  :class="{ 'scale-x-100': currentPath === link.to }"
-                ></span>
-              </NuxtLink>
-            </li>
-          </ul>
+              </span>
 
-          <NuxtLink
-            to="/contacto"
-            class="inline-flex items-center justify-center bg-[#71B1A5] text-white text-[10px] tracking-[0.22em] uppercase font-bold px-6 py-2.5 rounded-full hover:bg-[#5a9a8e] transition-all duration-500 shadow-lg shadow-[#71B1A5]/10 hover:shadow-xl hover:shadow-[#71B1A5]/30 hover:-translate-y-0.5 whitespace-nowrap"
-          >
-            Contacto
-          </NuxtLink>
-        </div>
+              <span
+                class="absolute top-0 left-0 right-0 h-[2px] bg-[#71B1A5] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"
+                :class="{ 'scale-x-100': currentPath === link.to }"
+              ></span>
+            </NuxtLink>
+          </li>
+        </ul>
 
         <button
           class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-full border border-[#27252B]/5 bg-[#FDFBF9]/60 backdrop-blur-sm ml-auto gap-1.5 transition-all duration-300 active:scale-[0.95] focus:outline-none z-50 relative"
@@ -88,25 +64,17 @@ defineProps({
 defineEmits(['toggleMenu'])
 
 const navLinks = [
+  { label: 'Inicio',      to: '/'            },
   { label: 'Terapias',    to: '/terapias'    },
+  { label: 'Equipo',      to: '/conocenos'   },
   { label: 'Talleres',    to: '/talleres'    },
   { label: 'Formaciones', to: '/formaciones' },
-  { label: 'Conócenos',   to: '/conocenos'   },
+  { label: 'Contacto',    to: '/contacto'    },
 ]
-
-const leftNavLinks  = navLinks.slice(0, 2)
-const rightNavLinks = navLinks.slice(2)
 </script>
 
 <style scoped>
 header {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-.backdrop-blur-md {
-  -webkit-backdrop-filter: blur(12px) !important;
-  backdrop-filter: blur(12px) !important;
+  will-change: transform;
 }
 </style>

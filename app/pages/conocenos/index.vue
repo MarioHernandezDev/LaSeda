@@ -15,106 +15,7 @@
       </template>
     </PageHero>
 
-    <SeccionIntro
-      id-heading="nosotros-heading"
-      titulo="Rigor científico con profundidad humana."
-      :parrafos="[
-        'La Seda nace para demostrar que la psicología más transformadora une la evidencia científica con una sensibilidad humana real. Nuestro equipo reúne a especialistas de corrientes sólidas —cognitivo-conductual, sistémica, humanista y mindfulness— bajo un mismo fin: consolidar cambios duraderos.',
-        'Entendemos el bienestar como un todo integrado que abarca la terapia, la formación y el crecimiento interno. Desplegamos nuestra labor desde un espacio en Granada concebido en detalle para que te sientas en calma y calidez desde el primer paso.'
-      ]"
-    />
 
-    <section
-      class="bg-[#27252B]/[0.02] py-24 md:py-32"
-      aria-labelledby="espacio-heading"
-    >
-      <div class="page-container">
-        <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-
-          <div class="relative">
-            <div
-              class="absolute -top-4 -left-4 w-full h-full border border-[#71B1A5]/30 pointer-events-none z-0"
-              aria-hidden="true"
-            />
-            <div class="relative z-10 overflow-hidden aspect-[3/4] rounded-sm">
-              <NuxtImg
-                src="/images/espacio-terapeutico-centro-psicologia-la-seda-granada.jpg"
-                alt="Sala de consulta terapéutica del Centro de Psicología La Seda en Granada, con materiales orgánicos y ambiente de calma"
-                class="w-full h-full object-cover"
-                width="600"
-                height="800"
-                format="webp"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-[#27252B]/5 pointer-events-none"
-                aria-hidden="true"
-              />
-            </div>
-            <div
-              class="absolute bottom-6 -right-5 bg-[#FDFBF9] border border-[#27252B]/10 px-5 py-3 z-20 hidden md:block"
-              aria-hidden="true"
-            >
-              <p class="section-label">Nuestro espacio</p>
-              <p class="font-serif italic text-[#27252B] text-sm mt-0.5">La Seda · Granada</p>
-            </div>
-          </div>
-
-          <div>
-            <p class="section-label mb-4">El centro de psicología</p>
-            <h2
-              id="espacio-heading"
-              class="font-serif italic text-3xl md:text-4xl leading-[1.2] mb-12 text-[#27252B]"
-            >
-              Un lugar pensado<br />
-              <span class="text-[#27252B]/60">para el bienestar en Granada.</span>
-            </h2>
-
-            <dl class="space-y-10" aria-label="Datos del espacio terapéutico">
-              <div class="flex gap-6 items-start">
-                <div class="shrink-0" aria-hidden="true">
-                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">5</span>
-                </div>
-                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
-                  <dt class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Salas independientes</dt>
-                  <dd class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                    Consultas individuales, grupales y sala de talleres. Acústica que protege
-                    la intimidad y materiales orgánicos que invitan a la calma.
-                  </dd>
-                </div>
-              </div>
-
-              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
-
-              <div class="flex gap-6 items-start">
-                <div class="shrink-0" aria-hidden="true">
-                  <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">+12</span>
-                </div>
-                <div class="pt-2 border-t border-[#27252B]/10 flex-1">
-                  <dt class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">Años de experiencia en Granada</dt>
-                  <dd class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                    En el corazón de Granada, accesible en transporte público y con
-                    aparcamiento próximo. Sesiones online disponibles para quienes no
-                    puedan desplazarse.
-                  </dd>
-                </div>
-              </div>
-            </dl>
-
-            <div class="mt-12 pt-8 border-t border-[#27252B]/10">
-              <NuxtLink
-                to="/contacto"
-                class="btn-secondary !inline-flex"
-                aria-label="Reservar primera cita en el Centro de Psicología La Seda Granada"
-              >
-                <span>Reservar primera cita</span>
-              </NuxtLink>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section
       class="py-24 md:py-36 bg-[#FDFBF9]"
@@ -140,7 +41,7 @@
         </div>
 
         <ul
-          class="flex flex-col gap-24 md:gap-36 list-none p-0 m-0"
+          class="flex flex-col gap-16 md:gap-24 list-none p-0 m-0"
           role="list"
           aria-label="Miembros del equipo de La Seda Granada"
         >
@@ -151,80 +52,64 @@
           >
             <NuxtLink 
               :to="`/conocenos/${miembro.id}`"
-              class="group relative flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24 transition-all duration-500 rounded-sm isolate cursor-pointer decoration-transparent block"
+              class="group relative flex flex-col md:flex-row items-stretch gap-8 md:gap-12 bg-[#FDFBF9] border border-[#27252B]/5 p-6 md:p-10 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 cursor-pointer decoration-transparent block"
               :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
             >
-              <div class="relative w-full md:w-[380px] lg:w-[420px] shrink-0 aspect-[3/4] z-10 overflow-visible">
-                <div
-                  class="absolute inset-0 border border-[#71B1A5]/20 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"
-                  aria-hidden="true"
+              <div class="relative w-full md:w-[300px] lg:w-[340px] shrink-0 aspect-[3/4] overflow-hidden bg-[#27252B]/5 rounded-sm">
+                <NuxtImg
+                  :src="miembro.imagen"
+                  :alt="miembro.imagenAlt"
+                  class="w-full h-full object-cover object-top grayscale-[15%] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700 ease-out"
+                  width="340"
+                  height="453"
+                  format="webp"
+                  loading="lazy"
                 />
-                
-                <div class="relative w-full h-full overflow-hidden bg-[#27252B]/5 z-10 rounded-sm">
-                  <NuxtImg
-                    :src="miembro.imagen"
-                    :alt="miembro.imagenAlt"
-                    class="w-full h-full object-cover object-top grayscale-[15%] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700 ease-out"
-                    width="420"
-                    height="560"
-                    format="webp"
-                    loading="lazy"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#27252B]/10 via-transparent to-transparent"
-                    aria-hidden="true"
-                  />
-                </div>
-
-                <div
-                  class="absolute -top-3 left-6 md:-left-3 z-20 text-[10px] font-medium tracking-[0.2em] uppercase bg-[#71B1A5] text-white px-4 py-2 shadow-xs"
-                >
+                <div class="absolute top-4 left-4 text-[9px] font-medium tracking-[0.2em] uppercase bg-[#71B1A5] text-white px-3 py-1.5 shadow-xs">
                   {{ miembro.rol }}
                 </div>
               </div>
 
-              <div class="flex flex-col justify-between flex-1 py-2 w-full z-10">
-                <div class="space-y-6">
+              <div class="flex flex-col justify-between flex-1 py-1 w-full">
+                <div class="space-y-5">
                   <div>
-                    <h3
-                      class="font-serif italic text-3xl md:text-4xl text-[#27252B] leading-tight mb-2 group-hover:text-[#71B1A5] transition-colors duration-300"
-                    >
+                    <h3 class="font-serif italic text-2xl md:text-3xl text-[#27252B] leading-tight mb-1 group-hover:text-[#71B1A5] transition-colors duration-300">
                       {{ miembro.nombre }}
                     </h3>
-                    <p class="text-xs font-medium tracking-[0.15em] text-[#71B1A5] uppercase">
+                    <p class="text-xs font-medium tracking-[0.12em] text-[#27252B]/40 uppercase">
                       {{ miembro.subtitulo }}
                     </p>
                   </div>
 
-                  <blockquote class="relative pl-6 border-l border-[#71B1A5]/30">
-                    <p class="font-serif italic text-[#27252B]/80 text-lg md:text-xl leading-relaxed">
-                      “{{ miembro.cita }}”
-                    </p>
-                  </blockquote>
-
-                  <p class="text-[#27252B]/70 text-base md:text-lg leading-[1.85] font-light max-w-2xl">
-                    {{ miembro.biografia }}
+                  <p class="font-serif italic text-[#27252B]/80 text-base md:text-lg leading-relaxed border-l-2 border-[#71B1A5]/40 pl-4">
+                    “{{ miembro.cita }}”
                   </p>
+
+                  <div class="space-y-3 pt-4">
+                    <p class="text-[10px] tracking-wider uppercase text-[#27252B]/50 font-medium">Áreas de intervención:</p>
+                    <div class="flex flex-wrap gap-2">
+                      <span 
+                        v-for="esp in miembro.especialidades" 
+                        :key="esp"
+                        class="text-xs bg-[#27252B]/[0.03] text-[#27252B]/85 border border-[#27252B]/5 px-3 py-1.5 rounded-sm font-light tracking-wide transition-colors group-hover:bg-[#27252B]/[0.05]"
+                      >
+                        {{ esp }}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-10 pt-6 border-t border-[#27252B]/10 relative z-20">
-                  <div class="flex items-center gap-2.5">
-                    <svg class="w-4 h-4 text-[#71B1A5]/80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z"/>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 pt-4 border-t border-[#27252B]/5">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-[#71B1A5]/80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 00.806 1.946 3.42 3.42 0 013.138 3.138z"/>
                     </svg>
-                    <span class="text-xs text-[#27252B]/50 font-light tracking-wide" v-html="miembro.colegiadoTexto" />
+                    <span class="text-[11px] text-[#27252B]/50 font-light" v-html="miembro.colegiadoTexto" />
                   </div>
 
-                  <div
-                    class="inline-flex items-center gap-4 py-1 text-sm text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200"
-                  >
-                    <span class="tracking-[0.15em] uppercase text-xs font-medium">
-                      Ver perfil
-                    </span>
-                    <span
-                      class="w-8 h-px bg-[#27252B]/40 group-hover:w-14 group-hover:bg-[#71B1A5] transition-all duration-300"
-                      aria-hidden="true"
-                    />
+                  <div class="inline-flex items-center gap-3 py-1 text-xs text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-200">
+                    <span class="tracking-[0.15em] uppercase font-medium">Ver Especialidades</span>
+                    <span class="w-6 h-px bg-[#27252B]/40 group-hover:w-10 group-hover:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
                   </div>
                 </div>
               </div>
@@ -362,7 +247,7 @@ interface MiembroEquipo {
   imagen: string
   imagenAlt: string
   colegiadoTexto: string
-  especialidades: string[] // Añadido para enriquecer el Schema org de forma dinámica
+  especialidades: string[]
 }
 
 const equipo: MiembroEquipo[] = [
@@ -423,7 +308,6 @@ const equipo: MiembroEquipo[] = [
     biografia: 'Psicoterapeuta con enfoque integrador-humanista y terapeuta Gestalt, con más de una década de experiencia en el acompañamiento a personas mayores, duelo y final de vida en Barcelona, y dedicada desde 2015 a la psicoterapia privada con adultos: crecimiento personal, gestión emocional y terapia de pareja.',
     imagen: '/images/maria-noel-reyes-granada.jpg',
     imagenAlt: 'María Noel Reyes, psicoterapeuta en el Centro de Psicología La Seda en Granada',
-    // NOTA PARA EL EQUIPO: no había número de colegiada en el CV recibido; sustituye este texto en cuanto lo tengáis.
     colegiadoTexto: '<strong class="text-[#27252B]/70 font-medium">Máster en Psicología General Sanitaria</strong> — Universidad de Valencia',
     especialidades: ['Terapia Gestalt', 'Enfoque Integrador-Humanista', 'Duelo y Pérdidas', 'Psicogerontología']
   },

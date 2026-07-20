@@ -5,7 +5,6 @@ useSeoMeta({
   ogTitle: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
   description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, terapia Gestalt y adultos desde un enfoque integrativo y eficaz.',
   ogDescription: 'Encuentra tu psicólogo en Granada. Especialistas en terapia infantil, terapia de pareja, adultos, adolescentes y enfoque sistémico-humanista en Centro La Seda.',
-  // Nombre de imagen actualizado para el SEO
   ogImage: '/images/psicoterapia-integrativa-adultos-pareja-granada.jpg',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Especialidades Clínicas y Psicoterapia en Granada | La Seda',
@@ -41,14 +40,6 @@ useHead({
       </template>
     </PageHero>
 
-    <SeccionIntro
-      id-heading="terapia-heading"
-      titulo="Terapia integrativa adaptada a tu momento vital."
-      :parrafos="[
-        'En La Seda trabajamos desde la psicología integrativa, combinando las herramientas más adecuadas de diferentes corrientes para cada persona. No existe una única forma de sanar: nuestro compromiso es encontrar el camino que mejor resuene con tu historia y tus necesidades actuales.',
-        'El enfoque cognitivo-conductual, el humanista, la perspectiva sistémica y el protocolo EMDR guían nuestra práctica cotidiana. Esta pluralidad nos permite ofrecer un acompañamiento personalizado, respaldado por evidencia científica y con una profunda calidez humana.'
-      ]"
-    />
 
     <section
       class="bg-[#27252B]/[0.03] py-20 md:py-32 overflow-hidden"
@@ -60,7 +51,7 @@ useHead({
           <div>
             <p class="section-label mb-3">Nuestras Especialidades</p>
             <h2 id="especialidades-heading" class="section-title">
-              Áreas de intervención
+              Servicios recomendados
             </h2>
           </div>
           <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" aria-hidden="true" />
@@ -90,14 +81,23 @@ useHead({
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Infantil</h3>
-                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Permite a los niños enfrentarse a dificultades como <strong>miedos, bullying, separación de sus padres o pérdidas</strong>. Un espacio que dota de herramientas emocionales al menor y ayuda a las familias a educar mejor, estableciendo <strong>límites sanos y saludables</strong>.
+                
+                <p class="text-[14px] leading-relaxed text-[#27252B]/70">
+                  Espacio seguro enfocado a dotar al menor de recursos emocionales y orientar a las familias en pautas de crianza saludables.
                 </p>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión de miedos</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Acoso escolar (Bullying)</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Procesos de separación</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Límites sanos</span>
+                </div>
+
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Imparten: <span class="font-normal text-[#27252B]/70">Ana Jiménez, Cristina Lence, María Noel Reyes</span>
+                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Saber más
+                  Ver detalles del servicio
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -123,14 +123,23 @@ useHead({
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adultos y Acompañamiento</h3>
-                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Enfoque psicoterapéutico <strong>humanista, Gestalt y sistémico</strong> orientado a resolver conflictos personales. Ideal para gestionar <strong>estrés, bloqueos, traumas o ansiedad</strong>, impulsando el autoconocimiento y la toma de decisiones coherentes.
+                
+                <p class="text-[14px] leading-relaxed text-[#27252B]/70">
+                  Psicoterapia integrativa y humanista enfocada en superar bloqueos vitales y promover la toma de decisiones conscientes.
                 </p>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Estrés y Ansiedad</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión del Trauma</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoconocimiento</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis existenciales</span>
+                </div>
+
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Imparten: <span class="font-normal text-[#27252B]/60 text-[11px]">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera, R. Sánchez-Tallón</span>
+                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera...</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Saber más
+                  Ver detalles del servicio
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -160,14 +169,23 @@ useHead({
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adolescentes</h3>
-                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Ofrece un <strong>espacio seguro y confidencial</strong> donde el joven puede desarrollar recursos ante la <strong>ansiedad, aislamiento o conflictos</strong>. Acompaña a los padres para optimizar la escucha y <strong>mejorar la comunicación familiar</strong>.
+                
+                <p class="text-[14px] leading-relaxed text-[#27252B]/70">
+                  Un entorno neutro y confidencial para que el joven aprenda a procesar sus emociones y reconstruir la comunicación en el hogar.
                 </p>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Aislamiento social</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Problemas de conducta</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoestima</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Relaciones familiares</span>
+                </div>
+
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Imparten: <span class="font-normal text-[#27252B]/70">Ana Jiménez, Cristina Lence, María Noel Reyes</span>
+                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Saber más
+                  Ver detalles del servicio
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -193,14 +211,23 @@ useHead({
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia de Pareja y Familia</h3>
-                <p class="text-base leading-[1.85] text-[#27252B]/75 flex-1">
-                  Aborda dificultades de comunicación, crisis o momentos de cambio. Ayuda a resolver <strong>conflictos recurrentes, infidelidades o desacuerdos en la crianza</strong>, ofreciendo soporte ante <strong>separaciones, duelos y transiciones</strong> familiares importantes.
+                
+                <p class="text-[14px] leading-relaxed text-[#27252B]/70">
+                  Mediación técnica dirigida a desenredar dinámicas disfuncionales, superar baches comunicativos o transiciones complejas.
                 </p>
+
+                <div class="flex flex-wrap gap-2 my-1">
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis de comunicación</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Infidelidades y Desconfianza</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Conflictos de crianza</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Procesos de duelo</span>
+                </div>
+
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Imparten: <span class="font-normal text-[#27252B]/70">Leonor Cabrera, Reyes Sánchez-Tallón</span>
+                  Especialistas: <span class="font-normal text-[#27252B]/70">L. Cabrera, R. Sánchez-Tallón</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Saber más
+                  Ver detalles del servicio
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -357,3 +384,16 @@ useHead({
 
   </main>
 </template>
+
+<style scoped>
+@media (min-width: 768px) {
+  .page-hero-root {
+    display: flex;
+  }
+  .page-hero-panel,
+  .page-hero-panel-right {
+    width: 50%;
+    flex-shrink: 0;
+  }
+}
+</style>

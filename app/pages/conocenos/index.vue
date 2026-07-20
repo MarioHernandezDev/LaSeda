@@ -311,6 +311,18 @@ const equipo: MiembroEquipo[] = [
     colegiadoTexto: '<strong class="text-[#27252B]/70 font-medium">Máster en Psicología General Sanitaria</strong> — Universidad de Valencia',
     especialidades: ['Terapia Gestalt', 'Enfoque Integrador-Humanista', 'Duelo y Pérdidas', 'Psicogerontología']
   },
+  {
+    id: 'maria-duarte',
+    nombre: 'María Duarte',
+    rol: 'Psicoterapia',
+    subtitulo: 'Psicología Infantil, Adolescencia y Familias',
+    cita: 'Acercarse a cada historia con respeto y sensibilidad permite ofrecer un espacio seguro basado en la confianza.',
+    biografia: 'Psicóloga General Sanitaria (Nº Colegiada AO13355) graduada por la Universidad de Málaga y Máster por la UNIR. Especializada en la práctica clínica integrativa con niños, adolescentes y acompañamiento familiar. Cuenta con una sólida experiencia en la reparación del vínculo materno-filial en contextos de adversidad y trauma, además de integrar enfoques corporales y gestálticos en consulta.',
+    imagen: '/images/maria-duarte-psicologa-infantil-granada.jpg',
+    imagenAlt: 'María Duarte, psicóloga general sanitaria especializada en infancia y familias en el Centro La Seda',
+    colegiadoTexto: 'Colegiada <strong class="text-[#27252B]/70 font-medium">Nº AO13355</strong> — Psicóloga Sanitaria',
+    especialidades: ['Psicología Infantil', 'Adolescencia', 'Acompañamiento Familiar', 'Trauma y Vínculos']
+  },
 ]
 
 // ─── SEO META LOCALIZADO Y TRANSACCIONAL ─────────────────────────────────────

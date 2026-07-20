@@ -3,34 +3,80 @@
     
     <div v-if="perfil">
       
-      <ConocenosMiniHero :perfil="perfil" />
+      <div v-if="perfil.esReal">
+        <ConocenosMiniHero :perfil="perfil" />
 
-      <div class="w-full">
-        <ConocenosBiography :perfil="perfil" />
+        <div class="w-full">
+          <ConocenosBiography :perfil="perfil" />
+        </div>
+
+        <div class="page-container pb-16 md:pb-24 max-w-5xl mx-auto space-y-24 lg:space-y-36 px-4 sm:px-6 lg:px-8">
+          <ConocenosSpecialties :perfil="perfil" />
+          <ConocenosAcademic :perfil="perfil" />
+
+          <div class="pt-16 border-t border-[#27252B]/10 space-y-12">
+            <div class="flex justify-center pt-6">
+              <NuxtLink 
+                to="/conocenos" 
+                class="inline-flex items-center gap-4 group/btn py-2"
+                aria-label="Volver al catálogo del equipo"
+              >
+                <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
+                <span class="text-xs tracking-[0.2em] uppercase font-bold text-[#27252B]/50 group-hover/btn:text-[#71B1A5] transition-colors duration-300">
+                  Ver todo el equipo
+                </span>
+                <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <div 
+        v-else 
+        class="min-h-[80vh] w-full flex flex-col justify-center items-center px-6 py-24 text-center"
+      >
+        <div class="max-w-md space-y-6">
+          <div class="flex justify-center items-center gap-2 mb-2">
+            <span class="w-8 h-px bg-[#71B1A5]" aria-hidden="true" />
+            <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#71B1A5]">Espacio en preparación</p>
+            <span class="w-8 h-px bg-[#71B1A5]" aria-hidden="true" />
+          </div>
+          
+          <h1 class="font-serif italic text-4xl text-[#27252B] font-light tracking-tight">
+            {{ perfil.nombre }}
+          </h1>
+          
+          <p class="text-stone-500 font-light text-sm leading-relaxed max-w-sm mx-auto">
+            Estamos completando el espacio profesional y la trayectoria clínica de {{ perfil.nombreCorto || 'nuestra especialista' }}. Muy pronto estará disponible.
+          </p>
 
-      <div class="page-container pb-16 md:pb-24 max-w-5xl mx-auto space-y-24 lg:space-y-36 px-4 sm:px-6 lg:px-8">
-        <ConocenosSpecialties :perfil="perfil" />
-        <ConocenosAcademic :perfil="perfil" />
-
-        <div class="pt-16 border-t border-[#27252B]/10 space-y-12">
-          <div class="flex justify-center pt-6">
+          <div class="pt-6">
             <NuxtLink 
-              to="/conocenos" 
-              class="inline-flex items-center gap-4 group/btn py-2"
-              aria-label="Volver al catálogo del equipo"
+              to="/conocenos"
+              class="inline-flex items-center gap-3 text-xs uppercase font-bold tracking-widest text-[#27252B] border border-[#27252B]/20 px-6 py-3 rounded-sm hover:bg-[#27252B] hover:text-white transition-all duration-300"
             >
-              <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
-              <span class="text-xs tracking-[0.2em] uppercase font-bold text-[#27252B]/50 group-hover/btn:text-[#71B1A5] transition-colors duration-300">
-                Ver todo el equipo
-              </span>
-              <span class="w-12 h-px bg-[#27252B]/30 group-hover/btn:w-20 group-hover/btn:bg-[#71B1A5] transition-all duration-300" aria-hidden="true" />
+              ← Volver al equipo
             </NuxtLink>
           </div>
         </div>
       </div>
 
+    </div>
+
+    <div 
+      v-else 
+      class="min-h-[80vh] w-full flex flex-col justify-center items-center px-6 py-24 text-center"
+    >
+      <div class="max-w-md space-y-4">
+        <h2 class="font-serif italic text-3xl text-[#27252B]">Perfil no encontrado</h2>
+        <p class="text-stone-500 text-sm font-light">El especialista que busca no forma parte del centro actualmente.</p>
+        <div class="pt-4">
+          <NuxtLink to="/conocenos" class="text-xs uppercase font-bold tracking-wider text-[#71B1A5] underline">
+            Volver al listado general
+          </NuxtLink>
+        </div>
+      </div>
     </div>
     
   </main>
@@ -79,6 +125,7 @@ interface PerfilProfesional {
     title: string
     description: string
   }
+  esReal: boolean // Nueva propiedad para gestionar la veracidad de los datos
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -90,6 +137,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'Ana Jiménez',
     nombreCorto: 'Ana',
     rol: 'Co-dirección',
+    esReal: false, // Marcada como pendiente (Próximamente)
     especialidadLabel: 'Psicología Clínica · Co-directora',
     tituloOficial: 'Psicóloga Sanitaria Colegiada · Terapeuta Gestalt',
     cita: 'Acompañar desde la presencia es permitir que cada persona descubra su propio ritmo para florecer.',
@@ -139,6 +187,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'Leonor Cabrera',
     nombreCorto: 'Leonor',
     rol: 'Co-dirección',
+    esReal: true,
     especialidadLabel: 'Terapia Gestalt, Transpersonal e Integrativa · Co-directora',
     tituloOficial: 'Terapeuta Gestalt, Transpersonal e Integrativa · Coach Profesional Certificada',
     cita: 'Desatar los nudos del pasado nos permite recuperar la fuerza para habitar el presente.',
@@ -196,9 +245,8 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'María Noel Reyes',
     nombreCorto: 'María Noel',
     rol: 'Psicoterapia',
+    esReal: true,
     especialidadLabel: 'Psicoterapia Integradora-Humanista · Adultos',
-    // NOTA PARA EL EQUIPO: en el CV recibido no figura número de colegiada.
-    // Añádelo aquí en "tituloOficial" / "acreditaciones" en cuanto lo tengáis, para mantener la coherencia con el resto de perfiles.
     tituloOficial: 'Psicóloga General Sanitaria · Terapeuta Gestalt',
     cita: 'Cada persona lleva dentro los recursos para crecer; mi trabajo es acompañarla a encontrarlos.',
     imagen: '/images/maria-noel-reyes-granada.jpg',
@@ -242,11 +290,63 @@ const perfiles: Record<string, PerfilProfesional> = {
       description: 'María Noel Reyes, psicoterapeuta con enfoque integrador-humanista, especializada en terapia Gestalt, duelo y acompañamiento a personas mayores. Centro La Seda, Granada.'
     }
   },
+
+  'maria-duarte': {
+    id: 'maria-duarte',
+    nombre: 'María Duarte',
+    nombreCorto: 'María',
+    rol: 'Psicoterapia',
+    esReal: true,
+    especialidadLabel: 'Psicología Infantil, Adolescencia y Familias',
+    tituloOficial: 'Psicóloga General Sanitaria · Especialista en Infancia, Adolescencia y Acompañamiento Familiar',
+    cita: 'Acercarse a cada historia con respeto y sensibilidad permite ofrecer un espacio seguro basado en la confianza.',
+    imagen: '/images/maria-duarte-psicologa-infantil-granada.jpg',
+    imagenAlt: 'María Duarte, psicóloga general sanitaria especializada en infancia y familias en el Centro La Seda',
+    galeria: [
+      { src: '/images/maria-duarte-consulta.jpg', alt: 'María Duarte en una sesión de acompañamiento familiar en La Seda' },
+      { src: '/images/la-seda-espacio-infantil.jpg', alt: 'Detalle de los recursos de juego y expresión creativa en Centro La Seda' }
+    ],
+    acreditaciones: [
+      'Colegiada Nº AO1355 — Colegio Oficial de Psicología de Andalucía Oriental',
+      'Máster en Psicología General Sanitaria — UNIR',
+      'Especializada en Reparación del Vínculo Materno-Filial y Trauma',
+    ],
+    tags: ['Psicología Infantil', 'Adolescencia', 'Acompañamiento Familiar', 'Terapia Gestalt', 'Teoría del Apego', 'Trauma', 'Violencia de Género', 'Expresión Corporal', 'Aguahara'],
+    biografiaExtendida: [
+      'María Duarte es <strong>psicóloga general sanitaria</strong> orientada principalmente al acompañamiento de niños, niñas, adolescentes y sus familias. Su práctica entiende la infancia y la adolescencia como etapas fundamentales en la construcción de la identidad y la forma de comprender el mundo.',
+      'Trabaja desde una <strong>mirada humanista y una práctica clínica integrativa</strong>, adaptando la intervención a las necesidades individuales de la persona, su contexto y su momento vital. En el trabajo con menores utiliza recursos como el juego, la creatividad y el movimiento, permitiendo que las experiencias se expresen más allá de la palabra.',
+      'Su labor incluye el <strong>acompañamiento a madres, padres y cuidadores</strong>, convencida de que el bienestar de un menor está profundamente relacionado con los vínculos que forman parte de su vida, prestando especial atención a la seguridad emocional y la regulación del sistema nervioso.'
+    ],
+    trayectoria: [
+      'Graduada en Psicología por la Universidad de Málaga, comenzó su recorrido con prácticas en un <strong>Centro de Atención Temprana</strong>, donde consolidó la importancia de la intervención en las primeras etapas del desarrollo y el trabajo conjunto con el núcleo familiar.',
+      'Amplió su experiencia clínica en el <strong>Centro de Psicoterapia Lamar</strong>, profundizando en el enfoque gestáltico aplicado a niños y adultos, y posteriormente coordinó proyectos de intervención psicosocial dentro del programa <strong>CaixaProinfancia</strong> facilitando talleres grupales de desarrollo emocional.',
+      'Cuenta con una destacada experiencia docente en acciones formativas sobre la <strong>reparación del vínculo materno-filial</strong> en contextos de violencia de género. Actualmente compagina su labor en La Seda con su puesto como psicóloga en la <strong>Asociación Deméter por la Igualdad</strong>, realizando intervenciones clínicas individuales y familiares desde una perspectiva de apego y trauma.'
+    ],
+    areasEspecializacion: [
+      { titulo: 'Psicología infanto-juvenil', descripcion: 'Acompañamiento a niños, niñas y adolescentes ante dificultades emocionales, relacionales, familiares o evolutivas a través del juego, el movimiento y la creatividad.' },
+      { titulo: 'Orientación y apoyo familiar', descripcion: 'Espacios dirigidos a madres, padres y cuidadores para fortalecer la comunicación, comprender las necesidades evolutivas y favorecer relaciones más seguras.' },
+      { titulo: 'Intervención en trauma y adversidad', descripcion: 'Abordaje terapéutico desde una mirada relacional para procesar el impacto de situaciones complejas o violencia en el desarrollo emocional y familiar.' },
+      { titulo: 'Psicoterapia individual de adultos', descripcion: 'Acompañamiento a personas adultas en procesos de ansiedad, crisis vitales, duelos, dificultades relacionales o malestar emocional.' }
+    ],
+    formacion: [
+      { titulo: 'Graduada en Psicología', institucion: 'Universidad de Málaga' },
+      { titulo: 'Máster en Psicología General Sanitaria', institucion: 'Universidad Internacional de La Rioja (UNIR)' },
+      { titulo: 'Formación en Terapia Gestalt Aplicada a la Infancia y Adolescencia', institucion: 'Centro de Psicoterapia Lamar' },
+      { titulo: 'Especialización en Teoría del Apego, Trauma y Acompañamiento al Duelo', institucion: 'Formación Continua Especializada' },
+      { titulo: 'Intervención y Reparación Vincular en Contextos de Violencia de Género', institucion: 'Asociación Deméter por la Igualdad' },
+      { titulo: 'Formación en Aguahara (Acompañamiento Somático y Conciencia Corporal)', institucion: 'Metodología Aguahara' }
+    ],
+    seo: {
+      title: 'María Duarte | Psicóloga Infantil y Sanitaria en Granada — La Seda',
+      description: 'María Duarte, psicóloga general sanitaria (Nº AO1355) en el Centro La Seda de Granada. Especialista en psicología infanto-juvenil, apego, trauma y acompañamiento familiar.'
+    }
+  },
   'cristina-lence': {
     id: 'cristina-lence',
     nombre: 'Cristina Lence',
     nombreCorto: 'Cristina',
     rol: 'Educación Familiar',
+    esReal: true,
     especialidadLabel: 'Educación Social · Infancia y Familias',
     tituloOficial: 'Educadora Social · Especialista en Gestalt Infanto-Juvenil y Sistémica',
     cita: 'Ofrecer un espacio seguro a la infancia y a las familias es sembrar raíces fuertes para el mañana.',
@@ -296,6 +396,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     nombre: 'Reyes Sánchez Tallón',
     nombreCorto: 'Reyes',
     rol: 'Medicina',
+    esReal: true,
     especialidadLabel: 'Medicina · Colaboradora en Salud Integrativa',
     tituloOficial: 'Médica Colegiada · Especialista en Pediatría · Terapia Gestalt y Trabajo Corporal',
     cita: 'Integrar el cuidado del cuerpo y la salud emocional es devolverle la plenitud y el equilibrio al ser.',
@@ -314,7 +415,7 @@ const perfiles: Record<string, PerfilProfesional> = {
     tags: ['Medicina Pediátrica', 'Terapia Gestalt', 'Terapia Corporal Integrativa', 'Análisis Caracterológico', 'Terapia Sistémica', 'Trauma y TEPT', 'Salud Integrativa'],
     biografiaExtendida: [
       'Reyes Sánchez Tallón es <strong>médica colegiada</strong>, licenciada en Medicina y Cirugía por la Universidad de Granada y especialista en Pediatría por la vía MIR. Colabora con el Centro La Seda aportando una mirada de <strong>salud integrativa</strong>, en la que el cuerpo y la emoción se entienden como parte de un mismo sistema.',
-      'Su formación médica se ha ampliado con la <strong>terapia Gestalt</strong> —con el equipo de Qualia, en Granada— y con la <strong>Terapia Corporal Integrativa</strong> junto al equipo de Antonio Pacheco, herramientas que le permiten trabajar con el cuerpo como vía de acceso a la experiencia emocional.',
+      'Su formación médica se ha ampliado con la <strong>terapia Gestalt</strong> —con el equipo de Qualia, en Granada— y con la <strong>Terapia Corporal Integrativa</strong> junto al equipo de Adobe Pacheco, herramientas que le permiten trabajar con el cuerpo como vía de acceso a la experiencia emocional.',
       'Ha profundizado también en el <strong>análisis caracterológico psico-corporal</strong> con Fernando de Juan, en <strong>terapia sistémica</strong> en la escuela de Psicogestalt de Madrid junto a Juan Carlos Calvo, y en herramientas de intervención en <strong>TEPT y trauma</strong> de abuso sexual y maltrato a través del Centro Landa, con Yolanda Mozota.'
     ],
     trayectoria: [
@@ -369,7 +470,7 @@ useSeoMeta({
   twitterDescription: () => perfil.value?.seo.description ?? 'Consulte los perfiles profesionales de nuestro equipo clínico en Granada.',
   profileFirstName: () => perfil.value?.nombre.split(' ')[0] ?? '',
   profileLastName: () => perfil.value?.nombre.split(' ').slice(1).join(' ') ?? '',
-  robots: () => perfil.value ? 'index, follow' : 'noindex, nofollow',
+  robots: () => perfil.value ? (perfil.value.esReal ? 'index, follow' : 'noindex, nofollow') : 'noindex, nofollow',
 })
 
 useHead({
@@ -382,7 +483,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: () => perfil.value ? JSON.stringify({
+      children: () => perfil.value && perfil.value.esReal ? JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ProfilePage',
         'mainEntity': {
@@ -417,7 +518,7 @@ useHead({
   color: #27252B;
 }
 
-/* SOLUCIÓN: Forzamos prioridad de renderizado del color crema base y creamos un contexto 3D para evitar parpadeos negros */
+/* Forzamos prioridad de renderizado del color crema base y creamos un contexto 3D para evitar parpadeos negros */
 main {
   background-color: #FDFBF9 !important;
   transform: translateZ(0);

@@ -45,8 +45,8 @@
       </div>
     </section>
 
-    <section class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[50vh] lg:min-h-[680px] gap-0 border-t border-stone-200/50">
-      
+<section class="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[50vh] lg:min-h-[680px] gap-0">
+        
       <div class="lg:col-span-7 px-8 sm:px-16 md:px-24 lg:px-28 py-16 lg:py-24 w-full flex flex-col justify-center items-start order-2 lg:order-1">
         <div class="space-y-8 max-w-2xl w-full">
           <div class="flex items-center gap-3">

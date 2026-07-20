@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-6">
     <p class="text-xs font-semibold tracking-[0.2em] uppercase text-[#27252B]/40">
-      Áreas de Especialización Clínica
+      Áreas de Especialización
     </p>
     <ul class="grid sm:grid-cols-2 gap-6 lg:gap-8 list-none p-0 m-0" aria-label="Áreas de especialización">
       <li

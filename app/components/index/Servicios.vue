@@ -13,8 +13,7 @@
           </h2>
         </div>
         <p class="opacity-65 max-w-sm text-base leading-relaxed font-light md:text-right">
-          Desde la terapia clínica hasta la formación especializada,
-          ofrecemos un ecosistema completo de salud psicológica en Granada.
+          Desde la atención psicológica al acompañamiento en procesos crecimiento personal, trabajamos desde una mirada humanista y ofrecemos formación.
         </p>
       </div>
 

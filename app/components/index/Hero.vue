@@ -4,7 +4,7 @@
     :class="{ 'hero-animated': ready }"
   >
     <div class="absolute inset-0 z-0 pointer-events-none select-none max-md:relative max-md:order-2 max-md:h-[45vh] max-md:mt-8">
-      <div class="absolute inset-0 md:left-1/3 lg:left-1/2 transition-all duration-[2000ms] ease-out scale-105 hero-bg-image">
+      <div class="absolute inset-0 md:left-1/3 lg:left-[55%] transition-all duration-[2000ms] ease-out scale-105 hero-bg-image">
         <NuxtImg
           src="/images/hero-consulta-laseda.jpg"
           alt="Espacio de consulta y bienestar en Granada — Centro La Seda"
@@ -24,7 +24,7 @@
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-12 max-md:order-1">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        <div class="lg:col-span-8 max-w-2xl">
+        <div class="lg:col-span-9 max-w-3xl">
           <div class="hero-text-item flex items-center gap-4 mb-6" style="--i:1">
             <span class="w-12 h-px bg-[#71B1A5]/60"></span>
             <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.45em] uppercase font-bold">
@@ -34,16 +34,15 @@
 
           <div class="hero-text-item mb-8" style="--i:2">
             <span class="block font-sans font-light text-[#71B1A5] text-[11px] md:text-[13px] uppercase tracking-[0.2em] mb-3">
-              Psicología Sanitaria & Formación Especializada
+              Nuestra Terapia y Formación
             </span>
             <h1 class="text-[#27252B] font-serif italic font-light text-[3rem] sm:text-[4.2rem] lg:text-[5.2rem] leading-[1.1] mb-6">
-              Psicoterapia Gestalt en Granada
+              Psicología y terapia Gestalt en Granada
             </h1>
-            <p class="text-stone-600/90 font-light text-base md:text-lg leading-relaxed max-w-xl">
-              Un espacio seguro para <strong>pausar</strong> , <strong>comprender tu presente</strong>  y transformar tu bienestar emocional junto a un equipo humano y especializado.
+            <p class="text-stone-600/90 font-light text-base md:text-lg leading-relaxed max-w-2xl">
+              Acompañamos desde un enfoque humanista a personas de todas las edades y a familias en procesos de cambio, crisis y crecimiento, y ofrecemos formación a profesionales del desarrollo personal.
             </p>
           </div>
-
 
           <div class="hero-text-item flex flex-col sm:flex-row gap-4 items-center justify-start w-full" style="--i:4">
             <NuxtLink
@@ -70,7 +69,7 @@
                 <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                 </svg>
-                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                 </svg>
               </div>
@@ -78,7 +77,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-4 flex justify-end lg:justify-end max-md:hidden">
+        <div class="lg:col-span-3 flex justify-end max-md:hidden">
           <div class="hero-text-item relative w-40 h-40 bg-[#F5F2EE]/60 backdrop-blur-sm rounded-full border border-[#27252B]/5 shadow-sm group/butterfly overflow-hidden flex items-center justify-center" style="--i:5">
             <div class="absolute inset-0 m-auto w-12 h-12 bg-[#71B1A5]/10 rounded-full blur-lg transition-transform duration-700 group-hover/butterfly:scale-150 pointer-events-none"></div>
             

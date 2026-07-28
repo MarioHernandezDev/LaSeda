@@ -580,89 +580,107 @@
          SECCIÓN 5 · MAPA
     ════════════════════════════════════════════════ -->
     <section
-      class="bg-[#27252B]/[0.03] py-20 md:py-28"
-      aria-labelledby="mapa-heading"
+  class="bg-[#27252B]/[0.03] py-20 md:py-28"
+  aria-labelledby="mapa-heading"
+>
+  <div class="page-container">
+    <p class="section-label mb-3">Cómo llegar</p>
+    <h2
+      id="mapa-heading"
+      class="font-serif italic text-3xl md:text-4xl leading-[1.2] mb-12"
     >
-      <div class="page-container">
+      Nos encontramos en el
+      <span class="text-[#27252B]/60"> corazón de Granada</span>
+    </h2>
 
-        <p class="section-label mb-3">Cómo llegar</p>
-        <h2
-          id="mapa-heading"
-          class="font-serif italic text-3xl md:text-4xl leading-[1.2] mb-12"
-        >
-          Nos encontramos en el
-          <span class="text-[#27252B]/60"> corazón de Granada</span>
-        </h2>
+    <div
+      class="relative overflow-hidden border border-[#27252B]/10"
+      style="height: 440px;"
+      role="region"
+      aria-label="Mapa de localización del Centro de Psicología La Seda en Granada"
+    >
+      <iframe
+        title="Ubicación del Centro de Psicología La Seda — C/ Horno de Haza 29, Granada"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.12345!2d-3.5986!3d37.1773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Horno+de+Haza+29+Granada!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+        width="100%"
+        height="100%"
+        style="border: 0; filter: saturate(0.85) contrast(0.95);"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
 
-        <div
-          class="relative overflow-hidden border border-[#27252B]/10"
-          style="height: 440px;"
-          role="region"
-          aria-label="Mapa de localización del Centro de Psicología La Seda en Granada"
-        >
-          <iframe
-            title="Ubicación del Centro de Psicología La Seda — C/ Horno de Haza 29, Granada"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.12345!2d-3.5986!3d37.1773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+Horno+de+Haza+29+Granada!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-            width="100%"
-            height="100%"
-            style="border: 0; filter: saturate(0.85) contrast(0.95);"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-
-          <div
-            class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm shadow-xl border-l-2 border-[#71B1A5] p-5 max-w-[240px]"
-            aria-hidden="true"
-          >
-            <div class="flex items-center gap-2 mb-2">
-              <div class="w-2 h-2 rounded-full bg-[#71B1A5]" />
-              <span class="section-label">La Seda · Granada</span>
-            </div>
-            <p class="text-sm font-medium text-[#27252B] mb-0.5">C/ Horno de Haza, 29, Bajo 1</p>
-            <p class="text-sm text-[#27252B]/50 font-light">18002 Granada</p>
-            <a
-              href="https://maps.google.com/?q=Calle+Horno+de+Haza+29+Granada"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir indicaciones hacia el Centro La Seda en Google Maps (abre en nueva pestaña)"
-              class="mt-3 inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#71B1A5] font-medium hover:text-[#5a9a8e] transition-colors duration-300"
-            >
-              Cómo llegar
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-              </svg>
-            </a>
-          </div>
+      <div
+        class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm shadow-xl border-l-2 border-[#71B1A5] p-5 max-w-[240px]"
+        aria-hidden="true"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-2 h-2 rounded-full bg-[#71B1A5]" />
+          <span class="section-label">La Seda · Granada</span>
         </div>
-
-        <div
-          class="mt-6 grid sm:grid-cols-3 gap-0 border border-[#27252B]/8"
-          role="list"
-          aria-label="Opciones de acceso al centro"
+        <p class="text-sm font-medium text-[#27252B] mb-0.5">C/ Horno de Haza, 29, Bajo 1</p>
+        <p class="text-sm text-[#27252B]/50 font-light">18002 Granada</p>
+        <a
+          href="https://maps.google.com/?q=Calle+Horno+de+Haza+29+Granada"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir indicaciones hacia el Centro La Seda en Google Maps (abre en nueva pestaña)"
+          class="mt-3 inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-[#71B1A5] font-medium hover:text-[#5a9a8e] transition-colors duration-300"
         >
-          <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8" role="listitem">
-            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
-              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">A pie</p>
-              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8" role="listitem">
-            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
-              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">Transporte público</p>
-              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Líneas C1 y 33 con parada en Recogidas.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-4 p-6" role="listitem">
-            <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
-              <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">En coche</p>
-              <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
-            </div>
-          </div>
-        </div>
-
+          Cómo llegar
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+
+      
+
+  <div class="page-container">
+    <div
+      class="grid sm:grid-cols-3 gap-0 border border-[#27252B]/8"
+      role="list"
+      aria-label="Opciones de acceso al centro"
+    >
+      <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8" role="listitem">
+        <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+          <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">A pie</p>
+          <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">5 min desde la Gran Vía y el Corte Inglés de Recogidas.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-6 border-b sm:border-b-0 sm:border-r border-[#27252B]/8" role="listitem">
+        <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+          <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">Transporte público</p>
+          <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Líneas C1 y 33 con parada en Recogidas.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-6" role="listitem">
+        <div class="border-t border-[#71B1A5]/40 pt-4 flex-1">
+          <p class="text-xs font-medium text-[#27252B] mb-1.5 tracking-[0.12em] uppercase">En coche</p>
+          <p class="text-sm text-[#27252B]/60 font-light leading-relaxed">Parking público en Plaza del Campillo (3 min a pie).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</section>
+
+<div class="w-full mb-12 h-[600px] sm:h-[800px] md:h-[1300px] overflow-hidden">
+    <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      preload="metadata"
+      class="w-full h-full object-cover"
+    >
+      <source src="/video/recorrido-edificio.webm" type="video/webm" />
+      Tu navegador no soporta el formato de vídeo.
+    </video>
+  </div>
 
 <section
       class="page-container py-20 md:py-24"

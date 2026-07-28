@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE TERAPIAS ────────────
 useSeoMeta({
-  title: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
+  title: 'Terapia infantil, adolescentes, adultos y pareja en Granada y online | Centro La Seda',
   ogTitle: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
   description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, terapia Gestalt y adultos desde un enfoque integrativo y eficaz.',
   ogDescription: 'Encuentra tu psicólogo en Granada. Especialistas en terapia infantil, terapia de pareja, adultos, adolescentes y enfoque sistémico-humanista en Centro La Seda.',
@@ -26,17 +26,16 @@ useHead({
   <main>
 
     <PageHero
-      label="Especialidades Clínicas"
-      title-main="Procesos de Psicoterapia"
-      title-accent="y Cuidado Psicológico"
+      label="Terapias psicológicas y acompañamiento emocional"
+      title-main="Comprender y transformar "
+      title-accent="lo que estás viviendo"
       image="/images/psicoterapia-integrativa-adultos-pareja-granada.jpg"
       image-alt="Sala de terapia del Centro de Psicología La Seda en Granada"
       secondary-link="/contacto"
-      secondary-label="Pedir primera cita"
+      secondary-label="Hablemos"
     >
       <template #description>
-        Acompañamos cada etapa vital desde un espacio de escucha activa,
-        rigor clínico y profundo respeto por la singularidad de cada persona.
+        Cada persona llega con una historia diferente. En La Seda entendemos la terapia como un espacio para comprender lo que estás viviendo, reconocer tus recursos y abrir nuevas posibilidades.
       </template>
     </PageHero>
 
@@ -49,9 +48,9 @@ useHead({
 
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16 md:mb-24">
           <div>
-            <p class="section-label mb-3">Nuestras Especialidades</p>
+            <p class="section-label mb-3">Áreas de atención</p>
             <h2 id="especialidades-heading" class="section-title">
-              Servicios recomendados
+              Una terapia para cada etapa de la vida.
             </h2>
           </div>
           <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" aria-hidden="true" />
@@ -80,24 +79,23 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Infantil</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Infancia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-                  Espacio seguro enfocado a dotar al menor de recursos emocionales y orientar a las familias en pautas de crianza saludables.
-                </p>
+Acompañamos a niños y niñas a comprender lo que sienten, expresar lo que necesitan y crecer junto a sus familias desde una mirada humanista e integrativa.                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión de miedos</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Miedos</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Acoso escolar (Bullying)</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Procesos de separación</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Límites sanos</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Separaciones</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Límites</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Ver detalles del servicio
+                  Saber más
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -122,24 +120,23 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adultos y Acompañamiento</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adultos</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-                  Psicoterapia integrativa y humanista enfocada en superar bloqueos vitales y promover la toma de decisiones conscientes.
-                </p>
+La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. Acompañamos a cada persona a comprender lo que está viviendo, elaborar aquello que genera sufrimiento y descubrir nuevas formas de relacionarse consigo misma y con los demás.                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Estrés y Ansiedad</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión del Trauma</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Ansiedad y estrés</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Trauma</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoconocimiento</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis existenciales</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis vitales</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera...</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Ver detalles del servicio
+                  Saber más
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -168,24 +165,23 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia Adolescentes</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adolescencia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-                  Un entorno neutro y confidencial para que el joven aprenda a procesar sus emociones y reconstruir la comunicación en el hogar.
-                </p>
+La adolescencia es una etapa de cambios, búsqueda y construcción de la identidad. Acompañamos a adolescentes a comprender lo que están viviendo, fortalecer la confianza en sí mismos y desarrollar los recursos necesarios para afrontar esta etapa, contando también con sus familias.                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Aislamiento social</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Problemas de conducta</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Ansiedad</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoestima</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Relaciones familiares</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión emocional</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Ver detalles del servicio
+                  Saber más
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -210,24 +206,24 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia de Pareja y Familia</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Pareja y Familia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-                  Mediación técnica dirigida a desenredar dinámicas disfuncionales, superar baches comunicativos o transiciones complejas.
-                </p>
+Las relaciones atraviesan momentos de dificultad, cambio y crecimiento. Acompañamos a parejas y familias a comprender las dinámicas que generan sufrimiento, fortalecer la comunicación y construir nuevas formas de encontrarse y cuidarse.                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis de comunicación</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Infidelidades y Desconfianza</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Conflictos de crianza</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Procesos de duelo</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Comunicación</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Conflictos familiares</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crianza</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Separaciones</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Duelo</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
                   Especialistas: <span class="font-normal text-[#27252B]/70">L. Cabrera, R. Sánchez-Tallón</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Ver detalles del servicio
+                  Saber más
                   <span class="w-4 group-hover:w-8 h-px bg-[#27252B] group-hover:bg-[#71B1A5] transition-all duration-300" />
                 </span>
               </div>
@@ -249,16 +245,15 @@ useHead({
             <div class="relative z-10 space-y-6 max-w-xl flex flex-col items-center">
               <div class="w-12 h-px bg-[#FDFBF9]/60" />
               <h3 class="font-serif italic text-[#FDFBF9] text-3xl md:text-4xl leading-tight">
-                ¿No encuentras el tipo de acompañamiento que buscas?
+                ¿No sabes qué tipo de terapia puede ayudarte?
               </h3>
               <p class="text-base md:text-lg text-[#FDFBF9]/90 font-light leading-relaxed">
-                Cuéntanos tu situación. Valoraremos juntos las necesidades actuales y el enfoque terapéutico que mejor se adapte a tu momento vital.
-              </p>
+Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos para encontrar el acompañamiento que mejor se adapte a tu situación.              </p>
             </div>
 
             <div class="relative z-10 pt-8">
               <span class="btn-secondary !bg-white/95 !border-transparent hover:!bg-white text-[#27252B] hover:scale-105 shadow-xl transition-transform">
-                Escríbenos ahora
+                Hablemos
               </span>
             </div>
           </NuxtLink>
@@ -294,10 +289,10 @@ useHead({
         </div>
 
         <div class="order-1 md:order-2">
-          <p class="section-label mb-4">Metodología</p>
+          <p class="section-label mb-4">Así lo hacemos</p>
           <h2 id="metodologia-heading" class="section-title mb-12">
-            Cómo trabajamos<br />
-            <span class="text-[#27252B]/60">en La Seda</span>
+            Nuestro modo <br />
+            <span class="text-[#27252B]/60">de acompañar</span>
           </h2>
 
           <ol class="space-y-10" aria-label="Pasos del proceso terapéutico">
@@ -308,12 +303,10 @@ useHead({
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
-                  Primera Valoración
+                  Primera encuentro
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  Analizamos juntos el motivo de consulta, tu historia personal
-                  y el contexto en el que se enmarca lo que traes. Sin prisas,
-                  con total confidencialidad.
+                  Nos tomamos el tiempo necesario para conocerte, comprender qué estás viviendo y escuchar tu historia. Cada proceso comienza desde el respeto, la confianza y una mirada atenta a tu realidad.
                 </p>
               </div>
             </li>
@@ -328,12 +321,10 @@ useHead({
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
-                  Propuesta Terapéutica
+                  Un trabajo a tu medida
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  Establecemos objetivos claros y acordados, eligiendo el
-                  enfoque o la combinación de enfoques más adecuados para
-                  tu proceso específico.
+                  No existen soluciones iguales para todas las personas. Definimos juntos el camino a seguir, integrando el enfoque terapéutico que mejor responda a tus necesidades y al momento vital en el que te encuentras.
                 </p>
               </div>
             </li>
@@ -348,12 +339,10 @@ useHead({
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
-                  Sesiones de Acompañamiento
+                  El proceso terapéutico
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  Un espacio de trabajo activo donde adquieres herramientas
-                  reales, revisas tus patrones y avanzas hacia los cambios
-                  que deseas a tu propio ritmo.
+                  La terapia es un espacio para comprender, elaborar y experimentar nuevas formas de relacionarte contigo, con los demás y con aquello que estás viviendo. Cada proceso avanza a su propio ritmo.
                 </p>
               </div>
             </li>

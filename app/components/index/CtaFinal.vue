@@ -21,15 +21,12 @@
         <div class="h-px w-12 bg-[#71B1A5]/40"></div>
       </div>
 
-      <h2 id="cta-titulo" class="font-serif italic font-light text-[2.4rem] sm:text-[3.2rem] lg:text-[4rem] leading-[1.15] text-[#27252B] mb-6 tracking-tight">
-        Da el primer paso hacia
-        <span class="not-italic font-sans font-light text-[#71B1A5] block mt-2 uppercase tracking-[0.06em] text-[1.6rem] sm:text-[2rem] lg:text-[2.4rem]">
-          tu bienestar en Granada
-        </span>
+      <h2 id="cta-titulo" class="font-serif italic font-light text-[2.4rem] sm:text-[3.2rem] lg:text-[3.8rem] leading-[1.15] text-[#27252B] mb-6 tracking-tight max-w-3xl mx-auto">
+        Todo proceso comienza con una <span class="not-italic font-normal text-[#71B1A5]">conversación.</span>
       </h2>
 
-      <p class="text-stone-600/90 text-base md:text-lg leading-[1.8] mb-12 max-w-2xl mx-auto font-light">
-        Una primera consulta sin compromiso para conocernos, escucharte y orientarte hacia el camino terapéutico que mejor se adapta a ti.
+      <p class="text-stone-600/90 text-base md:text-lg leading-[1.8] mb-12 max-w-3xl mx-auto font-light">
+        Si estás pensando en iniciar un proceso terapéutico, participar en un grupo de desarrollo personal o seguir formándote como profesional, estaremos encantados de orientarte para encontrar la propuesta que mejor se adapte a ti.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-md mx-auto sm:max-w-none w-full">
@@ -38,7 +35,7 @@
           to="/contacto" 
           class="group relative inline-flex items-center justify-center gap-3 bg-[#27252B] text-white px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-full transition-all duration-500 hover:bg-[#71B1A5] w-full sm:w-auto shadow-lg shadow-[#27252B]/5 hover:shadow-xl hover:shadow-[#71B1A5]/20 transform hover:-translate-y-0.5 overflow-hidden border border-transparent"
         >
-          <span>Pedir Cita</span>
+          <span>Hablemos</span>
           <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center">
             <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -53,7 +50,7 @@
           to="/terapias" 
           class="group relative inline-flex items-center justify-center gap-3 border border-[#27252B]/30 bg-[#FDFBF9]/60 backdrop-blur-md text-[#27252B] px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-full transition-all duration-500 hover:border-[#71B1A5] hover:text-[#71B1A5] hover:bg-white/90 w-full sm:w-auto shadow-sm hover:shadow-xl hover:shadow-[#71B1A5]/10 transform hover:-translate-y-0.5 overflow-hidden"
         >
-          <span>Ver Servicios</span>
+          <span>Nuestros Servicios</span>
           <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5]">
             <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -77,7 +74,7 @@
           <svg class="w-3.5 h-3.5 text-[#71B1A5]/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
-          hola@laseda.es
+          hola@centrolaseda.com
         </a>
         <span class="hidden sm:block w-px h-3 bg-[#27252B]/10" aria-hidden="true"></span>
         <span class="flex items-center gap-2.5 text-stone-400">

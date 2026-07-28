@@ -10,7 +10,7 @@
       </div>
       <h2 id="galeria-titulo" class="font-serif italic font-light text-[2rem] md:text-[2.6rem] leading-[1.15]">
         Un lugar pensado para
-        <span class="not-italic font-normal text-[#71B1A5]"> sentirte en calma</span>
+        <span class="not-italic font-normal text-[#71B1A5]"> poder ser</span>
       </h2>
     </div>
 

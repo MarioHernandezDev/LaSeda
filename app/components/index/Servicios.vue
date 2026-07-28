@@ -5,16 +5,15 @@
         <div>
           <div class="flex items-center gap-3 mb-5" aria-hidden="true">
             <div class="w-6 h-px bg-[#F5F2ED]"></div>
-            <span class="text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium">Nuestros Servicios</span>
+            <span class="text-[#71B1A5] text-xs tracking-[0.4em] uppercase font-medium">así trabajamos</span>
           </div>
           <h2 id="pilares-titulo" class="font-serif italic font-light text-[2rem] md:text-[2.6rem] leading-[1.15] max-w-md">
-            Tres pilares para tu
-            <span class="not-italic font-normal text-[#71B1A5]"> bienestar integral</span>
+            Tres maneras para cuidarte
+            <span class="not-italic font-normal text-[#71B1A5]"> y orientarte</span>
           </h2>
         </div>
         <p class="opacity-65 max-w-sm text-base leading-relaxed font-light md:text-right">
-          Desde la atención psicológica al acompañamiento en procesos crecimiento personal, trabajamos desde una mirada humanista y ofrecemos formación.
-        </p>
+Todas nuestras áreas comparten una misma mirada humanista e integrativa, que pone a la persona, su historia y sus recursos en el centro.        </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -26,18 +25,13 @@
           </div>
           <div class="p-8">
             <h3 class="font-serif italic font-normal text-[1.5rem] mb-3 group-hover:text-[#71B1A5] transition-colors duration-500 tracking-wide">
-              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Terapias</span> Psicológicas en Granada
+              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Terapias</span> Psicológicas y desarrollo Personal
             </h3>
             <p class="opacity-70 text-base leading-[1.8] mb-6 font-light">
-              <strong class="font-medium text-stone-900">Atención psicológica clínica</strong> para adultos, infanto-juvenil y terapia de pareja. Abordajes <strong class="font-medium text-stone-900">basados en evidencia</strong> adaptados a cada persona.
-            </p>
-            <ul class="flex flex-wrap gap-2 mb-8 relative z-10" aria-label="Modalidades de terapia">
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Adultos</li>
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Infanto-Juvenil</li>
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Pareja</li>
-            </ul>
+Atendemos a personas adultas, infancia, adolescencia, parejas y familias desde una práctica rigurosa, cercana y adaptada a las necesidades de cada etapa vital.            </p>
+          
             <NuxtLink to="/terapias" class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium border-b border-[#27252B]/20 pb-1 group-hover:border-[#71B1A5] group-hover:text-[#71B1A5] transition-all duration-500 after:absolute after:inset-0" aria-label="Ver todos los servicios de terapia psicológica">
-              Descubrir
+              Saber más
               <svg class="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </NuxtLink>
           </div>
@@ -50,17 +44,13 @@
           </div>
           <div class="p-8">
             <h3 class="font-serif italic font-normal text-[1.5rem] mb-3 group-hover:text-[#71B1A5] transition-colors duration-500 tracking-wide">
-              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Talleres</span> de Crecimiento Personal
+              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Talleres</span> de Desarollo Personal
             </h3>
             <p class="opacity-70 text-base leading-[1.8] mb-6 font-light">
-              Espacios vivenciales de <strong class="font-medium text-stone-900">crecimiento personal</strong>. Constelaciones Familiares, trabajo con emociones y grupos de <strong class="font-medium text-stone-900">autoconocimiento</strong>.
-            </p>
-            <ul class="flex flex-wrap gap-2 mb-8 relative z-10" aria-label="Tipos de talleres">
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Crecimiento Personal</li>
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Constelaciones</li>
-            </ul>
+Talleres, grupos y experiencias orientados a favorecer el autoconocimiento, fortalecer los recursos personales e integrar los aprendizajes en la vida cotidiana.            </p>
+           
             <NuxtLink to="/talleres" class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium border-b border-[#27252B]/20 pb-1 group-hover:border-[#71B1A5] group-hover:text-[#71B1A5] transition-all duration-500 after:absolute after:inset-0" aria-label="Ver todos los talleres de crecimiento personal">
-              Descubrir
+              Saber más
               <svg class="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </NuxtLink>
           </div>
@@ -73,17 +63,13 @@
           </div>
           <div class="p-8">
             <h3 class="font-serif italic font-normal text-[1.5rem] mb-3 group-hover:text-[#71B1A5] transition-colors duration-500 tracking-wide">
-              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Formaciones</span> para Profesionales
+              <span class="underline decoration-[#71B1A5]/40 decoration-2 underline-offset-4">Formación</span> para Profesionales
             </h3>
             <p class="opacity-70 text-base leading-[1.8] mb-6 font-light">
-              Programas de <strong class="font-medium text-stone-900">especialización oficial</strong> para profesionales de la salud y la educación que quieren ampliar su <strong class="font-medium text-stone-900">competencia clínica</strong>.
-            </p>
-            <ul class="flex flex-wrap gap-2 mb-8 relative z-10" aria-label="Perfiles de formación">
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Profesionales</li>
-              <li class="text-xs tracking-[0.2em] uppercase bg-[#71B1A5]/10 text-[#71B1A5] px-3 py-1.5 font-medium">Especialización</li>
-            </ul>
+Formación, supervisión y espacios de aprendizaje para profesionales que desean ampliar su mirada, profundizar en su práctica y seguir desarrollando su forma de acompañar a otras personas            </p>
+           
             <NuxtLink to="/formaciones" class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium border-b border-[#27252B]/20 pb-1 group-hover:border-[#71B1A5] group-hover:text-[#71B1A5] transition-all duration-500 after:absolute after:inset-0" aria-label="Ver programas de formación para psicólogos y profesionales">
-              Descubrir
+              Saber más
               <svg class="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </NuxtLink>
           </div>

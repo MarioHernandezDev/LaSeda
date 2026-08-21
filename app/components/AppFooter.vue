@@ -18,7 +18,7 @@
 
           <div class="border-l border-[#71B1A5]/40 pl-4">
             <p class="font-serif text-sm italic text-white/35 leading-relaxed">
-              "Crecer no es un privilegio.<br/>Es un derecho que acompañamos."
+              Un espacio para comprender, cuidar y <br/>crecer desde una perspectiva humanista e integrativa.
             </p>
           </div>
 
@@ -83,8 +83,8 @@ const currentYear = 2026
 
 const footerNavLinks = [
   { label: 'Inicio',            to: '/'            },
-  { label: 'Terapias Clínicas',    to: '/terapias'    },
-  { label: 'Talleres Vivenciales', to: '/talleres'    },
+  { label: 'Terapias',    to: '/terapias'    },
+  { label: 'Talleres', to: '/talleres'    },
   { label: 'Formaciones',          to: '/formaciones' },
   { label: 'Conócenos',            to: '/conocenos'   },
   { label: 'Contacto',             to: '/contacto'    },

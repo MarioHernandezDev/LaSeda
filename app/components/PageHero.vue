@@ -48,7 +48,7 @@
         <div class="flex flex-col sm:flex-row items-center gap-4 w-full relative z-20">
           
           <NuxtLink to="/contacto" class="group btn-primary">
-            <span>Contacto</span>
+            <span>Hablemos</span>
             <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center pointer-events-none">
               <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

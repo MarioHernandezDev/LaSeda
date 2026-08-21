@@ -5,17 +5,16 @@
          SECCIÓN 1 · MINI-HERO
     ════════════════════════════════════════════════ -->
     <PageHero
-      label="Contacto · La Seda Granada"
-      title-main="Estamos aquí para"
-      title-accent="acompañarte"
+      label="La Seda · Granada"
+      title-main="Todo proceso comienza"
+      title-accent="con una conversación."
       image="/images/hero-contacto-centro-psicologia-granada-la-seda.jpg"
       image-alt="Interior del Centro de Psicología La Seda en Granada, ambiente cálido y acogedor"
       secondary-link="/conocenos"
       secondary-label="Conocer al equipo"
     >
       <template #description>
-        Dar el primer paso requiere valentía. Pero es, precisamente,
-        el inicio del cambio.
+        Si estás pensando en iniciar terapia, participar en un grupo o seguir formándote, te ayudamos a encontrar la propuesta que mejor se adapte a ti.
       </template>
     </PageHero>
 
@@ -38,7 +37,7 @@
               class="font-serif italic text-3xl md:text-4xl leading-[1.2] mb-12"
             >
               Cómo
-              <span class="text-[#27252B]/70"> encontrarnos</span>
+              <span class="text-[#27252B]/70"> contactar</span>
             </h2>
 
             <div class="space-y-9">
@@ -108,11 +107,11 @@
                 <div class="border-t border-[#27252B]/15 pt-3 flex-1">
                   <h3 class="contact-item-label mb-1">Correo electrónico</h3>
                   <a
-                    href="mailto:centrolaseda@gmail.com"
+                    href="mailto:hola@centrolaseda.com"
                     class="block text-[#27252B]/85 text-base font-medium hover:text-[#71B1A5] transition-colors duration-300"
-                    aria-label="Enviar correo electrónico a La Seda: centrolaseda@gmail.com"
+                    aria-label="Enviar correo electrónico a La Seda: hola@centrolaseda.com"
                   >
-                    centrolaseda@gmail.com
+                    hola@centrolaseda.com
                   </a>
                   <p class="text-[#27252B]/60 text-sm mt-1.5 font-normal">
                     Respondemos en menos de 24 h laborables.
@@ -330,7 +329,7 @@
                 <!-- Servicio -->
                 <div class="form-field">
                   <label for="servicio" class="form-label text-sm text-[#27252B]/85 font-medium">
-                    ¿Qué servicio te interesa?
+                    ¿Sobre qué quieres información?
                     <span class="text-[#71B1A5] ml-0.5" aria-hidden="true">*</span>
                   </label>
                   <div class="relative">
@@ -349,37 +348,10 @@
                       :aria-invalid="errors.servicio ? 'true' : undefined"
                     >
                       <option value="" disabled selected>Selecciona una opción</option>
-
-                      <optgroup label="Terapias">
-                        <option value="terapia-adultos">Terapia de Adultos</option>
-                        <option value="terapia-infantil">Psicología Infantil</option>
-                        <option value="terapia-adolescente">Psicología de la Adolescencia</option>
-                        <option value="terapia-pareja">Terapia de Pareja</option>
-                        <option value="acompanamiento-socioemocional">Acompañamiento Socioemocional</option>
-                      </optgroup>
-
-                      <optgroup label="Talleres y Supervisión">
-                        <option value="taller-constelaciones">Talleres de Constelaciones Familiares</option>
-                        <option value="supervision-casos">Supervisión de Casos Clínicos</option>
-                      </optgroup>
-
-                      <optgroup label="Formaciones Especializadas">
-                        <option value="formacion-gestalt-infantil">Formación en Gestalt Infantil y Adolescente</option>
-                        <option value="formacion-wingwave">Formación en Método Wingwave®</option>
-                      </optgroup>
-
-                      <optgroup label="Contactar con una profesional">
-                        <option value="contacto-ana-jimenez">Ana Jiménez (Co-dirección / Gestalt)</option>
-                        <option value="contacto-leonor-cabrera">Leonor Cabrera (Co-dirección / Coaching)</option>
-                        <option value="contacto-maria-noel">María Noel Reyes (Psicología Clínica)</option>
-                        <option value="contacto-cristina-lence">Cristina Lence (Educación Familiar)</option>
-                        <option value="contacto-reyes-sanchez">Reyes Sánchez (Medicina Integrativa)</option>
-                      </optgroup>
-
-                      <optgroup label="Otros motivos">
-                        <option value="primera-consulta">Primera consulta (Sin decidir servicio aún)</option>
-                        <option value="otro-motivo">Otro motivo de consulta</option>
-                      </optgroup>
+                        <option value="terapia">Terapia</option>
+                        <option value="taller-o-grupo">Taller o grupo</option>
+                        <option value="formacion">Formación</option>
+                        <option value="otra-consulta">Otra consulta</option>
                     </select>
                     <div
                       class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4"
@@ -400,59 +372,10 @@
                   </p>
                 </div>
 
-                <!-- Modalidad de preferencia -->
-                <div class="form-field">
-                  <label for="modalidad" class="form-label text-sm text-[#27252B]/85 font-medium">
-                    Modalidad de preferencia
-                  </label>
-                  <div class="relative">
-                    <select
-                      id="modalidad"
-                      v-model="form.modalidad"
-                      name="modalidad"
-                      :disabled="form.servicio === 'terapia-infantil'"
-                      class="input-field appearance-none pr-12 cursor-pointer text-base rounded-none disabled:cursor-not-allowed disabled:opacity-70"
-                      :class="{
-                        '!border-red-400': errors.modalidad,
-                        'text-[#27252B]/50': !form.modalidad
-                      }"
-                      :aria-describedby="errors.modalidad ? 'modalidad-error' : (form.servicio === 'terapia-infantil' ? 'modalidad-aviso' : undefined)"
-                      :aria-invalid="errors.modalidad ? 'true' : undefined"
-                    >
-                      <option value="" disabled selected>Selecciona formato</option>
-                      <option value="presencial">Presencial (En el centro de Granada)</option>
-                      <option value="online">Online (A través de videoconferencia)</option>
-                    </select>
-                    <div
-                      class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4"
-                      aria-hidden="true"
-                    >
-                      <svg class="w-4 h-4 text-[#27252B]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <p
-                    v-if="errors.modalidad"
-                    id="modalidad-error"
-                    class="form-error text-red-500 font-medium"
-                    role="alert"
-                  >
-                    {{ errors.modalidad }}
-                  </p>
-                  <p
-                    v-if="form.servicio === 'terapia-infantil'"
-                    id="modalidad-aviso"
-                    class="text-xs italic text-[#27252B]/60 mt-2 leading-relaxed"
-                  >
-                    * Por motivos metodológicos y clínicos, la terapia infantil se ofrece exclusivamente de forma presencial en nuestra sede.
-                  </p>
-                </div>
-
                 <!-- Mensaje -->
                 <div class="form-field">
                   <label for="mensaje" class="form-label text-sm text-[#27252B]/85 font-medium">
-                    Mensaje
+                    Escríbenos
                     <span class="text-[#27252B]/50 text-xs normal-case tracking-normal ml-1">(opcional)</span>
                   </label>
                   <textarea
@@ -460,7 +383,7 @@
                     v-model="form.mensaje"
                     name="mensaje"
                     rows="5"
-                    placeholder="Cuéntanos brevemente qué te trae por aquí o en qué momento vital te encuentras. No hay prisa, escribe con calma."
+                    placeholder="Cuéntanos brevemente qué necesitas. Te responderemos para orientarte y acordar contigo el siguiente paso."
                     class="input-field resize-none leading-relaxed text-base placeholder-[#27252B]/40"
                   ></textarea>
                 </div>
@@ -490,9 +413,7 @@
                       id="privacidad-hint"
                       class="text-xs text-[#27252B]/70 leading-relaxed font-normal cursor-pointer"
                     >
-                      Consiento el tratamiento de mis datos con la finalidad de gestión de contacto
-                      recogidos a través de la página web de la clínica, de conformidad explícita
-                      con lo dispuesto en el RGPD y lo detallado en la
+                      He leido y acepto la
                       <NuxtLink
                         to="/privacidad"
                         class="text-[#71B1A5] font-medium underline underline-offset-2 hover:text-[#5a9a8e] transition-colors"
@@ -532,7 +453,7 @@
                     <span>Mensaje enviado</span>
                   </template>
                   <template v-else>
-                    Solicitar primera consulta
+                    Enviar consulta
                     <span class="w-6 h-px bg-white/60 inline-block" aria-hidden="true" />
                   </template>
                 </button>
@@ -668,20 +589,6 @@
   
 </section>
 
-<div class="w-full mb-12 h-[600px] sm:h-[800px] md:h-[1300px] overflow-hidden">
-    <video 
-      autoplay 
-      loop 
-      muted 
-      playsinline
-      preload="metadata"
-      class="w-full h-full object-cover"
-    >
-      <source src="/video/recorrido-edificio.webm" type="video/webm" />
-      Tu navegador no soporta el formato de vídeo.
-    </video>
-  </div>
-
 <section
       class="page-container py-20 md:py-24"
       aria-labelledby="cta-heading"
@@ -693,15 +600,13 @@
             id="cta-heading"
             class="font-serif italic text-3xl md:text-4xl leading-[1.2]"
           >
-            No tienes que saberlo<br />
-            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">todo de antemano.</span>
+            Puedes empezar sin<br />
+            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">tenerlo todo claro.</span>
           </h2>
         </div>
         <div class="md:col-span-7">
           <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-            Si no tienes claro qué servicio necesitas, cuéntanoslo. En La Seda te
-            orientamos sin compromiso hacia el profesional y el enfoque que mejor
-            encajan con lo que estás viviendo.
+            Una primera conversación puede ayudarte a ordenar lo que buscas y encontrar el espacio más adecuado para ti.
           </p>
         </div>
       </div>
@@ -806,7 +711,7 @@ useHead({
             name: 'La Seda · Psicología y Crecimiento en Granada',
             url: 'https://www.laseda.es',
             telephone: '+34-679-571-977',
-            email: 'centrolaseda@gmail.com',
+            email: 'hola@centrolaseda.com',
             image: 'https://www.laseda.es/images/hero-contacto-centro-psicologia-granada-la-seda.jpg',
             priceRange: '€€',
             medicalSpecialty: 'Psychiatry',

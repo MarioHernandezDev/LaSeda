@@ -26,7 +26,7 @@
       </h2>
 
       <p class="text-stone-600/90 text-base md:text-lg leading-[1.8] mb-12 max-w-3xl mx-auto font-light">
-        Si estás pensando en iniciar un proceso terapéutico, participar en un grupo de desarrollo personal o seguir formándote como profesional, estaremos encantados de orientarte para encontrar la propuesta que mejor se adapte a ti.
+        Si estás pensando en iniciar terapia, participar en un grupo de desarrollo personal o seguir formándote, te ayudamos a encontrar la propuesta que mejor se adapte a ti.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-md mx-auto sm:max-w-none w-full">

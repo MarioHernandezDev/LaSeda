@@ -2,16 +2,15 @@
   <main>
     <PageHero
       label="Quiénes somos · Granada"
-      title-main="El equipo detrás de"
-      title-accent="La Seda"
+      title-main="Una sensibilidad"
+      title-accent="Compartida"
       image="/images/centro-psicologia-la-seda-granada-hero.jpg"
       image-alt="Equipo del Centro de Psicología La Seda en Granada"
       secondary-link="/terapias"
       secondary-label="Ver nuestras terapias"
     >
       <template #description>
-        Un grupo de profesionales comprometidos con la salud psicológica,
-        la educación emocional y el crecimiento personal en Granada.
+        En La Seda compartimos una comprensión humanista e integrativa de las personas. La experiencia y especialización de cada profesional enriquecen un proyecto común, construido desde la escucha y el cuidado.
       </template>
     </PageHero>
 
@@ -25,18 +24,17 @@
 
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-24 md:mb-32">
           <div>
-            <p class="section-label mb-4">Profesionales acreditados</p>
+            <p class="section-label mb-4">Una forma compartida de trabajar</p>
             <h2
               id="equipo-heading"
               class="font-serif italic text-4xl md:text-5xl leading-[1.15] text-[#27252B]"
             >
-              Psicólogos y terapeutas<br />
-              <span class="text-[#27252B]/50">en Granada.</span>
+              Profesionales de la<br />
+              <span class="text-[#27252B]/50"> psicologia y la terapia</span>
             </h2>
           </div>
           <p class="text-[#27252B]/60 max-w-sm text-base leading-relaxed font-light md:text-right border-l md:border-l-0 md:border-r border-[#71B1A5]/30 pl-4 md:pl-0 md:pr-4 md:mb-1">
-            Un equipo multidisciplinar especializado en psicología clínica, psicoterapia 
-            y educación emocional comprometido con tu proceso.
+            Nuestro equipo reúne experiencia en psicología, medicina, terapia Gestalt, coaching y educación social. Esta diversidad permite ofrecer una atención coordinada a lo largo de la vida, con especial dedicación a infancia, adolescencia y familias.
           </p>
         </div>
 
@@ -118,7 +116,7 @@
         </ul>
 
         <p class="mt-28 md:mt-36 text-center text-xs text-[#27252B]/35 font-light tracking-wider max-w-md mx-auto leading-relaxed">
-          Todos los profesionales están debidamente colegiados o acreditados en sus respectivas especialidades y sujetos de forma estricta al código deontológico.
+          El equipo de La Seda ejerce desde el compromiso ético, el rigor profesional y los requisitos de titulación y acreditación propios de cada disciplina.
         </p>
 
       </div>
@@ -133,13 +131,13 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16 md:mb-20">
           <div>
             <p class="text-[#71B1A5] text-xs font-medium tracking-[0.35em] uppercase mb-3">
-              Garantías clínicas
+              Compromisos
             </p>
             <h2
               id="valores-heading"
               class="font-serif italic text-white text-3xl md:text-4xl leading-[1.2]"
             >
-              Los pilares de nuestra práctica
+              Lo que sostiene nuestra práctica
             </h2>
           </div>
           <div class="w-24 h-px bg-white/10 md:mb-2" aria-hidden="true" />
@@ -151,29 +149,25 @@
         >
           <li class="border-t border-white/10 pt-8">
             <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6" aria-hidden="true">01</span>
-            <h3 class="font-serif italic text-white text-2xl mb-4">Formación continua</h3>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Aprendizaje continuo</h3>
             <p class="text-white/60 text-base leading-relaxed font-light">
-              Cada miembro del equipo dedica horas anuales a supervisión clínica, congresos
-              y programas de actualización. La excelencia no se declara: se practica.
+              Seguimos formándonos porque la práctica profesional también exige revisión, curiosidad y crecimiento.
             </p>
           </li>
 
           <li class="border-t border-white/10 pt-8">
             <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6" aria-hidden="true">02</span>
-            <h3 class="font-serif italic text-white text-2xl mb-4">Supervisión de casos</h3>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Supervisión</h3>
             <p class="text-white/60 text-base leading-relaxed font-light">
-              Trabajamos con supervisión grupal regular. Que el terapeuta sea acompañado
-              en su práctica es garantía de calidad para quien acude a consulta.
+              La supervisión forma parte de nuestro trabajo. Compartir la práctica ayuda a cuidar cada intervención y aporta nuevas perspectivas.
             </p>
           </li>
 
           <li class="border-t border-white/10 pt-8">
             <span class="font-serif italic text-[#71B1A5]/30 text-5xl leading-none select-none block mb-6" aria-hidden="true">03</span>
-            <h3 class="font-serif italic text-white text-2xl mb-4">Derivación responsable</h3>
+            <h3 class="font-serif italic text-white text-2xl mb-4">Responsabilidad</h3>
             <p class="text-white/60 text-base leading-relaxed font-light">
-              Si detectamos que otra especialidad puede ayudarte mejor, lo decimos.
-              Contamos con una red de profesionales de confianza en Granada para
-              acompañarte en ese camino.
+              Reconocer cuándo otra especialidad puede ofrecer una respuesta más adecuada también forma parte de nuestro compromiso. Buscamos siempre el recurso que mejor cuide cada situación.
             </p>
           </li>
         </ol>
@@ -192,15 +186,12 @@
             id="cta-heading"
             class="font-serif italic text-3xl md:text-4xl leading-[1.2]"
           >
-            ¿Con quién te gustaría<br />
-            <span class="text-[#27252B]/55 not-italic font-light text-2xl md:text-3xl">comenzar tu proceso?</span>
+            ¿Hablamos?
           </h2>
         </div>
         <div class="md:col-span-7">
           <p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/65">
-            Si no sabes a qué profesional acudir, escríbenos. En La Seda te orientamos
-            sin compromiso hacia la persona y el enfoque que mejor encajan con lo que
-            estás viviendo.
+            Si no tienes claro qué tipo de ayuda necesitas, escríbenos. Te ayudaremos a encontrar la profesional y el enfoque que mejor se adapten a tu momento.
           </p>
         </div>
       </div>
@@ -290,8 +281,8 @@ const equipo: MiembroEquipo[] = [
   {
     id: 'reyes-sanchez',
     nombre: 'Reyes Sánchez Tallón',
-    rol: 'Medicina',
-    subtitulo: 'Medicina · Colaboradora en Salud Integrativa',
+    rol: 'Terapia',
+    subtitulo: 'Terapia Gestalt · Colaboradora en Salud Integrativa',
     cita: 'Integrar el cuidado del cuerpo y la salud emocional es devolverle la plenitud y el equilibrio al ser.',
     biografia: 'Médica colegiada, licenciada en Medicina y Cirugía (Universidad de Granada) y especialista en Pediatría por la vía MIR. Colaboradora de La Seda formada en terapia Gestalt (equipo Qualia), Terapia Corporal Integrativa, análisis caracterológico psico-corporal, terapia sistémica y herramientas de intervención en trauma y TEPT.',
     imagen: '/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg',

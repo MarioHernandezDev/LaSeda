@@ -1,5 +1,5 @@
 <template>
-  <section id="pilares-seccion" aria-labelledby="pilares-titulo" class="py-24 md:py-36 px-8 md:px-16">
+  <section v-reveal id="pilares-seccion" aria-labelledby="pilares-titulo" class="py-24 md:py-36 px-8 md:px-16">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
         <div>
@@ -18,7 +18,7 @@ Todas nuestras áreas comparten una misma mirada humanista e integrativa, que po
 
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
         
-        <article class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
+        <article v-reveal class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
           <div class="relative h-56 overflow-hidden">
             <NuxtImg src="/images/terapia-psicologica-individual-adultos-granada-la-seda.jpg" alt="Sesión de psicoterapia individual para adultos en el Centro La Seda, Granada" class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out" format="webp" loading="lazy" width="560" height="224" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/65 via-transparent to-transparent" aria-hidden="true"></div>
@@ -37,7 +37,7 @@ Atendemos a personas adultas, infancia, adolescencia, parejas y familias desde u
           </div>
         </article>
 
-        <article class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
+        <article v-reveal class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
           <div class="relative h-56 overflow-hidden">
             <NuxtImg src="/images/talleres-crecimiento-personal-constelaciones-familiares-granada.jpg" alt="Taller grupal de Constelaciones Familiares y crecimiento personal en Granada — Centro La Seda" class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out" format="webp" loading="lazy" width="560" height="224" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/65 via-transparent to-transparent" aria-hidden="true"></div>
@@ -56,7 +56,7 @@ Talleres, grupos y experiencias orientados a favorecer el autoconocimiento, fort
           </div>
         </article>
 
-        <article class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
+        <article v-reveal class="group relative overflow-hidden bg-stone-50 border border-[#27252B]/8 hover:border-[#71B1A5]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#71B1A5]/12 hover:-translate-y-2">
           <div class="relative h-56 overflow-hidden">
             <NuxtImg src="/images/formacion-psicologos-especializacion-salud-mental-granada.jpg" alt="Formación especializada para psicólogos y profesionales de la salud mental en Granada — Centro La Seda" class="w-full h-full object-cover object-center group-hover:scale-[1.06] transition-transform duration-700 ease-out" format="webp" loading="lazy" width="560" height="224" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/65 via-transparent to-transparent" aria-hidden="true"></div>

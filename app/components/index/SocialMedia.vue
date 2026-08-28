@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="redes-titulo" class="py-20 md:py-28 px-6 sm:px-10 lg:px-16 bg-[#F5F2ED] overflow-hidden relative">
+  <section v-reveal aria-labelledby="redes-titulo" class="py-20 md:py-28 px-6 sm:px-10 lg:px-16 bg-[#F5F2ED] overflow-hidden relative">
     
     <!-- Trama de fondo sutil -->
     <div class="absolute inset-0 opacity-[0.4]" style="background-image: radial-gradient(circle, #E6E1DA 1px, transparent 1px); background-size: 36px 36px;" aria-hidden="true"></div>

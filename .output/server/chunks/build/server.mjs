@@ -668,7 +668,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DWK53Tni.mjs')
+    component: () => import('./index-DdJhLTzO.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1058,6 +1058,9 @@ const components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8 = /* @__PURE
   name: "nuxt:global-components"
 });
 const revealDirective = {
+  getSSRProps() {
+    return { class: "reveal-on-scroll" };
+  },
   mounted(element) {
     if ((void 0).matchMedia("(prefers-reduced-motion: reduce)").matches) {
       element.classList.add("is-revealed");

@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="cta-titulo" class="relative py-28 md:py-36 overflow-hidden bg-[#FDFBF9]">
+  <section v-reveal aria-labelledby="cta-titulo" class="relative py-28 md:py-36 overflow-hidden bg-[#FDFBF9]">
     <div class="absolute inset-0" aria-hidden="true">
       <NuxtImg 
         src="/images/fondo-cta-centro-psicologia-granada-bienestar.jpg" 

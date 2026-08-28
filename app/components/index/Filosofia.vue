@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="filosofia-titulo" class="relative py-28 md:py-40 overflow-hidden">
+  <section v-reveal aria-labelledby="filosofia-titulo" class="relative py-28 md:py-40 overflow-hidden">
     <div class="absolute inset-0 bg-[#27252B]"></div>
     <div class="absolute inset-0 opacity-[0.06]" aria-hidden="true">
       <NuxtImg

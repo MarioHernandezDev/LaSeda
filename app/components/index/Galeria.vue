@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="galeria-titulo" class="py-20 md:py-28">
+  <section v-reveal aria-labelledby="galeria-titulo" class="py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-8 md:px-16 mb-12 text-center">
       <div class="flex items-center gap-4 mb-6 justify-center" aria-hidden="true">
         <div class="h-px w-8 bg-[#71B1A5]/50"></div>

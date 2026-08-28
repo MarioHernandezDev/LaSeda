@@ -1,6 +1,9 @@
 import type { ObjectDirective } from 'vue'
 
 const revealDirective: ObjectDirective<HTMLElement> = {
+  getSSRProps() {
+    return { class: 'reveal-on-scroll' }
+  },
   mounted(element) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       element.classList.add('is-revealed')

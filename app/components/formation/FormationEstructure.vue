@@ -5,11 +5,18 @@ interface BloqueClave {
   desc: string
 }
 
-defineProps<{
+withDefaults(defineProps<{
   motivos: BloqueClave[]
   imagen: string
   imagenAlt: string
-}>()
+  label?: string
+  titulo?: string
+  tituloSecundario?: string
+}>(), {
+  label: 'Pilares del Programa',
+  titulo: 'Estructura Académica',
+  tituloSecundario: 'y especificaciones clave'
+})
 </script>
 
 <template>
@@ -28,13 +35,13 @@ defineProps<{
             <div class="flex items-center gap-3 mb-4">
               <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
               <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-                Pilares del Programa
+                {{ label }}
               </p>
             </div>
             <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-              Estructura Académica<br>
+              {{ titulo }}<br>
               <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-                y especificaciones clave
+                {{ tituloSecundario }}
               </span>
             </h2>
           </div>

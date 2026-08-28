@@ -6,9 +6,24 @@ interface FAQ {
   respuesta: string
 }
 
-defineProps<{
+const props = withDefaults(defineProps<{
   faqs: FAQ[]
-}>()
+  label?: string
+  titulo?: string
+  subtitulo?: string
+  ctaTitulo?: string
+  ctaDescripcion?: string
+  ctaLabel?: string
+  ctaUrl?: string
+}>(), {
+  label: 'Dudas comunes',
+  titulo: 'Resolvemos tus preguntas',
+  subtitulo: 'con total transparencia',
+  ctaTitulo: '¿Listo para reservar tu espacio?',
+  ctaDescripcion: 'Contáctanos para formalizar tu inscripción, solicitar detalles sobre el encuadre o resolver dudas sobre las plazas disponibles del grupo.',
+  ctaLabel: 'Solicitar Reserva',
+  ctaUrl: '/contacto'
+})
 
 const faqAbierta = ref<number | null>(null)
 const toggleFaq = (i: number) => {
@@ -26,13 +41,13 @@ const toggleFaq = (i: number) => {
             <div class="flex items-center gap-3 mb-4">
               <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
               <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-                Dudas comunes
+                {{ label }}
               </p>
             </div>
             <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-              Resolvemos tus preguntas<br>
+              {{ titulo }}<br>
               <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-                con total transparencia
+                {{ subtitulo }}
               </span>
             </h2>
           </div>
@@ -78,15 +93,15 @@ const toggleFaq = (i: number) => {
           <div class="bg-[#F5F2EE]/50 border border-[#27252B]/5 rounded-2xl p-8 md:p-10 lg:p-12">
             <div class="w-8 h-px bg-[#71B1A5] mb-6" aria-hidden="true" />
             <h3 class="font-serif italic text-2xl md:text-3xl text-[#27252B] leading-tight mb-4">
-              ¿Listo para reservar tu espacio?
+              {{ ctaTitulo }}
             </h3>
             <p class="text-[#27252B]/60 font-light text-sm md:text-base leading-relaxed mb-8">
-              Contáctanos para formalizar tu inscripción, solicitar detalles sobre el encuadre o resolver dudas sobre las plazas disponibles del grupo.
+              {{ ctaDescripcion }}
             </p>
             
             <div class="space-y-4 pt-2">
               <NuxtLink 
-                to="/contacto" 
+                :to="ctaUrl"
                 class="flex items-center gap-4 group p-3 -mx-3 rounded-xl transition-colors duration-300 hover:bg-white"
               >
                 <div class="w-10 h-10 rounded-full bg-[#71B1A5]/10 text-[#71B1A5] flex items-center justify-center group-hover:bg-[#71B1A5] group-hover:text-white transition-all duration-300">
@@ -95,7 +110,7 @@ const toggleFaq = (i: number) => {
                   </svg>
                 </div>
                 <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#71B1A5] transition-colors duration-300">
-                  Solicitar Reserva
+                  {{ ctaLabel }}
                 </span>
               </NuxtLink>
 
@@ -111,7 +126,7 @@ const toggleFaq = (i: number) => {
                   </svg>
                 </div>
                 <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#25D366] transition-colors duration-300">
-                  WhatsApp Clínico
+                  WhatsApp de contacto
                 </span>
               </a>
             </div>

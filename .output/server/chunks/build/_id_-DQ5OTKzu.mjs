@@ -1,0 +1,709 @@
+import { u as useRoute, a as __nuxt_component_0 } from './server.mjs';
+import { _ as __nuxt_component_1 } from './TherapyHero-CiU7hQzm.mjs';
+import { defineComponent, computed, mergeProps, unref, withCtx, createTextVNode, createVNode, toDisplayString, openBlock, createBlock, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderClass, ssrRenderList } from 'vue/server-renderer';
+import { _ as __nuxt_component_1$1 } from './NuxtImg-BPQsK4wb.mjs';
+import { _ as __nuxt_component_6 } from './TherapyFAQ-BkjSSBtZ.mjs';
+import { u as useSeoMeta, a as useHead } from './composables-Bkq6dBM1.mjs';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import 'ipx';
+import 'vue-router';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const _sfc_main$5 = /* @__PURE__ */ defineComponent({
+  __name: "TherapyOverview",
+  __ssrInlineRender: true,
+  props: {
+    descripcion: {},
+    descripcion2: {},
+    cita: {},
+    beneficios: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<section${ssrRenderAttrs(mergeProps({
+        id: "sobre-la-terapia",
+        class: "bg-[#FDFBF9] py-20 md:py-28 relative scroll-mt-12"
+      }, _attrs))}><div class="page-container max-w-4xl mx-auto"><div class="space-y-12"><div class="py-10 my-6 border-t border-b border-[#27252B]/10 relative"><blockquote class="text-center max-w-2xl mx-auto"><p class="text-[#27252B]/80 font-serif italic text-lg md:text-xl leading-[1.85]"> “${ssrInterpolate(__props.cita)}” </p></blockquote></div></div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/therapy/TherapyOverview.vue");
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+};
+const __nuxt_component_2 = Object.assign(_sfc_main$5, { __name: "TherapyOverview" });
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+  __name: "TherapyTeam",
+  __ssrInlineRender: true,
+  props: {
+    terapeutas: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _component_NuxtImg = __nuxt_component_1$1;
+      if (__props.terapeutas.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden" }, _attrs))}><div class="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-[#27252B]/5 via-transparent to-transparent hidden lg:block" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid md:grid-cols-12 gap-8 items-end mb-20"><div class="md:col-span-7 lg:col-span-6"><div class="flex items-center gap-3 mb-4"><span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold"> Acompañamiento Humano </p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]"> Especialistas a tu lado<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1"> en este proceso </span></h2></div><div class="md:col-span-5 lg:col-span-6 flex md:justify-end items-center border-l md:border-l-0 md:border-r border-[#27252B]/10 pl-6 md:pl-0 md:pr-8 h-fit"><div class="text-left md:text-right"><span class="font-serif italic text-2xl text-[#71B1A5]"> 0${ssrInterpolate(__props.terapeutas.length)}</span><p class="text-[10px] tracking-widest text-[#27252B]/50 uppercase font-medium mt-0.5">${ssrInterpolate(__props.terapeutas.length === 1 ? "Especialista asignado" : "Equipo de la especialidad")}</p></div></div></div><div class="${ssrRenderClass([{
+          "grid-cols-1 max-w-sm mx-auto": __props.terapeutas.length === 1,
+          "sm:grid-cols-2 max-w-3xl mx-auto": __props.terapeutas.length === 2,
+          "sm:grid-cols-2 lg:grid-cols-3 w-full": __props.terapeutas.length >= 3
+        }, "grid gap-10 md:gap-12 justify-center"])}"><!--[-->`);
+        ssrRenderList(__props.terapeutas, (terapeuta) => {
+          _push(ssrRenderComponent(_component_NuxtLink, {
+            key: terapeuta.id,
+            to: `/conocenos/${terapeuta.id.replace("ana-jimenez", "ana-jimenez")}`,
+            class: "flex flex-col group bg-[#F5F2EE]/30 border border-[#27252B]/5 rounded-2xl overflow-hidden p-4 transition-all duration-500 hover:bg-[#F5F2EE]/60 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5 cursor-pointer"
+          }, {
+            default: withCtx((_, _push2, _parent2, _scopeId) => {
+              if (_push2) {
+                _push2(`<div class="relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#27252B]/5 mb-6"${_scopeId}>`);
+                _push2(ssrRenderComponent(_component_NuxtImg, {
+                  src: terapeuta.imagen,
+                  alt: terapeuta.imagenAlt || `Fotografía de ${terapeuta.nombre}, psicólogo en La Seda`,
+                  class: "w-full h-full object-cover object-center grayscale-[30%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0",
+                  loading: "lazy",
+                  format: "webp"
+                }, null, _parent2, _scopeId));
+                _push2(`<div class="absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#27252B]/5"${_scopeId}><p class="text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold"${_scopeId}> Equipo Clínico </p></div></div><div class="px-2 pb-4 pt-1 flex-grow flex flex-col justify-between space-y-4"${_scopeId}><div${_scopeId}><h3 class="font-serif italic text-2xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}>${ssrInterpolate(terapeuta.nombre)}</h3><p class="text-[11px] tracking-wider text-[#27252B]/40 uppercase font-medium mt-1"${_scopeId}>${ssrInterpolate(terapeuta.rol)}</p></div><div class="pt-2 border-t border-[#27252B]/5 flex items-center justify-between text-[11px] tracking-widest uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}><span${_scopeId}>Conocer trayectoria</span><svg class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div></div>`);
+              } else {
+                return [
+                  createVNode("div", { class: "relative aspect-[4/5] w-full rounded-xl overflow-hidden bg-[#27252B]/5 mb-6" }, [
+                    createVNode(_component_NuxtImg, {
+                      src: terapeuta.imagen,
+                      alt: terapeuta.imagenAlt || `Fotografía de ${terapeuta.nombre}, psicólogo en La Seda`,
+                      class: "w-full h-full object-cover object-center grayscale-[30%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0",
+                      loading: "lazy",
+                      format: "webp"
+                    }, null, 8, ["src", "alt"]),
+                    createVNode("div", { class: "absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#27252B]/5" }, [
+                      createVNode("p", { class: "text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold" }, " Equipo Clínico ")
+                    ])
+                  ]),
+                  createVNode("div", { class: "px-2 pb-4 pt-1 flex-grow flex flex-col justify-between space-y-4" }, [
+                    createVNode("div", null, [
+                      createVNode("h3", { class: "font-serif italic text-2xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300" }, toDisplayString(terapeuta.nombre), 1),
+                      createVNode("p", { class: "text-[11px] tracking-wider text-[#27252B]/40 uppercase font-medium mt-1" }, toDisplayString(terapeuta.rol), 1)
+                    ]),
+                    createVNode("div", { class: "pt-2 border-t border-[#27252B]/5 flex items-center justify-between text-[11px] tracking-widest uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300" }, [
+                      createVNode("span", null, "Conocer trayectoria"),
+                      (openBlock(), createBlock("svg", {
+                        class: "w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300",
+                        fill: "none",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24"
+                      }, [
+                        createVNode("path", {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                        })
+                      ]))
+                    ])
+                  ])
+                ];
+              }
+            }),
+            _: 2
+          }, _parent));
+        });
+        _push(`<!--]--></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/therapy/TherapyTeam.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const __nuxt_component_3 = Object.assign(_sfc_main$4, { __name: "TherapyTeam" });
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+  __name: "TherapyWorkAreas",
+  __ssrInlineRender: true,
+  props: {
+    motivos: {},
+    imagen: {},
+    imagenAlt: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtImg = __nuxt_component_1$1;
+      if (__props.motivos.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden" }, _attrs))}><div class="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#27252B]/5 to-transparent hidden lg:block" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start"><div class="lg:col-span-7 space-y-12"><div><div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold"> ¿Cuándo acudir? </p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]"> Motivos de consulta<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1"> más frecuentes </span></h2></div><div class="divide-y divide-[#27252B]/5 border-t border-b border-[#27252B]/5"><!--[-->`);
+        ssrRenderList(__props.motivos, (motivo) => {
+          _push(`<div class="py-6 flex gap-6 md:gap-8 items-start px-2"><span class="font-serif italic text-xl md:text-2xl text-[#71B1A5]/60 select-none pt-0.5">${ssrInterpolate(motivo.numero)}</span><div class="space-y-1.5 flex-grow"><h3 class="font-medium text-lg text-[#27252B] tracking-tight">${ssrInterpolate(motivo.titulo)}</h3><p class="text-sm text-[#27252B]/60 font-light leading-relaxed">${ssrInterpolate(motivo.desc)}</p></div></div>`);
+        });
+        _push(`<!--]--></div></div><div class="lg:col-span-5 lg:sticky lg:top-32 mt-8 lg:mt-4"><div class="max-w-md mx-auto lg:ml-auto"><div class="relative overflow-hidden aspect-[4/5] bg-[#27252B]/5 rounded-2xl shadow-sm">`);
+        _push(ssrRenderComponent(_component_NuxtImg, {
+          src: __props.imagen,
+          alt: __props.imagenAlt,
+          class: "w-full h-full object-cover",
+          loading: "lazy",
+          format: "webp"
+        }, null, _parent));
+        _push(`<div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/5 via-transparent to-transparent pointer-events-none"></div></div></div></div></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/therapy/TherapyWorkAreas.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const __nuxt_component_4 = Object.assign(_sfc_main$3, { __name: "TherapyWorkAreas" });
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "TherapyProcess",
+  __ssrInlineRender: true,
+  props: {
+    proceso: {},
+    therapyId: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "bg-[#27252B] py-24 md:py-32 relative overflow-hidden" }, _attrs))}><div class="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#71B1A5]/5 blur-[130px] pointer-events-none" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-20 md:mb-24"><div class="md:col-span-6 lg:col-span-5"><div class="flex items-center gap-3 mb-4"><span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold"> Metodología Interna </p></div><h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-serif italic font-light leading-[1.15]"> Cómo son las sesiones<br><span class="text-white/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-2"> en La Seda Granada </span></h2></div><div class="md:col-span-6 lg:col-span-7 border-l border-white/10 pl-6 md:pl-10"><p class="text-white/60 text-base md:text-[17px] leading-[1.85] font-light max-w-xl"> Los procesos comienzan con una <strong class="text-[#71B1A5] font-medium font-sans tracking-wide uppercase text-xs ml-1 bg-[#71B1A5]/10 px-2 py-0.5 rounded-none"> orientación telefónica gratuita </strong> en la que te escuchamos de forma activa para valorar qué tipo de abordaje clínico y qué profesional de nuestro equipo se adapta mejor a tu realidad presente. </p></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 group/container"><div class="relative bg-white/[0.02] border border-white/5 p-8 md:p-10 rounded-none transition-all duration-500 flex flex-col justify-between min-h-[250px] hover:bg-white/[0.04] hover:border-[#71B1A5]/30 hover:!opacity-100 group-hover/container:opacity-60 hover:-translate-y-1 group"><div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div><div class="flex justify-between items-start"><span class="font-serif italic text-4xl lg:text-5xl text-[#71B1A5]"> En sala </span><span class="text-[9px] tracking-widest text-[#71B1A5] font-mono uppercase pt-2"> Presencial </span></div><p class="text-white/80 text-base leading-[1.85] font-light mt-8"> Te recibimos en nuestro espacio privado en pleno centro de Granada (C/ Horno de Haza 29). Un entorno protegido, confortable y silencioso. </p></div>`);
+      if (__props.therapyId !== "infantil") {
+        _push(`<div class="relative bg-white/[0.02] border border-white/5 p-8 md:p-10 rounded-none transition-all duration-500 flex flex-col justify-between min-h-[250px] hover:bg-white/[0.04] hover:border-[#71B1A5]/30 hover:!opacity-100 group-hover/container:opacity-60 hover:-translate-y-1 group"><div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div><div class="flex justify-between items-start"><span class="font-serif italic text-4xl lg:text-5xl text-[#71B1A5]"> En línea </span><span class="text-[9px] tracking-widest text-[#71B1A5] font-mono uppercase pt-2"> Online </span></div><p class="text-white/80 text-base leading-[1.85] font-light mt-8"> Sesiones telemáticas a través de Google Meet o Skype. Mantenemos exactamente la misma confidencialidad, rigor clínico y duración (55 min). </p></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<!--[-->`);
+      ssrRenderList(__props.proceso, (paso, i) => {
+        _push(`<div class="${ssrRenderClass([{
+          /* Si NO es infantil (5 tarjetas en total): el último paso (Fase 3) ocupa las 2 columnas y se centra */
+          "lg:col-span-2 lg:max-w-[calc(50%-1.5rem)] lg:w-full lg:justify-self-center": __props.therapyId !== "infantil" && i === __props.proceso.length - 1
+        }, "relative bg-white/[0.02] border border-white/5 p-8 md:p-10 rounded-none transition-all duration-500 flex flex-col justify-between min-h-[250px] hover:bg-white/[0.04] hover:border-[#71B1A5]/30 hover:!opacity-100 group-hover/container:opacity-60 hover:-translate-y-1 group"])}"><div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#71B1A5]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div><div class="flex justify-between items-start"><span class="font-serif italic text-4xl lg:text-5xl text-white/20 group-hover:text-white/40 transition-colors duration-500">${ssrInterpolate(paso.paso)}</span><span class="text-[9px] tracking-widest text-white/20 font-mono uppercase pt-2"> Paso 0${ssrInterpolate(i + 1)}</span></div><p class="text-white/70 group-hover:text-white/85 text-base leading-[1.85] font-light transition-colors duration-500 mt-8">${ssrInterpolate(paso.texto)}</p></div>`);
+      });
+      _push(`<!--]--></div><div class="mt-20 flex flex-col sm:flex-row items-center justify-center gap-5 border-t border-white/5 pt-12 w-full">`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/contacto",
+        class: "group inline-flex items-center justify-center gap-4 px-8 py-4 bg-[#F5F2EE] text-[#27252B] border border-[#F5F2EE] rounded-none hover:bg-[#71B1A5] hover:text-white hover:border-[#71B1A5] transition-all duration-500 w-full sm:w-auto text-center",
+        "aria-label": "Pedir orientación gratuita"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<span class="text-[11px] tracking-[0.25em] uppercase font-bold"${_scopeId}>Pedir orientación gratuita</span><div class="relative w-4 h-3 overflow-hidden flex items-center justify-center pointer-events-none"${_scopeId}><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute text-[#27252B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+          } else {
+            return [
+              createVNode("span", { class: "text-[11px] tracking-[0.25em] uppercase font-bold" }, "Pedir orientación gratuita"),
+              createVNode("div", { class: "relative w-4 h-3 overflow-hidden flex items-center justify-center pointer-events-none" }, [
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute text-[#27252B]",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ])),
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ]))
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/terapias",
+        class: "group inline-flex items-center justify-center gap-4 px-8 py-4 bg-transparent text-white/70 border border-white/20 rounded-none hover:border-[#71B1A5] hover:text-white transition-all duration-500 w-full sm:w-auto text-center",
+        "aria-label": "Ver otras especialidades"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<span class="text-[11px] tracking-[0.25em] uppercase font-bold"${_scopeId}>Ver otras especialidades</span><div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5] pointer-events-none"${_scopeId}><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute fill-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+          } else {
+            return [
+              createVNode("span", { class: "text-[11px] tracking-[0.25em] uppercase font-bold" }, "Ver otras especialidades"),
+              createVNode("div", { class: "relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5] pointer-events-none" }, [
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ])),
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute fill-none",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ]))
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/therapy/TherapyProcess.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const __nuxt_component_5 = Object.assign(_sfc_main$2, { __name: "TherapyProcess" });
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "TherapyRelated",
+  __ssrInlineRender: true,
+  props: {
+    actualId: {},
+    todasLasTerapias: {}
+  },
+  setup(__props) {
+    const props = __props;
+    const terapiasSugeridas = computed(() => {
+      return Object.entries(props.todasLasTerapias).filter(([id]) => id !== props.actualId).map(([id, data]) => ({ id, ...data }));
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      if (terapiasSugeridas.value.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 bg-[#FDFBF9] border-t border-[#27252B]/5 relative overflow-hidden" }, _attrs))}><div class="page-container relative z-10"><div class="flex items-end justify-between mb-12 md:mb-16"><div><div class="flex items-center gap-3 mb-3"><span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold"> Otras Especialidades </p></div><h2 class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-[#27252B]"> También puede interesarte </h2></div>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/terapias",
+          class: "hidden md:flex items-center gap-2 text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 hover:text-[#71B1A5] transition-colors group/all"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`<span${_scopeId}>Ver todas</span><span class="transform group-hover/all:translate-x-1 transition-transform duration-300"${_scopeId}>→</span>`);
+            } else {
+              return [
+                createVNode("span", null, "Ver todas"),
+                createVNode("span", { class: "transform group-hover/all:translate-x-1 transition-transform duration-300" }, "→")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div><div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"><!--[-->`);
+        ssrRenderList(terapiasSugeridas.value, (t) => {
+          _push(ssrRenderComponent(_component_NuxtLink, {
+            key: t.id,
+            to: `/terapias/${t.id}`,
+            class: "group flex flex-col justify-between bg-[#F5F2EE]/30 border border-[#27252B]/5 p-6 md:p-8 rounded-xl transition-all duration-500 hover:bg-[#F5F2EE]/70 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5"
+          }, {
+            default: withCtx((_, _push2, _parent2, _scopeId) => {
+              if (_push2) {
+                _push2(`<div${_scopeId}><p class="text-[9px] tracking-[0.25em] uppercase text-[#71B1A5] font-bold mb-3"${_scopeId}>${ssrInterpolate(t.categoria || "Consulta")}</p><h3 class="font-serif italic text-xl text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-300 leading-[1.3]"${_scopeId}>${ssrInterpolate(t.titulo)} <span class="not-italic font-sans font-light text-lg text-[#27252B]/70 block mt-0.5"${_scopeId}>${ssrInterpolate(t.tituloItalico)}</span></h3></div><div class="mt-8 pt-4 border-t border-[#27252B]/5 flex items-center justify-between text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}><span${_scopeId}>Saber más</span><svg class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+              } else {
+                return [
+                  createVNode("div", null, [
+                    createVNode("p", { class: "text-[9px] tracking-[0.25em] uppercase text-[#71B1A5] font-bold mb-3" }, toDisplayString(t.categoria || "Consulta"), 1),
+                    createVNode("h3", { class: "font-serif italic text-xl text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-300 leading-[1.3]" }, [
+                      createTextVNode(toDisplayString(t.titulo) + " ", 1),
+                      createVNode("span", { class: "not-italic font-sans font-light text-lg text-[#27252B]/70 block mt-0.5" }, toDisplayString(t.tituloItalico), 1)
+                    ])
+                  ]),
+                  createVNode("div", { class: "mt-8 pt-4 border-t border-[#27252B]/5 flex items-center justify-between text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300" }, [
+                    createVNode("span", null, "Saber más"),
+                    (openBlock(), createBlock("svg", {
+                      class: "w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300",
+                      fill: "none",
+                      stroke: "currentColor",
+                      viewBox: "0 0 24 24"
+                    }, [
+                      createVNode("path", {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                      })
+                    ]))
+                  ])
+                ];
+              }
+            }),
+            _: 2
+          }, _parent));
+        });
+        _push(`<!--]--></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/therapy/TherapyRelated.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const __nuxt_component_7 = Object.assign(_sfc_main$1, { __name: "TherapyRelated" });
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "[id]",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const route = useRoute();
+    const staff = {
+      "ana-jimenez": {
+        id: "ana-jimenez",
+        nombre: "Ana Jiménez",
+        rol: "Psicología Clínica y Co-dirección",
+        imagen: "/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg",
+        imagenAlt: "Ana Jiménez, psicóloga sanitaria y co-directora en Granada"
+      },
+      "leonor-cabrera": {
+        id: "leonor-cabrera",
+        nombre: "Leonor Cabrera",
+        rol: "Coaching Profesional y Co-dirección",
+        imagen: "/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg",
+        imagenAlt: "Leonor Cabrera, coach profesional certificada en Granada"
+      },
+      "cristina-lence": {
+        id: "cristina-lence",
+        nombre: "Cristina Lence",
+        rol: "Educación Social · Infancia y Familias",
+        imagen: "/images/cristina-lence-educadora-familiar-gestalt-sistemica-granada.jpg",
+        imagenAlt: "Cristina Lence, educadora social especializada en Gestalt infanto-juvenil"
+      },
+      "reyes-sanchez": {
+        id: "reyes-sanchez",
+        nombre: "Reyes Sánchez Tallón",
+        rol: "Medicina Pediátrica · Salud Integrativa",
+        imagen: "/images/reyes-sanchez-tallon-medica-pediatra-gestalt-terapia-granada.jpg",
+        imagenAlt: "Reyes Sánchez Tallón, médica pediatra y terapeuta"
+      },
+      "maria-noel-reyes": {
+        id: "maria-noel-reyes",
+        nombre: "María Noel Reyes",
+        rol: "Psicología y Acompañamiento",
+        imagen: "/images/maria-noel-reyes-granada.jpg",
+        imagenAlt: "María Noel Reyes, psicóloga en Granada"
+      }
+    };
+    const terapias = {
+      "adultos": {
+        titulo: "Terapia Psicológica",
+        tituloItalico: "y Acompañamiento Emocional",
+        subtitulo: "Un espacio para comprender lo que te ocurre, reconocer tus emociones y conectar con los recursos que ya tienes.",
+        categoria: "Para adultos",
+        imagen: "/images/terapia-gestalt-adultos-centro-psicologia-la-seda-granada.jpg",
+        imagenAlt: "Sesión de Terapia Gestalt para adultos en el Centro de Psicología La Seda, Granada",
+        descripcion: "La terapia psicológica y el acompañamiento emocional son un espacio para comprender y resolver conflictos personales o relacionales. Desde un enfoque humanista, Gestalt y sistémico, trabajamos para que puedas reconocer las emociones que se mueven en ti, descubrir los patrones que repites sin darte cuenta y conectar con tus propios recursos.",
+        descripcion2: "El proceso puede incorporar también Wingwave y constelaciones familiares, según las necesidades de cada persona. La Gestalt nos permite trabajar en profundidad con quien viene a consulta, poniendo el foco en el momento presente y en la experiencia real, mientras que la sistémica sitúa al individuo dentro de su contexto relacional para comprender qué dinámicas le influyen y cómo puede relacionarse de otra manera.",
+        cita: '"La terapia Gestalt no es un conjunto de técnicas sino la transmisión de una actitud, una forma de estar en la vida." — Claudio Naranjo',
+        terapeutas: ["ana-jimenez", "leonor-cabrera", "cristina-lence", "reyes-sanchez", "maria-noel-reyes"],
+        beneficios: [
+          "Aumentar el autoconocimiento y la comprensión de lo que te ocurre.",
+          "Gestionar mejor las emociones y fortalecer tu autoestima.",
+          "Afrontar bloqueos, miedos, ansiedad, estrés o experiencias traumáticas.",
+          "Mejorar tus relaciones, tu comunicación y tu capacidad para tomar decisiones.",
+          "Encontrar nuevas formas de vivir con mayor presencia, equilibrio y coherencia personal."
+        ],
+        motivos: [
+          { numero: "01", titulo: "Gestalt", desc: "Trabajamos en profundidad con la persona para comprender qué le sucede y aprender a gestionar las emociones en el momento presente." },
+          { numero: "02", titulo: "Terapia Sistémica", desc: "Ponemos al individuo en su contexto relacional para ver los patrones que se repiten y encontrar maneras diferentes de vincularse y de estar en la vida." },
+          { numero: "03", titulo: "Método Wingwave", desc: "Especialmente indicado para trabajar con bloqueos, miedos y asuntos pendientes, así como con situaciones traumáticas mediante desensibilización." },
+          { numero: "04", titulo: "Constelaciones Familiares", desc: "Para explorar y resolver dinámicas familiares, relaciones interpersonales y conflictos personales de raíz sistémica." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Orientación telefónica inicial gratuita en la que te escuchamos y valoramos qué tipo de abordaje y qué profesional se adapta mejor a ti." },
+          { paso: "02", texto: "Primera sesión presencial u online en la que exploramos el motivo de consulta y establecemos los objetivos del proceso." },
+          { paso: "03", texto: "Sesiones semanales de 55 minutos, adaptadas a tu ritmo y a las necesidades del proceso terapéutico." }
+        ],
+        faqs: [
+          { pregunta: "¿Cuánto duran las sesiones?", respuesta: "55 minutos." },
+          { pregunta: "¿Cómo serán las sesiones?", respuesta: "Pueden ser tanto online a través de Skype u otro sistema de videoconferencia, como presencial en el Centro La Seda de Granada." },
+          { pregunta: "¿Cómo empiezo?", respuesta: "Los procesos comienzan con una orientación telefónica gratuita en la que te escuchamos y valoramos qué tipo de abordaje y qué profesional se adapta mejor a tus necesidades." }
+        ]
+      },
+      "adolescentes": {
+        titulo: "Terapia para",
+        tituloItalico: "Adolescentes",
+        subtitulo: "Un espacio seguro y confidencial donde el joven puede expresar lo que siente, comprender lo que le ocurre y desarrollar recursos para esta etapa.",
+        categoria: "Adolescentes",
+        imagen: "/images/terapia-adolescentes-psicologia-granada-la-seda.jpg",
+        imagenAlt: "Sesión de terapia psicológica para adolescentes en el Centro La Seda, Granada",
+        descripcion: "La adolescencia es una etapa de cambios profundos en la que el joven necesita un espacio propio donde pueda expresar lo que siente sin ser juzgado. La terapia para adolescentes ofrece ese entorno seguro y confidencial donde explorar lo que le ocurre, gestionar sus emociones y desarrollar recursos para afrontar las dificultades propias de este momento vital.",
+        descripcion2: "La eficacia del proceso depende también de la implicación de los padres. Por eso, a lo largo del trabajo incluimos sesiones con la familia que permiten mejorar la comunicación, reducir los enfrentamientos y ofrecer al adolescente un entorno con mayor seguridad y comprensión. Entender qué le está pasando por dentro es el primer paso para acompañarle bien.",
+        cita: '"Para acompañar bien a un adolescente primero hay que entender qué le está sucediendo por dentro."',
+        terapeutas: ["ana-jimenez", "cristina-lence", "maria-noel-reyes"],
+        beneficios: [
+          "Gestionar mejor sus emociones y fortalecer su autoestima.",
+          "Mejorar sus relaciones con la familia y el entorno.",
+          "Afrontar situaciones como ansiedad, aislamiento o dificultades académicas.",
+          "Reducir conductas de riesgo e impulsividad.",
+          "Que los padres comprendan mejor a su hijo y mejoren la comunicación."
+        ],
+        motivos: [
+          { numero: "01", titulo: "Aislamiento y tristeza", desc: "Cuando el adolescente se encierra en su cuarto, pierde el interés por sus actividades o muestra signos de tristeza profunda o bajo estado de ánimo." },
+          { numero: "02", titulo: "Agresividad e impulsividad", desc: "La violencia verbal y la pérdida de límites son señales de un desajuste emocional que necesita atención específica y un espacio de contención." },
+          { numero: "03", titulo: "Duelos y pérdidas", desc: "Separación de los padres, fallecimiento de un familiar, ruptura sentimental o cambio de ciudad que el adolescente no consigue superar." },
+          { numero: "04", titulo: "Fracaso escolar", desc: "La terapia ayuda a encontrar motivación y estrategias para que el adolescente pueda reincorporarse al sistema educativo o formativo." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Entrevista inicial con los padres, ya sea juntos o por separado, para explorar el motivo de consulta." },
+          { paso: "02", texto: "Sesiones 2, 3 y 4 con el adolescente. Sesión 5 de dinámica familiar. Sesión 6 de devolución y pautas para los padres." },
+          { paso: "03", texto: "Continuación del proceso con el adolescente, incluyendo progresivamente sesiones con los padres según evolucione el trabajo." }
+        ],
+        faqs: [
+          { pregunta: "¿Cuánto duran las sesiones?", respuesta: "55 minutos." },
+          { pregunta: "¿A partir de qué edad trabajáis con adolescentes?", respuesta: "A partir de los doce años. Para niños de entre seis y once años, consulta la terapia infantil." },
+          { pregunta: "¿Cuándo veremos resultados?", respuesta: "La adolescencia es un proceso complejo. Abordar el estado emocional del adolescente como un todo es fundamental para que los resultados puedan verse en un par de meses de trabajo." }
+        ]
+      },
+      "pareja-familia": {
+        titulo: "Terapia de",
+        tituloItalico: "Pareja y Familia",
+        subtitulo: "Un espacio seguro para mejorar la comunicación, resolver conflictos y comprenderse mutuamente.",
+        categoria: "Pareja y familia",
+        imagen: "/images/terapia-pareja-familia-psicologia-granada-la-seda.jpg",
+        imagenAlt: "Terapia de pareja y familia en el Centro de Psicología La Seda, Granada",
+        descripcion: "La terapia de pareja y de familia es un espacio terapéutico para quienes necesitan abordar conflictos, dificultades de comunicación o momentos de cambio. Ofrece un entorno seguro en el que los miembros pueden comprender mejor lo que está ocurriendo, expresar sus necesidades y buscar conjuntamente nuevas formas de relacionarse.",
+        descripcion2: "Tanto para parejas como para familias, el trabajo terapéutico permite abordar tensiones, comprender las causas de determinados comportamientos y establecer dinámicas más saludables. También acompaña procesos de separación, duelos o transiciones importantes, facilitando la adaptación y una comunicación más respetuosa entre todos los implicados.",
+        cita: '"El objetivo no es siempre salvar la relación, sino ayudar a cada persona a tomar decisiones auténticas desde un lugar más claro."',
+        terapeutas: ["leonor-cabrera", "reyes-sanchez"],
+        beneficios: [
+          "Mejorar la comunicación y expresar necesidades y deseos con mayor claridad.",
+          "Resolver conflictos recurrentes de forma más efectiva.",
+          "Acompañar procesos de infidelidad, pérdida de confianza o crisis de pareja.",
+          "Establecer pautas de crianza más coherentes y colaborativas.",
+          "Facilitar la adaptación ante separaciones, duelos o cambios importantes."
+        ],
+        motivos: [
+          { numero: "01", titulo: "Conflictos de pareja", desc: "Abordamos y resolvemos conflictos recurrentes, mejorando la comunicación y enseñando habilidades de resolución de problemas." },
+          { numero: "02", titulo: "Infidelidad y confianza", desc: "Proporcionamos un espacio para abordar el dolor, la ira y la reconstrucción de la confianza tras una ruptura de la misma." },
+          { numero: "03", titulo: "Crianza y co-parentalidad", desc: "Las diferencias en la crianza generan conflictos. Ayudamos a los padres a establecer una co-educación más efectiva y coherente." },
+          { numero: "04", titulo: "Dinámicas familiares", desc: "Abordamos conflictos intrafamiliares, cambios de vida, duelos colectivos y crisis de convivencia para que el sistema se reorganice de forma más saludable." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Entrevista inicial con la pareja o con la familia en la que exploramos el motivo de consulta y las expectativas." },
+          { paso: "02", texto: "Sesiones de trabajo conjunto, adaptando el encuadre según el proceso: sesiones conjuntas, individuales o de dinámica familiar." },
+          { paso: "03", texto: "Sesión de devolución y pautas, en la que compartimos las observaciones del proceso y los recursos para continuar avanzando." }
+        ],
+        faqs: [
+          { pregunta: "¿Cuánto duran las sesiones?", respuesta: "55 minutos." },
+          { pregunta: "¿Cómo serán las sesiones?", respuesta: "Pueden ser tanto online a través de Skype u otro sistema de videoconferencia, como presencial en el Centro La Seda de Granada." },
+          { pregunta: "¿Tienen que venir los dos miembros de la pareja?", respuesta: "La terapia de pareja requiere la participación de ambos para ser efectiva. En el caso de terapia familiar, acordamos qué miembros del sistema deben estar presentes en cada sesión según el momento del proceso." }
+        ]
+      },
+      "infantil": {
+        titulo: "Terapia",
+        tituloItalico: "Infantil",
+        subtitulo: "Ayudar a tu hijo a estar bien es también ayudarte a ti. La infancia es el momento en que todo empieza.",
+        categoria: "Niños de 6 a 11 años",
+        imagen: "/images/terapia-infantil-ninos-psicologia-granada-la-seda.jpg",
+        imagenAlt: "Terapia psicológica infantil para niños de 6 a 11 años en el Centro La Seda, Granada",
+        descripcion: "La infancia es el momento en que el niño construye sus mecanismos de defensa y genera patrones de conducta que pueden perdurar toda la vida. La terapia infantil ofrece un espacio adaptado a la edad del niño donde puede explorar su mundo interior con herramientas ajustadas a su momento evolutivo, aprender a gestionar sus emociones y comprender qué le preocupa o le frustra.",
+        descripcion2: "Los padres también son parte del proceso. La terapia les ayuda a comunicarse mejor con sus hijos, a comprender qué les sucede y a adoptar medidas adaptadas a cada situación. Porque a veces no sabemos cómo poner límites sanos, cómo hablar de las pérdidas o cómo acompañar el miedo sin amplificarlo. Y eso también tiene solución.",
+        cita: '"La infancia no es solo el principio de la vida, es también el principio de todo lo que vendrá después."',
+        terapeutas: ["ana-jimenez", "cristina-lence", "maria-noel-reyes"],
+        beneficios: [
+          "Reducir el síntoma que le genera malestar: ansiedad, miedos, tristeza.",
+          "Aprender a identificar y gestionar sus emociones.",
+          "Mejorar la comunicación con la familia y el entorno.",
+          "Desarrollar mejores herramientas para relacionarse con amigos y familia.",
+          "Que los padres comprendan qué patrones familiares se repiten y cómo resolverlos."
+        ],
+        motivos: [
+          { numero: "01", titulo: "Miedos y ansiedad", desc: "Miedo a la noche, al colegio o a la muerte. Trabajamos con el niño para que tome conciencia de qué le da miedo y potencie sus recursos para afrontarlo." },
+          { numero: "02", titulo: "Problemas de conducta", desc: "Agresividad, dificultad para aceptar límites o control de impulsos. Trabajamos la regulación emocional y la contención en un espacio seguro." },
+          { numero: "03", titulo: "Dificultades relacionales", desc: "Cuando el niño tiene problemas para relacionarse, no lo invitan a cumpleaños o sufre rechazo o acoso en el entorno escolar." },
+          { numero: "04", titulo: "Cambios y pérdidas", desc: "Separación de los padres, fallecimiento de un familiar o cambio de ciudad que el niño no consigue integrar y que bloquea su desarrollo." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Entrevista inicial con los padres, ya sea juntos o por separado, para explorar el motivo de consulta." },
+          { paso: "02", texto: "Sesiones 2, 3 y 4 con el niño. Sesión 5 de dinámica familiar. Sesión 6 de devolución y pautas para los padres." },
+          { paso: "03", texto: "Continuación del proceso con el niño, incluyendo progresivamente sesiones con los padres y de dinámica familiar." }
+        ],
+        faqs: [
+          { pregunta: "¿Cuánto duran las sesiones?", respuesta: "55 minutos." },
+          { pregunta: "¿Qué edades atendéis?", respuesta: "Entre seis y once años. Para adolescentes a partir de los doce años, consulta la terapia para adolescentes." },
+          { pregunta: "¿Cómo serán las sesiones con el niño?", respuesta: "Escuchamos el problema que trae el niño, los padres o la familia. Hacemos las preguntas necesarias para ver el problema desde diferentes puntos de vista y mostramos una forma alternativa de abordarlo para que pueda haber más comunicación y comprensión." }
+        ]
+      }
+    };
+    const id = route.params.id;
+    const terapia = computed(() => terapias[id] ?? null);
+    const terapeutasActivos = computed(() => {
+      if (!terapia.value || !terapia.value.terapeutas) return [];
+      return terapia.value.terapeutas.map((idRef) => ({ id: idRef, ...staff[idRef] })).filter((t) => t.nombre);
+    });
+    const seoTitle = computed(
+      () => terapia.value ? `${terapia.value.titulo} ${terapia.value.tituloItalico} en Granada · La Seda` : "Terapia no encontrada · La Seda"
+    );
+    const seoDescription = computed(
+      () => terapia.value ? `${terapia.value.subtitulo} Centro de Psicología La Seda, Granada. Primera orientación gratuita.` : ""
+    );
+    const seoImage = computed(
+      () => terapia.value?.imagen ? `https://www.laseda.es${terapia.value.imagen}` : "https://www.laseda.es/images/hero-consulta-laseda.jpg"
+    );
+    const seoUrl = computed(
+      () => terapia.value ? `https://www.laseda.es/terapias/${id}` : "https://www.laseda.es/terapias"
+    );
+    useSeoMeta({
+      title: seoTitle,
+      description: seoDescription,
+      ogTitle: seoTitle,
+      ogDescription: seoDescription,
+      ogImage: seoImage,
+      ogType: "website",
+      ogUrl: seoUrl,
+      ogLocale: "es_ES",
+      twitterCard: "summary_large_image",
+      twitterTitle: seoTitle,
+      twitterDescription: seoDescription,
+      twitterImage: seoImage,
+      robots: "index, follow",
+      canonical: seoUrl
+    });
+    useHead({
+      script: computed(() => terapia.value ? [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            name: `${terapia.value.titulo} ${terapia.value.tituloItalico} — Centro La Seda Granada`,
+            description: terapia.value.subtitulo,
+            url: seoUrl.value,
+            image: seoImage.value,
+            telephone: "+34-679-571-977",
+            email: "hola@centrolaseda.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Calle Horno de Haza 29, Bajo 1",
+              addressLocality: "Granada",
+              addressRegion: "Andalucía",
+              postalCode: "18001",
+              addressCountry: "ES"
+            },
+            parentOrganization: {
+              "@type": "MedicalBusiness",
+              name: "La Seda · Psicología y Crecimiento en Granada",
+              url: "https://www.laseda.es"
+            }
+          })
+        }
+      ] : [])
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _component_TherapyHero = __nuxt_component_1;
+      const _component_TherapyOverview = __nuxt_component_2;
+      const _component_TherapyTeam = __nuxt_component_3;
+      const _component_TherapyWorkAreas = __nuxt_component_4;
+      const _component_TherapyProcess = __nuxt_component_5;
+      const _component_TherapyFAQ = __nuxt_component_6;
+      const _component_TherapyRelated = __nuxt_component_7;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "bg-[#FDFBF9] antialiased" }, _attrs))}>`);
+      if (!unref(terapia)) {
+        _push(`<main class="min-h-screen flex flex-col items-center justify-center px-6 text-center"><p class="section-label mb-4 text-[#71B1A5]">Error 404</p><h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl leading-[1.2] mb-6"> Terapia no encontrada </h1><p class="text-lg md:text-xl leading-[1.85] text-[#27252B]/60 max-w-md mb-12"> La especialidad clínica que buscas no existe o ha cambiado de dirección. </p>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/terapias",
+          class: "inline-flex items-center gap-3 text-xs font-semibold tracking-widest uppercase border border-[#27252B] px-6 py-3.5 hover:bg-[#27252B] hover:text-white transition-all duration-300"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(` Ver todas las terapias `);
+            } else {
+              return [
+                createTextVNode(" Ver todas las terapias ")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</main>`);
+      } else {
+        _push(`<main>`);
+        _push(ssrRenderComponent(_component_TherapyHero, {
+          categoria: unref(terapia).categoria,
+          titulo: unref(terapia).titulo,
+          tituloItalico: unref(terapia).tituloItalico,
+          subtitulo: unref(terapia).subtitulo
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyOverview, {
+          descripcion: unref(terapia).descripcion,
+          descripcion2: unref(terapia).descripcion2,
+          cita: unref(terapia).cita,
+          beneficios: unref(terapia).beneficios
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyTeam, { terapeutas: unref(terapeutasActivos) }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyWorkAreas, {
+          motivos: unref(terapia).motivos,
+          imagen: unref(terapia).imagen,
+          imagenAlt: unref(terapia).imagenAlt
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyProcess, {
+          proceso: unref(terapia).proceso,
+          therapyId: unref(id)
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyFAQ, {
+          faqs: unref(terapia).faqs
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyRelated, {
+          actualId: unref(id),
+          todasLasTerapias: terapias
+        }, null, _parent));
+        _push(`</main>`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/terapias/[id].vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=_id_-DQ5OTKzu.mjs.map

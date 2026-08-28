@@ -8,9 +8,9 @@ const staff: Record<string, any> = {
   'ana-jimenez': {
     id: 'ana-jimenez',
     nombre: 'Ana María Jiménez',
-    rol: 'Psicóloga Clínica · Miembro Didacta AETG',
+    rol: 'Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG',
     imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
-    imagenAlt: 'Ana María Jiménez, directora de la formación Gestalt Infantil en Granada'
+    imagenAlt: 'Ana María Jiménez, directora de la formación en Gestalt aplicada a la infancia y adolescencia'
   },
   'oriol-belles': {
     id: 'oriol-belles',
@@ -31,39 +31,143 @@ const staff: Record<string, any> = {
 // 2. BASE DE DATOS DE FORMACIONES
 const formations: Record<string, any> = {
   'gestalt-infantil': {
-    titulo: 'Formación en Gestalt aplicada a la',
-    tituloItalico: 'Infancia y Adolescencia',
-    subtitulo: 'Un programa vivencial diseñado para integrar teoría, práctica clínica y el desarrollo de recursos proyectivos y corporales.',
-    categoria: 'Convocatoria 2026 · Granada',
+    titulo: 'Formación vivencial en Gestalt aplicada a la infancia y la adolescencia',
+    tituloItalico: '',
+    subtitulo: 'Un recorrido para acercarte a tu propia historia y aprender a cuidar los procesos de la infancia y la adolescencia.',
+    categoria: 'Tercera convocatoria · 2027 · Inscripciones abiertas',
+    categoriaSufijo: 'La Seda Granada',
     imagen: '/images/formacion-terapia-gestalt-infancia-adolescencia-granada.jpg',
-    imagenAlt: 'Alumnos en formación presencial de Terapia Gestalt Infantil en Centro La Seda',
-    descripcion: 'Esta formación especializada ofrece un recorrido profundo por el universo emocional de la infancia y la adolescencia. A través de un enfoque humanista y sistémico, aprenderás a decodificar el lenguaje del niño a través del juego, el dibujo y la expresión corporal, adquiriendo herramientas técnicas sólidas para la práctica clínica real.',
-    descripcion2: 'El programa está estructurado en módulos teórico-vivenciales donde el propio crecimiento y madurez del terapeuta es el pilar central. Dirigido a profesionales de la psicología, la salud y la educación que deseen incorporar la mirada amorosa y transformadora de la Gestalt en sus consultas.',
-    cita: '"El niño no juega para pasar el tiempo, juega para comprender su mundo y sanar sus heridas a través de la experiencia."',
+    imagenAlt: 'Grupo participante en una formación vivencial de La Seda en Granada',
+    botonPrincipal: 'Solicitar plaza o información',
+    botonPrincipalUrl: '#formulario',
+    botonSecundario: 'Conocer la formación',
+    botonSecundarioUrl: '#sobre-la-terapia',
+    descripcion: 'La infancia y la adolescencia dejan huellas que siguen presentes en la vida adulta. Esta formación propone volver a ellas con cuidado para reconocer necesidades, emociones y formas de relación que quizá todavía buscan un lugar.',
+    descripcion2: 'Al mismo tiempo, ofrece una base teórica y práctica para comprender mejor los procesos infantiles y adolescentes desde una perspectiva gestáltica, humanista y relacional. El aprendizaje nace de la experiencia y se traslada después a la forma de estar con niñas, niños, adolescentes y familias.',
+    descripcion3: 'Por eso pueden participar tanto personas que desean realizar una revisión terapéutica de su infancia y adolescencia como profesionales que quieren formarse y enriquecer su práctica.',
+    cita: '',
+    propuestaLabel: 'Una formación con dos puertas de entrada',
+    propuestaTitulo: 'Revisar la propia historia y aprender a estar con otras infancias',
+    propuestaTituloSecundario: '',
+    aprendizajesLabel: 'Cómo se aprende',
+    aprendizajesTitulo: 'Una experiencia que pone en diálogo lo personal y lo profesional',
+    equipoLabel: 'Dirección de la formación',
+    equipoTitulo: 'Ana María Jiménez',
+    equipoTituloSecundario: 'Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG',
+    equipoDescripcion: 'Ana María Jiménez dirige un programa en el que la formación teórica, la experiencia personal y la práctica se sostienen mutuamente. Su trayectoria clínica y docente aporta rigor, cercanía y atención al proceso del grupo.',
+    equipoBoton: 'Conocer a Ana',
+    estructuraLabel: 'La estructura del recorrido',
+    estructuraTitulo: 'Tiempo, continuidad y experiencia compartida',
+    estructuraTituloSecundario: '',
+    procesoLabel: 'Tercera convocatoria · 2027',
+    procesoTitulo: 'Inscripciones abiertas',
+    procesoTituloSecundario: '',
+    procesoDescripcion: 'Ya están abiertas las inscripciones para la tercera convocatoria, que se celebrará en 2027. Si quieres conocer el programa, valorar si es adecuado para ti o iniciar la inscripción, puedes solicitar una entrevista con la dirección.',
+    procesoBotonPrincipal: 'Solicitar plaza o información',
+    procesoBotonSecundario: 'Ver otras formaciones',
     terapeutas: ['ana-jimenez'], 
     beneficios: [
-      'Adquirir herramientas prácticas y creativas (caja de arena, cuentos, técnicas plásticas).',
-      'Aprender metodologías de supervisión clínica de casos reales infanto-juveniles.',
-      'Desarrollar la actitud gestáltica: presencia, escucha activa y autorregulación en consulta.',
-      'Comprender las dinámicas familiares y el trabajo sistémico con los padres.',
-      'Obtener una titulación avalada por un equipo docente con dilatada trayectoria.',
+      'Recursos creativos y expresivos: explorar el juego, el dibujo, los cuentos, la caja de arena y otras formas de expresión propias de la infancia.',
+      'Comprensión de los procesos infantiles y adolescentes: acercarse a las necesidades emocionales y relacionales de cada etapa, atendiendo también al contexto familiar.',
+      'Presencia y escucha: cultivar una forma de estar más consciente, sensible y respetuosa ante lo que cada persona necesita.',
+      'Familia y vínculos: observar cómo las relaciones familiares influyen en el desarrollo e incluirlas en la comprensión de cada situación.',
+      'Práctica y revisión de casos: relacionar lo aprendido con situaciones reales y revisar dudas dentro de un marco grupal cuidado.',
     ],
     motivos: [
-      { numero: '288h', titulo: 'Horas Lectivas totales', desc: 'Divididas en 240 horas de formación presencial directa y 48 horas destinadas al desarrollo tutorizado del proyecto final.' },
-      { numero: '15', titulo: 'Talleres Monográficos', desc: 'Un fin de semana al mes diseñado para profundizar de manera intensiva en temáticas específicas del desarrollo evolutivo.' },
-      { numero: '01', titulo: 'Entrevista de Valoración', desc: 'Garantizamos la cohesión y calidad humana del grupo mediante un encuentro previo gratuito con la dirección del programa.' },
-      { numero: 'AETG', titulo: 'Mirada Didáctica', desc: 'Dirección impartida por miembros didactas y especialistas en activo dentro del panorama terapéutico nacional.' },
+      { numero: '288h', titulo: '288 horas de recorrido formativo', desc: '240 horas de encuentros presenciales y 48 horas destinadas al desarrollo acompañado del proyecto final.' },
+      { numero: '15', titulo: '15 encuentros monográficos', desc: 'Un fin de semana al mes para profundizar en aspectos del desarrollo infantil y adolescente desde la experiencia, la teoría y la práctica.' },
+      { numero: '01', titulo: 'Un encuentro previo', desc: 'Antes de incorporarte tendrás una entrevista gratuita con la dirección. Es un espacio para conocernos, comprender qué buscas y valorar si la propuesta encaja contigo.' },
+      { numero: 'AETG', titulo: 'Dirección con experiencia clínica y docente', desc: 'El programa está dirigido por profesionales en activo y cuenta con la participación de especialistas con experiencia en distintos ámbitos.' },
     ],
     proceso: [
-      { paso: '01', texto: 'Solicitud de información y reserva de una entrevista de valoración inicial con la dirección académica del centro.' },
-      { paso: '02', texto: 'Formalización de la matrícula y entrega del calendario detallado de los 15 talleres del ciclo 2026.' },
-      { paso: '03', texto: 'Asistencia presencial mensual (fines de semana) combinando teoría, dinámicas de grupo y prácticas supervisadas.' },
+      { paso: '01', texto: 'Solicita información mediante el formulario de esta página.' },
+      { paso: '02', texto: 'Realiza una entrevista gratuita con la dirección para compartir qué buscas y resolver tus dudas.' },
+      { paso: '03', texto: 'Si la formación encaja contigo y hay plazas disponibles, recibirás la información necesaria para formalizar la matrícula.' },
     ],
     faqs: [
-      { pregunta: '¿A quién está dirigida esta especialización?', respuesta: 'Principalmente a profesionales o estudiantes de último año de psicología, pedagogía, educación social y disciplinas de la salud o acompañamiento humanista.' },
-      { pregunta: '¿Cuáles son las facilidades de pago?', respuesta: 'El centro dispone de planes de financiación fraccionada por talleres mensuales para facilitar el acceso a la formación sin recargos.' },
-      { pregunta: '¿Qué ocurre si falto a un taller?', respuesta: 'Disponemos de protocolos de recuperación de contenido teórico-práctico y tutorías de apoyo para asegurar la continuidad del aprendizaje.' },
+      { pregunta: '¿Tengo que ser profesional para participar?', respuesta: 'No. La formación está abierta tanto a personas que desean revisar terapéuticamente su infancia y adolescencia como a profesionales que quieren formarse. La entrevista previa nos ayudará a valorar contigo si el recorrido encaja con lo que buscas.' },
+      { pregunta: '¿En qué se diferencian el recorrido personal y el profesional?', respuesta: 'El grupo y los encuentros son compartidos. Lo que cambia es el propósito con el que cada persona se acerca: profundizar en su propia historia, ampliar sus recursos profesionales o reunir ambas necesidades.' },
+      { pregunta: '¿Necesito conocer la Terapia Gestalt?', respuesta: 'No. El programa está pensado para que puedas acercarte al enfoque de manera progresiva, a través de explicaciones claras y experiencias que ayudan a dar sentido a lo aprendido.' },
+      { pregunta: '¿Existen facilidades de pago?', respuesta: 'Sí. La matrícula puede abonarse de forma fraccionada por encuentros mensuales y sin recargos. Recibirás todos los detalles al solicitar información.' },
+      { pregunta: '¿Qué ocurre si no puedo asistir a un encuentro?', respuesta: 'La continuidad es importante en un proceso de estas características. Si surge una ausencia, el equipo te explicará las posibilidades de recuperación y apoyo previstas por el programa.' },
+      { pregunta: '¿Esta formación me habilita para ejercer como terapeuta?', respuesta: 'No por sí sola. El ejercicio profesional depende de la titulación, las competencias y la normativa aplicable a cada ámbito. Esta formación permite profundizar en el enfoque y ampliar recursos, pero no sustituye una titulación habilitante cuando sea necesaria.' },
+      { pregunta: '¿Cómo solicito plaza para 2027?', respuesta: 'Completa el formulario de esta página. Te enviaremos el programa y concertaremos una entrevista gratuita con la dirección antes de formalizar la matrícula.' },
     ],
+    faqLabel: 'Preguntas frecuentes',
+    faqTitulo: 'Antes de decidir',
+    faqSubtitulo: '',
+    ctaTitulo: 'Solicita plaza o información',
+    ctaDescripcion: 'Tanto si te interesa el recorrido personal como si buscas formación profesional, puedes escribirnos desde aquí. Te enviaremos el programa y te ayudaremos a valorar si esta propuesta responde a lo que necesitas.',
+    ctaLabel: 'Enviar solicitud',
+    seoTitle: 'Formación vivencial en Gestalt, infancia y adolescencia · 2027 | La Seda',
+    seoDescription: 'Tercera convocatoria de la formación vivencial en Gestalt aplicada a la infancia y adolescencia en Granada. Abierta a procesos personales y a profesionales. Inscripciones abiertas para 2027.',
+  },
+  'supervision-casos': {
+    titulo: 'Supervisión de casos para profesionales de la terapia',
+    tituloItalico: '',
+    subtitulo: 'Un espacio para revisar la práctica, compartir dificultades y seguir creciendo como profesional.',
+    categoria: 'Práctica profesional',
+    categoriaSufijo: 'La Seda Granada',
+    imagen: '/images/supervision-casos-clinicos-terapeutas-gestalt-granada.jpg',
+    imagenAlt: 'Grupo de supervisión de casos para profesionales de la terapia en La Seda, Granada',
+    botonPrincipal: 'Solicitar plaza o información',
+    botonPrincipalUrl: '#sobre-la-terapia',
+    botonSecundario: 'Conocer la supervisión',
+    botonSecundarioUrl: '#sobre-la-terapia',
+    descripcion: 'La supervisión permite detenerse y observar con más claridad lo que sucede en el trabajo terapéutico: las dudas que aparecen, los casos que se bloquean, las decisiones que cuesta tomar o aquello que la relación con una persona despierta en quien la atiende.',
+    descripcion2: 'En el grupo se comparten casos y experiencias profesionales dentro de un marco confidencial. La aportación de la supervisora y del resto de participantes ayuda a descubrir nuevas posibilidades de intervención y a cuidar la forma de estar en consulta.',
+    descripcion3: 'No se trata de evaluar ni de ofrecer respuestas cerradas. Se trata de pensar la práctica en compañía, reconocer recursos y encontrar una orientación más ajustada para cada situación.',
+    cita: '',
+    propuestaLabel: 'La supervisión',
+    propuestaTitulo: 'Un lugar donde no tener que sostener la práctica en soledad',
+    propuestaTituloSecundario: '',
+    aprendizajesLabel: 'Qué puede aportar la supervisión',
+    aprendizajesTitulo: 'Un espacio para pensar, aprender y cuidar la práctica',
+    equipoLabel: 'La supervisora',
+    equipoTitulo: 'Ana Jiménez',
+    equipoTituloSecundario: 'Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG',
+    equipoDescripcion: 'Ana Jiménez es psicóloga y psicoterapeuta Gestalt, miembro didacta y supervisora acreditada por la Asociación Española de Terapia Gestalt (AETG). Cuenta con más de quince años de experiencia supervisando a profesionales de la terapia.',
+    equipoBoton: 'Conocer a Ana',
+    estructuraLabel: 'Qué puede aportar la supervisión',
+    estructuraTitulo: 'Un espacio para pensar, aprender y cuidar la práctica',
+    estructuraTituloSecundario: '',
+    procesoLabel: 'Próxima convocatoria',
+    procesoTitulo: 'Grupo abierto desde octubre de 2026',
+    procesoTituloSecundario: '',
+    procesoDescripcion: 'En octubre de 2026 comienza un nuevo grupo de supervisión de casos. Las plazas son limitadas para cuidar la confianza, la continuidad y el trabajo compartido. La fecha de inicio, el calendario, el horario y las condiciones de participación se facilitarán al solicitar información.',
+    procesoBotonPrincipal: 'Solicitar plaza o información',
+    procesoBotonSecundario: 'Volver a Talleres',
+    terapeutas: ['ana-jimenez'],
+    beneficios: [
+      'Más claridad ante los casos: revisar la información disponible, ordenar hipótesis y encontrar nuevas posibilidades cuando un proceso parece estancado.',
+      'Conciencia sobre la propia intervención: reconocer cómo influyen las emociones, expectativas y formas de relacionarse de quien acompaña.',
+      'Una devolución honesta y cuidadosa: recibir otras perspectivas sin juicio, dentro de un entorno orientado al aprendizaje.',
+      'Apoyo entre profesionales: compartir el impacto emocional de la práctica con personas que conocen sus exigencias y responsabilidades.',
+      'Cuidado ético: pensar límites, responsabilidades y decisiones complejas para ofrecer una atención más consciente y responsable.',
+      'Horas acreditables por la AETG: las horas realizadas con Ana Jiménez pueden acreditarse como horas de supervisión para la formación en Terapia Gestalt de la AETG.'
+    ],
+    motivos: [],
+    proceso: [
+      { paso: '01', texto: 'Solicita plaza o información mediante el formulario de esta página.' },
+      { paso: '02', texto: 'Te escribiremos para ofrecerte la información necesaria y confirmar la disponibilidad.' },
+      { paso: '03', texto: 'El formato concreto y las condiciones de participación se comunicarán junto con el calendario.' }
+    ],
+    faqs: [
+      { pregunta: '¿Necesito tener experiencia para participar?', respuesta: 'No es necesario contar con una trayectoria extensa. El grupo puede ser útil tanto al comienzo de la práctica como en etapas posteriores. Si tienes dudas sobre si encaja contigo, puedes contárnoslo en el formulario.' },
+      { pregunta: '¿La supervisión es grupal?', respuesta: 'Sí. Esta convocatoria corresponde a un grupo de supervisión de casos. El formato concreto y las condiciones de participación se comunicarán junto con el calendario.' },
+      { pregunta: '¿Qué puedo llevar a supervisión?', respuesta: 'Puedes traer un caso, una dificultad de la relación terapéutica, una decisión que necesites revisar, un bloqueo o una situación que te esté generando dudas en la práctica.' },
+      { pregunta: '¿Todavía no atiendo casos, puedo participar?', respuesta: 'Sí. También puedes trabajar dudas, inseguridades o dificultades relacionadas con el inicio de tu recorrido profesional.' },
+      { pregunta: '¿Las horas pueden acreditarse para la formación Gestalt?', respuesta: 'Sí. Ana Jiménez es miembro didacta y supervisora acreditada por la AETG. Las horas realizadas pueden certificarse como horas de supervisión.' },
+      { pregunta: '¿Cómo solicito plaza o más información?', respuesta: 'Completa el formulario de esta página. Te escribiremos con el calendario, el horario, las condiciones y la disponibilidad del grupo. No necesitas llamar por teléfono.' }
+    ],
+    faqLabel: 'Preguntas frecuentes',
+    faqTitulo: 'Antes de incorporarte al grupo',
+    faqSubtitulo: '',
+    ctaTitulo: 'Un lugar para cuidar también a quien acompaña',
+    ctaDescripcion: 'La supervisión ofrece tiempo y compañía para pensar la práctica con más claridad, sostener sus dificultades y continuar aprendiendo.',
+    ctaLabel: 'Solicitar plaza o información',
+    seoTitle: 'Supervisión de casos para profesionales de la terapia en Granada | La Seda',
+    seoDescription: 'Grupo de supervisión de casos en Granada, facilitado por Ana Jiménez. Nuevo grupo abierto desde octubre de 2026. Solicita plaza o información.'
   },
   'metodo-wingwave': {
     titulo: 'Formación Certificada Oficial en el',
@@ -119,11 +223,11 @@ const profesoresActivos = computed(() => {
 // Reactividad de SEO Avanzado Dinámico
 const seoTitle = computed(() =>
   formacion.value
-    ? `${formacion.value.titulo} ${formacion.value.tituloItalico} · Granada 2026`
+    ? (formacion.value.seoTitle ?? `${formacion.value.titulo} ${formacion.value.tituloItalico} · Granada 2026`)
     : 'Formación no encontrada · Centro La Seda'
 )
 const seoDescription = computed(() =>
-  formacion.value ? `${formacion.value.subtitulo} Convocatoria abierta 2026.` : ''
+  formacion.value ? (formacion.value.seoDescription ?? `${formacion.value.subtitulo} Convocatoria abierta 2026.`) : ''
 )
 const seoImage = computed(() =>
   formacion.value?.imagen
@@ -169,9 +273,15 @@ useSeoMeta({
       
       <TherapyHero 
         :categoria="formacion.categoria"
+        :categoriaSufijo="formacion.categoriaSufijo"
         :titulo="formacion.titulo"
         :tituloItalico="formacion.tituloItalico"
         :subtitulo="formacion.subtitulo"
+        :imagenAlt="formacion.imagenAlt"
+        :botonPrincipal="formacion.botonPrincipal"
+        :botonPrincipalUrl="formacion.botonPrincipalUrl"
+        :botonSecundario="formacion.botonSecundario"
+        :botonSecundarioUrl="formacion.botonSecundarioUrl"
       />
 
       <FormationOverview 
@@ -179,22 +289,50 @@ useSeoMeta({
         :descripcion2="formacion.descripcion2"
         :cita="formacion.cita"
         :beneficios="formacion.beneficios"
+        :propuestaLabel="formacion.propuestaLabel"
+        :propuestaTitulo="formacion.propuestaTitulo"
+        :propuestaTituloSecundario="formacion.propuestaTituloSecundario"
+        :descripcion3="formacion.descripcion3"
+        :aprendizajesLabel="formacion.aprendizajesLabel"
+        :aprendizajesTitulo="formacion.aprendizajesTitulo"
       />
 
-      <FormationTeam :profesores="profesoresActivos" />
+      <FormationTeam
+        :profesores="profesoresActivos"
+        :label="formacion.equipoLabel"
+        :titulo="formacion.equipoTitulo"
+        :tituloSecundario="formacion.equipoTituloSecundario"
+        :descripcion="formacion.equipoDescripcion"
+        :boton="formacion.equipoBoton"
+      />
 
       <FormationEstructure 
         :motivos="formacion.motivos"
         :imagen="formacion.imagen"
         :imagenAlt="formacion.imagenAlt"
+        :label="formacion.estructuraLabel"
+        :titulo="formacion.estructuraTitulo"
+        :tituloSecundario="formacion.estructuraTituloSecundario"
       />
 
       <FormationProcess 
         :proceso="formacion.proceso"
+        :label="formacion.procesoLabel"
+        :titulo="formacion.procesoTitulo"
+        :tituloSecundario="formacion.procesoTituloSecundario"
+        :descripcion="formacion.procesoDescripcion"
+        :botonPrincipal="formacion.procesoBotonPrincipal"
+        :botonSecundario="formacion.procesoBotonSecundario"
       />
 
       <TherapyFAQ 
         :faqs="formacion.faqs"
+        :label="formacion.faqLabel"
+        :titulo="formacion.faqTitulo"
+        :subtitulo="formacion.faqSubtitulo"
+        :ctaTitulo="formacion.ctaTitulo"
+        :ctaDescripcion="formacion.ctaDescripcion"
+        :ctaLabel="formacion.ctaLabel"
       />
 
       <FormationRelated 

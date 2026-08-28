@@ -3,14 +3,28 @@ interface Fecha {
   dia: string
   mes: string
   diasemana: string
+  anio?: string
   descripcion: string
   horario: string
   especial?: string
 }
 
-defineProps<{
+const props = withDefaults(defineProps<{
   fechas: Fecha[]
-}>()
+  calendarioTitulo?: string
+  calendarioLabel?: string
+  calendarioDescripcion?: string
+  calendarioDireccion?: string
+  reservaLabel?: string
+  reservaUrl?: string
+}>(), {
+  calendarioTitulo: 'Próximas fechas',
+  calendarioLabel: 'Calendario 2026–2027',
+  calendarioDescripcion: 'Las plazas son limitadas para preservar el cuidado e intimidad clínica del grupo. Recomendamos formalizar la reserva con suficiente antelación.',
+  calendarioDireccion: '',
+  reservaLabel: 'Reservar plaza',
+  reservaUrl: '/contacto'
+})
 </script>
 
 <template>
@@ -19,12 +33,12 @@ defineProps<{
 
       <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">
         <div class="md:col-span-5">
-          <p class="text-[#71B1A5] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">Calendario 2026</p>
-          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-tight">Próximas fechas</h2>
+          <p class="text-[#71B1A5] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">{{ calendarioLabel }}</p>
+          <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-tight">{{ calendarioTitulo }}</h2>
         </div>
         <div class="md:col-span-7">
           <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/65">
-            Las plazas son limitadas para preservar el cuidado e intimidad clínica del grupo. Recomendamos formalizar la reserva con suficiente antelación.
+            {{ calendarioDescripcion }}<span v-if="calendarioDireccion"> {{ calendarioDireccion }}</span>
           </p>
         </div>
       </div>
@@ -44,7 +58,7 @@ defineProps<{
               {{ fecha.diasemana }}
             </span>
             <span class="block text-xs tracking-[0.15em] uppercase text-[#71B1A5] font-semibold">
-              {{ fecha.mes }} · 2026
+              {{ fecha.mes }} · {{ fecha.anio ?? '2026' }}
             </span>
           </div>
 
@@ -68,9 +82,9 @@ defineProps<{
           </div>
 
           <div class="md:col-span-2 flex md:justify-end">
-            <NuxtLink to="/contacto" class="inline-flex items-center gap-1 group/cta">
+            <NuxtLink :to="reservaUrl" class="inline-flex items-center gap-1 group/cta">
               <span class="text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap">
-                Reservar plaza
+                {{ reservaLabel }}
               </span>
             </NuxtLink>
           </div>

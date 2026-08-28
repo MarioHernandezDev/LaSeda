@@ -1,10 +1,24 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   categoria: string
   titulo: string
   tituloItalico: string
   subtitulo: string
-}>()
+  categoriaSufijo?: string
+  aviso?: string
+  botonPrincipal?: string
+  botonPrincipalUrl?: string
+  botonSecundario?: string
+  botonSecundarioUrl?: string
+  imagenAlt?: string
+}>(), {
+  categoriaSufijo: 'LA SEDA GRANADA',
+  botonPrincipal: 'Pedir Orientación',
+  botonPrincipalUrl: '/contacto',
+  botonSecundario: 'Explorar Especialidad',
+  botonSecundarioUrl: '#sobre-la-terapia',
+  imagenAlt: 'Interior minimalista, cálido y acogedor de las consultas del Centro de Psicología La Seda en Granada'
+})
 
 // Imagen fija para dotar de consistencia visual premium al hero de todas las terapias
 const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista-recepcion-jardin.jpg'
@@ -31,7 +45,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
           <div class="flex items-center gap-3 mb-6 lg:mb-8">
             <span class="w-5 h-px bg-[#71B1A5]" aria-hidden="true"></span>
             <p class="text-[#71B1A5] text-[10px] md:text-[11px] tracking-[0.42em] uppercase font-bold">
-              {{ categoria }} · LA SEDA GRANADA
+              {{ categoria }}<span v-if="categoriaSufijo"> · {{ categoriaSufijo }}</span>
             </p>
           </div>
 
@@ -54,10 +68,10 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
           <div class="flex flex-col sm:flex-row items-center gap-5 w-full">
             
             <NuxtLink
-              to="/contacto"
+              :to="botonPrincipalUrl"
               class="group relative inline-flex items-center justify-center gap-3 bg-[#27252B] text-white px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-full transition-all duration-500 hover:bg-[#71B1A5] w-full sm:w-auto shadow-lg shadow-[#27252B]/5 hover:shadow-xl hover:shadow-[#71B1A5]/20 transform hover:-translate-y-0.5 overflow-hidden border border-transparent"
             >
-              <span>Pedir Orientación</span>
+              <span>{{ botonPrincipal }}</span>
               <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center">
                 <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -69,10 +83,10 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
             </NuxtLink>
 
             <a
-              href="#sobre-la-terapia"
+              :href="botonSecundarioUrl"
               class="group relative inline-flex items-center justify-center gap-3 border border-[#27252B]/30 bg-[#F5F2EE]/60 backdrop-blur-md text-[#27252B] px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-full transition-all duration-500 hover:border-[#71B1A5] hover:text-[#71B1A5] hover:bg-white/90 w-full sm:w-auto shadow-sm hover:shadow-xl hover:shadow-[#71B1A5]/10 transform hover:-translate-y-0.5 overflow-hidden"
             >
-              <span>Explorar Especialidad</span>
+              <span>{{ botonSecundario }}</span>
               <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5]">
                 <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -90,7 +104,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
           class="text-stone-600/85 leading-[1.85] font-light mb-8 lg:mb-10 max-w-md hidden md:block mt-6 px-4 md:px-0"
           style="font-size: clamp(0.85rem, 1.1vw, 1rem);"
         >
-          {{ subtitulo }}
+          {{ aviso || subtitulo }}
         </p>
 
       </div>
@@ -106,7 +120,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
     <div class="page-hero-panel-right max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10">
       <NuxtImg
         :src="defaultImage"
-        alt="Interior minimalista, cálido y acogedor de las consultas del Centro de Psicología La Seda en Granada"
+        :alt="imagenAlt"
         class="w-full h-full object-cover object-center"
         format="webp"
         fetchpriority="high"

@@ -1,0 +1,8 @@
+const CookieBanner_vue_vue_type_style_index_0_scoped_588dda90_lang = ".cookie-element[data-v-588dda90]{animation:cookieIntro-588dda90 1.2s cubic-bezier(.34,1.56,.64,1) forwards}@keyframes cookieIntro-588dda90{0%{transform:rotate(-180deg) scale(.3)}to{transform:rotate(0) scale(1)}}.group:hover .bite-mark[data-v-588dda90]{box-shadow:inset 1px -1px #27252b1f}";
+
+const CookieBannerStyles_CLcKu6np = [
+  CookieBanner_vue_vue_type_style_index_0_scoped_588dda90_lang
+];
+
+export { CookieBannerStyles_CLcKu6np as default };
+//# sourceMappingURL=CookieBanner-styles.CLcKu6np.mjs.map

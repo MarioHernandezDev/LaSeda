@@ -1,0 +1,4 @@
+const ConocenosMiniHero_vue_vue_type_style_index_0_scoped_ac1bd728_lang = "@media(min-width:768px){.page-hero-root[data-v-ac1bd728]{display:flex}.page-hero-panel[data-v-ac1bd728],.page-hero-panel-right[data-v-ac1bd728]{width:50%;flex-shrink:0;height:100%}}";
+
+export { ConocenosMiniHero_vue_vue_type_style_index_0_scoped_ac1bd728_lang as C };
+//# sourceMappingURL=_id_-styles-1.mjs-BcvUAKVE.mjs.map

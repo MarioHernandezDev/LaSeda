@@ -7,9 +7,20 @@ interface Profesor {
   imagenAlt?: string
 }
 
-defineProps<{
+withDefaults(defineProps<{
   profesores: Profesor[]
-}>()
+  label?: string
+  titulo?: string
+  tituloSecundario?: string
+  descripcion?: string
+  boton?: string
+}>(), {
+  label: 'Excelencia y Experiencia',
+  titulo: 'Dirección de la Formación',
+  tituloSecundario: 'y especialistas a cargo',
+  descripcion: 'Profesional en activo con un amplio bagaje clínico y docente. Se encarga de velar por el rigor del programa teórico, coordinar las dinámicas vivenciales del grupo, la supervisión directa de casos prácticos y la tutorización metodológica de los alumnos.',
+  boton: 'Trayectoria profesional completa'
+})
 </script>
 
 <template>
@@ -29,13 +40,13 @@ defineProps<{
           <div class="flex items-center gap-3 mb-4">
             <span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-              Excelencia y Experiencia
+              {{ label }}
             </p>
           </div>
           <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-            Dirección de la Formación<br>
+            {{ titulo }}<br>
             <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-              y especialistas a cargo
+              {{ tituloSecundario }}
             </span>
           </h2>
         </div>
@@ -78,13 +89,13 @@ defineProps<{
               <div class="w-16 h-px bg-[#71B1A5]/50 pt-px" aria-hidden="true" />
               
               <p class="text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-4">
-                Profesional en activo con un amplio bagaje clínico y docente. Se encarga de velar por el rigor del programa teórico, coordinar las dinámicas vivenciales del grupo, la supervisión directa de casos prácticos y la tutorización metodológica de los alumnos.
+                {{ descripcion }}
               </p>
             </div>
 
             <div class="pt-6 border-t border-[#27252B]/5 inline-flex items-center gap-4 text-[11px] tracking-[0.15em] uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300">
               <span class="border-b border-transparent group-hover:border-[#71B1A5]/40 pb-0.5 transition-all duration-300">
-                Trayectoria profesional completa
+                {{ boton }}
               </span>
               <svg 
                 class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" 

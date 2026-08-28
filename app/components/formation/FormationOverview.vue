@@ -1,10 +1,22 @@
 <script setup lang="ts">
-defineProps<{
+withDefaults(defineProps<{
   descripcion: string
   descripcion2: string
   cita: string
   beneficios: string[]
-}>()
+  propuestaLabel?: string
+  propuestaTitulo?: string
+  propuestaTituloSecundario?: string
+  descripcion3?: string
+  aprendizajesLabel?: string
+  aprendizajesTitulo?: string
+}>(), {
+  propuestaLabel: 'Propuesta Formativa',
+  propuestaTitulo: 'Integrar la teoría,',
+  propuestaTituloSecundario: 'desarrollar la práctica clínica',
+  aprendizajesLabel: 'Objetivos del Programa',
+  aprendizajesTitulo: 'Qué te aporta esta especialización'
+})
 </script>
 
 <template>
@@ -16,12 +28,12 @@ defineProps<{
         <div class="text-center md:text-left">
           <div class="w-8 h-px bg-[#71B1A5] mb-5 max-md:mx-auto" aria-hidden="true" />
           <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold mb-3">
-            Propuesta Formativa
+            {{ propuestaLabel }}
           </p>
           <h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl lg:text-5xl leading-[1.2]">
-            Integrar la teoría,<br />
+            {{ propuestaTitulo }}<br />
             <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-              desarrollar la práctica clínica
+              {{ propuestaTituloSecundario }}
             </span>
           </h2>
         </div>
@@ -32,6 +44,9 @@ defineProps<{
           </p>
           <p>
             {{ descripcion2 }}
+          </p>
+          <p v-if="descripcion3">
+            {{ descripcion3 }}
           </p>
         </div>
 
@@ -46,10 +61,10 @@ defineProps<{
         <div class="pt-6 space-y-8">
           <div>
             <p class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#71B1A5] mb-1">
-              Objetivos del Programa
+              {{ aprendizajesLabel }}
             </p>
             <h3 class="font-serif italic text-2xl text-[#27252B]">
-              Qué te aporta esta especialización
+              {{ aprendizajesTitulo }}
             </h3>
           </div>
 

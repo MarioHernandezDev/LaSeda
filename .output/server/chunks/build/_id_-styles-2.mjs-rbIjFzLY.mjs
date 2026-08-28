@@ -1,0 +1,4 @@
+const ConocenosBiography_vue_vue_type_style_index_0_scoped_90b75bfe_lang = "[data-v-90b75bfe] strong{font-weight:500;color:#27252b}";
+
+export { ConocenosBiography_vue_vue_type_style_index_0_scoped_90b75bfe_lang as C };
+//# sourceMappingURL=_id_-styles-2.mjs-rbIjFzLY.mjs.map

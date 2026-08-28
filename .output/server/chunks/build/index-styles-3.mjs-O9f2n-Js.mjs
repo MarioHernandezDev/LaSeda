@@ -1,0 +1,4 @@
+const AnuncioRefinado_vue_vue_type_style_index_0_scoped_8cc1d1bd_lang = ".fade-slide-enter-active[data-v-8cc1d1bd],.fade-slide-leave-active[data-v-8cc1d1bd]{transition:all .6s cubic-bezier(.16,1,.3,1)}.fade-slide-enter-from[data-v-8cc1d1bd]{opacity:0;transform:translateY(20px) scale(.98)}.fade-slide-leave-to[data-v-8cc1d1bd]{opacity:0;transform:translateY(10px) scale(.98)}";
+
+export { AnuncioRefinado_vue_vue_type_style_index_0_scoped_8cc1d1bd_lang as A };
+//# sourceMappingURL=index-styles-3.mjs-O9f2n-Js.mjs.map

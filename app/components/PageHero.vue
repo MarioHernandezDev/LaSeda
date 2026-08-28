@@ -1,5 +1,5 @@
 <template>
-  <header class="page-hero-root relative pt-0 md:pt-24">
+  <header v-reveal class="page-hero-root relative pt-0 md:pt-24">
 
     <div class="page-hero-panel-left bg-[#F5F2EE] flex flex-col justify-center py-12 md:py-0 relative">
       
@@ -62,6 +62,7 @@
           <NuxtLink
             v-if="secondaryLink && secondaryLabel"
             :to="secondaryLink"
+            @click="smoothScroll"
             class="group btn-secondary"
           >
             <span>{{ secondaryLabel }}</span>
@@ -105,7 +106,7 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   label:          { type: String, required: true },
   titleMain:      { type: String, required: true },
   titleAccent:    { type: String, default: '' },
@@ -114,6 +115,13 @@ defineProps({
   secondaryLink:  { type: String, default: '' },
   secondaryLabel: { type: String, default: '' },
 })
+
+const smoothScroll = (event) => {
+  if (!props.secondaryLink.startsWith('#')) return
+
+  event.preventDefault()
+  document.getElementById(props.secondaryLink.slice(1))?.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <style scoped>

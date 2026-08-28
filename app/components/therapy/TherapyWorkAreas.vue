@@ -22,7 +22,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <section v-if="motivos.length > 0" class="py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden">
+  <section v-if="motivos.length > 0" v-reveal class="py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden">
     <div 
       class="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#27252B]/5 to-transparent hidden lg:block" 
       aria-hidden="true" 

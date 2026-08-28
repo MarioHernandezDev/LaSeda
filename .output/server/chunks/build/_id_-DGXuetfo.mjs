@@ -1,0 +1,823 @@
+import { u as useRoute, a as __nuxt_component_0 } from './server.mjs';
+import { _ as __nuxt_component_1 } from './TherapyHero-DuMYAMAx.mjs';
+import { defineComponent, computed, mergeProps, withCtx, createTextVNode, unref, resolveDirective, createVNode, toDisplayString, openBlock, createBlock, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrInterpolate, ssrRenderList, ssrRenderClass } from 'vue/server-renderer';
+import { _ as __nuxt_component_1$1 } from './NuxtImg-BPQsK4wb.mjs';
+import { _ as __nuxt_component_6 } from './TherapyFAQ-CT93uQmn.mjs';
+import { u as useSeoMeta } from './composables-Bkq6dBM1.mjs';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import 'ipx';
+import 'vue-router';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const _sfc_main$5 = /* @__PURE__ */ defineComponent({
+  __name: "FormationOverview",
+  __ssrInlineRender: true,
+  props: {
+    descripcion: {},
+    descripcion2: {},
+    cita: {},
+    beneficios: {},
+    propuestaLabel: { default: "Propuesta Formativa" },
+    propuestaTitulo: { default: "Integrar la teoría," },
+    propuestaTituloSecundario: { default: "desarrollar la práctica clínica" },
+    descripcion3: {},
+    aprendizajesLabel: { default: "Objetivos del Programa" },
+    aprendizajesTitulo: { default: "Qué te aporta esta especialización" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _directive_reveal = resolveDirective("reveal");
+      _push(`<section${ssrRenderAttrs(mergeProps({
+        id: "sobre-la-terapia",
+        class: "bg-[#FDFBF9] py-20 md:py-28 relative scroll-mt-12"
+      }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="page-container max-w-4xl mx-auto"><div class="space-y-12"><div class="text-center md:text-left"><div class="w-8 h-px bg-[#71B1A5] mb-5 max-md:mx-auto" aria-hidden="true"></div><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold mb-3">${ssrInterpolate(__props.propuestaLabel)}</p><h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl lg:text-5xl leading-[1.2]">${ssrInterpolate(__props.propuestaTitulo)}<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">${ssrInterpolate(__props.propuestaTituloSecundario)}</span></h2></div><div class="space-y-6 text-[#27252B]/75 font-light text-base md:text-lg leading-[1.9] text-justify md:text-left"><p class="first-letter:text-5xl first-letter:font-serif first-letter:font-medium first-letter:text-[#71B1A5] first-letter:mr-3 first-letter:float-left first-letter:leading-none">${ssrInterpolate(__props.descripcion)}</p><p>${ssrInterpolate(__props.descripcion2)}</p>`);
+      if (__props.descripcion3) {
+        _push(`<p>${ssrInterpolate(__props.descripcion3)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+      if (__props.cita) {
+        _push(`<div class="py-10 my-6 border-t border-b border-[#27252B]/10 relative"><blockquote class="text-center max-w-2xl mx-auto"><p class="text-[#27252B]/80 font-serif italic text-lg md:text-xl leading-[1.85]">${ssrInterpolate(__props.cita.startsWith('"') || __props.cita.startsWith("“") ? __props.cita : `“${__props.cita}”`)}</p></blockquote></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="pt-6 space-y-8"><div><p class="text-[10px] tracking-[0.25em] uppercase font-bold text-[#71B1A5] mb-1">${ssrInterpolate(__props.aprendizajesLabel)}</p><h3 class="font-serif italic text-2xl text-[#27252B]">${ssrInterpolate(__props.aprendizajesTitulo)}</h3></div><ul class="grid sm:grid-cols-2 gap-x-12 gap-y-6 pt-2"><!--[-->`);
+      ssrRenderList(__props.beneficios, (beneficio, i) => {
+        _push(`<li class="flex items-start gap-4 text-sm md:text-[15px] leading-[1.75] text-[#27252B]/70 py-2 border-b border-[#27252B]/5"><span class="text-[#71B1A5] font-serif text-lg leading-none select-none mt-0.5">—</span><span class="font-light">${ssrInterpolate(beneficio)}</span></li>`);
+      });
+      _push(`<!--]--></ul></div></div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/formation/FormationOverview.vue");
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+};
+const __nuxt_component_2 = Object.assign(_sfc_main$5, { __name: "FormationOverview" });
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+  __name: "FormationTeam",
+  __ssrInlineRender: true,
+  props: {
+    profesores: {},
+    label: { default: "Excelencia y Experiencia" },
+    titulo: { default: "Dirección de la Formación" },
+    tituloSecundario: { default: "y especialistas a cargo" },
+    descripcion: { default: "Profesional en activo con un amplio bagaje clínico y docente. Se encarga de velar por el rigor del programa teórico, coordinar las dinámicas vivenciales del grupo, la supervisión directa de casos prácticos y la tutorización metodológica de los alumnos." },
+    boton: { default: "Trayectoria profesional completa" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _component_NuxtImg = __nuxt_component_1$1;
+      const _directive_reveal = resolveDirective("reveal");
+      if (__props.profesores.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="absolute top-0 right-1/2 w-px h-full bg-gradient-to-b from-[#27252B]/5 via-transparent to-transparent hidden lg:block" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid md:grid-cols-12 gap-8 items-end mb-16 lg:mb-24"><div class="md:col-span-7 lg:col-span-6"><div class="flex items-center gap-3 mb-4"><span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">${ssrInterpolate(__props.label)}</p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">${ssrInterpolate(__props.titulo)}<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">${ssrInterpolate(__props.tituloSecundario)}</span></h2></div><div class="md:col-span-5 lg:col-span-6 flex md:justify-end items-center border-l md:border-l-0 md:border-r border-[#27252B]/10 pl-6 md:pl-0 md:pr-8 h-fit"><div class="text-left md:text-right"><span class="font-serif italic text-2xl text-[#71B1A5]"> 0${ssrInterpolate(__props.profesores.length)}</span><p class="text-[10px] tracking-widest text-[#27252B]/50 uppercase font-medium mt-0.5">${ssrInterpolate(__props.profesores.length === 1 ? "Docente a cargo" : "Docentes asignados")}</p></div></div></div>`);
+        if (__props.profesores.length === 1) {
+          _push(`<div class="max-w-5xl mx-auto">`);
+          _push(ssrRenderComponent(_component_NuxtLink, {
+            to: `/conocenos/${__props.profesores[0].id}`,
+            class: "group grid grid-cols-1 lg:grid-cols-12 border border-[#27252B]/10 rounded-none overflow-hidden p-0 gap-0 transition-all duration-700 hover:border-[#71B1A5]/40 hover:shadow-2xl hover:shadow-[#71B1A5]/5 cursor-pointer items-stretch bg-transparent"
+          }, {
+            default: withCtx((_, _push2, _parent2, _scopeId) => {
+              if (_push2) {
+                _push2(`<div class="relative aspect-square lg:col-span-5 w-full overflow-hidden bg-[#27252B]/5 border-b lg:border-b-0 lg:border-r border-[#27252B]/10"${_scopeId}>`);
+                _push2(ssrRenderComponent(_component_NuxtImg, {
+                  src: __props.profesores[0].imagen,
+                  alt: __props.profesores[0].imagenAlt || `Fotografía de ${__props.profesores[0].nombre}`,
+                  class: "w-full h-full object-cover object-center grayscale-[20%] transition-all duration-[1000ms] ease-out scale-100 group-hover:scale-102 group-hover:grayscale-0",
+                  loading: "lazy",
+                  format: "webp"
+                }, null, _parent2, _scopeId));
+                _push2(`</div><div class="lg:col-span-7 flex flex-col justify-center h-full space-y-8 p-8 sm:p-12 md:p-14 lg:p-12 xl:p-16 bg-[#F5F2EE]/10 group-hover:bg-[#F5F2EE]/30 transition-colors duration-500"${_scopeId}><div class="space-y-4"${_scopeId}><h3 class="font-serif italic text-3xl lg:text-4xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}>${ssrInterpolate(__props.profesores[0].nombre)}</h3><p class="text-xs tracking-[0.1em] text-[#27252B]/60 uppercase font-medium leading-relaxed"${_scopeId}>${ssrInterpolate(__props.profesores[0].rol)}</p><div class="w-16 h-px bg-[#71B1A5]/50 pt-px" aria-hidden="true"${_scopeId}></div><p class="text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-4"${_scopeId}>${ssrInterpolate(__props.descripcion)}</p></div><div class="pt-6 border-t border-[#27252B]/5 inline-flex items-center gap-4 text-[11px] tracking-[0.15em] uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}><span class="border-b border-transparent group-hover:border-[#71B1A5]/40 pb-0.5 transition-all duration-300"${_scopeId}>${ssrInterpolate(__props.boton)}</span><svg class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div></div>`);
+              } else {
+                return [
+                  createVNode("div", { class: "relative aspect-square lg:col-span-5 w-full overflow-hidden bg-[#27252B]/5 border-b lg:border-b-0 lg:border-r border-[#27252B]/10" }, [
+                    createVNode(_component_NuxtImg, {
+                      src: __props.profesores[0].imagen,
+                      alt: __props.profesores[0].imagenAlt || `Fotografía de ${__props.profesores[0].nombre}`,
+                      class: "w-full h-full object-cover object-center grayscale-[20%] transition-all duration-[1000ms] ease-out scale-100 group-hover:scale-102 group-hover:grayscale-0",
+                      loading: "lazy",
+                      format: "webp"
+                    }, null, 8, ["src", "alt"])
+                  ]),
+                  createVNode("div", { class: "lg:col-span-7 flex flex-col justify-center h-full space-y-8 p-8 sm:p-12 md:p-14 lg:p-12 xl:p-16 bg-[#F5F2EE]/10 group-hover:bg-[#F5F2EE]/30 transition-colors duration-500" }, [
+                    createVNode("div", { class: "space-y-4" }, [
+                      createVNode("h3", { class: "font-serif italic text-3xl lg:text-4xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300" }, toDisplayString(__props.profesores[0].nombre), 1),
+                      createVNode("p", { class: "text-xs tracking-[0.1em] text-[#27252B]/60 uppercase font-medium leading-relaxed" }, toDisplayString(__props.profesores[0].rol), 1),
+                      createVNode("div", {
+                        class: "w-16 h-px bg-[#71B1A5]/50 pt-px",
+                        "aria-hidden": "true"
+                      }),
+                      createVNode("p", { class: "text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-4" }, toDisplayString(__props.descripcion), 1)
+                    ]),
+                    createVNode("div", { class: "pt-6 border-t border-[#27252B]/5 inline-flex items-center gap-4 text-[11px] tracking-[0.15em] uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300" }, [
+                      createVNode("span", { class: "border-b border-transparent group-hover:border-[#71B1A5]/40 pb-0.5 transition-all duration-300" }, toDisplayString(__props.boton), 1),
+                      (openBlock(), createBlock("svg", {
+                        class: "w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300",
+                        fill: "none",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24"
+                      }, [
+                        createVNode("path", {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                        })
+                      ]))
+                    ])
+                  ])
+                ];
+              }
+            }),
+            _: 1
+          }, _parent));
+          _push(`</div>`);
+        } else {
+          _push(`<div class="${ssrRenderClass([{
+            "sm:grid-cols-2": __props.profesores.length === 2,
+            "sm:grid-cols-2 lg:grid-cols-3": __props.profesores.length >= 3
+          }, "grid gap-10 md:gap-12 max-w-4xl mx-auto"])}"><!--[-->`);
+          ssrRenderList(__props.profesores, (profesor, index) => {
+            _push(ssrRenderComponent(_component_NuxtLink, {
+              key: profesor.id,
+              to: `/conocenos/${profesor.id}`,
+              class: "flex flex-col group bg-[#F5F2EE]/30 border border-[#27252B]/5 rounded-none overflow-hidden p-4 transition-all duration-500 hover:bg-[#F5F2EE]/60 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5 cursor-pointer"
+            }, {
+              default: withCtx((_, _push2, _parent2, _scopeId) => {
+                if (_push2) {
+                  _push2(`<div class="relative aspect-[4/5] w-full rounded-none overflow-hidden bg-[#27252B]/5 mb-6"${_scopeId}>`);
+                  _push2(ssrRenderComponent(_component_NuxtImg, {
+                    src: profesor.imagen,
+                    alt: profesor.imagenAlt || `Fotografía de ${profesor.nombre}`,
+                    class: "w-full h-full object-cover object-center grayscale-[30%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0",
+                    loading: "lazy",
+                    format: "webp"
+                  }, null, _parent2, _scopeId));
+                  _push2(`<div class="absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-none border border-[#27252B]/5"${_scopeId}><p class="text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold"${_scopeId}>${ssrInterpolate(index === 0 ? "Codirección / Docente" : "Docente Especialista")}</p></div></div><div class="px-2 pb-4 pt-1 flex-grow flex flex-col justify-between space-y-4"${_scopeId}><div${_scopeId}><h3 class="font-serif italic text-2xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}>${ssrInterpolate(profesor.nombre)}</h3><p class="text-[11px] tracking-wider text-[#27252B]/40 uppercase font-medium mt-1 leading-snug"${_scopeId}>${ssrInterpolate(profesor.rol)}</p></div><div class="pt-2 border-t border-[#27252B]/5 flex items-center justify-between text-[11px] tracking-widest uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}><span${_scopeId}>Trayectoria académica</span><svg class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div></div>`);
+                } else {
+                  return [
+                    createVNode("div", { class: "relative aspect-[4/5] w-full rounded-none overflow-hidden bg-[#27252B]/5 mb-6" }, [
+                      createVNode(_component_NuxtImg, {
+                        src: profesor.imagen,
+                        alt: profesor.imagenAlt || `Fotografía de ${profesor.nombre}`,
+                        class: "w-full h-full object-cover object-center grayscale-[30%] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0",
+                        loading: "lazy",
+                        format: "webp"
+                      }, null, 8, ["src", "alt"]),
+                      createVNode("div", { class: "absolute top-4 left-4 bg-[#FDFBF9]/90 backdrop-blur-sm px-3 py-1 rounded-none border border-[#27252B]/5" }, [
+                        createVNode("p", { class: "text-[9px] tracking-widest text-[#71B1A5] uppercase font-bold" }, toDisplayString(index === 0 ? "Codirección / Docente" : "Docente Especialista"), 1)
+                      ])
+                    ]),
+                    createVNode("div", { class: "px-2 pb-4 pt-1 flex-grow flex flex-col justify-between space-y-4" }, [
+                      createVNode("div", null, [
+                        createVNode("h3", { class: "font-serif italic text-2xl text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300" }, toDisplayString(profesor.nombre), 1),
+                        createVNode("p", { class: "text-[11px] tracking-wider text-[#27252B]/40 uppercase font-medium mt-1 leading-snug" }, toDisplayString(profesor.rol), 1)
+                      ]),
+                      createVNode("div", { class: "pt-2 border-t border-[#27252B]/5 flex items-center justify-between text-[11px] tracking-widest uppercase font-bold text-[#27252B]/70 group-hover:text-[#71B1A5] transition-colors duration-300" }, [
+                        createVNode("span", null, "Trayectoria académica"),
+                        (openBlock(), createBlock("svg", {
+                          class: "w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300",
+                          fill: "none",
+                          stroke: "currentColor",
+                          viewBox: "0 0 24 24"
+                        }, [
+                          createVNode("path", {
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            "stroke-width": "2",
+                            d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                          })
+                        ]))
+                      ])
+                    ])
+                  ];
+                }
+              }),
+              _: 2
+            }, _parent));
+          });
+          _push(`<!--]--></div>`);
+        }
+        _push(`</div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/formation/FormationTeam.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const __nuxt_component_3 = Object.assign(_sfc_main$4, { __name: "FormationTeam" });
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+  __name: "FormationEstructure",
+  __ssrInlineRender: true,
+  props: {
+    motivos: {},
+    imagen: {},
+    imagenAlt: {},
+    label: { default: "Pilares del Programa" },
+    titulo: { default: "Estructura Académica" },
+    tituloSecundario: { default: "y especificaciones clave" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtImg = __nuxt_component_1$1;
+      const _directive_reveal = resolveDirective("reveal");
+      if (__props.motivos.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#27252B]/5 to-transparent hidden lg:block" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start"><div class="lg:col-span-7 space-y-12"><div><div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">${ssrInterpolate(__props.label)}</p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">${ssrInterpolate(__props.titulo)}<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">${ssrInterpolate(__props.tituloSecundario)}</span></h2></div><div class="divide-y divide-[#27252B]/5 border-t border-b border-[#27252B]/5"><!--[-->`);
+        ssrRenderList(__props.motivos, (item) => {
+          _push(`<div class="py-6 flex gap-6 md:gap-8 items-start px-2"><span class="font-serif italic text-xl md:text-2xl text-[#71B1A5]/60 min-w-[50px] select-none pt-0.5">${ssrInterpolate(item.numero)}</span><div class="space-y-1.5 flex-grow"><h3 class="font-medium text-lg text-[#27252B] tracking-tight">${ssrInterpolate(item.titulo)}</h3><p class="text-sm text-[#27252B]/60 font-light leading-relaxed">${ssrInterpolate(item.desc)}</p></div></div>`);
+        });
+        _push(`<!--]--></div></div><div class="lg:col-span-5 lg:sticky lg:top-32 mt-8 lg:mt-4"><div class="max-w-md mx-auto lg:ml-auto"><div class="relative overflow-hidden aspect-[4/5] bg-[#27252B]/5 rounded-2xl shadow-sm">`);
+        _push(ssrRenderComponent(_component_NuxtImg, {
+          src: __props.imagen,
+          alt: __props.imagenAlt,
+          class: "w-full h-full object-cover grayscale-[10%]",
+          loading: "lazy",
+          format: "webp"
+        }, null, _parent));
+        _push(`<div class="absolute inset-0 bg-gradient-to-t from-[#27252B]/5 via-transparent to-transparent pointer-events-none"></div></div></div></div></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/formation/FormationEstructure.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const __nuxt_component_4 = Object.assign(_sfc_main$3, { __name: "FormationEstructure" });
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "FormationProcess",
+  __ssrInlineRender: true,
+  props: {
+    proceso: {},
+    label: { default: "Itinerario de Admisión" },
+    titulo: { default: "Tu acceso al programa" },
+    tituloSecundario: { default: "paso a paso" },
+    descripcion: { default: "Para garantizar la máxima calidad y cohesión pedagógica del grupo, coordinamos un proceso de matriculación ágil respaldado por una valoración de perfil inicial con la dirección del centro antes del inicio lectivo." },
+    botonPrincipal: { default: "Solicitar plaza o dosier completo" },
+    botonSecundario: { default: "Ver otros programas" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _directive_reveal = resolveDirective("reveal");
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "bg-[#27252B] py-24 md:py-32 relative overflow-hidden" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#71B1A5]/5 blur-[130px] pointer-events-none" aria-hidden="true"></div><div class="page-container relative z-10"><div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-20 md:mb-24"><div class="md:col-span-6 lg:col-span-5"><div class="flex items-center gap-3 mb-4"><span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">${ssrInterpolate(__props.label)}</p></div><h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-serif italic font-light leading-[1.15]">${ssrInterpolate(__props.titulo)}<br><span class="text-white/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-2">${ssrInterpolate(__props.tituloSecundario)}</span></h2></div><div class="md:col-span-6 lg:col-span-7 border-l border-white/10 pl-6 md:pl-10"><p class="text-white/60 text-base md:text-[17px] leading-[1.85] font-light max-w-xl">${ssrInterpolate(__props.descripcion)}</p></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 group/container"><!--[-->`);
+      ssrRenderList(__props.proceso, (paso, i) => {
+        _push(`<div class="relative bg-white/[0.02] border border-white/5 p-8 md:p-10 rounded-xl transition-all duration-500 flex flex-col justify-between min-h-[260px] hover:bg-white/[0.04] hover:border-[#71B1A5]/30 hover:!opacity-100 group-hover/container:opacity-60 hover:-translate-y-1 group"><div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#71B1A5]/0 to-transparent group-hover:via-[#71B1A5]/40 transition-all duration-500"></div><div class="flex justify-between items-start"><span class="font-serif italic text-4xl lg:text-5xl text-[#71B1A5]/40 group-hover:text-[#71B1A5] transition-colors duration-500">${ssrInterpolate(paso.paso)}</span><span class="text-[9px] tracking-widest text-white/20 font-mono uppercase pt-2"> Etapa 0${ssrInterpolate(i + 1)}</span></div><p class="text-white/70 group-hover:text-white/85 text-base leading-[1.85] font-light transition-colors duration-500 mt-8">${ssrInterpolate(paso.texto)}</p></div>`);
+      });
+      _push(`<!--]--></div><div class="mt-20 flex flex-col sm:flex-row items-center justify-center gap-5 border-t border-white/5 pt-12 w-full">`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/contacto",
+        class: "group inline-flex items-center justify-center gap-4 px-8 py-3.5 bg-[#F5F2EE] text-[#27252B] border border-[#F5F2EE] rounded-full hover:bg-[#71B1A5] hover:text-white hover:border-[#71B1A5] transition-all duration-500 w-full sm:w-auto text-center",
+        "aria-label": "Solicitar plaza o información"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<span class="text-[11px] tracking-[0.25em] uppercase font-medium"${_scopeId}>${ssrInterpolate(__props.botonPrincipal)}</span><div class="relative w-4 h-3 overflow-hidden flex items-center justify-center pointer-events-none"${_scopeId}><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute text-[#27252B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+          } else {
+            return [
+              createVNode("span", { class: "text-[11px] tracking-[0.25em] uppercase font-medium" }, toDisplayString(__props.botonPrincipal), 1),
+              createVNode("div", { class: "relative w-4 h-3 overflow-hidden flex items-center justify-center pointer-events-none" }, [
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute text-[#27252B]",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ])),
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ]))
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/formaciones",
+        class: "group inline-flex items-center justify-center gap-4 px-8 py-3.5 bg-transparent text-white/70 border border-white/20 rounded-full hover:border-[#71B1A5] hover:text-white transition-all duration-500 w-full sm:w-auto text-center",
+        "aria-label": "Ver otros programas"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<span class="text-[11px] tracking-[0.25em] uppercase font-medium"${_scopeId}>${ssrInterpolate(__props.botonSecundario)}</span><div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5] pointer-events-none"${_scopeId}><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute fill-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+          } else {
+            return [
+              createVNode("span", { class: "text-[11px] tracking-[0.25em] uppercase font-medium" }, toDisplayString(__props.botonSecundario), 1),
+              createVNode("div", { class: "relative w-4 h-3 overflow-hidden flex items-center justify-center text-[#71B1A5] pointer-events-none" }, [
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ])),
+                (openBlock(), createBlock("svg", {
+                  class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute fill-none",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2.5",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ]))
+              ])
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/formation/FormationProcess.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const __nuxt_component_5 = Object.assign(_sfc_main$2, { __name: "FormationProcess" });
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "FormationRelated",
+  __ssrInlineRender: true,
+  props: {
+    actualId: {},
+    todasLasFormaciones: {}
+  },
+  setup(__props) {
+    const props = __props;
+    const formacionesSugeridas = computed(() => {
+      return Object.entries(props.todasLasFormaciones).filter(([id]) => id !== props.actualId).map(([id, data]) => ({ id, ...data }));
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _directive_reveal = resolveDirective("reveal");
+      if (formacionesSugeridas.value.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 bg-[#FDFBF9] border-t border-[#27252B]/5 relative overflow-hidden" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="page-container relative z-10"><div class="flex items-end justify-between mb-12 md:mb-16"><div><div class="flex items-center gap-3 mb-3"><span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold"> Otros Programas </p></div><h2 class="font-serif italic text-2xl md:text-3xl lg:text-4xl text-[#27252B]"> Especializaciones relacionadas </h2></div>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/formaciones",
+          class: "hidden md:flex items-center gap-2 text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 hover:text-[#71B1A5] transition-colors group/all"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`<span${_scopeId}>Ver toda la oferta</span><span class="transform group-hover/all:translate-x-1 transition-transform duration-300"${_scopeId}>→</span>`);
+            } else {
+              return [
+                createVNode("span", null, "Ver toda la oferta"),
+                createVNode("span", { class: "transform group-hover/all:translate-x-1 transition-transform duration-300" }, "→")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"><!--[-->`);
+        ssrRenderList(formacionesSugeridas.value, (f) => {
+          _push(ssrRenderComponent(_component_NuxtLink, {
+            key: f.id,
+            to: `/formaciones/${f.id}`,
+            class: "group flex flex-col justify-between bg-[#F5F2EE]/30 border border-[#27252B]/5 p-6 md:p-8 rounded-xl transition-all duration-500 hover:bg-[#F5F2EE]/70 hover:border-[#71B1A5]/20 hover:shadow-xl hover:shadow-[#71B1A5]/5"
+          }, {
+            default: withCtx((_, _push2, _parent2, _scopeId) => {
+              if (_push2) {
+                _push2(`<div${_scopeId}><p class="text-[9px] tracking-[0.25em] uppercase text-[#71B1A5] font-bold mb-3"${_scopeId}>${ssrInterpolate(f.categoria || "Especialización")}</p><h3 class="font-serif italic text-xl text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-300 leading-[1.3]"${_scopeId}>${ssrInterpolate(f.titulo)} <span class="not-italic font-sans font-light text-lg text-[#27252B]/70 block mt-0.5"${_scopeId}>${ssrInterpolate(f.tituloItalico)}</span></h3></div><div class="mt-8 pt-4 border-t border-[#27252B]/5 flex items-center justify-between text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}><span${_scopeId}>Ver programa</span><svg class="w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg></div>`);
+              } else {
+                return [
+                  createVNode("div", null, [
+                    createVNode("p", { class: "text-[9px] tracking-[0.25em] uppercase text-[#71B1A5] font-bold mb-3" }, toDisplayString(f.categoria || "Especialización"), 1),
+                    createVNode("h3", { class: "font-serif italic text-xl text-[#27252B] group-hover:text-[#71B1A5] transition-colors duration-300 leading-[1.3]" }, [
+                      createTextVNode(toDisplayString(f.titulo) + " ", 1),
+                      createVNode("span", { class: "not-italic font-sans font-light text-lg text-[#27252B]/70 block mt-0.5" }, toDisplayString(f.tituloItalico), 1)
+                    ])
+                  ]),
+                  createVNode("div", { class: "mt-8 pt-4 border-t border-[#27252B]/5 flex items-center justify-between text-[10px] tracking-widest uppercase font-bold text-[#27252B]/50 group-hover:text-[#71B1A5] transition-colors duration-300" }, [
+                    createVNode("span", null, "Ver programa"),
+                    (openBlock(), createBlock("svg", {
+                      class: "w-4 h-4 transform -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300",
+                      fill: "none",
+                      stroke: "currentColor",
+                      viewBox: "0 0 24 24"
+                    }, [
+                      createVNode("path", {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                      })
+                    ]))
+                  ])
+                ];
+              }
+            }),
+            _: 2
+          }, _parent));
+        });
+        _push(`<!--]--></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/formation/FormationRelated.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const __nuxt_component_7 = Object.assign(_sfc_main$1, { __name: "FormationRelated" });
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "[id]",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const route = useRoute();
+    const staff = {
+      "ana-jimenez": {
+        id: "ana-jimenez",
+        nombre: "Ana María Jiménez",
+        rol: "Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG",
+        imagen: "/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg",
+        imagenAlt: "Ana María Jiménez, directora de la formación en Gestalt aplicada a la infancia y adolescencia"
+      },
+      "oriol-belles": {
+        id: "oriol-belles",
+        nombre: "Oriol Bellés",
+        rol: "Symbiotik Institut · Formador Oficial Wingwave®",
+        imagen: "/images/oriol-belles-formador-wavewave.jpg",
+        imagenAlt: "Oriol Bellés, formador oficial del método Wingwave"
+      },
+      "leonor-cabrera": {
+        id: "leonor-cabrera",
+        nombre: "Leonor Cabrera",
+        rol: "Symbiotik Institut · Formadora Oficial Wingwave®",
+        imagen: "/images/leonor-cabrera-coach-wingwave-constelaciones-familiares-granada.jpg",
+        imagenAlt: "Leonor Cabrera, formadora certificada Wingwave"
+      }
+    };
+    const formations = {
+      "gestalt-infantil": {
+        titulo: "Formación vivencial en Gestalt aplicada a la infancia y la adolescencia",
+        tituloItalico: "",
+        subtitulo: "Un recorrido para acercarte a tu propia historia y aprender a cuidar los procesos de la infancia y la adolescencia.",
+        categoria: "Tercera convocatoria · 2027 · Inscripciones abiertas",
+        categoriaSufijo: "La Seda Granada",
+        imagen: "/images/formacion-terapia-gestalt-infancia-adolescencia-granada.jpg",
+        imagenAlt: "Grupo participante en una formación vivencial de La Seda en Granada",
+        botonPrincipal: "Solicitar plaza o información",
+        botonPrincipalUrl: "#formulario",
+        botonSecundario: "Conocer la formación",
+        botonSecundarioUrl: "#sobre-la-terapia",
+        descripcion: "La infancia y la adolescencia dejan huellas que siguen presentes en la vida adulta. Esta formación propone volver a ellas con cuidado para reconocer necesidades, emociones y formas de relación que quizá todavía buscan un lugar.",
+        descripcion2: "Al mismo tiempo, ofrece una base teórica y práctica para comprender mejor los procesos infantiles y adolescentes desde una perspectiva gestáltica, humanista y relacional. El aprendizaje nace de la experiencia y se traslada después a la forma de estar con niñas, niños, adolescentes y familias.",
+        descripcion3: "Por eso pueden participar tanto personas que desean realizar una revisión terapéutica de su infancia y adolescencia como profesionales que quieren formarse y enriquecer su práctica.",
+        cita: "",
+        propuestaLabel: "Una formación con dos puertas de entrada",
+        propuestaTitulo: "Revisar la propia historia y aprender a estar con otras infancias",
+        propuestaTituloSecundario: "",
+        aprendizajesLabel: "Cómo se aprende",
+        aprendizajesTitulo: "Una experiencia que pone en diálogo lo personal y lo profesional",
+        equipoLabel: "Dirección de la formación",
+        equipoTitulo: "Ana María Jiménez",
+        equipoTituloSecundario: "Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG",
+        equipoDescripcion: "Ana María Jiménez dirige un programa en el que la formación teórica, la experiencia personal y la práctica se sostienen mutuamente. Su trayectoria clínica y docente aporta rigor, cercanía y atención al proceso del grupo.",
+        equipoBoton: "Conocer a Ana",
+        estructuraLabel: "La estructura del recorrido",
+        estructuraTitulo: "Tiempo, continuidad y experiencia compartida",
+        estructuraTituloSecundario: "",
+        procesoLabel: "Tercera convocatoria · 2027",
+        procesoTitulo: "Inscripciones abiertas",
+        procesoTituloSecundario: "",
+        procesoDescripcion: "Ya están abiertas las inscripciones para la tercera convocatoria, que se celebrará en 2027. Si quieres conocer el programa, valorar si es adecuado para ti o iniciar la inscripción, puedes solicitar una entrevista con la dirección.",
+        procesoBotonPrincipal: "Solicitar plaza o información",
+        procesoBotonSecundario: "Ver otras formaciones",
+        terapeutas: ["ana-jimenez"],
+        beneficios: [
+          "Recursos creativos y expresivos: explorar el juego, el dibujo, los cuentos, la caja de arena y otras formas de expresión propias de la infancia.",
+          "Comprensión de los procesos infantiles y adolescentes: acercarse a las necesidades emocionales y relacionales de cada etapa, atendiendo también al contexto familiar.",
+          "Presencia y escucha: cultivar una forma de estar más consciente, sensible y respetuosa ante lo que cada persona necesita.",
+          "Familia y vínculos: observar cómo las relaciones familiares influyen en el desarrollo e incluirlas en la comprensión de cada situación.",
+          "Práctica y revisión de casos: relacionar lo aprendido con situaciones reales y revisar dudas dentro de un marco grupal cuidado."
+        ],
+        motivos: [
+          { numero: "288h", titulo: "288 horas de recorrido formativo", desc: "240 horas de encuentros presenciales y 48 horas destinadas al desarrollo acompañado del proyecto final." },
+          { numero: "15", titulo: "15 encuentros monográficos", desc: "Un fin de semana al mes para profundizar en aspectos del desarrollo infantil y adolescente desde la experiencia, la teoría y la práctica." },
+          { numero: "01", titulo: "Un encuentro previo", desc: "Antes de incorporarte tendrás una entrevista gratuita con la dirección. Es un espacio para conocernos, comprender qué buscas y valorar si la propuesta encaja contigo." },
+          { numero: "AETG", titulo: "Dirección con experiencia clínica y docente", desc: "El programa está dirigido por profesionales en activo y cuenta con la participación de especialistas con experiencia en distintos ámbitos." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Solicita información mediante el formulario de esta página." },
+          { paso: "02", texto: "Realiza una entrevista gratuita con la dirección para compartir qué buscas y resolver tus dudas." },
+          { paso: "03", texto: "Si la formación encaja contigo y hay plazas disponibles, recibirás la información necesaria para formalizar la matrícula." }
+        ],
+        faqs: [
+          { pregunta: "¿Tengo que ser profesional para participar?", respuesta: "No. La formación está abierta tanto a personas que desean revisar terapéuticamente su infancia y adolescencia como a profesionales que quieren formarse. La entrevista previa nos ayudará a valorar contigo si el recorrido encaja con lo que buscas." },
+          { pregunta: "¿En qué se diferencian el recorrido personal y el profesional?", respuesta: "El grupo y los encuentros son compartidos. Lo que cambia es el propósito con el que cada persona se acerca: profundizar en su propia historia, ampliar sus recursos profesionales o reunir ambas necesidades." },
+          { pregunta: "¿Necesito conocer la Terapia Gestalt?", respuesta: "No. El programa está pensado para que puedas acercarte al enfoque de manera progresiva, a través de explicaciones claras y experiencias que ayudan a dar sentido a lo aprendido." },
+          { pregunta: "¿Existen facilidades de pago?", respuesta: "Sí. La matrícula puede abonarse de forma fraccionada por encuentros mensuales y sin recargos. Recibirás todos los detalles al solicitar información." },
+          { pregunta: "¿Qué ocurre si no puedo asistir a un encuentro?", respuesta: "La continuidad es importante en un proceso de estas características. Si surge una ausencia, el equipo te explicará las posibilidades de recuperación y apoyo previstas por el programa." },
+          { pregunta: "¿Esta formación me habilita para ejercer como terapeuta?", respuesta: "No por sí sola. El ejercicio profesional depende de la titulación, las competencias y la normativa aplicable a cada ámbito. Esta formación permite profundizar en el enfoque y ampliar recursos, pero no sustituye una titulación habilitante cuando sea necesaria." },
+          { pregunta: "¿Cómo solicito plaza para 2027?", respuesta: "Completa el formulario de esta página. Te enviaremos el programa y concertaremos una entrevista gratuita con la dirección antes de formalizar la matrícula." }
+        ],
+        faqLabel: "Preguntas frecuentes",
+        faqTitulo: "Antes de decidir",
+        faqSubtitulo: "",
+        ctaTitulo: "Solicita plaza o información",
+        ctaDescripcion: "Tanto si te interesa el recorrido personal como si buscas formación profesional, puedes escribirnos desde aquí. Te enviaremos el programa y te ayudaremos a valorar si esta propuesta responde a lo que necesitas.",
+        ctaLabel: "Enviar solicitud",
+        seoTitle: "Formación vivencial en Gestalt, infancia y adolescencia · 2027 | La Seda",
+        seoDescription: "Tercera convocatoria de la formación vivencial en Gestalt aplicada a la infancia y adolescencia en Granada. Abierta a procesos personales y a profesionales. Inscripciones abiertas para 2027."
+      },
+      "supervision-casos": {
+        titulo: "Supervisión de casos para profesionales de la terapia",
+        tituloItalico: "",
+        subtitulo: "Un espacio para revisar la práctica, compartir dificultades y seguir creciendo como profesional.",
+        categoria: "Práctica profesional",
+        categoriaSufijo: "La Seda Granada",
+        imagen: "/images/supervision-casos-clinicos-terapeutas-gestalt-granada.jpg",
+        imagenAlt: "Grupo de supervisión de casos para profesionales de la terapia en La Seda, Granada",
+        botonPrincipal: "Solicitar plaza o información",
+        botonPrincipalUrl: "#sobre-la-terapia",
+        botonSecundario: "Conocer la supervisión",
+        botonSecundarioUrl: "#sobre-la-terapia",
+        descripcion: "La supervisión permite detenerse y observar con más claridad lo que sucede en el trabajo terapéutico: las dudas que aparecen, los casos que se bloquean, las decisiones que cuesta tomar o aquello que la relación con una persona despierta en quien la atiende.",
+        descripcion2: "En el grupo se comparten casos y experiencias profesionales dentro de un marco confidencial. La aportación de la supervisora y del resto de participantes ayuda a descubrir nuevas posibilidades de intervención y a cuidar la forma de estar en consulta.",
+        descripcion3: "No se trata de evaluar ni de ofrecer respuestas cerradas. Se trata de pensar la práctica en compañía, reconocer recursos y encontrar una orientación más ajustada para cada situación.",
+        cita: "",
+        propuestaLabel: "La supervisión",
+        propuestaTitulo: "Un lugar donde no tener que sostener la práctica en soledad",
+        propuestaTituloSecundario: "",
+        aprendizajesLabel: "Qué puede aportar la supervisión",
+        aprendizajesTitulo: "Un espacio para pensar, aprender y cuidar la práctica",
+        equipoLabel: "La supervisora",
+        equipoTitulo: "Ana Jiménez",
+        equipoTituloSecundario: "Psicóloga y psicoterapeuta Gestalt · Miembro didacta de la AETG",
+        equipoDescripcion: "Ana Jiménez es psicóloga y psicoterapeuta Gestalt, miembro didacta y supervisora acreditada por la Asociación Española de Terapia Gestalt (AETG). Cuenta con más de quince años de experiencia supervisando a profesionales de la terapia.",
+        equipoBoton: "Conocer a Ana",
+        estructuraLabel: "Qué puede aportar la supervisión",
+        estructuraTitulo: "Un espacio para pensar, aprender y cuidar la práctica",
+        estructuraTituloSecundario: "",
+        procesoLabel: "Próxima convocatoria",
+        procesoTitulo: "Grupo abierto desde octubre de 2026",
+        procesoTituloSecundario: "",
+        procesoDescripcion: "En octubre de 2026 comienza un nuevo grupo de supervisión de casos. Las plazas son limitadas para cuidar la confianza, la continuidad y el trabajo compartido. La fecha de inicio, el calendario, el horario y las condiciones de participación se facilitarán al solicitar información.",
+        procesoBotonPrincipal: "Solicitar plaza o información",
+        procesoBotonSecundario: "Volver a Talleres",
+        terapeutas: ["ana-jimenez"],
+        beneficios: [
+          "Más claridad ante los casos: revisar la información disponible, ordenar hipótesis y encontrar nuevas posibilidades cuando un proceso parece estancado.",
+          "Conciencia sobre la propia intervención: reconocer cómo influyen las emociones, expectativas y formas de relacionarse de quien acompaña.",
+          "Una devolución honesta y cuidadosa: recibir otras perspectivas sin juicio, dentro de un entorno orientado al aprendizaje.",
+          "Apoyo entre profesionales: compartir el impacto emocional de la práctica con personas que conocen sus exigencias y responsabilidades.",
+          "Cuidado ético: pensar límites, responsabilidades y decisiones complejas para ofrecer una atención más consciente y responsable.",
+          "Horas acreditables por la AETG: las horas realizadas con Ana Jiménez pueden acreditarse como horas de supervisión para la formación en Terapia Gestalt de la AETG."
+        ],
+        motivos: [],
+        proceso: [
+          { paso: "01", texto: "Solicita plaza o información mediante el formulario de esta página." },
+          { paso: "02", texto: "Te escribiremos para ofrecerte la información necesaria y confirmar la disponibilidad." },
+          { paso: "03", texto: "El formato concreto y las condiciones de participación se comunicarán junto con el calendario." }
+        ],
+        faqs: [
+          { pregunta: "¿Necesito tener experiencia para participar?", respuesta: "No es necesario contar con una trayectoria extensa. El grupo puede ser útil tanto al comienzo de la práctica como en etapas posteriores. Si tienes dudas sobre si encaja contigo, puedes contárnoslo en el formulario." },
+          { pregunta: "¿La supervisión es grupal?", respuesta: "Sí. Esta convocatoria corresponde a un grupo de supervisión de casos. El formato concreto y las condiciones de participación se comunicarán junto con el calendario." },
+          { pregunta: "¿Qué puedo llevar a supervisión?", respuesta: "Puedes traer un caso, una dificultad de la relación terapéutica, una decisión que necesites revisar, un bloqueo o una situación que te esté generando dudas en la práctica." },
+          { pregunta: "¿Todavía no atiendo casos, puedo participar?", respuesta: "Sí. También puedes trabajar dudas, inseguridades o dificultades relacionadas con el inicio de tu recorrido profesional." },
+          { pregunta: "¿Las horas pueden acreditarse para la formación Gestalt?", respuesta: "Sí. Ana Jiménez es miembro didacta y supervisora acreditada por la AETG. Las horas realizadas pueden certificarse como horas de supervisión." },
+          { pregunta: "¿Cómo solicito plaza o más información?", respuesta: "Completa el formulario de esta página. Te escribiremos con el calendario, el horario, las condiciones y la disponibilidad del grupo. No necesitas llamar por teléfono." }
+        ],
+        faqLabel: "Preguntas frecuentes",
+        faqTitulo: "Antes de incorporarte al grupo",
+        faqSubtitulo: "",
+        ctaTitulo: "Un lugar para cuidar también a quien acompaña",
+        ctaDescripcion: "La supervisión ofrece tiempo y compañía para pensar la práctica con más claridad, sostener sus dificultades y continuar aprendiendo.",
+        ctaLabel: "Solicitar plaza o información",
+        seoTitle: "Supervisión de casos para profesionales de la terapia en Granada | La Seda",
+        seoDescription: "Grupo de supervisión de casos en Granada, facilitado por Ana Jiménez. Nuevo grupo abierto desde octubre de 2026. Solicita plaza o información."
+      },
+      "metodo-wingwave": {
+        titulo: "Formación Certificada Oficial en el",
+        tituloItalico: "Método Wingwave®",
+        subtitulo: "Certificación internacional en coaching emocional y regulación del estrés respaldada por evidencias científicas.",
+        categoria: "Certificación ISO 29993 · Mayo 2026",
+        imagen: "/images/formacion-certificada-metodo-wingwave-coaching-granada.jpg",
+        imagenAlt: "Prácticas del test miostático u O-Ring durante la formación oficial de Wingwave en Granada",
+        descripcion: "El Método Wingwave® es un enfoque de intervención rápida para el desbloqueo emocional y el rendimiento mental. Combina la estimulación bilateral de los hemisferios cerebrales (similar a la fase REM del sueño) con la Programación Neurolingüística (PNL) y el test miostático O-Ring para localizar con precisión los disparadores exactos del estrés.",
+        descripcion2: "Esta formación intensiva te capacita de manera oficial para utilizar una de las herramientas de regulación de ansiedad y superación de traumas más estudiadas y extendidas en Europa. Al finalizar, obtendrás la titulación oficial internacional que te acredita como Coach Wingwave® certificado.",
+        cita: '"Una combinación perfecta de precisión muscular, reprogramación neurolingüística y balance cerebral profundo."',
+        // CAMBIO AQUÍ: Dejamos únicamente a Leonor Cabrera en el array
+        terapeutas: ["leonor-cabrera"],
+        beneficios: [
+          "Aprender a disolver bloqueos, fobias, miedos escénicos y estrés postraumático en pocas sesiones.",
+          "Dominar el test miostático o de resistencia muscular como brújula precisa en tus terapias.",
+          "Incorporar protocolos validados científicamente por más de 14 estudios independientes.",
+          "Acceso al buscador y red mundial de profesionales acreditados de la marca Besser-Siegmund.",
+          "Formación con sello de calidad europeo ISO 29993 orientada a la excelencia formativa."
+        ],
+        motivos: [
+          { numero: "32h", titulo: "Horas Académicas", desc: "Distribuidas de forma intensiva a lo largo de 4 jornadas consecutivas con un enfoque eminentemente práctico." },
+          // Actualizamos también el texto de la cantidad de alumnos por formador para adaptarlo a un único profesor
+          { numero: "12", titulo: "Alumnos por Formadora", desc: "Plazas estrictamente limitadas para garantizar la supervisión milimétrica de las prácticas individuales en la sala." },
+          { numero: "ISO", titulo: "Calidad Europea Certificada", desc: "Contenidos y metodologías pedagógicas auditadas bajo los más altos estándares internacionales de formación." },
+          { numero: "04", titulo: "Días de Inmersión Total", desc: "Convocatoria del 9 al 12 de mayo de 2026 en nuestras instalaciones presenciales de Granada capital." }
+        ],
+        proceso: [
+          { paso: "01", texto: "Inscripción online previa para reservar una de las plazas limitadas del grupo intensivo de mayo." },
+          { paso: "02", texto: "Acceso al material didáctico oficial preparatorio y lecturas recomendadas antes del inicio de las clases." },
+          { paso: "03", texto: "Entrenamiento intensivo presencial de 4 días y alta en la comunidad internacional de profesionales." }
+        ],
+        faqs: [
+          { pregunta: "¿Qué titulación se obtiene al finalizar el curso?", respuesta: "Se expide el diploma oficial internacional expedido de forma conjunta por Symbiotik Institut y el Besser-Siegmund-Institut de Hamburgo, Alemania." },
+          { pregunta: "¿Es necesario ser psicólogo para certificarse?", respuesta: "Está dirigido a psicólogos, terapeutas, médicos, coaches profesionales, mentores o profesionales de recursos humanos y optimización del rendimiento." },
+          { pregunta: "¿Qué materiales incluye la matrícula?", respuesta: "Incluye los manuales oficiales de formación de la marca registrada, cuadernos de trabajo y el acceso a la plataforma online de recursos." }
+        ]
+      }
+    };
+    const id = route.params.id;
+    const formacion = computed(() => formations[id] ?? null);
+    const profesoresActivos = computed(() => {
+      if (!formacion.value || !formacion.value.terapeutas) return [];
+      return formacion.value.terapeutas.map((idRef) => ({ id: idRef, ...staff[idRef] })).filter((p) => p.nombre);
+    });
+    const seoTitle = computed(
+      () => formacion.value ? formacion.value.seoTitle ?? `${formacion.value.titulo} ${formacion.value.tituloItalico} · Granada 2026` : "Formación no encontrada · Centro La Seda"
+    );
+    const seoDescription = computed(
+      () => formacion.value ? formacion.value.seoDescription ?? `${formacion.value.subtitulo} Convocatoria abierta 2026.` : ""
+    );
+    const seoImage = computed(
+      () => formacion.value?.imagen ? `https://centrolaseda.com${formacion.value.imagen}` : "https://centrolaseda.com/images/centro-psicologia-la-seda-granada-hero.jpg"
+    );
+    const seoUrl = computed(() => `https://centrolaseda.com/formaciones/${id}`);
+    useSeoMeta({
+      title: seoTitle,
+      description: seoDescription,
+      ogTitle: seoTitle,
+      ogDescription: seoDescription,
+      ogImage: seoImage,
+      ogType: "website",
+      ogUrl: seoUrl,
+      ogLocale: "es_ES",
+      twitterCard: "summary_large_image",
+      canonical: seoUrl
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _component_TherapyHero = __nuxt_component_1;
+      const _component_FormationOverview = __nuxt_component_2;
+      const _component_FormationTeam = __nuxt_component_3;
+      const _component_FormationEstructure = __nuxt_component_4;
+      const _component_FormationProcess = __nuxt_component_5;
+      const _component_TherapyFAQ = __nuxt_component_6;
+      const _component_FormationRelated = __nuxt_component_7;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "bg-[#FDFBF9] antialiased" }, _attrs))}>`);
+      if (!formacion.value) {
+        _push(`<main class="min-h-screen flex flex-col items-center justify-center px-6 text-center"><p class="section-label mb-4 text-[#71B1A5]">Error 404</p><h1 class="font-serif italic text-[#27252B] text-4xl md:text-5xl mb-6"> Formación no encontrada </h1><p class="text-lg md:text-xl text-[#27252B]/60 max-w-md mb-12"> El programa de especialización que buscas no pertenece a la convocatoria 2026. </p>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/formaciones",
+          class: "inline-flex items-center gap-3 text-xs font-semibold tracking-widest uppercase border border-[#27252B] px-6 py-3.5 hover:bg-[#27252B] hover:text-white transition-all duration-300"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(` Ver todos los programas `);
+            } else {
+              return [
+                createTextVNode(" Ver todos los programas ")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</main>`);
+      } else {
+        _push(`<main>`);
+        _push(ssrRenderComponent(_component_TherapyHero, {
+          categoria: formacion.value.categoria,
+          categoriaSufijo: formacion.value.categoriaSufijo,
+          titulo: formacion.value.titulo,
+          tituloItalico: formacion.value.tituloItalico,
+          subtitulo: formacion.value.subtitulo,
+          imagenAlt: formacion.value.imagenAlt,
+          botonPrincipal: formacion.value.botonPrincipal,
+          botonPrincipalUrl: formacion.value.botonPrincipalUrl,
+          botonSecundario: formacion.value.botonSecundario,
+          botonSecundarioUrl: formacion.value.botonSecundarioUrl
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_FormationOverview, {
+          descripcion: formacion.value.descripcion,
+          descripcion2: formacion.value.descripcion2,
+          cita: formacion.value.cita,
+          beneficios: formacion.value.beneficios,
+          propuestaLabel: formacion.value.propuestaLabel,
+          propuestaTitulo: formacion.value.propuestaTitulo,
+          propuestaTituloSecundario: formacion.value.propuestaTituloSecundario,
+          descripcion3: formacion.value.descripcion3,
+          aprendizajesLabel: formacion.value.aprendizajesLabel,
+          aprendizajesTitulo: formacion.value.aprendizajesTitulo
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_FormationTeam, {
+          profesores: profesoresActivos.value,
+          label: formacion.value.equipoLabel,
+          titulo: formacion.value.equipoTitulo,
+          tituloSecundario: formacion.value.equipoTituloSecundario,
+          descripcion: formacion.value.equipoDescripcion,
+          boton: formacion.value.equipoBoton
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_FormationEstructure, {
+          motivos: formacion.value.motivos,
+          imagen: formacion.value.imagen,
+          imagenAlt: formacion.value.imagenAlt,
+          label: formacion.value.estructuraLabel,
+          titulo: formacion.value.estructuraTitulo,
+          tituloSecundario: formacion.value.estructuraTituloSecundario
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_FormationProcess, {
+          proceso: formacion.value.proceso,
+          label: formacion.value.procesoLabel,
+          titulo: formacion.value.procesoTitulo,
+          tituloSecundario: formacion.value.procesoTituloSecundario,
+          descripcion: formacion.value.procesoDescripcion,
+          botonPrincipal: formacion.value.procesoBotonPrincipal,
+          botonSecundario: formacion.value.procesoBotonSecundario
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_TherapyFAQ, {
+          faqs: formacion.value.faqs,
+          label: formacion.value.faqLabel,
+          titulo: formacion.value.faqTitulo,
+          subtitulo: formacion.value.faqSubtitulo,
+          ctaTitulo: formacion.value.ctaTitulo,
+          ctaDescripcion: formacion.value.ctaDescripcion,
+          ctaLabel: formacion.value.ctaLabel
+        }, null, _parent));
+        _push(ssrRenderComponent(_component_FormationRelated, {
+          actualId: unref(id),
+          todasLasFormaciones: formations
+        }, null, _parent));
+        _push(`</main>`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/formaciones/[id].vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=_id_-DGXuetfo.mjs.map

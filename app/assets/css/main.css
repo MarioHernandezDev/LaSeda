@@ -389,11 +389,26 @@
 .page-enter-active, .page-leave-active { transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1); }
 .page-leave-active { position: absolute; top: 0; left: 0; width: 100%; }
 
+/* Revelado progresivo de contenido al entrar en el viewport */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
 /* ──────────────────────────────────────────────────────────
    Accesibilidad y Reducción de Movimiento
    ────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .hero-item, .scroll-line, .marquee-track, .butterfly-3d, .shadow-3d, .wing-3d, .page-hero-butterfly {
+  .hero-item, .scroll-line, .marquee-track, .butterfly-3d, .shadow-3d, .wing-3d, .page-hero-butterfly,
+  .reveal-on-scroll, .reveal-on-scroll.is-revealed {
     animation: none !important; transform: none !important; transition: none !important; opacity: 1 !important;
   }
 }

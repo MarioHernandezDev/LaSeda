@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <section class="py-20 md:py-32">
+  <section v-reveal class="py-20 md:py-32">
     <div class="page-container">
 
       <div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20">

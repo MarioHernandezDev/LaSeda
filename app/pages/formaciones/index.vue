@@ -51,7 +51,7 @@ const scrollToTop = () => {
 
 
     <!-- BLOQUE NUEVO: Escuela La Seda (Identidad) -->
-    <section class="page-container py-20 md:py-28 border-b border-[#27252B]/10">
+    <section v-reveal class="page-container py-20 md:py-28 border-b border-[#27252B]/10">
       <div class="max-w-4xl mx-auto text-center space-y-6 mb-16">
         <p class="section-label">ESCUELA LA SEDA</p>
         <h2 class="section-title">Una comunidad de aprendizaje</h2>
@@ -112,7 +112,7 @@ const scrollToTop = () => {
           <div class="space-y-12 lg:space-y-32">
             
             <!-- Programa 1: Gestalt Infantil -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/formaciones/gestalt-infantil"
               @click="scrollToTop"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
@@ -147,7 +147,7 @@ const scrollToTop = () => {
             </NuxtLink>
 
             <!-- Programa 3: Supervisión de Casos -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/formaciones/supervision-casos"
               @click="scrollToTop"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
@@ -189,7 +189,7 @@ const scrollToTop = () => {
           <div class="space-y-12 lg:space-y-32 lg:mt-32">
             
             <!-- Programa 2: Wingwave -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/formaciones/metodo-wingwave"
               @click="scrollToTop"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
@@ -366,7 +366,7 @@ const scrollToTop = () => {
     </section>
 
     <!-- Sección Testimonios -->
-    <section class="bg-[#27252B]/[0.02] py-20 md:py-32 border-t border-[#27252B]/10">
+    <section v-reveal class="bg-[#27252B]/[0.02] py-20 md:py-32 border-t border-[#27252B]/10">
       <div class="page-container">
         
         <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">

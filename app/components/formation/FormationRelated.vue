@@ -15,7 +15,7 @@ const formacionesSugeridas = computed(() => {
 </script>
 
 <template>
-  <section v-if="formacionesSugeridas.length > 0" class="py-24 bg-[#FDFBF9] border-t border-[#27252B]/5 relative overflow-hidden">
+  <section v-if="formacionesSugeridas.length > 0" v-reveal class="py-24 bg-[#FDFBF9] border-t border-[#27252B]/5 relative overflow-hidden">
     <div class="page-container relative z-10">
       
       <div class="flex items-end justify-between mb-12 md:mb-16">

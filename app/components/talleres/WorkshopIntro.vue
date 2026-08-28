@@ -37,7 +37,7 @@ withDefaults(defineProps<{
 <template>
   <div class="w-full text-[#27252B] font-sans pt-12 md:pt-16 pb-24 lg:pb-32 space-y-24 lg:space-y-36 bg-[#FDFBF9]">
     
-    <section class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0 border-b border-[#27252B]/5 pb-24 lg:pb-0">
+    <section id="sobre-el-taller" v-reveal class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0 border-b border-[#27252B]/5 pb-24 lg:pb-0">
       
       <div class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-[#27252B]/5 relative border-b lg:border-b-0 lg:border-r border-[#27252B]/10 rounded-none">
         <img
@@ -69,7 +69,7 @@ withDefaults(defineProps<{
       </div>
     </section>
 
-    <section v-if="facilitadora" class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0">
+    <section v-if="facilitadora" v-reveal class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0">
       
       <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-end lg:max-w-[90%] xl:max-w-[85%] justify-self-end order-2 lg:order-1">
         <div class="space-y-6 w-full">

@@ -1,5 +1,5 @@
 <template>
-  <section aria-labelledby="testimonios-titulo" class="py-28 md:py-40 overflow-hidden bg-[#FDFBF9] relative">
+  <section v-reveal aria-labelledby="testimonios-titulo" class="py-28 md:py-40 overflow-hidden bg-[#FDFBF9] relative">
     <div class="absolute inset-0 opacity-[0.025]" style="background-image: radial-gradient(circle, #27252B 1px, transparent 1px); background-size: 32px 32px;" aria-hidden="true"></div>
     <div class="relative z-10">
       <div class="max-w-7xl mx-auto px-8 md:px-16 mb-20 text-center">

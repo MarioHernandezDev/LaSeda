@@ -34,7 +34,7 @@ const toggleFaq = (i: number) => {
 </script>
 
 <template>
-  <section v-if="faqs.length > 0" class="py-24 md:py-32 bg-[#FDFBF9] relative overflow-hidden">
+  <section v-if="faqs.length > 0" v-reveal class="py-24 md:py-32 bg-[#FDFBF9] relative overflow-hidden">
     <div class="page-container relative z-10">
       <div class="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start">
         

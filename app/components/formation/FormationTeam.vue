@@ -24,7 +24,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <section 
+  <section v-reveal
     v-if="profesores.length > 0" 
     class="py-24 md:py-32 bg-[#FDFBF9] border-b border-[#27252B]/5 relative overflow-hidden"
   >

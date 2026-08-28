@@ -20,7 +20,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <section id="sobre-la-terapia" class="bg-[#FDFBF9] py-20 md:py-28 relative scroll-mt-12">
+  <section id="sobre-la-terapia" v-reveal class="bg-[#FDFBF9] py-20 md:py-28 relative scroll-mt-12">
     <div class="page-container max-w-4xl mx-auto">
       
       <div class="space-y-12">

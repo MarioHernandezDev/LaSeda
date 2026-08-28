@@ -13,7 +13,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="bg-[#27252B] py-24 md:py-36 overflow-hidden relative">
+  <section v-reveal class="bg-[#27252B] py-24 md:py-36 overflow-hidden relative">
     <div 
       class="absolute top-1/4 right-[-10%] w-[600px] h-[600px] rounded-full bg-[#71B1A5]/[0.02] blur-[120px] pointer-events-none" 
       aria-hidden="true" 

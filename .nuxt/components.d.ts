@@ -44,7 +44,6 @@ export const TalleresWorkshopBenefits: typeof import("../app/components/talleres
 export const TalleresWorkshopDates: typeof import("../app/components/talleres/WorkshopDates.vue")['default']
 export const TalleresWorkshopFaqs: typeof import("../app/components/talleres/WorkshopFaqs.vue")['default']
 export const TalleresWorkshopIntro: typeof import("../app/components/talleres/WorkshopIntro.vue")['default']
-export const TherapyAppointmentForm: typeof import("../app/components/therapy/TherapyAppointmentForm.vue")['default']
 export const TherapyFAQ: typeof import("../app/components/therapy/TherapyFAQ.vue")['default']
 export const TherapyHero: typeof import("../app/components/therapy/TherapyHero.vue")['default']
 export const TherapyOverview: typeof import("../app/components/therapy/TherapyOverview.vue")['default']
@@ -106,7 +105,6 @@ export const LazyTalleresWorkshopBenefits: LazyComponent<typeof import("../app/c
 export const LazyTalleresWorkshopDates: LazyComponent<typeof import("../app/components/talleres/WorkshopDates.vue")['default']>
 export const LazyTalleresWorkshopFaqs: LazyComponent<typeof import("../app/components/talleres/WorkshopFaqs.vue")['default']>
 export const LazyTalleresWorkshopIntro: LazyComponent<typeof import("../app/components/talleres/WorkshopIntro.vue")['default']>
-export const LazyTherapyAppointmentForm: LazyComponent<typeof import("../app/components/therapy/TherapyAppointmentForm.vue")['default']>
 export const LazyTherapyFAQ: LazyComponent<typeof import("../app/components/therapy/TherapyFAQ.vue")['default']>
 export const LazyTherapyHero: LazyComponent<typeof import("../app/components/therapy/TherapyHero.vue")['default']>
 export const LazyTherapyOverview: LazyComponent<typeof import("../app/components/therapy/TherapyOverview.vue")['default']>

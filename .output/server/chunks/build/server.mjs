@@ -608,17 +608,17 @@ const _routes = [
   {
     name: "formaciones-id",
     path: "/formaciones/:id()",
-    component: () => import('./_id_-CWJoXwKP.mjs')
+    component: () => import('./_id_-DGXuetfo.mjs')
   },
   {
     name: "talleres-id",
     path: "/talleres/:id()",
-    component: () => import('./_id_-CduVghWF.mjs')
+    component: () => import('./_id_-DsJ_dTS9.mjs')
   },
   {
     name: "terapias-id",
     path: "/terapias/:id()",
-    component: () => import('./_id_-CwVpol4d.mjs')
+    component: () => import('./_id_-DBJ85R5H.mjs')
   },
   {
     name: "aviso-legal",
@@ -628,12 +628,12 @@ const _routes = [
   {
     name: "conocenos",
     path: "/conocenos",
-    component: () => import('./index-CctEBEGh.mjs')
+    component: () => import('./index-Hb8q7Rr9.mjs')
   },
   {
     name: "contacto",
     path: "/contacto",
-    component: () => import('./contacto-DYEXQ2sc.mjs')
+    component: () => import('./contacto-CwnB2hvy.mjs')
   },
   {
     name: "cookies",
@@ -643,7 +643,7 @@ const _routes = [
   {
     name: "formaciones",
     path: "/formaciones",
-    component: () => import('./index-BnLzmXJo.mjs')
+    component: () => import('./index-DpFaHJM9.mjs')
   },
   {
     name: "login",
@@ -658,17 +658,17 @@ const _routes = [
   {
     name: "talleres",
     path: "/talleres",
-    component: () => import('./index-B91V5mN_.mjs')
+    component: () => import('./index-B9snTXbX.mjs')
   },
   {
     name: "terapias",
     path: "/terapias",
-    component: () => import('./index-B8Gld_fG.mjs')
+    component: () => import('./index-RMMw5n9S.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-bnpMxNA8.mjs')
+    component: () => import('./index-DWK53Tni.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1057,11 +1057,35 @@ const revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms = /* @__
 const components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
+const revealDirective = {
+  mounted(element) {
+    if ((void 0).matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      element.classList.add("is-revealed");
+      return;
+    }
+    element.classList.add("reveal-on-scroll");
+    const observer = new IntersectionObserver(
+      ([entry2]) => {
+        element.classList.toggle("is-revealed", entry2.isIntersecting);
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    observer.observe(element);
+    element._revealObserver = observer;
+  },
+  beforeUnmount(element) {
+    element._revealObserver?.disconnect();
+  }
+};
+const reveal_DkfC2QoBUDm0je9o6kUSnkBVK9__iuC_hBh1xQmFb6k = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.directive("reveal", revealDirective);
+});
 const plugins = [
   unhead_k2P3m_ZDyjlr2mMYnoDPwavjsDN8hBlk9cFai0bbopU,
   plugin,
   revive_payload_server_MVtmlZaQpj6ApFmshWfUWl5PehCebzaBf2NuRMiIbms,
-  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8
+  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
+  reveal_DkfC2QoBUDm0je9o6kUSnkBVK9__iuC_hBh1xQmFb6k
 ];
 const layouts = {
   default: defineAsyncComponent(() => import('./default-kdUbpDI3.mjs').then((m) => m.default || m))

@@ -61,10 +61,10 @@ useHead({
           <div class="space-y-12 lg:space-y-32">
             
             <!-- Tarjeta 1: Infantil -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/terapias/infantil"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Infancia en Granada"
+              aria-label="Saber más sobre Terapia infantil en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
@@ -80,7 +80,7 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Infancia</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia infantil</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
                   Durante la infancia ayudamos a reconocer lo que se siente, expresar necesidades y crecer junto a la familia, respetando la singularidad de cada menor.
@@ -104,10 +104,10 @@ useHead({
             </NuxtLink>
 
             <!-- Tarjeta 3: Adultos -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/terapias/adultos"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Adultos en Granada"
+              aria-label="Saber más sobre Terapia para adultos en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
@@ -123,7 +123,7 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adultos</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia para adultos</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
                   La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. La terapia ayuda a elaborar lo que genera sufrimiento y a descubrir modos más saludables de relacionarse consigo y con el entorno.
@@ -152,10 +152,10 @@ useHead({
           <div class="space-y-12 lg:space-y-32 lg:mt-32">
 
             <!-- Tarjeta 2: Adolescentes -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/terapias/adolescentes"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Adolescencia en Granada"
+              aria-label="Saber más sobre Terapia para adolescentes en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
@@ -171,7 +171,7 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adolescencia</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia para adolescentes</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
                   La adolescencia trae cambios, preguntas y una identidad en construcción. Ofrecemos un espacio de confianza para reconocer lo que sucede, fortalecer la autoestima y encontrar recursos, contando también con la familia.
@@ -196,10 +196,10 @@ useHead({
             </NuxtLink>
 
             <!-- Tarjeta 4: Pareja y Familia -->
-            <NuxtLink
+            <NuxtLink v-reveal
               to="/terapias/pareja-familia"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Pareja y familia"
+              aria-label="Saber más sobre Terapia de pareja y familia"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
@@ -215,7 +215,7 @@ useHead({
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Pareja y familia</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Terapia de pareja y familia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
                   Las relaciones atraviesan momentos de dificultad y cambio. En terapia se exploran las dinámicas que generan sufrimiento para fortalecer la comunicación y construir maneras más cuidadas de encontrarse.

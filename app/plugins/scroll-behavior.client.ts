@@ -1,6 +1,8 @@
 // app/plugins/scroll-behavior.client.ts
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.$router.afterEach((to, from) => {
+    if (to.path === from.path && to.hash) return
+
     // Dejamos un ligerísimo margen para que elDOM se asiente antes de deslizar
     setTimeout(() => {
       // 1. Subida fluida de la ventana global

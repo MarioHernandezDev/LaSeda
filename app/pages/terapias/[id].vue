@@ -46,7 +46,7 @@ const terapias: Record<string, any> = {
     titulo: 'Terapia para adultos',
     tituloItalico: '',
     subtitulo: 'Un lugar donde poder detenerte, comprender lo que estás viviendo y encontrar una forma más propia de seguir adelante.',
-    categoria: 'Adultos',
+    categoria: 'Terapia para adultos',
     categoriaSufijo: 'Granada y online',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
@@ -112,7 +112,7 @@ const terapias: Record<string, any> = {
     titulo: 'Terapia para adolescentes',
     tituloItalico: '',
     subtitulo: 'Un lugar propio donde poder hablar, entender lo que está pasando y atravesar esta etapa con más recursos y menos soledad.',
-    categoria: 'Adolescencia',
+    categoria: 'Terapia para adolescentes',
     categoriaSufijo: 'La Seda Granada',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
@@ -172,7 +172,7 @@ const terapias: Record<string, any> = {
     titulo: 'Terapia de pareja y familia',
     tituloItalico: '',
     subtitulo: 'Cuando una relación duele o la convivencia se vuelve difícil, contar con un espacio compartido puede ayudar a escuchar lo que ya no conseguimos decirnos.',
-    categoria: 'Pareja y familia',
+    categoria: 'Terapia de pareja y familia',
     categoriaSufijo: 'Granada y online',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
@@ -237,7 +237,7 @@ const terapias: Record<string, any> = {
     titulo: 'Terapia infantil',
     tituloItalico: '',
     subtitulo: 'Cuando algo preocupa en la infancia, no siempre es fácil saber qué ocurre ni cómo ayudar. La terapia ofrece un lugar para entenderlo y encontrar nuevas formas de cuidarlo en familia.',
-    categoria: 'Infancia · De 6 a 11 años',
+    categoria: 'Terapia infantil · De 6 a 11 años',
     categoriaSufijo: 'La Seda Granada',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
@@ -473,18 +473,6 @@ useHead({
         :subtitulo="terapia.processSubtitulo"
         :modalidad="terapia.modalidad"
         :ctaLabel="terapia.processCta"
-      />
-
-      <TherapyAppointmentForm
-        v-if="id === 'adolescentes' || id === 'infantil' || id === 'adultos'"
-        :therapyName="terapia.formTherapyName"
-        :intro="terapia.formIntro"
-        :nameLabel="terapia.formNameLabel"
-        :ageLabel="terapia.formAgeLabel"
-        :showRelationship="terapia.formShowRelationship"
-        :showModality="terapia.formShowModality"
-        :modalityLabel="terapia.formModalityLabel"
-        :confirmation="terapia.formConfirmation"
       />
 
       <TherapyFAQ 

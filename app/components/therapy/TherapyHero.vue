@@ -82,8 +82,8 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
               </div>
             </NuxtLink>
 
-            <a
-              :href="botonSecundarioUrl"
+            <NuxtLink
+              :to="botonSecundarioUrl"
               class="group relative inline-flex items-center justify-center gap-3 border border-[#27252B]/30 bg-[#F5F2EE]/60 backdrop-blur-md text-[#27252B] px-8 py-4 md:min-w-[210px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-full transition-all duration-500 hover:border-[#71B1A5] hover:text-[#71B1A5] hover:bg-white/90 w-full sm:w-auto shadow-sm hover:shadow-xl hover:shadow-[#71B1A5]/10 transform hover:-translate-y-0.5 overflow-hidden"
             >
               <span>{{ botonSecundario }}</span>
@@ -95,7 +95,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                 </svg>
               </div>
-            </a>
+            </NuxtLink>
           </div>
 
         </div>

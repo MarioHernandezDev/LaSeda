@@ -1,14 +1,14 @@
 <script setup lang="ts">
-// ─── SEO & METADATOS ULTRA-OPTIMIZADOS PARA LA PÁGINA DE TERAPIAS ────────────
+// ─── SEO & METADATOS OPTIMIZADOS PARA LA PÁGINA DE TERAPIAS ────────────
 useSeoMeta({
-  title: 'Terapia infantil, adolescentes, adultos y pareja en Granada y online | Centro La Seda',
-  ogTitle: 'Terapia Infantil, Pareja, Adultos y Gestalt en Granada | Centro La Seda',
-  description: 'Centro de psicología en Granada especializado en terapia infantil, psicología para adolescentes, terapia de pareja, terapia Gestalt y adultos desde un enfoque integrativo y eficaz.',
-  ogDescription: 'Encuentra tu psicólogo en Granada. Especialistas en terapia infantil, terapia de pareja, adultos, adolescentes y enfoque sistémico-humanista en Centro La Seda.',
+  title: 'Terapia infantil, adolescentes, adultos y pareja en Granada y online | La Seda',
+  ogTitle: 'Terapia infantil, adolescentes, adultos y pareja en Granada y online | La Seda',
+  description: 'Centro de psicología en Granada especializado en infancia, adolescencia, terapia para adultos, pareja y terapia Gestalt desde un enfoque humanista e integrativo.',
+  ogDescription: 'Centro de psicología en Granada especializado en infancia, adolescencia, terapia para adultos, pareja y terapia Gestalt desde un enfoque humanista e integrativo.',
   ogImage: '/images/psicoterapia-integrativa-adultos-pareja-granada.jpg',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Especialidades Clínicas y Psicoterapia en Granada | La Seda',
-  twitterDescription: 'Terapia infantil, de pareja, adolescentes y psicoterapia integrativa en Granada. Consulta nuestro equipo de psicólogos colegiados.',
+  twitterTitle: 'Terapia infantil, adolescentes, adultos y pareja en Granada y online | La Seda',
+  twitterDescription: 'Centro de psicología en Granada especializado en infancia, adolescencia, terapia para adultos, pareja y terapia Gestalt desde un enfoque humanista e integrativo.',
   robots: 'index, follow'
 })
 
@@ -26,16 +26,16 @@ useHead({
   <main>
 
     <PageHero
-      label="Terapias psicológicas y acompañamiento emocional"
-      title-main="Comprender y transformar "
-      title-accent="lo que estás viviendo"
+      label="Procesos de Psicoterapia"
+      title-main="Un espacio para entender y "
+      title-accent="transformar lo que estás viviendo"
       image="/images/psicoterapia-integrativa-adultos-pareja-granada.jpg"
       image-alt="Sala de terapia del Centro de Psicología La Seda en Granada"
       secondary-link="/contacto"
-      secondary-label="Hablemos"
+      secondary-label="Solicitar una cita"
     >
       <template #description>
-        Cada persona llega con una historia diferente. En La Seda entendemos la terapia como un espacio para comprender lo que estás viviendo, reconocer tus recursos y abrir nuevas posibilidades.
+        Cada historia es diferente. En La Seda, la terapia ofrece un lugar de escucha para reconocer recursos y abrir nuevas posibilidades.
       </template>
     </PageHero>
 
@@ -48,9 +48,9 @@ useHead({
 
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16 md:mb-24">
           <div>
-            <p class="section-label mb-3">Áreas de atención</p>
+            <p class="section-label mb-3">Servicios recomendados</p>
             <h2 id="especialidades-heading" class="section-title">
-              Una terapia para cada etapa de la vida.
+              Una terapia para cada etapa de la vida
             </h2>
           </div>
           <div class="w-24 h-px bg-[#27252B]/20 md:mb-2" aria-hidden="true" />
@@ -60,16 +60,17 @@ useHead({
 
           <div class="space-y-12 lg:space-y-32">
             
+            <!-- Tarjeta 1: Infantil -->
             <NuxtLink
               to="/terapias/infantil"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Terapia Infantil en Granada"
+              aria-label="Saber más sobre Infancia en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
                 <NuxtImg
                   src="/images/terapia-infantil-psicologia-ninos-granada-centro-la-seda.jpg"
-                  alt="Terapia infantil y psicología para niños, Centro de Psicología La Seda Granada"
+                  alt="Terapia infantil en Granada, Centro de Psicología La Seda"
                   width="800"
                   height="500"
                   format="webp"
@@ -82,17 +83,18 @@ useHead({
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Infancia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-Acompañamos a niños y niñas a comprender lo que sienten, expresar lo que necesitan y crecer junto a sus familias desde una mirada humanista e integrativa.                </p>
+                  Durante la infancia ayudamos a reconocer lo que se siente, expresar necesidades y crecer junto a la familia, respetando la singularidad de cada menor.
+                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Miedos</span>
-                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Acoso escolar (Bullying)</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Acoso escolar</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Separaciones</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Límites</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
+                  Profesionales: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence y M. Duarte</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
                   Saber más
@@ -101,10 +103,11 @@ Acompañamos a niños y niñas a comprender lo que sienten, expresar lo que nece
               </div>
             </NuxtLink>
 
+            <!-- Tarjeta 3: Adultos -->
             <NuxtLink
               to="/terapias/adultos"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Terapia psicológica y acompañamiento emocional para adultos"
+              aria-label="Saber más sobre Adultos en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
@@ -123,17 +126,19 @@ Acompañamos a niños y niñas a comprender lo que sienten, expresar lo que nece
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adultos</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. Acompañamos a cada persona a comprender lo que está viviendo, elaborar aquello que genera sufrimiento y descubrir nuevas formas de relacionarse consigo misma y con los demás.                </p>
+                  La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. La terapia ayuda a elaborar lo que genera sufrimiento y a descubrir modos más saludables de relacionarse consigo y con el entorno.
+                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Ansiedad y estrés</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Trauma</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoconocimiento</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Crisis vitales</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Duelo</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, M.N. Reyes, C. Lence, L. Cabrera...</span>
+                  Profesionales: <span class="font-normal text-[#27252B]/70">A. Jiménez, M. N. Reyes, C. Lence y L. Cabrera</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
                   Saber más
@@ -146,16 +151,17 @@ La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. Acompaña
 
           <div class="space-y-12 lg:space-y-32 lg:mt-32">
 
+            <!-- Tarjeta 2: Adolescentes -->
             <NuxtLink
               to="/terapias/adolescentes"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Terapia Psicológica para Adolescentes"
+              aria-label="Saber más sobre Adolescencia en Granada"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
                 <NuxtImg
                   src="/images/terapia-psicologica-adolescentes-granada-centro-la-seda.jpg"
-                  alt="Terapia psicológica para adolescentes en Granada, Centro de Psicología La Seda"
+                  alt="Terapia Adolescentes"
                   width="800"
                   height="500"
                   format="webp"
@@ -168,17 +174,19 @@ La vida nos enfrenta a momentos de dificultad, cambio e incertidumbre. Acompaña
                 <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Adolescencia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-La adolescencia es una etapa de cambios, búsqueda y construcción de la identidad. Acompañamos a adolescentes a comprender lo que están viviendo, fortalecer la confianza en sí mismos y desarrollar los recursos necesarios para afrontar esta etapa, contando también con sus familias.                </p>
+                  La adolescencia trae cambios, preguntas y una identidad en construcción. Ofrecemos un espacio de confianza para reconocer lo que sucede, fortalecer la autoestima y encontrar recursos, contando también con la familia.
+                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Ansiedad</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Autoestima</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Relaciones familiares</span>
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Gestión emocional</span>
+                  <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Acoso escolar</span>
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Especialistas: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence, M.N. Reyes</span>
+                  Profesionales: <span class="font-normal text-[#27252B]/70">A. Jiménez, C. Lence y M. N. Reyes</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
                   Saber más
@@ -187,16 +195,17 @@ La adolescencia es una etapa de cambios, búsqueda y construcción de la identid
               </div>
             </NuxtLink>
 
+            <!-- Tarjeta 4: Pareja y Familia -->
             <NuxtLink
               to="/terapias/pareja-familia"
               class="training-card group flex flex-col bg-[#FDFBF9] border border-[#27252B]/5 rounded-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#27252B]/5 block"
-              aria-label="Saber más sobre Terapia de Pareja y Familia"
+              aria-label="Saber más sobre Pareja y familia"
             >
               <div class="overflow-hidden aspect-[16/10] relative">
                 <div class="absolute inset-0 bg-[#27252B]/0 group-hover:bg-[#27252B]/5 transition-colors duration-500 z-10" />
                 <NuxtImg
                   src="/images/terapia-pareja-familia-sistemica-granada-centro-la-seda.jpg"
-                  alt="Terapia de pareja y familia con enfoque sistémico, Centro de Psicología La Seda Granada"
+                  alt="Terapia de Pareja y Familia"
                   width="800"
                   height="500"
                   format="webp"
@@ -206,10 +215,11 @@ La adolescencia es una etapa de cambios, búsqueda y construcción de la identid
               </div>
               <div class="p-8 md:p-10 flex flex-col flex-1 gap-5">
                 <div class="section-divider" aria-hidden="true" />
-                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Pareja y Familia</h3>
+                <h3 class="font-serif italic text-[#27252B] text-2xl md:text-3xl leading-snug">Pareja y familia</h3>
                 
                 <p class="text-[14px] leading-relaxed text-[#27252B]/70">
-Las relaciones atraviesan momentos de dificultad, cambio y crecimiento. Acompañamos a parejas y familias a comprender las dinámicas que generan sufrimiento, fortalecer la comunicación y construir nuevas formas de encontrarse y cuidarse.                </p>
+                  Las relaciones atraviesan momentos de dificultad y cambio. En terapia se exploran las dinámicas que generan sufrimiento para fortalecer la comunicación y construir maneras más cuidadas de encontrarse.
+                </p>
 
                 <div class="flex flex-wrap gap-2 my-1">
                   <span class="text-[11px] bg-[#27252B]/5 text-[#27252B]/80 px-3 py-1 rounded-full font-medium">Comunicación</span>
@@ -220,7 +230,7 @@ Las relaciones atraviesan momentos de dificultad, cambio y crecimiento. Acompañ
                 </div>
 
                 <div class="text-xs tracking-wider uppercase text-[#27252B]/50 font-light pt-2 border-t border-[#27252B]/5">
-                  Especialistas: <span class="font-normal text-[#27252B]/70">L. Cabrera, R. Sánchez-Tallón</span>
+                  Profesionales: <span class="font-normal text-[#27252B]/70">L. Cabrera y R. Sánchez-Tallón</span>
                 </div>
                 <span class="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium mt-2 group-hover:text-[#71B1A5] transition-colors duration-300">
                   Saber más
@@ -232,6 +242,7 @@ Las relaciones atraviesan momentos de dificultad, cambio y crecimiento. Acompañ
           </div>
         </div>
 
+        <!-- Bloque de Ayuda (CTA) -->
         <div class="mt-20 lg:mt-32 max-w-3xl mx-auto">
           <NuxtLink
             to="/contacto"
@@ -248,7 +259,8 @@ Las relaciones atraviesan momentos de dificultad, cambio y crecimiento. Acompañ
                 ¿No sabes qué tipo de terapia puede ayudarte?
               </h3>
               <p class="text-base md:text-lg text-[#FDFBF9]/90 font-light leading-relaxed">
-Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos para encontrar el acompañamiento que mejor se adapte a tu situación.              </p>
+                Cuéntanos qué estás viviendo. Te orientaremos para encontrar la opción que mejor se adapte a tu situación.
+              </p>
             </div>
 
             <div class="relative z-10 pt-8">
@@ -262,6 +274,7 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
       </div>
     </section>
 
+    <!-- Metodología -->
     <section
       class="page-container py-20 md:py-32"
       aria-labelledby="metodologia-heading"
@@ -289,10 +302,10 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
         </div>
 
         <div class="order-1 md:order-2">
-          <p class="section-label mb-4">Así lo hacemos</p>
+          <p class="section-label mb-4">El recorrido terapéutico</p>
           <h2 id="metodologia-heading" class="section-title mb-12">
-            Nuestro modo <br />
-            <span class="text-[#27252B]/60">de acompañar</span>
+            Cómo trabajamos <br />
+            <span class="text-[#27252B]/60">en La Seda</span>
           </h2>
 
           <ol class="space-y-10" aria-label="Pasos del proceso terapéutico">
@@ -303,10 +316,10 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
-                  Primera encuentro
+                  Primer encuentro
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  Nos tomamos el tiempo necesario para conocerte, comprender qué estás viviendo y escuchar tu historia. Cada proceso comienza desde el respeto, la confianza y una mirada atenta a tu realidad.
+                  Nos tomamos el tiempo necesario para conocerte, escuchar tu historia y entender qué estás viviendo. El recorrido comienza desde el respeto y la confianza.
                 </p>
               </div>
             </li>
@@ -321,10 +334,10 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
               </div>
               <div class="pt-2 border-t border-[#27252B]/10 flex-1">
                 <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
-                  Un trabajo a tu medida
+                  Una propuesta a tu medida
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  No existen soluciones iguales para todas las personas. Definimos juntos el camino a seguir, integrando el enfoque terapéutico que mejor responda a tus necesidades y al momento vital en el que te encuentras.
+                  No existen soluciones iguales para todas las personas. Acordamos el recorrido y el enfoque terapéutico que mejor responda a tus necesidades y a tu momento vital.
                 </p>
               </div>
             </li>
@@ -342,7 +355,25 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
                   El proceso terapéutico
                 </h3>
                 <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
-                  La terapia es un espacio para comprender, elaborar y experimentar nuevas formas de relacionarte contigo, con los demás y con aquello que estás viviendo. Cada proceso avanza a su propio ritmo.
+                  La terapia permite elaborar lo vivido, reconocer patrones y ensayar nuevas formas de relacionarte contigo, con otras personas y con tu realidad. El ritmo lo marca tu propio proceso.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="w-full h-px bg-[#27252B]/8" aria-hidden="true" />
+            </li>
+
+            <li class="flex gap-6 items-start">
+              <div class="shrink-0" aria-hidden="true">
+                <span class="font-serif italic text-[#71B1A5] text-5xl md:text-6xl leading-none select-none">04</span>
+              </div>
+              <div class="pt-2 border-t border-[#27252B]/10 flex-1">
+                <h3 class="text-[#27252B] font-medium text-base md:text-lg mb-2 tracking-wide">
+                  Integración de los cambios
+                </h3>
+                <p class="text-base md:text-lg leading-[1.85] text-[#27252B]/70">
+                  Buscamos no solo aliviar el malestar, sino favorecer cambios que puedan sostenerse e incorporarse de forma natural a la vida cotidiana.
                 </p>
               </div>
             </li>
@@ -356,9 +387,9 @@ Cada proceso es diferente. Cuéntanos qué estás viviendo y te orientaremos par
         <NuxtLink
           to="/contacto"
           class="group btn-primary !inline-flex"
-          aria-label="Ir a contacto para comenzar el proceso terapéutico"
+          aria-label="Ir a contacto para solicitar una cita"
         >
-          <span>Comenzar el proceso</span>
+          <span>Solicitar una cita</span>
           <div class="relative w-4 h-3 overflow-hidden flex items-center justify-center text-white pointer-events-none">
             <svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

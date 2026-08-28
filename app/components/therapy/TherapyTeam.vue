@@ -7,9 +7,18 @@ interface Terapeuta {
   imagenAlt?: string
 }
 
-defineProps<{
+withDefaults(defineProps<{
   terapeutas: Terapeuta[]
-}>()
+  label?: string
+  titulo?: string
+  subtitulo?: string
+  nota?: string
+}>(), {
+  label: 'Acompañamiento Humano',
+  titulo: 'Especialistas a tu lado',
+  subtitulo: 'en este proceso',
+  nota: ''
+})
 </script>
 
 <template>
@@ -29,13 +38,13 @@ defineProps<{
           <div class="flex items-center gap-3 mb-4">
             <span class="w-2 h-2 rounded-full bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-              Acompañamiento Humano
+              {{ label }}
             </p>
           </div>
           <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-            Especialistas a tu lado<br>
+            {{ titulo }}<br>
             <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-              en este proceso
+              {{ subtitulo }}
             </span>
           </h2>
         </div>
@@ -51,6 +60,10 @@ defineProps<{
           </div>
         </div>
       </div>
+
+      <p v-if="nota" class="max-w-2xl text-[#27252B]/60 font-light leading-relaxed -mt-12 mb-16">
+        {{ nota }}
+      </p>
 
       <div 
         class="grid gap-10 md:gap-12 justify-center"

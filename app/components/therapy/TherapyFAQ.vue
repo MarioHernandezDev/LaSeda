@@ -12,13 +12,19 @@ withDefaults(defineProps<{
   ctaTitulo?: string
   ctaDescripcion?: string
   ctaLabel?: string
+  cierreSecundario?: string
+  cierreSecundarioUrl?: string
+  cierreLabel?: string
+  cierreDescripcion?: string
 }>(), {
   label: 'Dudas comunes',
   titulo: 'Resolvemos tus preguntas',
   subtitulo: 'con total transparencia',
   ctaTitulo: '¿Prefieres que hablemos directamente?',
   ctaDescripcion: 'Estamos aquí para escucharte de forma activa. La primera orientación telefónica es completamente gratuita y sin compromiso alguno.',
-  ctaLabel: 'Reservar orientación'
+  ctaLabel: 'Reservar orientación',
+  cierreSecundario: 'Contactar por WhatsApp',
+  cierreSecundarioUrl: 'https://wa.me/34679571977?text=Hola,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20la%20orientaci%C3%B3n%20gratuita.'
 })
 
 const faqAbierta = ref<number | null>(null)
@@ -107,10 +113,10 @@ const toggleFaq = (i: number) => {
                 </span>
               </NuxtLink>
 
-              <a 
-                href="https://wa.me/34679571977?text=Hola,%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20la%20orientaci%C3%B3n%20gratuita." 
-                target="_blank"
-                rel="noopener noreferrer"
+              <a
+                :href="cierreSecundarioUrl"
+                :target="cierreSecundarioUrl.startsWith('http') ? '_blank' : undefined"
+                :rel="cierreSecundarioUrl.startsWith('http') ? 'noopener noreferrer' : undefined"
                 class="flex items-center gap-4 group p-3 -mx-3 rounded-xl transition-colors duration-300 hover:bg-white"
               >
                 <div class="w-10 h-10 rounded-full bg-[#71B1A5]/10 text-[#71B1A5] flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300">
@@ -119,7 +125,7 @@ const toggleFaq = (i: number) => {
                 </svg>
                 </div>
                 <span class="text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#25D366] transition-colors duration-300">
-                  Contactar por WhatsApp
+                  {{ cierreSecundario }}
                 </span>
               </a>
             </div>

@@ -5,11 +5,20 @@ interface Motivo {
   desc: string
 }
 
-defineProps<{
+withDefaults(defineProps<{
   motivos: Motivo[]
   imagen: string
   imagenAlt: string
-}>()
+  label?: string
+  titulo?: string
+  subtitulo?: string
+  nota?: string
+}>(), {
+  label: '¿Cuándo acudir?',
+  titulo: 'Motivos de consulta',
+  subtitulo: 'más frecuentes',
+  nota: ''
+})
 </script>
 
 <template>
@@ -28,13 +37,13 @@ defineProps<{
             <div class="flex items-center gap-3 mb-4">
               <span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true" />
               <p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">
-                ¿Cuándo acudir?
+                {{ label }}
               </p>
             </div>
             <h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">
-              Motivos de consulta<br>
+              {{ titulo }}<br>
               <span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">
-                más frecuentes
+                {{ subtitulo }}
               </span>
             </h2>
           </div>
@@ -59,6 +68,10 @@ defineProps<{
               </div>
             </div>
           </div>
+
+          <p v-if="nota" class="text-sm text-[#27252B]/60 font-light leading-relaxed border-l-2 border-[#71B1A5] pl-5">
+            {{ nota }}
+          </p>
         </div>
 
         <div class="lg:col-span-5 lg:sticky lg:top-32 mt-8 lg:mt-4">

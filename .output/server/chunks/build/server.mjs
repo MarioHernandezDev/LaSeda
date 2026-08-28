@@ -608,7 +608,7 @@ const _routes = [
   {
     name: "formaciones-id",
     path: "/formaciones/:id()",
-    component: () => import('./_id_-DKQjGjc9.mjs')
+    component: () => import('./_id_-CWJoXwKP.mjs')
   },
   {
     name: "talleres-id",
@@ -618,7 +618,7 @@ const _routes = [
   {
     name: "terapias-id",
     path: "/terapias/:id()",
-    component: () => import('./_id_-DQ5OTKzu.mjs')
+    component: () => import('./_id_-CwVpol4d.mjs')
   },
   {
     name: "aviso-legal",
@@ -663,7 +663,7 @@ const _routes = [
   {
     name: "terapias",
     path: "/terapias",
-    component: () => import('./index-B2dUd8AN.mjs')
+    component: () => import('./index-B8Gld_fG.mjs')
   },
   {
     name: "index",

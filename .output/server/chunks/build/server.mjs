@@ -616,7 +616,7 @@ const _routes = [
   {
     name: "talleres-id",
     path: "/talleres/:id()",
-    component: () => import('./_id_-Xkpcjyvr.mjs')
+    component: () => import('./_id_-BOX-plVF.mjs')
   },
   {
     name: "terapias-id",
@@ -631,12 +631,12 @@ const _routes = [
   {
     name: "conocenos",
     path: "/conocenos",
-    component: () => import('./index-e7o9q1x6.mjs')
+    component: () => import('./index-sw6qGiTu.mjs')
   },
   {
     name: "contacto",
     path: "/contacto",
-    component: () => import('./contacto-BT8jWiGA.mjs')
+    component: () => import('./contacto-C0vq14zX.mjs')
   },
   {
     name: "cookies",
@@ -646,7 +646,7 @@ const _routes = [
   {
     name: "formaciones",
     path: "/formaciones",
-    component: () => import('./index-C5RvKWTT.mjs')
+    component: () => import('./index-Do-z4ZSs.mjs')
   },
   {
     name: "login",
@@ -661,12 +661,12 @@ const _routes = [
   {
     name: "talleres",
     path: "/talleres",
-    component: () => import('./index-DhoPNd88.mjs')
+    component: () => import('./index-DcgOImqD.mjs')
   },
   {
     name: "terapias",
     path: "/terapias",
-    component: () => import('./index-DvO2u6K0.mjs')
+    component: () => import('./index-CK1oAIje.mjs')
   },
   {
     name: "video",

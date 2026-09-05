@@ -37,20 +37,11 @@ withDefaults(defineProps<{
 <template>
   <div class="w-full text-[#27252B] font-sans pt-12 md:pt-16 pb-24 lg:pb-32 space-y-24 lg:space-y-36 bg-[#FDFBF9]">
     
-    <section id="sobre-el-taller" v-reveal class="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0 border-b border-[#27252B]/5 pb-24 lg:pb-0">
-      
-      <div class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-[#27252B]/5 relative border-b lg:border-b-0 lg:border-r border-[#27252B]/10 rounded-none">
-        <img
-          :src="imagen"
-          :alt="imagenAlt"
-          class="absolute inset-0 w-full h-full object-cover grayscale-[10%] hover:scale-102 transition-all duration-[1200ms] ease-out"
-          loading="lazy"
-        />
-      </div>
+    <section id="sobre-el-taller" v-reveal class="flex justify-center border-b border-[#27252B]/5 pb-24">
 
-      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-start lg:max-w-[90%] xl:max-w-[85%] justify-self-start">
+      <div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full max-w-4xl flex flex-col justify-center items-center text-center">
         <div class="space-y-6 w-full">
-          <div class="flex items-center gap-3">
+          <div class="flex items-center justify-center gap-3">
             <span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" />
             <p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]">
               {{ introduccionLabel }}

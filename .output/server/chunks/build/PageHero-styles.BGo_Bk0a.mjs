@@ -1,0 +1,8 @@
+const PageHero_vue_vue_type_style_index_0_scoped_8d4daa70_lang = "@media(max-width:767px){.page-hero-root[data-v-8d4daa70]{display:flex!important;flex-direction:column!important;height:auto!important}.page-hero-panel-left[data-v-8d4daa70]{height:auto!important}.page-hero-panel-left[data-v-8d4daa70],.page-hero-panel-right[data-v-8d4daa70]{position:relative!important;inset:auto!important;width:100%!important}.page-hero-panel-right[data-v-8d4daa70]{height:280px!important}}@media(min-width:768px){.page-hero-root[data-v-8d4daa70]{display:flex}.page-hero-panel-left[data-v-8d4daa70],.page-hero-panel-right[data-v-8d4daa70]{width:50%;flex-shrink:0}}";
+
+const PageHeroStyles_BGo_Bk0a = [
+  PageHero_vue_vue_type_style_index_0_scoped_8d4daa70_lang
+];
+
+export { PageHeroStyles_BGo_Bk0a as default };
+//# sourceMappingURL=PageHero-styles.BGo_Bk0a.mjs.map

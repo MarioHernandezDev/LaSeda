@@ -1,0 +1,4 @@
+const WorkshopIntro_vue_vue_type_style_index_0_scoped_2d1709b6_lang = "[data-v-2d1709b6] strong{font-weight:500;color:#27252b}";
+
+export { WorkshopIntro_vue_vue_type_style_index_0_scoped_2d1709b6_lang as W };
+//# sourceMappingURL=_id_-styles-1.mjs-B60KfTSM.mjs.map

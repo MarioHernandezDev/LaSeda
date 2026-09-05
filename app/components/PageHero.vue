@@ -127,13 +127,34 @@ const smoothScroll = (event) => {
 <style scoped>
 @media (max-width: 767px) {
   .page-hero-root {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
   }
 
+  .page-hero-panel-left {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .page-hero-panel-right {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 280px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-hero-root {
+    display: flex;
+  }
   .page-hero-panel-left,
   .page-hero-panel-right {
-    width: 100%;
+    width: 50%;
+    flex-shrink: 0;
   }
 }
 </style>

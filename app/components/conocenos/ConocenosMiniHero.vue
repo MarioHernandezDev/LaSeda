@@ -35,7 +35,7 @@
             </span>
           </div>
 
-          <blockquote class="hidden md:block relative pl-5 border-l border-[#71B1A5]/40 mb-8 md:mb-10 max-w-lg">
+          <blockquote v-if="perfil.cita" class="hidden md:block relative pl-5 border-l border-[#71B1A5]/40 mb-8 md:mb-10 max-w-lg">
             <p 
               class="text-[#27252B]/80 font-serif italic leading-relaxed"
               style="font-size: clamp(0.95rem, 1.2vw, 1.15rem);"

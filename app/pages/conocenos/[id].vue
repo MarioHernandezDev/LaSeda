@@ -3,7 +3,7 @@
     
     <div v-if="perfil">
       
-      <div v-if="perfil.esReal">
+      <div v-if="perfil.esReal && perfil.id !== 'ana-jimenez'">
         <ConocenosMiniHero :perfil="perfil" />
 
         <div class="w-full">
@@ -30,6 +30,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div v-else-if="perfil.id === 'ana-jimenez'">
+        <ConocenosMiniHero :perfil="perfil" />
       </div>
 
       <div 
@@ -136,11 +140,11 @@ const perfiles: Record<string, PerfilProfesional> = {
     id: 'ana-jimenez',
     nombre: 'Ana Jiménez',
     nombreCorto: 'Ana',
-    rol: 'Co-dirección',
-    esReal: false, // Marcada como pendiente (Próximamente)
-    especialidadLabel: 'Psicología Clínica · Co-directora',
-    tituloOficial: 'Psicóloga Sanitaria Colegiada · Terapeuta Gestalt',
-    cita: 'Acompañar desde la presencia es permitir que cada persona descubra su propio ritmo para florecer.',
+    rol: 'Dirección',
+    esReal: true,
+    especialidadLabel: 'Directora del centro',
+    tituloOficial: '',
+    cita: '',
     imagen: '/images/ana-jimenez-psicologa-gestalt-terapia-infanto-juvenil-granada.jpg',
     imagenAlt: 'Ana Jiménez, psicóloga sanitaria y co-directora del Centro de Psicología La Seda en Granada',
     galeria: [

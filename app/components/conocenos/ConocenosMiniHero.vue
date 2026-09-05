@@ -1,5 +1,5 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-auto md:h-[calc(100vh-20rem)] pt-24 md:pt-24 w-full bg-[#F5F2EE]">
+  <header class="page-hero-root relative overflow-hidden h-auto md:h-[60vh] pt-24 md:pt-24 w-full bg-[#F5F2EE]">
     
     <div class="page-hero-panel relative z-20 h-auto md:h-full flex flex-col justify-center max-md:justify-start">
       

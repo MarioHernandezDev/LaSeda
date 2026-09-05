@@ -1,7 +1,7 @@
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[100dvh] md:h-[calc(100vh-20rem)] md:pt-24 w-full bg-[#F5F2EE]">
+  <header class="page-hero-root relative overflow-hidden h-auto md:h-[calc(100vh-20rem)] pt-24 md:pt-24 w-full bg-[#F5F2EE]">
     
-    <div class="page-hero-panel relative z-20 h-full flex flex-col justify-center max-md:justify-end">
+    <div class="page-hero-panel relative z-20 h-auto md:h-full flex flex-col justify-center max-md:justify-start">
       
       <div
         class="absolute inset-0 opacity-[0.015] pointer-events-none z-0 hidden md:block"
@@ -11,7 +11,7 @@
 
       <div class="w-full max-w-7xl mx-auto relative z-10 px-6 sm:px-12 md:px-16 lg:px-24 max-md:pb-12">
         
-        <div class="max-md:bg-[#F5F2EE]/85 max-md:backdrop-blur-md max-md:p-8 max-md:rounded-sm max-md:border max-md:border-white/20 max-w-2xl py-16 md:py-24">
+        <div class="max-md:bg-[#F5F2EE] max-md:p-8 max-md:rounded-sm max-w-2xl py-10 md:py-24">
 
           <div class="hidden md:flex items-center gap-3 mb-6 md:mb-8">
             <span class="w-6 h-px bg-[#71B1A5]/60" aria-hidden="true"></span>
@@ -73,7 +73,7 @@
 
     </div>
 
-    <div class="page-hero-panel-right max-md:absolute max-md:inset-0 max-md:w-full max-md:h-full z-10 overflow-hidden">
+    <div class="page-hero-panel-right max-md:relative max-md:inset-auto max-md:w-full max-md:h-[min(82vw,28rem)] z-10 overflow-hidden">
       <NuxtImg
         :src="perfil.imagen"
         :alt="perfil.imagenAlt"
@@ -103,6 +103,13 @@ defineProps<{
 </script>
 
 <style scoped>
+@media (max-width: 767px) {
+  .page-hero-root {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 768px) {
   .page-hero-root {
     display: flex;

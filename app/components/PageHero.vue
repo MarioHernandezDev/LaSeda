@@ -1,5 +1,5 @@
 <template>
-  <header v-reveal class="page-hero-root relative pt-0 md:pt-24">
+  <header v-reveal class="page-hero-root relative pt-24 md:pt-24">
 
     <div class="page-hero-panel-left bg-[#F5F2EE] flex flex-col justify-center py-12 md:py-0 relative">
       
@@ -87,7 +87,7 @@
 
     </div>
 
-    <div class="page-hero-panel-right relative">
+    <div class="page-hero-panel-right relative h-[min(82vw,28rem)] md:h-auto">
       <div 
         class="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-[#F5F2EE] to-transparent z-10 pointer-events-none md:block hidden"
         aria-hidden="true"
@@ -125,4 +125,15 @@ const smoothScroll = (event) => {
 </script>
 
 <style scoped>
+@media (max-width: 767px) {
+  .page-hero-root {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-hero-panel-left,
+  .page-hero-panel-right {
+    width: 100%;
+  }
+}
 </style>

@@ -50,7 +50,7 @@ const terapias: Record<string, any> = {
     categoriaSufijo: 'Granada y online',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
-    imagen: '/images/terapia-gestalt-adultos-centro-psicologia-la-seda-granada.jpg',
+    imagen: '/images/terapia-acompanamiento-adulto-psicologia-granada-la-seda.jpg',
     imagenAlt: 'Sesión de Terapia Gestalt para adultos en el Centro de Psicología La Seda, Granada',
     overviewLabel: 'Cuando sostenerlo en soledad ya no ayuda',
     overviewTitulo: 'No necesitas saber exactamente qué te pasa para empezar',
@@ -116,7 +116,7 @@ const terapias: Record<string, any> = {
     categoriaSufijo: 'La Seda Granada',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
-    imagen: '/images/terapia-adolescentes-psicologia-granada-la-seda.jpg',
+    imagen: '/images/terapia-psicologica-adolescentes-granada-centro-la-seda.jpg',
     imagenAlt: 'Sesión de terapia psicológica para adolescentes en el Centro La Seda, Granada',
     descripcion: 'La adolescencia trae cambios en el cuerpo, la identidad, las relaciones y la manera de mirar el mundo. Puede ser una etapa intensa tanto para quien la vive como para su familia.',
     descripcion2: 'La terapia ofrece un espacio confidencial para expresar lo que cuesta compartir en otros lugares, reconocer emociones y encontrar maneras más cuidadas de afrontar lo que ocurre. La familia puede participar cuando sea necesario. El modo de hacerlo se acuerda respetando la intimidad y la autonomía progresiva de cada adolescente.',
@@ -176,7 +176,7 @@ const terapias: Record<string, any> = {
     categoriaSufijo: 'Granada y online',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
-    imagen: '/images/terapia-pareja-familia-psicologia-granada-la-seda.jpg',
+    imagen: '/images/terapia-pareja-familia-sistemica-granada-centro-la-seda.jpg',
     overviewLabel: 'Un lugar para la relación',
     overviewTitulo: 'La terapia no parte de buscar quién tiene razón',
     descripcion: 'Las parejas y las familias atraviesan cambios, crisis y momentos en los que las formas habituales de relacionarse dejan de funcionar.',
@@ -241,7 +241,7 @@ const terapias: Record<string, any> = {
     categoriaSufijo: 'La Seda Granada',
     botonPrincipal: 'Solicitar una cita',
     botonSecundario: 'Conocer la terapia',
-    imagen: '/images/terapia-infantil-ninos-psicologia-granada-la-seda.jpg',
+    imagen: '/images/terapia-infantil-psicologia-ninos-granada-centro-la-seda.jpg',
     imagenAlt: 'Sala de terapia infantil de La Seda en Granada',
     overviewLabel: 'Un espacio para entender lo que está pasando',
     overviewTitulo: 'La infancia tiene sus propios lenguajes',
@@ -434,6 +434,8 @@ useHead({
         :titulo="terapia.titulo"
         :tituloItalico="terapia.tituloItalico"
         :subtitulo="terapia.subtitulo"
+        :imagen="terapia.imagen"
+        :imagenAlt="terapia.imagenAlt"
         :botonPrincipal="terapia.botonPrincipal"
         :botonSecundario="terapia.botonSecundario"
       />

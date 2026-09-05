@@ -10,6 +10,7 @@ withDefaults(defineProps<{
   botonPrincipalUrl?: string
   botonSecundario?: string
   botonSecundarioUrl?: string
+  imagen?: string
   imagenAlt?: string
 }>(), {
   categoriaSufijo: 'LA SEDA GRANADA',
@@ -20,14 +21,13 @@ withDefaults(defineProps<{
   imagenAlt: 'Interior minimalista, cálido y acogedor de las consultas del Centro de Psicología La Seda en Granada'
 })
 
-// Imagen fija para dotar de consistencia visual premium al hero de todas las terapias
 const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista-recepcion-jardin.jpg'
 </script>
 
 <template>
-  <header class="page-hero-root relative overflow-hidden h-[500px] md:h-[calc(580px+6rem)] lg:h-[calc(640px+6rem)] md:pt-24 border-b border-[#27252B]/5">
+  <header class="page-hero-root relative overflow-hidden h-auto md:h-[calc(580px+6rem)] lg:h-[calc(640px+6rem)] pt-24 md:pt-24 border-b border-[#27252B]/5">
 
-    <div class="page-hero-panel bg-[#F5F2EE] max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-20 max-md:!bg-transparent flex flex-col justify-center">
+    <div class="page-hero-panel bg-[#F5F2EE] max-md:!relative max-md:!inset-auto max-md:!w-full max-md:!h-auto max-md:z-20 max-md:!bg-[#F5F2EE] flex flex-col justify-center">
       
       <div
         class="absolute inset-0 opacity-[0.018] pointer-events-none z-0"
@@ -40,7 +40,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
       />
 
       <div class="w-full relative z-10 px-0 md:px-12 lg:px-16 xl:px-20">
-        <div class="max-md:bg-[#F5F2EE]/85 max-md:backdrop-blur-md max-md:py-10 max-md:px-8 max-md:w-full">
+        <div class="max-md:bg-[#F5F2EE] max-md:py-10 max-md:px-8 max-md:w-full">
 
           <div class="flex items-center gap-3 mb-6 lg:mb-8">
             <span class="w-5 h-px bg-[#71B1A5]" aria-hidden="true"></span>
@@ -101,7 +101,7 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
         </div>
 
         <p
-          class="text-stone-600/85 leading-[1.85] font-light mb-8 lg:mb-10 max-w-md hidden md:block mt-6 px-4 md:px-0"
+          class="text-stone-600/85 leading-[1.85] font-light mb-8 lg:mb-10 max-w-md mt-6 px-4 md:px-0"
           style="font-size: clamp(0.85rem, 1.1vw, 1rem);"
         >
           {{ aviso || subtitulo }}
@@ -117,9 +117,9 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
 
     </div>
 
-    <div class="page-hero-panel-right max-md:!absolute max-md:inset-0 max-md:!w-full max-md:!h-full max-md:z-10">
+    <div class="page-hero-panel-right max-md:!relative max-md:!inset-auto max-md:!w-full max-md:!h-[min(82vw,28rem)] max-md:z-10">
       <NuxtImg
-        :src="defaultImage"
+        :src="imagen || defaultImage"
         :alt="imagenAlt"
         class="w-full h-full object-cover object-center"
         format="webp"
@@ -132,6 +132,13 @@ const defaultImage = '/images/centro-clinico-clinica-salud-bienestar-minimalista
 </template>
 
 <style scoped>
+@media (max-width: 767px) {
+  .page-hero-root {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 768px) {
   .page-hero-root {
     display: flex;

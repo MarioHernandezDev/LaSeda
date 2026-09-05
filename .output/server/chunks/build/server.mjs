@@ -606,78 +606,78 @@ const _routes = [
   {
     name: "conocenos-id",
     path: "/conocenos/:id()",
-    component: () => import('./_id_-Rw7o1crI.mjs')
+    component: () => import('./_id_-CrCMLpVL.mjs')
   },
   {
     name: "formaciones-id",
     path: "/formaciones/:id()",
-    component: () => import('./_id_-D93yD963.mjs')
+    component: () => import('./_id_-DOr6TcjZ.mjs')
   },
   {
     name: "talleres-id",
     path: "/talleres/:id()",
-    component: () => import('./_id_-BeG5AKy9.mjs')
+    component: () => import('./_id_-Xkpcjyvr.mjs')
   },
   {
     name: "terapias-id",
     path: "/terapias/:id()",
-    component: () => import('./_id_-CGwnIgaC.mjs')
+    component: () => import('./_id_-DI0HrvMi.mjs')
   },
   {
     name: "aviso-legal",
     path: "/aviso-legal",
-    component: () => import('./aviso-legal-DpAW7oXa.mjs')
+    component: () => import('./aviso-legal-DUiupibq.mjs')
   },
   {
     name: "conocenos",
     path: "/conocenos",
-    component: () => import('./index-FH2Q9RDG.mjs')
+    component: () => import('./index-e7o9q1x6.mjs')
   },
   {
     name: "contacto",
     path: "/contacto",
-    component: () => import('./contacto-DZKiVulP.mjs')
+    component: () => import('./contacto-BT8jWiGA.mjs')
   },
   {
     name: "cookies",
     path: "/cookies",
-    component: () => import('./cookies-Dxbzz9_w.mjs')
+    component: () => import('./cookies-BlYwLrDz.mjs')
   },
   {
     name: "formaciones",
     path: "/formaciones",
-    component: () => import('./index-DgvEvBZB.mjs')
+    component: () => import('./index-C5RvKWTT.mjs')
   },
   {
     name: "login",
     path: "/login",
-    component: () => import('./login-CDbCdl0d.mjs')
+    component: () => import('./login-DH_LSu2w.mjs')
   },
   {
     name: "privacidad",
     path: "/privacidad",
-    component: () => import('./privacidad-BVTMk6Vd.mjs')
+    component: () => import('./privacidad-BiMtBY1G.mjs')
   },
   {
     name: "talleres",
     path: "/talleres",
-    component: () => import('./index-D6CxWn2q.mjs')
+    component: () => import('./index-DhoPNd88.mjs')
   },
   {
     name: "terapias",
     path: "/terapias",
-    component: () => import('./index-NnL7OWss.mjs')
+    component: () => import('./index-DvO2u6K0.mjs')
   },
   {
     name: "video",
     path: "/video",
     meta: __nuxt_page_meta || {},
-    component: () => import('./video-BTgEVWp6.mjs')
+    component: () => import('./video-DBM_fSjR.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BJCirisu.mjs')
+    component: () => import('./index-WwYp2LEj.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1100,7 +1100,7 @@ const plugins = [
   reveal_DkfC2QoBUDm0je9o6kUSnkBVK9__iuC_hBh1xQmFb6k
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-C3DtIkkV.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-D9a6J_y8.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -1711,8 +1711,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-CUeH-UqF.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-BqtZt6Bs.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-7aYpehFH.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-DHwHeBmJ.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));

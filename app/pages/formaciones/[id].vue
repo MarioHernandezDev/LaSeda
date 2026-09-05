@@ -277,6 +277,7 @@ useSeoMeta({
         :titulo="formacion.titulo"
         :tituloItalico="formacion.tituloItalico"
         :subtitulo="formacion.subtitulo"
+        :imagen="formacion.imagen"
         :imagenAlt="formacion.imagenAlt"
         :botonPrincipal="formacion.botonPrincipal"
         :botonPrincipalUrl="formacion.botonPrincipalUrl"

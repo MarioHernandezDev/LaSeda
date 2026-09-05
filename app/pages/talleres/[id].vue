@@ -288,6 +288,7 @@ useSeoMeta({
         :tituloItalico="taller.tituloItalico"
         :subtitulo="taller.subtitulo"
         :aviso="taller.aviso"
+        :imagen="taller.imagen"
         :imagenAlt="taller.imagenAlt"
         :botonPrincipal="taller.botonPrincipal"
         :botonPrincipalUrl="taller.botonPrincipalUrl"

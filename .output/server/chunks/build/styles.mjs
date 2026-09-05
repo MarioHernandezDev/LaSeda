@@ -1,7 +1,7 @@
 const interopDefault = r => r.default || r || [];
 const styles = {
-  "pages/conocenos/[id].vue": () => import('./_id_-styles.CnScxvqm.mjs').then(interopDefault),
-  "components/conocenos/ConocenosMiniHero.vue": () => import('./ConocenosMiniHero-styles.D2gexAba.mjs').then(interopDefault),
+  "pages/conocenos/[id].vue": () => import('./_id_-styles.Cyus955B.mjs').then(interopDefault),
+  "components/conocenos/ConocenosMiniHero.vue": () => import('./ConocenosMiniHero-styles.Bl6xw3l3.mjs').then(interopDefault),
   "components/conocenos/ConocenosBiography.vue": () => import('./ConocenosBiography-styles.A3XAfYaW.mjs').then(interopDefault),
   "pages/talleres/[id].vue": () => import('./_id_-styles.CWy22vD4.mjs').then(interopDefault),
   "components/talleres/WorkshopIntro.vue": () => import('./WorkshopIntro-styles.Dfs_ns3M.mjs').then(interopDefault),
@@ -17,10 +17,11 @@ const styles = {
   "../node_modules/nuxt/dist/app/components/error-404.vue": () => import('./error-404-styles.C8lgdT6t.mjs').then(interopDefault),
   "../node_modules/nuxt/dist/app/components/error-500.vue": () => import('./error-500-styles.Ccrcwcfa.mjs').then(interopDefault),
   "components/CustomCursor.vue": () => import('./CustomCursor-styles.CLaEh505.mjs').then(interopDefault),
-  "components/therapy/TherapyHero.vue": () => import('./TherapyHero-styles._Ni-Bs4X.mjs').then(interopDefault),
-  "layouts/default.vue": () => import('./default-styles.284IAs77.mjs').then(interopDefault),
+  "components/PageHero.vue": () => import('./PageHero-styles.BRl5fHra.mjs').then(interopDefault),
+  "components/therapy/TherapyHero.vue": () => import('./TherapyHero-styles.Bq2EtqnL.mjs').then(interopDefault),
+  "layouts/default.vue": () => import('./default-styles.BABV6YWp.mjs').then(interopDefault),
   "components/AppHeader.vue": () => import('./AppHeader-styles.CIR2FtsS.mjs').then(interopDefault),
-  "components/ChatGuiado.vue": () => import('./ChatGuiado-styles.C0s7nr0J.mjs').then(interopDefault)
+  "components/ChatGuiado.vue": () => import('./ChatGuiado-styles._Lck68ub.mjs').then(interopDefault)
 };
 
 export { styles as default };

@@ -599,76 +599,85 @@ function getRouteRules(arg) {
     return {};
   }
 }
+const __nuxt_page_meta = {
+  layout: false
+};
 const _routes = [
   {
     name: "conocenos-id",
     path: "/conocenos/:id()",
-    component: () => import('./_id_-DCsYKDlQ.mjs')
+    component: () => import('./_id_-Rw7o1crI.mjs')
   },
   {
     name: "formaciones-id",
     path: "/formaciones/:id()",
-    component: () => import('./_id_-DGXuetfo.mjs')
+    component: () => import('./_id_-D93yD963.mjs')
   },
   {
     name: "talleres-id",
     path: "/talleres/:id()",
-    component: () => import('./_id_-DsJ_dTS9.mjs')
+    component: () => import('./_id_-BdfqbMAw.mjs')
   },
   {
     name: "terapias-id",
     path: "/terapias/:id()",
-    component: () => import('./_id_-DBJ85R5H.mjs')
+    component: () => import('./_id_-CGwnIgaC.mjs')
   },
   {
     name: "aviso-legal",
     path: "/aviso-legal",
-    component: () => import('./aviso-legal-DUiupibq.mjs')
+    component: () => import('./aviso-legal-DpAW7oXa.mjs')
   },
   {
     name: "conocenos",
     path: "/conocenos",
-    component: () => import('./index-Hb8q7Rr9.mjs')
+    component: () => import('./index-FH2Q9RDG.mjs')
   },
   {
     name: "contacto",
     path: "/contacto",
-    component: () => import('./contacto-CwnB2hvy.mjs')
+    component: () => import('./contacto-DZKiVulP.mjs')
   },
   {
     name: "cookies",
     path: "/cookies",
-    component: () => import('./cookies-BlYwLrDz.mjs')
+    component: () => import('./cookies-Dxbzz9_w.mjs')
   },
   {
     name: "formaciones",
     path: "/formaciones",
-    component: () => import('./index-DpFaHJM9.mjs')
+    component: () => import('./index-DgvEvBZB.mjs')
   },
   {
     name: "login",
     path: "/login",
-    component: () => import('./login-DH_LSu2w.mjs')
+    component: () => import('./login-CDbCdl0d.mjs')
   },
   {
     name: "privacidad",
     path: "/privacidad",
-    component: () => import('./privacidad-BiMtBY1G.mjs')
+    component: () => import('./privacidad-BVTMk6Vd.mjs')
   },
   {
     name: "talleres",
     path: "/talleres",
-    component: () => import('./index-B9snTXbX.mjs')
+    component: () => import('./index-D6CxWn2q.mjs')
   },
   {
     name: "terapias",
     path: "/terapias",
-    component: () => import('./index-RMMw5n9S.mjs')
+    component: () => import('./index-NnL7OWss.mjs')
+  },
+  {
+    name: "video",
+    path: "/video",
+    meta: __nuxt_page_meta || {},
+    component: () => import('./video-BTgEVWp6.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DdJhLTzO.mjs')
+    component: () => import('./index-BJCirisu.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1091,7 +1100,7 @@ const plugins = [
   reveal_DkfC2QoBUDm0je9o6kUSnkBVK9__iuC_hBh1xQmFb6k
 ];
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-kdUbpDI3.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-C3DtIkkV.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -1674,7 +1683,11 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     }),
     _: 1
   }, _parent));
-  _push(ssrRenderComponent(_component_CookieBanner, null, null, _parent));
+  if (_ctx.$route.path !== "/video") {
+    _push(ssrRenderComponent(_component_CookieBanner, null, null, _parent));
+  } else {
+    _push(`<!---->`);
+  }
   _push(`<!--]-->`);
 }
 const _sfc_setup$2 = _sfc_main$2.setup;
@@ -1698,8 +1711,8 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-7aYpehFH.mjs'));
-    const _Error = defineAsyncComponent(() => import('./error-500-DHwHeBmJ.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-CUeH-UqF.mjs'));
+    const _Error = defineAsyncComponent(() => import('./error-500-BqtZt6Bs.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ status: unref(status), statusText: unref(statusText), statusCode: unref(status), statusMessage: unref(statusText), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));

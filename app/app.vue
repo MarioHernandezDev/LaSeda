@@ -2,5 +2,5 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-<CookieBanner />
+  <CookieBanner v-if="$route.path !== '/video'" />
 </template>

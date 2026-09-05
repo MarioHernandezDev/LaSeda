@@ -616,7 +616,7 @@ const _routes = [
   {
     name: "talleres-id",
     path: "/talleres/:id()",
-    component: () => import('./_id_-BdfqbMAw.mjs')
+    component: () => import('./_id_-BeG5AKy9.mjs')
   },
   {
     name: "terapias-id",

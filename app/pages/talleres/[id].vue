@@ -29,7 +29,7 @@ const workshops: Record<string, any> = {
     categoria: 'Práctica profesional',
     categoriaSufijo: 'La Seda Granada',
     aviso: 'Nuevo grupo abierto · Octubre de 2026',
-    botonPrincipal: 'Solicitar plaza o información',
+    botonPrincipal: 'Solicitar',
     botonPrincipalUrl: '#sobre-el-taller',
     botonSecundario: 'Conocer la supervisión',
     botonSecundarioUrl: '#sobre-el-taller',
@@ -61,7 +61,7 @@ const workshops: Record<string, any> = {
     calendarioLabel: 'Próxima convocatoria',
     calendarioTitulo: 'Grupo abierto desde octubre de 2026',
     calendarioDescripcion: 'En octubre de 2026 comienza un nuevo grupo de supervisión de casos. Las plazas son limitadas para cuidar la confianza, la continuidad y el trabajo compartido. La fecha de inicio, el calendario, el horario y las condiciones de participación se facilitarán al solicitar información.',
-    reservaLabel: 'Solicitar plaza o información',
+    reservaLabel: 'Solicitar',
     reservaUrl: '#sobre-el-taller',
     faqs: [
       { pregunta: '¿Necesito tener experiencia para participar?', respuesta: 'No es necesario contar con una trayectoria extensa. El grupo puede ser útil tanto al comienzo de la práctica como en etapas posteriores. Si tienes dudas sobre si encaja contigo, puedes contárnoslo en el formulario.' },
@@ -104,10 +104,15 @@ const workshops: Record<string, any> = {
       { numero: '06', titulo: 'Autoconocimiento y dirección vital', desc: 'Muchas personas salen de los talleres con una percepción renovada de sí mismas.' }
     ],
     fechas: [
-      { dia: '28', mes: 'Feb', diasemana: 'Sábado', descripcion: 'Taller Breve de Constelaciones Familiares', horario: '10:00 – 14:00 h' },
-      { dia: '18', mes: 'Abr', diasemana: 'Sábado', descripcion: 'Taller Breve de Constelaciones Familiares', horario: '10:00 – 14:00 h' },
-      { dia: '16', mes: 'May', diasemana: 'Sábado', descripcion: 'Taller Breve de Constelaciones Familiares', horario: '10:00 – 14:00 h' },
-      { dia: '20', mes: 'Jun', diasemana: 'Sábado', descripcion: 'Taller de Constelaciones para la Renovación', horario: 'Consultar horario', especial: 'Solsticio de Verano' }
+      { dia: '18', mes: 'Sep', anio: '2026', diasemana: 'Viernes', descripcion: 'Constelaciones abiertas', horario: '17:00 – 21:00 h' },
+      { dia: '10', mes: 'Oct', anio: '2026', diasemana: 'Sábado', descripcion: 'Pareja y vínculos', horario: '10:00 – 19:00 h' },
+      { dia: '21', mes: 'Nov', anio: '2026', diasemana: 'Sábado', descripcion: 'Constelaciones abiertas', horario: '10:00 – 14:00 h' },
+      { dia: '23', mes: 'Ene', anio: '2027', diasemana: 'Sábado', descripcion: 'Cierres, pérdidas y duelo', horario: '10:00 – 19:00 h' },
+      { dia: '26', mes: 'Feb', anio: '2027', diasemana: 'Viernes', descripcion: 'Constelaciones abiertas', horario: '17:00 – 21:00 h' },
+      { dia: '20', mes: 'Mar', anio: '2027', diasemana: 'Sábado', descripcion: 'Trabajo y lugar en el mundo', horario: '10:00 – 19:00 h' },
+      { dia: '29', mes: 'Abr', anio: '2027', diasemana: 'Jueves', descripcion: 'Constelaciones', horario: '17:00 – 21:00 h' },
+      { dia: '21', mes: 'May', anio: '2027', diasemana: 'Viernes', descripcion: 'Constelaciones abiertas', horario: '17:00 – 21:00 h' },
+      { dia: '9-11', mes: 'Jul', anio: '2027', diasemana: 'Vie-Dom', descripcion: 'Linaje, pertenencia y dirección vital', horario: 'Vie 17:00 – Dom 17:00 h', especial: 'RESIDENCIAL · Lugar por determinar' }
     ],
     faqs: [
       { pregunta: '¿Es necesaria experiencia previa para asistir?', respuesta: 'No. Los talleres están abiertos a cualquier persona independientemente de su experiencia.' },
@@ -115,7 +120,8 @@ const workshops: Record<string, any> = {
       { pregunta: '¿Es seguro que constelaré en el taller?', respuesta: 'En este tipo de talleres no podemos asegurar que todos los participantes constelen por razones terapéuticas...' },
       { pregunta: '¿Puedo participar como representante sin tener una constelación propia?', respuesta: 'Sí, y es una experiencia muy valiosa en sí misma.' },
       { pregunta: '¿Cómo reservo plaza en un taller?', respuesta: 'Puedes escribirnos a hola@centrolaseda.com o enviar un WhatsApp al 656 431 309.' }
-    ]
+    ],
+    reservaUrl: 'https://wa.me/34656431309?text=Hola%20buenas!%20Quiero%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20Constelaciones%20Familiares.'
   },
   'seguimiento-programa-sat': {
     titulo: 'Seguimiento eneagrama Programa SAT',
@@ -124,7 +130,7 @@ const workshops: Record<string, any> = {
     categoria: 'Seguimiento eneagrama Programa SAT',
     categoriaSufijo: 'En colaboración con la Fundación Claudio Naranjo',
     aviso: 'Nueve encuentros · De 18:30 a 20:30',
-    botonPrincipal: 'Más información en la FCN',
+    botonPrincipal: 'Info FCN',
     botonPrincipalUrl: 'https://programasat.com/es/grupos/seguimiento',
     botonSecundario: 'Conocer el grupo',
     botonSecundarioUrl: '#sobre-el-taller',
@@ -134,7 +140,7 @@ const workshops: Record<string, any> = {
     bio: 'Leonor Cabrera Torrado participa como colaboradora del Programa SAT y será la responsable del grupo de seguimiento en Granada.',
     bio2: 'Su manera de sostener los procesos parte de una presencia cercana, respetuosa y atenta a la experiencia de cada persona y del grupo.',
     descripcion: 'El trabajo con el eneagrama no termina al reconocer un carácter o comprender una estructura. Lo aprendido cobra una nueva dimensión cuando podemos observar cómo aparece en nuestras relaciones, decisiones y maneras de estar en el mundo.',
-    descripcion2: 'El grupo de seguimiento reúne a personas que comparten el deseo de continuar investigándose y seguir avanzando en el camino abierto por el Programa SAT. A lo largo de los encuentros profundizaremos en la presencia de las pasiones y las fijaciones en la vida cotidiana, acercándonos a ellas con honestidad, atención y respeto por el momento de cada persona.',
+    descripcion2: 'El grupo de seguimiento reúne a personas que comparten el deseo de continuar investigándose y seguir advancing en el camino abierto por el Programa SAT. A lo largo de los encuentros profundizaremos en la presencia de las pasiones y las fijaciones en la vida cotidiana, acercándonos a ellas con honestidad, atención y respeto por el momento de cada persona.',
     introduccionLabel: 'Continuar el proceso',
     introduccionTitulo: 'Un lugar para seguir profundizando',
     introduccionTituloSecundario: '',
@@ -149,20 +155,20 @@ const workshops: Record<string, any> = {
       { numero: '04', titulo: 'Dar espacio a la integración', desc: 'Cada encuentro ayuda a enlazar el trabajo realizado en los módulos con la forma en que vivimos, nos relacionamos y elegimos.' }
     ],
     fechas: [
-      { dia: '8', mes: 'Oct', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 8 de octubre de 2026' },
-      { dia: '5', mes: 'Nov', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 5 de noviembre de 2026'},
-      { dia: '3', mes: 'Dic', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 3 de diciembre de 2026'},
-      { dia: '7', mes: 'Ene', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 7 de enero de 2027' },
-      { dia: '4', mes: 'Feb', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 4 de febrero de 2027' },
-      { dia: '11', mes: 'Mar', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 11 de marzo de 2027' },
-      { dia: '1', mes: 'Abr', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 1 de abril de 2027' },
-      { dia: '13', mes: 'May', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 13 de mayo de 2027' },
-      { dia: '2', mes: 'Jun', anio: '2027', diasemana: 'Miércoles', descripcion: 'Miércoles, 2 de junio de 2027' }
+      { dia: '8', mes: 'Oct', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 8 de octubre de 2026', horario: '18:30 – 20:30 h' },
+      { dia: '5', mes: 'Nov', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 5 de noviembre de 2026', horario: '18:30 – 20:30 h' },
+      { dia: '3', mes: 'Dic', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 3 de diciembre de 2026', horario: '18:30 – 20:30 h' },
+      { dia: '7', mes: 'Ene', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 7 de enero de 2027', horario: '18:30 – 20:30 h' },
+      { dia: '4', mes: 'Feb', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 4 de febrero de 2027', horario: '18:30 – 20:30 h' },
+      { dia: '11', mes: 'Mar', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 11 de marzo de 2027', horario: '18:30 – 20:30 h' },
+      { dia: '1', mes: 'Abr', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 1 de abril de 2027', horario: '18:30 – 20:30 h' },
+      { dia: '13', mes: 'May', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 13 de mayo de 2027', horario: '18:30 – 20:30 h' },
+      { dia: '2', mes: 'Jun', anio: '2027', diasemana: 'Miércoles', descripcion: 'Miércoles, 2 de junio de 2027', horario: '18:30 – 20:30 h' }
     ],
     calendarioTitulo: 'Nueve encuentros en Granada',
     calendarioDescripcion: 'Los encuentros se celebrarán en La Seda, en el centro de Granada, de 18:30 a 20:30.',
     calendarioDireccion: 'La Seda · Calle Horno de Haza, 29, Bajo 1 · Granada',
-    reservaLabel: 'Más información en la FCN',
+    reservaLabel: 'Info FCN',
     reservaUrl: 'https://programasat.com/es/grupos/seguimiento',
     faqs: [
       { pregunta: '¿Puedo participar si no he realizado el Programa SAT?', respuesta: 'No. Los grupos de seguimiento están dirigidos a personas que ya han realizado el Introductorio o cualquier otro módulo del Programa SAT.' },
@@ -188,8 +194,8 @@ const workshops: Record<string, any> = {
     subtitulo: 'Con enfoque gestáltico y sistémico',
     categoria: 'Grupo de terapia',
     categoriaSufijo: 'Con enfoque gestáltico y sistémico',
-    aviso: 'Nueve encuentros · De 17:00 a 19:30',
-    botonPrincipal: 'Solicitar plaza o información',
+    aviso: 'Pack completo cerrado · Nueve encuentros (De 17:00 a 19:30)',
+    botonPrincipal: 'Solicitar',
     botonPrincipalUrl: '/contacto',
     botonSecundario: 'Conocer el grupo',
     botonSecundarioUrl: '#sobre-el-taller',
@@ -217,26 +223,27 @@ const workshops: Record<string, any> = {
       { numero: '06', titulo: 'Un lugar más propio', desc: 'Buscaremos ordenar la experiencia familiar interna para relacionarnos desde una posición más adulta, presente y consciente.' }
     ],
     fechas: [
-      { dia: '22', mes: 'Oct', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 22 de octubre de 2026'},
-      { dia: '20', mes: 'Nov', anio: '2026', diasemana: 'Viernes', descripcion: 'Viernes, 20 de noviembre de 2026'},
-      { dia: '17', mes: 'Dic', anio: '2026', diasemana: 'Jueves', descripcion: 'Jueves, 17 de diciembre de 2026'},
-      { dia: '21', mes: 'Ene', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 21 de enero de 2027' },
-      { dia: '18', mes: 'Feb', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 18 de febrero de 2027' },
-      { dia: '18', mes: 'Mar', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 18 de marzo de 2027' },
-      { dia: '15', mes: 'Abr', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 15 de abril de 2027' },
-      { dia: '20', mes: 'May', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 20 de mayo de 2027' },
-      { dia: '17', mes: 'Jun', anio: '2027', diasemana: 'Jueves', descripcion: 'Jueves, 17 de junio de 2027' }
+      { dia: '22', mes: 'Oct', anio: '2026', diasemana: 'Jueves', descripcion: 'Sesión 1: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '20', mes: 'Nov', anio: '2026', diasemana: 'Jueves', descripcion: 'Sesión 2: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '17', mes: 'Dic', anio: '2026', diasemana: 'Jueves', descripcion: 'Sesión 3: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '21', mes: 'Ene', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 4: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '18', mes: 'Feb', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 5: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '18', mes: 'Mar', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 6: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '15', mes: 'Abr', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 7: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '20', mes: 'May', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 8: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' },
+      { dia: '17', mes: 'Jun', anio: '2027', diasemana: 'Jueves', descripcion: 'Sesión 9: Grupo de Terapia', horario: '17:00 – 19:30 h', especial: 'Pack completo · Asistencia requerida' }
     ],
-    calendarioTitulo: 'Nueve encuentros mensuales',
-    calendarioDescripcion: 'El grupo comienza en octubre de 2026 y mantiene un encuentro mensual hasta junio de 2027. Todos los encuentros se celebrarán de 17:00 a 19:30.',
+    calendarioTitulo: 'Nueve encuentros mensuales (Pack cerrado)',
+    calendarioDescripcion: 'Este proceso funciona como un pack cerrado de 9 encuentros desde octubre de 2026 a junio de 2027. Para garantizar la cohesión, la seguridad y el trabajo profundo del grupo, no es posible reservar sesiones sueltas; la inscripción implica el compromiso de asistir al recorrido completo.',
     calendarioDireccion: 'La Seda · Granada',
-    reservaLabel: 'Solicitar plaza o información',
-    reservaUrl: '/contacto',
+    reservaLabel: 'Solicitar',
+    reservaUrl: 'https://wa.me/34656431309?text=Hola%20buenas!%20Quiero%20informaci%C3%B3n%20sobre%20el%20Grupo%20de%20Terapia.',
     faqs: [
+      { pregunta: '¿Puedo reservar sesiones sueltas?', respuesta: 'No. El grupo de terapia es un proceso cerrado en formato pack. No se permite la asistencia puntual a fechas sueltas para cuidar la intimidad, la confianza y el proceso del grupo.' },
       { pregunta: '¿Necesito haber hecho terapia anteriormente?', respuesta: 'No es imprescindible. Antes de incorporarte tendremos un primer contacto para conocer qué buscas y valorar si el grupo puede responder a tu momento y a tus necesidades.' },
       { pregunta: '¿Tengo que contar mi historia delante del grupo?', respuesta: 'No tendrás que compartir más información de la que desees. El proceso se construirá respetando tu intimidad, tus límites y tu ritmo.' },
       { pregunta: '¿Es un grupo de constelaciones familiares?', respuesta: 'No. Es un grupo de terapia vivencial con una comprensión gestáltica y sistémica. En algunos encuentros podrán utilizarse trabajos inspirados en las constelaciones como uno de los recursos del proceso.' },
-      { pregunta: '¿Tengo que asistir a los nueve encuentros?', respuesta: 'La inscripción corresponde al recorrido completo. La continuidad permite construir confianza y favorece el trabajo terapéutico. Si prevés alguna dificultad de asistencia, puedes comentarla antes de incorporarte.' },
+      { pregunta: '¿Tengo que asistir a los nueve encuentros?', respuesta: 'Sí. La inscripción corresponde al recorrido completo de las nueve sesiones. La continuidad de los mismos integrantes es imprescindible para construir el vínculo de confianza que sostiene el trabajo terapéutico.' },
       { pregunta: '¿Cómo sé si este grupo es para mí?', respuesta: 'Puede resultarte útil si deseas comprender mejor tus relaciones, reconocer patrones familiares que se repiten o revisar el lugar que sueles ocupar ante otras personas. El contacto previo servirá para valorar conjuntamente si es el espacio adecuado.' },
       { pregunta: '¿Dónde se realizará?', respuesta: 'Los encuentros serán presenciales en La Seda, en el centro de Granada.' }
     ],
@@ -244,11 +251,11 @@ const workshops: Record<string, any> = {
     faqTitulo: 'Antes de incorporarte',
     faqSubtitulo: '',
     ctaTitulo: 'Solicita plaza o información',
-    ctaDescripcion: 'Si quieres saber si este grupo puede ser adecuado para ti, completa el formulario. Te escribiremos para resolver tus dudas, explicarte las condiciones y valorar contigo la incorporación.',
+    ctaDescripcion: 'Si quieres saber si este grupo puede ser adecuado para ti, completa el formulario. Te escribiremos para resolver tus dudas, explicarte las condiciones y valorar contigo la incorporación al pack completo.',
     ctaLabel: 'Enviar solicitud',
     ctaUrl: '/contacto',
     seoTitle: 'Grupo de terapia en Granada | La Seda',
-    seoDescription: 'Grupo de terapia con enfoque gestáltico y sistémico para explorar los vínculos familiares y los patrones que repetimos en nuestras relaciones. Nueve encuentros en Granada, de octubre de 2026 a junio de 2027.'
+    seoDescription: 'Grupo de terapia con enfoque gestáltico y sistémico para explorar los vínculos familiares y los patrones que repetimos en nuestras relaciones. Nueve encuentros en pack cerrado en Granada, de octubre de 2026 a junio de 2027.'
   }
 }
 

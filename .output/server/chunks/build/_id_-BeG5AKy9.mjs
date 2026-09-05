@@ -1,0 +1,666 @@
+import { u as useRoute, a as __nuxt_component_0, _ as _export_sfc } from './server.mjs';
+import { defineComponent, computed, mergeProps, withCtx, createTextVNode, resolveDirective, createVNode, toDisplayString, openBlock, createBlock, ref, useSSRContext } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderAttr, ssrInterpolate, ssrRenderList, ssrRenderClass } from 'vue/server-renderer';
+import { _ as __nuxt_component_1 } from './TherapyHero-BzbVQC21.mjs';
+import { u as useSeoMeta } from './composables-BO5wdsw-.mjs';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import 'ipx';
+import 'vue-router';
+import './NuxtImg-DCBPdNwS.mjs';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/plugins';
+import 'unhead/utils';
+
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+  __name: "WorkshopIntro",
+  __ssrInlineRender: true,
+  props: {
+    descripcion: {},
+    descripcion2: {},
+    descripcion3: {},
+    imagen: {},
+    imagenAlt: {},
+    bio: {},
+    bio2: {},
+    facilitadoraId: {},
+    facilitadora: {},
+    facilitadoraImagenAlt: {},
+    introduccionLabel: { default: "El Taller" },
+    introduccionTitulo: { default: "¿Qué es y para quién es" },
+    introduccionTituloSecundario: { default: "este espacio?" },
+    facilitadoraLabel: { default: "Acompañamiento Profesional" },
+    facilitadoraTitulo: { default: "Sobre la facilitadora" },
+    facilitadoraBoton: { default: "Ver perfil completo" },
+    facilitadoraTituloSecundario: { default: "" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _directive_reveal = resolveDirective("reveal");
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-full text-[#27252B] font-sans pt-12 md:pt-16 pb-24 lg:pb-32 space-y-24 lg:space-y-36 bg-[#FDFBF9]" }, _attrs))} data-v-878551e4><section${ssrRenderAttrs(mergeProps({
+        id: "sobre-el-taller",
+        class: "grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0 border-b border-[#27252B]/5 pb-24 lg:pb-0"
+      }, ssrGetDirectiveProps(_ctx, _directive_reveal)))} data-v-878551e4><div class="w-full min-h-[350px] sm:min-h-[450px] lg:min-h-full h-full overflow-hidden bg-[#27252B]/5 relative border-b lg:border-b-0 lg:border-r border-[#27252B]/10 rounded-none" data-v-878551e4><img${ssrRenderAttr("src", __props.imagen)}${ssrRenderAttr("alt", __props.imagenAlt)} class="absolute inset-0 w-full h-full object-cover grayscale-[10%] hover:scale-102 transition-all duration-[1200ms] ease-out" loading="lazy" data-v-878551e4></div><div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-start lg:max-w-[90%] xl:max-w-[85%] justify-self-start" data-v-878551e4><div class="space-y-6 w-full" data-v-878551e4><div class="flex items-center gap-3" data-v-878551e4><span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" data-v-878551e4></span><p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]" data-v-878551e4>${ssrInterpolate(__props.introduccionLabel)}</p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal leading-tight tracking-tight" data-v-878551e4>${ssrInterpolate(__props.introduccionTitulo)}<br data-v-878551e4><span class="text-[#27252B]/50 not-italic font-sans font-light text-2xl md:text-3xl block mt-1" data-v-878551e4>${ssrInterpolate(__props.introduccionTituloSecundario)}</span></h2><div class="space-y-6 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2" data-v-878551e4><p data-v-878551e4>${ssrInterpolate(__props.descripcion)}</p><p data-v-878551e4>${ssrInterpolate(__props.descripcion2)}</p>`);
+      if (__props.descripcion3) {
+        _push(`<p data-v-878551e4>${ssrInterpolate(__props.descripcion3)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></div></div></section>`);
+      if (__props.facilitadora) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "grid grid-cols-1 lg:grid-cols-2 items-center min-h-[50vh] lg:min-h-[650px] gap-8 lg:gap-0" }, ssrGetDirectiveProps(_ctx, _directive_reveal)))} data-v-878551e4><div class="px-6 sm:px-16 md:px-24 py-8 lg:py-24 w-full flex flex-col justify-center items-end lg:max-w-[90%] xl:max-w-[85%] justify-self-end order-2 lg:order-1" data-v-878551e4><div class="space-y-6 w-full" data-v-878551e4><div class="flex items-center gap-3" data-v-878551e4><span class="w-6 h-px bg-[#71B1A5]" aria-hidden="true" data-v-878551e4></span><p class="text-xs font-bold tracking-[0.3em] uppercase text-[#71B1A5]" data-v-878551e4>${ssrInterpolate(__props.facilitadoraLabel)}</p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-[40px] text-[#27252B] font-normal tracking-tight leading-tight" data-v-878551e4>${ssrInterpolate(__props.facilitadoraTitulo)}<br data-v-878551e4><span class="text-[#27252B]/40 not-italic font-sans font-light text-xl md:text-2xl block mt-1" data-v-878551e4>${ssrInterpolate(__props.facilitadora.nombre)}</span></h2><div class="space-y-6 text-stone-600/90 text-sm md:text-base leading-relaxed md:leading-loose font-light tracking-wide pt-2 mb-4" data-v-878551e4><p data-v-878551e4>${__props.bio ?? ""}</p><p data-v-878551e4>${__props.bio2 ?? ""}</p></div><div class="pt-4 w-full flex justify-start" data-v-878551e4>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: `/conocenos/${__props.facilitadoraId}`,
+          class: "group relative inline-flex items-center justify-center gap-4 bg-[#27252B] text-white px-10 py-5 md:min-w-[240px] text-[10.5px] tracking-[0.28em] uppercase font-bold rounded-none transition-all duration-500 hover:bg-[#71B1A5] w-full sm:w-auto shadow-md transform hover:-translate-y-0.5 overflow-hidden border border-transparent",
+          "aria-label": `Ver perfil completo de ${__props.facilitadora.nombre}`
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`<span data-v-878551e4${_scopeId}>${ssrInterpolate(__props.facilitadoraBoton)}</span><div class="relative w-4 h-3 overflow-hidden flex items-center justify-center" data-v-878551e4${_scopeId}><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-878551e4${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" data-v-878551e4${_scopeId}></path></svg><svg class="w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-v-878551e4${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" data-v-878551e4${_scopeId}></path></svg></div>`);
+            } else {
+              return [
+                createVNode("span", null, toDisplayString(__props.facilitadoraBoton), 1),
+                createVNode("div", { class: "relative w-4 h-3 overflow-hidden flex items-center justify-center" }, [
+                  (openBlock(), createBlock("svg", {
+                    class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform group-hover:translate-x-5 absolute",
+                    fill: "none",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24"
+                  }, [
+                    createVNode("path", {
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round",
+                      "stroke-width": "2.5",
+                      d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                    })
+                  ])),
+                  (openBlock(), createBlock("svg", {
+                    class: "w-3.5 h-3.5 transition-transform duration-500 ease-out transform -translate-x-5 group-hover:translate-x-0 absolute text-white",
+                    fill: "none",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24"
+                  }, [
+                    createVNode("path", {
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round",
+                      "stroke-width": "2.5",
+                      d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                    })
+                  ]))
+                ])
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div></div></div><div class="w-full aspect-square overflow-hidden bg-[#27252B]/5 relative order-1 lg:order-2 border border-[#27252B]/10 rounded-none max-w-[550px] lg:max-w-full justify-self-center lg:w-full" data-v-878551e4><img${ssrRenderAttr("src", __props.facilitadora.imagen)}${ssrRenderAttr("alt", __props.facilitadoraImagenAlt || __props.facilitadora.imagenAlt)} class="absolute inset-0 w-full h-full object-cover object-center grayscale-[15%] hover:grayscale-0 transition-all duration-[1200ms] ease-out scale-100 hover:scale-102" loading="lazy" data-v-878551e4></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/talleres/WorkshopIntro.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const WorkshopIntro = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$4, [["__scopeId", "data-v-878551e4"]]), { __name: "TalleresWorkshopIntro" });
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+  __name: "WorkshopBenefits",
+  __ssrInlineRender: true,
+  props: {
+    label: {},
+    titulo: {},
+    beneficios: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _directive_reveal = resolveDirective("reveal");
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "bg-[#27252B] py-24 md:py-36 overflow-hidden relative" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))} data-v-b9f60bda><div class="absolute top-1/4 right-[-10%] w-[600px] h-[600px] rounded-full bg-[#71B1A5]/[0.02] blur-[120px] pointer-events-none" aria-hidden="true" data-v-b9f60bda></div><div class="page-container relative z-10" data-v-b9f60bda><div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20 md:mb-28" data-v-b9f60bda><div class="max-w-2xl" data-v-b9f60bda><div class="flex items-center gap-3 mb-5" data-v-b9f60bda><span class="w-4 h-px bg-[#71B1A5]/60" aria-hidden="true" data-v-b9f60bda></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold" data-v-b9f60bda>${ssrInterpolate(__props.label)}</p></div><h2 class="font-serif italic text-[#FDFBF9] text-4xl md:text-5xl leading-[1.15] tracking-tight" data-v-b9f60bda>${ssrInterpolate(__props.titulo)}</h2></div><div class="hidden md:block w-32 h-px bg-[#71B1A5]/25 mb-4 shrink-0" aria-hidden="true" data-v-b9f60bda></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 md:gap-y-20" data-v-b9f60bda><!--[-->`);
+      ssrRenderList(__props.beneficios, (b, i) => {
+        _push(`<div class="group/card flex flex-col items-start relative transition-all duration-500 ease-out" data-v-b9f60bda><div class="flex items-baseline justify-between w-full mb-4" data-v-b9f60bda><span class="font-serif italic text-[#71B1A5]/30 group-hover/card:text-[#71B1A5]/80 text-5xl font-medium transition-all duration-500 ease-out transform group-hover/card:-translate-y-1 select-none" aria-hidden="true" data-v-b9f60bda>${ssrInterpolate(b.numero)}</span><span class="w-0 h-[1px] bg-[#71B1A5]/40 transition-all duration-700 ease-out group-hover/card:w-12" aria-hidden="true" data-v-b9f60bda></span></div><div class="w-full pt-4 border-t border-white/[0.07] group-hover/card:border-[#71B1A5]/30 transition-colors duration-500" data-v-b9f60bda><h3 class="text-[#FDFBF9] font-medium text-lg tracking-wide mb-3 transition-colors duration-300 group-hover/card:text-white" data-v-b9f60bda>${ssrInterpolate(b.titulo)}</h3><p class="text-white/50 text-[14px] leading-[1.75] font-light tracking-wide transition-colors duration-500 group-hover/card:text-white/70" data-v-b9f60bda>${ssrInterpolate(b.desc)}</p></div></div>`);
+      });
+      _push(`<!--]--></div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/talleres/WorkshopBenefits.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const WorkshopBenefits = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$3, [["__scopeId", "data-v-b9f60bda"]]), { __name: "TalleresWorkshopBenefits" });
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "WorkshopDates",
+  __ssrInlineRender: true,
+  props: {
+    fechas: {},
+    calendarioTitulo: { default: "Próximas fechas" },
+    calendarioLabel: { default: "Calendario 2026–2027" },
+    calendarioDescripcion: { default: "Las plazas son limitadas para preservar el cuidado e intimidad clínica del grupo. Recomendamos formalizar la reserva con suficiente antelación." },
+    calendarioDireccion: { default: "" },
+    reservaLabel: { default: "Reservar plaza" },
+    reservaUrl: { default: "/contacto" }
+  },
+  setup(__props) {
+    const props = __props;
+    const isExternalReservation = computed(() => /^https?:\/\//.test(props.reservaUrl));
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _directive_reveal = resolveDirective("reveal");
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-20 md:py-32" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="page-container"><div class="grid md:grid-cols-12 gap-8 md:gap-16 items-end mb-16 md:mb-20"><div class="md:col-span-5"><p class="text-[#71B1A5] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">${ssrInterpolate(__props.calendarioLabel)}</p><h2 class="font-serif italic text-[#27252B] text-3xl md:text-4xl leading-tight">${ssrInterpolate(__props.calendarioTitulo)}</h2></div><div class="md:col-span-7"><p class="text-base md:text-lg leading-[1.85] text-[#27252B]/65">${ssrInterpolate(__props.calendarioDescripcion)}`);
+      if (__props.calendarioDireccion) {
+        _push(`<span>${ssrInterpolate(__props.calendarioDireccion)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</p></div></div><div class="border border-[#27252B]/5 rounded-sm overflow-hidden divide-y divide-[#27252B]/10"><!--[-->`);
+      ssrRenderList(__props.fechas, (fecha, i) => {
+        _push(`<div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-center p-6 md:p-8 bg-[#FDFBF9] hover:bg-[#27252B]/[0.01] transition-colors duration-200"><div class="md:col-span-1 flex md:block items-center gap-3"><span class="font-serif italic text-[#71B1A5] text-3xl md:text-4xl leading-none">${ssrInterpolate(fecha.dia)}</span></div><div class="md:col-span-2"><span class="block text-xs tracking-[0.2em] uppercase text-[#27252B]/50 font-medium">${ssrInterpolate(fecha.diasemana)}</span><span class="block text-xs tracking-[0.15em] uppercase text-[#71B1A5] font-semibold">${ssrInterpolate(fecha.mes)} · ${ssrInterpolate(fecha.anio ?? "2026")}</span></div><div class="md:col-span-5"><h3 class="font-serif italic text-[#27252B] text-lg md:text-xl leading-snug">${ssrInterpolate(fecha.descripcion)}</h3>`);
+        if (fecha.especial) {
+          _push(`<span class="inline-block mt-2 text-[10px] tracking-wider uppercase text-[#71B1A5] font-medium bg-[#71B1A5]/10 px-2 py-0.5 rounded-sm">${ssrInterpolate(fecha.especial)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><div class="md:col-span-2 flex items-center gap-2 text-[#27252B]/60"><svg class="w-4 h-4 text-[#71B1A5] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span class="text-sm font-light">${ssrInterpolate(fecha.horario)}</span></div><div class="md:col-span-2 flex md:justify-end">`);
+        if (isExternalReservation.value) {
+          _push(`<a${ssrRenderAttr("href", __props.reservaUrl)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 group/cta"><span class="text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap">${ssrInterpolate(__props.reservaLabel)}</span></a>`);
+        } else {
+          _push(ssrRenderComponent(_component_NuxtLink, {
+            to: __props.reservaUrl,
+            class: "inline-flex items-center gap-1 group/cta"
+          }, {
+            default: withCtx((_, _push2, _parent2, _scopeId) => {
+              if (_push2) {
+                _push2(`<span class="text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap"${_scopeId}>${ssrInterpolate(__props.reservaLabel)}</span>`);
+              } else {
+                return [
+                  createVNode("span", { class: "text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap" }, toDisplayString(__props.reservaLabel), 1)
+                ];
+              }
+            }),
+            _: 2
+          }, _parent));
+        }
+        _push(`</div></div>`);
+      });
+      _push(`<!--]--></div></div></section>`);
+    };
+  }
+});
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/talleres/WorkshopDates.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const WorkshopDates = Object.assign(_sfc_main$2, { __name: "TalleresWorkshopDates" });
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "WorkshopFaqs",
+  __ssrInlineRender: true,
+  props: {
+    faqs: {},
+    label: { default: "Dudas comunes" },
+    titulo: { default: "Resolvemos tus preguntas" },
+    subtitulo: { default: "con total transparencia" },
+    ctaTitulo: { default: "¿Listo para reservar tu espacio?" },
+    ctaDescripcion: { default: "Contáctanos para formalizar tu inscripción, solicitar detalles sobre el encuadre o resolver dudas sobre las plazas disponibles del grupo." },
+    ctaLabel: { default: "Solicitar Reserva" },
+    ctaUrl: { default: "/contacto" }
+  },
+  setup(__props) {
+    const faqAbierta = ref(null);
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      const _directive_reveal = resolveDirective("reveal");
+      if (__props.faqs.length > 0) {
+        _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 md:py-32 bg-[#FDFBF9] relative overflow-hidden" }, _attrs, ssrGetDirectiveProps(_ctx, _directive_reveal)))}><div class="page-container relative z-10"><div class="grid lg:grid-cols-12 gap-16 lg:gap-20 items-start"><div class="lg:col-span-7 space-y-12"><div><div class="flex items-center gap-3 mb-4"><span class="w-1.5 h-1.5 rounded-full bg-[#71B1A5]" aria-hidden="true"></span><p class="text-[#71B1A5] text-[10px] tracking-[0.35em] uppercase font-bold">${ssrInterpolate(__props.label)}</p></div><h2 class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#27252B] leading-[1.15]">${ssrInterpolate(__props.titulo)}<br><span class="text-[#27252B]/40 not-italic font-sans font-light text-2xl md:text-3xl block mt-1">${ssrInterpolate(__props.subtitulo)}</span></h2></div><div class="divide-y divide-[#27252B]/10 border-t border-b border-[#27252B]/10"><!--[-->`);
+        ssrRenderList(__props.faqs, (faq, i) => {
+          _push(`<div class="py-2"><button class="w-full flex items-center justify-between py-6 text-left group cursor-pointer"${ssrRenderAttr("aria-expanded", faqAbierta.value === i)}><span class="${ssrRenderClass([{ "text-[#71B1A5]": faqAbierta.value === i }, "text-base md:text-lg font-serif italic text-[#27252B] tracking-tight group-hover:text-[#71B1A5] transition-colors duration-300"])}">${ssrInterpolate(faq.pregunta)}</span><span class="relative w-5 h-5 shrink-0 ml-4" aria-hidden="true"><span class="${ssrRenderClass([faqAbierta.value === i ? "rotate-90 opacity-0" : "rotate-0", "absolute inset-0 w-px h-4 bg-[#71B1A5] mx-auto transition-all duration-500 ease-out"])}"></span><span class="absolute inset-0 h-px w-4 bg-[#71B1A5] my-auto"></span></span></button><div class="${ssrRenderClass([faqAbierta.value === i ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0 pointer-events-none", "grid transition-all duration-500 ease-in-out text-[#27252B]/60 font-light leading-relaxed text-sm md:text-base"])}"><div class="overflow-hidden"><p class="pr-4 font-sans text-[#27252B]/70 antialiased">${ssrInterpolate(faq.respuesta)}</p></div></div></div>`);
+        });
+        _push(`<!--]--></div></div><div class="lg:col-span-5 lg:sticky lg:top-32 mt-4"><div class="bg-[#F5F2EE]/50 border border-[#27252B]/5 rounded-2xl p-8 md:p-10 lg:p-12"><div class="w-8 h-px bg-[#71B1A5] mb-6" aria-hidden="true"></div><h3 class="font-serif italic text-2xl md:text-3xl text-[#27252B] leading-tight mb-4">${ssrInterpolate(__props.ctaTitulo)}</h3><p class="text-[#27252B]/60 font-light text-sm md:text-base leading-relaxed mb-8">${ssrInterpolate(__props.ctaDescripcion)}</p><div class="space-y-4 pt-2">`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: __props.ctaUrl,
+          class: "flex items-center gap-4 group p-3 -mx-3 rounded-xl transition-colors duration-300 hover:bg-white"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`<div class="w-10 h-10 rounded-full bg-[#71B1A5]/10 text-[#71B1A5] flex items-center justify-center group-hover:bg-[#71B1A5] group-hover:text-white transition-all duration-300"${_scopeId}><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"${_scopeId}></path></svg></div><span class="text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#71B1A5] transition-colors duration-300"${_scopeId}>${ssrInterpolate(__props.ctaLabel)}</span>`);
+            } else {
+              return [
+                createVNode("div", { class: "w-10 h-10 rounded-full bg-[#71B1A5]/10 text-[#71B1A5] flex items-center justify-center group-hover:bg-[#71B1A5] group-hover:text-white transition-all duration-300" }, [
+                  (openBlock(), createBlock("svg", {
+                    class: "w-4 h-4",
+                    fill: "none",
+                    stroke: "currentColor",
+                    viewBox: "0 0 24 24",
+                    "aria-hidden": "true"
+                  }, [
+                    createVNode("path", {
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round",
+                      "stroke-width": "2",
+                      d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    })
+                  ]))
+                ]),
+                createVNode("span", { class: "text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#71B1A5] transition-colors duration-300" }, toDisplayString(__props.ctaLabel), 1)
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`<a href="https://wa.me/34656431309" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group p-3 -mx-3 rounded-xl transition-colors duration-300 hover:bg-white"><div class="w-10 h-10 rounded-full bg-[#71B1A5]/10 text-[#71B1A5] flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.334.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.458h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></div><span class="text-[11px] tracking-[0.2em] uppercase font-bold text-[#27252B]/80 group-hover:text-[#25D366] transition-colors duration-300"> WhatsApp de contacto </span></a></div></div><div class="pt-6 pl-4">`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/talleres",
+          class: "inline-flex items-center gap-3 group text-xs font-semibold tracking-wider uppercase text-[#27252B]/40 hover:text-[#71B1A5] transition-colors duration-300"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`<svg class="w-4 h-4 transform rotate-180 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"${_scopeId}><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"${_scopeId}></path></svg> Volver a Talleres `);
+            } else {
+              return [
+                (openBlock(), createBlock("svg", {
+                  class: "w-4 h-4 transform rotate-180 group-hover:-translate-x-1 transition-transform duration-300",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24"
+                }, [
+                  createVNode("path", {
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round",
+                    "stroke-width": "2",
+                    d: "M14 5l7 7m0 0l-7 7m7-7H3"
+                  })
+                ])),
+                createTextVNode(" Volver a Talleres ")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</div></div></div></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+    };
+  }
+});
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/talleres/WorkshopFaqs.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const WorkshopFaqs = Object.assign(_sfc_main$1, { __name: "TalleresWorkshopFaqs" });
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "[id]",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const route = useRoute();
+    const staff = {
+      "ana-jimenez": {
+        nombre: "Ana Jiménez",
+        imagen: "/images/ana-jimenez-consulta-granada.jpg",
+        imagenAlt: "Ana Jiménez, psicóloga, psicoterapeuta Gestalt y supervisora acreditada por la AETG"
+      },
+      "leonor-cabrera": {
+        nombre: "Leonor Cabrera Torrado",
+        imagen: "/images/la-seda-leonor-cabrera.jpg",
+        imagenAlt: "Leonor Cabrera Torrado, especialista y facilitadora de Constelaciones Familiares"
+      }
+    };
+    const workshops = {
+      "supervision-casos": {
+        titulo: "Supervisión de casos",
+        tituloItalico: "",
+        subtitulo: "Un espacio para revisar la práctica, compartir dificultades y seguir creciendo como profesional.",
+        categoria: "Práctica profesional",
+        categoriaSufijo: "La Seda Granada",
+        aviso: "Nuevo grupo abierto · Octubre de 2026",
+        botonPrincipal: "Solicitar",
+        botonPrincipalUrl: "#sobre-el-taller",
+        botonSecundario: "Conocer la supervisión",
+        botonSecundarioUrl: "#sobre-el-taller",
+        imagen: "/images/supervision-casos-clinicos-terapeutas-gestalt-granada.jpg",
+        imagenAlt: "Grupo de supervisión de casos para profesionales de la terapia en La Seda, Granada",
+        facilitadoraId: "ana-jimenez",
+        bio: "Ana Jiménez es psicóloga y psicoterapeuta Gestalt, miembro didacta y supervisora acreditada por la Asociación Española de Terapia Gestalt (AETG). Cuenta con más de quince años de experiencia supervisando a profesionales de la terapia.",
+        bio2: "Su forma de trabajar pone en relación la revisión del caso con lo que sucede en quien acompaña. Atiende tanto a las decisiones profesionales como a las emociones, dudas o bloqueos que pueden aparecer durante el proceso terapéutico.",
+        descripcion: "La supervisión permite detenerse y observar con más claridad lo que sucede en el trabajo terapéutico: las dudas que aparecen, los casos que se bloquean, las decisiones que cuesta tomar o aquello que la relación con una persona despierta en quien la atiende.",
+        descripcion2: "En el grupo se comparten casos y experiencias profesionales dentro de un marco confidencial. La aportación de la supervisora y del resto de participantes ayuda a descubrir nuevas posibilidades de intervención y a cuidar la forma de estar en consulta.",
+        descripcion3: "No se trata de evaluar ni de ofrecer respuestas cerradas. Se trata de pensar la práctica en compañía, reconocer recursos y encontrar una orientación más ajustada para cada situación.",
+        introduccionLabel: "La supervisión",
+        introduccionTitulo: "Un lugar donde no tener que sostener la práctica en soledad",
+        introduccionTituloSecundario: "",
+        facilitadoraLabel: "La supervisora",
+        facilitadoraTitulo: "",
+        facilitadoraBoton: "Conocer a Ana",
+        beneficiosLabel: "Qué puede aportar la supervisión",
+        beneficiosTitulo: "Un espacio para pensar, aprender y cuidar la práctica",
+        beneficios: [
+          { numero: "01", titulo: "Más claridad ante los casos", desc: "Revisar la información disponible, ordenar hipótesis y encontrar nuevas posibilidades cuando un proceso parece estancado." },
+          { numero: "02", titulo: "Conciencia sobre la propia intervención", desc: "Reconocer cómo influyen las emociones, expectativas y formas de relacionarse de quien acompaña." },
+          { numero: "03", titulo: "Una devolución honesta y cuidadosa", desc: "Recibir otras perspectivas sin juicio, dentro de un entorno orientado al aprendizaje." },
+          { numero: "04", titulo: "Apoyo entre profesionales", desc: "Compartir el impacto emocional de la práctica con personas que conocen sus exigencias y responsabilidades." },
+          { numero: "05", titulo: "Cuidado ético", desc: "Pensar límites, responsabilidades y decisiones complejas para ofrecer una atención más consciente y responsable." },
+          { numero: "06", titulo: "Horas acreditables por la AETG", desc: "Las horas realizadas con Ana Jiménez pueden acreditarse como horas de supervisión para la formación en Terapia Gestalt de la AETG." }
+        ],
+        fechas: [],
+        calendarioLabel: "Próxima convocatoria",
+        calendarioTitulo: "Grupo abierto desde octubre de 2026",
+        calendarioDescripcion: "En octubre de 2026 comienza un nuevo grupo de supervisión de casos. Las plazas son limitadas para cuidar la confianza, la continuidad y el trabajo compartido. La fecha de inicio, el calendario, el horario y las condiciones de participación se facilitarán al solicitar información.",
+        reservaLabel: "Solicitar",
+        reservaUrl: "#sobre-el-taller",
+        faqs: [
+          { pregunta: "¿Necesito tener experiencia para participar?", respuesta: "No es necesario contar con una trayectoria extensa. El grupo puede ser útil tanto al comienzo de la práctica como en etapas posteriores. Si tienes dudas sobre si encaja contigo, puedes contárnoslo en el formulario." },
+          { pregunta: "¿La supervisión es grupal?", respuesta: "Sí. Esta convocatoria corresponde a un grupo de supervisión de casos. El formato concreto y las condiciones de participación se comunicarán junto con el calendario." },
+          { pregunta: "¿Qué puedo llevar a supervisión?", respuesta: "Puedes traer un caso, una dificultad de la relación terapéutica, una decisión que necesites revisar, un bloqueo o una situación que te esté generando dudas en la práctica." },
+          { pregunta: "¿Todavía no atiendo casos, puedo participar?", respuesta: "Sí. También puedes trabajar dudas, inseguridades o dificultades relacionadas con el inicio de tu recorrido profesional." },
+          { pregunta: "¿Las horas pueden acreditarse para la formación Gestalt?", respuesta: "Sí. Ana Jiménez es miembro didacta y supervisora acreditada por la AETG. Las horas realizadas pueden certificarse como horas de supervisión." },
+          { pregunta: "¿Cómo solicito plaza o más información?", respuesta: "Completa el formulario de esta página. Te escribiremos con el calendario, el horario, las condiciones y la disponibilidad del grupo. No necesitas llamar por teléfono." }
+        ],
+        faqLabel: "Preguntas frecuentes",
+        faqTitulo: "Antes de incorporarte al grupo",
+        faqSubtitulo: "",
+        ctaTitulo: "Solicita plaza o información",
+        ctaDescripcion: "Si te interesa incorporarte al grupo o quieres resolver alguna duda antes de decidir, completa el formulario. Te escribiremos para ofrecerte la información necesaria y confirmar la disponibilidad.",
+        ctaLabel: "Enviar solicitud",
+        ctaUrl: "#sobre-el-taller",
+        seoTitle: "Supervisión de casos para profesionales de la terapia en Granada | La Seda",
+        seoDescription: "Grupo de supervisión de casos en Granada, facilitado por Ana Jiménez. Nuevo grupo abierto desde octubre de 2026. Solicita plaza o información."
+      },
+      "constelaciones-familiares": {
+        titulo: "Talleres de Constelaciones",
+        tituloItalico: "Familiares",
+        subtitulo: "Revelar lo invisible para liberarse de lo que no nos pertenece.",
+        categoria: "Espacios vivenciales",
+        imagen: "/images/taller-constelaciones-familiares-granada-centro-la-seda.jpg",
+        imagenAlt: "Taller vivencial y grupal de constelaciones familiares en Granada",
+        facilitadoraId: "leonor-cabrera",
+        bio: "Leonor Cabrera Torrado está especializada en trabajar la fuerza interior y los bloqueos emocionales a través de las <strong>Constelaciones Familiares</strong>...",
+        bio2: 'Es autora del libro "El camino de la fuerza interior". Su trabajo combina el rigor del método sistémico de Bert Hellinger con una <strong>mirada profundamente compasiva</strong>...',
+        descripcion: "Los talleres de Constelaciones Familiares de La Seda sirven para abordar problemas y dinámicas familiares, así como otros desafíos personales...",
+        descripcion2: "El objetivo principal es revelar y resolver estos patrones para promover el bienestar emocional y las relaciones saludables...",
+        beneficiosLabel: "Qué abordamos",
+        beneficiosTitulo: "Situaciones que este taller puede mover",
+        beneficios: [
+          { numero: "01", titulo: "Resolver conflictos familiares", desc: "Identifica y resuelve conflictos persistententes dentro de la familia: entre padres e hijos, entre hermanos..." },
+          { numero: "02", titulo: "Comprender patrones repetitivos", desc: "Las personas a menudo repiten patrones que se originan en su historia familiar." },
+          { numero: "03", titulo: "Liberar cargas transgeneracionales", desc: "Devuelve simbólicamente lo que pertenece a generaciones anteriores y recupera tu propio lugar." },
+          { numero: "04", titulo: "Elaborar duelos y pérdidas", desc: "Hay duelos que no pueden ser elaborados y que siguen doliendo a pesar de que pasa el tiempo." },
+          { numero: "05", titulo: "Tomar decisiones importantes", desc: "En ocasiones, las personas recurren a las Constelaciones para tomar decisiones sobre trabajo, relaciones o crianza." },
+          { numero: "06", titulo: "Autoconocimiento y dirección vital", desc: "Muchas personas salen de los talleres con una percepción renovada de sí mismas." }
+        ],
+        fechas: [
+          { dia: "18", mes: "Sep", anio: "2026", diasemana: "Viernes", descripcion: "Constelaciones abiertas", horario: "17:00 – 21:00 h" },
+          { dia: "10", mes: "Oct", anio: "2026", diasemana: "Sábado", descripcion: "Pareja y vínculos", horario: "10:00 – 19:00 h" },
+          { dia: "21", mes: "Nov", anio: "2026", diasemana: "Sábado", descripcion: "Constelaciones abiertas", horario: "10:00 – 14:00 h" },
+          { dia: "23", mes: "Ene", anio: "2027", diasemana: "Sábado", descripcion: "Cierres, pérdidas y duelo", horario: "10:00 – 19:00 h" },
+          { dia: "26", mes: "Feb", anio: "2027", diasemana: "Viernes", descripcion: "Constelaciones abiertas", horario: "17:00 – 21:00 h" },
+          { dia: "20", mes: "Mar", anio: "2027", diasemana: "Sábado", descripcion: "Trabajo y lugar en el mundo", horario: "10:00 – 19:00 h" },
+          { dia: "29", mes: "Abr", anio: "2027", diasemana: "Jueves", descripcion: "Constelaciones", horario: "17:00 – 21:00 h" },
+          { dia: "21", mes: "May", anio: "2027", diasemana: "Viernes", descripcion: "Constelaciones abiertas", horario: "17:00 – 21:00 h" },
+          { dia: "9-11", mes: "Jul", anio: "2027", diasemana: "Vie-Dom", descripcion: "Linaje, pertenencia y dirección vital", horario: "Vie 17:00 – Dom 17:00 h", especial: "RESIDENCIAL · Lugar por determinar" }
+        ],
+        faqs: [
+          { pregunta: "¿Es necesaria experiencia previa para asistir?", respuesta: "No. Los talleres están abiertos a cualquier persona independientemente de su experiencia." },
+          { pregunta: "¿Cómo funciona el taller? ¿Qué ocurre durante la sesión?", respuesta: "El facilitador elige entre los asistentes a alguien para trabajar su tema y le hace una pequeña entrevista..." },
+          { pregunta: "¿Es seguro que constelaré en el taller?", respuesta: "En este tipo de talleres no podemos asegurar que todos los participantes constelen por razones terapéuticas..." },
+          { pregunta: "¿Puedo participar como representante sin tener una constelación propia?", respuesta: "Sí, y es una experiencia muy valiosa en sí misma." },
+          { pregunta: "¿Cómo reservo plaza en un taller?", respuesta: "Puedes escribirnos a hola@centrolaseda.com o enviar un WhatsApp al 656 431 309." }
+        ],
+        reservaUrl: "https://wa.me/34656431309?text=Hola%20buenas!%20Quiero%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20Constelaciones%20Familiares."
+      },
+      "seguimiento-programa-sat": {
+        titulo: "Seguimiento eneagrama Programa SAT",
+        tituloItalico: "",
+        subtitulo: "Un espacio compartido para continuar el recorrido iniciado en el Programa SAT y llevar su comprensión a la experiencia cotidiana.",
+        categoria: "Seguimiento eneagrama Programa SAT",
+        categoriaSufijo: "En colaboración con la Fundación Claudio Naranjo",
+        aviso: "Nueve encuentros · De 18:30 a 20:30",
+        botonPrincipal: "Más información en la FCN",
+        botonPrincipalUrl: "https://programasat.com/es/grupos/seguimiento",
+        botonSecundario: "Conocer el grupo",
+        botonSecundarioUrl: "#sobre-el-taller",
+        imagen: "/images/seguimiento-eneagrama-programa-sat-granada.jpg",
+        imagenAlt: "Grupo de seguimiento del Programa SAT en La Seda, Granada",
+        facilitadoraId: "leonor-cabrera",
+        bio: "Leonor Cabrera Torrado participa como colaboradora del Programa SAT y será la responsable del grupo de seguimiento en Granada.",
+        bio2: "Su manera de sostener los procesos parte de una presencia cercana, respetuosa y atenta a la experiencia de cada persona y del grupo.",
+        descripcion: "El trabajo con el eneagrama no termina al reconocer un carácter o comprender una estructura. Lo aprendido cobra una nueva dimensión cuando podemos observar cómo aparece en nuestras relaciones, decisiones y maneras de estar en el mundo.",
+        descripcion2: "El grupo de seguimiento reúne a personas que comparten el deseo de continuar investigándose y seguir advancing en el camino abierto por el Programa SAT. A lo largo de los encuentros profundizaremos en la presencia de las pasiones y las fijaciones en la vida cotidiana, acercándonos a ellas con honestidad, atención y respeto por el momento de cada persona.",
+        introduccionLabel: "Continuar el proceso",
+        introduccionTitulo: "Un lugar para seguir profundizando",
+        introduccionTituloSecundario: "",
+        facilitadoraLabel: "En Granada",
+        facilitadoraBoton: "Conocer a Leonor",
+        beneficiosLabel: "El recorrido",
+        beneficiosTitulo: "De la comprensión a la experiencia",
+        beneficios: [
+          { numero: "01", titulo: "Observar lo cotidiano", desc: "Reconoceremos cómo las pasiones, las fijaciones y los automatismos se expresan en situaciones concretas de la vida." },
+          { numero: "02", titulo: "Profundizar en la comprensión de sí", desc: "Volveremos sobre lo aprendido desde la experiencia presente, permitiendo que aparezcan nuevos matices y preguntas." },
+          { numero: "03", titulo: "Compartir el camino", desc: "El grupo ofrece continuidad y compañía junto a otras personas con una motivación común: seguir avanzando en su proceso de autoconocimiento." },
+          { numero: "04", titulo: "Dar espacio a la integración", desc: "Cada encuentro ayuda a enlazar el trabajo realizado en los módulos con la forma en que vivimos, nos relacionamos y elegimos." }
+        ],
+        fechas: [
+          { dia: "8", mes: "Oct", anio: "2026", diasemana: "Jueves", descripcion: "Jueves, 8 de octubre de 2026", horario: "18:30 – 20:30 h" },
+          { dia: "5", mes: "Nov", anio: "2026", diasemana: "Jueves", descripcion: "Jueves, 5 de noviembre de 2026", horario: "18:30 – 20:30 h" },
+          { dia: "3", mes: "Dic", anio: "2026", diasemana: "Jueves", descripcion: "Jueves, 3 de diciembre de 2026", horario: "18:30 – 20:30 h" },
+          { dia: "7", mes: "Ene", anio: "2027", diasemana: "Jueves", descripcion: "Jueves, 7 de enero de 2027", horario: "18:30 – 20:30 h" },
+          { dia: "4", mes: "Feb", anio: "2027", diasemana: "Jueves", descripcion: "Jueves, 4 de febrero de 2027", horario: "18:30 – 20:30 h" },
+          { dia: "11", mes: "Mar", anio: "2027", diasemana: "Jueves", descripcion: "Jueves, 11 de marzo de 2027", horario: "18:30 – 20:30 h" },
+          { dia: "1", mes: "Abr", anio: "2027", diasemana: "Jueves", descripcion: "Jueves, 1 de abril de 2027", horario: "18:30 – 20:30 h" },
+          { dia: "13", mes: "May", anio: "2027", diasemana: "Jueves", descripcion: "Jueves, 13 de mayo de 2027", horario: "18:30 – 20:30 h" },
+          { dia: "2", mes: "Jun", anio: "2027", diasemana: "Miércoles", descripcion: "Miércoles, 2 de junio de 2027", horario: "18:30 – 20:30 h" }
+        ],
+        calendarioTitulo: "Nueve encuentros en Granada",
+        calendarioDescripcion: "Los encuentros se celebrarán en La Seda, en el centro de Granada, de 18:30 a 20:30.",
+        calendarioDireccion: "La Seda · Calle Horno de Haza, 29, Bajo 1 · Granada",
+        reservaLabel: "Más información en la FCN",
+        reservaUrl: "https://programasat.com/es/grupos/seguimiento",
+        faqs: [
+          { pregunta: "¿Puedo participar si no he realizado el Programa SAT?", respuesta: "No. Los grupos de seguimiento están dirigidos a personas que ya han realizado el Introductorio o cualquier otro módulo del Programa SAT." },
+          { pregunta: "¿Es un curso de eneagrama?", respuesta: "No es un curso inicial ni un nuevo módulo. Es un espacio para continuar profundizando en la experiencia y observar las pasiones y fijaciones en la vida cotidiana." },
+          { pregunta: "¿Dónde se realizan los encuentros?", respuesta: "En La Seda, en Calle Horno de Haza, 29, Bajo 1, en el centro de Granada." },
+          { pregunta: "¿Quién acompaña el grupo?", respuesta: "Leonor Cabrera Torrado, colaboradora del Programa SAT y responsable del grupo de seguimiento en Granada." },
+          { pregunta: "¿Cómo se realiza la inscripción?", respuesta: "A través del formulario oficial del Programa SAT. Si necesitas resolver alguna duda sobre el proceso, puedes escribir a seguimiento@programasat.com." }
+        ],
+        faqLabel: "Preguntas frecuentes",
+        faqTitulo: "Antes de incorporarte",
+        faqSubtitulo: "",
+        ctaTitulo: "Más información e inscripción",
+        ctaDescripcion: "La información y la inscripción se gestionan a través de la web oficial del Programa SAT de la Fundación Claudio Naranjo. Desde el botón podrás consultar los detalles y acceder al formulario correspondiente al grupo de Granada.",
+        ctaLabel: "Ir a la web de la FCN",
+        ctaUrl: "https://programasat.com/es/grupos/seguimiento",
+        seoTitle: "Seguimiento eneagrama Programa SAT en Granada | La Seda",
+        seoDescription: "Grupo de seguimiento del Programa SAT en Granada para continuar profundizando en el eneagrama y observar las pasiones y fijaciones en la vida cotidiana.",
+        enlaceInscripcion: "https://programasat.com/es/grupos/seguimiento"
+      },
+      "grupo-de-terapia": {
+        titulo: "Grupo de terapia",
+        tituloItalico: "",
+        subtitulo: "Con enfoque gestáltico y sistémico",
+        categoria: "Grupo de terapia",
+        categoriaSufijo: "Con enfoque gestáltico y sistémico",
+        aviso: "Pack completo cerrado · Nueve encuentros (De 17:00 a 19:30)",
+        botonPrincipal: "Solicitar",
+        botonPrincipalUrl: "/contacto",
+        botonSecundario: "Conocer el grupo",
+        botonSecundarioUrl: "#sobre-el-taller",
+        imagen: "/images/grupo-de-terapia-granada-la-seda.jpg",
+        imagenAlt: "Grupo de terapia con enfoque gestáltico y sistémico en La Seda, Granada",
+        facilitadoraId: "leonor-cabrera",
+        facilitadoraImagenAlt: "Leonor Cabrera Torrado, facilitadora del grupo de terapia",
+        bio: "Leonor Cabrera Torrado es facilitadora de constelaciones familiares y se dedica al acompañamiento emocional desde 2013.",
+        bio2: "Su forma de trabajar integra la Terapia Gestalt, la perspectiva sistémica y el trabajo con la historia familiar. En este grupo sostendrá un espacio cercano y estructurado, atento tanto al proceso individual como a lo que vaya sucediendo en las relaciones dentro del grupo. Es autora de «El camino de la fuerza interior».",
+        descripcion: "Nuestra forma de relacionarnos empieza a construirse en los primeros vínculos. En la familia aprendemos qué podemos esperar de las demás personas, qué lugar ocupamos y qué necesitamos hacer para sentir pertenencia, protección o reconocimiento.",
+        descripcion2: "Muchas de esas respuestas fueron necesarias en su momento. Sin embargo, podemos seguir repitiéndolas de forma automática en la vida adulta, incluso cuando ya no responden a lo que necesitamos. El grupo ofrece un contexto vivo para reconocer esos movimientos mientras aparecen: cómo nos acercamos, cómo nos alejamos, qué nos cuesta pedir, qué tememos mostrar y qué papel tendemos a asumir en las relaciones. No se trata de aprender una manera correcta de relacionarse. Se trata de comprender de dónde viene nuestra forma de hacerlo y ampliar la posibilidad de elegir.",
+        introduccionLabel: "Lo relacional",
+        introduccionTitulo: "El grupo como lugar para observar lo que nos sucede con otras personas",
+        introduccionTituloSecundario: "",
+        facilitadoraLabel: "La facilitadora",
+        facilitadoraBoton: "Conocer a Leonor",
+        beneficiosLabel: "El recorrido",
+        beneficiosTitulo: "Nueve encuentros para acercarnos a nuestra historia relacional",
+        beneficios: [
+          { numero: "01", titulo: "El sistema familiar", desc: "Observaremos cómo se ha organizado nuestra familia, qué lugares ha ocupado cada persona y qué reglas explícitas o silenciosas han sostenido el sistema." },
+          { numero: "02", titulo: "Patrones que se repiten", desc: "Reconoceremos formas de vincularnos que reproducimos sin darnos cuenta en la pareja, las amistades, la familia o el trabajo." },
+          { numero: "03", titulo: "Conflictos nucleares del sistema", desc: "Nos acercaremos a dificultades profundas que atraviesan la historia familiar y que pueden seguir influyendo en cómo vivimos y nos relacionamos." },
+          { numero: "04", titulo: "Creencias familiares que limitan", desc: "Revisaremos ideas sobre el amor, el cuidado, el éxito, la pertenencia o el propio valor que hemos recibido y que quizá seguimos tomando como verdades." },
+          { numero: "05", titulo: "La imagen que construimos de quiénes somos", desc: "Exploraremos cómo los vínculos familiares han contribuido a formar una imagen de quiénes somos y distinguiremos qué parte de esa imagen todavía nos representa y cuál necesita ser revisada." },
+          { numero: "06", titulo: "Un lugar más propio", desc: "Buscaremos ordenar la experiencia familiar interna para relacionarnos desde una posición más adulta, presente y consciente." }
+        ],
+        fechas: [
+          { dia: "22", mes: "Oct", anio: "2026", diasemana: "Jueves", descripcion: "Sesión 1: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "20", mes: "Nov", anio: "2026", diasemana: "Jueves", descripcion: "Sesión 2: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "17", mes: "Dic", anio: "2026", diasemana: "Jueves", descripcion: "Sesión 3: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "21", mes: "Ene", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 4: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "18", mes: "Feb", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 5: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "18", mes: "Mar", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 6: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "15", mes: "Abr", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 7: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "20", mes: "May", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 8: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" },
+          { dia: "17", mes: "Jun", anio: "2027", diasemana: "Jueves", descripcion: "Sesión 9: Grupo de Terapia", horario: "17:00 – 19:30 h", especial: "Pack completo · Asistencia requerida" }
+        ],
+        calendarioTitulo: "Nueve encuentros mensuales (Pack cerrado)",
+        calendarioDescripcion: "Este proceso funciona como un pack cerrado de 9 encuentros desde octubre de 2026 a junio de 2027. Para garantizar la cohesión, la seguridad y el trabajo profundo del grupo, no es posible reservar sesiones sueltas; la inscripción implica el compromiso de asistir al recorrido completo.",
+        calendarioDireccion: "La Seda · Granada",
+        reservaLabel: "Solicitar",
+        reservaUrl: "https://wa.me/34656431309?text=Hola%20buenas!%20Quiero%20informaci%C3%B3n%20sobre%20el%20Grupo%20de%20Terapia.",
+        faqs: [
+          { pregunta: "¿Puedo reservar sesiones sueltas?", respuesta: "No. El grupo de terapia es un proceso cerrado en formato pack. No se permite la asistencia puntual a fechas sueltas para cuidar la intimidad, la confianza y el proceso del grupo." },
+          { pregunta: "¿Necesito haber hecho terapia anteriormente?", respuesta: "No es imprescindible. Antes de incorporarte tendremos un primer contacto para conocer qué buscas y valorar si el grupo puede responder a tu momento y a tus necesidades." },
+          { pregunta: "¿Tengo que contar mi historia delante del grupo?", respuesta: "No tendrás que compartir más información de la que desees. El proceso se construirá respetando tu intimidad, tus límites y tu ritmo." },
+          { pregunta: "¿Es un grupo de constelaciones familiares?", respuesta: "No. Es un grupo de terapia vivencial con una comprensión gestáltica y sistémica. En algunos encuentros podrán utilizarse trabajos inspirados en las constelaciones como uno de los recursos del proceso." },
+          { pregunta: "¿Tengo que asistir a los nueve encuentros?", respuesta: "Sí. La inscripción corresponde al recorrido completo de las nueve sesiones. La continuidad de los mismos integrantes es imprescindible para construir el vínculo de confianza que sostiene el trabajo terapéutico." },
+          { pregunta: "¿Cómo sé si este grupo es para mí?", respuesta: "Puede resultarte útil si deseas comprender mejor tus relaciones, reconocer patrones familiares que se repiten o revisar el lugar que sueles ocupar ante otras personas. El contacto previo servirá para valorar conjuntamente si es el espacio adecuado." },
+          { pregunta: "¿Dónde se realizará?", respuesta: "Los encuentros serán presenciales en La Seda, en el centro de Granada." }
+        ],
+        faqLabel: "Preguntas frecuentes",
+        faqTitulo: "Antes de incorporarte",
+        faqSubtitulo: "",
+        ctaTitulo: "Solicita plaza o información",
+        ctaDescripcion: "Si quieres saber si este grupo puede ser adecuado para ti, completa el formulario. Te escribiremos para resolver tus dudas, explicarte las condiciones y valorar contigo la incorporación al pack completo.",
+        ctaLabel: "Enviar solicitud",
+        ctaUrl: "/contacto",
+        seoTitle: "Grupo de terapia en Granada | La Seda",
+        seoDescription: "Grupo de terapia con enfoque gestáltico y sistémico para explorar los vínculos familiares y los patrones que repetimos en nuestras relaciones. Nueve encuentros en pack cerrado en Granada, de octubre de 2026 a junio de 2027."
+      }
+    };
+    const id = route.params.id;
+    const taller = computed(() => workshops[id] ?? null);
+    const facilitadoraActiva = computed(() => taller.value ? staff[taller.value.facilitadoraId] : null);
+    const seoTitle = computed(() => taller.value ? taller.value.seoTitle ?? `${taller.value.titulo} ${taller.value.tituloItalico} · Granada 2026` : "Taller no encontrado");
+    const seoDescription = computed(() => taller.value ? taller.value.seoDescription ?? taller.value.subtitulo : "");
+    useSeoMeta({
+      title: seoTitle,
+      description: seoDescription
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "bg-[#FDFBF9] antialiased" }, _attrs))}>`);
+      if (!taller.value) {
+        _push(`<main class="min-h-screen flex flex-col items-center justify-center text-center px-6"><h1 class="font-serif italic text-3xl mb-4">Taller no encontrado</h1>`);
+        _push(ssrRenderComponent(_component_NuxtLink, {
+          to: "/talleres",
+          class: "text-xs uppercase tracking-widest border border-[#27252B] px-6 py-3"
+        }, {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`Ver todos`);
+            } else {
+              return [
+                createTextVNode("Ver todos")
+              ];
+            }
+          }),
+          _: 1
+        }, _parent));
+        _push(`</main>`);
+      } else {
+        _push(`<main>`);
+        _push(ssrRenderComponent(__nuxt_component_1, {
+          categoria: taller.value.categoria,
+          categoriaSufijo: taller.value.categoriaSufijo,
+          titulo: taller.value.titulo,
+          tituloItalico: taller.value.tituloItalico,
+          subtitulo: taller.value.subtitulo,
+          aviso: taller.value.aviso,
+          imagenAlt: taller.value.imagenAlt,
+          botonPrincipal: taller.value.botonPrincipal,
+          botonPrincipalUrl: taller.value.botonPrincipalUrl,
+          botonSecundario: taller.value.botonSecundario,
+          botonSecundarioUrl: taller.value.botonSecundarioUrl
+        }, null, _parent));
+        _push(ssrRenderComponent(WorkshopIntro, {
+          descripcion: taller.value.descripcion,
+          descripcion2: taller.value.descripcion2,
+          descripcion3: taller.value.descripcion3,
+          imagen: taller.value.imagen,
+          imagenAlt: taller.value.imagenAlt,
+          bio: taller.value.bio,
+          bio2: taller.value.bio2,
+          facilitadoraId: taller.value.facilitadoraId,
+          facilitadora: facilitadoraActiva.value,
+          facilitadoraImagenAlt: taller.value.facilitadoraImagenAlt,
+          introduccionLabel: taller.value.introduccionLabel,
+          introduccionTitulo: taller.value.introduccionTitulo,
+          introduccionTituloSecundario: taller.value.introduccionTituloSecundario,
+          facilitadoraLabel: taller.value.facilitadoraLabel,
+          facilitadoraTitulo: taller.value.facilitadoraTitulo,
+          facilitadoraBoton: taller.value.facilitadoraBoton
+        }, null, _parent));
+        _push(ssrRenderComponent(WorkshopBenefits, {
+          label: taller.value.beneficiosLabel,
+          titulo: taller.value.beneficiosTitulo,
+          beneficios: taller.value.beneficios
+        }, null, _parent));
+        _push(ssrRenderComponent(WorkshopDates, {
+          fechas: taller.value.fechas,
+          calendarioTitulo: taller.value.calendarioTitulo,
+          calendarioLabel: taller.value.calendarioLabel,
+          calendarioDescripcion: taller.value.calendarioDescripcion,
+          calendarioDireccion: taller.value.calendarioDireccion,
+          reservaLabel: taller.value.reservaLabel,
+          reservaUrl: taller.value.reservaUrl
+        }, null, _parent));
+        _push(ssrRenderComponent(WorkshopFaqs, {
+          faqs: taller.value.faqs,
+          label: taller.value.faqLabel,
+          titulo: taller.value.faqTitulo,
+          subtitulo: taller.value.faqSubtitulo,
+          ctaTitulo: taller.value.ctaTitulo,
+          ctaDescripcion: taller.value.ctaDescripcion,
+          ctaLabel: taller.value.ctaLabel,
+          ctaUrl: taller.value.ctaUrl
+        }, null, _parent));
+        _push(`</main>`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/talleres/[id].vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=_id_-BeG5AKy9.mjs.map

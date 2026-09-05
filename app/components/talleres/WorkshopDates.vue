@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface Fecha {
   dia: string
   mes: string
@@ -25,6 +27,8 @@ const props = withDefaults(defineProps<{
   reservaLabel: 'Reservar plaza',
   reservaUrl: '/contacto'
 })
+
+const isExternalReservation = computed(() => /^https?:\/\//.test(props.reservaUrl))
 </script>
 
 <template>
@@ -82,7 +86,18 @@ const props = withDefaults(defineProps<{
           </div>
 
           <div class="md:col-span-2 flex md:justify-end">
-            <NuxtLink :to="reservaUrl" class="inline-flex items-center gap-1 group/cta">
+            <a
+              v-if="isExternalReservation"
+              :href="reservaUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 group/cta"
+            >
+              <span class="text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap">
+                {{ reservaLabel }}
+              </span>
+            </a>
+            <NuxtLink v-else :to="reservaUrl" class="inline-flex items-center gap-1 group/cta">
               <span class="text-xs tracking-[0.2em] uppercase text-[#27252B] font-medium border-b border-[#27252B]/20 pb-0.5 group-hover/cta:border-[#71B1A5] group-hover/cta:text-[#71B1A5] transition-all duration-200 whitespace-nowrap">
                 {{ reservaLabel }}
               </span>
